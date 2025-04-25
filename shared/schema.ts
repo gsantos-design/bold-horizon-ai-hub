@@ -15,6 +15,7 @@ export const inquiries = pgTable("inquiries", {
   phone: text("phone").notNull(),
   interest: text("interest").notNull(),
   message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const careerQuizResults = pgTable("career_quiz_results", {

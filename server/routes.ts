@@ -51,13 +51,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Generate AI recommendation
       const aiRecommendation = await generateCareerRecommendation(validatedQuizData);
       
-      // In a production app, we would save this to the database
-      // const quizResultData = {
-      //   ...validatedQuizData,
-      //   ...aiRecommendation
-      // };
+      // Combine quiz data and AI recommendation
+      const quizResultData = {
+        ...validatedQuizData,
+        ...aiRecommendation
+      };
       
-      console.log("Career path recommendation generated");
+      // Store the result
+      await storage.createCareerQuizResult(quizResultData);
+      
+      console.log("Career path recommendation generated and stored");
       
       // Return the recommendation to the client
       res.status(200).json({

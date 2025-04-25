@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { QuizResults } from "../shared/schema";
+import { type QuizResults } from "@shared/schema";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -73,8 +73,8 @@ export async function generateCareerRecommendation(quizResults: QuizResults): Pr
       nextSteps: parsedResult.nextSteps,
       estimatedTimeframe: parsedResult.estimatedTimeframe,
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error generating career recommendation:", error);
-    throw new Error(`Failed to generate career recommendation: ${error.message}`);
+    throw new Error(`Failed to generate career recommendation: ${error.message || 'Unknown error'}`);
   }
 }
