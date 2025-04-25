@@ -15,6 +15,7 @@ export default function Header() {
     { name: "Calculator", href: "#calculator" },
     { name: "Promotions", href: "#promotion" },
     { name: "Team Building", href: "#team-building" },
+    { name: "Growth Mindset", href: "#growth-mindset" },
     { name: "Resources", href: "#resources" },
     { name: "Contact", href: "#contact" },
   ];
