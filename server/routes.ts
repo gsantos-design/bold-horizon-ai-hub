@@ -1,7 +1,13 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertInquirySchema } from "@shared/schema";
+import { 
+  insertInquirySchema, 
+  quizResultsSchema, 
+  insertCareerQuizResultSchema,
+  type QuizResults 
+} from "@shared/schema";
+import { generateCareerRecommendation } from "./openai";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -34,6 +40,45 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // API route for career path quiz submissions
+  app.post("/api/career-quiz", async (req, res) => {
+    try {
+      console.log("Received career quiz submission");
+      
+      // Validate quiz data
+      const validatedQuizData = quizResultsSchema.parse(req.body);
+      
+      // Generate AI recommendation
+      const aiRecommendation = await generateCareerRecommendation(validatedQuizData);
+      
+      // In a production app, we would save this to the database
+      // const quizResultData = {
+      //   ...validatedQuizData,
+      //   ...aiRecommendation
+      // };
+      
+      console.log("Career path recommendation generated");
+      
+      // Return the recommendation to the client
+      res.status(200).json({
+        success: true,
+        recommendation: aiRecommendation
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          message: "Invalid quiz data", 
+          errors: error.errors 
+        });
+      } else {
+        console.error("Error processing career quiz:", error);
+        res.status(500).json({ 
+          message: "Failed to process career quiz. Please try again." 
+        });
+      }
+    }
+  });
+  
   // API route for retrieving resources
   app.get("/api/resources", (req, res) => {
     // This would typically fetch from a database, but for this implementation
