@@ -9,12 +9,14 @@ import Resources from "@/components/Resources";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import GrowthMindset from "@/components/GrowthMindset";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-neutral-100">
       <Header />
       <Hero />
+      <AboutUs />
       <main className="container mx-auto px-4 py-12">
         <CompensationStructure />
         <CommissionCalculator />
