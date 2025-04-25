@@ -124,123 +124,258 @@ export default function ContactForm() {
                   Complete the form below to learn how you can transform your financial future with WFG.
                 </p>
               </div>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-4">
-                  <Label htmlFor="name" className="block text-neutral-700 mb-2">Your Name</Label>
-                  <Controller
-                    name="name"
-                    control={control}
-                    render={({ field }) => (
-                      <Input
-                        id="name"
-                        className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                        {...field}
-                      />
-                    )}
-                  />
-                  {errors.name && (
-                    <p className="text-destructive text-sm mt-1">{errors.name.message}</p>
-                  )}
+              {isSuccess ? (
+                <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-xl mb-2">Application Received!</h3>
+                  <p className="mb-4 text-neutral-600">
+                    Thank you for taking the first step toward your financial transformation! 
+                    One of our team leaders will contact you within 24 hours to discuss the next steps.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-left">
+                      <Calendar className="h-5 w-5 text-primary mr-2" />
+                      <p className="text-sm text-neutral-600">You'll receive an invitation to an upcoming presentation</p>
+                    </div>
+                    <div className="flex items-center text-left">
+                      <Users className="h-5 w-5 text-primary mr-2" />
+                      <p className="text-sm text-neutral-600">Meet successful associates from your region</p>
+                    </div>
+                    <div className="flex items-center text-left">
+                      <DollarSign className="h-5 w-5 text-primary mr-2" />
+                      <p className="text-sm text-neutral-600">Get a personalized income projection plan</p>
+                    </div>
+                  </div>
+                  <Button 
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setFormStep(1);
+                    }}
+                    className="bg-primary hover:bg-primary-dark text-white font-semibold"
+                  >
+                    Submit Another Request
+                  </Button>
                 </div>
-                
-                <div className="mb-4">
-                  <Label htmlFor="email" className="block text-neutral-700 mb-2">Email Address</Label>
-                  <Controller
-                    name="email"
-                    control={control}
-                    render={({ field }) => (
-                      <Input
-                        id="email"
-                        type="email"
-                        className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                        {...field}
-                      />
-                    )}
-                  />
-                  {errors.email && (
-                    <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
-                  )}
-                </div>
-                
-                <div className="mb-4">
-                  <Label htmlFor="phone" className="block text-neutral-700 mb-2">Phone Number</Label>
-                  <Controller
-                    name="phone"
-                    control={control}
-                    render={({ field }) => (
-                      <Input
-                        id="phone"
-                        type="tel"
-                        className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                        {...field}
-                      />
-                    )}
-                  />
-                  {errors.phone && (
-                    <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
-                  )}
-                </div>
-                
-                <div className="mb-4">
-                  <Label htmlFor="interest" className="block text-neutral-700 mb-2">I'm Interested In:</Label>
-                  <Controller
-                    name="interest"
-                    control={control}
-                    render={({ field }) => (
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
+              ) : (
+                <form onSubmit={handleSubmit(onSubmit)} className="transition-all duration-300">
+                  {formStep === 1 ? (
+                    <div className="space-y-4">
+                      <div className="bg-accent/10 p-4 rounded-md mb-5">
+                        <h4 className="font-semibold mb-1 flex items-center">
+                          <Zap className="h-4 w-4 mr-1 text-accent" />
+                          Start Your Journey (Step 1 of 2)
+                        </h4>
+                        <p className="text-sm text-neutral-600">
+                          Tell us about yourself and your interests so we can match you with the right opportunity.
+                        </p>
+                      </div>
+                  
+                      <div className="mb-4">
+                        <Label htmlFor="name" className="block text-neutral-700 mb-2">Your Name</Label>
+                        <Controller
+                          name="name"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="name"
+                              className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                              {...field}
+                            />
+                          )}
+                        />
+                        {errors.name && (
+                          <p className="text-destructive text-sm mt-1">{errors.name.message}</p>
+                        )}
+                      </div>
+                      
+                      <div className="mb-4">
+                        <Label htmlFor="email" className="block text-neutral-700 mb-2">Email Address</Label>
+                        <Controller
+                          name="email"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="email"
+                              type="email"
+                              className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                              {...field}
+                            />
+                          )}
+                        />
+                        {errors.email && (
+                          <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
+                        )}
+                      </div>
+                      
+                      <div className="mb-4">
+                        <Label htmlFor="phone" className="block text-neutral-700 mb-2">Phone Number</Label>
+                        <Controller
+                          name="phone"
+                          control={control}
+                          render={({ field }) => (
+                            <Input
+                              id="phone"
+                              type="tel"
+                              className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                              {...field}
+                            />
+                          )}
+                        />
+                        {errors.phone && (
+                          <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
+                        )}
+                      </div>
+                      
+                      <div className="mb-4">
+                        <Label htmlFor="region" className="block text-neutral-700 mb-2">Your Region</Label>
+                        <Controller
+                          name="region"
+                          control={control}
+                          render={({ field }) => (
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <SelectTrigger className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                <SelectValue placeholder="Select your region" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="caribbean">Caribbean</SelectItem>
+                                <SelectItem value="florida">Florida</SelectItem>
+                                <SelectItem value="newyork">New York</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          )}
+                        />
+                      </div>
+                      
+                      <Button 
+                        type="button"
+                        onClick={nextStep}
+                        className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300 w-full flex items-center justify-center"
                       >
-                        <SelectTrigger className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="career">Building My Own WFG Business</SelectItem>
-                          <SelectItem value="more-info">Learning About Income Potential</SelectItem>
-                          <SelectItem value="meeting">Scheduling a Personal Consultation</SelectItem>
-                          <SelectItem value="social-presentation">Attending a Group Presentation</SelectItem>
-                          <SelectItem value="resources">Recruitment Materials</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
-                  {errors.interest && (
-                    <p className="text-destructive text-sm mt-1">{errors.interest.message}</p>
+                        Continue <ChevronRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      <div className="bg-accent/10 p-4 rounded-md mb-5">
+                        <h4 className="font-semibold mb-1 flex items-center">
+                          <Zap className="h-4 w-4 mr-1 text-accent" />
+                          Almost There! (Step 2 of 2)
+                        </h4>
+                        <p className="text-sm text-neutral-600">
+                          Help us understand your goals so we can provide the best support for your journey.
+                        </p>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <Label htmlFor="interest" className="block text-neutral-700 mb-2">I'm Interested In:</Label>
+                        <Controller
+                          name="interest"
+                          control={control}
+                          render={({ field }) => (
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <SelectTrigger className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                <SelectValue placeholder="Select an option" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="career">Building My Own WFG Business</SelectItem>
+                                <SelectItem value="more-info">Learning About Income Potential</SelectItem>
+                                <SelectItem value="meeting">Scheduling a Personal Consultation</SelectItem>
+                                <SelectItem value="social-presentation">Attending a Group Presentation</SelectItem>
+                                <SelectItem value="resources">Recruitment Materials</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          )}
+                        />
+                        {errors.interest && (
+                          <p className="text-destructive text-sm mt-1">{errors.interest.message}</p>
+                        )}
+                      </div>
+                      
+                      {selectedInterest && (
+                        <div className="mb-4 p-3 bg-green-50 border border-green-100 rounded-md">
+                          <p className="text-sm text-green-800">{getInterestMessage(selectedInterest)}</p>
+                        </div>
+                      )}
+                      
+                      <div className="mb-4">
+                        <Label htmlFor="callTime" className="block text-neutral-700 mb-2">Preferred Contact Time</Label>
+                        <Controller
+                          name="callTime"
+                          control={control}
+                          render={({ field }) => (
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <SelectTrigger className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                <SelectValue placeholder="Select preferred time" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="morning">Morning (9AM - 12PM)</SelectItem>
+                                <SelectItem value="afternoon">Afternoon (12PM - 5PM)</SelectItem>
+                                <SelectItem value="evening">Evening (5PM - 8PM)</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          )}
+                        />
+                      </div>
+                      
+                      <div className="mb-6">
+                        <Label htmlFor="message" className="block text-neutral-700 mb-2">Tell us about your goals</Label>
+                        <Controller
+                          name="message"
+                          control={control}
+                          render={({ field }) => (
+                            <Textarea
+                              id="message"
+                              rows={4}
+                              placeholder="What are your financial goals? Are you looking for part-time income or building a full-time business? Let us know how we can help you achieve your dreams."
+                              className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                              {...field}
+                            />
+                          )}
+                        />
+                        {errors.message && (
+                          <p className="text-destructive text-sm mt-1">{errors.message.message}</p>
+                        )}
+                      </div>
+                      
+                      <div className="flex space-x-3">
+                        <Button 
+                          type="button"
+                          onClick={prevStep}
+                          variant="outline"
+                          className="px-6 py-3 rounded-md transition-colors duration-300"
+                        >
+                          Back
+                        </Button>
+                        
+                        <Button 
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300 flex-1"
+                        >
+                          {isSubmitting ? "Submitting..." : "Start My Financial Transformation"}
+                        </Button>
+                      </div>
+                      
+                      <p className="text-xs text-center text-neutral-500 mt-2">
+                        We typically respond within 24 hours to schedule your consultation.
+                      </p>
+                    </div>
                   )}
-                </div>
-                
-                <div className="mb-6">
-                  <Label htmlFor="message" className="block text-neutral-700 mb-2">Tell us about your goals</Label>
-                  <Controller
-                    name="message"
-                    control={control}
-                    render={({ field }) => (
-                      <Textarea
-                        id="message"
-                        rows={4}
-                        placeholder="What are your financial goals? Are you looking for part-time income or building a full-time business? Let us know how we can help you achieve your dreams."
-                        className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                        {...field}
-                      />
-                    )}
-                  />
-                  {errors.message && (
-                    <p className="text-destructive text-sm mt-1">{errors.message.message}</p>
-                  )}
-                </div>
-                
-                <Button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300 w-full"
-                >
-                  {isSubmitting ? "Submitting..." : "Start My Financial Transformation"}
-                </Button>
-                <p className="text-xs text-center text-neutral-500 mt-2">
-                  We typically respond within 24 hours to schedule your consultation.
-                </p>
-              </form>
+                </form>
+              )}
             </div>
             
             <div>
