@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import GrowthMindset from "@/components/GrowthMindset";
 import AboutUs from "@/components/AboutUs";
+import CareerQuiz from "@/components/CareerQuiz";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <TeamBuilding />
         <GrowthMindset />
         <AdditionalBonuses />
+        <CareerQuiz />
         <Resources />
         <ContactForm />
       </main>

@@ -125,13 +125,13 @@ export default function CareerQuiz() {
   const onSubmit = async (data: QuizValues) => {
     setIsSubmitting(true);
     try {
-      const response = await apiRequest<{ success: boolean; recommendation: typeof recommendation }>({
+      const response = await apiRequest({
         url: "/api/career-quiz",
         method: "POST",
         body: data,
       });
 
-      if (response.success && response.recommendation) {
+      if (response && response.success && response.recommendation) {
         setRecommendation(response.recommendation);
         toast({
           title: "Career Path Analysis Complete",
@@ -426,7 +426,7 @@ export default function CareerQuiz() {
                                                 ? field.onChange([...field.value, value.id])
                                                 : field.onChange(
                                                     field.value?.filter(
-                                                      (value) => value !== value.id
+                                                      (v) => v !== value.id
                                                     )
                                                   )
                                             }}
