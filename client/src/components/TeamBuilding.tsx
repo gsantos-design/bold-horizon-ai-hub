@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Button } from "@/components/ui/button";
 
 export default function TeamBuilding() {
   const incomeData = [
@@ -10,6 +11,16 @@ export default function TeamBuilding() {
     { name: 'Marketing Director', income: 7400 },
     { name: 'Senior Marketing Director', income: 9600 },
   ];
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section id="team-building" className="mb-16">
@@ -177,6 +188,92 @@ export default function TeamBuilding() {
           </div>
         </CardContent>
       </Card>
+      
+      {/* Testimonials Section */}
+      <div className="mt-16 mb-8">
+        <div className="text-center mb-10">
+          <h2 className="font-heading font-bold text-3xl text-primary mb-2">
+            Real People, Real Transformations
+          </h2>
+          <p className="text-neutral-600 max-w-3xl mx-auto">
+            Hear from associates who changed their lives with WFG in the Caribbean, Florida, and New York regions.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+            <div className="h-4 bg-accent"></div>
+            <div className="p-6">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                  MC
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-center mb-1">Maria Castillo</h3>
+              <p className="text-neutral-500 text-sm text-center mb-4">San Juan, Puerto Rico</p>
+              <p className="text-neutral-600 italic mb-4">
+                "I was working 60 hours a week at two jobs and still struggling to pay my bills. After joining WFG, I was able to quit both jobs within 6 months. Now I earn triple my previous income while spending more time with my family."
+              </p>
+              <div className="flex justify-center">
+                <div className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent font-semibold">
+                  Income: $8,200/month
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+            <div className="h-4 bg-accent"></div>
+            <div className="p-6">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                  JD
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-center mb-1">James Davis</h3>
+              <p className="text-neutral-500 text-sm text-center mb-4">Miami, Florida</p>
+              <p className="text-neutral-600 italic mb-4">
+                "After 15 years in corporate America, I was tired of missing my kids' basketball games. With WFG, I built a team of 12 associates in my first year. Now I make my own schedule and earn more than my old executive salary."
+              </p>
+              <div className="flex justify-center">
+                <div className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent font-semibold">
+                  Income: $17,500/month
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+            <div className="h-4 bg-accent"></div>
+            <div className="p-6">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                  TD
+                </div>
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-center mb-1">Tanya Diaz</h3>
+              <p className="text-neutral-500 text-sm text-center mb-4">Jamaica, New York</p>
+              <p className="text-neutral-600 italic mb-4">
+                "As a single mother, I was living paycheck to paycheck with no time for my son. WFG gave me the blueprint to build wealth. In 18 months, I paid off $43,000 in debt and bought my first home. The best part? I'm helping others do the same."
+              </p>
+              <div className="flex justify-center">
+                <div className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent font-semibold">
+                  Income: $12,300/month
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mt-10">
+          <Button 
+            className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300"
+            onClick={() => scrollToSection("contact")}
+          >
+            Join Them Today
+          </Button>
+        </div>
+      </div>
     </section>
   );
 }

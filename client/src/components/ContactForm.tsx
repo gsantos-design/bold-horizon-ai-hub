@@ -10,7 +10,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock, Facebook, Linkedin, Youtube, Smartphone } from "lucide-react";
+import { 
+  MapPin, Phone, Mail, Clock, Facebook, Linkedin, Youtube, Smartphone,
+  DollarSign, Zap, Award, Calendar, Users, CheckCircle, ChevronRight
+} from "lucide-react";
+import { interestOptions } from "@/lib/constants";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(50),
@@ -18,17 +22,22 @@ const contactFormSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
   interest: z.string().min(1, "Please select an area of interest"),
   message: z.string().min(10, "Message must be at least 10 characters").max(500),
+  region: z.string().optional(),
+  callTime: z.string().optional(),
 });
 
 type ContactFormInputs = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formStep, setFormStep] = useState(1);
   const { toast } = useToast();
 
   const {
     control,
     handleSubmit,
+    watch,
     reset,
     formState: { errors },
   } = useForm<ContactFormInputs>({
@@ -39,8 +48,37 @@ export default function ContactForm() {
       phone: "",
       interest: "",
       message: "",
+      region: "florida",
+      callTime: "morning",
     },
   });
+
+  const selectedInterest = watch("interest");
+  
+  const getInterestMessage = (interest: string) => {
+    switch(interest) {
+      case "career":
+        return "Great choice! Building your own WFG business can lead to financial independence and unlimited income potential.";
+      case "more-info":
+        return "Smart move! Understanding your income potential is the first step toward financial transformation.";
+      case "meeting":
+        return "Excellent! Personal consultations are the fastest way to get your specific questions answered.";
+      case "social-presentation":
+        return "Perfect! Our group presentations are informative, inspiring, and a great way to get started.";
+      case "resources":
+        return "We have comprehensive recruitment materials to help you build your team successfully.";
+      default:
+        return "Thanks for your interest! We'll help you with any questions you might have.";
+    }
+  };
+
+  const nextStep = () => {
+    setFormStep(2);
+  };
+
+  const prevStep = () => {
+    setFormStep(1);
+  };
 
   const onSubmit = async (data: ContactFormInputs) => {
     setIsSubmitting(true);
@@ -51,6 +89,7 @@ export default function ContactForm() {
         description: "Your inquiry has been submitted. We'll contact you soon.",
         variant: "default",
       });
+      setIsSuccess(true);
       reset();
     } catch (error) {
       toast({
