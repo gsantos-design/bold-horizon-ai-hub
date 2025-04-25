@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="bg-white/10 p-4 rounded-lg mb-8 max-w-2xl mx-auto">
           <p className="text-lg font-semibold">
             "I went from making $3,600 monthly to over $15,000 in just one year by building my team." 
-            <span className="block text-sm mt-1">- Nolly Santiago, Marketing Director</span>
+            <span className="block text-sm mt-1">- Paul Santiago, Marketing Director</span>
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
