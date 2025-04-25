@@ -27,7 +27,7 @@ export default function Header() {
             <Building2 className="h-8 w-8 mr-3" />
             <div>
               <h1 className="font-heading font-bold text-2xl">WFG Financial</h1>
-              <p className="text-sm opacity-80">Compensation & Team Building</p>
+              <p className="text-sm opacity-80">Change Your Life | Caribbean, Florida & NY</p>
             </div>
           </div>
 

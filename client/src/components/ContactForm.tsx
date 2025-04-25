@@ -78,7 +78,13 @@ export default function ContactForm() {
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-heading font-semibold text-xl mb-4">Contact Form</h3>
+              <h3 className="font-heading font-semibold text-xl mb-4">Begin Your Financial Transformation</h3>
+              <div className="bg-neutral-100 p-4 rounded-lg mb-4">
+                <p className="text-sm text-neutral-700">
+                  Join our growing team of associates and leaders in the Caribbean, Florida, and New York regions. 
+                  Complete the form below to learn how you can transform your financial future with WFG.
+                </p>
+              </div>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4">
                   <Label htmlFor="name" className="block text-neutral-700 mb-2">Your Name</Label>
@@ -150,10 +156,11 @@ export default function ContactForm() {
                           <SelectValue placeholder="Select an option" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="career">Starting a Career with WFG</SelectItem>
-                          <SelectItem value="more-info">Learning More About Compensation</SelectItem>
-                          <SelectItem value="meeting">Scheduling a Meeting</SelectItem>
-                          <SelectItem value="resources">Accessing Resources</SelectItem>
+                          <SelectItem value="career">Building My Own WFG Business</SelectItem>
+                          <SelectItem value="more-info">Learning About Income Potential</SelectItem>
+                          <SelectItem value="meeting">Scheduling a Personal Consultation</SelectItem>
+                          <SelectItem value="social-presentation">Attending a Group Presentation</SelectItem>
+                          <SelectItem value="resources">Recruitment Materials</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
@@ -165,7 +172,7 @@ export default function ContactForm() {
                 </div>
                 
                 <div className="mb-6">
-                  <Label htmlFor="message" className="block text-neutral-700 mb-2">Message</Label>
+                  <Label htmlFor="message" className="block text-neutral-700 mb-2">Tell us about your goals</Label>
                   <Controller
                     name="message"
                     control={control}
@@ -173,6 +180,7 @@ export default function ContactForm() {
                       <Textarea
                         id="message"
                         rows={4}
+                        placeholder="What are your financial goals? Are you looking for part-time income or building a full-time business? Let us know how we can help you achieve your dreams."
                         className="w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         {...field}
                       />
@@ -186,10 +194,13 @@ export default function ContactForm() {
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300"
+                  className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300 w-full"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Request"}
+                  {isSubmitting ? "Submitting..." : "Start My Financial Transformation"}
                 </Button>
+                <p className="text-xs text-center text-neutral-500 mt-2">
+                  We typically respond within 24 hours to schedule your consultation.
+                </p>
               </form>
             </div>
             

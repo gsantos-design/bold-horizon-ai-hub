@@ -15,11 +15,18 @@ export default function TeamBuilding() {
     <section id="team-building" className="mb-16">
       <div className="text-center mb-10">
         <h2 className="font-heading font-bold text-3xl text-primary mb-2">
-          Team Building Opportunities
+          Life-Changing Income Through Team Building
         </h2>
         <p className="text-neutral-600 max-w-3xl mx-auto">
-          The real power of WFG comes from building a successful team.
+          The real power of WFG comes from building a successful team. Our associates in the Caribbean, Florida, 
+          and New York have transformed their financial futures by following our proven system.
         </p>
+        <div className="mt-4 max-w-xl mx-auto bg-accent/10 p-3 rounded-md">
+          <p className="text-sm text-accent-dark font-semibold">
+            Your income potential grows exponentially as you build your team, allowing you to escape 
+            the time-for-money trap of traditional careers.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

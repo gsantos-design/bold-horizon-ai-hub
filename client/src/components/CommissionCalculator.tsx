@@ -67,11 +67,18 @@ export default function CommissionCalculator() {
     <section id="calculator" className="mb-16">
       <Card className="shadow-lg">
         <CardHeader className="bg-primary text-white p-6">
+          <div className="mb-2">
+            <span className="bg-white/20 text-white text-sm font-semibold px-3 py-1 rounded-full">
+              Financial Freedom Calculator
+            </span>
+          </div>
           <CardTitle className="font-heading font-bold text-3xl mb-2">
-            Commission Calculator
+            Visualize Your Potential Income
           </CardTitle>
           <CardDescription className="text-white opacity-90">
-            Estimate your potential earnings based on your rank and premium amount.
+            See how WFG can transform your financial future by calculating your potential earnings 
+            based on your rank and sales activity. Many of our Caribbean, Florida and New York associates 
+            have multiplied their former incomes by 3-5x within their first year.
           </CardDescription>
         </CardHeader>
         
@@ -164,39 +171,58 @@ export default function CommissionCalculator() {
               </Button>
             </div>
             
-            <div className="bg-neutral-100 p-6 rounded-lg">
-              <h3 className="font-heading font-semibold text-xl mb-4">Your Potential Earnings</h3>
+            <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
+              <h3 className="font-heading font-semibold text-xl mb-4">Your Financial Transformation</h3>
               
-              <div className="space-y-4">
-                <div>
-                  <p className="text-neutral-600">Monthly Commission:</p>
+              <div className="space-y-6">
+                <div className="bg-white p-4 rounded-md shadow-sm">
+                  <p className="text-neutral-600 font-semibold">Monthly Commission:</p>
                   <p 
-                    className={`font-mono text-2xl font-bold text-secondary animate-value ${isHighlighted ? 'highlight' : ''}`}
+                    className={`font-mono text-3xl font-bold text-secondary animate-value ${isHighlighted ? 'highlight' : ''}`}
                   >
                     ${monthlyCommission.toFixed(2)}
                   </p>
+                  {monthlyCommission > 5000 && (
+                    <p className="text-xs text-accent-dark mt-1 font-semibold">
+                      That's more than many professionals earn in a month!
+                    </p>
+                  )}
                 </div>
                 
-                <div>
-                  <p className="text-neutral-600">Annual Commission:</p>
+                <div className="bg-white p-4 rounded-md shadow-sm">
+                  <p className="text-neutral-600 font-semibold">Annual Commission:</p>
                   <p 
-                    className={`font-mono text-2xl font-bold text-secondary animate-value ${isHighlighted ? 'highlight' : ''}`}
+                    className={`font-mono text-3xl font-bold text-secondary animate-value ${isHighlighted ? 'highlight' : ''}`}
                   >
                     ${annualCommission.toFixed(2)}
                   </p>
+                  {annualCommission > 50000 && (
+                    <p className="text-xs text-accent-dark mt-1 font-semibold">
+                      This could be life-changing income for you and your family!
+                    </p>
+                  )}
                 </div>
                 
-                <div>
-                  <p className="text-neutral-600">Points Generated:</p>
+                <div className="bg-white p-4 rounded-md shadow-sm">
+                  <p className="text-neutral-600 font-semibold">Points Generated:</p>
                   <p 
-                    className={`font-mono text-2xl font-bold text-primary animate-value ${isHighlighted ? 'highlight' : ''}`}
+                    className={`font-mono text-3xl font-bold text-primary animate-value ${isHighlighted ? 'highlight' : ''}`}
                   >
                     {Math.round(points)}
+                  </p>
+                  <p className="text-xs text-primary-dark mt-1">
+                    Points help you track progress toward promotions and bonuses
                   </p>
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-neutral-200 rounded-md">
+              <div className="mt-6 p-4 bg-white rounded-md border border-accent/20">
+                <div className="flex items-center mb-2">
+                  <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
+                  <p className="text-sm font-semibold">
+                    Now imagine building a team and multiplying this income!
+                  </p>
+                </div>
                 <p className="text-sm text-neutral-700">
                   This calculator provides estimates based on the information provided. Actual commissions and points may vary based on specific products, carriers, and other factors.
                 </p>
