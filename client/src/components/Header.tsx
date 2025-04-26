@@ -89,19 +89,19 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button 
-              variant="ghost" 
+              variant="secondary" 
               size="icon" 
               onClick={toggleMobileMenu}
-              className="text-white relative overflow-hidden group"
+              className="relative overflow-hidden group bg-blue-600/60 border border-blue-400/50"
             >
-              <span className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/30 rounded-full transition-colors duration-300"></span>
-              <span className="relative z-10">
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <span className="absolute inset-0 bg-blue-600/40 group-hover:bg-blue-600/70 rounded-full transition-colors duration-300"></span>
+              <span className="relative z-10 text-white">
+                {mobileMenuOpen ? <X className="h-6 w-6 drop-shadow-md" /> : <Menu className="h-6 w-6 drop-shadow-md" />}
               </span>
               
               {/* Button glow effect */}
-              <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="absolute inset-0 rounded-full bg-blue-400/20 blur-md"></span>
+              <span className="absolute inset-0 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="absolute inset-0 rounded-full bg-blue-400/30 blur-md"></span>
               </span>
             </Button>
           </div>
