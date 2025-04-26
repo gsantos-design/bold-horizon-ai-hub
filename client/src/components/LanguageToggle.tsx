@@ -12,10 +12,10 @@ export const LanguageToggle: React.FC = () => {
 
   return (
     <Button 
-      onClick={toggleLanguage} 
-      variant="ghost" 
-      size="sm" 
-      className="text-white hover:bg-white/10 flex items-center gap-1.5"
+      onClick={toggleLanguage}
+      variant="secondary"
+      size="sm"
+      className="bg-blue-500/30 hover:bg-blue-500/50 text-white border border-blue-400/50 flex items-center gap-1.5 font-medium"
     >
       <Globe className="h-4 w-4" />
       <span>{t('language.toggle')}</span>

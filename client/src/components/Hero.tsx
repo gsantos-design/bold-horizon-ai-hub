@@ -21,7 +21,7 @@ import Interactive3DCamera from "./Interactive3DCamera";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentIncome, setCurrentIncome] = useState("");
   const [showComparison, setShowComparison] = useState(false);
   const [potentialIncome, setPotentialIncome] = useState(0);
@@ -143,7 +143,7 @@ export default function Hero() {
           <div className="mb-2 flex justify-center">
             <span className="bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center">
               <Star className="h-3 w-3 mr-1" fill="white" />
-              The Santiago Team: Caribbean, Florida & New York
+              {language === 'en' ? 'The Santiago Team: Caribbean, Florida & New York' : 'El Equipo Santiago: Caribe, Florida y Nueva York'}
             </span>
           </div>
           
@@ -211,7 +211,7 @@ export default function Hero() {
                       placeholder={t('calc.current_income')}
                       value={currentIncome}
                       onChange={(e) => setCurrentIncome(e.target.value)}
-                      className="pl-10 py-6 w-full text-primary font-medium border-2 border-accent/30 focus:border-accent"
+                      className="pl-10 py-6 w-full text-white font-medium border-2 border-accent/30 focus:border-accent"
                     />
                   </div>
                   <Button 

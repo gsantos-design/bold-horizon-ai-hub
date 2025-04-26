@@ -35,7 +35,7 @@ export default function Header() {
             <div className="absolute -inset-2 bg-blue-500 rounded-full opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-500"></div>
             <Building2 className="h-8 w-8 mr-3 relative z-10" />
             <div className="relative z-10">
-              <h1 className="font-heading font-bold text-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">{t('hero.title').split(' with ')[0]}</h1>
+              <h1 className="font-heading font-bold text-2xl text-white">{t('hero.title').split(' with ')[0]}</h1>
               <p className="text-sm text-blue-100">{t('hero.title').includes(' with ') ? t('hero.title').split(' with ')[1] : 'with World Financial Group'} | Caribbean, Florida & NY</p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function Header() {
                   </a>
                 </li>
               ))}
-              <li className="pt-2 mt-2 border-t border-white/10">
+              <li className="pt-4 mt-3 border-t border-white/10">
                 <div className="flex justify-center">
                   <LanguageToggle />
                 </div>
