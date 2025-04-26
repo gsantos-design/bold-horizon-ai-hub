@@ -97,12 +97,37 @@ export default function Hero() {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-8 relative overflow-hidden">
-      {/* Animated Background Patterns */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-blue-300 rounded-full blur-3xl"></div>
+    <section className="text-white py-16 relative overflow-hidden">
+      {/* Animated Cosmic Elements (to enhance the global cosmic background) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Glowing orbs specific to hero section */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-blue-300/10 rounded-full blur-3xl"></div>
+        
+        {/* Animated stars */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <motion.div
+            key={`hero-star-${i}`}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: Math.random() * 3 + 1,
+              height: Math.random() * 3 + 1,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: 0.6,
+            }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          />
+        ))}
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -168,7 +193,7 @@ export default function Hero() {
           <div className="lg:col-span-6">
             {!showComparison ? (
               <motion.div 
-                className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 shadow-xl"
+                className="cosmic-glass-effect p-8 rounded-xl relative z-10 cosmic-gradient-border"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
@@ -200,7 +225,7 @@ export default function Hero() {
               </motion.div>
             ) : (
               <motion.div 
-                className="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/20 shadow-xl"
+                className="cosmic-glass-effect p-8 rounded-xl relative z-10 cosmic-gradient-border"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}

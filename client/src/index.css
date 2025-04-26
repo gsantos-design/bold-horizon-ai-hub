@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
+  --background: 220 25% 98%; /* Slightly blue-tinted white for cosmic theme */
   --foreground: 222.2 84% 4.9%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
@@ -23,6 +23,13 @@
   --destructive-foreground: 210 40% 98%;
   --ring: 215 90% 28%;
   --radius: 0.5rem;
+  
+  /* Cosmic theme variables */
+  --cosmic-bg: 220 70% 5%;
+  --cosmic-text: 210 40% 98%;
+  --cosmic-blue-light: 215 90% 70%;
+  --cosmic-blue-medium: 215 90% 50%;
+  --cosmic-blue-dark: 215 90% 28%;
   
   --chart-1: 215 90% 28%;
   --chart-2: 142 59% 36%;
@@ -58,12 +65,19 @@
     @apply border-border;
   }
   
-  body {
-    @apply bg-background text-foreground font-body;
+  html, body {
+    @apply bg-transparent text-foreground font-body;
+    min-height: 100%;
+    overflow-x: hidden;
   }
   
+  /* Improved text visibility over cosmic backgrounds */
+  p, span, div {
+    @apply drop-shadow-sm;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-heading font-bold drop-shadow-md;
   }
   
   h1 {
@@ -80,6 +94,16 @@
   
   h4 {
     @apply text-lg font-semibold;
+  }
+
+  /* Content containers should have enough contrast with background */
+  section, main {
+    @apply relative z-10;
+  }
+
+  /* Ensure form inputs and buttons are visible */
+  input, textarea, select, button {
+    @apply bg-white/90 text-foreground;
   }
 }
 
@@ -112,6 +136,55 @@
     @apply text-neutral-600 max-w-3xl mx-auto;
   }
   
+  /* Cosmic Theme Utilities */
+  .cosmic-card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg rounded-lg overflow-hidden relative z-10;
+  }
+  
+  .cosmic-card-content {
+    @apply p-6 relative z-10;
+  }
+  
+  .cosmic-panel {
+    @apply bg-white/80 backdrop-blur-md rounded-xl border border-blue-100/50 shadow-md relative;
+  }
+  
+  .cosmic-text {
+    @apply text-neutral-900 drop-shadow-sm;
+  }
+  
+  .cosmic-text-light {
+    @apply text-white drop-shadow-sm;
+  }
+  
+  .cosmic-heading {
+    @apply font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+  
+  .cosmic-glow {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .cosmic-glow-blue {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  }
+  
+  .cosmic-glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-md;
+  }
+  
+  .cosmic-gradient-border {
+    @apply p-[1px] rounded-lg relative overflow-hidden;
+    background: linear-gradient(45deg, #60a5fa20, #4f46e520, #60a5fa20);
+  }
+  
+  .cosmic-gradient-border::before {
+    content: "";
+    @apply absolute inset-0 rounded-lg opacity-30;
+    background: linear-gradient(45deg, #60a5fa, #4f46e5, #60a5fa);
+    z-index: -1;
+  }
+  
   .card-header {
     @apply bg-primary text-white p-4;
   }
@@ -126,5 +199,18 @@
   
   .animate-value.highlight {
     transform: scale(1.1);
+  }
+  
+  /* Fix for text contrast/visibility over cosmic backgrounds */
+  .text-on-cosmic {
+    @apply bg-white/90 backdrop-blur-sm p-2 rounded;
+  }
+  
+  /* Added media query to reduce animation for users who prefer reduced motion */
+  @media (prefers-reduced-motion) {
+    .cosmic-animation {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }
