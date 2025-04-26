@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import GrowthMindset from "@/components/GrowthMindset";
 import AboutUs from "@/components/AboutUs";
 import CareerQuiz from "@/components/CareerQuiz";
+import RecruitmentJourney from "@/components/RecruitmentJourney";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <TeamBuilding />
         <GrowthMindset />
         <AdditionalBonuses />
+        <RecruitmentJourney />
         <CareerQuiz />
         <Resources />
         <ContactForm />

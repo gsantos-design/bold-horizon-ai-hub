@@ -17,6 +17,8 @@ export default function Header() {
     { name: "Promotions", href: "#promotion" },
     { name: "Team Building", href: "#team-building" },
     { name: "Growth Mindset", href: "#growth-mindset" },
+    { name: "Recruitment Journey", href: "#recruitment-journey" },
+    { name: "Career Quiz", href: "#career-quiz" },
     { name: "Resources", href: "#resources" },
     { name: "Contact", href: "#contact" },
   ];
