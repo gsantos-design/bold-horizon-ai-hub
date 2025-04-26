@@ -17,7 +17,7 @@ const journeySteps: JourneyStep[] = [
   {
     id: 1,
     title: "Join The Team",
-    description: "Start your journey with World Financial Group",
+    description: "Start your journey with Bold Horizons with World Financial Group",
     icon: <Users className="h-10 w-10 text-primary" />,
     milestones: [
       "Complete orientation",

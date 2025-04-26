@@ -172,12 +172,32 @@ export default function CareerQuiz() {
   };
 
   return (
-    <div className="container py-12 space-y-8" id="career-quiz">
+    <div className="container py-12 space-y-8 relative z-10" id="career-quiz">
+      {/* Enhanced cosmic background for this section */}
+      <div className="absolute inset-0 -z-10 bg-blue-900/30 backdrop-blur-md rounded-xl 
+                     border border-blue-400/20 shadow-xl overflow-hidden">
+        <div className="absolute w-64 h-64 bg-blue-400/10 rounded-full -top-20 -right-20 blur-2xl"></div>
+        <div className="absolute w-64 h-64 bg-indigo-400/10 rounded-full -bottom-20 -left-20 blur-2xl"></div>
+        {/* Add stars */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div 
+            key={`quiz-star-${i}`}
+            className="absolute w-1 h-1 bg-white rounded-full animate-pulse cosmic-star"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${3 + Math.random() * 3}s`,
+              animationDelay: `${Math.random() * 2}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+      
       <div className="text-center space-y-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-indigo-600 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight cosmic-text-title cosmic-glow-blue">
           Find Your Perfect Career Path
         </h2>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto">
+        <p className="cosmic-text text-lg max-w-2xl mx-auto">
           Discover your ideal role in the World Financial Group team with our personalized AI-powered career assessment.
         </p>
       </div>

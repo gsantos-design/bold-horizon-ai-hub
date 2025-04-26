@@ -39,7 +39,7 @@ export default function Header() {
             </div>
             <div className="relative z-10 ml-1">
               <h1 className="font-heading font-bold text-2xl cosmic-text-title cosmic-glow-blue">{t('hero.title').split(' with ')[0]}</h1>
-              <p className="text-sm cosmic-text cosmic-glow">{t('hero.title').includes(' with ') ? t('hero.title').split(' with ')[1] : 'with World Financial Group'} | Caribbean, Florida & NY</p>
+              <p className="text-sm cosmic-text cosmic-glow">{t('hero.title').includes(' with ') ? t('hero.title').split(' with ')[1] : 'with Bold Horizons with World Financial Group'} | Caribbean, Florida & NY</p>
             </div>
           </div>
 

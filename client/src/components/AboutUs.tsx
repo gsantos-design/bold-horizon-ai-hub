@@ -150,7 +150,7 @@ export default function AboutUs() {
                 </h3>
                 <div className="prose prose-neutral max-w-none">
                   <p>
-                    The Santiago Team is a dynamic community of financial professionals within World Financial Group. 
+                    The Santiago Team is a dynamic community of financial professionals within Bold Horizons with World Financial Group. 
                     Under the visionary leadership of Paul and Nolly Santiago, we've built a reputation for excellence, 
                     integrity, and results. Our team members come from diverse backgrounds but share a common purpose: 
                     helping families achieve financial security and independence.

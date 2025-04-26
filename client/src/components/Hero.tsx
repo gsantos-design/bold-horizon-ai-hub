@@ -159,7 +159,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto cosmic-text-subtitle cosmic-glow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
