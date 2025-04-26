@@ -28,8 +28,8 @@ export default function Header() {
           <div className="flex items-center">
             <Building2 className="h-8 w-8 mr-3" />
             <div>
-              <h1 className="font-heading font-bold text-2xl">WFG Financial</h1>
-              <p className="text-sm opacity-80">Change Your Life | Caribbean, Florida & NY</p>
+              <h1 className="font-heading font-bold text-2xl">Bold Horizons</h1>
+              <p className="text-sm opacity-80">with World Financial Group | Caribbean, Florida & NY</p>
             </div>
           </div>
 
