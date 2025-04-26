@@ -12,6 +12,7 @@ import GrowthMindset from "@/components/GrowthMindset";
 import AboutUs from "@/components/AboutUs";
 import CareerQuiz from "@/components/CareerQuiz";
 import RecruitmentJourney from "@/components/RecruitmentJourney";
+import CareerConstellation from "@/components/CareerConstellation";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           <GrowthMindset />
           <AdditionalBonuses />
           <RecruitmentJourney />
+          <CareerConstellation />
           <CareerQuiz />
           <Resources />
           <ContactForm />
