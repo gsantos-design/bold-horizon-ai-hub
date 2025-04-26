@@ -21,6 +21,7 @@ import Interactive3DCamera from "./Interactive3DCamera";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [currentIncome, setCurrentIncome] = useState("");
   const [showComparison, setShowComparison] = useState(false);
   const [potentialIncome, setPotentialIncome] = useState(0);
@@ -152,9 +153,9 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <span className="block">Your Life.</span>
-            <span className="text-accent">Transformed</span>
-            <span className="block">Forever.</span>
+            <span className="block">{t('hero.your_life')}</span>
+            <span className="text-accent">{t('hero.transformed')}</span>
+            <span className="block">{t('hero.forever')}</span>
           </motion.h1>
           
           <motion.p 
@@ -163,14 +164,12 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Join the <span className="font-bold text-accent">Santiago Team</span> and escape the ordinary. 
-            Discover how our associates are building <span className="underline decoration-accent decoration-2">life-changing wealth</span> in 
-            the Caribbean, Florida, and New York.
+            {t('hero.join_team')}
           </motion.p>
           
           {/* "As Seen On" Social Proof */}
           <div className="flex justify-center items-center gap-4 mb-8 text-white/70">
-            <p className="text-sm font-semibold">As featured in:</p>
+            <p className="text-sm font-semibold">{t('hero.featured')}</p>
             <div className="flex gap-4">
               <div className="flex items-center gap-1 text-sm">
                 <Instagram className="h-4 w-4" />
@@ -178,11 +177,11 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-1 text-sm">
                 <Twitter className="h-4 w-4" />
-                <span>25K+ Followers</span>
+                <span>{t('hero.followers')}</span>
               </div>
               <div className="flex items-center gap-1 text-sm">
                 <Users className="h-4 w-4" />
-                <span>5000+ Associates</span>
+                <span>{t('hero.associates')}</span>
               </div>
             </div>
           </div>
@@ -201,15 +200,15 @@ export default function Hero() {
               >
                 <h3 className="text-2xl font-bold mb-4 flex items-center">
                   <MoneyIcon className="h-6 w-6 mr-2 text-accent" />
-                  Calculate Your New Future
+                  {t('calc.future')}
                 </h3>
-                <p className="font-medium mb-6">Enter your current income to see how the Santiago Team system can transform your financial reality:</p>
+                <p className="font-medium mb-6">{t('calc.transform')}</p>
                 <div className="flex flex-col gap-3">
                   <div className="relative">
                     <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-accent h-5 w-5" />
                     <Input
                       type="text"
-                      placeholder="Your current monthly income"
+                      placeholder={t('calc.current_income')}
                       value={currentIncome}
                       onChange={(e) => setCurrentIncome(e.target.value)}
                       className="pl-10 py-6 w-full text-primary font-medium border-2 border-accent/30 focus:border-accent"
@@ -219,10 +218,10 @@ export default function Hero() {
                     className="bg-accent hover:bg-accent-dark text-white font-bold py-6 text-lg"
                     onClick={handleQuickCalculate}
                   >
-                    Reveal My Potential <ChevronRight className="ml-2 h-5 w-5" />
+                    {t('calc.reveal')} <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
-                <p className="text-xs mt-3 text-white/80 italic">Based on real results from our associates in your region</p>
+                <p className="text-xs mt-3 text-white/80 italic">{t('calc.real_results')}</p>
               </motion.div>
             ) : (
               <motion.div 
@@ -233,14 +232,14 @@ export default function Hero() {
               >
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
                   <TrendingUp className="h-6 w-6 mr-2 text-accent" />
-                  Your Transformation Preview
+                  {t('calc.preview')}
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-6 mb-6">
                   <div className="flex flex-col items-center p-5 bg-white/5 rounded-lg border border-white/10">
-                    <p className="text-sm opacity-80 mb-1">Current Monthly</p>
+                    <p className="text-sm opacity-80 mb-1">{t('calc.current_monthly')}</p>
                     <p className="text-3xl font-bold">${currentIncome}</p>
-                    <p className="text-xs mt-2 text-white/60">Stuck in the rat race</p>
+                    <p className="text-xs mt-2 text-white/60">{t('calc.rat_race')}</p>
                   </div>
                   
                   <motion.div 
@@ -249,28 +248,28 @@ export default function Hero() {
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
                   >
-                    <p className="text-sm opacity-80 mb-1">Santiago Team Potential</p>
+                    <p className="text-sm opacity-80 mb-1">{t('calc.potential')}</p>
                     <p className="text-3xl font-bold">${potentialIncome.toLocaleString()}</p>
                     <div className="mt-2 bg-white/20 px-2 py-1 rounded-full">
-                      <p className="text-xs font-semibold">+{Math.round(potentialIncome/(parseInt(currentIncome.replace(/,/g, "")) || 1))}x increase</p>
+                      <p className="text-xs font-semibold">+{Math.round(potentialIncome/(parseInt(currentIncome.replace(/,/g, "")) || 1))}x {t('calc.increase')}</p>
                     </div>
                   </motion.div>
                 </div>
                 
                 <div className="mb-6 p-4 bg-white/5 rounded-lg">
-                  <p className="text-sm mb-2">With this income, you could:</p>
+                  <p className="text-sm mb-2">{t('calc.with_income')}</p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <Check className="h-4 w-4 text-accent mr-2" />
-                      <span>Pay off all debt in {Math.round(50000/potentialIncome)} months</span>
+                      <span>{t('calc.pay_debt')} {Math.round(50000/potentialIncome)} {t('calc.months')}</span>
                     </li>
                     <li className="flex items-center">
                       <Check className="h-4 w-4 text-accent mr-2" />
-                      <span>Afford a ${Math.round(potentialIncome*3.5)} monthly mortgage</span>
+                      <span>{t('calc.afford')} ${Math.round(potentialIncome*3.5)} {t('calc.monthly_mortgage')}</span>
                     </li>
                     <li className="flex items-center">
                       <Check className="h-4 w-4 text-accent mr-2" />
-                      <span>Build ${Math.round(potentialIncome*0.2*12*5).toLocaleString()} in savings over 5 years</span>
+                      <span>{t('calc.build_savings')} ${Math.round(potentialIncome*0.2*12*5).toLocaleString()} {t('calc.in_savings')}</span>
                     </li>
                   </ul>
                 </div>
@@ -280,7 +279,7 @@ export default function Hero() {
                     className="bg-accent hover:bg-accent-dark text-white"
                     onClick={() => scrollToSection("calculator")}
                   >
-                    See detailed projection
+                    {t('calc.see_projection')}
                   </Button>
                   
                   <Button 
@@ -288,7 +287,7 @@ export default function Hero() {
                     className="border-white text-white hover:bg-white/10"
                     onClick={() => setShowComparison(false)}
                   >
-                    Recalculate
+                    {t('calc.recalculate')}
                   </Button>
                 </div>
               </motion.div>
