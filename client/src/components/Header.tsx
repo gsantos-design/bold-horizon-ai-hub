@@ -2,25 +2,28 @@ import { useState } from "react";
 import { Menu, X, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Compensation", href: "#compensation" },
-    { name: "Calculator", href: "#calculator" },
+    { name: t('nav.about_us'), href: "#about" },
+    { name: t('nav.compensation'), href: "#compensation" },
+    { name: t('calc.title'), href: "#calculator" },
     { name: "Promotions", href: "#promotion" },
-    { name: "Team Building", href: "#team-building" },
+    { name: t('nav.team_building'), href: "#team-building" },
     { name: "Growth Mindset", href: "#growth-mindset" },
     { name: "Recruitment Journey", href: "#recruitment-journey" },
     { name: "Career Quiz", href: "#career-quiz" },
-    { name: "Resources", href: "#resources" },
-    { name: "Contact", href: "#contact" },
+    { name: t('nav.resources'), href: "#resources" },
+    { name: t('nav.contact'), href: "#contact" },
   ];
 
   return (
@@ -38,8 +41,8 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-3">
+          <nav className="hidden md:flex items-center">
+            <ul className="flex space-x-3 mr-4">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <a
@@ -66,6 +69,7 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+            <LanguageToggle />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -122,6 +126,11 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li className="pt-2 mt-2 border-t border-white/10">
+                <div className="flex justify-center">
+                  <LanguageToggle />
+                </div>
+              </li>
             </ul>
           </nav>
         )}

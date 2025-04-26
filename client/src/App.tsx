@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import CosmicBackground from "@/components/CosmicBackground";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 function Router() {
   return (
@@ -16,12 +17,14 @@ function Router() {
 
 function App() {
   return (
-    <TooltipProvider>
-      {/* 3D/4D Cosmic Background for entire site */}
-      <CosmicBackground intensity="high" primaryColor="blue" />
-      <Toaster />
-      <Router />
-    </TooltipProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        {/* 3D/4D Cosmic Background for entire site */}
+        <CosmicBackground intensity="high" primaryColor="blue" />
+        <Toaster />
+        <Router />
+      </TooltipProvider>
+    </LanguageProvider>
   );
 }
 
