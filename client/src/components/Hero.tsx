@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Interactive3DCamera from "./Interactive3DCamera";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
   const [currentIncome, setCurrentIncome] = useState("");

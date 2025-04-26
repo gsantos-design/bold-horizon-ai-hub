@@ -26,6 +26,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.resources': 'Resources',
     'nav.about_us': 'About Us',
     'nav.contact': 'Contact',
+    'nav.promotions': 'Promotions',
+    'nav.growth_mindset': 'Growth Mindset',
+    'nav.recruitment_journey': 'Recruitment Journey',
+    'nav.career_quiz': 'Career Quiz',
     
     // Hero
     'hero.title': 'Bold Horizons with World Financial Group',
@@ -39,6 +43,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'calc.your_rank': 'Your Rank',
     'calc.calculate': 'Calculate',
     'calc.results': 'Your Commission',
+    'calc.annual_premium': 'Annual Premium',
+    'calc.commission_amount': 'Commission Amount',
+    'calc.points': 'Points',
     
     // Career Quiz
     'quiz.title': 'Find Your Perfect Career Path',
@@ -79,6 +86,34 @@ export const translations: Record<Language, Record<string, string>> = {
     // About
     'about.title': 'About The Santiago Team',
     'about.mission': 'Our Mission',
+    'about.team': 'Our Team',
+    'about.values': 'Our Values',
+    'about.success': 'Our Success Stories',
+    
+    // Team Building
+    'team.title': 'Team Building',
+    'team.subtitle': 'Build a successful team with our proven strategies',
+    'team.leadership': 'Leadership',
+    'team.recruitment': 'Recruitment',
+    'team.mentorship': 'Mentorship',
+    'team.retention': 'Retention',
+    
+    // Growth Mindset
+    'growth.title': 'Growth Mindset',
+    'growth.subtitle': 'Embracing challenges and continuous improvement',
+    'growth.personal': 'Personal Development',
+    'growth.professional': 'Professional Growth',
+    'growth.mindset': 'Mindset Transformation',
+    
+    // Contact Form
+    'contact.title': 'Contact Us',
+    'contact.name': 'Your Name',
+    'contact.email': 'Email Address',
+    'contact.phone': 'Phone Number',
+    'contact.message': 'Message',
+    'contact.interest': 'Interest',
+    'contact.submit': 'Submit',
+    'contact.success': 'Message sent successfully!',
     
     // Footer
     'footer.rights': 'All rights reserved',
@@ -96,6 +131,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.resources': 'Recursos',
     'nav.about_us': 'Sobre Nosotros',
     'nav.contact': 'Contacto',
+    'nav.promotions': 'Promociones',
+    'nav.growth_mindset': 'Mentalidad de Crecimiento',
+    'nav.recruitment_journey': 'Proceso de Reclutamiento',
+    'nav.career_quiz': 'Test de Carrera',
     
     // Hero
     'hero.title': 'Horizontes Audaces con World Financial Group',
@@ -109,6 +148,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'calc.your_rank': 'Tu Rango',
     'calc.calculate': 'Calcular',
     'calc.results': 'Tu Comisión',
+    'calc.annual_premium': 'Prima Anual',
+    'calc.commission_amount': 'Monto de Comisión',
+    'calc.points': 'Puntos',
     
     // Career Quiz
     'quiz.title': 'Encuentra Tu Camino Profesional Perfecto',
@@ -149,6 +191,34 @@ export const translations: Record<Language, Record<string, string>> = {
     // About
     'about.title': 'Acerca del Equipo Santiago',
     'about.mission': 'Nuestra Misión',
+    'about.team': 'Nuestro Equipo',
+    'about.values': 'Nuestros Valores',
+    'about.success': 'Nuestras Historias de Éxito',
+    
+    // Team Building
+    'team.title': 'Formación de Equipos',
+    'team.subtitle': 'Construye un equipo exitoso con nuestras estrategias probadas',
+    'team.leadership': 'Liderazgo',
+    'team.recruitment': 'Reclutamiento',
+    'team.mentorship': 'Mentoría',
+    'team.retention': 'Retención',
+    
+    // Growth Mindset
+    'growth.title': 'Mentalidad de Crecimiento',
+    'growth.subtitle': 'Aceptando desafíos y mejora continua',
+    'growth.personal': 'Desarrollo Personal',
+    'growth.professional': 'Crecimiento Profesional',
+    'growth.mindset': 'Transformación de Mentalidad',
+    
+    // Contact Form
+    'contact.title': 'Contáctanos',
+    'contact.name': 'Tu Nombre',
+    'contact.email': 'Correo Electrónico',
+    'contact.phone': 'Número de Teléfono',
+    'contact.message': 'Mensaje',
+    'contact.interest': 'Interés',
+    'contact.submit': 'Enviar',
+    'contact.success': '¡Mensaje enviado con éxito!',
     
     // Footer
     'footer.rights': 'Todos los derechos reservados',

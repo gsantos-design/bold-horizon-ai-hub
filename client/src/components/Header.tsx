@@ -17,11 +17,11 @@ export default function Header() {
     { name: t('nav.about_us'), href: "#about" },
     { name: t('nav.compensation'), href: "#compensation" },
     { name: t('calc.title'), href: "#calculator" },
-    { name: "Promotions", href: "#promotion" },
+    { name: t('nav.promotions'), href: "#promotion" },
     { name: t('nav.team_building'), href: "#team-building" },
-    { name: "Growth Mindset", href: "#growth-mindset" },
-    { name: "Recruitment Journey", href: "#recruitment-journey" },
-    { name: "Career Quiz", href: "#career-quiz" },
+    { name: t('nav.growth_mindset'), href: "#growth-mindset" },
+    { name: t('nav.recruitment_journey'), href: "#recruitment-journey" },
+    { name: t('nav.career_quiz'), href: "#career-quiz" },
     { name: t('nav.resources'), href: "#resources" },
     { name: t('nav.contact'), href: "#contact" },
   ];
@@ -35,8 +35,8 @@ export default function Header() {
             <div className="absolute -inset-2 bg-blue-500 rounded-full opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-500"></div>
             <Building2 className="h-8 w-8 mr-3 relative z-10" />
             <div className="relative z-10">
-              <h1 className="font-heading font-bold text-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Bold Horizons</h1>
-              <p className="text-sm text-blue-100">with World Financial Group | Caribbean, Florida & NY</p>
+              <h1 className="font-heading font-bold text-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">{t('hero.title').split(' with ')[0]}</h1>
+              <p className="text-sm text-blue-100">{t('hero.title').includes(' with ') ? t('hero.title').split(' with ')[1] : 'with World Financial Group'} | Caribbean, Florida & NY</p>
             </div>
           </div>
 
