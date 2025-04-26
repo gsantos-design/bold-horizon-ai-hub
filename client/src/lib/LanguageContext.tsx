@@ -75,7 +75,7 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Career Quiz
     'quiz.title': 'Find Your Perfect Career Path',
-    'quiz.subtitle': 'Discover your ideal role in the World Financial Group team with our personalized AI-powered career assessment.',
+    'quiz.subtitle': 'Discover your ideal role in the Bold Horizons with World Financial Group team with our personalized AI-powered career assessment.',
     'quiz.personal_info': 'Personal Info',
     'quiz.preferences': 'Preferences',
     'quiz.results': 'Results',
@@ -85,7 +85,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'quiz.email': 'Email Address',
     'quiz.email_desc': 'We\'ll send your personalized career path results to this email.',
     'quiz.background': 'Professional Background',
-    'quiz.background_placeholder': 'Briefly describe your professional background, current situation, and why you\'re interested in a career with World Financial Group.',
+    'quiz.background_placeholder': 'Briefly describe your professional background, current situation, and why you\'re interested in a career with Bold Horizons with World Financial Group.',
     'quiz.skills': 'Your Skills',
     'quiz.skills_desc': 'Select all the skills you possess or are confident you can develop.',
     'quiz.motivations': 'Your Motivations',
@@ -206,7 +206,7 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Career Quiz
     'quiz.title': 'Encuentra Tu Camino Profesional Perfecto',
-    'quiz.subtitle': 'Descubre tu rol ideal en el equipo de World Financial Group con nuestra evaluación personalizada impulsada por IA.',
+    'quiz.subtitle': 'Descubre tu rol ideal en el equipo de Horizontes Audaces con World Financial Group con nuestra evaluación personalizada impulsada por IA.',
     'quiz.personal_info': 'Información Personal',
     'quiz.preferences': 'Preferencias',
     'quiz.results': 'Resultados',
@@ -216,7 +216,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'quiz.email': 'Correo Electrónico',
     'quiz.email_desc': 'Enviaremos los resultados de tu trayectoria profesional personalizada a este correo.',
     'quiz.background': 'Experiencia Profesional',
-    'quiz.background_placeholder': 'Describe brevemente tu experiencia profesional, situación actual y por qué estás interesado en una carrera con World Financial Group.',
+    'quiz.background_placeholder': 'Describe brevemente tu experiencia profesional, situación actual y por qué estás interesado en una carrera con Horizontes Audaces con World Financial Group.',
     'quiz.skills': 'Tus Habilidades',
     'quiz.skills_desc': 'Selecciona todas las habilidades que posees o que confías en desarrollar.',
     'quiz.motivations': 'Tus Motivaciones',

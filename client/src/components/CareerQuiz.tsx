@@ -198,7 +198,7 @@ export default function CareerQuiz() {
           Find Your Perfect Career Path
         </h2>
         <p className="cosmic-text text-lg max-w-2xl mx-auto">
-          Discover your ideal role in the World Financial Group team with our personalized AI-powered career assessment.
+          Discover your ideal role in the Bold Horizons with World Financial Group team with our personalized AI-powered career assessment.
         </p>
       </div>
 
@@ -287,7 +287,7 @@ export default function CareerQuiz() {
                             <FormLabel className="text-white">Professional Background</FormLabel>
                             <FormControl>
                               <Textarea
-                                placeholder="Briefly describe your professional background, current situation, and why you're interested in a career with World Financial Group."
+                                placeholder="Briefly describe your professional background, current situation, and why you're interested in a career with Bold Horizons with World Financial Group."
                                 className="min-h-[120px] cosmic-input"
                                 {...field}
                               />
