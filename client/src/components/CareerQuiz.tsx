@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
 import { 
   Form,
   FormControl,
@@ -20,7 +21,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Sparkles, Send, RefreshCw, Star, Rocket, Heart, Brain, Briefcase, DollarSign } from "lucide-react";
+import { Check, Sparkles, Send, RefreshCw, Star, Rocket, Heart, Brain, Briefcase, DollarSign, Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 // Define the quiz schema
