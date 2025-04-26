@@ -177,7 +177,7 @@ export default function CareerQuiz() {
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-indigo-600 to-blue-400 bg-clip-text text-transparent">
           Find Your Perfect Career Path
         </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <p className="text-white/80 text-lg max-w-2xl mx-auto">
           Discover your ideal role in the World Financial Group team with our personalized AI-powered career assessment.
         </p>
       </div>
@@ -185,26 +185,26 @@ export default function CareerQuiz() {
       <div className="max-w-3xl mx-auto">
         {/* Progress Indicator */}
         <div className="flex justify-between items-center mb-8">
-          <div className={`flex flex-col items-center ${step >= 1 ? "text-primary" : "text-muted-foreground"}`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 1 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
+          <div className={`flex flex-col items-center ${step >= 1 ? "text-accent" : "text-white/50"}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 1 ? "bg-accent/80 text-white" : "bg-white/10"}`}>
               1
             </div>
             <span className="text-sm">Personal Info</span>
           </div>
-          <div className="flex-1 h-1 mx-2 bg-muted">
-            <div className={`h-full bg-primary ${step >= 2 ? "w-full" : "w-0"} transition-all duration-300`}></div>
+          <div className="flex-1 h-1 mx-2 bg-white/10">
+            <div className={`h-full bg-accent ${step >= 2 ? "w-full" : "w-0"} transition-all duration-300`}></div>
           </div>
-          <div className={`flex flex-col items-center ${step >= 2 ? "text-primary" : "text-muted-foreground"}`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 2 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
+          <div className={`flex flex-col items-center ${step >= 2 ? "text-accent" : "text-white/50"}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 2 ? "bg-accent/80 text-white" : "bg-white/10"}`}>
               2
             </div>
             <span className="text-sm">Preferences</span>
           </div>
-          <div className="flex-1 h-1 mx-2 bg-muted">
-            <div className={`h-full bg-primary ${step >= 3 ? "w-full" : "w-0"} transition-all duration-300`}></div>
+          <div className="flex-1 h-1 mx-2 bg-white/10">
+            <div className={`h-full bg-accent ${step >= 3 ? "w-full" : "w-0"} transition-all duration-300`}></div>
           </div>
-          <div className={`flex flex-col items-center ${step >= 3 ? "text-primary" : "text-muted-foreground"}`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 3 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
+          <div className={`flex flex-col items-center ${step >= 3 ? "text-accent" : "text-white/50"}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${step >= 3 ? "bg-accent/80 text-white" : "bg-white/10"}`}>
               3
             </div>
             <span className="text-sm">Results</span>
@@ -222,7 +222,7 @@ export default function CareerQuiz() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="text-gradient">Tell us about yourself</CardTitle>
                       <CardDescription className="text-white/80">
@@ -283,12 +283,12 @@ export default function CareerQuiz() {
 
               {step === 2 && (
                 <motion.div 
-                  className="space-y-8 cosmic-gradient-border"
+                  className="space-y-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-gradient">
                         <div className="bg-accent/20 p-2 rounded-full">
@@ -349,7 +349,7 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-gradient">
                         <div className="bg-accent/20 p-2 rounded-full">
@@ -410,7 +410,7 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-gradient">
                         <div className="bg-accent/20 p-2 rounded-full">
@@ -471,7 +471,7 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-gradient">
                         <div className="bg-accent/20 p-2 rounded-full">
@@ -532,7 +532,7 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
+                  <Card className="cosmic-glass-effect border-0 shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-gradient">
                         <div className="bg-accent/20 p-2 rounded-full">
@@ -554,7 +554,7 @@ export default function CareerQuiz() {
                               <RadioGroup
                                 onValueChange={field.onChange}
                                 defaultValue={field.value}
-                                className="flex flex-col space-y-1"
+                                className="flex flex-col space-y-3"
                               >
                                 {financialGoalsOptions.map((goal) => (
                                   <FormItem
@@ -596,7 +596,7 @@ export default function CareerQuiz() {
                     type="button"
                     onClick={handleNextStep}
                     disabled={isSubmitting}
-                    className={`ml-auto ${step === 1 ? "bg-accent hover:bg-accent/80 text-white" : "bg-accent hover:bg-accent/80 text-white"}`}
+                    className={`ml-auto bg-accent hover:bg-accent/80 text-white`}
                   >
                     {step === 2 ? (
                       <>
@@ -625,7 +625,7 @@ export default function CareerQuiz() {
         {/* Quiz Results */}
         {step === 3 && recommendation && (
           <motion.div 
-            className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500"
+            className="space-y-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -640,7 +640,7 @@ export default function CareerQuiz() {
               </p>
             </div>
 
-            <Card className="cosmic-glass-effect border-0 shadow-cosmic overflow-hidden">
+            <Card className="cosmic-glass-effect border-0 shadow-xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-50 rounded-lg"></div>
               <div className="relative z-10">
                 <CardHeader className="flex flex-col items-center text-center pb-2">

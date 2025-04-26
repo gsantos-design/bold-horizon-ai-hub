@@ -206,6 +206,11 @@
     @apply bg-white/90 backdrop-blur-sm p-2 rounded;
   }
   
+  /* Cosmic form input styles */
+  .cosmic-input {
+    @apply bg-white/10 border-white/20 text-white placeholder:text-white/40;
+  }
+
   /* Added media query to reduce animation for users who prefer reduced motion */
   @media (prefers-reduced-motion) {
     .cosmic-animation {
