@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useLoading } from "@/lib/LoadingContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -5,7 +5,9 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import CosmicBackground from "@/components/CosmicBackground";
 import { LanguageProvider, useLanguage } from "@/lib/LanguageContext";
-import { useState } from "react";
+import { LoadingProvider, useLoading } from "@/lib/LoadingContext";
+import LoadingTransition from "@/components/LoadingTransition";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
 
@@ -72,16 +74,45 @@ function FloatingLanguageToggle() {
   );
 }
 
+function AppContent() {
+  const { isLoading } = useLoading();
+  const [initialLoad, setInitialLoad] = useState(true);
+  
+  // Initial load animation when the app first renders
+  useEffect(() => {
+    // Show initial loading animation for 2 seconds
+    const timer = setTimeout(() => {
+      setInitialLoad(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  return (
+    <>
+      {/* 3D/4D Cosmic Background for entire site */}
+      <CosmicBackground intensity="high" primaryColor="blue" />
+      <Toaster />
+      <Router />
+      <FloatingLanguageToggle />
+      
+      {/* Initial app load transition */}
+      <LoadingTransition isLoading={initialLoad} stars={80} />
+      
+      {/* Transitions between sections/pages */}
+      <LoadingTransition isLoading={isLoading} stars={50} />
+    </>
+  );
+}
+
 function App() {
   return (
     <LanguageProvider>
-      <TooltipProvider>
-        {/* 3D/4D Cosmic Background for entire site */}
-        <CosmicBackground intensity="high" primaryColor="blue" />
-        <Toaster />
-        <Router />
-        <FloatingLanguageToggle />
-      </TooltipProvider>
+      <LoadingProvider>
+        <TooltipProvider>
+          <AppContent />
+        </TooltipProvider>
+      </LoadingProvider>
     </LanguageProvider>
   );
 }

@@ -268,13 +268,156 @@
   }
   
   @keyframes twinkle {
-    0% { opacity: 0.2; }
-    100% { opacity: 0.8; }
+    0% { 
+      opacity: 0.2; 
+      box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
+    }
+    100% { 
+      opacity: 0.8; 
+      box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
+  /* Cosmic Loading Animation keyframes */
+  @keyframes cosmicFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes cosmicFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes cosmicPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes cosmicSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes cosmicSectionEnter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  
+  @keyframes cosmicShootingStar {
+    from {
+      transform: translateX(-200px) translateY(-200px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(200px) translateY(200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(200px) translateY(200px);
+      opacity: 0;
+    }
+  }
+  
+  /* Cosmic Animation Classes */
+  .cosmic-fade-in {
+    animation: cosmicFadeIn 1.5s ease-out forwards;
+  }
+  
+  .cosmic-fade-in-slow {
+    animation: cosmicFadeIn 2.5s ease-out forwards;
+  }
+  
+  .cosmic-float {
+    animation: cosmicFloat 4s ease-in-out infinite;
+  }
+  
+  .cosmic-pulse {
+    animation: cosmicPulse 3s ease-in-out infinite;
+  }
+  
+  .cosmic-spin {
+    animation: cosmicSpin 15s linear infinite;
+  }
+  
+  .cosmic-spin-reverse {
+    animation: cosmicSpin 12s linear infinite reverse;
+  }
+  
+  /* Cosmic Section Transition */
+  .cosmic-section-enter {
+    animation: cosmicSectionEnter 1s forwards;
+  }
+  
+  /* Loading transition elements */
+  .cosmic-loading-bg {
+    @apply fixed inset-0 z-50 bg-gradient-to-b from-blue-950 via-indigo-900 to-black;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .cosmic-shooting-star {
+    @apply absolute rounded-full bg-white;
+    height: 2px;
+    width: 50px;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    animation: cosmicShootingStar 6s ease-in-out infinite;
+  }
+  
+  .cosmic-star-slow {
+    animation: twinkle 4s infinite ease-in-out alternate;
+    animation-delay: 0.5s;
+  }
+  
+  .cosmic-star-fast {
+    animation: twinkle 2s infinite ease-in-out alternate;
+    animation-delay: 0.2s;
   }
 
   /* Added media query to reduce animation for users who prefer reduced motion */
   @media (prefers-reduced-motion) {
-    .cosmic-animation {
+    .cosmic-animation, 
+    .cosmic-fade-in,
+    .cosmic-fade-in-slow,
+    .cosmic-float,
+    .cosmic-pulse,
+    .cosmic-spin,
+    .cosmic-spin-reverse,
+    .cosmic-section-enter,
+    .cosmic-shooting-star,
+    .cosmic-star,
+    .cosmic-star-slow,
+    .cosmic-star-fast {
       animation: none !important;
       transition: none !important;
     }
