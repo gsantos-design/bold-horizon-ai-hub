@@ -83,7 +83,18 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <LanguageToggle />
+            
+            {/* Language toggle with enhanced visibility */}
+            <div className="relative">
+              {/* Animated attention-grabbing pulsing ring */}
+              <div className="absolute -inset-2 bg-yellow-400/30 rounded-full animate-pulse"></div>
+              <div className="absolute -inset-4 bg-blue-500/20 rounded-full animate-ping"></div>
+              
+              {/* Language toggle with extra highlight */}
+              <div className="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-lg shadow-lg border-2 border-white/30">
+                <LanguageToggle />
+              </div>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -151,8 +162,14 @@ export default function Header() {
                 </li>
               ))}
               <li className="pt-4 mt-3 border-t border-white/10">
-                <div className="flex justify-center">
-                  <LanguageToggle />
+                <div className="flex justify-center relative">
+                  {/* Mobile attention-grabbing pulsing effect */}
+                  <div className="absolute -inset-2 bg-yellow-400/30 rounded-full animate-pulse"></div>
+                  
+                  {/* Enhanced mobile language toggle */}
+                  <div className="relative z-10 bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-lg shadow-lg border-2 border-white/30">
+                    <LanguageToggle />
+                  </div>
                 </div>
               </li>
             </ul>

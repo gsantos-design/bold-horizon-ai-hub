@@ -148,6 +148,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Language Toggle
     'language': 'English',
     'language.toggle': 'Español',
+    'language.select': 'Select Language',
     
     // Career Constellation
     'constellation.eyebrow': 'Career Path Visualization',
@@ -352,6 +353,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Language Toggle
     'language': 'Español',
     'language.toggle': 'English',
+    'language.select': 'Seleccionar Idioma',
     
     // Career Constellation
     'constellation.eyebrow': 'Visualización de Carrera Profesional',
