@@ -1,11 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Users, Trophy, TrendingUp, Rocket, Zap, ArrowRight, ChevronRight } from "lucide-react";
+import { Check, Users, Trophy, TrendingUp, Rocket, Zap, ArrowRight, ChevronRight, Star, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const journeySteps = [
+interface JourneyStep {
+  id: number;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  milestones: string[];
+}
+
+const journeySteps: JourneyStep[] = [
   {
     id: 1,
     title: "Join The Team",
@@ -74,6 +82,104 @@ const journeySteps = [
   }
 ];
 
+// Cosmic background element
+const CosmicBackground: React.FC = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Cosmic effect with stars and moon */}
+      <div className="absolute w-full h-full bg-blue-900/10 backdrop-blur-[100px]"></div>
+      
+      {/* Stars */}
+      {Array.from({ length: 30 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-white"
+          style={{
+            width: Math.random() * 3 + 1,
+            height: Math.random() * 3 + 1,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0.2, 0.8, 0.2],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: Math.random() * 3 + 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: Math.random() * 5,
+          }}
+        />
+      ))}
+      
+      {/* Larger stars */}
+      {Array.from({ length: 5 }).map((_, i) => (
+        <motion.div
+          key={`large-${i}`}
+          className="absolute text-white/70"
+          style={{
+            top: `${Math.random() * 90 + 5}%`,
+            left: `${Math.random() * 90 + 5}%`,
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: Math.random() * 3,
+          }}
+        >
+          <Star className="h-4 w-4" />
+        </motion.div>
+      ))}
+      
+      {/* Moon */}
+      <motion.div 
+        className="absolute right-[10%] top-[15%]"
+        animate={{
+          y: [0, 10, 0],
+          opacity: [0.8, 1, 0.8],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+      >
+        <Moon className="h-16 w-16 text-white/30" />
+      </motion.div>
+      
+      {/* Glowing orbs */}
+      {Array.from({ length: 8 }).map((_, i) => (
+        <motion.div
+          key={`orb-${i}`}
+          className="absolute rounded-full bg-blue-300/10 blur-xl"
+          style={{
+            width: Math.random() * 150 + 50,
+            height: Math.random() * 150 + 50,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.2, 1],
+            x: [0, Math.random() * 50 - 25, 0],
+            y: [0, Math.random() * 50 - 25, 0],
+          }}
+          transition={{
+            duration: Math.random() * 20 + 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export default function RecruitmentJourney() {
   const [activeStep, setActiveStep] = useState(1);
   const [autoAdvance, setAutoAdvance] = useState(true);
@@ -100,8 +206,12 @@ export default function RecruitmentJourney() {
   };
 
   return (
-    <section className="py-16 bg-blue-50" id="recruitment-journey">
-      <div className="container px-4 mx-auto">
+    <section className="py-16 relative overflow-hidden" id="recruitment-journey">
+      {/* 3D Cosmic Background */}
+      <div className="absolute inset-0 bg-blue-50"></div>
+      <CosmicBackground />
+      
+      <div className="container px-4 mx-auto relative z-10">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-3 px-3 py-1 bg-primary/5 text-primary border-primary/20">
             Your Path to Success
@@ -118,7 +228,7 @@ export default function RecruitmentJourney() {
         {/* Progress Tracker */}
         <div className="relative max-w-5xl mx-auto mb-12">
           {/* Progress Line */}
-          <div className="hidden md:block h-2 bg-gradient-to-r from-neutral-200 via-neutral-200 to-neutral-200 rounded-full absolute top-7 left-7 right-7 z-0">
+          <div className="hidden md:block h-2 bg-blue-200/50 rounded-full absolute top-7 left-7 right-7 z-0">
             <motion.div 
               className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
               style={{ 
@@ -178,9 +288,9 @@ export default function RecruitmentJourney() {
                     "w-14 h-14 rounded-full flex items-center justify-center z-10 transition-all duration-500",
                     "border-4 shadow-md",
                     step.id <= activeStep 
-                      ? "bg-gradient-to-br from-blue-500 to-indigo-600 border-white" 
+                      ? "bg-blue-600 border-white" 
                       : "bg-white border-neutral-200",
-                    step.id === activeStep && "ring-4 ring-indigo-200"
+                    step.id === activeStep && "ring-4 ring-blue-200"
                   )}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -191,7 +301,7 @@ export default function RecruitmentJourney() {
                       animate={{ scale: 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
-                      {step.icon}
+                      {React.cloneElement(step.icon as React.ReactElement, { className: "h-6 w-6 text-white" })}
                     </motion.div>
                   ) : (
                     <span className="text-lg font-bold text-neutral-400">
@@ -202,10 +312,22 @@ export default function RecruitmentJourney() {
                   {/* Pulse animation for active step */}
                   {step.id === activeStep && (
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-primary/40"
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.7, 0, 0.7] }}
+                      className="absolute inset-0 rounded-full bg-blue-500/40"
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />
+                  )}
+
+                  {/* Star decoration for completed steps */}
+                  {step.id < activeStep && (
+                    <motion.div
+                      className="absolute -top-1 -right-1"
+                      initial={{ scale: 0, rotate: -30 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ delay: 0.2, type: "spring" }}
+                    >
+                      <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                    </motion.div>
                   )}
                 </motion.div>
                 
@@ -216,9 +338,9 @@ export default function RecruitmentJourney() {
                       className={cn(
                         "text-sm font-semibold hidden md:block",
                         step.id === activeStep 
-                          ? "text-primary" 
+                          ? "text-blue-700" 
                           : step.id < activeStep 
-                            ? "text-neutral-700" 
+                            ? "text-blue-600" 
                             : "text-neutral-500"
                       )}
                       initial={{ opacity: 0, y: 5 }}
@@ -250,10 +372,10 @@ export default function RecruitmentJourney() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-white shadow-xl rounded-xl overflow-hidden border border-neutral-200/50"
+                  className="bg-white/80 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden border border-blue-100"
                 >
                   {/* Header Gradient */}
-                  <div className="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" />
+                  <div className="h-2 bg-blue-500" />
                   
                   <div className="p-8 md:p-10">
                     <div className="flex flex-col md:flex-row items-start gap-8">
@@ -265,7 +387,7 @@ export default function RecruitmentJourney() {
                             animate={{ rotate: 0, scale: 1 }}
                             transition={{ type: "spring", stiffness: 200 }}
                           >
-                            {React.cloneElement(step.icon as React.ReactElement, { className: "h-12 w-12 text-indigo-600" })}
+                            {React.cloneElement(step.icon as React.ReactElement, { className: "h-12 w-12 text-blue-600" })}
                           </motion.div>
                         </div>
                         <Badge className="mt-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-none">
@@ -275,15 +397,15 @@ export default function RecruitmentJourney() {
                       
                       {/* Content */}
                       <div className="flex-1">
-                        <h3 className="text-3xl font-bold mb-3 bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">
+                        <h3 className="text-3xl font-bold mb-3 text-blue-700">
                           {step.title}
                         </h3>
-                        <p className="text-lg text-neutral-600 mb-8 border-l-4 border-indigo-200 pl-4 italic">
+                        <p className="text-lg text-neutral-600 mb-8 border-l-4 border-blue-200 pl-4 italic">
                           {step.description}
                         </p>
                         
                         <h4 className="font-semibold mb-4 text-neutral-800 flex items-center">
-                          <Trophy className="h-5 w-5 mr-2 text-amber-500" />
+                          <Star className="h-5 w-5 mr-2 text-yellow-500 fill-yellow-500" />
                           Key Milestones:
                         </h4>
                         <ul className="space-y-4 mb-6">
@@ -295,8 +417,8 @@ export default function RecruitmentJourney() {
                               transition={{ duration: 0.4, delay: i * 0.2 }}
                               className="flex items-start gap-4 p-3 rounded-lg bg-blue-50 border border-blue-100"
                             >
-                              <div className="flex-shrink-0 h-7 w-7 rounded-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center mt-0.5 border border-green-300">
-                                <Check className="h-4 w-4 text-green-600" />
+                              <div className="flex-shrink-0 h-7 w-7 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mt-0.5 border border-blue-300">
+                                <Check className="h-4 w-4 text-blue-600" />
                               </div>
                               <span className="text-neutral-700">{milestone}</span>
                             </motion.li>
@@ -313,7 +435,7 @@ export default function RecruitmentJourney() {
                             {step.id > 1 && (
                               <button 
                                 onClick={() => handleStepClick(step.id - 1)}
-                                className="px-4 py-2 border border-neutral-200 rounded-md text-sm font-medium hover:bg-neutral-50 transition-colors flex items-center"
+                                className="px-4 py-2 border border-blue-200 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors flex items-center"
                               >
                                 <ChevronRight className="h-4 w-4 mr-1 transform rotate-180" />
                                 Previous
@@ -368,27 +490,26 @@ export default function RecruitmentJourney() {
                 </button>
               </motion.div>
               
-              {/* Animated decorative elements */}
+              {/* Stars in CTA */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                {Array.from({ length: 8 }).map((_, i) => (
+                {Array.from({ length: 12 }).map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-20 h-20 rounded-full bg-white/5"
-                    initial={{ 
-                      x: Math.random() * 100 - 50, 
-                      y: Math.random() * 100 - 50,
-                      scale: Math.random() * 0.5 + 0.5
+                    className="absolute rounded-full bg-white/20"
+                    style={{
+                      width: Math.random() * 4 + 1,
+                      height: Math.random() * 4 + 1,
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
                     }}
-                    animate={{ 
-                      x: Math.random() * 100 - 50, 
-                      y: Math.random() * 100 - 50,
-                      scale: Math.random() * 0.5 + 0.5
+                    animate={{
+                      opacity: [0.2, 0.8, 0.2],
+                      scale: [1, 1.5, 1],
                     }}
                     transition={{
-                      duration: 10,
+                      duration: Math.random() * 3 + 2,
                       repeat: Infinity,
                       repeatType: "reverse",
-                      delay: i * 0.5,
                     }}
                   />
                 ))}
