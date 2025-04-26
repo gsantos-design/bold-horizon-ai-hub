@@ -54,18 +54,30 @@ export default function AboutUs() {
         {/* Team Photo */}
         <div className="relative rounded-xl overflow-hidden mb-16 max-w-4xl mx-auto shadow-xl">
           <div className="aspect-[16/9] bg-gradient-to-r from-primary/10 to-accent/10 flex flex-col md:flex-row items-center justify-center">
-            {/* Image will be replaced with the actual photo of Nolly and Paul Santiago */}
+            {/* Replace the src URL with your actual image path once you've uploaded it */}
             <div className="w-full md:w-1/2 h-full bg-gradient-to-br from-blue-800/20 to-indigo-600/10 flex items-center justify-center p-6">
-              <div className="bg-white/80 backdrop-blur-md p-4 rounded-xl text-center shadow-md border border-blue-100">
-                <h4 className="text-primary font-bold">Nolly and Paul Santiago</h4>
-                <p className="text-sm text-gray-700">Team Leaders</p>
-                <p className="text-xs italic mt-2 text-primary/70">
-                  Add photo here:<br/>
-                  Replace this placeholder with your image
-                </p>
-                <div className="mt-3 text-xs text-blue-500 flex justify-center gap-1">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <div className="relative overflow-hidden rounded-xl shadow-lg border-4 border-white/90">
+                {/* Instructions for manually adding the image */}
+                <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl text-center border border-blue-100 absolute inset-0 flex flex-col items-center justify-center">
+                  <h4 className="text-primary font-bold">Nolly and Paul Santiago</h4>
+                  <p className="text-sm text-gray-700">Team Leaders</p>
+                  <p className="text-xs italic mt-2 text-primary/70">
+                    Manual Image Integration:<br/>
+                    1. Place your image in the "public" folder<br/>
+                    2. Update this component to use that image path<br/>
+                    3. Example: src="/yourimage.jpg"
+                  </p>
+                  <div className="mt-3 text-xs text-blue-500 flex justify-center gap-1">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
                 </div>
+                
+                {/* Once you have the image, uncomment this line and update the src path */}
+                {/* <img 
+                  src="/santiago-team-leaders.jpg" 
+                  alt="Nolly and Paul Santiago" 
+                  className="w-full h-full object-cover"
+                /> */}
               </div>
             </div>
             
