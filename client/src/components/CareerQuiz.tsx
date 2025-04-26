@@ -216,11 +216,16 @@ export default function CareerQuiz() {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {step === 1 && (
-                <div className="space-y-6">
-                  <Card>
+                <motion.div 
+                  className="space-y-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle>Tell us about yourself</CardTitle>
-                      <CardDescription>
+                      <CardTitle className="text-gradient">Tell us about yourself</CardTitle>
+                      <CardDescription className="text-white/80">
                         We'll use this information to personalize your career path recommendation.
                       </CardDescription>
                     </CardHeader>
@@ -230,9 +235,9 @@ export default function CareerQuiz() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Full Name</FormLabel>
+                            <FormLabel className="text-white">Full Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} />
+                              <Input placeholder="Your name" {...field} className="cosmic-input" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -243,11 +248,11 @@ export default function CareerQuiz() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email Address</FormLabel>
+                            <FormLabel className="text-white">Email Address</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="you@example.com" {...field} />
+                              <Input type="email" placeholder="you@example.com" {...field} className="cosmic-input" />
                             </FormControl>
-                            <FormDescription>
+                            <FormDescription className="text-white/60">
                               We'll send your personalized career path results to this email.
                             </FormDescription>
                             <FormMessage />
@@ -259,11 +264,11 @@ export default function CareerQuiz() {
                         name="background"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Professional Background</FormLabel>
+                            <FormLabel className="text-white">Professional Background</FormLabel>
                             <FormControl>
                               <Textarea
                                 placeholder="Briefly describe your professional background, current situation, and why you're interested in a career with World Financial Group."
-                                className="min-h-[120px]"
+                                className="min-h-[120px] cosmic-input"
                                 {...field}
                               />
                             </FormControl>
@@ -273,17 +278,25 @@ export default function CareerQuiz() {
                       />
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               )}
 
               {step === 2 && (
-                <div className="space-y-8">
-                  <Card>
+                <motion.div 
+                  className="space-y-8 cosmic-gradient-border"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Briefcase className="w-5 h-5" /> Your Skills
+                      <CardTitle className="flex items-center gap-2 text-gradient">
+                        <div className="bg-accent/20 p-2 rounded-full">
+                          <Briefcase className="w-5 h-5 text-accent" />
+                        </div> 
+                        Your Skills
                       </CardTitle>
-                      <CardDescription>
+                      <CardDescription className="text-white/80">
                         Select all the skills you possess or are confident you can develop.
                       </CardDescription>
                     </CardHeader>
@@ -307,6 +320,7 @@ export default function CareerQuiz() {
                                       >
                                         <FormControl>
                                           <Checkbox
+                                            className="border-accent data-[state=checked]:bg-accent"
                                             checked={field.value?.includes(skill.id)}
                                             onCheckedChange={(checked) => {
                                               return checked
@@ -319,7 +333,7 @@ export default function CareerQuiz() {
                                             }}
                                           />
                                         </FormControl>
-                                        <FormLabel className="font-normal cursor-pointer">
+                                        <FormLabel className="font-normal cursor-pointer text-white">
                                           {skill.label}
                                         </FormLabel>
                                       </FormItem>
@@ -335,12 +349,15 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Rocket className="w-5 h-5" /> Your Motivations
+                      <CardTitle className="flex items-center gap-2 text-gradient">
+                        <div className="bg-accent/20 p-2 rounded-full">
+                          <Rocket className="w-5 h-5 text-accent" />
+                        </div> 
+                        Your Motivations
                       </CardTitle>
-                      <CardDescription>
+                      <CardDescription className="text-white/80">
                         What drives you most in your career? Select all that apply.
                       </CardDescription>
                     </CardHeader>
@@ -364,6 +381,7 @@ export default function CareerQuiz() {
                                       >
                                         <FormControl>
                                           <Checkbox
+                                            className="border-accent data-[state=checked]:bg-accent"
                                             checked={field.value?.includes(motivation.id)}
                                             onCheckedChange={(checked) => {
                                               return checked
@@ -376,7 +394,7 @@ export default function CareerQuiz() {
                                             }}
                                           />
                                         </FormControl>
-                                        <FormLabel className="font-normal cursor-pointer">
+                                        <FormLabel className="font-normal cursor-pointer text-white">
                                           {motivation.label}
                                         </FormLabel>
                                       </FormItem>
@@ -392,12 +410,15 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Heart className="w-5 h-5" /> Your Values
+                      <CardTitle className="flex items-center gap-2 text-gradient">
+                        <div className="bg-accent/20 p-2 rounded-full">
+                          <Heart className="w-5 h-5 text-accent" />
+                        </div> 
+                        Your Values
                       </CardTitle>
-                      <CardDescription>
+                      <CardDescription className="text-white/80">
                         Which values are most important to you in your work environment?
                       </CardDescription>
                     </CardHeader>
@@ -421,6 +442,7 @@ export default function CareerQuiz() {
                                       >
                                         <FormControl>
                                           <Checkbox
+                                            className="border-accent data-[state=checked]:bg-accent"
                                             checked={field.value?.includes(value.id)}
                                             onCheckedChange={(checked) => {
                                               return checked
@@ -433,7 +455,7 @@ export default function CareerQuiz() {
                                             }}
                                           />
                                         </FormControl>
-                                        <FormLabel className="font-normal cursor-pointer">
+                                        <FormLabel className="font-normal cursor-pointer text-white">
                                           {value.label}
                                         </FormLabel>
                                       </FormItem>
@@ -449,13 +471,16 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Brain className="w-5 h-5" /> Your Work Style
+                      <CardTitle className="flex items-center gap-2 text-gradient">
+                        <div className="bg-accent/20 p-2 rounded-full">
+                          <Brain className="w-5 h-5 text-accent" />
+                        </div> 
+                        Your Work Style
                       </CardTitle>
-                      <CardDescription>
-                        How do you prefer to work? Select all that apply.
+                      <CardDescription className="text-white/80">
+                        How would you describe your preferred way of working?
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -478,19 +503,20 @@ export default function CareerQuiz() {
                                       >
                                         <FormControl>
                                           <Checkbox
+                                            className="border-accent data-[state=checked]:bg-accent"
                                             checked={field.value?.includes(style.id)}
                                             onCheckedChange={(checked) => {
                                               return checked
                                                 ? field.onChange([...field.value, style.id])
                                                 : field.onChange(
                                                     field.value?.filter(
-                                                      (value) => value !== style.id
+                                                      (v) => v !== style.id
                                                     )
                                                   )
                                             }}
                                           />
                                         </FormControl>
-                                        <FormLabel className="font-normal cursor-pointer">
+                                        <FormLabel className="font-normal cursor-pointer text-white">
                                           {style.label}
                                         </FormLabel>
                                       </FormItem>
@@ -506,13 +532,16 @@ export default function CareerQuiz() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="cosmic-glass-effect border-0 shadow-cosmic">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <DollarSign className="w-5 h-5" /> Financial Goals
+                      <CardTitle className="flex items-center gap-2 text-gradient">
+                        <div className="bg-accent/20 p-2 rounded-full">
+                          <DollarSign className="w-5 h-5 text-accent" />
+                        </div> 
+                        Your Financial Goals
                       </CardTitle>
-                      <CardDescription>
-                        What are your primary financial goals for this career?
+                      <CardDescription className="text-white/80">
+                        What are your primary financial objectives right now?
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -525,7 +554,7 @@ export default function CareerQuiz() {
                               <RadioGroup
                                 onValueChange={field.onChange}
                                 defaultValue={field.value}
-                                className="space-y-3"
+                                className="flex flex-col space-y-1"
                               >
                                 {financialGoalsOptions.map((goal) => (
                                   <FormItem
@@ -533,9 +562,9 @@ export default function CareerQuiz() {
                                     className="flex items-center space-x-3 space-y-0"
                                   >
                                     <FormControl>
-                                      <RadioGroupItem value={goal.id} />
+                                      <RadioGroupItem className="border-accent text-accent" value={goal.id} />
                                     </FormControl>
-                                    <FormLabel className="font-normal cursor-pointer">
+                                    <FormLabel className="font-normal text-white">
                                       {goal.label}
                                     </FormLabel>
                                   </FormItem>
@@ -548,7 +577,7 @@ export default function CareerQuiz() {
                       />
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               )}
 
               <div className="flex justify-between mt-6">
@@ -557,6 +586,7 @@ export default function CareerQuiz() {
                     type="button"
                     variant="outline"
                     onClick={() => setStep((prev) => prev - 1)}
+                    className="border-white/40 text-white hover:bg-white/10"
                   >
                     Back
                   </Button>
@@ -566,13 +596,13 @@ export default function CareerQuiz() {
                     type="button"
                     onClick={handleNextStep}
                     disabled={isSubmitting}
-                    className="ml-auto"
+                    className={`ml-auto ${step === 1 ? "bg-accent hover:bg-accent/80 text-white" : "bg-accent hover:bg-accent/80 text-white"}`}
                   >
                     {step === 2 ? (
                       <>
                         {isSubmitting ? (
                           <>
-                            <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             Analyzing...
                           </>
                         ) : (
@@ -592,103 +622,114 @@ export default function CareerQuiz() {
           </Form>
         )}
 
-        {/* Results */}
+        {/* Quiz Results */}
         {step === 3 && recommendation && (
-          <div className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500">
+          <motion.div 
+            className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="text-center space-y-2">
-              <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
-                <Sparkles className="h-8 w-8 text-primary" />
+              <div className="inline-flex items-center justify-center p-3 bg-accent/20 rounded-full mb-4">
+                <Sparkles className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold">Your Personalized Career Recommendation</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold text-gradient">Your Personalized Career Recommendation</h3>
+              <p className="text-white/80">
                 Based on your unique skills, values, and goals
               </p>
             </div>
 
-            <Card className="border-primary/20 shadow-lg">
-              <CardHeader className="pb-4">
-                <Badge className="mb-2 self-start" variant="default">
-                  Recommended Path
-                </Badge>
-                <CardTitle className="text-2xl font-bold text-primary">
-                  {recommendation.recommendedPath}
-                </CardTitle>
-                <CardDescription className="text-base">
-                  {recommendation.explanation}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-lg mb-3 flex items-center">
-                    <Star className="h-5 w-5 mr-2 text-yellow-500" />
-                    Your Strengths
-                  </h4>
-                  <ul className="grid gap-2">
-                    {recommendation.strengths.map((strength, index) => (
-                      <li key={index} className="flex items-start">
-                        <Check className="h-5 w-5 mr-2 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>{strength}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <Card className="cosmic-glass-effect border-0 shadow-cosmic overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-50 rounded-lg"></div>
+              <div className="relative z-10">
+                <CardHeader className="flex flex-col items-center text-center pb-2">
+                  <Badge className="bg-accent/20 text-white hover:bg-accent/30 mb-2">
+                    AI-Powered Recommendation
+                  </Badge>
+                  <CardTitle className="text-2xl text-gradient">
+                    {recommendation.recommendedPath}
+                  </CardTitle>
+                  <CardDescription className="text-white/90 text-center max-w-2xl mx-auto">
+                    {recommendation.explanation}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pb-6 space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold flex items-center gap-2 text-white">
+                        <Star className="h-5 w-5 text-yellow-400" /> Your Strengths
+                      </h4>
+                      <ul className="space-y-2">
+                        {recommendation.strengths.map((strength, index) => (
+                          <li key={index} className="flex items-start">
+                            <div className="mt-1 mr-2 flex items-center justify-center">
+                              <div className="h-2 w-2 bg-accent rounded-full"></div>
+                            </div>
+                            <span className="text-white/90">{strength}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold flex items-center gap-2 text-white">
+                        <Rocket className="h-5 w-5 text-accent" /> Development Areas
+                      </h4>
+                      <ul className="space-y-2">
+                        {recommendation.developmentAreas.map((area, index) => (
+                          <li key={index} className="flex items-start">
+                            <div className="mt-1 mr-2 flex items-center justify-center">
+                              <div className="h-2 w-2 bg-accent rounded-full"></div>
+                            </div>
+                            <span className="text-white/90">{area}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
 
-                <Separator />
+                  <Separator className="bg-white/10" />
 
-                <div>
-                  <h4 className="font-semibold text-lg mb-3">Development Areas</h4>
-                  <ul className="grid gap-2">
-                    {recommendation.developmentAreas.map((area, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="h-5 w-5 mr-2 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0">
-                          <div className="h-2 w-2 bg-primary rounded-full"></div>
-                        </div>
-                        <span>{area}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold flex items-center gap-2 text-white">
+                      <Check className="h-5 w-5 text-green-400" /> Next Steps for Success
+                    </h4>
+                    <ol className="space-y-3">
+                      {recommendation.nextSteps.map((step, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="flex-shrink-0 h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center mr-3 text-white font-semibold">
+                            {index + 1}
+                          </span>
+                          <span className="text-white/90">{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
 
-                <Separator />
-
-                <div>
-                  <h4 className="font-semibold text-lg mb-3">Next Steps</h4>
-                  <ol className="grid gap-3">
-                    {recommendation.nextSteps.map((step, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-medium mr-3">
-                          {index + 1}
-                        </span>
-                        <span>{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-
-                <Separator />
-
-                <div className="bg-muted/50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-lg mb-1">Estimated Timeframe</h4>
-                  <p>{recommendation.estimatedTimeframe}</p>
-                </div>
-              </CardContent>
-              <CardFooter className="flex flex-col md:flex-row gap-4">
-                <Button onClick={resetQuiz} variant="outline" className="w-full md:w-auto">
-                  <RefreshCw className="mr-2 h-4 w-4" />
-                  Take Quiz Again
-                </Button>
-                <Button className="w-full md:w-auto">
-                  Schedule a Consultation
-                </Button>
-              </CardFooter>
+                  <div className="mt-6 bg-accent/10 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                      <h4 className="font-semibold text-white">Estimated Timeframe</h4>
+                      <p className="text-white/80">{recommendation.estimatedTimeframe}</p>
+                    </div>
+                    <div className="hidden md:block">
+                      <Rocket className="h-10 w-10 text-accent opacity-50" />
+                    </div>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
 
-            <div className="text-center pt-4">
-              <p className="text-muted-foreground text-sm">
-                Want to discuss your results in person? Reach out to our team for a personalized consultation.
-              </p>
+            <div className="flex justify-center">
+              <Button 
+                variant="outline" 
+                onClick={resetQuiz}
+                className="bg-accent/10 border-accent/30 text-white hover:bg-accent/20"
+              >
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Retake Quiz
+              </Button>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
