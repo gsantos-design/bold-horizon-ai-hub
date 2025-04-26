@@ -477,11 +477,11 @@ export default function Hero() {
             Calculate Full Potential
           </Button>
           <Button 
-            variant="outline"
-            className="border-2 border-white hover:bg-white/20 text-white font-semibold px-8 py-6 rounded-md transition-colors duration-300 text-lg"
+            variant="secondary"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-md transition-colors duration-300 text-lg border-2 border-blue-400 shadow-lg"
             onClick={() => scrollToSection("contact")}
           >
-            Join The Santiago Team
+            {t('hero.cta')}
           </Button>
         </motion.div>
       </div>
@@ -519,7 +519,7 @@ export default function Hero() {
                 scrollToSection("contact");
               }}
             >
-              I'm Ready To Transform My Life
+              {t('hero.cta')}
             </Button>
           </div>
         </div>
