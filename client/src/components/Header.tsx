@@ -24,25 +24,27 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-primary text-white shadow-md sticky top-0 z-50">
+    <header className="bg-primary/80 text-white shadow-lg backdrop-blur-lg sticky top-0 z-50 border-b border-white/10">
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Building2 className="h-8 w-8 mr-3" />
-            <div>
-              <h1 className="font-heading font-bold text-2xl">Bold Horizons</h1>
-              <p className="text-sm opacity-80">with World Financial Group | Caribbean, Florida & NY</p>
+          <div className="flex items-center relative group">
+            {/* Glowing logo effect */}
+            <div className="absolute -inset-2 bg-blue-500 rounded-full opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-500"></div>
+            <Building2 className="h-8 w-8 mr-3 relative z-10" />
+            <div className="relative z-10">
+              <h1 className="font-heading font-bold text-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Bold Horizons</h1>
+              <p className="text-sm text-blue-100">with World Financial Group | Caribbean, Florida & NY</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-3">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="hover:text-accent transition-colors duration-300"
+                    className="px-3 py-2 rounded-full hover:bg-white/10 hover:text-blue-200 transition-all duration-300 flex items-center relative overflow-hidden group"
                     onClick={(e) => {
                       e.preventDefault();
                       const element = document.querySelector(item.href);
@@ -54,7 +56,12 @@ export default function Header() {
                       }
                     }}
                   >
-                    {item.name}
+                    {/* Cosmic nav hover effect */}
+                    <span className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors duration-300"></span>
+                    <span className="relative z-10">{item.name}</span>
+                    
+                    {/* Star accent on hover */}
+                    <span className="absolute top-1/2 left-0 w-0 h-0 bg-blue-400 rounded-full opacity-0 group-hover:opacity-30 group-hover:w-full group-hover:h-full transition-all duration-500 group-hover:-translate-y-1/2 ease-out"></span>
                   </a>
                 </li>
               ))}
@@ -67,9 +74,17 @@ export default function Header() {
               variant="ghost" 
               size="icon" 
               onClick={toggleMobileMenu}
-              className="text-white hover:bg-primary-light"
+              className="text-white relative overflow-hidden group"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <span className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/30 rounded-full transition-colors duration-300"></span>
+              <span className="relative z-10">
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </span>
+              
+              {/* Button glow effect */}
+              <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="absolute inset-0 rounded-full bg-blue-400/20 blur-md"></span>
+              </span>
             </Button>
           </div>
         </div>
@@ -77,12 +92,12 @@ export default function Header() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="mt-4 md:hidden">
-            <ul className="flex flex-col space-y-4 pb-4">
-              {navItems.map((item) => (
+            <ul className="flex flex-col space-y-2 pb-4">
+              {navItems.map((item, index) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="block hover:text-accent transition-colors duration-300"
+                    className="block py-2 px-3 rounded-lg bg-blue-600/10 backdrop-blur-md hover:bg-blue-600/20 transition-all duration-300 relative overflow-hidden"
                     onClick={(e) => {
                       e.preventDefault();
                       const element = document.querySelector(item.href);
@@ -95,7 +110,15 @@ export default function Header() {
                       }
                     }}
                   >
-                    {item.name}
+                    {/* Animated star background on mobile nav */}
+                    {index % 3 === 0 && (
+                      <span className="absolute h-1 w-1 rounded-full bg-white/30 right-3 top-3 animate-pulse"></span>
+                    )}
+                    {index % 4 === 0 && (
+                      <span className="absolute h-1 w-1 rounded-full bg-white/20 right-6 bottom-3 animate-pulse" 
+                            style={{animationDelay: '0.5s'}}></span>
+                    )}
+                    <span className="relative z-10">{item.name}</span>
                   </a>
                 </li>
               ))}

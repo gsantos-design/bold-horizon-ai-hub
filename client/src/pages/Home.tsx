@@ -15,21 +15,25 @@ import RecruitmentJourney from "@/components/RecruitmentJourney";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-100">
+    <div className="flex flex-col min-h-screen bg-transparent">
+      {/* Main content with semi-transparent backgrounds to let cosmic effects show through */}
       <Header />
       <Hero />
       <AboutUs />
-      <main className="container mx-auto px-4 py-12">
-        <CompensationStructure />
-        <CommissionCalculator />
-        <PromotionGuidelines />
-        <TeamBuilding />
-        <GrowthMindset />
-        <AdditionalBonuses />
-        <RecruitmentJourney />
-        <CareerQuiz />
-        <Resources />
-        <ContactForm />
+      <main className="container mx-auto px-4 py-12 relative z-10">
+        {/* Main content sections with theme-consistent styling */}
+        <div className="space-y-16 backdrop-blur-sm">
+          <CompensationStructure />
+          <CommissionCalculator />
+          <PromotionGuidelines />
+          <TeamBuilding />
+          <GrowthMindset />
+          <AdditionalBonuses />
+          <RecruitmentJourney />
+          <CareerQuiz />
+          <Resources />
+          <ContactForm />
+        </div>
       </main>
       <Footer />
     </div>
