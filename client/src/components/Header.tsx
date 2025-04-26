@@ -9,6 +9,7 @@ import { useLoading } from "@/lib/LoadingContext";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const { transitionToSection } = useLoading();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -54,13 +55,8 @@ export default function Header() {
                     className="px-3 py-2 rounded-full hover:bg-blue-700/30 hover:text-white transition-all duration-300 flex items-center relative overflow-hidden group cosmic-3d"
                     onClick={(e) => {
                       e.preventDefault();
-                      const element = document.querySelector(item.href);
-                      if (element) {
-                        window.scrollTo({
-                          top: element.getBoundingClientRect().top + window.pageYOffset - 100,
-                          behavior: "smooth",
-                        });
-                      }
+                      // Use the loading transition when navigating between sections
+                      transitionToSection(item.href, 100);
                     }}
                   >
                     {/* Enhanced Cosmic nav hover effect */}
@@ -132,14 +128,9 @@ export default function Header() {
                              transition-all duration-300 relative overflow-hidden shadow-md hover:shadow-lg"
                     onClick={(e) => {
                       e.preventDefault();
-                      const element = document.querySelector(item.href);
-                      if (element) {
-                        window.scrollTo({
-                          top: element.getBoundingClientRect().top + window.pageYOffset - 100,
-                          behavior: "smooth",
-                        });
-                        setMobileMenuOpen(false);
-                      }
+                      // Use the loading transition when navigating between sections in mobile view
+                      transitionToSection(item.href, 100);
+                      setMobileMenuOpen(false);
                     }}
                   >
                     {/* Enhanced animated cosmic effects on mobile nav */}

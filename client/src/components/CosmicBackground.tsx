@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Star, Moon } from "lucide-react";
+import ShootingStars from "./ShootingStars";
 
 interface CosmicBackgroundProps {
   intensity?: "low" | "medium" | "high";
@@ -70,6 +71,9 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
       {/* Cosmic backdrop */}
       <div className={`absolute w-full h-full ${colorConfig.backdropColor} backdrop-blur-[100px]`}></div>
+      
+      {/* Add shooting stars effect */}
+      <ShootingStars count={intensity === "high" ? 10 : (intensity === "medium" ? 7 : 4)} />
       
       {/* Small stars */}
       {Array.from({ length: starCount }).map((_, i) => (
