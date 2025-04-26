@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
 import { useLanguage, Language } from '@/lib/LanguageContext';
+import { motion } from 'framer-motion';
 
 export const LanguageToggle: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -11,15 +12,29 @@ export const LanguageToggle: React.FC = () => {
   };
 
   return (
-    <Button 
-      onClick={toggleLanguage}
-      variant="secondary"
-      size="sm"
-      className="bg-blue-500/30 hover:bg-blue-500/50 text-white border border-blue-400/50 flex items-center gap-1.5 font-medium"
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="relative cosmic-3d"
     >
-      <Globe className="h-4 w-4" />
-      <span>{t('language.toggle')}</span>
-    </Button>
+      {/* Glow effect */}
+      <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-lg opacity-60"></div>
+      
+      <Button 
+        onClick={toggleLanguage}
+        variant="secondary"
+        size="sm"
+        className="cosmic-language-toggle relative z-10"
+      >
+        <Globe className="h-4 w-4" />
+        <span className="font-medium cosmic-glow-blue">{t('language.toggle')}</span>
+        
+        {/* Language indicator */}
+        <div className="absolute -top-1 -right-1 bg-white text-blue-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+          {language.toUpperCase()}
+        </div>
+      </Button>
+    </motion.div>
   );
 };
 

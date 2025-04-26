@@ -28,29 +28,32 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
     }
   };
 
-  // Configuration based on color
+  // Configuration based on color - enhanced for better visibility
   const colorConfig = {
     blue: {
-      moonColor: "text-blue-200/30",
+      moonColor: "text-blue-200/60",
       starColor: "bg-blue-50",
       starFillColor: "text-yellow-100 fill-yellow-100",
-      orbColors: ["bg-blue-300/10", "bg-indigo-300/10", "bg-violet-300/10"],
-      backdropColor: "bg-blue-900/5"
+      orbColors: ["bg-blue-400/20", "bg-indigo-400/20", "bg-violet-400/20"],
+      backdropColor: "bg-blue-950/40",
+      galaxyColors: ["from-blue-300/30", "from-indigo-300/30", "from-cyan-300/30"]
     },
     purple: {
-      moonColor: "text-purple-200/30",
+      moonColor: "text-purple-200/60",
       starColor: "bg-purple-50",
       starFillColor: "text-yellow-100 fill-yellow-100",
-      orbColors: ["bg-purple-300/10", "bg-fuchsia-300/10", "bg-pink-300/10"],
-      backdropColor: "bg-purple-900/5"
+      orbColors: ["bg-purple-400/20", "bg-fuchsia-400/20", "bg-pink-400/20"],
+      backdropColor: "bg-purple-950/40",
+      galaxyColors: ["from-purple-300/30", "from-fuchsia-300/30", "from-pink-300/30"]
     },
     // Add more color themes if needed
   }[primaryColor] || {
-    moonColor: "text-blue-200/30",
+    moonColor: "text-blue-200/60",
     starColor: "bg-blue-50",
     starFillColor: "text-yellow-100 fill-yellow-100",
-    orbColors: ["bg-blue-300/10", "bg-indigo-300/10", "bg-violet-300/10"],
-    backdropColor: "bg-blue-900/5"
+    orbColors: ["bg-blue-400/20", "bg-indigo-400/20", "bg-violet-400/20"],
+    backdropColor: "bg-blue-950/40",
+    galaxyColors: ["from-blue-300/30", "from-indigo-300/30", "from-cyan-300/30"]
   };
 
   const getRandomOrbColor = () => {
@@ -120,29 +123,37 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
         </motion.div>
       ))}
       
-      {/* Moon */}
-      <motion.div 
-        className={`absolute ${colorConfig.moonColor}`}
+      {/* Enhanced 3D Moon with glow effect */}
+      <div className="absolute z-20" 
         style={{
           right: `${10 + Math.random() * 20}%`,
           top: `${10 + Math.random() * 20}%`,
-          filter: "drop-shadow(0 0 15px rgba(180, 210, 255, 0.4))",
-          zIndex: 2
-        }}
-        animate={{
-          y: [0, 15, 0],
-          x: [0, -10, 0],
-          opacity: [0.7, 0.9, 0.7],
-          scale: [1, 1.05, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "reverse",
+          filter: "drop-shadow(0 0 25px rgba(180, 210, 255, 0.7))",
+          transform: "translateZ(50px)",
+          transformStyle: "preserve-3d"
         }}
       >
-        <Moon className="h-20 w-20" />
-      </motion.div>
+        <motion.div 
+          className={`absolute ${colorConfig.moonColor} cosmic-3d-element`}
+          animate={{
+            y: [0, 15, 0],
+            x: [0, -10, 0],
+            opacity: [0.8, 1, 0.8],
+            scale: [1, 1.05, 1],
+            rotateY: [0, 5, 0],
+            rotateX: [0, -5, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          <Moon className="h-24 w-24" />
+          {/* Moon glow effect */}
+          <div className="absolute inset-0 rounded-full bg-blue-200/10 blur-xl -z-10 scale-150"></div>
+        </motion.div>
+      </div>
       
       {/* Glowing orbs / nebulae */}
       {Array.from({ length: orbCount }).map((_, i) => (
@@ -210,42 +221,75 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
         />
       ))}
 
-      {/* Distant galaxy clusters */}
-      {Array.from({ length: getCount(3) }).map((_, i) => (
-        <div 
-          key={`galaxy-${i}-${randomSeed}`}
-          className="absolute overflow-hidden"
-          style={{
-            width: Math.random() * 300 + 200,
-            height: Math.random() * 300 + 200,
-            top: `${Math.random() * 90}%`,
-            left: `${Math.random() * 90}%`,
-            transform: `rotate(${Math.random() * 360}deg)`,
-            opacity: 0.2,
-            zIndex: 0
-          }}
-        >
-          <motion.div
-            className="w-full h-full bg-gradient-radial from-blue-300/20 via-transparent to-transparent"
-            animate={{
-              rotate: 360,
-              scale: [1, 1.1, 1]
+      {/* Enhanced 3D/4D Distant galaxy clusters */}
+      {Array.from({ length: getCount(4) }).map((_, i) => {
+        const galaxyColor = colorConfig.galaxyColors[Math.floor(Math.random() * colorConfig.galaxyColors.length)];
+        return (
+          <div 
+            key={`galaxy-${i}-${randomSeed}`}
+            className="absolute overflow-hidden cosmic-3d"
+            style={{
+              width: Math.random() * 400 + 250,
+              height: Math.random() * 400 + 250,
+              top: `${Math.random() * 90}%`,
+              left: `${Math.random() * 90}%`,
+              transform: `rotate(${Math.random() * 360}deg) translateZ(${Math.random() * 20}px)`,
+              opacity: 0.4,
+              zIndex: 0
             }}
-            transition={{
-              rotate: {
-                duration: Math.random() * 200 + 100,
-                repeat: Infinity,
-                ease: "linear"
-              },
-              scale: {
-                duration: Math.random() * 30 + 20,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }
-            }}
-          />
-        </div>
-      ))}
+          >
+            <motion.div
+              className={`w-full h-full bg-gradient-radial ${galaxyColor} via-transparent to-transparent`}
+              animate={{
+                rotate: 360,
+                scale: [1, 1.15, 1],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{
+                rotate: {
+                  duration: Math.random() * 200 + 100,
+                  repeat: Infinity,
+                  ease: "linear"
+                },
+                scale: {
+                  duration: Math.random() * 30 + 20,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                },
+                opacity: {
+                  duration: Math.random() * 15 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }
+              }}
+            />
+            {/* Galaxy stars */}
+            {Array.from({ length: 5 }).map((_, j) => (
+              <motion.div
+                key={`galaxy-star-${i}-${j}-${randomSeed}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: Math.random() * 3 + 1,
+                  height: Math.random() * 3 + 1,
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  boxShadow: '0 0 4px rgba(255, 255, 255, 0.8)'
+                }}
+                animate={{
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [1, 1.5, 1]
+                }}
+                transition={{
+                  duration: Math.random() * 3 + 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: Math.random() * 2
+                }}
+              />
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 };
