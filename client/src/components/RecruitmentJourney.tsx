@@ -100,7 +100,7 @@ export default function RecruitmentJourney() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-neutral-50" id="recruitment-journey">
+    <section className="py-16 bg-blue-50" id="recruitment-journey">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-3 px-3 py-1 bg-primary/5 text-primary border-primary/20">
@@ -120,7 +120,7 @@ export default function RecruitmentJourney() {
           {/* Progress Line */}
           <div className="hidden md:block h-2 bg-gradient-to-r from-neutral-200 via-neutral-200 to-neutral-200 rounded-full absolute top-7 left-7 right-7 z-0">
             <motion.div 
-              className="h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full"
+              className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
               style={{ 
                 width: `${(activeStep - 1) * (100 / (journeySteps.length - 1))}%`
               }}
@@ -259,7 +259,7 @@ export default function RecruitmentJourney() {
                     <div className="flex flex-col md:flex-row items-start gap-8">
                       {/* Icon Section */}
                       <div className="md:w-24 flex flex-col items-center">
-                        <div className="p-5 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-2xl shadow-sm border border-indigo-100">
+                        <div className="p-5 bg-blue-100 rounded-2xl shadow-sm border border-blue-200">
                           <motion.div
                             initial={{ rotate: -10, scale: 0.9 }}
                             animate={{ rotate: 0, scale: 1 }}
@@ -268,7 +268,7 @@ export default function RecruitmentJourney() {
                             {React.cloneElement(step.icon as React.ReactElement, { className: "h-12 w-12 text-indigo-600" })}
                           </motion.div>
                         </div>
-                        <Badge className="mt-4 bg-indigo-100 text-indigo-700 hover:bg-indigo-200 border-none">
+                        <Badge className="mt-4 bg-blue-100 text-blue-700 hover:bg-blue-200 border-none">
                           Step {step.id}
                         </Badge>
                       </div>
@@ -293,7 +293,7 @@ export default function RecruitmentJourney() {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.4, delay: i * 0.2 }}
-                              className="flex items-start gap-4 p-3 rounded-lg bg-gradient-to-r from-indigo-50 to-white border border-indigo-100/70"
+                              className="flex items-start gap-4 p-3 rounded-lg bg-blue-50 border border-blue-100"
                             >
                               <div className="flex-shrink-0 h-7 w-7 rounded-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center mt-0.5 border border-green-300">
                                 <Check className="h-4 w-4 text-green-600" />
@@ -306,7 +306,7 @@ export default function RecruitmentJourney() {
                         {/* Navigation Buttons */}
                         <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4 mt-8 pt-6 border-t border-neutral-200">
                           <div className="flex items-center text-sm text-neutral-500">
-                            <div className="h-2 w-2 bg-indigo-500 rounded-full mr-2"></div>
+                            <div className="h-2 w-2 bg-blue-500 rounded-full mr-2"></div>
                             <span>Your progress: Step {step.id} of {journeySteps.length}</span>
                           </div>
                           <div className="flex gap-3">
@@ -322,7 +322,7 @@ export default function RecruitmentJourney() {
                             {step.id < journeySteps.length ? (
                               <button 
                                 onClick={() => handleStepClick(step.id + 1)}
-                                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center"
+                                className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors flex items-center"
                               >
                                 Next Step
                                 <ChevronRight className="h-4 w-4 ml-1" />
@@ -330,7 +330,7 @@ export default function RecruitmentJourney() {
                             ) : (
                               <button 
                                 onClick={handleRestart}
-                                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center"
+                                className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors flex items-center"
                               >
                                 Restart Journey
                                 <ArrowRight className="h-4 w-4 ml-1" />
@@ -350,7 +350,7 @@ export default function RecruitmentJourney() {
         {/* Call To Action */}
         <div className="mt-16 text-center">
           <Card className="max-w-xl mx-auto overflow-hidden border-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 rounded-lg opacity-90" />
+            <div className="absolute inset-0 bg-blue-600 rounded-lg opacity-90" />
             <CardContent className="relative z-10 px-8 py-10">
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
