@@ -6,12 +6,14 @@ import Home from "@/pages/Home";
 import LeadEngine from "@/pages/LeadEngine";
 import LeadBoard from "@/pages/LeadBoard";
 import AdminOwners from "@/pages/AdminOwners";
+import Empower360 from "@/pages/Empower360";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/empower360" component={Empower360} />
       <Route path="/lead-engine" component={LeadEngine} />
       <Route path="/lead-engine/board" component={LeadBoard} />
       <Route path="/admin/owners" component={AdminOwners} />

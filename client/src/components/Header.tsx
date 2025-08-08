@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Link } from "wouter";
@@ -38,6 +38,13 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
+            <Link href="/empower360">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+                <Star className="h-4 w-4" />
+                <span>Empower360</span>
+              </Button>
+            </Link>
+            
             <Link href="/lead-engine">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2">
                 <BarChart3 className="h-4 w-4" />
@@ -94,6 +101,13 @@ export default function Header() {
         {mobileMenuOpen && (
           <nav className="mt-4 md:hidden border-t pt-4 space-y-3">
             <div className="flex flex-col space-y-2">
+              <Link href="/empower360">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-purple-600">
+                  <Star className="h-4 w-4 mr-2" />
+                  Empower360
+                </Button>
+              </Link>
+              
               <Link href="/lead-engine">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <BarChart3 className="h-4 w-4 mr-2" />
