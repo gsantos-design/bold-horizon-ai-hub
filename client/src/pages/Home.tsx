@@ -24,7 +24,7 @@ export default function Home() {
           <Card className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl">
             <CardContent className="p-8 text-center">
               <Badge className="mb-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2">
-                🌟 New Feature: Johnny's Three Philosophies
+                🌟 New Feature: Our Three Philosophies
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
                 Experience Empower360
