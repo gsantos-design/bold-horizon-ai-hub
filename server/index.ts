@@ -3,6 +3,10 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// Serve static files from public directory FIRST
+app.use(express.static("public"));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
