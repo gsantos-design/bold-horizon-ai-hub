@@ -21,12 +21,12 @@ const MENTOR_PERSONALITIES = {
     tone: "confident, motivating, forward-thinking",
     greeting: "Hello! I'm Paul Santiago, and I'm excited to help you unlock your potential and achieve your career goals. What can we work on together?"
   },
-  balanced: {
+  santiago_team: {
     name: "Santiago Team AI Mentor",
-    style: "balanced approach combining both Nolly and Paul's expertise",
-    expertise: "comprehensive career guidance, financial planning, leadership development",
+    style: "balanced approach combining both Nolly and Paul Santiago's leadership expertise",
+    expertise: "comprehensive career guidance, financial planning, leadership development under dual Santiago Team leadership",
     tone: "professional, supportive, adaptable",
-    greeting: "Welcome! I'm your AI Career Mentor, combining the expertise of both Nolly and Paul Santiago. I'm here to provide personalized guidance for your career journey. How can I help you today?"
+    greeting: "Welcome! I'm your AI Career Mentor, combining the dual leadership expertise of both Nolly and Paul Santiago. I'm here to provide personalized guidance for your career journey. How can I help you today?"
   }
 };
 
@@ -71,7 +71,7 @@ export async function generateMentorResponse(
   userMessage: string,
   chatHistory: ChatMessage[],
   userProfile: any = {},
-  mentorPersonality: keyof typeof MENTOR_PERSONALITIES = "balanced"
+  mentorPersonality: keyof typeof MENTOR_PERSONALITIES = "santiago_team"
 ): Promise<{
   content: string;
   emotionalTone: string;
@@ -182,7 +182,7 @@ export async function generateMentorResponse(
 // Generate welcome message based on user context
 export function generateWelcomeMessage(
   userProfile: any = {},
-  mentorPersonality: keyof typeof MENTOR_PERSONALITIES = "balanced"
+  mentorPersonality: keyof typeof MENTOR_PERSONALITIES = "santiago_team"
 ): string {
   const mentor = MENTOR_PERSONALITIES[mentorPersonality];
   
@@ -215,5 +215,5 @@ export function suggestMentorPersonality(userMessage: string, userProfile: any =
     return "nolly";
   }
   
-  return "balanced";
+  return "santiago_team";
 }

@@ -62,7 +62,7 @@ const emotionalIcons = {
 const mentorColors = {
   nolly: "bg-blue-100 border-blue-300 text-blue-800",
   paul: "bg-purple-100 border-purple-300 text-purple-800", 
-  balanced: "bg-emerald-100 border-emerald-300 text-emerald-800"
+  santiago_team: "bg-emerald-100 border-emerald-300 text-emerald-800"
 };
 
 export default function AiCareerMentor() {
@@ -107,7 +107,7 @@ export default function AiCareerMentor() {
         role: 'assistant' as const,
         content: data.welcomeMessage,
         emotionalTone: 'welcoming',
-        mentorPersonality: 'balanced',
+        mentorPersonality: 'santiago_team',
         createdAt: new Date().toISOString()
       }]);
       setShowProfileSetup(false);
@@ -298,7 +298,7 @@ export default function AiCareerMentor() {
                   <div>
                     <CardTitle className="text-lg">Santiago Team AI Mentor</CardTitle>
                     <p className="text-sm text-gray-500">
-                      {currentSession?.emotionalState && (
+                      Led by Nolly and Paul Santiago • {currentSession?.emotionalState && (
                         <span className="flex items-center">
                           {emotionalIcons[currentSession.emotionalState as keyof typeof emotionalIcons]}
                           <span className="ml-1 capitalize">{currentSession.emotionalState}</span>
@@ -357,7 +357,9 @@ export default function AiCareerMentor() {
                                   variant="outline" 
                                   className={`text-xs ${mentorColors[message.mentorPersonality as keyof typeof mentorColors]}`}
                                 >
-                                  {message.mentorPersonality}
+                                  {message.mentorPersonality === 'santiago_team' ? 'Santiago Team' : 
+                                   message.mentorPersonality === 'nolly' ? 'Nolly Santiago' :
+                                   message.mentorPersonality === 'paul' ? 'Paul Santiago' : message.mentorPersonality}
                                 </Badge>
                                 <span className="text-xs opacity-75">
                                   {emotionalIcons[message.emotionalTone as keyof typeof emotionalIcons]}

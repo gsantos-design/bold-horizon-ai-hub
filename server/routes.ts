@@ -1016,7 +1016,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       // Generate welcome message
-      const welcomeMessage = generateWelcomeMessage(userProfile, 'balanced');
+      const welcomeMessage = generateWelcomeMessage(userProfile, 'santiago_team');
       
       // Save welcome message
       await storage.createChatMessage({
@@ -1025,7 +1025,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         content: welcomeMessage,
         emotionalTone: 'welcoming',
         followUpActions: ['career_assessment', 'goal_setting', 'team_introduction'],
-        mentorPersonality: 'balanced',
+        mentorPersonality: 'santiago_team',
         metadata: { messageType: 'welcome', timestamp: new Date().toISOString() }
       });
       
@@ -1059,7 +1059,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         content,
         emotionalTone: 'neutral',
         followUpActions: [],
-        mentorPersonality: 'balanced',
+        mentorPersonality: 'santiago_team',
         metadata: { timestamp: new Date().toISOString() }
       });
 
