@@ -74,9 +74,9 @@ export const chatSessions = pgTable("chat_sessions", {
   sessionId: text("session_id").notNull().unique(),
   userEmail: text("user_email"),
   userName: text("user_name"),
-  currentTopic: text("current_topic"), // "career_guidance", "financial_planning", "emotional_support", etc.
-  emotionalState: text("emotional_state"), // "confident", "anxious", "excited", "uncertain", etc.
-  userProfile: jsonb("user_profile"), // Stores career goals, background, preferences
+  currentTopic: text("current_topic"),
+  emotionalState: text("emotional_state"),
+  userProfile: jsonb("user_profile"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
@@ -84,12 +84,12 @@ export const chatSessions = pgTable("chat_sessions", {
 export const chatMessages = pgTable("chat_messages", {
   id: serial("id").primaryKey(),
   sessionId: text("session_id").notNull(),
-  role: text("role").notNull(), // "user", "assistant", "system"
+  role: text("role").notNull(),
   content: text("content").notNull(),
-  emotionalTone: text("emotional_tone"), // Detected emotion in message
-  followUpActions: text("follow_up_actions").array(), // Suggested next steps
-  mentorPersonality: text("mentor_personality"), // "nolly", "paul", "balanced"
-  metadata: jsonb("metadata"), // Additional context, sentiment scores, etc.
+  emotionalTone: text("emotional_tone"),
+  followUpActions: text("follow_up_actions").array(),
+  mentorPersonality: text("mentor_personality"),
+  metadata: jsonb("metadata"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
