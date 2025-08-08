@@ -11,7 +11,12 @@ export default function Footer() {
             <h3 className="font-heading font-bold text-xl mb-4">The Santiago Team</h3>
             <p className="text-neutral-400 mb-2">Independent WFG Associates</p>
             <p className="text-neutral-400 text-sm">Empowering families through financial education and opportunity.</p>
-            <p className="text-neutral-400 text-xs mt-2">Licensed agents affiliated with World Financial Group Insurance Agency, LLC</p>
+            <p className="text-neutral-400 text-xs mt-2">
+              The Santiago Team consists of independent contractors affiliated with WFGIA. 
+              This website provides educational information about financial concepts and WFG opportunities. 
+              All content is for informational purposes only and does not constitute financial advice. 
+              Individual results may vary and are not guaranteed. Please consult with one of our licensed professionals for specific financial guidance.
+            </p>
           </div>
           
           <div>

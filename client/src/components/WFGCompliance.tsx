@@ -35,8 +35,8 @@ export default function WFGCompliance() {
                   The Santiago Team consists of independent contractors affiliated with WFGIA. 
                   This website provides educational information about financial concepts and WFG opportunities. 
                   All content is for informational purposes only and does not constitute financial advice. 
-                  Individual results may vary and are not guaranteed. Please consult with a licensed professional 
-                  for specific financial guidance.
+                  Individual results may vary and are not guaranteed. Please consult with one of our 
+                  licensed professionals for specific financial guidance.
                 </p>
               </div>
             </div>
