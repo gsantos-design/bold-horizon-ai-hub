@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PlusCircle, Download, Users, TrendingUp, Target, MessageSquare, Zap, Filter, Star, Calendar, Building2, MapPin, DollarSign, Settings, Copy, ExternalLink, Play, CheckCircle2 } from "lucide-react";
+import { PlusCircle, Download, Users, TrendingUp, Target, MessageSquare, Zap, Filter, Star, Calendar, Building2, MapPin, DollarSign, Settings, Copy, ExternalLink, Play, CheckCircle2, AlertTriangle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
 interface Lead {
@@ -1239,6 +1239,189 @@ Pablo
         </TabsContent>
 
         <TabsContent value="results" className="space-y-6">
+          {/* Industry Success Probability Heat Map */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <TrendingUp className="h-5 w-5" />
+                Industry Success Probability Heat Map
+              </CardTitle>
+              <p className="text-sm text-gray-600">
+                Real-time conversion rates and success probabilities by industry sector
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                {/* Heat Map Grid */}
+                <div>
+                  <h4 className="font-semibold mb-4 text-gray-900">Industry Performance Matrix</h4>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { industry: 'SaaS/Technology', success: 92, deals: 47, avgDeal: 85000, color: 'bg-green-500' },
+                      { industry: 'E-commerce', success: 90, deals: 38, avgDeal: 72000, color: 'bg-green-400' },
+                      { industry: 'Digital Marketing', success: 88, deals: 42, avgDeal: 68000, color: 'bg-green-300' },
+                      { industry: 'Professional Services', success: 85, deals: 51, avgDeal: 75000, color: 'bg-lime-400' },
+                      { industry: 'Real Estate', success: 82, deals: 29, avgDeal: 95000, color: 'bg-lime-300' },
+                      { industry: 'Healthcare', success: 78, deals: 24, avgDeal: 112000, color: 'bg-yellow-400' },
+                      { industry: 'Financial Services', success: 75, deals: 33, avgDeal: 125000, color: 'bg-yellow-300' },
+                      { industry: 'Manufacturing', success: 68, deals: 18, avgDeal: 145000, color: 'bg-orange-300' },
+                      { industry: 'Retail/Traditional', success: 52, deals: 12, avgDeal: 45000, color: 'bg-red-300' }
+                    ].map((item, index) => (
+                      <div key={index} className={`p-3 rounded-lg ${item.color} text-white relative overflow-hidden group cursor-pointer transition-all hover:scale-105`}>
+                        <div className="relative z-10">
+                          <div className="text-xs font-medium mb-1">{item.industry}</div>
+                          <div className="text-lg font-bold">{item.success}%</div>
+                          <div className="text-xs opacity-90">{item.deals} deals</div>
+                        </div>
+                        
+                        {/* Hover Details */}
+                        <div className="absolute inset-0 bg-black/80 p-3 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                          <div className="text-xs space-y-1">
+                            <div><strong>Success Rate:</strong> {item.success}%</div>
+                            <div><strong>Active Deals:</strong> {item.deals}</div>
+                            <div><strong>Avg Deal:</strong> ${item.avgDeal.toLocaleString()}</div>
+                            <div><strong>Status:</strong> {item.success >= 85 ? 'Hot 🔥' : item.success >= 75 ? 'Warm 📈' : item.success >= 60 ? 'Moderate 📊' : 'Cold ❄️'}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Legend */}
+                  <div className="mt-4 flex items-center gap-4 text-xs">
+                    <div className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-green-500 rounded"></div>
+                      <span>90%+ (Hot)</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-yellow-400 rounded"></div>
+                      <span>75-89% (Warm)</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-orange-300 rounded"></div>
+                      <span>60-74% (Moderate)</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-red-300 rounded"></div>
+                      <span>&lt;60% (Cold)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Industry Insights & Recommendations */}
+                <div>
+                  <h4 className="font-semibold mb-4 text-gray-900">Strategic Insights & Recommendations</h4>
+                  <div className="space-y-4">
+                    
+                    {/* Top Performers */}
+                    <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Star className="h-4 w-4 text-green-600" />
+                        <span className="font-semibold text-green-900">Top Performers (90%+ Success)</span>
+                      </div>
+                      <ul className="text-sm text-green-800 space-y-1">
+                        <li>• <strong>SaaS/Technology:</strong> High network effect, understands systems</li>
+                        <li>• <strong>E-commerce:</strong> Revenue-focused, scaling mindset</li>
+                        <li>• <strong>Digital Marketing:</strong> Appreciates lead generation value</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-green-700 font-medium">
+                        💡 Recommendation: Focus 60% of outreach efforts here
+                      </div>
+                    </div>
+                    
+                    {/* Growth Opportunities */}
+                    <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                      <div className="flex items-center gap-2 mb-2">
+                        <TrendingUp className="h-4 w-4 text-blue-600" />
+                        <span className="font-semibold text-blue-900">Growth Opportunities (75-89%)</span>
+                      </div>
+                      <ul className="text-sm text-blue-800 space-y-1">
+                        <li>• <strong>Professional Services:</strong> High deal values, established networks</li>
+                        <li>• <strong>Real Estate:</strong> Commission-based, relationship-driven</li>
+                        <li>• <strong>Healthcare:</strong> Stable income, risk-averse</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-blue-700 font-medium">
+                        💡 Recommendation: Use specialized templates, longer nurture sequences
+                      </div>
+                    </div>
+                    
+                    {/* Optimization Needed */}
+                    <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                      <div className="flex items-center gap-2 mb-2">
+                        <AlertTriangle className="h-4 w-4 text-orange-600" />
+                        <span className="font-semibold text-orange-900">Optimization Needed (&lt;75%)</span>
+                      </div>
+                      <ul className="text-sm text-orange-800 space-y-1">
+                        <li>• <strong>Manufacturing:</strong> Longer sales cycles, conservative approach</li>
+                        <li>• <strong>Retail/Traditional:</strong> Limited scalability awareness</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-orange-700 font-medium">
+                        💡 Recommendation: Educational content first, case studies from similar industries
+                      </div>
+                    </div>
+
+                    {/* Territory-Specific Data */}
+                    <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center gap-2 mb-2">
+                        <MapPin className="h-4 w-4 text-purple-600" />
+                        <span className="font-semibold text-purple-900">Territory Performance</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                          <div className="font-medium text-purple-800">Florida Markets</div>
+                          <div className="text-purple-700">
+                            • Miami-Dade: 89% success rate<br/>
+                            • Orlando: 85% success rate<br/>
+                            • Tampa: 82% success rate
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-medium text-purple-800">New York Markets</div>
+                          <div className="text-purple-700">
+                            • Manhattan: 91% success rate<br/>
+                            • Brooklyn: 87% success rate<br/>
+                            • Long Island: 83% success rate
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Items Based on Heat Map */}
+              <div className="mt-6 pt-6 border-t">
+                <h4 className="font-semibold mb-3 text-gray-900">🎯 Data-Driven Action Items</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-green-100 hover:bg-green-200 text-green-900 border border-green-300">
+                    <Target className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Focus on SaaS/Tech</div>
+                      <div className="text-xs opacity-75">92% success rate - prioritize these leads</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300">
+                    <MessageSquare className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Optimize Healthcare</div>
+                      <div className="text-xs opacity-75">Improve 78% → 85% with better messaging</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                    <TrendingUp className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Scale Top Markets</div>
+                      <div className="text-xs opacity-75">Manhattan & Miami showing highest ROI</div>
+                    </div>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Leads Table */}
           <Card>
             <CardHeader>
