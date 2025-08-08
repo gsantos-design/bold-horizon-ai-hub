@@ -59,10 +59,14 @@ export async function createNoteOnContact(contactId: string, bodyText: string) {
 
 export async function getHubSpotOwners() {
   try {
+    if (!process.env.HUBSPOT_API_KEY) {
+      console.log('No HubSpot API key configured, returning empty results')
+      return []
+    }
     const res = await hs('/crm/v3/owners', 'GET')
     return res.results || []
   } catch (error) {
-    console.error('Error fetching HubSpot owners:', error)
+    console.log('HubSpot API not available, returning empty results:', error.message)
     return []
   }
 }

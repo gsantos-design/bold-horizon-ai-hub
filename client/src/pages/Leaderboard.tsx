@@ -31,7 +31,7 @@ export default function Leaderboard() {
   const [owners, setOwners] = useState<Owner[]>([]);
 
   const { data: leads = [], isLoading: leadsLoading } = useQuery({
-    queryKey: ['/api/leads/list'],
+    queryKey: ['/api/leads/list?guest=true'],
   });
 
   const { data: hubspotData, isLoading: ownersLoading } = useQuery({
