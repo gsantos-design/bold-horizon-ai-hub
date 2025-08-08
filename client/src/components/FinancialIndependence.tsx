@@ -35,7 +35,7 @@ export default function FinancialIndependence() {
                 <span className="text-blue-600">Empowering Families</span>
               </h2>
               
-              {/* Three Core Philosophies */}
+              {/* Core Philosophy */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center p-4 bg-blue-50 rounded-lg">
                   <h3 className="font-bold text-blue-600 mb-2">Multi-Handed Income</h3>
