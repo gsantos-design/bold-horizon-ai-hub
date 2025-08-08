@@ -5,20 +5,72 @@ import {
   insertInquirySchema, 
   quizResultsSchema, 
   insertCareerQuizResultSchema,
+  insertLeadSchema,
+  updateLeadSchema,
+  roundRobinConfigSchema,
   type QuizResults 
 } from "@shared/schema";
 import { generateCareerRecommendation } from "./openai";
 import { z } from "zod";
 
+// Simple authentication middleware for demo purposes
+// In production, you would use proper authentication
+const authenticateUser = async (req: any, res: any, next: any) => {
+  const userEmail = req.headers['x-user-email'] as string;
+  const userRole = req.headers['x-user-role'] as string || 'team';
+  
+  if (!userEmail) {
+    return res.status(401).json({ message: 'Authentication required' });
+  }
+  
+  req.user = { email: userEmail, role: userRole };
+  next();
+};
+
+// Check if user is founder
+const requireFounder = (req: any, res: any, next: any) => {
+  if (req.user?.role !== 'founder') {
+    return res.status(403).json({ message: 'Founder access required' });
+  }
+  next();
+};
+
 export async function registerRoutes(app: Express): Promise<Server> {
-  // API route for handling contact form submissions
+  // Convert inquiries to leads
+  app.post("/api/inquiries/convert/:id", authenticateUser, async (req: any, res) => {
+    try {
+      const inquiryId = parseInt(req.params.id);
+      // In a real implementation, you'd fetch the inquiry and convert it
+      // For now, we'll just acknowledge the conversion
+      res.json({ message: "Inquiry converted to lead successfully" });
+    } catch (error) {
+      console.error("Error converting inquiry:", error);
+      res.status(500).json({ message: "Failed to convert inquiry" });
+    }
+  });
+  
+  // API route for handling contact form submissions (now creates leads)
   app.post("/api/inquiries", async (req, res) => {
     try {
       // Validate the request body using the schema
       const validatedData = insertInquirySchema.parse(req.body);
       
-      // Store the inquiry (in-memory storage for this implementation)
+      // Store the inquiry
       const inquiry = await storage.createInquiry(validatedData);
+      
+      // Also create a lead from the inquiry
+      const leadData = {
+        firstName: validatedData.name.split(' ')[0] || validatedData.name,
+        lastName: validatedData.name.split(' ').slice(1).join(' ') || '',
+        email: validatedData.email,
+        phone: validatedData.phone,
+        status: 'new' as const,
+        source: 'website' as const,
+        notes: `Interest: ${validatedData.interest}. Message: ${validatedData.message}`,
+        ownerEmail: await storage.getNextOwner() || undefined
+      };
+      
+      await storage.createLead(leadData);
       
       // Return success response
       res.status(201).json({ 
@@ -222,6 +274,264 @@ export async function registerRoutes(app: Express): Promise<Server> {
       estimatedTimeframe
     };
   }
+  
+  // Lead Management APIs
+  
+  // Create a new lead
+  app.post("/api/leads", async (req, res) => {
+    try {
+      const validatedData = insertLeadSchema.parse(req.body);
+      
+      // Auto-assign owner if not specified using round-robin
+      if (!validatedData.ownerEmail) {
+        const nextOwner = await storage.getNextOwner();
+        if (nextOwner) {
+          validatedData.ownerEmail = nextOwner;
+        }
+      }
+      
+      const lead = await storage.createLead(validatedData);
+      res.status(201).json(lead);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid lead data", errors: error.errors });
+      } else {
+        console.error("Error creating lead:", error);
+        res.status(500).json({ message: "Failed to create lead" });
+      }
+    }
+  });
+  
+  // Get leads (respects permissions)
+  app.get("/api/leads", authenticateUser, async (req: any, res) => {
+    try {
+      const leads = await storage.getLeads(req.user.email, req.user.role);
+      res.json(leads);
+    } catch (error) {
+      console.error("Error fetching leads:", error);
+      res.status(500).json({ message: "Failed to fetch leads" });
+    }
+  });
+  
+  // Get single lead
+  app.get("/api/leads/:id", authenticateUser, async (req: any, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const lead = await storage.getLeadById(id);
+      
+      if (!lead) {
+        return res.status(404).json({ message: "Lead not found" });
+      }
+      
+      // Check permissions - team members can only access their own leads
+      if (req.user.role !== 'founder' && lead.ownerEmail !== req.user.email) {
+        return res.status(403).json({ message: "Access denied" });
+      }
+      
+      res.json(lead);
+    } catch (error) {
+      console.error("Error fetching lead:", error);
+      res.status(500).json({ message: "Failed to fetch lead" });
+    }
+  });
+  
+  // Update lead
+  app.patch("/api/leads/:id", authenticateUser, async (req: any, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const validatedData = updateLeadSchema.parse(req.body);
+      
+      // Check if lead exists and user has permission
+      const existingLead = await storage.getLeadById(id);
+      if (!existingLead) {
+        return res.status(404).json({ message: "Lead not found" });
+      }
+      
+      if (req.user.role !== 'founder' && existingLead.ownerEmail !== req.user.email) {
+        return res.status(403).json({ message: "Access denied" });
+      }
+      
+      const updatedLead = await storage.updateLead(id, validatedData);
+      res.json(updatedLead);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid update data", errors: error.errors });
+      } else {
+        console.error("Error updating lead:", error);
+        res.status(500).json({ message: "Failed to update lead" });
+      }
+    }
+  });
+  
+  // Delete lead (founders only)
+  app.delete("/api/leads/:id", authenticateUser, requireFounder, async (req: any, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const success = await storage.deleteLead(id);
+      
+      if (!success) {
+        return res.status(404).json({ message: "Lead not found" });
+      }
+      
+      res.json({ message: "Lead deleted successfully" });
+    } catch (error) {
+      console.error("Error deleting lead:", error);
+      res.status(500).json({ message: "Failed to delete lead" });
+    }
+  });
+  
+  // CSV Export (respects permissions)
+  app.get("/api/leads/export", authenticateUser, async (req: any, res) => {
+    try {
+      const leads = await storage.getLeads(req.user.email, req.user.role);
+      
+      // Create CSV content
+      const csvHeaders = [
+        'ID', 'First Name', 'Last Name', 'Email', 'Phone', 
+        'Status', 'Source', 'Owner Email', 'Notes', 
+        'Last Contact Date', 'Next Follow Up', 'Created At', 'Updated At'
+      ];
+      
+      const csvRows = leads.map(lead => [
+        lead.id,
+        lead.firstName || '',
+        lead.lastName || '',
+        lead.email || '',
+        lead.phone || '',
+        lead.status || '',
+        lead.source || '',
+        lead.ownerEmail || '',
+        (lead.notes || '').replace(/["\r\n]/g, ' '), // Clean notes for CSV
+        lead.lastContactDate ? lead.lastContactDate.toISOString() : '',
+        lead.nextFollowUp ? lead.nextFollowUp.toISOString() : '',
+        lead.createdAt ? lead.createdAt.toISOString() : '',
+        lead.updatedAt ? lead.updatedAt.toISOString() : ''
+      ]);
+      
+      const csvContent = [csvHeaders, ...csvRows]
+        .map(row => row.map(field => `"${field}"`).join(','))
+        .join('\n');
+      
+      const timestamp = new Date().toISOString().split('T')[0];
+      const filename = `leads-export-${timestamp}.csv`;
+      
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.send(csvContent);
+    } catch (error) {
+      console.error("Error exporting leads:", error);
+      res.status(500).json({ message: "Failed to export leads" });
+    }
+  });
+  
+  // Round Robin Admin APIs (founders only)
+  
+  // Get current round robin configuration
+  app.get("/api/admin/round-robin", authenticateUser, requireFounder, async (req: any, res) => {
+    try {
+      const config = await storage.getRoundRobinConfig();
+      res.json(config || { ownerEmails: [], currentIndex: 0 });
+    } catch (error) {
+      console.error("Error fetching round robin config:", error);
+      res.status(500).json({ message: "Failed to fetch configuration" });
+    }
+  });
+  
+  // Update round robin configuration
+  app.post("/api/admin/round-robin", authenticateUser, requireFounder, async (req: any, res) => {
+    try {
+      const validatedData = roundRobinConfigSchema.parse(req.body);
+      const config = await storage.updateRoundRobinConfig(validatedData);
+      res.json(config);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid configuration data", errors: error.errors });
+      } else {
+        console.error("Error updating round robin config:", error);
+        res.status(500).json({ message: "Failed to update configuration" });
+      }
+    }
+  });
+  
+  // Get next owner in round robin
+  app.get("/api/admin/next-owner", authenticateUser, requireFounder, async (req: any, res) => {
+    try {
+      const nextOwner = await storage.getNextOwner();
+      res.json({ nextOwner });
+    } catch (error) {
+      console.error("Error getting next owner:", error);
+      res.status(500).json({ message: "Failed to get next owner" });
+    }
+  });
+  
+  // Development endpoint to initialize sample data
+  app.post("/api/dev/init-data", async (req, res) => {
+    try {
+      // Initialize round robin config
+      await storage.updateRoundRobinConfig({
+        ownerEmails: ['nolly@santiago-team.com', 'paul@santiago-team.com'],
+        currentIndex: 0
+      });
+      
+      // Create sample leads
+      const sampleLeads = [
+        {
+          firstName: 'John',
+          lastName: 'Doe', 
+          email: 'john.doe@example.com',
+          phone: '+1-555-0101',
+          status: 'new' as const,
+          source: 'website' as const,
+          ownerEmail: 'nolly@santiago-team.com',
+          notes: 'Interested in financial planning from career quiz'
+        },
+        {
+          firstName: 'Maria',
+          lastName: 'Garcia',
+          email: 'maria.garcia@example.com', 
+          phone: '+1-555-0102',
+          status: 'contacted' as const,
+          source: 'referral' as const,
+          ownerEmail: 'paul@santiago-team.com',
+          notes: 'Referred by existing client, interested in team opportunity'
+        },
+        {
+          firstName: 'David',
+          lastName: 'Smith',
+          email: 'david.smith@example.com',
+          phone: '+1-555-0103', 
+          status: 'meeting_booked' as const,
+          source: 'website' as const,
+          ownerEmail: 'nolly@santiago-team.com',
+          notes: 'Scheduled initial consultation for next week'
+        },
+        {
+          firstName: 'Sarah',
+          lastName: 'Johnson',
+          email: 'sarah.johnson@example.com',
+          phone: '+1-555-0104',
+          status: 'new' as const,
+          source: 'website' as const, 
+          ownerEmail: 'paul@santiago-team.com',
+          notes: 'Submitted contact form, interested in The New Art of Living'
+        }
+      ];
+      
+      for (const leadData of sampleLeads) {
+        try {
+          await storage.createLead(leadData);
+        } catch (error) {
+          // Lead might already exist, continue
+          console.log(`Lead ${leadData.email} might already exist`);
+        }
+      }
+      
+      res.json({ message: 'Sample data initialized successfully', leadsCreated: sampleLeads.length });
+    } catch (error) {
+      console.error('Error initializing sample data:', error);
+      res.status(500).json({ message: 'Failed to initialize sample data' });
+    }
+  });
   
   // API route for retrieving resources
   app.get("/api/resources", (req, res) => {

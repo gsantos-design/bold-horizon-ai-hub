@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { Link } from "wouter";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,6 +38,27 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
+            <Link href="/lead-engine">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+                <BarChart3 className="h-4 w-4" />
+                <span>Lead Engine</span>
+              </Button>
+            </Link>
+            
+            <Link href="/lead-engine/board">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+                <Users className="h-4 w-4" />
+                <span>Board</span>
+              </Button>
+            </Link>
+            
+            <Link href="/admin/owners">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+                <Settings className="h-4 w-4" />
+                <span>Admin</span>
+              </Button>
+            </Link>
+            
             <Button 
               variant="outline" 
               size="sm"
@@ -70,8 +92,31 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="mt-4 md:hidden border-t pt-4">
-            <div className="text-center">
+          <nav className="mt-4 md:hidden border-t pt-4 space-y-3">
+            <div className="flex flex-col space-y-2">
+              <Link href="/lead-engine">
+                <Button variant="ghost" size="sm" className="w-full justify-start">
+                  <BarChart3 className="h-4 w-4 mr-2" />
+                  Lead Engine
+                </Button>
+              </Link>
+              
+              <Link href="/lead-engine/board">
+                <Button variant="ghost" size="sm" className="w-full justify-start">
+                  <Users className="h-4 w-4 mr-2" />
+                  Board View
+                </Button>
+              </Link>
+              
+              <Link href="/admin/owners">
+                <Button variant="ghost" size="sm" className="w-full justify-start">
+                  <Settings className="h-4 w-4 mr-2" />
+                  Admin
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="text-center border-t pt-3">
               <a href="https://www.worldfinancialgroup.com/" className="text-sm text-gray-600 hover:text-blue-600">
                 WorldFinancialGroup.com
               </a>
