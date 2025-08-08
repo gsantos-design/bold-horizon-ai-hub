@@ -43,6 +43,10 @@ export interface IStorage {
   updateLead(id: number, updates: UpdateLead): Promise<Lead | undefined>;
   deleteLead(id: number): Promise<boolean>;
   
+  // Additional lead operations for webhooks
+  getLeadsByEmail(email: string): Promise<Lead[]>;
+  getAllLeads(): Promise<Lead[]>;
+  
   // Round robin operations
   getRoundRobinConfig(): Promise<RoundRobinConfig | undefined>;
   updateRoundRobinConfig(config: InsertRoundRobinConfig): Promise<RoundRobinConfig>;
@@ -169,6 +173,15 @@ export class DatabaseStorage implements IStorage {
     });
 
     return currentOwner;
+  }
+
+  // Additional lead operations for webhooks
+  async getLeadsByEmail(email: string): Promise<Lead[]> {
+    return await db.select().from(leads).where(eq(leads.email, email));
+  }
+
+  async getAllLeads(): Promise<Lead[]> {
+    return await db.select().from(leads).orderBy(desc(leads.createdAt));
   }
 }
 

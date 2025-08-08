@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings, Star } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Link } from "wouter";
@@ -56,6 +56,13 @@ export default function Header() {
               <Button variant="ghost" size="sm" className="flex items-center space-x-2">
                 <Users className="h-4 w-4" />
                 <span>Board</span>
+              </Button>
+            </Link>
+            
+            <Link href="/team/leaderboard">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-yellow-600 hover:text-yellow-700 hover:bg-yellow-50">
+                <Trophy className="h-4 w-4" />
+                <span>Leaderboard</span>
               </Button>
             </Link>
             

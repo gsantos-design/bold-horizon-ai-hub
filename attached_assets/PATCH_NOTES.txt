@@ -1,0 +1,26 @@
+Santiago v11 PATCH — Reply tracking, Calendly webhook, Leaderboard
+
+ADD these files into your existing v10 project (preserve folder structure):
+- lib/hubspot.ts
+- app/api/webhooks/calendly/route.ts
+- app/api/leads/reply/route.ts
+- app/team/leaderboard/page.tsx
+
+ENV additions (put in your .env):
+CALENDLY_WEBHOOK_SECRET=change-me
+HUBSPOT_DEALSTAGE_MEETING=appointmentscheduled
+HUBSPOT_DEALSTAGE_CONTACTED=qualifiedtobuy
+
+Calendly setup:
+- Point a webhook to: https://<your-repl>.repl.co/api/webhooks/calendly
+- Payload must include invitee.email (Calendly default does)
+
+Zapier/Gmail reply setup:
+- POST {"email":"lead@company.com"} to https://<your-repl>.repl.co/api/leads/reply
+
+Nav:
+- Add a link to /team/leaderboard in your navbar if you want quick access (or go directly).
+
+Then run:
+npm install
+npm run dev

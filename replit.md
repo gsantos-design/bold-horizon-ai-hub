@@ -52,6 +52,27 @@ Currently implements a minimal authentication structure with room for expansion:
 - Interactive compensation structure visualization
 - Team building income projections and growth modeling
 
+### B2B Lead Engine (Fast-Track Santiago Lead Engine Plan)
+- 5-tab interface: Dashboard, Targeting, Scripts, Automation, Results
+- Apollo.io and LinkedIn Sales Navigator integration concepts
+- Santiago-branded email sequences with AI lead scoring
+- CRM integration with HubSpot API
+- Round-robin lead assignment system
+- Automated workflow management
+
+### Webhook Integration System
+- Calendly webhook handling for automatic meeting booking updates
+- Email reply tracking via Zapier/Gmail integration
+- Real-time lead stage progression in both local database and HubSpot
+- Automated note creation in CRM for lead activity tracking
+
+### Team Performance Leaderboard
+- Real-time team statistics and performance rankings
+- Lead conversion tracking with visual progress indicators
+- HubSpot owner integration for comprehensive team management
+- Trophy system with gold, silver, bronze rankings
+- Conversion rate calculations and progress analytics
+
 ### Multilingual Support
 - React Context-based language switching (English/Spanish)
 - Comprehensive translation system for Caribbean and Florida markets
@@ -82,6 +103,9 @@ Currently implements a minimal authentication structure with room for expansion:
 
 ## AI and External Services
 - **OpenAI API**: AI-powered career recommendation engine
+- **HubSpot API**: CRM integration for lead management and automation
+- **Calendly Webhooks**: Automated meeting booking tracking
+- **Zapier Integration**: Email reply detection and lead engagement monitoring
 - **Zod**: Schema validation for forms and API requests
 - **React Hook Form**: Form management with validation integration
 

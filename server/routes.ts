@@ -12,6 +12,13 @@ import {
 } from "@shared/schema";
 import { generateCareerRecommendation } from "./openai";
 import { z } from "zod";
+import { 
+  findContactByEmail, 
+  listDealsForContact, 
+  updateDealStage, 
+  createNoteOnContact,
+  getHubSpotOwners 
+} from "./lib/hubspot";
 
 // Simple authentication middleware for demo purposes
 // In production, you would use proper authentication
@@ -583,6 +590,121 @@ export async function registerRoutes(app: Express): Promise<Server> {
     ];
     
     res.json(resources);
+  });
+
+  // Webhook for Calendly meeting bookings
+  app.post("/api/webhooks/calendly", async (req, res) => {
+    try {
+      const data = req.body;
+      const payload = data.payload || data;
+      const email = (payload?.invitee?.email) || (payload?.email) || '';
+      const name = (payload?.invitee?.name) || (payload?.name) || '';
+      
+      if (!email) {
+        return res.status(400).json({ ok: false, error: 'No email in payload' });
+      }
+
+      // Update local lead stage
+      const leads = await storage.getLeadsByEmail(email);
+      for (const lead of leads) {
+        await storage.updateLead(lead.id, { status: 'meeting_booked' });
+      }
+
+      // Update HubSpot deals + note (if HubSpot integration is available)
+      try {
+        const contact = await findContactByEmail(email);
+        if (contact) {
+          const deals = await listDealsForContact(contact.id);
+          const pipeline = process.env.HUBSPOT_PIPELINE || 'default';
+          const dealstage = process.env.HUBSPOT_DEALSTAGE_MEETING || 'appointmentscheduled';
+          for (const d of deals) {
+            await updateDealStage(d.id, pipeline, dealstage);
+          }
+          await createNoteOnContact(contact.id, `Meeting booked via Calendly for ${name || email}.`);
+        }
+      } catch (error) {
+        console.log('HubSpot integration not available or failed:', error);
+      }
+
+      res.json({ ok: true });
+    } catch (error) {
+      console.error("Error processing Calendly webhook:", error);
+      res.status(500).json({ ok: false, error: 'Internal server error' });
+    }
+  });
+
+  // Webhook for lead reply tracking (from Zapier/Gmail)
+  app.post("/api/webhooks/leads/reply", async (req, res) => {
+    try {
+      const body = req.body;
+      const email = (body.email || '').toString().trim();
+      
+      if (!email) {
+        return res.status(400).json({ ok: false, error: 'Missing email' });
+      }
+
+      // Update local lead stage
+      const leads = await storage.getLeadsByEmail(email);
+      for (const lead of leads) {
+        await storage.updateLead(lead.id, { status: 'contacted' });
+      }
+
+      // Update HubSpot (if available)
+      try {
+        const contact = await findContactByEmail(email);
+        if (contact) {
+          const deals = await listDealsForContact(contact.id);
+          const pipeline = process.env.HUBSPOT_PIPELINE || 'default';
+          const dealstage = process.env.HUBSPOT_DEALSTAGE_CONTACTED || undefined;
+          if (dealstage) {
+            for (const d of deals) {
+              await updateDealStage(d.id, pipeline, dealstage);
+            }
+          }
+          await createNoteOnContact(contact.id, `Email reply detected for ${email}.`);
+        }
+      } catch (error) {
+        console.log('HubSpot integration not available or failed:', error);
+      }
+
+      res.json({ ok: true });
+    } catch (error) {
+      console.error("Error processing lead reply:", error);
+      res.status(500).json({ ok: false, error: 'Internal server error' });
+    }
+  });
+
+  // HubSpot owners endpoint for leaderboard
+  app.get("/api/hubspot/owners", async (req, res) => {
+    try {
+      const owners = await getHubSpotOwners();
+      res.json({ results: owners });
+    } catch (error) {
+      console.log('HubSpot integration not available:', error);
+      res.json({ results: [] });
+    }
+  });
+
+  // Leaderboard data endpoint
+  app.get("/api/leads/list", async (req, res) => {
+    try {
+      // Get all leads for leaderboard statistics
+      const leads = await storage.getAllLeads();
+      
+      // Transform leads to include stage mapping for leaderboard
+      const transformedLeads = leads.map(lead => ({
+        id: lead.id.toString(),
+        ownerId: lead.ownerEmail || 'unassigned',
+        stage: lead.status === 'meeting_booked' ? 'Meeting Booked' : 
+               lead.status === 'closed_won' ? 'Closed Won' : 
+               lead.status === 'contacted' ? 'Contacted' : 'New'
+      }));
+      
+      res.json(transformedLeads);
+    } catch (error) {
+      console.error("Error fetching leads for leaderboard:", error);
+      res.status(500).json({ message: "Failed to fetch leads" });
+    }
   });
 
   const httpServer = createServer(app);

@@ -5,6 +5,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import LeadEngine from "@/pages/LeadEngine";
 import LeadBoard from "@/pages/LeadBoard";
+import Leaderboard from "@/pages/Leaderboard";
 import AdminOwners from "@/pages/AdminOwners";
 import Empower360 from "@/pages/Empower360";
 import { LanguageProvider } from "@/lib/LanguageContext";
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/empower360" component={Empower360} />
       <Route path="/lead-engine" component={LeadEngine} />
       <Route path="/lead-engine/board" component={LeadBoard} />
+      <Route path="/team/leaderboard" component={Leaderboard} />
       <Route path="/admin/owners" component={AdminOwners} />
       <Route component={NotFound} />
     </Switch>
