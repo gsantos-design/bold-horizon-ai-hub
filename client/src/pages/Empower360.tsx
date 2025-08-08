@@ -75,16 +75,61 @@ export default function Empower360() {
             </p>
             
             {/* Leadership Introduction */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto mb-8 border border-purple-200">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <Users2 className="h-8 w-8 text-purple-600" />
-                <h3 className="text-2xl font-bold text-gray-900">Meet Your Leaders</h3>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 max-w-6xl mx-auto mb-8 border border-purple-200">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Your Leaders</h3>
+                <p className="text-gray-600 text-lg">The driving force behind The Santiago Team's proven system</p>
               </div>
-              <p className="text-gray-700 text-center leading-relaxed">
-                <strong>Nolly and Paul Santiago</strong> have transformed thousands of lives through The Santiago Team's 
-                proven system. As WFG leaders, they've built a legacy of empowering families to achieve financial 
-                freedom through systematic approaches to wealth building, education, and personal growth.
-              </p>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {/* Nolly Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-6">
+                    <img 
+                      src="@assets/image_1754672305240.png" 
+                      alt="Nolly Santiago" 
+                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-purple-200"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-blue-400/20"></div>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h4>
+                  <p className="text-purple-600 font-semibold mb-4">Co-Founder &amp; Financial Strategist</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Nolly specializes in helping families build systematic wealth through proven financial strategies. 
+                    Her expertise in multi-handed income approaches has empowered hundreds of professionals to 
+                    achieve true financial freedom.
+                  </p>
+                </div>
+                
+                {/* Paul Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-6">
+                    <img 
+                      src="@assets/image_1754672375035.png" 
+                      alt="Paul Santiago" 
+                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Paul Santiago</h4>
+                  <p className="text-blue-600 font-semibold mb-4">Co-Founder &amp; Business Development Leader</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Paul brings decades of business leadership experience, focusing on building sustainable income systems 
+                    and personal development. His vision for "The New Art of Living" has transformed thousands of lives 
+                    across the Caribbean, Florida, and New York markets.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Combined Achievement */}
+              <div className="mt-8 text-center p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  Together, <strong>Nolly and Paul Santiago</strong> have built a legacy of empowering families to achieve financial 
+                  freedom through systematic approaches to wealth building, education, and personal growth. Their proven 
+                  three-pillar system has helped clients go from traditional single-income approaches to generating 
+                  multiple streams of income that often exceed their original earnings by 5x-10x.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -140,6 +185,188 @@ export default function Empower360() {
           {/* Gamification Dashboard */}
           <div className="max-w-6xl mx-auto mt-12">
             <GamificationDashboard />
+          </div>
+        </div>
+      </section>
+
+      {/* Team Showcase Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
+              🏆 Award-Winning Team
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              The Santiago Team Excellence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the dedicated professionals who make financial transformation possible for families 
+              across the Caribbean, Florida, and New York markets.
+            </p>
+          </div>
+
+          {/* Team Conference Photo */}
+          <div className="mb-16">
+            <Card className="overflow-hidden max-w-5xl mx-auto">
+              <div className="relative">
+                <img 
+                  src="@assets/image_1754672443814.png" 
+                  alt="Santiago Team at WFG Conference" 
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">WFG Leadership Conference</h3>
+                  <p className="text-lg opacity-90">Celebrating excellence and building the future of financial education</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Individual Team Members */}
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Our Professional Team</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              
+              {/* Nolly - Business Professional */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672358131.png" 
+                    alt="Nolly Santiago - Business Professional" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Nolly Santiago</h4>
+                  <p className="text-purple-600 text-sm font-medium mb-2">Strategic Leader</p>
+                  <p className="text-gray-600 text-sm">Financial systems &amp; client success</p>
+                </div>
+              </Card>
+
+              {/* Nolly - Executive Style */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672328811.png" 
+                    alt="Nolly Santiago - Executive" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-gray-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Nolly Santiago</h4>
+                  <p className="text-gray-600 text-sm font-medium mb-2">Executive Leadership</p>
+                  <p className="text-gray-600 text-sm">Vision &amp; strategic planning</p>
+                </div>
+              </Card>
+
+              {/* Team Member 1 */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672465415.png" 
+                    alt="Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Team Leader</h4>
+                  <p className="text-blue-600 text-sm font-medium mb-2">Client Relations</p>
+                  <p className="text-gray-600 text-sm">Family financial planning</p>
+                </div>
+              </Card>
+
+              {/* Team Member 2 */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672514059.png" 
+                    alt="Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Senior Advisor</h4>
+                  <p className="text-green-600 text-sm font-medium mb-2">Financial Education</p>
+                  <p className="text-gray-600 text-sm">Wealth building strategies</p>
+                </div>
+              </Card>
+
+              {/* Team Member 3 */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672497638.png" 
+                    alt="Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Business Consultant</h4>
+                  <p className="text-purple-600 text-sm font-medium mb-2">Growth Strategies</p>
+                  <p className="text-gray-600 text-sm">Business development</p>
+                </div>
+              </Card>
+
+              {/* Team Member 4 */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672534173.png" 
+                    alt="Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-orange-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Financial Specialist</h4>
+                  <p className="text-orange-600 text-sm font-medium mb-2">Investment Planning</p>
+                  <p className="text-gray-600 text-sm">Portfolio management</p>
+                </div>
+              </Card>
+
+              {/* Paul - Professional */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672399942.png" 
+                    alt="Paul Santiago - Professional" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Paul Santiago</h4>
+                  <p className="text-blue-600 text-sm font-medium mb-2">Founder &amp; Visionary</p>
+                  <p className="text-gray-600 text-sm">Leadership &amp; mentorship</p>
+                </div>
+              </Card>
+
+              {/* Nolly - Professional Headshot */}
+              <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-6">
+                  <img 
+                    src="@assets/image_1754672534173.png" 
+                    alt="Nolly Santiago - Close-up" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-pink-100"
+                  />
+                  <h4 className="font-bold text-gray-900 mb-1">Professional Excellence</h4>
+                  <p className="text-pink-600 text-sm font-medium mb-2">Client Success</p>
+                  <p className="text-gray-600 text-sm">Personalized guidance</p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Team Achievement Banner */}
+            <div className="mt-12 text-center">
+              <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-4">Why Choose The Santiago Team?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <div className="text-3xl font-bold mb-2">500+</div>
+                      <div className="text-blue-100">Families Served</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold mb-2">$50M+</div>
+                      <div className="text-blue-100">Assets Protected</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold mb-2">15+</div>
+                      <div className="text-blue-100">Years Experience</div>
+                    </div>
+                  </div>
+                  <p className="mt-6 text-blue-100">
+                    Our proven track record speaks for itself. Join hundreds of families who have transformed 
+                    their financial future with The Santiago Team's systematic approach to wealth building.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

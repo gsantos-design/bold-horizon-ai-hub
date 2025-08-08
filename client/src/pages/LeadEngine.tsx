@@ -298,9 +298,23 @@ Paul`,
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Santiago Lead Engine</h1>
-          <p className="text-gray-600 mt-2">Fast-track B2B outreach system for Nolly &amp; Paul Santiago</p>
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3">
+            <img 
+              src="@assets/image_1754672305240.png" 
+              alt="Nolly Santiago" 
+              className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
+            />
+            <img 
+              src="@assets/image_1754672375035.png" 
+              alt="Paul Santiago" 
+              className="w-16 h-16 rounded-full object-cover border-2 border-blue-200"
+            />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Santiago Lead Engine</h1>
+            <p className="text-gray-600 mt-2">Fast-track B2B outreach system for Nolly &amp; Paul Santiago</p>
+          </div>
         </div>
         
         <div className="flex gap-4 items-center">
