@@ -109,11 +109,16 @@ export default function AchievementNotificationContainer() {
 
   useEffect(() => {
     // Check for newly unlocked achievements
-    const newAchievements = progress.achievements.filter(achievement => 
-      achievement.unlocked && 
-      achievement.unlockedAt && 
-      achievement.unlockedAt.getTime() > lastCheckTime
-    );
+    const newAchievements = progress.achievements.filter(achievement => {
+      if (!achievement.unlocked || !achievement.unlockedAt) return false;
+      
+      // Handle both Date objects and date strings from localStorage
+      const unlockedTime = achievement.unlockedAt instanceof Date 
+        ? achievement.unlockedAt.getTime() 
+        : new Date(achievement.unlockedAt).getTime();
+        
+      return unlockedTime > lastCheckTime;
+    });
 
     if (newAchievements.length > 0) {
       newAchievements.forEach((achievement, index) => {
