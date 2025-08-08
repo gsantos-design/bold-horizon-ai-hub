@@ -2,6 +2,8 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText } from "l
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
+import newMember1Photo from "@assets/image_1754680424329.jpeg";
+import newMember2Photo from "@assets/image_1754680478408.jpeg";
 
 export default function AgentProfile() {
   const { t } = useLanguage();
@@ -56,10 +58,10 @@ export default function AgentProfile() {
             </div>
           </div>
 
-          {/* Team Member - Princhesca */}
+          {/* Team Members Section */}
           <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8 mb-12">
             <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
-              Featured Team Member
+              Santiago Team Members
             </h2>
             
             <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -115,6 +117,67 @@ export default function AgentProfile() {
                     <FileText className="h-4 w-4" />
                     <span className="text-sm font-medium">Bookkeeping Services</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Team Members */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* New Team Member 1 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-100">
+              <div className="text-center mb-4">
+                <div className="relative mb-4">
+                  <img 
+                    src={newMember1Photo} 
+                    alt="Santiago Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20"></div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
+                <p className="text-blue-600 font-semibold mb-2">Licensed WFG Associate</p>
+                <p className="text-gray-700 text-sm">
+                  Dedicated to helping families understand financial opportunities and build secure futures through education and professional guidance.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2 text-blue-700">
+                  <Building className="h-4 w-4" />
+                  <span className="text-sm font-medium">Financial Education</span>
+                </div>
+                <div className="flex items-center space-x-2 text-blue-700">
+                  <FileText className="h-4 w-4" />
+                  <span className="text-sm font-medium">Career Development</span>
+                </div>
+              </div>
+            </div>
+
+            {/* New Team Member 2 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-100">
+              <div className="text-center mb-4">
+                <div className="relative mb-4">
+                  <img 
+                    src={newMember2Photo} 
+                    alt="Santiago Team Member" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg border-4 border-emerald-200"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/20 to-teal-400/20"></div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
+                <p className="text-emerald-600 font-semibold mb-2">Licensed WFG Associate</p>
+                <p className="text-gray-700 text-sm">
+                  Committed to empowering individuals through financial literacy and helping them discover pathways to financial independence.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2 text-emerald-700">
+                  <Building className="h-4 w-4" />
+                  <span className="text-sm font-medium">Client Education</span>
+                </div>
+                <div className="flex items-center space-x-2 text-emerald-700">
+                  <FileText className="h-4 w-4" />
+                  <span className="text-sm font-medium">Professional Development</span>
                 </div>
               </div>
             </div>

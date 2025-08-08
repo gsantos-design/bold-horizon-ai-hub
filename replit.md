@@ -5,6 +5,8 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 ## Recent v12 Enhancements (August 2025)
 - **AI Career Mentor Chatbot**: Full implementation with emotional intelligence, mentor personalities (Nolly Santiago, Paul Santiago, Santiago Team), OpenAI GPT-4o integration
 - **Team Member Profiles**: Added Princhesca Rainier Turner profile with professional bio and services
+- **Extended Team Roster**: Added two additional Licensed WFG Associates to the Santiago Team with professional photos and service descriptions
+- **WFG Compliance Implementation**: Comprehensive compliance overhaul following official WFG Social Media Guidelines including proper disclaimers, educational focus, and professional title corrections
 - **Deal Amount Estimator**: Advanced revenue prediction based on lead profile, company data, industry, and geographic factors
 - **Enhanced HubSpot Import**: Automatic deal value calculation and probability scoring for imported leads
 - **Enhanced Security**: HMAC verification for Calendly webhooks to prevent unauthorized access
