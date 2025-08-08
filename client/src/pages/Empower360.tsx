@@ -86,7 +86,7 @@ export default function Empower360() {
                 <div className="text-center">
                   <div className="relative mb-6">
                     <img 
-                      src="@assets/image_1754672305240.png" 
+                      src="/nolly-santiago.png" 
                       alt="Nolly Santiago" 
                       className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-purple-200"
                     />
@@ -105,7 +105,7 @@ export default function Empower360() {
                 <div className="text-center">
                   <div className="relative mb-6">
                     <img 
-                      src="@assets/image_1754672375035.png" 
+                      src="/paul-santiago.png" 
                       alt="Paul Santiago" 
                       className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
                     />
@@ -210,7 +210,7 @@ export default function Empower360() {
             <Card className="overflow-hidden max-w-5xl mx-auto">
               <div className="relative">
                 <img 
-                  src="@assets/image_1754672443814.png" 
+                  src="/empower360-hero.png" 
                   alt="Santiago Team at WFG Conference" 
                   className="w-full h-96 object-cover"
                 />
@@ -232,7 +232,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672358131.png" 
+                    src="/vision-image.png" 
                     alt="Nolly Santiago - Business Professional" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-100"
                   />
@@ -246,7 +246,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672328811.png" 
+                    src="/mission-image.png" 
                     alt="Nolly Santiago - Executive" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-gray-100"
                   />
@@ -260,7 +260,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672465415.png" 
+                    src="/values-image.png" 
                     alt="Team Member" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-100"
                   />
@@ -274,7 +274,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672514059.png" 
+                    src="/growth-image.png" 
                     alt="Team Member" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-100"
                   />
@@ -288,7 +288,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672497638.png" 
+                    src="/mentorship-image.png" 
                     alt="Team Member" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-100"
                   />
@@ -302,7 +302,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672534173.png" 
+                    src="/community-image.png" 
                     alt="Team Member" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-orange-100"
                   />
@@ -316,7 +316,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672399942.png" 
+                    src="/success-image.png" 
                     alt="Paul Santiago - Professional" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-100"
                   />
@@ -330,7 +330,7 @@ export default function Empower360() {
               <Card className="text-center overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <img 
-                    src="@assets/image_1754672534173.png" 
+                    src="/community-image.png" 
                     alt="Nolly Santiago - Close-up" 
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-pink-100"
                   />

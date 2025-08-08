@@ -58,14 +58,23 @@ export default function AboutUs() {
             <div className="w-full md:w-1/2 h-full bg-gradient-to-br from-blue-800/20 to-indigo-600/10 flex items-center justify-center p-6">
               <div className="relative overflow-hidden rounded-xl shadow-lg border-4 border-white/90">
                 {/* Instructions for manually adding the image */}
-                <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl text-center border border-blue-100 absolute inset-0 flex flex-col items-center justify-center">
+                <div className="relative mb-6">
+                  <img 
+                    src="/nolly-santiago.png" 
+                    alt="Nolly Santiago" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-purple-200 shadow-lg"
+                  />
+                  <img 
+                    src="/paul-santiago.png" 
+                    alt="Paul Santiago" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-200 shadow-lg -mt-16 ml-16"
+                  />
+                </div>
+                <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl text-center border border-blue-100">
                   <h4 className="text-primary font-bold">Nolly and Paul Santiago</h4>
                   <p className="text-sm text-gray-700">Team Leaders</p>
                   <p className="text-xs italic mt-2 text-primary/70">
-                    Manual Image Integration:<br/>
-                    1. Place your image in the "public" folder<br/>
-                    2. Update this component to use that image path<br/>
-                    3. Example: src="/yourimage.jpg"
+                    Empowering families to achieve financial freedom through proven WFG strategies and team building.
                   </p>
                   <div className="mt-3 text-xs text-blue-500 flex justify-center gap-1">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>

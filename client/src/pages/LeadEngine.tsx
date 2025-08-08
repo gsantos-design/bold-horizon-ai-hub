@@ -303,12 +303,12 @@ Paul`,
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             <img 
-              src="@assets/image_1754672305240.png" 
+              src="/nolly-santiago.png" 
               alt="Nolly Santiago" 
               className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
             />
             <img 
-              src="@assets/image_1754672375035.png" 
+              src="/paul-santiago.png" 
               alt="Paul Santiago" 
               className="w-16 h-16 rounded-full object-cover border-2 border-blue-200"
             />

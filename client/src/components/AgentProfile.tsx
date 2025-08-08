@@ -23,7 +23,7 @@ export default function AgentProfile() {
               <div className="text-center">
                 <div className="relative mb-4">
                   <img 
-                    src="@assets/image_1754672305240.png" 
+                    src="/nolly-santiago.png" 
                     alt="Nolly Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg border-4 border-purple-200"
                   />
@@ -40,7 +40,7 @@ export default function AgentProfile() {
               <div className="text-center">
                 <div className="relative mb-4">
                   <img 
-                    src="@assets/image_1754672375035.png" 
+                    src="/paul-santiago.png" 
                     alt="Paul Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
                   />
