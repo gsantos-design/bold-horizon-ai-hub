@@ -8,6 +8,8 @@ import LeadBoard from "@/pages/LeadBoard";
 import AdminOwners from "@/pages/AdminOwners";
 import Empower360 from "@/pages/Empower360";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { ProgressProvider } from "@/lib/ProgressContext";
+import AchievementNotificationContainer from "@/components/AchievementNotification";
 
 function Router() {
   return (
@@ -28,6 +30,7 @@ function AppContent() {
     <>
       <Toaster />
       <Router />
+      <AchievementNotificationContainer />
     </>
   );
 }
@@ -35,9 +38,11 @@ function AppContent() {
 function App() {
   return (
     <LanguageProvider>
-      <TooltipProvider>
-        <AppContent />
-      </TooltipProvider>
+      <ProgressProvider>
+        <TooltipProvider>
+          <AppContent />
+        </TooltipProvider>
+      </ProgressProvider>
     </LanguageProvider>
   );
 }

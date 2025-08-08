@@ -2,11 +2,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, GraduationCap, Brain, ArrowRight, PlayCircle, Star } from "lucide-react";
+import { TrendingUp, GraduationCap, Brain, ArrowRight, PlayCircle, Star, Award, Users2, Target, Trophy, Zap } from "lucide-react";
 import MultiHandedIncome from "@/components/MultiHandedIncome";
 import FinancialEducationModule from "@/components/FinancialEducationModule";
 import SelfImprovementModule from "@/components/SelfImprovementModule";
 import { useLanguage } from "@/lib/LanguageContext";
+import GamificationDashboard from "@/components/GamificationDashboard";
 
 export default function Empower360() {
   const { t } = useLanguage();
@@ -63,15 +64,28 @@ export default function Empower360() {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="mb-8">
             <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
-              The Santiago Team Presents
+              Led by Nolly & Paul Santiago
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
               Empower360
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
-              Experience the <strong>New Art of Living</strong> through our three empowering philosophies: 
+              Experience the <strong>New Art of Living</strong> through Nolly and Paul Santiago's proven three-pillar system: 
               Multi-Handed Income, Financial Education, and Self-Improvement
             </p>
+            
+            {/* Leadership Introduction */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto mb-8 border border-purple-200">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <Users2 className="h-8 w-8 text-purple-600" />
+                <h3 className="text-2xl font-bold text-gray-900">Meet Your Leaders</h3>
+              </div>
+              <p className="text-gray-700 text-center leading-relaxed">
+                <strong>Nolly and Paul Santiago</strong> have transformed thousands of lives through The Santiago Team's 
+                proven system. As WFG leaders, they've built a legacy of empowering families to achieve financial 
+                freedom through systematic approaches to wealth building, education, and personal growth.
+              </p>
+            </div>
           </div>
 
           {/* Philosophy Overview Cards */}
@@ -121,6 +135,11 @@ export default function Empower360() {
                 Speak with Nolly
               </Button>
             </div>
+          </div>
+          
+          {/* Gamification Dashboard */}
+          <div className="max-w-6xl mx-auto mt-12">
+            <GamificationDashboard />
           </div>
         </div>
       </section>
@@ -178,8 +197,8 @@ export default function Empower360() {
               Ready to Master The New Art of Living?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Join the Santiago Team and thousands of others who have transformed their lives through 
-              multi-handed income, financial education, and self-improvement.
+              Join Nolly and Paul Santiago's team and thousands of others who have transformed their lives through 
+              the proven three-pillar system of multi-handed income, financial education, and self-improvement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

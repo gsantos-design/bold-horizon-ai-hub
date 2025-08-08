@@ -7,12 +7,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Users, Building, Calculator, PlayCircle } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProgress } from "@/lib/ProgressContext";
 
 export default function MultiHandedIncome() {
   const { t } = useLanguage();
+  const { markModuleStarted, markCalculatorUsed, markWorkshopCompleted } = useProgress();
   const [currentIncome, setCurrentIncome] = useState<number>(5000);
   const [systemFactor, setSystemFactor] = useState<number>(3);
   const [timeframe, setTimeframe] = useState<number>(2);
+  const [hasStartedModule, setHasStartedModule] = useState(false);
+  
+  // Track module start
+  if (!hasStartedModule) {
+    markModuleStarted("multi-handed-income");
+    setHasStartedModule(true);
+  }
 
   const calculateProjections = () => {
     const monthly = currentIncome;
@@ -126,7 +135,10 @@ export default function MultiHandedIncome() {
                         id="current-income"
                         type="number"
                         value={currentIncome}
-                        onChange={(e) => setCurrentIncome(Number(e.target.value))}
+                        onChange={(e) => {
+                          setCurrentIncome(Number(e.target.value));
+                          markCalculatorUsed("income-multiplier");
+                        }}
                         className="mt-1"
                       />
                     </div>
@@ -247,6 +259,7 @@ export default function MultiHandedIncome() {
                       <Button 
                         className="w-full" 
                         variant={module.completed ? "outline" : "default"}
+                        onClick={() => markWorkshopCompleted(`workshop-${index}`)}
                       >
                         <PlayCircle className="h-4 w-4 mr-2" />
                         {module.completed ? "Review" : "Start Module"}

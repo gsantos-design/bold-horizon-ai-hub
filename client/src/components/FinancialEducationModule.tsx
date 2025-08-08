@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { PiggyBank, TrendingUp, Shield, Calculator, Target, BookOpen } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProgress } from "@/lib/ProgressContext";
 
 interface BudgetItem {
   name: string;
@@ -17,6 +18,14 @@ interface BudgetItem {
 
 export default function FinancialEducationModule() {
   const { t } = useLanguage();
+  const { markModuleStarted, markCalculatorUsed, markWorkshopCompleted } = useProgress();
+  const [hasStartedModule, setHasStartedModule] = useState(false);
+  
+  // Track module start
+  if (!hasStartedModule) {
+    markModuleStarted("financial-education");
+    setHasStartedModule(true);
+  }
   
   // Budget Simulator State
   const [monthlyIncome, setMonthlyIncome] = useState(5000);
@@ -229,7 +238,10 @@ export default function FinancialEducationModule() {
                         id="monthly-income"
                         type="number"
                         value={monthlyIncome}
-                        onChange={(e) => setMonthlyIncome(Number(e.target.value))}
+                        onChange={(e) => {
+                          setMonthlyIncome(Number(e.target.value));
+                          markCalculatorUsed("budget-simulator");
+                        }}
                         className="mt-1"
                       />
                     </div>
@@ -335,7 +347,10 @@ export default function FinancialEducationModule() {
                           id="principal"
                           type="number"
                           value={principal}
-                          onChange={(e) => setPrincipal(Number(e.target.value))}
+                          onChange={(e) => {
+                            setPrincipal(Number(e.target.value));
+                            markCalculatorUsed("compound-interest");
+                          }}
                         />
                       </div>
                       <div>

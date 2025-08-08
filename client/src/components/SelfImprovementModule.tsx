@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Brain, Target, Lightbulb, Eye, Heart, Star } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useProgress } from "@/lib/ProgressContext";
 
 interface QuizQuestion {
   id: string;
@@ -27,6 +28,20 @@ interface VisionBoardItem {
 
 export default function SelfImprovementModule() {
   const { t } = useLanguage();
+  const { 
+    markModuleStarted, 
+    markQuizTaken, 
+    addVisionItem: trackVisionItem, 
+    addGratitudeEntry: trackGratitudeEntry,
+    recordConfidenceAssessment 
+  } = useProgress();
+  const [hasStartedModule, setHasStartedModule] = useState(false);
+  
+  // Track module start
+  if (!hasStartedModule) {
+    markModuleStarted("self-improvement");
+    setHasStartedModule(true);
+  }
   
   // Lens of Life Quiz State
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -141,12 +156,14 @@ export default function SelfImprovementModule() {
     const result = positiveCount >= negativeCount ? "positive" : "negative";
     setQuizResult(result);
     setQuizCompleted(true);
+    markQuizTaken("lens-of-life");
   };
 
   const addGratitudeEntry = () => {
     if (newGratitude.trim()) {
       setGratitudeEntries(prev => [...prev, newGratitude.trim()]);
       setNewGratitude("");
+      trackGratitudeEntry();
     }
   };
 
@@ -162,6 +179,7 @@ export default function SelfImprovementModule() {
       setVisionItems(prev => [...prev, newItem]);
       setNewVisionTitle("");
       setNewVisionDescription("");
+      trackVisionItem();
     }
   };
 
@@ -397,7 +415,10 @@ export default function SelfImprovementModule() {
                           min="1"
                           max="10"
                           value={confidenceLevel}
-                          onChange={(e) => setConfidenceLevel(Number(e.target.value))}
+                          onChange={(e) => {
+                            setConfidenceLevel(Number(e.target.value));
+                            recordConfidenceAssessment();
+                          }}
                           className="w-full"
                         />
                         <div className="flex justify-between text-sm text-gray-500">
