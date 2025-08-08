@@ -14,7 +14,13 @@ import {
   type UpdateLead,
   roundRobinConfig,
   type RoundRobinConfig,
-  type InsertRoundRobinConfig
+  type InsertRoundRobinConfig,
+  chatSessions,
+  chatMessages,
+  type ChatSession,
+  type ChatMessage,
+  type InsertChatSession,
+  type InsertChatMessage
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, desc } from "drizzle-orm";
@@ -51,6 +57,14 @@ export interface IStorage {
   getRoundRobinConfig(): Promise<RoundRobinConfig | undefined>;
   updateRoundRobinConfig(config: InsertRoundRobinConfig): Promise<RoundRobinConfig>;
   getNextOwner(): Promise<string | undefined>;
+  
+  // AI Career Mentor chat operations
+  createChatSession(session: InsertChatSession): Promise<ChatSession>;
+  getChatSession(sessionId: string): Promise<ChatSession | undefined>;
+  updateChatSession(sessionId: string, updates: Partial<InsertChatSession>): Promise<ChatSession | undefined>;
+  createChatMessage(message: InsertChatMessage): Promise<ChatMessage>;
+  getChatMessages(sessionId: string, limit?: number): Promise<ChatMessage[]>;
+  getChatSessionsByEmail(email: string): Promise<ChatSession[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -182,6 +196,45 @@ export class DatabaseStorage implements IStorage {
 
   async getAllLeads(): Promise<Lead[]> {
     return await db.select().from(leads).orderBy(desc(leads.createdAt));
+  }
+
+  // AI Career Mentor chat operations
+  async createChatSession(sessionData: InsertChatSession): Promise<ChatSession> {
+    const [session] = await db.insert(chatSessions).values(sessionData).returning();
+    return session;
+  }
+
+  async getChatSession(sessionId: string): Promise<ChatSession | undefined> {
+    const [session] = await db.select().from(chatSessions).where(eq(chatSessions.sessionId, sessionId));
+    return session;
+  }
+
+  async updateChatSession(sessionId: string, updates: Partial<InsertChatSession>): Promise<ChatSession | undefined> {
+    const [updated] = await db.update(chatSessions)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(chatSessions.sessionId, sessionId))
+      .returning();
+    return updated;
+  }
+
+  async createChatMessage(messageData: InsertChatMessage): Promise<ChatMessage> {
+    const [message] = await db.insert(chatMessages).values(messageData).returning();
+    return message;
+  }
+
+  async getChatMessages(sessionId: string, limit: number = 50): Promise<ChatMessage[]> {
+    return await db.select()
+      .from(chatMessages)
+      .where(eq(chatMessages.sessionId, sessionId))
+      .orderBy(desc(chatMessages.createdAt))
+      .limit(limit);
+  }
+
+  async getChatSessionsByEmail(email: string): Promise<ChatSession[]> {
+    return await db.select()
+      .from(chatSessions)
+      .where(eq(chatSessions.userEmail, email))
+      .orderBy(desc(chatSessions.updatedAt));
   }
 }
 

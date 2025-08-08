@@ -68,6 +68,31 @@ export const leads = pgTable("leads", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+// AI Career Mentor Chatbot Schema
+export const chatSessions = pgTable("chat_sessions", {
+  id: serial("id").primaryKey(),
+  sessionId: text("session_id").notNull().unique(),
+  userEmail: text("user_email"),
+  userName: text("user_name"),
+  currentTopic: text("current_topic"), // "career_guidance", "financial_planning", "emotional_support", etc.
+  emotionalState: text("emotional_state"), // "confident", "anxious", "excited", "uncertain", etc.
+  userProfile: jsonb("user_profile"), // Stores career goals, background, preferences
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const chatMessages = pgTable("chat_messages", {
+  id: serial("id").primaryKey(),
+  sessionId: text("session_id").notNull(),
+  role: text("role").notNull(), // "user", "assistant", "system"
+  content: text("content").notNull(),
+  emotionalTone: text("emotional_tone"), // Detected emotion in message
+  followUpActions: text("follow_up_actions").array(), // Suggested next steps
+  mentorPersonality: text("mentor_personality"), // "nolly", "paul", "balanced"
+  metadata: jsonb("metadata"), // Additional context, sentiment scores, etc.
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 export const roundRobinConfig = pgTable("round_robin_config", {
   id: serial("id").primaryKey(),
   ownerEmails: text("owner_emails").array().notNull().default([]),
@@ -137,3 +162,23 @@ export type InsertLead = z.infer<typeof insertLeadSchema>;
 export type UpdateLead = z.infer<typeof updateLeadSchema>;
 export type RoundRobinConfig = typeof roundRobinConfig.$inferSelect;
 export type InsertRoundRobinConfig = z.infer<typeof roundRobinConfigSchema>;
+
+// AI Career Mentor Types
+export type ChatSession = typeof chatSessions.$inferSelect;
+export type InsertChatSession = typeof chatSessions.$inferInsert;
+export type ChatMessage = typeof chatMessages.$inferSelect;
+export type InsertChatMessage = typeof chatMessages.$inferInsert;
+
+// AI Career Mentor Validation Schemas
+export const chatMessageSchema = z.object({
+  sessionId: z.string(),
+  content: z.string().min(1),
+  userProfile: z.object({
+    name: z.string().optional(),
+    email: z.string().email().optional(),
+    careerStage: z.string().optional(),
+    goals: z.array(z.string()).optional(),
+  }).optional(),
+});
+
+export type ChatMessageInput = z.infer<typeof chatMessageSchema>;

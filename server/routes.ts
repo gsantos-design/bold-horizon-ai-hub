@@ -8,9 +8,12 @@ import {
   insertLeadSchema,
   updateLeadSchema,
   roundRobinConfigSchema,
-  type QuizResults 
+  chatMessageSchema,
+  type QuizResults,
+  type ChatMessageInput 
 } from "@shared/schema";
 import { generateCareerRecommendation } from "./openai";
+import { generateMentorResponse, generateWelcomeMessage, suggestMentorPersonality } from "./aiCareerMentor";
 import { z } from "zod";
 import { 
   findContactByEmail, 
@@ -992,7 +995,172 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // AI Career Mentor API Routes
+  
+  // Start a new chat session or get existing session
+  app.post("/api/ai-mentor/session", async (req, res) => {
+    try {
+      const { userEmail, userName, userProfile } = req.body;
+      
+      // Generate unique session ID
+      const sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      // Create new chat session
+      const session = await storage.createChatSession({
+        sessionId,
+        userEmail,
+        userName,
+        currentTopic: 'career_guidance',
+        emotionalState: 'neutral',
+        userProfile: userProfile || {}
+      });
 
+      // Generate welcome message
+      const welcomeMessage = generateWelcomeMessage(userProfile, 'balanced');
+      
+      // Save welcome message
+      await storage.createChatMessage({
+        sessionId,
+        role: 'assistant',
+        content: welcomeMessage,
+        emotionalTone: 'welcoming',
+        followUpActions: ['career_assessment', 'goal_setting', 'team_introduction'],
+        mentorPersonality: 'balanced',
+        metadata: { messageType: 'welcome', timestamp: new Date().toISOString() }
+      });
+      
+      res.json({ 
+        session,
+        welcomeMessage,
+        success: true 
+      });
+    } catch (error) {
+      console.error('Error creating chat session:', error);
+      res.status(500).json({ message: 'Failed to create chat session' });
+    }
+  });
+
+  // Send message to AI Career Mentor
+  app.post("/api/ai-mentor/chat", async (req, res) => {
+    try {
+      const validatedInput = chatMessageSchema.parse(req.body);
+      const { sessionId, content, userProfile } = validatedInput;
+      
+      // Get existing session
+      const session = await storage.getChatSession(sessionId);
+      if (!session) {
+        return res.status(404).json({ message: 'Chat session not found' });
+      }
+
+      // Save user message
+      await storage.createChatMessage({
+        sessionId,
+        role: 'user',
+        content,
+        emotionalTone: 'neutral',
+        followUpActions: [],
+        mentorPersonality: 'balanced',
+        metadata: { timestamp: new Date().toISOString() }
+      });
+
+      // Get recent chat history
+      const chatHistory = await storage.getChatMessages(sessionId, 10);
+      
+      // Suggest mentor personality based on message content
+      const suggestedPersonality = suggestMentorPersonality(content, userProfile);
+      
+      // Generate AI response with emotional intelligence
+      const mentorResponse = await generateMentorResponse(
+        content,
+        chatHistory.reverse(), // Reverse to get chronological order
+        userProfile,
+        suggestedPersonality
+      );
+
+      // Save AI response
+      const aiMessage = await storage.createChatMessage({
+        sessionId,
+        role: 'assistant',
+        content: mentorResponse.content,
+        emotionalTone: mentorResponse.emotionalTone,
+        followUpActions: mentorResponse.followUpActions,
+        mentorPersonality: mentorResponse.mentorPersonality,
+        metadata: mentorResponse.metadata
+      });
+
+      // Update session with latest emotional state and topic
+      await storage.updateChatSession(sessionId, {
+        emotionalState: mentorResponse.emotionalTone,
+        currentTopic: mentorResponse.metadata.nextSteps || session.currentTopic,
+        userProfile: userProfile || session.userProfile
+      });
+
+      res.json({
+        message: aiMessage,
+        emotionalInsights: mentorResponse.metadata.emotionalAnalysis,
+        followUpActions: mentorResponse.followUpActions,
+        success: true
+      });
+
+    } catch (error) {
+      console.error('Error processing chat message:', error);
+      
+      // Return fallback response
+      res.status(500).json({ 
+        message: {
+          content: "I apologize, but I'm having trouble processing your message right now. Please try again, or feel free to schedule a direct consultation with our team.",
+          role: 'assistant',
+          emotionalTone: 'apologetic'
+        },
+        fallback: true
+      });
+    }
+  });
+
+  // Get chat history for a session
+  app.get("/api/ai-mentor/history/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const limit = parseInt(req.query.limit as string) || 50;
+      
+      const session = await storage.getChatSession(sessionId);
+      if (!session) {
+        return res.status(404).json({ message: 'Chat session not found' });
+      }
+
+      const messages = await storage.getChatMessages(sessionId, limit);
+      
+      res.json({
+        session,
+        messages: messages.reverse(), // Return in chronological order
+        success: true
+      });
+    } catch (error) {
+      console.error('Error retrieving chat history:', error);
+      res.status(500).json({ message: 'Failed to retrieve chat history' });
+    }
+  });
+
+  // Get user's chat sessions
+  app.get("/api/ai-mentor/sessions", async (req, res) => {
+    try {
+      const userEmail = req.query.email as string;
+      
+      if (!userEmail) {
+        return res.status(400).json({ message: 'User email required' });
+      }
+
+      const sessions = await storage.getChatSessionsByEmail(userEmail);
+      
+      res.json({
+        sessions,
+        success: true
+      });
+    } catch (error) {
+      console.error('Error retrieving user sessions:', error);
+      res.status(500).json({ message: 'Failed to retrieve sessions' });
+    }
+  });
 
   const httpServer = createServer(app);
 
