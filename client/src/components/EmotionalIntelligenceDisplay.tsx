@@ -37,7 +37,7 @@ const mentorStyles = {
     description: "Visionary & Strategic"
   },
   santiago_team: {
-    name: "Santiago Team",
+    name: "Nolly & Paul's Office",
     style: "bg-emerald-50 border-emerald-200 text-emerald-800",
     description: "Balanced Expertise"
   }

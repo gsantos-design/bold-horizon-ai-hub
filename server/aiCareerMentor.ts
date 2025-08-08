@@ -22,11 +22,11 @@ const MENTOR_PERSONALITIES = {
     greeting: "Hello! I'm Paul Santiago, Licensed WFG Associate. I'm excited to help you unlock your potential and explore career opportunities. What can we discuss together?"
   },
   santiago_team: {
-    name: "Santiago Team AI Mentor",
+    name: "Nolly & Paul's Office AI Mentor",
     style: "balanced approach combining both Nolly and Paul Santiago's educational expertise",
-    expertise: "career exploration, educational resources, professional development under dual Santiago Team leadership",
+    expertise: "career exploration, educational resources, professional development from Nolly & Paul's office",
     tone: "professional, supportive, adaptable",
-    greeting: "Welcome! I'm your AI Career Mentor, combining the educational expertise of both Nolly and Paul Santiago, Licensed WFG Associates. I'm here to provide educational guidance for your career exploration. How can I help you today?"
+    greeting: "Welcome to Nolly & Paul's Office! I'm your AI Career Mentor, combining the educational expertise of both Nolly and Paul Santiago, Licensed WFG Associates. I'm here to provide educational guidance for your career exploration. How can I help you today?"
   }
 };
 
@@ -156,10 +156,10 @@ export async function generateMentorResponse(
     
     // Fallback response with emotional awareness
     const fallbackContent = emotionalAnalysis.emotion === "anxious" || emotionalAnalysis.emotion === "overwhelmed"
-      ? "I understand this can feel overwhelming. Let's take it one step at a time. The Santiago Team is here to support you through your career journey. What's the most important thing you'd like to focus on right now?"
+      ? "I understand this can feel overwhelming. Let's take it one step at a time. Nolly & Paul's office is here to support you through your career journey. What's the most important thing you'd like to focus on right now?"
       : emotionalAnalysis.emotion === "excited" || emotionalAnalysis.emotion === "motivated"
       ? "I love your enthusiasm! That energy will serve you well in building your career. Let's channel that motivation into a clear action plan. What specific area would you like to explore first?"
-      : "I'm here to help guide you through your career journey with the Santiago Team. Every successful person started exactly where you are now. What would you like to discuss about your future?";
+      : "I'm here to help guide you through your career journey from Nolly & Paul's office. Every successful person started exactly where you are now. What would you like to discuss about your future?";
 
     return {
       content: fallbackContent,
@@ -187,10 +187,10 @@ export function generateWelcomeMessage(
   const mentor = MENTOR_PERSONALITIES[mentorPersonality];
   
   if (userProfile.name) {
-    return `${mentor.greeting.replace("Hi!", `Hi ${userProfile.name}!`)} I'm excited to learn about your career goals and help you create a path to success. What brought you here today?`;
+    return `${mentor.greeting.replace("Hi!", `Hi ${userProfile.name}!`)} I'm excited to learn about your career goals and help you create a path to success. What brought you to our office today?`;
   }
   
-  return `${mentor.greeting} I'm excited to learn about your career goals and help you create a path to success. What brought you here today?`;
+  return `${mentor.greeting} I'm excited to learn about your career goals and help you create a path to success. What brought you to our office today?`;
 }
 
 // Suggest mentor personality based on user input
