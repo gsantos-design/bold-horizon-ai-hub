@@ -1,6 +1,7 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
 
 export default function AgentProfile() {
   const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function AgentProfile() {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               THE SANTIAGO TEAM
             </h1>
-            <p className="text-xl text-gray-600 mb-2">Nolly &amp; Paul Santiago</p>
+            <p className="text-xl text-gray-600 mb-2">Nolly &amp; Paul Santiago - Team Leaders</p>
             <p className="text-lg font-semibold text-blue-600 mb-8">Empowering Families Through The New Art of Living</p>
             
             {/* Leadership Photos */}
@@ -51,6 +52,70 @@ export default function AgentProfile() {
                 <p className="text-gray-700 max-w-xs">
                   Focused on building sustainable income systems and personal development
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Team Member - Princhesca */}
+          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8 mb-12">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+              Featured Team Member
+            </h2>
+            
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* Princhesca Photo */}
+              <div className="text-center lg:text-left">
+                <div className="relative mb-4">
+                  <img 
+                    src={princhescaPhoto} 
+                    alt="Princhesca Rainier Turner" 
+                    className="w-48 h-48 mx-auto lg:mx-0 rounded-lg object-cover shadow-lg border-4 border-emerald-200"
+                  />
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-emerald-400/20 to-teal-400/20"></div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Princhesca Rainier Turner</h3>
+                <p className="text-emerald-600 font-semibold mb-2">Licensed Life Insurance Agent</p>
+                <p className="text-gray-700 font-medium">Owner, Rainier Tax Services LLC</p>
+              </div>
+              
+              {/* Princhesca Bio */}
+              <div className="flex-1">
+                <div className="bg-white rounded-lg p-6 shadow-md">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Princhesca Rainier Turner is a Licensed Life Insurance Agent and the owner of Rainier Tax Services LLC. 
+                    With more than 10 years of experience in financial services, she specializes in life insurance and annuities, 
+                    personal and business tax planning and preparation, bookkeeping, and LLC formation.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Her mission is to empower families, small business owners, and young professionals through financial 
+                    education and customized solutions. Before entering the financial industry, Princhesca built a strong 
+                    foundation in telecommunications, excelling in customer service, project management, and sales leadership.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Rainier Tax Services was originally founded by her father in the 1990s. After his passing in 2018, 
+                    Princhesca proudly took over the business to continue his legacy of service and integrity.
+                  </p>
+                </div>
+                
+                {/* Services Offered */}
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  <div className="flex items-center space-x-2 text-emerald-700">
+                    <Building className="h-4 w-4" />
+                    <span className="text-sm font-medium">Life Insurance & Annuities</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-emerald-700">
+                    <FileText className="h-4 w-4" />
+                    <span className="text-sm font-medium">Tax Preparation</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-emerald-700">
+                    <Building className="h-4 w-4" />
+                    <span className="text-sm font-medium">Business Formation</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-emerald-700">
+                    <FileText className="h-4 w-4" />
+                    <span className="text-sm font-medium">Bookkeeping Services</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
