@@ -14,19 +14,19 @@ const MENTOR_PERSONALITIES = {
     tone: "warm, encouraging, practical",
     greeting: "Hi! I'm Nolly Santiago, Licensed WFG Associate. I'm here to help you explore career opportunities and financial education. What questions can I help you with today?"
   },
-  paul: {
-    name: "Paul Santiago",
+  pablo: {
+    name: "Pablo Santiago",
     style: "visionary, strategic, inspirational",
     expertise: "leadership development, career planning, personal development",
     tone: "confident, motivating, forward-thinking",
-    greeting: "Hello! I'm Paul Santiago, Licensed WFG Associate. I'm excited to help you unlock your potential and explore career opportunities. What can we discuss together?"
+    greeting: "Hello! I'm Pablo Santiago, Licensed WFG Associate. I'm excited to help you unlock your potential and explore career opportunities. What can we discuss together?"
   },
   santiago_team: {
-    name: "Nolly & Paul's Office AI Mentor",
-    style: "balanced approach combining both Nolly and Paul Santiago's educational expertise",
-    expertise: "career exploration, educational resources, professional development from Nolly & Paul's office",
+    name: "Pablo & Nolly's Office AI Mentor",
+    style: "balanced approach combining both Pablo and Nolly Santiago's educational expertise",
+    expertise: "career exploration, educational resources, professional development from Pablo & Nolly's office",
     tone: "professional, supportive, adaptable",
-    greeting: "Welcome to Nolly & Paul's Office! I'm your AI Career Mentor, combining the educational expertise of both Nolly and Paul Santiago, Licensed WFG Associates. I'm here to provide educational guidance for your career exploration. How can I help you today?"
+    greeting: "Welcome to Pablo & Nolly's Office! I'm your AI Career Mentor, combining the educational expertise of both Pablo and Nolly Santiago, Licensed WFG Associates. I'm here to provide educational guidance for your career exploration. How can I help you today?"
   }
 };
 
@@ -161,10 +161,10 @@ export async function generateMentorResponse(
     
     // Fallback response with emotional awareness
     const fallbackContent = emotionalAnalysis.emotion === "anxious" || emotionalAnalysis.emotion === "overwhelmed"
-      ? "I understand this can feel overwhelming. Let's take it one step at a time. Nolly & Paul's office is here to support you through your career journey. What's the most important thing you'd like to focus on right now?"
+      ? "I understand this can feel overwhelming. Let's take it one step at a time. Pablo & Nolly's office is here to support you through your career journey. What's the most important thing you'd like to focus on right now?"
       : emotionalAnalysis.emotion === "excited" || emotionalAnalysis.emotion === "motivated"
       ? "I love your enthusiasm! That energy will serve you well in building your career. Let's channel that motivation into a clear action plan. What specific area would you like to explore first?"
-      : "I'm here to help guide you through your career journey from Nolly & Paul's office. Every successful person started exactly where you are now. What would you like to discuss about your future?";
+      : "I'm here to help guide you through your career journey from Pablo & Nolly's office. Every successful person started exactly where you are now. What would you like to discuss about your future?";
 
     return {
       content: fallbackContent,
@@ -208,12 +208,12 @@ export function suggestMentorPersonality(userMessage: string, userProfile: any =
   }
   
   if (message.includes("leadership") || message.includes("vision") || message.includes("team") || message.includes("inspire") || message.includes("growth")) {
-    return "paul";
+    return "pablo";
   }
   
   // Check user profile for preferences
   if (userProfile.careerStage === "management" || userProfile.goals?.includes("leadership")) {
-    return "paul";
+    return "pablo";
   }
   
   if (userProfile.careerStage === "planning" || userProfile.goals?.includes("financial_planning")) {

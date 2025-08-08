@@ -46,7 +46,7 @@ export default function AboutUs() {
             About The Santiago Team
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
-            Led by Paul and Nolly Santiago, we're dedicated to empowering individuals with 
+            Led by Pablo and Nolly Santiago, we're dedicated to empowering individuals with 
             financial education and opportunities that transform lives.
           </p>
         </div>
@@ -65,13 +65,13 @@ export default function AboutUs() {
                     className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-purple-200 shadow-lg"
                   />
                   <img 
-                    src="/paul-santiago.png" 
-                    alt="Paul Santiago" 
+                    src="/pablo-santiago.png" 
+                    alt="Pablo Santiago" 
                     className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-200 shadow-lg -mt-16 ml-16"
                   />
                 </div>
                 <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl text-center border border-blue-100">
-                  <h4 className="text-primary font-bold">Nolly and Paul Santiago</h4>
+                  <h4 className="text-primary font-bold">Pablo and Nolly Santiago</h4>
                   <p className="text-sm text-gray-700">Team Leaders</p>
                   <p className="text-xs italic mt-2 text-primary/70">
                     Empowering families to achieve financial freedom through proven WFG strategies and team building.

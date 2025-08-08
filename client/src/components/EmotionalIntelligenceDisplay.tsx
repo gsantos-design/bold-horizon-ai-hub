@@ -31,13 +31,13 @@ const mentorStyles = {
     style: "bg-blue-50 border-blue-200 text-blue-800",
     description: "Empathetic & Detail-Oriented"
   },
-  paul: {
-    name: "Paul Santiago", 
+  pablo: {
+    name: "Pablo Santiago", 
     style: "bg-purple-50 border-purple-200 text-purple-800",
     description: "Visionary & Strategic"
   },
   santiago_team: {
-    name: "Nolly & Paul's Office",
+    name: "Pablo & Nolly's Office",
     style: "bg-emerald-50 border-emerald-200 text-emerald-800",
     description: "Balanced Expertise"
   }

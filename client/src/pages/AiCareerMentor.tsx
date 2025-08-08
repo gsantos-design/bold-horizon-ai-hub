@@ -61,7 +61,7 @@ const emotionalIcons = {
 
 const mentorColors = {
   nolly: "bg-blue-100 border-blue-300 text-blue-800",
-  paul: "bg-purple-100 border-purple-300 text-purple-800", 
+  pablo: "bg-purple-100 border-purple-300 text-purple-800", 
   santiago_team: "bg-emerald-100 border-emerald-300 text-emerald-800"
 };
 
@@ -191,7 +191,7 @@ export default function AiCareerMentor() {
                   </div>
                 </div>
                 <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Nolly & Paul's Office
+                  Pablo & Nolly's Office
                 </CardTitle>
                 <p className="text-gray-600 mt-2">
                   Your personal career guide powered by Licensed WFG Associates
@@ -257,7 +257,7 @@ export default function AiCareerMentor() {
                     ) : (
                       <div className="flex items-center">
                         <MessageCircle className="w-4 h-4 mr-2" />
-                        Enter Nolly & Paul's Office
+                        Enter Pablo & Nolly's Office
                       </div>
                     )}
                   </Button>
@@ -281,7 +281,7 @@ export default function AiCareerMentor() {
             className="text-center mb-6"
           >
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Nolly & Paul's Office
+              Pablo & Nolly's Office
             </h1>
             <p className="text-gray-600 mt-2">
               AI Career Mentor • Licensed WFG Associates • Emotional Intelligence enabled
@@ -296,7 +296,7 @@ export default function AiCareerMentor() {
                 <div className="flex items-center space-x-3">
                   <Bot className="w-8 h-8 text-purple-600" />
                   <div>
-                    <CardTitle className="text-lg">Nolly & Paul's Office</CardTitle>
+                    <CardTitle className="text-lg">Pablo & Nolly's Office</CardTitle>
                     <p className="text-sm text-gray-500">
                       Licensed WFG Associates • {currentSession?.emotionalState && (
                         <span className="flex items-center">
@@ -357,9 +357,9 @@ export default function AiCareerMentor() {
                                   variant="outline" 
                                   className={`text-xs ${mentorColors[message.mentorPersonality as keyof typeof mentorColors]}`}
                                 >
-                                  {message.mentorPersonality === 'santiago_team' ? 'Nolly & Paul\'s Office' : 
-                                   message.mentorPersonality === 'nolly' ? 'Nolly Santiago' :
-                                   message.mentorPersonality === 'paul' ? 'Paul Santiago' : message.mentorPersonality}
+                                  {message.mentorPersonality === 'santiago_team' ? 'Pablo & Nolly\'s Office' : 
+                                   message.mentorPersonality === 'nolly' ? 'Pablo & Nolly Santiago' :
+                                   message.mentorPersonality === 'pablo' ? 'Pablo Santiago' : message.mentorPersonality}
                                 </Badge>
                                 <span className="text-xs opacity-75">
                                   {emotionalIcons[message.emotionalTone as keyof typeof emotionalIcons]}
@@ -425,7 +425,7 @@ export default function AiCareerMentor() {
                 <Textarea
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
-                  placeholder="Ask Nolly & Paul about your career path, WFG opportunities, or any questions..."
+                  placeholder="Ask Pablo & Nolly about your career path, WFG opportunities, or any questions..."
                   className="flex-1 resize-none bg-white/50"
                   rows={1}
                   onKeyDown={(e) => {

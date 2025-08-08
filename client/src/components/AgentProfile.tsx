@@ -17,7 +17,7 @@ export default function AgentProfile() {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               THE SANTIAGO TEAM
             </h1>
-            <p className="text-xl text-gray-600 mb-2">Nolly &amp; Paul Santiago - Team Leaders</p>
+            <p className="text-xl text-gray-600 mb-2">Pablo &amp; Nolly Santiago - Team Leaders</p>
             <p className="text-lg font-semibold text-blue-600 mb-8">Empowering Families Through The New Art of Living</p>
             
             {/* Leadership Photos */}
@@ -39,17 +39,17 @@ export default function AgentProfile() {
                 </p>
               </div>
               
-              {/* Paul Santiago */}
+              {/* Pablo Santiago */}
               <div className="text-center">
                 <div className="relative mb-4">
                   <img 
-                    src="/paul-santiago.png" 
-                    alt="Paul Santiago" 
+                    src="/pablo-santiago.png" 
+                    alt="Pablo Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Paul Santiago</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
                 <p className="text-blue-600 font-semibold mb-2">Financial Professional &amp; Team Leader</p>
                 <p className="text-gray-700 max-w-xs">
                   Licensed WFG Associate focused on sustainable income systems and development
