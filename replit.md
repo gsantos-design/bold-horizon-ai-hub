@@ -3,7 +3,7 @@
 Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG), specifically designed for the Santiago Team. This cosmic-themed digital recruitment platform transforms career exploration through immersive 3D visualizations, AI-powered career assessments, and innovative engagement strategies. The application serves as a comprehensive recruitment and education tool for financial professionals in the Florida and New York markets.
 
 ## Recent v12 Enhancements (August 2025)
-- **AI Career Mentor Chatbot**: Full implementation with emotional intelligence, mentor personalities (Nolly Santiago, Paul Santiago, Santiago Team), OpenAI GPT-4o integration
+- **AI Career Mentor Chatbot**: Full implementation with emotional intelligence, mentor personalities (Nolly Santiago, Pablo Santiago, Santiago Team), OpenAI GPT-4o integration
 - **Team Member Profiles**: Added Princhesca Rainier Turner profile with professional bio and services
 - **Extended Team Roster**: Added two additional Licensed WFG Associates to the Santiago Team with professional photos and service descriptions
 - **WFG Compliance Implementation**: Comprehensive compliance overhaul following official WFG Social Media Guidelines including proper disclaimers, educational focus, and professional title corrections
@@ -12,6 +12,9 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 - **Enhanced Security**: HMAC verification for Calendly webhooks to prevent unauthorized access
 - **Lead Pipeline Visualization**: Updated tables showing estimated deal values and success probabilities
 - **Revenue Intelligence**: Smart calculation engine using title, industry, company size, and location multipliers
+- **Entrepreneur-Focused Lead Generation**: New targeting system for entrepreneurs seeking $100K-$250K additional income with 90% close rate potential
+- **High-Converting Outreach Templates**: Specialized email sequences and LinkedIn campaigns targeting successful business owners and founders
+- **Territory Optimization**: Updated all components to focus exclusively on Florida and New York markets (removed Caribbean and Puerto Rico)
 
 # User Preferences
 

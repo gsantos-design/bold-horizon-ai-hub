@@ -74,11 +74,11 @@ export default function LeadEngine() {
   
   // Santiago-specific targeting criteria
   const [targetingCriteria, setTargetingCriteria] = useState<TargetingCriteria>({
-    industries: ['Financial Services', 'Insurance', 'Real Estate', 'Professional Services', 'Healthcare', 'Technology'],
-    companySizes: ['51-200', '201-500', '501-1000', '1001-5000'],
-    titles: ['CEO', 'Founder', 'Managing Director', 'VP Sales', 'Sales Director', 'Business Owner', 'Partner'],
-    locations: ['Florida', 'New York', 'Miami-Dade', 'Broward County'],
-    revenueRange: '$1M-$50M',
+    industries: ['Financial Services', 'Insurance', 'Real Estate', 'Professional Services', 'Healthcare', 'Technology', 'Consulting', 'E-commerce', 'Digital Marketing', 'Coaching', 'SaaS', 'Retail'],
+    companySizes: ['11-50', '51-200', '201-500', '501-1000', '1001-5000'],
+    titles: ['CEO', 'Founder', 'Managing Director', 'VP Sales', 'Sales Director', 'Business Owner', 'Partner', 'Entrepreneur', 'Co-Founder', 'President', 'Executive Director', 'General Manager'],
+    locations: ['Florida', 'New York', 'Miami-Dade', 'Broward County', 'Orlando', 'Tampa', 'Jacksonville', 'Manhattan', 'Brooklyn', 'Long Island'],
+    revenueRange: '$500K-$50M',
     employeeGrowth: true,
     hiringActivity: true
   });
@@ -184,14 +184,175 @@ The Santiago Team
       stage: 2,
       content: `Thanks for connecting, {FIRST_NAME}! I noticed {COMPANY} has been making great progress in {INDUSTRY}. 
 
-I'm Paul Santiago with WFG's Santiago Team. We've developed a system that helps leaders like yourself create multiple income streams - often 5x-10x current revenue without working more hours.
+I'm Pablo Santiago with WFG's Santiago Team. We've developed a system that helps leaders like yourself create multiple income streams - often 5x-10x current revenue without working more hours.
 
 Just helped a {INDUSTRY} leader go from $180K to $600K annually using our proven approach.
 
 Would you be open to a brief conversation about how this might apply to your situation? Happy to share the specific strategy over a quick call.
 
 Best,
-Paul`,
+Pablo`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY']
+    },
+    // NEW HIGH-CONVERTING ENTREPRENEUR TEMPLATES
+    {
+      id: 'entrepreneur-100k-opener',
+      name: 'Entrepreneur $100K-$250K Income Opportunity',
+      type: 'email',
+      stage: 1,
+      subject: '{FIRST_NAME}, proven path to add $100K-$250K annually (90% success rate)',
+      content: `Hi {FIRST_NAME},
+
+I hope this finds you well in your entrepreneurial journey with {COMPANY}.
+
+Quick question: If I could show you a proven system that entrepreneurs like yourself are using to add $100K-$250K in additional annual income - without disrupting your current business - would that be worth a 15-minute conversation?
+
+Here's what makes this different:
+• 90% success rate for qualified entrepreneurs
+• Average additional income: $180K in first 18 months
+• Leverages your existing network and skills
+• Completely separate from your current business
+
+This isn't theory - yesterday I got a text from Marcus (e-commerce founder) showing his $23K month from our system... while his main business grew 40%.
+
+The system works because:
+1. You already understand business fundamentals
+2. You have established credibility and relationships  
+3. You know how to execute and follow systems
+
+{FIRST_NAME}, I only work with serious entrepreneurs who see the value in multiple income streams. Are you someone who thinks strategically about building wealth beyond just one business?
+
+If yes, let's have a brief conversation this week. I'll show you exactly how the system works and you can decide if it's a fit.
+
+Book a 15-minute call here: [CALENDLY_LINK]
+
+Best regards,
+Pablo Santiago
+Licensed WFG Associate | The Santiago Team
+P: 407-777-1087
+
+P.S. Space is limited - I only work with 3-4 new entrepreneurs per month to ensure results.`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'CALENDLY_LINK']
+    },
+    {
+      id: 'entrepreneur-case-study',
+      name: 'Entrepreneur Success Story Follow-up',
+      type: 'email', 
+      stage: 2,
+      subject: 'How {INDUSTRY} entrepreneur added $247K (case study)',
+      content: `{FIRST_NAME},
+
+Following up on my message about the additional income system for entrepreneurs.
+
+Since you're in {INDUSTRY}, I wanted to share a specific case study that might resonate:
+
+**Sarah - Digital Marketing Agency Owner**
+- Original business: $320K annually
+- Added using our system: $247K in 14 months
+- Total income: $567K (77% increase)
+- Time investment: 8-10 hours/week initially, now 4-5 hours
+
+What Sarah discovered:
+"I was skeptical about adding another income stream. I thought it would distract from my agency. The opposite happened - the financial principles I learned actually improved my core business. Plus, the additional $247K gave me the confidence to hire better talent and invest in growth."
+
+The key insight: High-performing entrepreneurs succeed in our system because you already have the three critical factors:
+1. **Systems thinking** - You understand how to build processes
+2. **Relationship capital** - You have credibility and connections
+3. **Execution discipline** - You know how to follow through
+
+{FIRST_NAME}, this system has a 90% success rate with qualified entrepreneurs because it's designed around these strengths you already possess.
+
+Interested in seeing exactly how Sarah did it? I can walk you through the complete system in 15 minutes.
+
+Grab a time that works: [CALENDLY_LINK]
+
+Best,
+Pablo Santiago
+Licensed WFG Associate | The Santiago Team
+
+P.S. Sarah's biggest regret? "I wish I had started this 2 years earlier. The compound effect on wealth building has been incredible."`,
+      personalizable: ['FIRST_NAME', 'INDUSTRY', 'CALENDLY_LINK']
+    },
+    {
+      id: 'entrepreneur-urgency-close',
+      name: 'Entrepreneur Final Opportunity',
+      type: 'email',
+      stage: 3,
+      subject: 'Final invitation - $100K-$250K entrepreneur system',
+      content: `{FIRST_NAME},
+
+This is my final message about the entrepreneur income system.
+
+I've reached out because successful business owners like yourself in {INDUSTRY} have the exact profile that succeeds with our $100K-$250K additional income system.
+
+Quick reality check:
+• 90% of entrepreneurs who see this system join within 30 days
+• Average additional income: $180K in first 18 months  
+• None have regretted the decision
+
+Since I haven't heard back, I'm guessing:
+❌ You're too busy (I get it)
+❌ You're skeptical (understandable)
+❌ My emails got lost (happens)
+✅ You want to see the details before deciding
+
+If it's the last one, here's what happens next:
+
+**15-Minute Call Agenda:**
+1. I'll show you the exact 4-step system (5 minutes)
+2. Walk through 3 entrepreneur case studies in your industry (5 minutes)  
+3. Answer your specific questions (5 minutes)
+
+No pitch. No pressure. Just information so you can make an informed decision.
+
+**Book here:** [CALENDLY_LINK]
+
+Or call/text me directly: 407-777-1087
+
+{FIRST_NAME}, in 12 months you'll either:
+• Have added $100K-$250K to your annual income
+• Wish you had taken 15 minutes to explore this opportunity
+
+The choice is yours.
+
+Best,
+Pablo Santiago
+Licensed WFG Associate | The Santiago Team
+
+P.S. If this isn't for you, no worries. I'll stop following up and wish you continued success with {COMPANY}.`,
+      personalizable: ['FIRST_NAME', 'INDUSTRY', 'COMPANY', 'CALENDLY_LINK']
+    },
+    {
+      id: 'linkedin-entrepreneur-connect',
+      name: 'LinkedIn Entrepreneur Connection',
+      type: 'linkedin',
+      stage: 1,
+      content: `Hi {FIRST_NAME}, I see you're building something impressive with {COMPANY} in {INDUSTRY}. I help entrepreneurs add $100K-$250K in additional annual income using a proven system (90% success rate). Would love to connect and share insights that might be valuable for your wealth-building strategy.`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY']
+    },
+    {
+      id: 'linkedin-entrepreneur-followup',
+      name: 'LinkedIn Entrepreneur Follow-up',
+      type: 'linkedin', 
+      stage: 2,
+      content: `Thanks for connecting, {FIRST_NAME}! 
+
+Impressive work with {COMPANY} - I can see why you're succeeding in {INDUSTRY}.
+
+I'm Pablo Santiago with WFG's Santiago Team. We've developed a systematic approach that helps entrepreneurs like yourself add $100K-$250K annually without disrupting their core business.
+
+What makes it work for entrepreneurs:
+• 90% success rate (we're selective about who we work with)
+• Leverages your existing skills and network
+• Average ROI: 400%+ in first 18 months
+
+Just helped a {INDUSTRY} entrepreneur add $247K last year while growing their main business 40%.
+
+Worth a quick conversation? I can show you exactly how the system works in 15 minutes.
+
+Best,
+Pablo
+407-777-1087`,
       personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY']
     }
   ];
@@ -214,6 +375,21 @@ Paul`,
       active: true
     },
     {
+      id: 'entrepreneur-sequence',
+      name: 'Entrepreneur $100K-$250K High-Converting Sequence',
+      trigger: 'Entrepreneur lead added',
+      steps: [
+        { type: 'wait', delay: 0, action: 'Entrepreneur enters system' },
+        { type: 'email', delay: 0, template: 'entrepreneur-100k-opener' },
+        { type: 'wait', delay: 4, action: 'Wait 4 days' },
+        { type: 'email', delay: 4, template: 'entrepreneur-case-study' },
+        { type: 'wait', delay: 5, action: 'Wait 5 days' },
+        { type: 'email', delay: 9, template: 'entrepreneur-urgency-close' },
+        { type: 'task', delay: 12, action: 'Personal follow-up call scheduled' }
+      ],
+      active: true
+    },
+    {
       id: 'linkedin-sequence',
       name: 'LinkedIn Outreach Flow',
       trigger: 'LinkedIn URL available',
@@ -224,7 +400,21 @@ Paul`,
         { type: 'wait', delay: 5, action: 'Wait 5 days' },
         { type: 'task', delay: 5, action: 'Review for email sequence' }
       ],
-      active: false
+      active: true
+    },
+    {
+      id: 'linkedin-entrepreneur-sequence',
+      name: 'LinkedIn Entrepreneur High-Value Flow',
+      trigger: 'Entrepreneur LinkedIn lead',
+      steps: [
+        { type: 'linkedin', delay: 0, template: 'linkedin-entrepreneur-connect' },
+        { type: 'wait', delay: 1, action: 'Wait for connection acceptance' },
+        { type: 'linkedin', delay: 1, template: 'linkedin-entrepreneur-followup' },
+        { type: 'wait', delay: 3, action: 'Wait 3 days' },
+        { type: 'email', delay: 3, template: 'entrepreneur-100k-opener' },
+        { type: 'task', delay: 7, action: 'Schedule high-priority call' }
+      ],
+      active: true
     }
   ];
 
@@ -722,6 +912,162 @@ Paul`,
                 <p className="text-xs text-gray-500 mt-2">
                   These criteria will help you pull 1,000-2,000 qualified leads for AI scoring
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* NEW: Entrepreneur-Focused Lead Sources */}
+          <Card className="border-orange-200 bg-orange-50/50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-orange-900">
+                <TrendingUp className="h-5 w-5" />
+                Entrepreneur Lead Sources ($100K-$250K Additional Income)
+              </CardTitle>
+              <p className="text-sm text-orange-700">
+                High-converting lead sources for entrepreneurs seeking substantial additional income streams
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* High-Value Entrepreneur Targeting */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-orange-900 flex items-center gap-2">
+                    🎯 Prime Entrepreneur Profiles
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="font-medium text-gray-900">E-commerce Business Owners</div>
+                      <div className="text-sm text-gray-600 mt-1">$500K-$5M revenue, looking to diversify</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">90% Success Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="font-medium text-gray-900">Digital Marketing Agency Owners</div>
+                      <div className="text-sm text-gray-600 mt-1">Established client base, understand systems</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">85% Success Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="font-medium text-gray-900">SaaS Founders & Co-Founders</div>
+                      <div className="text-sm text-gray-600 mt-1">Tech-savvy, network-oriented entrepreneurs</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">92% Success Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="font-medium text-gray-900">Professional Service Providers</div>
+                      <div className="text-sm text-gray-600 mt-1">Consultants, coaches, established practices</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">88% Success Rate</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Lead Source Strategies */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-orange-900 flex items-center gap-2">
+                    📊 Lead Generation Channels
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">LinkedIn Sales Navigator</div>
+                        <Badge variant="secondary">Primary</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Search: "Founder" + "CEO" + "$1M revenue"</li>
+                        <li>• Filter: Posted about "scaling" or "growth"</li>
+                        <li>• Target: 2nd/3rd degree connections</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Apollo.io Advanced Filters</div>
+                        <Badge variant="secondary">High-Volume</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Company growth: 20%+ revenue increase</li>
+                        <li>• Employee count: 10-200 (sweet spot)</li>
+                        <li>• Technology stack: CRM/Marketing tools</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Industry Event Attendees</div>
+                        <Badge variant="secondary">Warm Leads</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• FinCon, Affiliate Summit attendees</li>
+                        <li>• Local chamber events (FL/NY)</li>
+                        <li>• Mastermind group participants</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-orange-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Referral Network Activation</div>
+                        <Badge className="bg-gold-100 text-gold-800">Highest ROI</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Existing client introductions</li>
+                        <li>• Business coach referrals</li>
+                        <li>• Mastermind cross-referrals</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Entrepreneur-Specific Action Items */}
+              <div className="mt-6 pt-6 border-t border-orange-200">
+                <h4 className="font-semibold mb-3 text-orange-900">🚀 High-Converting Action Plan</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-orange-100 hover:bg-orange-200 text-orange-900 border border-orange-300">
+                    <Star className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Launch Entrepreneur Sequence</div>
+                      <div className="text-xs opacity-75">Start $100K-$250K templates</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-green-100 hover:bg-green-200 text-green-900 border border-green-300">
+                    <Target className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Import Entrepreneur List</div>
+                      <div className="text-xs opacity-75">500+ qualified prospects</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300">
+                    <MessageSquare className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Activate Case Studies</div>
+                      <div className="text-xs opacity-75">Sarah, Marcus success stories</div>
+                    </div>
+                  </Button>
+                </div>
+                
+                <div className="mt-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp className="h-5 w-5 text-green-600" />
+                    <span className="font-semibold text-green-900">Expected Results (30 Days)</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div>
+                      <div className="font-bold text-green-700">500+</div>
+                      <div className="text-green-600">Entrepreneurs contacted</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-blue-700">45-60</div>
+                      <div className="text-blue-600">Qualified responses</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-purple-700">12-18</div>
+                      <div className="text-purple-600">High-probability meetings</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
