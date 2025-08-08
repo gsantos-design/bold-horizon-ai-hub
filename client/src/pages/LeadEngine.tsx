@@ -77,7 +77,7 @@ export default function LeadEngine() {
     industries: ['Financial Services', 'Insurance', 'Real Estate', 'Professional Services', 'Healthcare', 'Technology'],
     companySizes: ['51-200', '201-500', '501-1000', '1001-5000'],
     titles: ['CEO', 'Founder', 'Managing Director', 'VP Sales', 'Sales Director', 'Business Owner', 'Partner'],
-    locations: ['Florida', 'New York', 'Caribbean', 'Puerto Rico', 'Miami-Dade', 'Broward County'],
+    locations: ['Florida', 'New York', 'Miami-Dade', 'Broward County'],
     revenueRange: '$1M-$50M',
     employeeGrowth: true,
     hiringActivity: true
@@ -95,14 +95,14 @@ export default function LeadEngine() {
 
 I noticed {COMPANY} has been growing steadily in {INDUSTRY}. Congratulations on that momentum!
 
-I'm Paul Santiago with WFG, and I've been helping business leaders like yourself create multiple income streams that often 5x-10x their current revenue through systematic approaches.
+I'm Pablo Santiago with WFG, and I've been helping business leaders like yourself create multiple income streams that often 5x-10x their current revenue through systematic approaches.
 
 Just last month, one of our partners went from $180K annually to over $600K using our proven system - without working more hours.
 
 Would you be open to a brief conversation about how leaders in {INDUSTRY} are building these additional revenue streams?
 
 Best regards,
-Paul Santiago
+Pablo Santiago
 The Santiago Team - WFG
 P: 407-777-1087
 

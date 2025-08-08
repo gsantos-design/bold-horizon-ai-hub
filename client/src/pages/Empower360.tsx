@@ -116,7 +116,7 @@ export default function Empower360() {
                   <p className="text-gray-700 leading-relaxed">
                     Pablo brings decades of business leadership experience, focusing on building sustainable income systems 
                     and personal development. His vision for "The New Art of Living" has transformed thousands of lives 
-                    across the Caribbean, Florida, and New York markets.
+                    across Florida and New York markets.
                   </p>
                 </div>
               </div>

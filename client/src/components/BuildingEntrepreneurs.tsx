@@ -28,7 +28,7 @@ export default function BuildingEntrepreneurs() {
                 Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Join the Santiago team and become part of a community dedicated to empowering families across the Caribbean, Florida, and New York. Learn the new art of living while building a business that makes a real difference.
+                Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

@@ -29,7 +29,7 @@ export default function TeamBuilding() {
           Life-Changing Income Through Team Building
         </h2>
         <p className="text-neutral-600 max-w-3xl mx-auto">
-          The real power of WFG comes from building a successful team. Our associates in the Caribbean, Florida, 
+          The real power of WFG comes from building a successful team. Our associates in Florida 
           and New York have transformed their financial futures by following our proven system.
         </p>
         <div className="mt-4 max-w-xl mx-auto bg-accent/10 p-3 rounded-md">
