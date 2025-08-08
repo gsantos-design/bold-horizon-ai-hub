@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
-// Define mentor personalities based on Nolly and Paul Santiago
+// Define mentor personalities based on Nolly and Pablo Santiago
 const MENTOR_PERSONALITIES = {
   nolly: {
     name: "Nolly Santiago",

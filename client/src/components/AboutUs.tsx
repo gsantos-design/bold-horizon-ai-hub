@@ -26,7 +26,7 @@ export default function AboutUs() {
     {
       name: "Maria Gonzalez",
       role: "Marketing Director",
-      quote: "Paul and Nolly's mentorship transformed not just my business but my entire approach to helping families achieve financial security.",
+      quote: "Pablo and Nolly's mentorship transformed not just my business but my entire approach to helping families achieve financial security.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTIwd29tYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=150&q=80"
     },
     {
@@ -40,6 +40,7 @@ export default function AboutUs() {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-accent font-semibold tracking-wider text-sm uppercase">Our Story</span>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
@@ -53,63 +54,39 @@ export default function AboutUs() {
 
         {/* Team Photo */}
         <div className="relative rounded-xl overflow-hidden mb-16 max-w-4xl mx-auto shadow-xl">
-          <div className="aspect-[16/9] bg-gradient-to-r from-primary/10 to-accent/10 flex flex-col md:flex-row items-center justify-center">
-            {/* Replace the src URL with your actual image path once you've uploaded it */}
-            <div className="w-full md:w-1/2 h-full bg-gradient-to-br from-blue-800/20 to-indigo-600/10 flex items-center justify-center p-6">
-              <div className="relative overflow-hidden rounded-xl shadow-lg border-4 border-white/90">
-                {/* Instructions for manually adding the image */}
-                <div className="relative mb-6">
+          <div className="aspect-[16/9] bg-gradient-to-r from-primary/10 to-accent/10 flex items-center justify-center p-8">
+            <div className="w-full max-w-2xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
+                <div className="text-center">
                   <img 
                     src="/nolly-santiago.png" 
                     alt="Nolly Santiago" 
-                    className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-purple-200 shadow-lg"
+                    className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-purple-200 shadow-lg mb-4"
                   />
+                  <h4 className="text-lg font-bold text-primary">Nolly Santiago</h4>
+                  <p className="text-sm text-gray-600">Co-Leader</p>
+                </div>
+                <div className="text-center">
                   <img 
                     src="/pablo-santiago.png" 
                     alt="Pablo Santiago" 
-                    className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-200 shadow-lg -mt-16 ml-16"
+                    className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-blue-200 shadow-lg mb-4"
                   />
+                  <h4 className="text-lg font-bold text-primary">Pablo Santiago</h4>
+                  <p className="text-sm text-gray-600">Co-Leader</p>
                 </div>
-                <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl text-center border border-blue-100">
-                  <h4 className="text-primary font-bold">Pablo and Nolly Santiago</h4>
-                  <p className="text-sm text-gray-700">Team Leaders</p>
-                  <p className="text-xs italic mt-2 text-primary/70">
-                    Empowering families to achieve financial freedom through proven WFG strategies and team building.
-                  </p>
-                  <div className="mt-3 text-xs text-blue-500 flex justify-center gap-1">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </div>
+              </div>
+              <div className="bg-white/90 backdrop-blur-md p-6 rounded-xl text-center border border-blue-100">
+                <h3 className="text-xl font-bold text-primary mb-2">The Santiago Team</h3>
+                <p className="text-sm text-gray-700 mb-3">Licensed WFG Associates</p>
+                <p className="text-sm italic text-primary/70 max-w-md mx-auto">
+                  Empowering families to achieve financial freedom through proven WFG strategies and team building.
+                </p>
+                <div className="mt-4 text-sm text-blue-500 flex justify-center gap-1">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                
-                {/* Once you have the image, uncomment this line and update the src path */}
-                {/* <img 
-                  src="/santiago-team-leaders.jpg" 
-                  alt="Nolly and Paul Santiago" 
-                  className="w-full h-full object-cover"
-                /> */}
               </div>
             </div>
-            
-            <div className="w-full md:w-1/2 p-8 text-center">
-              <h3 className="text-3xl font-bold text-primary mb-4">The Santiago Team</h3>
-              <p className="text-neutral-700 mb-2 italic">
-                "Transforming Lives Through Financial Education"
-              </p>
-              <p className="text-neutral-600 text-sm">
-                A community of passionate professionals dedicated to financial empowerment, led by Nolly and Paul Santiago
-              </p>
-            </div>
-          </div>
-          {/* Social media-style overlay */}
-          <div className="absolute bottom-4 right-4 flex gap-2">
-            <span className="bg-white/80 backdrop-blur-sm text-primary text-xs px-2 py-1 rounded-full flex items-center">
-              <Users className="h-3 w-3 mr-1" />
-              <span>5000+ Team Members</span>
-            </span>
-            <span className="bg-white/80 backdrop-blur-sm text-primary text-xs px-2 py-1 rounded-full flex items-center">
-              <MessageCircle className="h-3 w-3 mr-1" />
-              <span>View Team</span>
-            </span>
           </div>
         </div>
 

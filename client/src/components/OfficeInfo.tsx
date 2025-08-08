@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export default function OfficeInfo() {
@@ -22,9 +22,9 @@ export default function OfficeInfo() {
             About Pablo & Nolly's Office
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Location */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
               <div className="flex items-center mb-6">
                 <MapPin className="h-6 w-6 text-blue-600 mr-3" />
                 <h3 className="text-xl font-bold text-gray-900">Office Location</h3>
@@ -37,8 +37,11 @@ export default function OfficeInfo() {
             </div>
 
             {/* Office Hours */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Office Hours</h3>
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+              <div className="flex items-center mb-6">
+                <Clock className="h-6 w-6 text-blue-600 mr-3" />
+                <h3 className="text-xl font-bold text-gray-900">Office Hours</h3>
+              </div>
               <div className="space-y-3">
                 {hours.map((schedule, index) => (
                   <div key={index} className="flex justify-between items-center">

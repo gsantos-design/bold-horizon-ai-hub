@@ -27,25 +27,25 @@ export default function FinancialIndependence() {
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <div className="flex flex-col justify-start h-full">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-left">
                 The New Art of Living:<br />
                 <span className="text-blue-600">Empowering Families</span>
               </h2>
               
               {/* Core Philosophy */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <div className="grid grid-cols-1 gap-4 mb-8">
+                <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
                   <h3 className="font-bold text-blue-600 mb-2">Multi-Handed Income</h3>
                   <p className="text-sm text-gray-600">Create multiple streams of income to build lasting wealth</p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
                   <h3 className="font-bold text-blue-600 mb-2">Financial Education</h3>
                   <p className="text-sm text-gray-600">Learn the strategies that truly build generational wealth</p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
                   <h3 className="font-bold text-blue-600 mb-2">Self Improvement</h3>
                   <p className="text-sm text-gray-600">Develop the mindset and skills for lasting success</p>
                 </div>

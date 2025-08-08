@@ -49,7 +49,7 @@ export default function Home() {
                   className="border-purple-600 text-purple-600 hover:bg-purple-50"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
-                  Speak with Nolly
+                  Speak with Pablo & Nolly
                 </Button>
               </div>
             </CardContent>

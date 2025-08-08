@@ -64,13 +64,13 @@ export default function Empower360() {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="mb-8">
             <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
-              Led by Nolly & Paul Santiago
+              Led by Pablo & Nolly Santiago
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
               Empower360
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
-              Experience the <strong>New Art of Living</strong> through Nolly and Paul Santiago's proven three-pillar system: 
+              Experience the <strong>New Art of Living</strong> through Pablo and Nolly Santiago's proven three-pillar system: 
               Multi-Handed Income, Financial Education, and Self-Improvement
             </p>
             
@@ -101,20 +101,20 @@ export default function Empower360() {
                   </p>
                 </div>
                 
-                {/* Paul Santiago */}
+                {/* Pablo Santiago */}
                 <div className="text-center">
                   <div className="relative mb-6">
                     <img 
-                      src="/paul-santiago.png" 
-                      alt="Paul Santiago" 
+                      src="/pablo-santiago.png" 
+                      alt="Pablo Santiago" 
                       className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
                     />
                     <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Paul Santiago</h4>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h4>
                   <p className="text-blue-600 font-semibold mb-4">Co-Founder &amp; Business Development Leader</p>
                   <p className="text-gray-700 leading-relaxed">
-                    Paul brings decades of business leadership experience, focusing on building sustainable income systems 
+                    Pablo brings decades of business leadership experience, focusing on building sustainable income systems 
                     and personal development. His vision for "The New Art of Living" has transformed thousands of lives 
                     across the Caribbean, Florida, and New York markets.
                   </p>
@@ -124,7 +124,7 @@ export default function Empower360() {
               {/* Combined Achievement */}
               <div className="mt-8 text-center p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Together, <strong>Nolly and Paul Santiago</strong> have built a legacy of empowering families to achieve financial 
+                  Together, <strong>Pablo and Nolly Santiago</strong> have built a legacy of empowering families to achieve financial 
                   freedom through systematic approaches to wealth building, education, and personal growth. Their proven 
                   three-pillar system has helped clients go from traditional single-income approaches to generating 
                   multiple streams of income that often exceed their original earnings by 5x-10x.

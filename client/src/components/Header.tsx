@@ -18,8 +18,8 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md border-b">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* WFG Logo and Branding */}
           <div className="flex items-center space-x-4">
             <img 

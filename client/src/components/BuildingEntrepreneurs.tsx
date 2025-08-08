@@ -45,7 +45,7 @@ export default function BuildingEntrepreneurs() {
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
-                  Call Nolly Now
+                  Call Pablo & Nolly
                 </Button>
               </div>
             </div>
