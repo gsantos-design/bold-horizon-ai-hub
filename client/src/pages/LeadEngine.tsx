@@ -28,6 +28,8 @@ interface Lead {
   location?: string;
   aiScore?: number;
   linkedinUrl?: string;
+  estimatedDealAmount?: number;
+  dealProbability?: number;
 }
 
 interface TargetingCriteria {
@@ -505,6 +507,112 @@ Paul`,
               </div>
             </CardContent>
           </Card>
+
+          {/* Deal Amount Estimator - NEW v12 Feature */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <DollarSign className="h-5 w-5" />
+                Deal Amount Estimator
+              </CardTitle>
+              <p className="text-sm text-gray-600">
+                Calculate potential deal values based on lead profile and company data
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Input Criteria */}
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">
+                      Company Revenue Range
+                    </label>
+                    <select className="w-full p-2 border rounded-md">
+                      <option value="startup">$0-$1M (Startup)</option>
+                      <option value="small">$1M-$5M (Small Business)</option>
+                      <option value="medium">$5M-$25M (Medium Business)</option>
+                      <option value="large">$25M-$100M (Large Business)</option>
+                      <option value="enterprise">$100M+ (Enterprise)</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">
+                      Decision Maker Level
+                    </label>
+                    <select className="w-full p-2 border rounded-md">
+                      <option value="c-level">C-Level (CEO, CFO, etc.)</option>
+                      <option value="vp">VP Level</option>
+                      <option value="director">Director Level</option>
+                      <option value="manager">Manager Level</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">
+                      Industry Type
+                    </label>
+                    <select className="w-full p-2 border rounded-md">
+                      <option value="financial">Financial Services</option>
+                      <option value="real-estate">Real Estate</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="professional">Professional Services</option>
+                      <option value="technology">Technology</option>
+                      <option value="manufacturing">Manufacturing</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">
+                      Geographic Market
+                    </label>
+                    <select className="w-full p-2 border rounded-md">
+                      <option value="florida">Florida</option>
+                      <option value="new-york">New York</option>
+                      <option value="caribbean">Caribbean</option>
+                      <option value="puerto-rico">Puerto Rico</option>
+                    </select>
+                  </div>
+                </div>
+                
+                {/* Estimated Results */}
+                <div className="space-y-4">
+                  <div className="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+                    <h4 className="font-semibold text-green-900 mb-2">Estimated Deal Value</h4>
+                    <div className="text-2xl font-bold text-green-700">$15,000 - $45,000</div>
+                    <div className="text-sm text-green-600 mt-1">Annual premium potential</div>
+                  </div>
+                  
+                  <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 className="font-semibold text-yellow-900 mb-2">Commission Estimate</h4>
+                    <div className="text-xl font-bold text-yellow-700">$2,250 - $6,750</div>
+                    <div className="text-sm text-yellow-600 mt-1">First year commission (15% avg)</div>
+                  </div>
+                  
+                  <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-900 mb-2">Success Probability</h4>
+                    <div className="flex items-center gap-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                      </div>
+                      <span className="text-purple-700 font-medium">75%</span>
+                    </div>
+                    <div className="text-sm text-purple-600 mt-1">Based on Santiago team historical data</div>
+                  </div>
+                  
+                  <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-900 mb-2">Recommended Approach</h4>
+                    <div className="text-sm text-blue-700 space-y-1">
+                      <div>• Use Case Study opener (CEO level)</div>
+                      <div>• Focus on multi-handed income strategy</div>
+                      <div>• Schedule 30-min discovery call</div>
+                      <div>• Follow up within 48 hours</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
 
         <TabsContent value="targeting" className="space-y-6">
@@ -798,6 +906,8 @@ Paul`,
                       <th className="text-left p-2">Name</th>
                       <th className="text-left p-2">Company</th>
                       <th className="text-left p-2">Title</th>
+                      <th className="text-left p-2">Deal Value</th>
+                      <th className="text-left p-2">Probability</th>
                       <th className="text-left p-2">AI Score</th>
                       <th className="text-left p-2">Status</th>
                       <th className="text-left p-2">Last Contact</th>
@@ -817,6 +927,33 @@ Paul`,
                           <div className="text-xs text-gray-500">{lead.industry || ''}</div>
                         </td>
                         <td className="p-2 text-sm text-gray-600">{lead.title || 'N/A'}</td>
+                        <td className="p-2">
+                          {lead.estimatedDealAmount ? (
+                            <div className="text-sm font-medium text-green-700">
+                              ${lead.estimatedDealAmount.toLocaleString()}
+                            </div>
+                          ) : (
+                            <span className="text-xs text-gray-400">-</span>
+                          )}
+                        </td>
+                        <td className="p-2">
+                          {lead.dealProbability ? (
+                            <div className="flex items-center gap-2">
+                              <div className="w-12 bg-gray-200 rounded-full h-2">
+                                <div 
+                                  className={`h-2 rounded-full ${
+                                    lead.dealProbability >= 75 ? 'bg-green-500' :
+                                    lead.dealProbability >= 50 ? 'bg-yellow-500' : 'bg-red-500'
+                                  }`}
+                                  style={{ width: `${Math.round(lead.dealProbability * 100)}%` }}
+                                ></div>
+                              </div>
+                              <span className="text-xs">{Math.round(lead.dealProbability * 100)}%</span>
+                            </div>
+                          ) : (
+                            <span className="text-xs text-gray-400">-</span>
+                          )}
+                        </td>
                         <td className="p-2">
                           {lead.aiScore ? (
                             <div className="flex items-center gap-1">

@@ -54,6 +54,16 @@ export const leads = pgTable("leads", {
   calendlyLink: text("calendly_link"),
   lastContactDate: timestamp("last_contact_date"),
   nextFollowUp: timestamp("next_follow_up"),
+  // v12 NEW FIELDS: Deal Amount Estimator
+  company: text("company"),
+  title: text("title"),
+  industry: text("industry"),
+  companySize: text("company_size"),
+  location: text("location"),
+  aiScore: integer("ai_score"),
+  linkedinUrl: text("linkedin_url"),
+  estimatedDealAmount: integer("estimated_deal_amount"), // v12 NEW
+  dealProbability: integer("deal_probability"), // v12 NEW (stored as percentage 0-100)
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });

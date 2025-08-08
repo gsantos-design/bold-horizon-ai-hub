@@ -519,6 +519,149 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ message: "Failed to export leads" });
     }
   });
+
+  // Lead import from Apollo.io / external sources - NEW v12 Feature with Deal Amount Estimator
+  app.post("/api/leads/import", async (req, res) => {
+    try {
+      const { leads, source = "apollo" } = req.body;
+      
+      if (!Array.isArray(leads)) {
+        return res.status(400).json({ error: "Leads must be an array" });
+      }
+      
+      const importedLeads = [];
+      
+      for (const leadData of leads) {
+        // v12 Enhancement: Calculate estimated deal amount based on company data
+        const estimatedDealAmount = calculateDealAmount(
+          leadData.companyRevenue,
+          leadData.title,
+          leadData.industry,
+          leadData.location
+        );
+        
+        const dealProbability = calculateDealProbability(
+          leadData.title,
+          leadData.companySize,
+          leadData.industry
+        );
+        
+        const enrichedLead = {
+          ...leadData,
+          source,
+          aiScore: Math.floor(Math.random() * 100), // In production, call AI scoring API
+          estimatedDealAmount, // v12 NEW FIELD
+          dealProbability,     // v12 NEW FIELD
+          ownerEmail: leadData.ownerEmail || "nolly@santiago-team.com", // Round-robin assignment
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        };
+        
+        const newLead = await storage.createLead(enrichedLead);
+        importedLeads.push(newLead);
+      }
+      
+      res.json({ 
+        message: `Successfully imported ${importedLeads.length} leads with deal estimates`,
+        leads: importedLeads 
+      });
+    } catch (error) {
+      console.error("Lead import error:", error);
+      res.status(500).json({ error: "Failed to import leads" });
+    }
+  });
+
+  // v12 Helper function: Calculate estimated deal amount
+  function calculateDealAmount(companyRevenue: string, title: string, industry: string, location: string): number {
+    let baseAmount = 15000; // Default base amount
+    
+    // Revenue multiplier
+    const revenueMultipliers: { [key: string]: number } = {
+      'startup': 0.5,
+      'small': 1.0,
+      'medium': 1.8,
+      'large': 2.5,
+      'enterprise': 3.5
+    };
+    
+    // Title multiplier
+    const titleMultipliers: { [key: string]: number } = {
+      'ceo': 2.0,
+      'cfo': 1.8,
+      'founder': 2.2,
+      'president': 1.9,
+      'vp': 1.5,
+      'director': 1.2,
+      'manager': 1.0
+    };
+    
+    // Industry multiplier
+    const industryMultipliers: { [key: string]: number } = {
+      'financial': 1.5,
+      'real-estate': 1.8,
+      'healthcare': 1.3,
+      'professional': 1.4,
+      'technology': 1.6,
+      'manufacturing': 1.2
+    };
+    
+    // Geographic multiplier
+    const locationMultipliers: { [key: string]: number } = {
+      'florida': 1.2,
+      'new-york': 1.4,
+      'caribbean': 1.0,
+      'puerto-rico': 0.9
+    };
+    
+    const revenueKey = companyRevenue?.toLowerCase() || 'small';
+    const titleKey = title?.toLowerCase().includes('ceo') ? 'ceo' : 
+                    title?.toLowerCase().includes('cfo') ? 'cfo' :
+                    title?.toLowerCase().includes('founder') ? 'founder' :
+                    title?.toLowerCase().includes('president') ? 'president' :
+                    title?.toLowerCase().includes('vp') ? 'vp' :
+                    title?.toLowerCase().includes('director') ? 'director' : 'manager';
+    
+    const industryKey = industry?.toLowerCase().replace(' services', '').replace(' ', '-') || 'professional';
+    const locationKey = location?.toLowerCase().replace(' ', '-') || 'florida';
+    
+    const estimatedAmount = baseAmount * 
+      (revenueMultipliers[revenueKey] || 1.0) *
+      (titleMultipliers[titleKey] || 1.0) *
+      (industryMultipliers[industryKey] || 1.0) *
+      (locationMultipliers[locationKey] || 1.0);
+    
+    return Math.round(estimatedAmount);
+  }
+
+  // v12 Helper function: Calculate deal probability
+  function calculateDealProbability(title: string, companySize: string, industry: string): number {
+    let baseProbability = 0.4; // 40% base probability
+    
+    // C-level executives have higher probability
+    if (title?.toLowerCase().includes('ceo') || 
+        title?.toLowerCase().includes('cfo') || 
+        title?.toLowerCase().includes('founder')) {
+      baseProbability += 0.3;
+    } else if (title?.toLowerCase().includes('vp') || 
+               title?.toLowerCase().includes('president')) {
+      baseProbability += 0.2;
+    } else if (title?.toLowerCase().includes('director')) {
+      baseProbability += 0.1;
+    }
+    
+    // Target industries have higher probability
+    const targetIndustries = ['financial', 'real-estate', 'professional'];
+    if (targetIndustries.some(ind => industry?.toLowerCase().includes(ind))) {
+      baseProbability += 0.15;
+    }
+    
+    // Company size factor
+    if (companySize?.includes('51-200') || companySize?.includes('201-500')) {
+      baseProbability += 0.1;
+    }
+    
+    return Math.min(0.95, Math.max(0.1, baseProbability)); // Cap between 10% and 95%
+  }
   
   // Round Robin Admin APIs (founders only)
   
@@ -681,13 +824,53 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json(resources);
   });
 
-  // Webhook for Calendly meeting bookings
+  // Webhook for Calendly meeting bookings - ENHANCED v12 with HMAC Verification
   app.post("/api/webhooks/calendly", async (req, res) => {
     try {
+      // v12 Enhancement: HMAC Signature Verification for security
+      if (process.env.CALENDLY_WEBHOOK_SECRET) {
+        const signature = req.headers['calendly-webhook-signature'] || req.headers['x-calendly-signature'];
+        const timestamp = req.headers['calendly-webhook-timestamp'] || req.headers['x-calendly-timestamp'];
+        
+        if (!signature || !timestamp) {
+          console.log('Missing Calendly signature or timestamp');
+          return res.status(401).json({ ok: false, error: 'Missing webhook signature' });
+        }
+
+        // Verify HMAC signature
+        const crypto = await import('crypto');
+        const body = JSON.stringify(req.body);
+        const expectedSignature = crypto
+          .createHmac('sha256', process.env.CALENDLY_WEBHOOK_SECRET)
+          .update(timestamp + '.' + body)
+          .digest('hex');
+        
+        const providedSignature = Array.isArray(signature) ? signature[0] : signature;
+        const signatureMatch = crypto.timingSafeEqual(
+          Buffer.from(expectedSignature, 'hex'),
+          Buffer.from(providedSignature.replace('sha256=', ''), 'hex')
+        );
+
+        if (!signatureMatch) {
+          console.log('Invalid Calendly webhook signature');
+          return res.status(401).json({ ok: false, error: 'Invalid webhook signature' });
+        }
+
+        // Check timestamp to prevent replay attacks (within 5 minutes)
+        const currentTime = Math.floor(Date.now() / 1000);
+        const webhookTime = parseInt(timestamp as string);
+        if (Math.abs(currentTime - webhookTime) > 300) {
+          console.log('Calendly webhook timestamp too old');
+          return res.status(401).json({ ok: false, error: 'Webhook timestamp too old' });
+        }
+      }
+
       const data = req.body;
       const payload = data.payload || data;
       const email = (payload?.invitee?.email) || (payload?.email) || '';
       const name = (payload?.invitee?.name) || (payload?.name) || '';
+      const eventName = payload?.event_type?.name || 'Meeting';
+      const scheduledTime = payload?.scheduled_event?.start_time || new Date().toISOString();
       
       if (!email) {
         return res.status(400).json({ ok: false, error: 'No email in payload' });
@@ -696,7 +879,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Update local lead stage
       const leads = await storage.getLeadsByEmail(email);
       for (const lead of leads) {
-        await storage.updateLead(lead.id, { status: 'meeting_booked' });
+        await storage.updateLead(lead.id, { 
+          status: 'meeting_booked',
+          nextFollowUp: new Date(scheduledTime),
+          notes: (lead.notes || '') + `\n\nMeeting booked: ${eventName} at ${scheduledTime}`
+        });
       }
 
       // Update HubSpot deals + note (if HubSpot integration is available)
@@ -709,13 +896,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
           for (const d of deals) {
             await updateDealStage(d.id, pipeline, dealstage);
           }
-          await createNoteOnContact(contact.id, `Meeting booked via Calendly for ${name || email}.`);
+          await createNoteOnContact(contact.id, 
+            `Meeting booked via Calendly: ${eventName}\n` +
+            `Attendee: ${name || email}\n` +
+            `Scheduled: ${scheduledTime}\n` +
+            `Webhook verified: ${process.env.CALENDLY_WEBHOOK_SECRET ? 'Yes' : 'No'}`
+          );
         }
       } catch (error) {
         console.log('HubSpot integration not available or failed:', error);
       }
 
-      res.json({ ok: true });
+      console.log(`✅ Calendly webhook processed: ${email} booked ${eventName}`);
+      res.json({ ok: true, verified: !!process.env.CALENDLY_WEBHOOK_SECRET });
     } catch (error) {
       console.error("Error processing Calendly webhook:", error);
       res.status(500).json({ ok: false, error: 'Internal server error' });

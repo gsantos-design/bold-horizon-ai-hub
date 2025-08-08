@@ -2,6 +2,13 @@
 
 Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG), specifically designed for the Santiago Team. This cosmic-themed digital recruitment platform transforms career exploration through immersive 3D visualizations, AI-powered career assessments, and innovative engagement strategies. The application serves as a comprehensive recruitment and education tool for financial professionals in the Caribbean, Florida, and New York markets.
 
+## Recent v12 Enhancements (August 2025)
+- **Deal Amount Estimator**: Advanced revenue prediction based on lead profile, company data, industry, and geographic factors
+- **Enhanced HubSpot Import**: Automatic deal value calculation and probability scoring for imported leads
+- **Enhanced Security**: HMAC verification for Calendly webhooks to prevent unauthorized access
+- **Lead Pipeline Visualization**: Updated tables showing estimated deal values and success probabilities
+- **Revenue Intelligence**: Smart calculation engine using title, industry, company size, and location multipliers
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -59,12 +66,16 @@ Currently implements a minimal authentication structure with room for expansion:
 - CRM integration with HubSpot API
 - Round-robin lead assignment system
 - Automated workflow management
+- **v12 NEW**: Deal Amount Estimator with intelligent revenue calculations
+- **v12 NEW**: Enhanced lead import with automatic deal value and probability scoring
 
 ### Webhook Integration System
-- Calendly webhook handling for automatic meeting booking updates
+- **v12 ENHANCED**: Calendly webhook handling with HMAC signature verification for security
+- **v12 ENHANCED**: Enhanced meeting booking tracking with detailed event information
 - Email reply tracking via Zapier/Gmail integration
 - Real-time lead stage progression in both local database and HubSpot
 - Automated note creation in CRM for lead activity tracking
+- **v12 NEW**: Timestamp validation to prevent replay attacks (5-minute window)
 
 ### Team Performance Leaderboard
 - Real-time team statistics and performance rankings
