@@ -31,14 +31,31 @@ export default function FinancialIndependence() {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Financial Independence<br />
-                <span className="text-blue-600">For Everyone</span>
+                The New Art of Living:<br />
+                <span className="text-blue-600">Empowering Families</span>
               </h2>
+              
+              {/* Three Core Philosophies */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                  <h3 className="font-bold text-blue-600 mb-2">Multi-Handed Income</h3>
+                  <p className="text-sm text-gray-600">Create multiple streams of income to build lasting wealth</p>
+                </div>
+                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                  <h3 className="font-bold text-blue-600 mb-2">Financial Education</h3>
+                  <p className="text-sm text-gray-600">Learn the strategies that truly build generational wealth</p>
+                </div>
+                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                  <h3 className="font-bold text-blue-600 mb-2">Self Improvement</h3>
+                  <p className="text-sm text-gray-600">Develop the mindset and skills for lasting success</p>
+                </div>
+              </div>
+              
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                World Financial Group offers a leading financial services platform and experience to help pursue your specific life insurance goals. No matter your life story, our tailored approach to planning for retirement will meet you where you are and address your specific goals.
+                Our approach goes beyond traditional financial planning. We empower families through comprehensive financial education, multiple income strategies, and personal development that creates lasting transformation.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                And for entrepreneurial-minded individuals looking to grow wealth on their terms, our turnkey system and experienced leadership can help you build your own business through supporting the needs of others. We help make the dream of financial independence and financial resilience possible for all those in our communities across North America.
+                Join the Santiago team and discover how the New Art of Living can transform your family's financial future through our proven system of building wealth, gaining knowledge, and developing yourself into the person you were meant to be.
               </p>
             </div>
 

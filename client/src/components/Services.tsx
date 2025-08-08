@@ -7,18 +7,18 @@ export default function Services() {
   const services = [
     {
       icon: Shield,
-      title: "Insurance Protection",
-      description: "The most important part of preparing for the future is protecting it. As a WFGIA insurance agent, I can help you prepare for uncertainty. Whether you outlive your retirement, pass away unexpectedly or become disabled, there are products that can help protect the life you've built for you and your loved ones."
+      title: "Multi-Handed Income Strategies",
+      description: "Learn how to create multiple streams of income that work together to build lasting wealth. We'll show you proven strategies to diversify your income sources and reduce financial risk while maximizing your earning potential through our comprehensive system."
     },
     {
       icon: TrendingUp,
-      title: "Retirement Strategies", 
-      description: "The key to a successful retirement is one that doesn't require you to compromise your lifestyle or wonder if and when your nest egg will run out. As a WFGIA Insurance Agent, I can provide a variety of options to help you prepare for your leisure years without having to sacrifice your quality of life."
+      title: "Financial Education & Planning", 
+      description: "Master the financial knowledge that schools don't teach. From understanding how money really works to building generational wealth strategies, we provide the education that empowers you to make informed decisions about your family's financial future."
     },
     {
       icon: Briefcase,
-      title: "Business Strategies",
-      description: "Small business owners need financial and insurance options for themselves and their employees, and they need to ensure the future safety of their businesses. I can help structure strategies for employees and owners to help ensure if- or when- something happens, those who own and run the business are protected."
+      title: "Personal Development & Business Building",
+      description: "Transform yourself while building a business that serves others. Our system focuses on personal growth, leadership development, and building the skills needed to succeed in both life and business while making a positive impact on families in your community."
     }
   ];
 
@@ -26,9 +26,12 @@ export default function Services() {
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Services Offered by Nolly
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            The New Art of Living Philosophy
           </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Empowering families through our three core philosophies that create lasting transformation
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => {

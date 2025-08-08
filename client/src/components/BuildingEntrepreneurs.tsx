@@ -21,20 +21,33 @@ export default function BuildingEntrepreneurs() {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Building<br />
-                <span className="text-blue-600">Entrepreneurs</span>
+                Master The New Art of Living<br />
+                <span className="text-blue-600">Join the Santiago Team</span>
               </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.
+              </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Our innovative business model enables entrepreneurs to succeed together through a turnkey system and a commission structure that encourages mentorship and teamwork. Join WFG today and be part of the thousands of independent professionals across the United States helping individuals and families protect what matters most to them.
+                Join the Santiago team and become part of a community dedicated to empowering families across the Caribbean, Florida, and New York. Learn the new art of living while building a business that makes a real difference.
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-                onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
-              >
-                Join WFG
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+                  onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
+                >
+                  Start Your Journey
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
+                  onClick={() => window.location.href = 'tel:407-777-1087'}
+                >
+                  Call Nolly Now
+                </Button>
+              </div>
             </div>
           </div>
         </div>

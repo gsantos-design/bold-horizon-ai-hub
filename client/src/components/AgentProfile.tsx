@@ -14,7 +14,8 @@ export default function AgentProfile() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
               NOLLY SANTIAGO
             </h1>
-            <p className="text-xl text-gray-600 mb-6">Financial Professional</p>
+            <p className="text-xl text-gray-600 mb-2">Financial Professional</p>
+            <p className="text-lg font-semibold text-blue-600 mb-6">Empowering Families Through The New Art of Living</p>
           </div>
 
           {/* Contact Information Grid */}
