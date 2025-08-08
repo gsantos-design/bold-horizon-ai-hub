@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, ArrowRight, Bot, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
+import WFGCompliance from "@/components/WFGCompliance";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -100,6 +102,8 @@ export default function Home() {
       <BuildingEntrepreneurs />
       <FAQ />
       <OfficeInfo />
+      <WFGCompliance />
+      <Footer />
     </div>
   );
 }

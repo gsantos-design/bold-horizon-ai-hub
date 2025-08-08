@@ -31,9 +31,9 @@ export default function AgentProfile() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-blue-400/20"></div>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
-                <p className="text-purple-600 font-semibold mb-2">Co-Founder &amp; Financial Strategist</p>
+                <p className="text-purple-600 font-semibold mb-2">Financial Professional &amp; Team Leader</p>
                 <p className="text-gray-700 max-w-xs">
-                  Specializing in systematic wealth building and multi-handed income strategies
+                  Licensed WFG Associate specializing in systematic wealth building strategies
                 </p>
               </div>
               
@@ -48,9 +48,9 @@ export default function AgentProfile() {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Paul Santiago</h2>
-                <p className="text-blue-600 font-semibold mb-2">Co-Founder &amp; Business Development Leader</p>
+                <p className="text-blue-600 font-semibold mb-2">Financial Professional &amp; Team Leader</p>
                 <p className="text-gray-700 max-w-xs">
-                  Focused on building sustainable income systems and personal development
+                  Licensed WFG Associate focused on sustainable income systems and development
                 </p>
               </div>
             </div>

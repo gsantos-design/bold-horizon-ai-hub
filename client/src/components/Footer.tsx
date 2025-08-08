@@ -8,8 +8,10 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-heading font-bold text-xl mb-4">WFG Financial</h3>
-            <p className="text-neutral-400">Building futures through financial opportunity and team success since 1991.</p>
+            <h3 className="font-heading font-bold text-xl mb-4">The Santiago Team</h3>
+            <p className="text-neutral-400 mb-2">Independent WFG Associates</p>
+            <p className="text-neutral-400 text-sm">Empowering families through financial education and opportunity.</p>
+            <p className="text-neutral-400 text-xs mt-2">Licensed agents affiliated with World Financial Group Insurance Agency, LLC</p>
           </div>
           
           <div>
@@ -51,11 +53,14 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-neutral-400 mb-4 md:mb-0">© 2025 WFG Financial. All rights reserved.</p>
-          <div className="flex space-x-4">
+          <div className="text-neutral-400 mb-4 md:mb-0 text-sm">
+            <p>© 2024-2025 Transamerica Corporation. All rights reserved.</p>
+            <p className="text-xs mt-1">World Financial Group and the WFG logo are registered trademarks of Transamerica Corporation.</p>
+          </div>
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
             <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
             <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Accessibility</a>
+            <a href="https://www.worldfinancialgroup.com/compliance" className="text-neutral-400 hover:text-white transition-colors duration-300">Compliance</a>
           </div>
         </div>
       </div>

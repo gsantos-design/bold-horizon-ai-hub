@@ -7,18 +7,18 @@ export default function Services() {
   const services = [
     {
       icon: Shield,
-      title: "Multi-Handed Income Strategies",
-      description: "Learn how to create multiple streams of income that work together to build lasting wealth. We'll show you proven strategies to diversify your income sources and reduce financial risk while maximizing your earning potential through our comprehensive system."
+      title: "Multi-Handed Income Education",
+      description: "Learn about creating multiple streams of income through financial education and opportunity. Our educational approach helps you understand strategies to diversify income sources and build lasting financial security through comprehensive learning programs."
     },
     {
       icon: TrendingUp,
-      title: "Financial Education & Planning", 
-      description: "Master the financial knowledge that schools don't teach. From understanding how money really works to building generational wealth strategies, we provide the education that empowers you to make informed decisions about your family's financial future."
+      title: "Financial Education & Literacy", 
+      description: "Access financial education that covers fundamental money concepts and wealth-building strategies. We provide educational resources that help you understand financial principles and make informed decisions about your family's financial future."
     },
     {
       icon: Briefcase,
-      title: "Personal Development & Business Building",
-      description: "Transform yourself while building a business that serves others. Our system focuses on personal growth, leadership development, and building the skills needed to succeed in both life and business while making a positive impact on families in your community."
+      title: "Personal Development & Leadership",
+      description: "Focus on personal growth and leadership development through our educational system. Learn the skills needed to succeed in life and business while developing the ability to help others in your community through financial education opportunities."
     }
   ];
 
@@ -27,10 +27,10 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-            The New Art of Living Philosophy
+            Financial Education Philosophy
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Empowering families through our core philosophy that creates lasting transformation
+            Empowering families through financial education and opportunity awareness
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
