@@ -354,6 +354,214 @@ Best,
 Pablo
 407-777-1087`,
       personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY']
+    },
+    // NEW 401K ROLLOVER TEMPLATES
+    {
+      id: '401k-rollover-opener',
+      name: '401k Rollover Tax-Free Strategy',
+      type: 'email',
+      stage: 1,
+      subject: 'Your {COMPANY} 401k - Tax-Free Rollover Options Available?',
+      content: `Hi {FIRST_NAME},
+
+I hope this finds you well. I noticed you might be considering what to do with your {COMPANY} 401k.
+
+Many executives and professionals I work with are surprised to learn about tax-free alternatives to traditional rollovers that can potentially:
+
+• Eliminate future taxes on growth
+• Provide living benefits if needed  
+• Create tax-free income in retirement
+• Offer principal protection with upside potential
+
+Recently helped Dr. Patricia R. roll over $850K into an IUL strategy - she'll have tax-free access to over $1.2M by age 65.
+
+The key advantages of tax-free accounts (IUL, Annuities, Strategic Investments):
+
+**Indexed Universal Life (IUL):**
+- Tax-free growth potential tied to market performance
+- Downside protection (0% floor)
+- Tax-free access to cash value
+- Death benefit protection
+
+**Fixed Annuities:**  
+- Guaranteed income for life
+- Principal protection
+- Tax-deferred growth
+- Inflation protection options
+
+**Strategic Investment Portfolios:**
+- Roth IRA conversions
+- Municipal bonds
+- Tax-managed funds
+
+Would you be interested in a brief 15-minute call to explore if a tax-free rollover strategy makes sense for your situation?
+
+I can show you exactly how these options compare to leaving funds in a traditional rollover IRA and what the tax implications look like over 10-20 years.
+
+Book a time that works: [CALENDLY_LINK]
+
+Best regards,
+{AGENT_NAME}
+Santiago Team | WFG
+Licensed Financial Professional
+P: 407-777-1087
+
+P.S. The 60-day rollover window is important - happy to discuss timing that works for your tax strategy. Every day you wait could be costing you thousands in future tax savings.`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: '401k-rollover-case-study',
+      name: '401k Rollover Success Story',
+      type: 'email',
+      stage: 2,
+      subject: 'How executive saved $340K in future taxes (401k rollover case study)',
+      content: `{FIRST_NAME},
+
+Following up on my message about tax-free 401k rollover strategies.
+
+I wanted to share a specific case study that demonstrates the power of choosing the right rollover strategy:
+
+**Michael S. - Technology Executive, Age 58**
+- 401k Balance: $1.2M
+- Traditional Rollover Projection: $1.8M at 65 (taxed at withdrawal)
+- IUL Strategy Result: $2.1M at 65 (tax-free access)
+- **Tax Savings: $340K over retirement**
+
+What Michael told me 18 months later:
+"I almost did a traditional rollover to save time and effort. Thank goodness I took 15 minutes to understand my options. The tax-free growth and access has been incredible, and I sleep better knowing I have living benefits if anything happens."
+
+The key insight for professionals like Michael (and you):
+
+**Traditional 401k Rollover:**
+- Grows tax-deferred
+- Fully taxable at withdrawal
+- Required minimum distributions at 73
+- No living benefits
+
+**Tax-Free IUL Strategy:**
+- Market-linked growth potential (0% floor protection)  
+- Tax-free access to cash value
+- No required distributions
+- Living benefits (chronic illness, etc.)
+- Death benefit protection
+
+**Fixed Annuity Option:**
+- Guaranteed lifetime income
+- Principal protection  
+- Tax-deferred growth
+- Optional inflation protection
+
+{FIRST_NAME}, the difference isn't just about returns - it's about tax efficiency, flexibility, and protection.
+
+Most people don't realize they have these options during their rollover window. Once you do a traditional rollover, these strategies become much more complex and expensive.
+
+Interested in seeing exactly how this could work for your {COMPANY} 401k? I can run the numbers for your specific situation in 15 minutes.
+
+Schedule here: [CALENDLY_LINK]
+
+Best,
+{AGENT_NAME}  
+Licensed WFG Associate | The Santiago Team
+
+P.S. Michael's only regret? "I wish I had known about this strategy 10 years earlier. The compound effect on tax savings would have been even more dramatic."`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: '401k-rollover-urgency',
+      name: '401k Rollover Final Opportunity',
+      type: 'email',
+      stage: 3,
+      subject: 'Final notice: {COMPANY} 401k rollover window closing',
+      content: `{FIRST_NAME},
+
+This is my final message about your {COMPANY} 401k rollover options.
+
+I've reached out because the rollover decision you make now will impact your retirement for the next 20-30 years.
+
+Here's what's at stake:
+
+**If you do nothing or choose traditional rollover:**
+- Pay full taxes on all withdrawals in retirement
+- Required minimum distributions starting at 73
+- No living benefits protection
+- No flexibility for tax-free access
+
+**If you explore tax-free strategies (IUL/Annuities):**
+- Potential tax-free growth and access
+- No required distributions
+- Living benefits protection
+- Principal protection with upside potential
+
+The numbers are compelling:
+- $500K rollover → Traditional IRA: ~$750K at retirement (fully taxable)
+- $500K rollover → IUL Strategy: ~$900K at retirement (tax-free access)
+- **Difference: $150K+ in your pocket, not the IRS**
+
+Since I haven't heard back, I'm guessing:
+❌ You're busy with the transition (completely understandable)
+❌ You're working with another advisor (no problem)
+❌ You've already decided on traditional rollover (may want to double-check)
+✅ You want to understand your options before the window closes
+
+If it's the last one, here's what happens in our 15-minute call:
+
+**Quick Rollover Options Review:**
+1. I'll explain your three main options (5 minutes)
+2. Show you the tax implications of each over 20 years (5 minutes)
+3. Answer your specific questions about timing and process (5 minutes)
+
+**Schedule your rollover consultation:** [CALENDLY_LINK]
+**Or call/text directly:** 407-777-1087
+
+{FIRST_NAME}, in 10 years you'll either:
+✅ Thank yourself for taking 15 minutes to understand tax-free options
+❌ Wish you had explored alternatives when you had the chance
+
+The rollover window doesn't wait.
+
+Best,
+{AGENT_NAME}
+Licensed WFG Associate | The Santiago Team
+
+P.S. Even if you decide against tax-free strategies, you'll have peace of mind knowing you made an informed decision. That alone is worth 15 minutes.`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: 'linkedin-401k-connect',
+      name: 'LinkedIn 401k Rollover Connection',
+      type: 'linkedin',
+      stage: 1,
+      content: `Hi {FIRST_NAME}, I noticed your background at {COMPANY} and expertise in {INDUSTRY}. I help executives optimize 401k rollovers into tax-free strategies (IUL, annuities, strategic investments). Many of my clients wished they knew about these options earlier - would love to connect and share some insights that might be valuable for your retirement planning.`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY']
+    },
+    {
+      id: 'linkedin-401k-followup', 
+      name: 'LinkedIn 401k Rollover Follow-up',
+      type: 'linkedin',
+      stage: 2,
+      content: `Thanks for connecting, {FIRST_NAME}!
+
+Your experience at {COMPANY} in {INDUSTRY} is impressive - I can see why you've been successful.
+
+I'm {AGENT_NAME} with WFG's Santiago Team. I specialize in helping professionals like yourself optimize their 401k rollovers for maximum tax efficiency.
+
+Most people don't realize they have alternatives to traditional rollover IRAs:
+
+**Tax-Free Growth Options:**
+• IUL strategies: Market upside, 0% floor protection
+• Fixed annuities: Guaranteed lifetime income
+• Strategic Roth conversions: Tax-free retirement
+
+Just helped a technology executive save $340K in future taxes by choosing the right rollover strategy instead of the default option.
+
+The key? Understanding your options BEFORE you roll over.
+
+Worth a brief conversation about your situation? I can show you the exact comparison in 15 minutes.
+
+Best,
+{AGENT_NAME}
+407-777-1087`,
+      personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY', 'AGENT_NAME']
     }
   ];
   
@@ -413,6 +621,34 @@ Pablo
         { type: 'wait', delay: 3, action: 'Wait 3 days' },
         { type: 'email', delay: 3, template: 'entrepreneur-100k-opener' },
         { type: 'task', delay: 7, action: 'Schedule high-priority call' }
+      ],
+      active: true
+    },
+    {
+      id: '401k-rollover-sequence',
+      name: '401k Rollover Tax-Free Campaign',
+      trigger: 'Pre-retiree or job changer lead',
+      steps: [
+        { type: 'email', delay: 0, template: '401k-rollover-opener' },
+        { type: 'wait', delay: 4, action: 'Wait for response' },
+        { type: 'email', delay: 4, template: '401k-rollover-case-study' },
+        { type: 'wait', delay: 5, action: 'Wait 5 days' },
+        { type: 'email', delay: 9, template: '401k-rollover-urgency' },
+        { type: 'task', delay: 12, action: 'Personal call - rollover window closing' }
+      ],
+      active: true
+    },
+    {
+      id: 'linkedin-401k-sequence',
+      name: 'LinkedIn 401k Rollover Flow',
+      trigger: '401k rollover LinkedIn lead',
+      steps: [
+        { type: 'linkedin', delay: 0, template: 'linkedin-401k-connect' },
+        { type: 'wait', delay: 2, action: 'Wait for connection acceptance' },
+        { type: 'linkedin', delay: 2, template: 'linkedin-401k-followup' },
+        { type: 'wait', delay: 4, action: 'Wait 4 days' },
+        { type: 'email', delay: 6, template: '401k-rollover-opener' },
+        { type: 'task', delay: 10, action: 'Schedule tax strategy consultation' }
       ],
       active: true
     }
@@ -912,6 +1148,202 @@ Pablo
                 <p className="text-xs text-gray-500 mt-2">
                   These criteria will help you pull 1,000-2,000 qualified leads for AI scoring
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* NEW: 401k Rollover Targeting */}
+          <Card className="border-blue-200 bg-blue-50/50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-blue-900">
+                <DollarSign className="h-5 w-5" />
+                401k Rollover to Tax-Free Accounts (IUL, Annuities, Investments)
+              </CardTitle>
+              <p className="text-sm text-blue-700">
+                High-net-worth individuals seeking tax-advantaged retirement strategies
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* Target Demographics */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-blue-900 flex items-center gap-2">
+                    🎯 Prime 401k Rollover Candidates
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="font-medium text-gray-900">Pre-Retirees (Ages 50-65)</div>
+                      <div className="text-sm text-gray-600 mt-1">$500K+ in 401k, seeking tax optimization</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">95% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="font-medium text-gray-900">Recent Retirees (65+)</div>
+                      <div className="text-sm text-gray-600 mt-1">Active rollover phase, tax-conscious</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">92% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="font-medium text-gray-900">Job Changers/Executives</div>
+                      <div className="text-sm text-gray-600 mt-1">Large 401k balances, rollover required</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">88% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="font-medium text-gray-900">High-Income Professionals</div>
+                      <div className="text-sm text-gray-600 mt-1">Doctors, lawyers, max 401k contributions</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">90% Interest Rate</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Lead Sources & Strategies */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-blue-900 flex items-center gap-2">
+                    📊 Lead Generation Strategies
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">LinkedIn: "401k rollover"</div>
+                        <Badge variant="secondary">High-Intent</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Search posts about "retirement planning"</li>
+                        <li>• Filter: "changing jobs" + "401k options"</li>
+                        <li>• Target: Senior executives 50+</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Company Layoff Lists</div>
+                        <Badge variant="secondary">Urgent Need</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Recent corporate downsizing announcements</li>
+                        <li>• Senior-level layoffs (Director+)</li>
+                        <li>• Must rollover within 60 days</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Financial Advisory Networks</div>
+                        <Badge className="bg-gold-100 text-gold-800">Warm Referrals</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• CPA firm partnerships</li>
+                        <li>• Estate planning attorney referrals</li>
+                        <li>• HR consulting company networks</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-blue-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Retirement Seminar Attendees</div>
+                        <Badge className="bg-purple-100 text-purple-800">Qualified Leads</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Local chamber retirement workshops</li>
+                        <li>• Corporate pre-retirement seminars</li>
+                        <li>• Financial planning conferences</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tax-Free Account Benefits */}
+              <div className="mt-6 pt-6 border-t border-blue-200">
+                <h4 className="font-semibold mb-3 text-blue-900">💰 Tax-Free Account Advantages</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg border border-blue-300">
+                    <div className="font-semibold text-blue-900 mb-2">Indexed Universal Life (IUL)</div>
+                    <ul className="text-sm text-blue-800 space-y-1">
+                      <li>• Tax-free growth potential</li>
+                      <li>• Market upside, downside protection</li>
+                      <li>• Living benefits access</li>
+                      <li>• Death benefit protection</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="p-4 bg-gradient-to-br from-green-100 to-emerald-100 rounded-lg border border-green-300">
+                    <div className="font-semibold text-green-900 mb-2">Fixed Annuities</div>
+                    <ul className="text-sm text-green-800 space-y-1">
+                      <li>• Guaranteed income stream</li>
+                      <li>• Tax-deferred growth</li>
+                      <li>• Principal protection</li>
+                      <li>• Inflation protection options</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="p-4 bg-gradient-to-br from-purple-100 to-violet-100 rounded-lg border border-purple-300">
+                    <div className="font-semibold text-purple-900 mb-2">Strategic Investments</div>
+                    <ul className="text-sm text-purple-800 space-y-1">
+                      <li>• Roth IRA conversions</li>
+                      <li>• Municipal bonds</li>
+                      <li>• Tax-managed portfolios</li>
+                      <li>• HSA maximization</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 401k Rollover Action Plan */}
+              <div className="mt-6 pt-6 border-t border-blue-200">
+                <h4 className="font-semibold mb-3 text-blue-900">🚀 401k Rollover Campaign Launch</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300">
+                    <Target className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Launch Rollover Sequence</div>
+                      <div className="text-xs opacity-75">Tax-free account templates</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-green-100 hover:bg-green-200 text-green-900 border border-green-300">
+                    <Users className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Import Retiree Lists</div>
+                      <div className="text-xs opacity-75">Ages 50-70, $500K+ assets</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                    <MessageSquare className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Tax Strategy Content</div>
+                      <div className="text-xs opacity-75">IUL vs Annuity comparisons</div>
+                    </div>
+                  </Button>
+                </div>
+                
+                <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <DollarSign className="h-5 w-5 text-blue-600" />
+                    <span className="font-semibold text-blue-900">Expected 401k Rollover Results (60 Days)</span>
+                  </div>
+                  <div className="grid grid-cols-4 gap-4 text-sm">
+                    <div>
+                      <div className="font-bold text-blue-700">200+</div>
+                      <div className="text-blue-600">Pre-retirees contacted</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-green-700">35-50</div>
+                      <div className="text-green-600">Qualified rollover leads</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-purple-700">12-20</div>
+                      <div className="text-purple-600">Tax strategy consultations</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-orange-700">$2.5M-$8M</div>
+                      <div className="text-orange-600">Assets under management</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
