@@ -10,6 +10,7 @@ import AdminOwners from "@/pages/AdminOwners";
 import Empower360 from "@/pages/Empower360";
 import AiCareerMentor from "@/pages/AiCareerMentor";
 import ThreePhilosophiesPage from "@/pages/ThreePhilosophiesPage";
+import AiAutomationHub from "@/pages/AiAutomationHub";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/empower360" component={Empower360} />
       <Route path="/three-philosophies" component={ThreePhilosophiesPage} />
+      <Route path="/ai-automation" component={AiAutomationHub} />
       <Route path="/ai-mentor" component={AiCareerMentor} />
       <Route path="/lead-engine" component={LeadEngine} />
       <Route path="/lead-engine/board" component={LeadBoard} />

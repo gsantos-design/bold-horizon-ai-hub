@@ -52,6 +52,13 @@ export default function Header() {
               </Button>
             </Link>
             
+            <Link href="/ai-automation">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-red-600 hover:text-red-700 hover:bg-red-50">
+                <Bot className="h-4 w-4" />
+                <span>AI Automation</span>
+              </Button>
+            </Link>
+
             <Link href="/ai-mentor">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50">
                 <Bot className="h-4 w-4" />
