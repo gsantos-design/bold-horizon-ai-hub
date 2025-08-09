@@ -562,6 +562,199 @@ Best,
 {AGENT_NAME}
 407-777-1087`,
       personalizable: ['FIRST_NAME', 'COMPANY', 'INDUSTRY', 'AGENT_NAME']
+    },
+    // NEW HIGH YIELD NO-LOSS TEMPLATES
+    {
+      id: 'high-yield-cd-alternative',
+      name: 'High Yield CD Alternative',
+      type: 'email',
+      stage: 1,
+      subject: '{FIRST_NAME}, earning more than your CD without the risk?',
+      content: `Hi {FIRST_NAME},
+
+I hope this finds you well. I noticed many conservative investors like yourself are frustrated with current CD and savings rates.
+
+Quick question: If I could show you how to earn 4.5-6.8% annually with the same principal protection as a CD - but with additional tax advantages - would that be worth a brief conversation?
+
+Here's what I'm talking about:
+
+**Multi-Year Guaranteed Annuities:**
+• 5.0-6.8% guaranteed rates (vs 0.5-2.5% CDs)
+• Same principal protection as FDIC
+• Tax-deferred growth until withdrawal
+• Flexible terms: 3, 5, 7, or 10 years
+• No market risk - guaranteed returns
+
+**Recent example:** Just helped Margaret R. move $400K from a 1.8% CD to a 6.2% guaranteed annuity. She'll earn an extra $17,600 per year with the same safety.
+
+What makes this different from risky investments:
+✅ Your principal is 100% guaranteed
+✅ Interest rates are locked in for the full term  
+✅ No stock market exposure or volatility
+✅ Insurance company backing (stronger than most banks)
+✅ Tax advantages CDs don't offer
+
+{FIRST_NAME}, I specialize in helping conservative investors like yourself maximize returns without taking unnecessary risks. 
+
+Would you be interested in seeing how this could work for your situation? I can run the exact numbers in 10 minutes.
+
+Book a brief call: [CALENDLY_LINK]
+
+Best regards,
+{AGENT_NAME}
+Licensed WFG Associate | The Santiago Team
+P: 407-777-1087
+
+P.S. Interest rates are starting to trend down. Locking in 5-6.8% guaranteed rates now could save you thousands over the next few years.`,
+      personalizable: ['FIRST_NAME', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: 'high-yield-comparison',
+      name: 'High Yield Rate Comparison',
+      type: 'email',
+      stage: 2,
+      subject: 'CD vs Guaranteed Annuity: The numbers will surprise you',
+      content: `{FIRST_NAME},
+
+Following up on my message about alternatives to low-yield CDs.
+
+Let me show you exactly what the difference looks like over time:
+
+**$100,000 Investment Comparison (5 Years):**
+
+**Traditional CD @ 2.0%:**
+• Year 5 total: $110,408
+• Annual income: $2,000-$2,200
+• Taxes due annually on interest
+• Total after taxes (25% bracket): $108,306
+
+**Guaranteed Annuity @ 5.8%:**  
+• Year 5 total: $133,382
+• Annual income: $5,800-$6,300
+• Tax-deferred until withdrawal
+• Additional earnings: $22,974
+
+**The difference: $22,974 more in your pocket**
+
+But here's what really matters for conservative investors like yourself:
+
+**Safety Comparison:**
+• CD: FDIC insured up to $250K
+• Annuity: State guarantee fund + insurance company reserves
+• Both: Zero principal risk
+
+**Flexibility Comparison:**
+• CD: Early withdrawal penalties, limited terms
+• Annuity: More flexible withdrawal options, multiple term choices
+
+**Tax Comparison:**
+• CD: Pay taxes annually on interest (even if not withdrawn)
+• Annuity: No taxes until you withdraw (tax-deferred growth)
+
+{FIRST_NAME}, I've helped dozens of conservative savers make this transition. The most common feedback? "I wish I had known about this sooner."
+
+Recent client success story:
+Robert K. moved $350K from CDs averaging 1.5% to guaranteed annuities at 6.2%. He now earns $21,700 annually instead of $5,250 - an extra $16,450 per year with the same safety.
+
+Ready to see how this could work for your specific situation? I can prepare a personalized comparison in 10 minutes.
+
+Schedule here: [CALENDLY_LINK]
+
+Best,
+{AGENT_NAME}
+Licensed WFG Associate | The Santiago Team
+
+P.S. The highest guaranteed rates are available for a limited time. Banks are already starting to lower CD rates as the Fed signals rate cuts.`,
+      personalizable: ['FIRST_NAME', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: 'high-yield-urgency',
+      name: 'High Yield Rate Lock Urgency',
+      type: 'email',
+      stage: 3,
+      subject: 'Final opportunity: Lock in 6.8% before rates drop',
+      content: `{FIRST_NAME},
+
+This is my final message about upgrading from low-yield CDs to guaranteed high-yield alternatives.
+
+The window for locking in 6.5-6.8% guaranteed rates is closing fast.
+
+Here's what's happening:
+• Fed signals indicate rate cuts coming in Q2/Q3
+• Insurance companies are already reducing new money rates
+• The 6.8% rates available today may be 5.5% next month
+
+**What this means for you:**
+Every month you wait could cost you 0.2-0.5% in guaranteed returns for the ENTIRE term of your investment.
+
+**Real impact on $200K investment:**
+• Lock in 6.8% today: $238,000 after 5 years
+• Wait until rates drop to 6.0%: $230,000 after 5 years
+• **Cost of waiting: $8,000**
+
+Since I haven't heard back, I'm guessing:
+❌ You're happy with current CD returns (unlikely at 0.5-2%)
+❌ You're concerned about safety (understandable - let me address this)
+❌ You're working with another advisor (no problem)
+✅ You want to understand the details before moving forward
+
+If it's the last one, here's what our 10-minute call covers:
+
+**Quick Rate Lock Consultation:**
+1. Current guaranteed rates available to you (2 minutes)
+2. Safety comparison: CDs vs Guaranteed Annuities (3 minutes)
+3. Tax implications and timing considerations (3 minutes)
+4. Next steps if you decide to proceed (2 minutes)
+
+**Schedule your rate lock consultation:** [CALENDLY_LINK]
+**Or call/text directly:** 407-777-1087
+
+{FIRST_NAME}, in 12 months you'll either:
+✅ Be earning 3-4x more than your old CDs with the same safety
+❌ Wish you had locked in higher guaranteed rates when you had the chance
+
+The choice is yours, but time is running out.
+
+Best,
+{AGENT_NAME}
+Licensed WFG Associate | The Santiago Team
+
+P.S. No obligation to move forward - but you deserve to know what options are available before rates drop further.`,
+      personalizable: ['FIRST_NAME', 'AGENT_NAME', 'CALENDLY_LINK']
+    },
+    {
+      id: 'linkedin-high-yield-connect',
+      name: 'LinkedIn High Yield Connection',
+      type: 'linkedin',
+      stage: 1,
+      content: `Hi {FIRST_NAME}, I see you're interested in conservative investing strategies. I help investors like yourself earn 4.5-6.8% guaranteed returns with the same principal protection as CDs. Many of my clients wished they knew about these high-yield, no-loss alternatives earlier. Would love to connect and share some insights.`,
+      personalizable: ['FIRST_NAME']
+    },
+    {
+      id: 'linkedin-high-yield-followup',
+      name: 'LinkedIn High Yield Follow-up', 
+      type: 'linkedin',
+      stage: 2,
+      content: `Thanks for connecting, {FIRST_NAME}!
+
+I noticed you're focused on conservative investing - smart approach in today's volatile markets.
+
+I'm {AGENT_NAME} with WFG's Santiago Team. I specialize in helping conservative investors earn significantly more than CDs and savings accounts without taking additional risk.
+
+**Current opportunities:**
+• Guaranteed annuities: 5.0-6.8% (vs 0.5-2% CDs)
+• Same principal protection as FDIC
+• Tax advantages CDs don't offer
+• No market risk or volatility
+
+Just helped a client move $300K from 1.5% CDs to 6.2% guaranteed annuities. Same safety, but earning $14,100 more annually.
+
+Worth a brief conversation about your current CD/savings strategy? I can show you exactly how much more you could be earning with the same safety.
+
+Best,
+{AGENT_NAME}
+407-777-1087`,
+      personalizable: ['FIRST_NAME', 'AGENT_NAME']
     }
   ];
   
@@ -649,6 +842,34 @@ Best,
         { type: 'wait', delay: 4, action: 'Wait 4 days' },
         { type: 'email', delay: 6, template: '401k-rollover-opener' },
         { type: 'task', delay: 10, action: 'Schedule tax strategy consultation' }
+      ],
+      active: true
+    },
+    {
+      id: 'high-yield-cd-sequence',
+      name: 'High Yield CD Alternative Campaign',
+      trigger: 'Conservative saver/CD holder lead',
+      steps: [
+        { type: 'email', delay: 0, template: 'high-yield-cd-alternative' },
+        { type: 'wait', delay: 5, action: 'Wait for response' },
+        { type: 'email', delay: 5, template: 'high-yield-comparison' },
+        { type: 'wait', delay: 6, action: 'Wait 6 days' },
+        { type: 'email', delay: 11, template: 'high-yield-urgency' },
+        { type: 'task', delay: 14, action: 'Personal call - rate lock consultation' }
+      ],
+      active: true
+    },
+    {
+      id: 'linkedin-high-yield-sequence',
+      name: 'LinkedIn High Yield Flow',
+      trigger: 'Conservative investor LinkedIn lead',
+      steps: [
+        { type: 'linkedin', delay: 0, template: 'linkedin-high-yield-connect' },
+        { type: 'wait', delay: 2, action: 'Wait for connection' },
+        { type: 'linkedin', delay: 2, template: 'linkedin-high-yield-followup' },
+        { type: 'wait', delay: 4, action: 'Wait 4 days' },
+        { type: 'email', delay: 6, template: 'high-yield-cd-alternative' },
+        { type: 'task', delay: 10, action: 'Schedule rate comparison call' }
       ],
       active: true
     }
@@ -1341,6 +1562,198 @@ Best,
                     <div>
                       <div className="font-bold text-orange-700">$2.5M-$8M</div>
                       <div className="text-orange-600">Assets under management</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* NEW: High Yield No-Loss Account Targeting */}
+          <Card className="border-emerald-200 bg-emerald-50/50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-emerald-900">
+                <TrendingUp className="h-5 w-5" />
+                High Yield Accounts with No Loss Guarantee
+              </CardTitle>
+              <p className="text-sm text-emerald-700">
+                Conservative investors seeking guaranteed principal protection with competitive returns
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* Target Demographics */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-emerald-900 flex items-center gap-2">
+                    🛡️ High Yield No-Loss Prospects
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="font-medium text-gray-900">Conservative Savers</div>
+                      <div className="text-sm text-gray-600 mt-1">CD/savings account holders, risk-averse investors</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">85% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="font-medium text-gray-900">Pre-Retirees (55+)</div>
+                      <div className="text-sm text-gray-600 mt-1">Seeking capital preservation with growth</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">90% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="font-medium text-gray-900">High Net Worth Individuals</div>
+                      <div className="text-sm text-gray-600 mt-1">$500K+ liquid assets, diversification focused</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">88% Interest Rate</Badge>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="font-medium text-gray-900">Business Owners</div>
+                      <div className="text-sm text-gray-600 mt-1">Cash flow management, tax-efficient strategies</div>
+                      <Badge className="mt-2 bg-green-100 text-green-800">83% Interest Rate</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* High Yield No-Loss Strategies */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-emerald-900 flex items-center gap-2">
+                    📈 No-Loss High Yield Solutions
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Fixed Annuities</div>
+                        <Badge className="bg-emerald-100 text-emerald-800">4.5-6.2% APY</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Guaranteed principal protection</li>
+                        <li>• Fixed interest rates for term</li>
+                        <li>• No market risk exposure</li>
+                        <li>• Tax-deferred growth</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Multi-Year Guaranteed Annuities</div>
+                        <Badge className="bg-emerald-100 text-emerald-800">5.0-6.8% APY</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Locked-in rates for 3-10 years</li>
+                        <li>• Higher yields than CDs</li>
+                        <li>• FDIC equivalent protection</li>
+                        <li>• Flexible payout options</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Buffer ETFs & Structured CDs</div>
+                        <Badge className="bg-emerald-100 text-emerald-800">Market upside</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Principal protection guarantee</li>
+                        <li>• Market participation up to cap</li>
+                        <li>• Downside buffer protection</li>
+                        <li>• 1-3 year terms available</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="p-3 bg-white rounded border border-emerald-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="font-medium text-gray-900">Cash Value Life Insurance</div>
+                        <Badge className="bg-emerald-100 text-emerald-800">Tax advantages</Badge>
+                      </div>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Tax-free growth potential</li>
+                        <li>• Guaranteed minimum returns</li>
+                        <li>• Living benefits access</li>
+                        <li>• Estate planning advantages</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Lead Generation Sources */}
+              <div className="mt-6 pt-6 border-t border-emerald-200">
+                <h4 className="font-semibold mb-3 text-emerald-900">🎯 High Yield No-Loss Lead Sources</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 className="font-medium mb-2 text-emerald-800">Online Sources</h5>
+                    <ul className="text-sm text-gray-700 space-y-1">
+                      <li>• LinkedIn: "CD rates too low" posts</li>
+                      <li>• Facebook: Retirement planning groups</li>
+                      <li>• Reddit: r/investing conservative threads</li>
+                      <li>• Nextdoor: Financial planning discussions</li>
+                      <li>• Bank rate comparison websites</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium mb-2 text-emerald-800">Traditional Sources</h5>
+                    <ul className="text-sm text-gray-700 space-y-1">
+                      <li>• Local bank CD maturity lists</li>
+                      <li>• Credit union member directories</li>
+                      <li>• Estate planning attorney referrals</li>
+                      <li>• CPA client bases (conservative investors)</li>
+                      <li>• Senior community centers</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* High Yield Campaign Action Plan */}
+              <div className="mt-6 pt-6 border-t border-emerald-200">
+                <h4 className="font-semibold mb-3 text-emerald-900">🚀 High Yield No-Loss Campaign</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300">
+                    <Target className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Launch CD Alternative Campaign</div>
+                      <div className="text-xs opacity-75">Target CD holders with better rates</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300">
+                    <Users className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Import Conservative Savers</div>
+                      <div className="text-xs opacity-75">Bank customers, CD holders</div>
+                    </div>
+                  </Button>
+                  
+                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                    <MessageSquare className="h-5 w-5 mb-2" />
+                    <div className="text-left">
+                      <div className="font-semibold">Rate Comparison Content</div>
+                      <div className="text-xs opacity-75">CD vs Annuity calculators</div>
+                    </div>
+                  </Button>
+                </div>
+                
+                <div className="mt-4 p-4 bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg border border-emerald-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <DollarSign className="h-5 w-5 text-emerald-600" />
+                    <span className="font-semibold text-emerald-900">Expected High Yield Results (90 Days)</span>
+                  </div>
+                  <div className="grid grid-cols-4 gap-4 text-sm">
+                    <div>
+                      <div className="font-bold text-emerald-700">300+</div>
+                      <div className="text-emerald-600">Conservative savers contacted</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-green-700">60-85</div>
+                      <div className="text-green-600">CD alternative consultations</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-blue-700">25-40</div>
+                      <div className="text-blue-600">High yield account opens</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-purple-700">$1.2M-$4.5M</div>
+                      <div className="text-purple-600">Assets under management</div>
                     </div>
                   </div>
                 </div>
