@@ -12,28 +12,44 @@ export default function VideoSection() {
             <span className="text-blue-600">Those We Serve</span>
           </h2>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
-            No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Watch the video below to learn more about our business platform and what makes us unique in an industry that is not known for its diversity.
+            No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Our video showcases our business platform and what makes us unique in an industry that is not known for its diversity.
           </p>
           
-          {/* Video Placeholder */}
+          {/* Live Video */}
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-gray-800 rounded-lg overflow-hidden aspect-video mb-4 shadow-xl">
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="text-white text-center">
-                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-white/30">
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                    </svg>
-                  </div>
-                  <p className="text-sm mb-1">Click for sound</p>
-                  <p className="text-sm font-bold">3:01</p>
-                </div>
+              <video 
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="https://embed-ssl.wistia.com/deliveries/92ea60af2260ad7f93a015783c8efbeb7d29d677.webp?image_crop_resized=1920x1080"
+              >
+                <source src="https://embed-ssl.wistia.com/deliveries/92ea60af2260ad7f93a015783c8efbeb7d29d677.bin" type="video/mp4" />
+                <source src="https://embed-ssl.wistia.com/deliveries/92ea60af2260ad7f93a015783c8efbeb7d29d677.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              {/* Video Controls Overlay */}
+              <div className="absolute top-4 right-4 flex space-x-2">
+                <button 
+                  className="w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center text-white hover:bg-opacity-70 transition-opacity"
+                  onClick={(e) => {
+                    const video = e.currentTarget.parentNode?.parentNode?.querySelector('video');
+                    if (video) {
+                      video.muted = !video.muted;
+                      e.currentTarget.innerHTML = video.muted ? 
+                        '<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.617 14H2a1 1 0 01-1-1V7a1 1 0 011-1h2.617l3.766-2.816a1 1 0 011.617.816zM14 5a1 1 0 011.414 0A9.05 9.05 0 0119.5 10a9.05 9.05 0 01-4.086 5A1 1 0 1114 13.585a7.05 7.05 0 000-7.17A1 1 0 0114 5z"/></svg>' :
+                        '<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.617 14H2a1 1 0 01-1-1V7a1 1 0 011-1h2.617l3.766-2.816a1 1 0 011.617.816zM12.828 11.828a4 4 0 000-5.656l1.414-1.414a6 6 0 010 8.484l-1.414-1.414z" clipRule="evenodd"/></svg>';
+                    }
+                  }}
+                  title="Toggle Sound"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.816L4.617 14H2a1 1 0 01-1-1V7a1 1 0 011-1h2.617l3.766-2.816a1 1 0 011.617.816zM15.657 6.343a1 1 0 00-1.414 1.414l1.414 1.414-1.414 1.414a1 1 0 001.414 1.414l1.414-1.414 1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414 1.414-1.414a1 1 0 00-1.414-1.414l-1.414 1.414-1.414-1.414z" clipRule="evenodd"/>
+                  </svg>
+                </button>
               </div>
-              <img 
-                src="https://embed-ssl.wistia.com/deliveries/92ea60af2260ad7f93a015783c8efbeb7d29d677.webp?image_crop_resized=1920x1080" 
-                alt="Video Thumbnail" 
-                className="w-full h-full object-cover opacity-90"
-              />
             </div>
           </div>
         </div>
