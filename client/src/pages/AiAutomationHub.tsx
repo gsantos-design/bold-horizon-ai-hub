@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AIAutomationDashboard from "@/components/AIAutomationDashboard";
 import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from "@/components/ContextualTooltip";
 import InteractiveTourGuide, { aiAutomationTour, useTourGuide } from "@/components/InteractiveTourGuide";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
@@ -157,7 +158,8 @@ export default function AiAutomationHub() {
 
               {/* Overview Tab */}
               <TabsContent value="overview" className="mt-0">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <AIAutomationDashboard />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 mt-8">
                   {/* AI Phone Calls */}
                   <Card className="border-2 border-blue-200 shadow-xl">
                     <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">

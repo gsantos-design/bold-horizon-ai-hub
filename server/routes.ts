@@ -1160,6 +1160,49 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // AI Automation Routes
+  app.get("/api/ai-automation/status", async (req, res) => {
+    try {
+      const { aiAutomation } = await import('./services/aiAutomation');
+      const status = await aiAutomation.setupSantiagoTeamAutomation();
+      res.json(status);
+    } catch (error) {
+      res.status(500).json({ 
+        status: 'error', 
+        message: 'Failed to check AI automation status',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.post("/api/ai-automation/process-lead", async (req, res) => {
+    try {
+      const { aiAutomation } = await import('./services/aiAutomation');
+      const result = await aiAutomation.processLeadOutreach(req.body);
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ 
+        status: 'error', 
+        message: 'Failed to process lead outreach',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.get("/api/ai-automation/voices", async (req, res) => {
+    try {
+      const { elevenLabsService } = await import('./services/aiAutomation');
+      const voices = await elevenLabsService.getVoices();
+      res.json(voices);
+    } catch (error) {
+      res.status(500).json({ 
+        status: 'error', 
+        message: 'Failed to get voices',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
