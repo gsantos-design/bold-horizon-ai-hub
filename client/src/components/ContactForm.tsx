@@ -120,7 +120,7 @@ export default function ContactForm() {
               <h3 className="font-heading font-semibold text-xl mb-4">Begin Your Financial Transformation</h3>
               <div className="bg-neutral-100 p-4 rounded-lg mb-4">
                 <p className="text-sm text-neutral-700">
-                  Join our growing team of associates and leaders in the Caribbean, Florida, and New York regions. 
+                  Join our growing team of associates and leaders in the Florida and New York regions. 
                   Complete the form below to learn how you can transform your financial future with WFG.
                 </p>
               </div>

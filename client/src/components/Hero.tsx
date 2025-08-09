@@ -143,7 +143,7 @@ export default function Hero() {
           <div className="mb-2 flex justify-center">
             <span className="bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center">
               <Star className="h-3 w-3 mr-1" fill="white" />
-              {language === 'en' ? 'The Santiago Team: Caribbean, Florida & New York' : 'El Equipo Santiago: Caribe, Florida y Nueva York'}
+              {language === 'en' ? 'The Santiago Team: Florida & New York' : 'El Equipo Santiago: Florida y Nueva York'}
             </span>
           </div>
           

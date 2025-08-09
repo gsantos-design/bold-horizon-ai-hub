@@ -14,7 +14,7 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 - **Revenue Intelligence**: Smart calculation engine using title, industry, company size, and location multipliers
 - **Entrepreneur-Focused Lead Generation**: New targeting system for entrepreneurs seeking $100K-$250K additional income with 90% close rate potential
 - **High-Converting Outreach Templates**: Specialized email sequences and LinkedIn campaigns targeting successful business owners and founders
-- **Territory Optimization**: Updated all components to focus exclusively on Florida and New York markets (removed Caribbean and Puerto Rico)
+- **Territory Optimization**: Updated all components to focus exclusively on Florida and New York markets (Caribbean and Puerto Rico fully removed)
 - **Industry Success Probability Heat Map**: Interactive visual analytics showing conversion rates, deal values, and strategic insights across 9 industry sectors with territory-specific performance data
 - **401k Rollover Targeting**: Comprehensive lead generation system targeting individuals seeking tax-free rollover strategies (IUL, Annuities, Strategic Investments) with specialized templates for pre-retirees, job changers, and high-income professionals
 - **High Yield No-Loss Targeting**: Lead generation system for conservative investors seeking CD alternatives with guaranteed principal protection and higher yields (4.5-6.8% vs traditional CD rates)
@@ -147,4 +147,4 @@ Currently implements a minimal authentication structure with room for expansion:
 ## Additional Integrations
 - **World Financial Group**: Direct integration with WFG registration systems
 - **Transamerica**: Commission calculation based on Transamerica products
-- **Multi-regional Support**: Specialized configurations for Florida and New York markets
+- **Multi-regional Support**: Specialized configurations for Florida and New York markets (Caribbean territory removed)

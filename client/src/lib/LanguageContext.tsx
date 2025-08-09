@@ -39,7 +39,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.your_life': 'Your Life.',
     'hero.transformed': 'Transformed',
     'hero.forever': 'Forever.',
-    'hero.join_team': 'Join the Santiago Team and escape the ordinary. Discover how our associates are building life-changing wealth in the Caribbean, Florida, and New York.',
+    'hero.join_team': 'Join the Santiago Team and escape the ordinary. Discover how our associates are building life-changing wealth in Florida and New York.',
     'hero.featured': 'As featured in:',
     'hero.followers': '25K+ Followers',
     'hero.associates': '5000+ Associates',

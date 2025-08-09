@@ -196,7 +196,7 @@ export default function TeamBuilding() {
             Real People, Real Transformations
           </h2>
           <p className="text-neutral-600 max-w-3xl mx-auto">
-            Hear from associates who changed their lives with WFG in the Caribbean, Florida, and New York regions.
+            Hear from associates who changed their lives with WFG in the Florida and New York regions.
           </p>
         </div>
         
@@ -209,8 +209,8 @@ export default function TeamBuilding() {
                   MC
                 </div>
               </div>
-              <h3 className="font-heading font-semibold text-lg text-center mb-1">Maria Castillo</h3>
-              <p className="text-neutral-500 text-sm text-center mb-4">San Juan, Puerto Rico</p>
+              <h3 className="font-heading font-semibold text-lg text-center mb-1">Maria Rodriguez</h3>
+              <p className="text-neutral-500 text-sm text-center mb-4">Miami, Florida</p>
               <p className="text-neutral-600 italic mb-4">
                 "I was working 60 hours a week at two jobs and still struggling to pay my bills. After joining WFG, I was able to quit both jobs within 6 months. Now I earn triple my previous income while spending more time with my family."
               </p>

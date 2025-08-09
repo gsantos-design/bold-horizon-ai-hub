@@ -611,9 +611,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     // Geographic multiplier
     const locationMultipliers: { [key: string]: number } = {
       'florida': 1.2,
-      'new-york': 1.4,
-      'caribbean': 1.0,
-      'puerto-rico': 0.9
+      'new-york': 1.4
     };
     
     const revenueKey = companyRevenue?.toLowerCase() || 'small';

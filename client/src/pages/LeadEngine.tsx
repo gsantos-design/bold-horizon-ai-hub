@@ -1216,8 +1216,6 @@ Best,
                     <select className="w-full p-2 border rounded-md">
                       <option value="florida">Florida</option>
                       <option value="new-york">New York</option>
-                      <option value="caribbean">Caribbean</option>
-                      <option value="puerto-rico">Puerto Rico</option>
                     </select>
                   </div>
                 </div>

@@ -201,7 +201,7 @@ export default function Empower360() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Meet the dedicated professionals who make financial transformation possible for families 
-              across the Caribbean, Florida, and New York markets.
+              across the Florida and New York markets.
             </p>
           </div>
 
