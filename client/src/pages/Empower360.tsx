@@ -8,6 +8,7 @@ import FinancialEducationModule from "@/components/FinancialEducationModule";
 import SelfImprovementModule from "@/components/SelfImprovementModule";
 import { useLanguage } from "@/lib/LanguageContext";
 import GamificationDashboard from "@/components/GamificationDashboard";
+import ThreePhilosophies from "@/components/ThreePhilosophies";
 
 export default function Empower360() {
   const { t } = useLanguage();
@@ -370,6 +371,9 @@ export default function Empower360() {
           </div>
         </div>
       </section>
+
+      {/* Three Philosophies Section */}
+      <ThreePhilosophies />
 
       {/* Main Content */}
       <section className="pb-16">

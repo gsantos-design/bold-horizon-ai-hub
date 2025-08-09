@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Link } from "wouter";
@@ -42,6 +42,13 @@ export default function Header() {
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 hover:bg-purple-50">
                 <Star className="h-4 w-4" />
                 <span>Empower360</span>
+              </Button>
+            </Link>
+            
+            <Link href="/three-philosophies">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50">
+                <Target className="h-4 w-4" />
+                <span>3 Philosophies</span>
               </Button>
             </Link>
             
