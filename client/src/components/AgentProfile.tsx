@@ -2,8 +2,6 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText } from "l
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
-import newMember1Photo from "@assets/image_1754680424329.jpeg";
-import newMember2Photo from "@assets/image_1754680478408.jpeg";
 
 export default function AgentProfile() {
   const { t } = useLanguage();
@@ -129,13 +127,13 @@ export default function AgentProfile() {
               <div className="text-center mb-4">
                 <div className="relative mb-4">
                   <img 
-                    src={newMember1Photo} 
-                    alt="Santiago Team Member" 
+                    src="/joseph-santiago.png" 
+                    alt="Joseph Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Joseph Santiago</h3>
                 <p className="text-blue-600 font-semibold mb-2">Licensed WFG Associate</p>
                 <p className="text-gray-700 text-sm">
                   Dedicated to helping families understand financial opportunities and build secure futures through education and professional guidance.
@@ -158,13 +156,13 @@ export default function AgentProfile() {
               <div className="text-center mb-4">
                 <div className="relative mb-4">
                   <img 
-                    src={newMember2Photo} 
-                    alt="Santiago Team Member" 
+                    src="/christian-santiago.png" 
+                    alt="Christian Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-emerald-200"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Christian Santiago</h3>
                 <p className="text-emerald-600 font-semibold mb-2">Licensed WFG Associate</p>
                 <p className="text-gray-700 text-sm">
                   Committed to empowering individuals through financial literacy and helping them discover pathways to financial independence.
