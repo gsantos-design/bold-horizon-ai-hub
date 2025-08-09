@@ -33,23 +33,40 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from "@/components/ContextualTooltip";
+import InteractiveTourGuide, { aiAutomationTour, useTourGuide } from "@/components/InteractiveTourGuide";
+import FloatingHelpButton from "@/components/FloatingHelpButton";
 
 export default function AiAutomationHub() {
   const [activeTab, setActiveTab] = useState("overview");
   const [phoneScript, setPhoneScript] = useState("");
   const [videoScript, setVideoScript] = useState("");
+  const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      
+      {/* Interactive Tour Guide */}
+      <InteractiveTourGuide 
+        steps={aiAutomationTour}
+        isActive={isActive}
+        onComplete={completeTour}
+        onSkip={skipTour}
+      />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-16">
+        <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-16 ai-overview-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-4 bg-white/20 text-white px-6 py-2 text-sm">
-                🤖 AI Automation Hub
-              </Badge>
+              <AITooltip 
+                content="Transform your Santiago Team's lead generation with cutting-edge AI technology. Scale from dozens to thousands of personalized prospect interactions daily while maintaining the authentic touch of Nolly and Pablo Santiago."
+                title="🤖 Revolutionary AI Scaling"
+              >
+                <Badge className="mb-4 bg-white/20 text-white px-6 py-2 text-sm cursor-help">
+                  🤖 AI Automation Hub
+                </Badge>
+              </AITooltip>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 AI Phone Calls &<br/>
                 <span className="text-yellow-300">Video Avatars</span>
@@ -59,15 +76,44 @@ export default function AiAutomationHub() {
                 featuring voice and video clones of Nolly and Pablo Santiago.
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8">
-                  <PlayCircle className="h-5 w-5 mr-2" />
-                  Start AI Campaign
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8">
-                  <Settings className="h-5 w-5 mr-2" />
-                  Configuration
-                </Button>
+                <TipTooltip 
+                  content="Launch your first AI automation campaign targeting 401k rollover prospects, high-yield savers, or entrepreneurs. Expected results: 8-12% conversion rate, 200+ appointments monthly, $2.5M+ pipeline value."
+                  title="🚀 Campaign Launch"
+                >
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8">
+                    <PlayCircle className="h-5 w-5 mr-2" />
+                    Start AI Campaign
+                  </Button>
+                </TipTooltip>
+                
+                <HelpTooltip 
+                  content="Configure your AI phone calls and video avatars with custom scripts, targeting parameters, and integration settings. Setup includes voice cloning, avatar training, and CRM synchronization."
+                  title="⚙️ AI Configuration"
+                >
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8">
+                    <Settings className="h-5 w-5 mr-2" />
+                    Configuration
+                  </Button>
+                </HelpTooltip>
               </div>
+              
+              {/* Tour trigger for new users */}
+              {!hasSeenTour && (
+                <div className="mt-6">
+                  <TipTooltip 
+                    content="New to AI automation? Take a quick guided tour to understand how voice cloning and video avatars can 10x your lead generation capacity!"
+                  >
+                    <Button 
+                      onClick={startTour}
+                      variant="outline" 
+                      className="border-white/50 text-white hover:bg-white/10"
+                    >
+                      <PlayCircle className="h-4 w-4 mr-2" />
+                      Take AI Automation Tour
+                    </Button>
+                  </TipTooltip>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -701,6 +747,9 @@ export default function AiAutomationHub() {
         </section>
       </main>
       <Footer />
+      
+      {/* Floating Help Button */}
+      <FloatingHelpButton currentPage="ai-automation" />
     </div>
   );
 }
