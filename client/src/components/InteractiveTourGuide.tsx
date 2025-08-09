@@ -89,7 +89,7 @@ export default function InteractiveTourGuide({ steps, isActive, onComplete, onSk
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            className="fixed inset-0 bg-black bg-opacity-30 z-40"
             onClick={handleSkip}
           />
           
@@ -98,13 +98,13 @@ export default function InteractiveTourGuide({ steps, isActive, onComplete, onSk
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="fixed z-50 pointer-events-none"
+              className="fixed z-40 pointer-events-none"
               style={{
                 top: targetElement.offsetTop - 10,
                 left: targetElement.offsetLeft - 10,
                 width: targetElement.offsetWidth + 20,
                 height: targetElement.offsetHeight + 20,
-                boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.5)',
+                boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.5)',
                 borderRadius: '8px'
               }}
             />

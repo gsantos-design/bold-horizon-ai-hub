@@ -62,7 +62,7 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
         {
           icon: <ExternalLink className="h-4 w-4" />,
           label: "Setup Guide",
-          action: () => window.open('/AI_AUTOMATION_SETUP_GUIDE.md', '_blank'),
+          action: () => window.location.href = '/setup-guide',
           description: "Complete account setup walkthrough"
         },
         {

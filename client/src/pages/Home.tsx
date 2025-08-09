@@ -33,23 +33,22 @@ export default function Home() {
         onSkip={skipTour}
       />
 
-      {/* Tour Trigger Button (for first-time users) */}
-      {!hasSeenTour && (
-        <div className="fixed bottom-4 right-4 z-30">
-          <TipTooltip 
-            content="Take a guided tour to discover all the powerful features available to grow your Santiago Team success!"
-            title="🚀 Quick Start Tour"
+      {/* Tour Trigger Button (always visible for demo) */}
+      <div className="fixed bottom-4 left-4 z-30">
+        <TipTooltip 
+          content="Take a guided tour to discover all the powerful features available to grow your Santiago Team success!"
+          title="🚀 Quick Start Tour"
+        >
+          <Button
+            onClick={startTour}
+            variant="outline"
+            className="bg-white/90 backdrop-blur-sm border-blue-200 text-blue-600 hover:bg-blue-50 shadow-lg"
           >
-            <Button
-              onClick={startTour}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl"
-            >
-              <PlayCircle className="h-5 w-5 mr-2" />
-              Take Tour
-            </Button>
-          </TipTooltip>
-        </div>
-      )}
+            <PlayCircle className="h-5 w-5 mr-2" />
+            Take Tour
+          </Button>
+        </TipTooltip>
+      </div>
       
       {/* Empower360 Featured Section */}
       <section className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 py-12 hero-section">
