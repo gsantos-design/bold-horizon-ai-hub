@@ -61,7 +61,19 @@ export default function AIAutomationDashboard() {
 
   // Process lead mutation  
   const processLeadMutation = useMutation({
-    mutationFn: (leadData: any) => apiRequest('/api/ai-automation/process-lead', 'POST', leadData),
+    mutationFn: async (leadData: any) => {
+      const response = await fetch('/api/ai-automation/process-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(leadData),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to process lead');
+      }
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/leads'] });
     }

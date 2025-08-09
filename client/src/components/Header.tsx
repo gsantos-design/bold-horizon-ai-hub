@@ -87,6 +87,13 @@ export default function Header() {
               </Button>
             </Link>
             
+            <Link href="/workflow-visualization">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50">
+                <BarChart3 className="h-4 w-4" />
+                <span>Workflows</span>
+              </Button>
+            </Link>
+            
             <Link href="/admin/owners">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2">
                 <Settings className="h-4 w-4" />
