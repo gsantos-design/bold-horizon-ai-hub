@@ -28,9 +28,9 @@ export default function AgentProfile() {
                   <img 
                     src="/nolly-santiago.png" 
                     alt="Nolly Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg border-4 border-purple-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-purple-200"
+                    style={{ objectPosition: 'center top' }}
                   />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-blue-400/20"></div>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
                 <p className="text-purple-600 font-semibold mb-2">Financial Professional &amp; Co-Leader</p>
@@ -45,9 +45,9 @@ export default function AgentProfile() {
                   <img 
                     src="/pablo-santiago.png" 
                     alt="Pablo Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
+                    style={{ objectPosition: 'center top' }}
                   />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
                 <p className="text-blue-600 font-semibold mb-2">Financial Professional &amp; Co-Leader</p>
@@ -71,9 +71,9 @@ export default function AgentProfile() {
                   <img 
                     src={princhescaPhoto} 
                     alt="Princhesca Rainier Turner" 
-                    className="w-48 h-48 mx-auto lg:mx-0 rounded-lg object-cover shadow-lg border-4 border-emerald-200"
+                    className="w-48 h-48 mx-auto lg:mx-0 rounded-full object-cover object-top shadow-lg border-4 border-emerald-200"
+                    style={{ objectPosition: 'center top' }}
                   />
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-emerald-400/20 to-teal-400/20"></div>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Princhesca Rainier Turner</h3>
                 <p className="text-emerald-600 font-semibold mb-2">Licensed Life Insurance Agent</p>
@@ -131,9 +131,9 @@ export default function AgentProfile() {
                   <img 
                     src={newMember1Photo} 
                     alt="Santiago Team Member" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
+                    style={{ objectPosition: 'center top' }}
                   />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
                 <p className="text-blue-600 font-semibold mb-2">Licensed WFG Associate</p>
@@ -160,9 +160,9 @@ export default function AgentProfile() {
                   <img 
                     src={newMember2Photo} 
                     alt="Santiago Team Member" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg border-4 border-emerald-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-emerald-200"
+                    style={{ objectPosition: 'center top' }}
                   />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/20 to-teal-400/20"></div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Team Associate</h3>
                 <p className="text-emerald-600 font-semibold mb-2">Licensed WFG Associate</p>
