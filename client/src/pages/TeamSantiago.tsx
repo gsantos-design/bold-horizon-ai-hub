@@ -96,38 +96,38 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Nolly Santiago</CardTitle>
-                      <p className="text-purple-100">Co-Founder & Senior Associate</p>
+                      <p className="text-purple-100">Marketing Director – World Financial Group</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        The heart and soul of Team Santiago. With over a decade of experience transforming lives 
-                        through financial education, Nolly combines compassion with expertise to guide families 
-                        toward financial freedom.
+                        <strong>Two decades in telecommunications.</strong> After losing both parents too early and realizing 
+                        they never had financial education, Nolly discovered WFG. Her mission: ensure every family has 
+                        the knowledge and tools to secure their future before it's too late.
                       </p>
                       
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-purple-600">
-                          <Award className="h-4 w-4" />
-                          <span className="text-sm font-medium">Senior Associate WFG</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-purple-600">
-                          <Users className="h-4 w-4" />
-                          <span className="text-sm font-medium">Team Building Expert</span>
+                          <Briefcase className="h-4 w-4" />
+                          <span className="text-sm font-medium">Telecommunications Veteran</span>
                         </div>
                         <div className="flex items-center gap-2 text-purple-600">
                           <Heart className="h-4 w-4" />
-                          <span className="text-sm font-medium">Family Financial Advocate</span>
+                          <span className="text-sm font-medium">Family Legacy Advocate</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-purple-600">
+                          <Users className="h-4 w-4" />
+                          <span className="text-sm font-medium">Financial Education</span>
                         </div>
                       </div>
 
                       <div className="border-t pt-4">
                         <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
                         <div className="flex flex-wrap gap-2">
-                          <Badge variant="outline" className="text-xs">IUL Products</Badge>
-                          <Badge variant="outline" className="text-xs">Retirement Planning</Badge>
-                          <Badge variant="outline" className="text-xs">Team Leadership</Badge>
+                          <Badge variant="outline" className="text-xs">Family Protection</Badge>
+                          <Badge variant="outline" className="text-xs">Multiple Income Streams</Badge>
+                          <Badge variant="outline" className="text-xs">Financial Education</Badge>
                         </div>
                       </div>
                     </div>

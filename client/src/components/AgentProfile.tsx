@@ -21,7 +21,7 @@ export default function AgentProfile() {
             {/* Leadership Photos */}
             <div className="flex flex-col md:flex-row justify-center items-start gap-12 mb-8">
               {/* Nolly Santiago */}
-              <div className="text-center max-w-sm">
+              <div className="text-center max-w-lg">
                 <div className="relative mb-6">
                   <img 
                     src="/nolly-santiago.png" 
@@ -31,10 +31,13 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
-                <p className="text-purple-600 font-semibold mb-2">Financial Professional &amp; Co-Leader</p>
-                <p className="text-gray-700 leading-relaxed">
-                  Licensed WFG Associate specializing in systematic wealth building strategies and empowering families through financial education
-                </p>
+                <p className="text-purple-600 font-semibold mb-2">Marketing Director – World Financial Group</p>
+                <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
+                  <p>I've spent over two decades in telecommunications, working as an account executive and serving small and medium-sized businesses. Those businesses have always reminded me of my parents — hardworking, dedicated, and doing whatever it takes to provide for their families.</p>
+                  <p>Both of my parents passed away far too early. I'm deeply grateful for the sacrifices they made, but they never had the chance to teach me about financial education. The truth is, they didn't know much about it themselves — and like many families, we were never shown how to build real financial security.</p>
+                  <p><strong>That changed when I came to WFG.</strong> For the first time, I learned how money really works — and more importantly, how to protect families from the uncertainties life throws our way.</p>
+                  <p>Now, my mission is simple: to educate and empower others so they can create financial freedom, build multiple streams of income, and protect what matters most. Because every family deserves the knowledge and tools to secure their future — before it's too late.</p>
+                </div>
               </div>
               
               {/* Pablo Santiago */}
