@@ -16,6 +16,7 @@ import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from
 import InteractiveTourGuide, { homePageTour, useTourGuide } from "@/components/InteractiveTourGuide";
 import WFGCompliance from "@/components/WFGCompliance";
 import DynamicTeamMissionHighlightReel from "@/components/DynamicTeamMissionHighlightReel";
+import LandingHero from "@/components/LandingHero";
 import Footer from "@/components/Footer";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 
@@ -51,57 +52,7 @@ export default function Home() {
         </TipTooltip>
       </div>
       
-      {/* Empower360 Featured Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 py-12 hero-section">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl">
-            <CardContent className="p-8 text-center">
-              <FeatureTooltip 
-                content="Discover our comprehensive philosophy system that combines financial education, multi-income strategies, and personal development into one transformative experience."
-                title="✨ Empower360 Philosophy"
-              >
-                <Badge className="mb-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 cursor-help">
-                  🌟 New Feature: Our Philosophy
-                </Badge>
-              </FeatureTooltip>
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
-                Experience Empower360
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                Master the <strong>New Art of Living</strong> through our transformative philosophy: 
-                Multi-Handed Income, Financial Education, and Self-Improvement
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <SmartTooltip 
-                  content="Access comprehensive training on the Three Philosophies: Multi-Handed Income (create multiple revenue streams), Financial Rules (10% savings, 3 rules, 3 goals), and Self-Improvement (mindset mastery). Perfect for entrepreneurs and professionals seeking $100K-$250K additional income."
-                  context="financial-planning"
-                >
-                  <Link href="/empower360">
-                    <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-                      <Star className="h-5 w-5 mr-2" />
-                      Explore Empower360
-                      <ArrowRight className="h-5 w-5 ml-2" />
-                    </Button>
-                  </Link>
-                </SmartTooltip>
-                <HelpTooltip 
-                  content="Speak directly with Nolly or Pablo Santiago to discuss your financial goals and explore opportunities with the Santiago Team. Average consultation leads to $150K+ additional annual income potential."
-                  title="📞 Free Consultation"
-                >
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-purple-600 text-purple-600 hover:bg-purple-50"
-                    onClick={() => window.location.href = 'tel:407-777-1087'}
-                  >
-                    📞 Call Now: (407) 777-1087
-                  </Button>
-                </HelpTooltip>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <LandingHero />
 
       {/* AI Career Mentor Featured Section */}
       <section className="bg-gradient-to-r from-emerald-50 via-blue-50 to-purple-50 py-12">
@@ -150,7 +101,6 @@ export default function Home() {
         </div>
       </section>
       
-      <DynamicTeamMissionHighlightReel />
       <AgentProfile />
       <FinancialIndependence />
       <VideoSection />
