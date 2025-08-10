@@ -23,8 +23,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Import images directly
-import pabloImage from '@assets/Image-1_1754701413805.jpeg';
-import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';
+import pabloImage from '@assets/image_1754703082911.png';
+import nollyImage from '@assets/image_1754703666032.png';
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
 import christianImage from '@assets/IMG_0322_1754704295010.png';
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
