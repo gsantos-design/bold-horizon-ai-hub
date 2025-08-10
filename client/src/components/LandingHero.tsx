@@ -274,6 +274,28 @@ export default function LandingHero() {
               </div>
             </div>
           </motion.div>
+
+          {/* Santiago Team Family Photo */}
+          <motion.div 
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
+          >
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Meet the Santiago Family
+              </h3>
+              <p className="text-lg text-gray-600 mb-8">
+                Four generations united in transforming lives through financial education
+              </p>
+              <img 
+                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                alt="Santiago Team Family Photo" 
+                className="w-full rounded-2xl shadow-2xl border-4 border-white"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

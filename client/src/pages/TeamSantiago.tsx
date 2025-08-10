@@ -444,6 +444,58 @@ export default function TeamSantiago() {
         </div>
       </section>
 
+      {/* Santiago Team Family Photo Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Together We Transform Lives
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              The Santiago Team: Four generations united by service, driven by mission, 
+              and committed to building generational wealth for families everywhere.
+            </p>
+            <div className="relative">
+              <img 
+                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                alt="Santiago Team Family Photo" 
+                className="w-full rounded-3xl shadow-2xl border-8 border-white"
+              />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <p className="text-lg font-semibold">
+                  "From protecting communities to protecting families' financial futures"
+                </p>
+              </div>
+            </div>
+            
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-blue-600 mb-2">Pablo</div>
+                <div className="text-sm text-gray-600">Law Enforcement Legacy</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-purple-600 mb-2">Nolly</div>
+                <div className="text-sm text-gray-600">Family Protection Mission</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-green-600 mb-2">Joseph</div>
+                <div className="text-sm text-gray-600">Entrepreneurial Leadership</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-orange-600 mb-2">Christian</div>
+                <div className="text-sm text-gray-600">Youth Financial Education</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

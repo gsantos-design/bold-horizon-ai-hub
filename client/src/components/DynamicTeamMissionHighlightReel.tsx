@@ -403,6 +403,29 @@ export default function DynamicTeamMissionHighlightReel() {
               <div className="text-sm text-gray-600">Family Commitment</div>
             </div>
           </motion.div>
+
+          {/* Santiago Team Closing Photo */}
+          <motion.div 
+            className="mt-16 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              The Santiago Team Family
+            </h3>
+            <div className="max-w-4xl mx-auto">
+              <img 
+                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                alt="Santiago Team Family Photo" 
+                className="w-full rounded-2xl shadow-2xl border-4 border-white"
+              />
+              <p className="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
+                Four generations united in service, transformed by financial education, 
+                and committed to protecting families across Florida and New York.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
