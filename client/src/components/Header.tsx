@@ -59,6 +59,13 @@ export default function Header() {
               </Button>
             </Link>
             
+            <Link href="/mission-highlights">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-rose-600 hover:text-rose-700 hover:bg-rose-50">
+                <Star className="h-4 w-4" />
+                <span>Mission Highlights</span>
+              </Button>
+            </Link>
+            
             <Link href="/ai-automation">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-red-600 hover:text-red-700 hover:bg-red-50">
                 <Bot className="h-4 w-4" />

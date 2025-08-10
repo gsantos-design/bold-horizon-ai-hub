@@ -15,6 +15,7 @@ import { Link } from "wouter";
 import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from "@/components/ContextualTooltip";
 import InteractiveTourGuide, { homePageTour, useTourGuide } from "@/components/InteractiveTourGuide";
 import WFGCompliance from "@/components/WFGCompliance";
+import DynamicTeamMissionHighlightReel from "@/components/DynamicTeamMissionHighlightReel";
 import Footer from "@/components/Footer";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 
@@ -149,6 +150,7 @@ export default function Home() {
         </div>
       </section>
       
+      <DynamicTeamMissionHighlightReel />
       <AgentProfile />
       <FinancialIndependence />
       <VideoSection />

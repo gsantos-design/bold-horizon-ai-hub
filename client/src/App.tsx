@@ -14,6 +14,7 @@ import AiAutomationHub from "@/pages/AiAutomationHub";
 import SetupGuide from "@/pages/SetupGuide";
 import WorkflowVisualization from "@/pages/WorkflowVisualization";
 import TeamSantiago from "@/pages/TeamSantiago";
+import MissionHighlightReel from "@/pages/MissionHighlightReel";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/setup-guide" component={SetupGuide} />
       <Route path="/workflow-visualization" component={WorkflowVisualization} />
       <Route path="/team-santiago" component={TeamSantiago} />
+      <Route path="/mission-highlights" component={MissionHighlightReel} />
       <Route path="/ai-mentor" component={AiCareerMentor} />
       <Route path="/lead-engine" component={LeadEngine} />
       <Route path="/lead-engine/board" component={LeadBoard} />
