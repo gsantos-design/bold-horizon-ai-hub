@@ -134,7 +134,7 @@ export default function AgentProfile() {
               <div className="text-center mb-4">
                 <div className="relative mb-4">
                   <img 
-                    src="@assets/image_1754703166961.png" 
+                    src="@assets/IMG_9689_1754855787976.jpeg" 
                     alt="Joseph Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
                     style={{ objectPosition: 'center top' }}
