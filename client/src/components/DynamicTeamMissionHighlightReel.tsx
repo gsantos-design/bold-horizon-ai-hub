@@ -86,7 +86,7 @@ export default function DynamicTeamMissionHighlightReel() {
         { label: 'Wealth Building Plans', value: '650+' }
       ],
       teamMember: 'Joseph Santiago',
-      image: '@assets/IMG_9689_1754855787976.jpeg'
+      image: '@assets/image_1754703166961.png'
     },
     {
       id: 'youth-education',
