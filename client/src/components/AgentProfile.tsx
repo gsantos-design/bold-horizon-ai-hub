@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
@@ -127,26 +127,34 @@ export default function AgentProfile() {
               <div className="text-center mb-4">
                 <div className="relative mb-4">
                   <img 
-                    src="/joseph-santiago.png" 
+                    src="@assets/IMG_9689_1754855787976.jpeg" 
                     alt="Joseph Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Joseph Santiago</h3>
-                <p className="text-blue-600 font-semibold mb-2">Licensed WFG Associate</p>
-                <p className="text-gray-700 text-sm">
-                  Dedicated to helping families understand financial opportunities and build secure futures through education and professional guidance.
+                <p className="text-blue-600 font-semibold mb-2">Associate – World Financial Group</p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  I'm excited to join the WFG team — a team that's also my family. I earned my investment license right out of high school, and later graduated with a degree in Finance. From day one, I knew I wanted to use my skills to help people take control of their money and their future.
+                  <br/><br/>
+                  I grew up watching my parents work incredibly hard, sacrificing countless holidays and summers in service to others. That dedication taught me discipline and commitment, but it also showed me a hard truth: without financial education, even the most dedicated people can be left unprotected.
+                  <br/><br/>
+                  My mission is to build lasting financial wealth, gain true freedom, and create a legacy that lasts for generations. If you have the heart of an entrepreneur and want to build real wealth, let's connect. I've got you, brother.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-blue-700">
                   <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">Financial Education</span>
+                  <span className="text-sm font-medium">Investment License</span>
                 </div>
                 <div className="flex items-center space-x-2 text-blue-700">
                   <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">Career Development</span>
+                  <span className="text-sm font-medium">Finance Degree</span>
+                </div>
+                <div className="flex items-center space-x-2 text-blue-700">
+                  <Users className="h-4 w-4" />
+                  <span className="text-sm font-medium">Wealth Building</span>
                 </div>
               </div>
             </div>
