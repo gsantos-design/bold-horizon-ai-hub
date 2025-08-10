@@ -171,19 +171,29 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Christian Santiago</h3>
-                <p className="text-emerald-600 font-semibold mb-2">Licensed WFG Associate</p>
-                <p className="text-gray-700 text-sm">
-                  Committed to empowering individuals through financial literacy and helping them discover pathways to financial independence.
+                <p className="text-emerald-600 font-semibold mb-2">Associate – World Financial Group</p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  I'm Christian Santiago. I recently graduated and, like my twin brother Joseph, I've chosen to join my family's mission at WFG. I've always been a bit of an introvert, keeping my circle small, but I'm deeply loyal to the people I care about. Numbers have always been my strength — I've loved math for as long as I can remember — but what truly grabbed my attention was learning about the power of compound interest.
+                  <br/><br/>
+                  It wasn't something I was ever taught in school, and my first reaction was: Why isn't this in schools? Everyone should know this. That moment sparked a passion in me to share this knowledge with others — especially with the younger generation.
+                  <br/><br/>
+                  I believe in empowering people to dream again, to rebuild self-belief, and to gain the confidence to create their own financial future. I see this as a new art of living — one where we use knowledge, entrepreneurship, and discipline to build not just wealth, but a lasting legacy.
+                  <br/><br/>
+                  My mission is to help young people understand that they have the power to take control of their money, their choices, and their future — starting today.
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-emerald-700">
                   <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">Client Education</span>
+                  <span className="text-sm font-medium">Mathematics & Analytics</span>
                 </div>
                 <div className="flex items-center space-x-2 text-emerald-700">
                   <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">Professional Development</span>
+                  <span className="text-sm font-medium">Compound Interest Expert</span>
+                </div>
+                <div className="flex items-center space-x-2 text-emerald-700">
+                  <Users className="h-4 w-4" />
+                  <span className="text-sm font-medium">Youth Financial Education</span>
                 </div>
               </div>
             </div>

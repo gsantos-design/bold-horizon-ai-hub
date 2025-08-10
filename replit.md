@@ -5,7 +5,9 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 ## Recent v12 Enhancements (August 2025)
 - **AI Career Mentor Chatbot**: Full implementation with emotional intelligence, mentor personalities (Nolly Santiago, Pablo Santiago, Santiago Team), OpenAI GPT-4o integration
 - **Team Member Profiles**: Added Princhesca Rainier Turner profile with professional bio and services
-- **Extended Team Roster**: Added two additional Licensed WFG Associates to the Santiago Team with professional photos and service descriptions
+- **Extended Team Roster**: Updated Joseph Santiago and Christian Santiago profiles with new photos and comprehensive personal bios highlighting their unique specializations
+- **Dynamic Workflow Visualization Tool**: Complete interactive workflow visualization system with real-time animations, performance analytics, and multiple campaign templates
+- **Unified Team Santiago Page**: Comprehensive family story page showcasing four-generation Santiago team with professional bios and mission statement
 - **WFG Compliance Implementation**: Comprehensive compliance overhaul following official WFG Social Media Guidelines including proper disclaimers, educational focus, and professional title corrections
 - **Deal Amount Estimator**: Advanced revenue prediction based on lead profile, company data, industry, and geographic factors
 - **Enhanced HubSpot Import**: Automatic deal value calculation and probability scoring for imported leads
@@ -18,6 +20,8 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 - **Industry Success Probability Heat Map**: Interactive visual analytics showing conversion rates, deal values, and strategic insights across 9 industry sectors with territory-specific performance data
 - **401k Rollover Targeting**: Comprehensive lead generation system targeting individuals seeking tax-free rollover strategies (IUL, Annuities, Strategic Investments) with specialized templates for pre-retirees, job changers, and high-income professionals
 - **High Yield No-Loss Targeting**: Lead generation system for conservative investors seeking CD alternatives with guaranteed principal protection and higher yields (4.5-6.8% vs traditional CD rates)
+- **Team Santiago Twin Brothers**: Joseph Santiago (entrepreneurial focus, investment licensed) and Christian Santiago (mathematics expert, youth educator) profiles updated with authentic personal stories
+- **Interactive Workflow Visualization**: Real-time animated workflow diagrams for AI automation campaigns, lead generation processes, and conversion funnel analytics
 
 # User Preferences
 

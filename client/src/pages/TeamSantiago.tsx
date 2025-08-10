@@ -78,7 +78,7 @@ export default function TeamSantiago() {
 
             {/* Team Members */}
             <motion.div 
-              className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
               variants={staggerContainer}
               initial="initial"
               animate="animate"
@@ -199,15 +199,15 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Joseph Santiago</CardTitle>
-                      <p className="text-green-100">Associate & Next Generation Leader</p>
+                      <p className="text-green-100">Associate & Entrepreneurial Leader</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        The next generation of Santiago leadership. With his investment license earned straight 
-                        out of high school and a Finance degree, Joseph brings fresh energy and deep commitment 
-                        to building generational wealth.
+                        Twin brother and entrepreneurial force. With his investment license earned straight 
+                        out of high school and a Finance degree, Joseph brings passion for helping entrepreneurs 
+                        build wealth and create lasting legacies.
                       </p>
                       
                       <div className="space-y-2">
@@ -221,7 +221,7 @@ export default function TeamSantiago() {
                         </div>
                         <div className="flex items-center gap-2 text-green-600">
                           <DollarSign className="h-4 w-4" />
-                          <span className="text-sm font-medium">Wealth Building Expert</span>
+                          <span className="text-sm font-medium">Entrepreneurial Focus</span>
                         </div>
                       </div>
 
@@ -229,8 +229,60 @@ export default function TeamSantiago() {
                         <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
                         <div className="flex flex-wrap gap-2">
                           <Badge variant="outline" className="text-xs">Compound Interest</Badge>
-                          <Badge variant="outline" className="text-xs">Young Professionals</Badge>
+                          <Badge variant="outline" className="text-xs">Entrepreneurs</Badge>
                           <Badge variant="outline" className="text-xs">Legacy Building</Badge>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Christian Santiago */}
+              <motion.div variants={fadeInUp}>
+                <Card className="h-full border-2 border-orange-200 shadow-xl">
+                  <CardHeader className="bg-gradient-to-r from-orange-600 to-red-600 text-white">
+                    <div className="text-center">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                        <img 
+                          src="/christian-santiago.png" 
+                          alt="Christian Santiago" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardTitle className="text-2xl">Christian Santiago</CardTitle>
+                      <p className="text-orange-100">Associate & Youth Financial Educator</p>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      <p className="text-gray-700 leading-relaxed">
+                        Twin brother and mathematical mind. A recent graduate with a passion for numbers 
+                        and compound interest, Christian is dedicated to educating young people about 
+                        financial empowerment and the new art of living.
+                      </p>
+                      
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-orange-600">
+                          <GraduationCap className="h-4 w-4" />
+                          <span className="text-sm font-medium">Recent Graduate</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-orange-600">
+                          <Target className="h-4 w-4" />
+                          <span className="text-sm font-medium">Mathematics Expert</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-orange-600">
+                          <Users className="h-4 w-4" />
+                          <span className="text-sm font-medium">Youth Educator</span>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          <Badge variant="outline" className="text-xs">Compound Interest</Badge>
+                          <Badge variant="outline" className="text-xs">Young Adults</Badge>
+                          <Badge variant="outline" className="text-xs">Financial Education</Badge>
                         </div>
                       </div>
                     </div>
