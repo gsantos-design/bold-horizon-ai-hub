@@ -2,6 +2,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Building, FileText, Users } 
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
+import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
 
 export default function AgentProfile() {
   const { t } = useLanguage();
@@ -134,7 +135,7 @@ export default function AgentProfile() {
               <div className="text-center mb-4">
                 <div className="relative mb-4">
                   <img 
-                    src="@assets/IMG_9689_1754855787976.jpeg" 
+                    src={josephImage} 
                     alt="Joseph Santiago" 
                     className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
                     style={{ objectPosition: 'center top' }}

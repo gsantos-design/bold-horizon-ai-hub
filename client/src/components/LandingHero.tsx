@@ -17,6 +17,9 @@ import {
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 
+// Import images directly
+import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
+
 export default function LandingHero() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -290,7 +293,7 @@ export default function LandingHero() {
                 Four generations united in transforming lives through financial education
               </p>
               <img 
-                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
                 className="w-full rounded-2xl shadow-2xl border-4 border-white"
               />

@@ -22,6 +22,13 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+// Import images directly
+import pabloImage from '@assets/Image-1_1754701413805.jpeg';
+import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';
+import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
+import christianImage from '@assets/IMG_0322_1754704295010.png';
+import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
+
 export default function TeamSantiago() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -90,7 +97,7 @@ export default function TeamSantiago() {
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
-                          src="@assets/image_1754703666032.png" 
+                          src={nollyImage} 
                           alt="Nolly Santiago" 
                           className="w-full h-full object-cover"
                         />
@@ -142,7 +149,7 @@ export default function TeamSantiago() {
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
-                          src="@assets/image_1754703082911.png" 
+                          src={pabloImage} 
                           alt="Pablo Santiago" 
                           className="w-full h-full object-cover"
                         />
@@ -194,7 +201,7 @@ export default function TeamSantiago() {
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
-                          src="@assets/IMG_9689_1754855787976.jpeg" 
+                          src={josephImage} 
                           alt="Joseph Santiago" 
                           className="w-full h-full object-cover"
                         />
@@ -462,7 +469,7 @@ export default function TeamSantiago() {
             </p>
             <div className="relative">
               <img 
-                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
                 className="w-full rounded-3xl shadow-2xl border-8 border-white"
               />

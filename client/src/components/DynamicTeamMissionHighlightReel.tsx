@@ -21,6 +21,14 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Import images directly
+import pabloImage from '@assets/Image-1_1754701413805.jpeg';
+import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';
+import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
+import christianImage from '@assets/IMG_0322_1754704295010.png';
+import teamFamilyPhoto from '@assets/image_1754703082911.png';
+import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
+
 interface MissionHighlight {
   id: string;
   title: string;
@@ -54,7 +62,7 @@ export default function DynamicTeamMissionHighlightReel() {
         { label: 'Financial Protection Plans', value: '1,200+' }
       ],
       teamMember: 'Pablo Santiago',
-      image: '@assets/image_1754703082911.png'
+      image: pabloImage
     },
     {
       id: 'family-legacy',
@@ -70,7 +78,7 @@ export default function DynamicTeamMissionHighlightReel() {
         { label: 'Multiple Income Streams', value: '1,500+' }
       ],
       teamMember: 'Nolly Santiago',
-      image: '@assets/image_1754703666032.png'
+      image: nollyImage
     },
     {
       id: 'entrepreneurial-wealth',
@@ -86,7 +94,7 @@ export default function DynamicTeamMissionHighlightReel() {
         { label: 'Wealth Building Plans', value: '650+' }
       ],
       teamMember: 'Joseph Santiago',
-      image: '@assets/IMG_9689_1754855787976.jpeg'
+      image: josephImage
     },
     {
       id: 'youth-education',
@@ -416,7 +424,7 @@ export default function DynamicTeamMissionHighlightReel() {
             </h3>
             <div className="max-w-4xl mx-auto">
               <img 
-                src="@assets/8357223228604543892_1754857339707.jpeg" 
+                src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
                 className="w-full rounded-2xl shadow-2xl border-4 border-white"
               />
