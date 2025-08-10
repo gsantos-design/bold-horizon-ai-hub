@@ -38,7 +38,7 @@ export default function AgentProfile() {
               </div>
               
               {/* Pablo Santiago */}
-              <div className="text-center max-w-sm">
+              <div className="text-center max-w-lg">
                 <div className="relative mb-6">
                   <img 
                     src="/pablo-santiago.png" 
@@ -48,10 +48,14 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
-                <p className="text-blue-600 font-semibold mb-2">Financial Professional &amp; Co-Leader</p>
-                <p className="text-gray-700 leading-relaxed">
-                  Licensed WFG Associate focused on sustainable income systems, leadership development, and strategic growth planning
-                </p>
+                <p className="text-blue-600 font-semibold mb-2">Former NYPD & Orange County Law Enforcement | WFG Associate</p>
+                <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
+                  <p><strong>My Story, My Mission</strong></p>
+                  <p>For over 30 years, I served with the NYPD and Orange County law enforcement. I stood side by side with my brothers and sisters — protecting strangers, running toward danger, and sacrificing time with my family because that's what the job demands.</p>
+                  <p>The day I survived a major heart attack, I saw a truth I wish I'd known earlier: if I couldn't go back to work, my family would be left struggling. My pension wouldn't have been enough. My 401(k) was filled with hidden taxes and restrictions.</p>
+                  <p><strong>Now, my mission is clear: to protect the protectors.</strong> I educate and empower first responders to safeguard their income and build tax-free wealth using strategies the job never told us about.</p>
+                  <p>We've spent our careers protecting the public. It's time to protect our own.</p>
+                </div>
               </div>
             </div>
           </div>

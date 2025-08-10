@@ -148,37 +148,38 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Pablo Santiago</CardTitle>
-                      <p className="text-blue-100">Co-Founder & Strategic Leader</p>
+                      <p className="text-blue-100">Former NYPD & Orange County Law Enforcement</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        The strategic mind behind Team Santiago's growth. Pablo's analytical approach and 
-                        entrepreneurial spirit drive innovative solutions for wealth building and business development.
+                        <strong>30+ years in law enforcement.</strong> After surviving a major heart attack, Pablo realized 
+                        the financial vulnerabilities first responders face. His mission: protect the protectors through 
+                        financial education and tax-free wealth building strategies.
                       </p>
                       
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-blue-600">
-                          <Briefcase className="h-4 w-4" />
-                          <span className="text-sm font-medium">Business Strategist</span>
+                          <Shield className="h-4 w-4" />
+                          <span className="text-sm font-medium">NYPD Veteran</span>
                         </div>
                         <div className="flex items-center gap-2 text-blue-600">
-                          <TrendingUp className="h-4 w-4" />
-                          <span className="text-sm font-medium">Investment Advisor</span>
+                          <Users className="h-4 w-4" />
+                          <span className="text-sm font-medium">First Responder Advocate</span>
                         </div>
                         <div className="flex items-center gap-2 text-blue-600">
                           <Target className="h-4 w-4" />
-                          <span className="text-sm font-medium">Goal Achievement Coach</span>
+                          <span className="text-sm font-medium">Tax-Free Wealth Strategies</span>
                         </div>
                       </div>
 
                       <div className="border-t pt-4">
                         <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
                         <div className="flex flex-wrap gap-2">
-                          <Badge variant="outline" className="text-xs">Business Building</Badge>
-                          <Badge variant="outline" className="text-xs">Investment Strategy</Badge>
-                          <Badge variant="outline" className="text-xs">Entrepreneurship</Badge>
+                          <Badge variant="outline" className="text-xs">Law Enforcement</Badge>
+                          <Badge variant="outline" className="text-xs">First Responders</Badge>
+                          <Badge variant="outline" className="text-xs">Financial Protection</Badge>
                         </div>
                       </div>
                     </div>
@@ -369,10 +370,10 @@ export default function TeamSantiago() {
                 <CardContent className="p-8">
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p className="text-lg">
-                      <strong>Our journey began with sacrifice.</strong> Like many families, we watched our parents 
-                      work tirelessly, giving up holidays and summers to provide for us. Their dedication taught us 
-                      the value of hard work, but it also revealed a painful truth: without financial education, 
-                      even the most dedicated people can be left vulnerable.
+                      <strong>Our journey began with service and sacrifice.</strong> Pablo served over 30 years with the NYPD 
+                      and Orange County law enforcement, protecting strangers and running toward danger. But after surviving 
+                      a major heart attack, he realized a painful truth: even the most dedicated servants can be left financially 
+                      vulnerable when they can no longer work.
                     </p>
                     
                     <p>
@@ -383,15 +384,15 @@ export default function TeamSantiago() {
                     </p>
                     
                     <p>
-                      <strong>Today, we're three generations strong.</strong> From Nolly and Pablo's leadership to 
-                      Joseph's fresh perspective as a licensed professional, we're united in one mission: helping 
-                      families break free from financial uncertainty and build lasting wealth.
+                      <strong>Today, we're four family members strong.</strong> From Pablo's mission to protect the protectors 
+                      and Nolly's heart for family empowerment, to Joseph's entrepreneurial focus and Christian's passion for 
+                      educating young people — we're united in helping families break free from financial uncertainty.
                     </p>
                     
                     <p>
-                      <strong>This is more than business — it's our calling.</strong> We've experienced the 
-                      transformation that comes with financial education and protection. Now, we're dedicated to 
-                      sharing that opportunity with every family we meet.
+                      <strong>This is more than business — it's our calling.</strong> We've spent our careers serving others. 
+                      Pablo protected the public; now we protect families' financial futures. Every strategy we share, every 
+                      solution we provide, comes from our own transformation through financial education.
                     </p>
                   </div>
                 </CardContent>
