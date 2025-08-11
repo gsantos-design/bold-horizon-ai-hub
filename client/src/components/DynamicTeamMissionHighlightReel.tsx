@@ -23,7 +23,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Import images directly - CORRECTED PABLO/NOLLY SWAP
 import pabloImage from '@assets/8357223228604543892_1754857339707.jpeg';  // Pablo Santiago (swapped from Nolly)
-import nollyImage from '@assets/IMG_0401_1754859814959.png';  // Nolly Santiago (swapped from Pablo)
+import nollyImage from '@assets/image_1754917046338.png';  // Nolly Santiago (temporary until PNG fixed)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/image_1754703666032.png'; // Christian Santiago (young male in formal)
 import teamFamilyPhoto from '@assets/image_1754703082911.png';
