@@ -14,11 +14,11 @@
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
   --primary: 221 83% 53%; /* WFG Blue #2563eb */
-  --primary-foreground: 210 40% 98%;
+  --primary-foreground: 0 0% 100%; /* Pure white text */
   --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary-foreground: 222.2 84% 4.9%; /* Dark text for contrast */
   --accent: 221 83% 53%;
-  --accent-foreground: 210 40% 98%;
+  --accent-foreground: 0 0% 100%; /* Pure white text */
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
   --ring: 221 83% 53%;
@@ -122,6 +122,28 @@
     @apply p-6;
   }
   
+  /* Button text visibility fixes */
+  .btn-white {
+    @apply bg-white text-gray-900 border border-gray-300 hover:bg-gray-50;
+  }
+  
+  .btn-outline-white {
+    @apply bg-transparent text-white border border-white hover:bg-white hover:text-gray-900;
+  }
+  
+  /* Ensure button text is always visible */
+  button {
+    color: inherit !important;
+  }
+  
+  .text-white {
+    color: white !important;
+  }
+  
+  .text-gray-900 {
+    color: rgb(17 24 39) !important;
+  }
+
   .animate-value {
     transition: all 0.3s ease-in-out;
   }
