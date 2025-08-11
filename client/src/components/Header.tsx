@@ -37,105 +37,84 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4">
+          <nav className="hidden lg:flex items-center space-x-2">
+            {/* Core Navigation */}
             <Link href="/empower360">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 hover:bg-purple-50">
-                <Star className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+                <Star className="h-4 w-4 mr-1" />
                 <span>Empower360</span>
               </Button>
             </Link>
             
-            <Link href="/three-philosophies">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50">
-                <Target className="h-4 w-4" />
-                <span>3 Philosophies</span>
-              </Button>
-            </Link>
-            
             <Link href="/team-santiago">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 hover:bg-orange-50">
-                <Users className="h-4 w-4" />
-                <span>Team Santiago</span>
-              </Button>
-            </Link>
-            
-            <Link href="/mission-highlights">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-rose-600 hover:text-rose-700 hover:bg-rose-50">
-                <Star className="h-4 w-4" />
-                <span>Mission Highlights</span>
-              </Button>
-            </Link>
-            
-            <Link href="/ai-automation">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-red-600 hover:text-red-700 hover:bg-red-50">
-                <Bot className="h-4 w-4" />
-                <span>AI Automation</span>
-              </Button>
-            </Link>
-            
-            <Link href="/events">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50">
-                <Trophy className="h-4 w-4" />
-                <span>Events</span>
+              <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
+                <Users className="h-4 w-4 mr-1" />
+                <span>Team</span>
               </Button>
             </Link>
             
             <Link href="/why-join-our-team">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-green-600 hover:text-green-700 hover:bg-green-50">
-                <Users className="h-4 w-4" />
-                <span>Join Our Team</span>
+              <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-700 hover:bg-green-50">
+                <Users className="h-4 w-4 mr-1" />
+                <span>Join Us</span>
               </Button>
             </Link>
-
-            <Link href="/ai-mentor">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50">
-                <Bot className="h-4 w-4" />
-                <span>AI Mentor</span>
+            
+            <Link href="/ai-automation">
+              <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50">
+                <Bot className="h-4 w-4 mr-1" />
+                <span>AI Tools</span>
               </Button>
             </Link>
             
             <Link href="/lead-engine">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                <BarChart3 className="h-4 w-4" />
-                <span>Lead Engine</span>
+              <Button variant="ghost" size="sm">
+                <BarChart3 className="h-4 w-4 mr-1" />
+                <span>Leads</span>
               </Button>
             </Link>
             
-            <Link href="/lead-engine/board">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            {/* Language Toggle - More Prominent */}
+            <div className="border-l border-gray-200 pl-4 ml-2">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={toggleLanguage}
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-4"
+              >
+                {language === 'en' ? 'Español' : 'English'}
+              </Button>
+            </div>
+          </nav>
+
+          {/* Medium Screen Navigation */}
+          <nav className="hidden md:flex lg:hidden items-center space-x-2">
+            <Link href="/empower360">
+              <Button variant="ghost" size="sm" className="text-purple-600">
+                <Star className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            <Link href="/team-santiago">
+              <Button variant="ghost" size="sm" className="text-orange-600">
                 <Users className="h-4 w-4" />
-                <span>Board</span>
               </Button>
             </Link>
             
-            <Link href="/team/leaderboard">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-yellow-600 hover:text-yellow-700 hover:bg-yellow-50">
-                <Trophy className="h-4 w-4" />
-                <span>Leaderboard</span>
-              </Button>
-            </Link>
-            
-            <Link href="/workflow-visualization">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50">
+            <Link href="/lead-engine">
+              <Button variant="ghost" size="sm">
                 <BarChart3 className="h-4 w-4" />
-                <span>Workflows</span>
               </Button>
             </Link>
             
-            <Link href="/admin/owners">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                <Settings className="h-4 w-4" />
-                <span>Admin</span>
-              </Button>
-            </Link>
-            
+            {/* Language Toggle for Medium Screens */}
             <Button 
               variant="outline" 
               size="sm"
               onClick={toggleLanguage}
-              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 ml-2"
             >
-              {language === 'en' ? 'Español' : 'English'}
+              {language === 'en' ? 'ES' : 'EN'}
             </Button>
           </nav>
 
