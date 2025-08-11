@@ -21,11 +21,11 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import images directly - CORRECTED PABLO/NOLLY SWAP
-import pabloImage from '@assets/image_1754698128431.png';  // Pablo Santiago (working male photo)
-import nollyImage from '@assets/image_1754917046338.png';  // Nolly Santiago (temporary until PNG fixed)
+// Import images directly - PROPER GENDER MATCHED PHOTOS
+import pabloImage from '@assets/image_1754703082911.png';  // Pablo Santiago (male in suit)
+import nollyImage from '@assets/image_1754672328811.png';  // Nolly Santiago (professional female)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
-import christianImage from '@assets/image_1754703666032.png'; // Christian Santiago (young male in formal)
+import christianImage from '@assets/image_1754703166961.png'; // Christian Santiago (young male in tuxedo)
 import teamFamilyPhoto from '@assets/image_1754703082911.png';
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
