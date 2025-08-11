@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlusCircle, Download, Users, TrendingUp, Target, MessageSquare, Zap, Filter, Star, Calendar, Building2, MapPin, DollarSign, Settings, Copy, ExternalLink, Play, CheckCircle2, AlertTriangle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
+import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago authentic photo
+import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago authentic photo
 
 interface Lead {
   id: number;
@@ -950,13 +952,13 @@ Best,
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             <img 
-              src="/nolly-santiago.png" 
+              src={nollyImage} 
               alt="Nolly Santiago" 
               className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
             />
             <img 
-              src="/paul-santiago.png" 
-              alt="Paul Santiago" 
+              src={pabloImage} 
+              alt="Pablo Santiago" 
               className="w-16 h-16 rounded-full object-cover border-2 border-blue-200"
             />
           </div>
