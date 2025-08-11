@@ -22,11 +22,11 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Import images directly - SWAPPED PABLO AND NOLLY
-import pabloImage from '@assets/IMG_0321_1754703873582.jpeg';   // Male (Pablo)
+// Import images directly - FINAL CORRECT ASSIGNMENTS
+import pabloImage from '@assets/image_1754703082911.png';  // Male, older (Pablo)
 import nollyImage from '@assets/Image-1_1754701413805.jpeg';  // Female (Nolly)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph)
-import christianImage from '@assets/IMG_0322_1754704295010.png'; // Male, young (Christian)
+import christianImage from '@assets/IMG_0321_1754703873582.jpeg'; // Male, young (Christian)
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
 export default function TeamSantiago() {
