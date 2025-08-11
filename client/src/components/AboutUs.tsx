@@ -7,7 +7,13 @@ import {
   BookOpen, 
   Heart,
   ArrowRight,
-  MessageCircle
+  MessageCircle,
+  Check,
+  Bot,
+  Trophy,
+  Star,
+  ThumbsUp,
+  Share
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -41,7 +47,7 @@ export default function AboutUs() {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+          <div className="text-center mb-12">
           <span className="text-accent font-semibold tracking-wider text-sm uppercase">Our Story</span>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             About The Santiago Team
@@ -281,6 +287,95 @@ export default function AboutUs() {
                     </p>
                   </div>
                 </div>
+
+                {/* AI Sales Force - Unique Competitive Advantage */}
+                <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 rounded-xl border-2 border-purple-200 mb-6">
+                  <div className="flex items-center mb-4">
+                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                      <Bot className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-2xl text-purple-800 mb-1">Revolutionary AI Sales Force</h4>
+                      <p className="text-purple-600 font-medium">The Santiago Team's Exclusive Competitive Edge</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4 text-gray-700">
+                    <p className="text-lg leading-relaxed">
+                      <strong className="text-purple-800">The Santiago Team stands as one of the only organizations in the financial services industry</strong> 
+                      providing a complete AI-powered sales ecosystem that revolutionizes how we generate, qualify, and convert prospects into satisfied clients.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-6 mt-6">
+                      <div className="bg-white p-6 rounded-lg border border-purple-100">
+                        <h5 className="font-bold text-lg text-purple-800 mb-3 flex items-center">
+                          <Target className="h-5 w-5 mr-2" />
+                          AI-Powered Lead Generation
+                        </h5>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Intelligent prospect identification targeting high-net-worth individuals</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Automated LinkedIn and email outreach with personalized messaging</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Real-time lead scoring and qualification algorithms</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Multi-channel campaign orchestration across all platforms</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="bg-white p-6 rounded-lg border border-purple-100">
+                        <h5 className="font-bold text-lg text-purple-800 mb-3 flex items-center">
+                          <Bot className="h-5 w-5 mr-2" />
+                          AI Appointment Setting
+                        </h5>
+                        <ul className="space-y-2 text-sm">
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Automated phone calls with human-like AI voice technology</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Intelligent conversation flows that qualify prospects automatically</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Seamless calendar integration for immediate appointment booking</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Follow-up sequences that nurture prospects until appointment confirmation</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200 mt-6">
+                      <h5 className="font-bold text-xl text-green-800 mb-3 flex items-center">
+                        <Trophy className="h-6 w-6 mr-2" />
+                        Exceptional Results & High Close Rates
+                      </h5>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-green-700">90%+</div>
+                          <div className="text-sm text-green-600">Qualified Appointment Rate</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-green-700">75%+</div>
+                          <div className="text-sm text-green-600">First Meeting Close Rate</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-green-700">3x</div>
+                          <div className="text-sm text-green-600">Industry Average Conversion</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                      <h5 className="font-bold text-lg text-yellow-800 mb-3">What This Means for Santiago Team Members:</h5>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <ul className="space-y-2">
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Pre-qualified prospects delivered to your calendar daily</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Higher conversion rates leading to increased income potential</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />More time focusing on closing deals, not chasing leads</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <ul className="space-y-2">
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Professional development through advanced AI tools training</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Competitive advantage over traditional financial services teams</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Access to cutting-edge technology usually reserved for Fortune 500 companies</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
                 <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg">
                   <h4 className="font-bold text-lg mb-2">Growth Opportunities</h4>
@@ -390,6 +485,7 @@ export default function AboutUs() {
             Connect With Us
           </Button>
         </div>
+        </div>
       </div>
     </section>
   );
@@ -412,73 +508,5 @@ function TabButton({ active, onClick, icon, label }: { active: boolean; onClick:
   );
 }
 
-function Check({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
 
-function Star({ className, fill }: { className?: string; fill?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill={fill || "none"}
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  );
-}
 
-function ThumbsUp({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M7 10v12" />
-      <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
-    </svg>
-  );
-}
-
-function Share({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-      <polyline points="16 6 12 2 8 6" />
-      <line x1="12" y1="2" x2="12" y2="15" />
-    </svg>
-  );
-}
