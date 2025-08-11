@@ -195,7 +195,7 @@ export default function LandingHero() {
               {/* Impact Stats */}
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Impact</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Impact with WFG</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-white rounded-lg shadow">
