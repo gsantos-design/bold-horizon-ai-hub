@@ -7,9 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-// Import the event flyer image - using placeholder due to .JPG extension issue
-// Original: A4AF5E28-1BD1-45D5-823B-2A7C48FABB69_1754924142912.JPG
-import wealthWorkshopFlyer from '@assets/image_1754921328034.png';
+// Import the event flyer image - using the correct screenshot provided by user
+import wealthWorkshopFlyer from '@assets/image_1754924470639.png';
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
