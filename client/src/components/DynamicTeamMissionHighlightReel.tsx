@@ -21,8 +21,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import images directly - WORKING ASSIGNMENTS
-import pabloImage from '@assets/Image-1_1754701413805.jpeg';  // Male (Pablo) 
+// Import images directly - WITH CORRECT PABLO PHOTO
+import pabloImage from '@assets/image_1754703082911.png';  // Male (Pablo) - working image
 import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';  // Female (Nolly)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph)
 import christianImage from '@assets/IMG_0322_1754704295010.png'; // Male, young (Christian)
