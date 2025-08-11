@@ -21,11 +21,11 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import images directly - PROPER GENDER MATCHED PHOTOS
+// Import images directly - ALL CORRECT SANTIAGO FAMILY PHOTOS
 import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago (correct photo)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
-import christianImage from '@assets/image_1754703166961.png'; // Christian Santiago (young male in tuxedo)
+import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago (correct photo)
 import teamFamilyPhoto from '@assets/image_1754703082911.png';
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
