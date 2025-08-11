@@ -23,7 +23,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Import images directly
 import pabloImage from '@assets/Image-1_1754701413805.jpeg';
-import nollyImage from '@assets/image_1754703666032.png';
+import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
 import christianImage from '@assets/IMG_0397_1754857771422.png';
 import teamFamilyPhoto from '@assets/image_1754703082911.png';
