@@ -79,6 +79,13 @@ export default function Header() {
                 <span>Events</span>
               </Button>
             </Link>
+            
+            <Link href="/why-join-our-team">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-green-600 hover:text-green-700 hover:bg-green-50">
+                <Users className="h-4 w-4" />
+                <span>Join Our Team</span>
+              </Button>
+            </Link>
 
             <Link href="/ai-mentor">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50">
@@ -168,6 +175,13 @@ export default function Header() {
                 <Button variant="ghost" size="sm" className="w-full justify-start text-indigo-600">
                   <Trophy className="h-4 w-4 mr-2" />
                   Events
+                </Button>
+              </Link>
+              
+              <Link href="/why-join-our-team">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-green-600">
+                  <Users className="h-4 w-4 mr-2" />
+                  Join Our Team
                 </Button>
               </Link>
               
