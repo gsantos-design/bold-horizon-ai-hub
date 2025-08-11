@@ -50,30 +50,7 @@ export default function Events() {
     image: wealthWorkshopFlyer
   };
 
-  const upcomingEvents = [
-    {
-      id: 'team-training',
-      title: 'Advanced Team Training Seminar',
-      date: 'September 15th, 2025',
-      time: '10:00 AM - 4:00 PM',
-      location: 'Orlando Convention Center',
-      type: 'Professional Development',
-      status: 'Registration Open',
-      description: 'Comprehensive training for Santiago Team members on advanced financial strategies and client relationship management.',
-      capacity: '50 attendees'
-    },
-    {
-      id: 'client-appreciation',
-      title: 'Client Appreciation Gala',
-      date: 'October 12th, 2025',
-      time: '6:00 PM - 10:00 PM',
-      location: 'The Ritz-Carlton Orlando',
-      type: 'Networking Event',
-      status: 'Save the Date',
-      description: 'Annual celebration honoring our valued clients and their financial achievements with the Santiago Team.',
-      capacity: 'Invitation Only'
-    }
-  ];
+  // Only show real events - upcoming events will be added when they are actually scheduled
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
@@ -144,10 +121,10 @@ export default function Events() {
                 size="lg" 
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-full backdrop-blur-sm"
-                onClick={() => document.getElementById('upcoming-events')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Browse All Events
+                Get Event Updates
               </Button>
             </motion.div>
 
@@ -350,80 +327,33 @@ export default function Events() {
           </div>
         </motion.section>
 
-        {/* Upcoming Events Section */}
+        {/* More Events Coming Soon Section */}
         <motion.section 
           id="upcoming-events"
           {...fadeInUp}
           className="py-20 bg-white"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2 mb-4">
-                Coming Soon
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Upcoming Events
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Mark your calendars for these exciting upcoming events and opportunities to grow with the Santiago Team.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {upcomingEvents.map((event, index) => (
-                <motion.div
-                  key={event.id}
-                  {...fadeInUp}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-                    <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-                      <div className="flex items-center justify-between">
-                        <Badge className="bg-white/20 text-white border-white/30">
-                          {event.status}
-                        </Badge>
-                        <Calendar className="h-6 w-6" />
-                      </div>
-                      <CardTitle className="text-xl">{event.title}</CardTitle>
-                      <CardDescription className="text-blue-100">
-                        {event.type}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-6">
-                      <div className="space-y-4 mb-6">
-                        <div className="flex items-center text-gray-700">
-                          <Calendar className="h-5 w-5 text-blue-600 mr-3" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center text-gray-700">
-                          <Clock className="h-5 w-5 text-blue-600 mr-3" />
-                          <span>{event.time}</span>
-                        </div>
-                        <div className="flex items-center text-gray-700">
-                          <MapPin className="h-5 w-5 text-blue-600 mr-3" />
-                          <span>{event.location}</span>
-                        </div>
-                        <div className="flex items-center text-gray-700">
-                          <Users className="h-5 w-5 text-blue-600 mr-3" />
-                          <span>{event.capacity}</span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-600 mb-6">
-                        {event.description}
-                      </p>
-                      
-                      <Button 
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                        disabled={event.status === 'Save the Date'}
-                      >
-                        {event.status === 'Save the Date' ? 'Coming Soon' : 'Learn More'}
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2 mb-6">
+              Stay Tuned
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              More Events Coming Soon
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              The Santiago Team regularly hosts exclusive financial education workshops, 
+              team training sessions, and networking events. Follow us for announcements 
+              about upcoming opportunities to grow your financial knowledge and connect 
+              with like-minded professionals.
+            </p>
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Get Notified About Future Events
+            </Button>
           </div>
         </motion.section>
 
