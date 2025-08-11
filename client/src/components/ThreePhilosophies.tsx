@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, DollarSign, Users, Target, Shield, PiggyBank, Brain, Heart, Star } from "lucide-react";
+import { TrendingUp, DollarSign, Users, Target, Shield, PiggyBank, Zap, Heart, Star } from "lucide-react";
 
 export default function ThreePhilosophies() {
   const [activePhilosophy, setActivePhilosophy] = useState(1);
@@ -51,7 +51,7 @@ export default function ThreePhilosophies() {
             onClick={() => setActivePhilosophy(3)}
             className="flex items-center gap-2"
           >
-            <Brain className="h-5 w-5" />
+            <Zap className="h-5 w-5" />
             Self-Improvement
           </Button>
         </div>
@@ -272,7 +272,7 @@ export default function ThreePhilosophies() {
             <Card className="mb-8 border-2 border-purple-200 shadow-xl">
               <CardHeader className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
                 <CardTitle className="text-2xl md:text-3xl text-center">
-                  <Brain className="h-8 w-8 inline-block mr-3" />
+                  <Zap className="h-8 w-8 inline-block mr-3" />
                   Philosophy #3: Self-Improvement
                 </CardTitle>
               </CardHeader>
@@ -393,7 +393,7 @@ export default function ThreePhilosophies() {
                         <span className="font-semibold">10% | 3 Rules | 3 Goals</span>
                       </div>
                       <div className="flex items-center">
-                        <Brain className="h-5 w-5 text-purple-600 mr-3" />
+                        <Zap className="h-5 w-5 text-purple-600 mr-3" />
                         <span className="font-semibold">Self-Improvement</span>
                       </div>
                     </div>
