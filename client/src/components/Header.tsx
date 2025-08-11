@@ -72,6 +72,13 @@ export default function Header() {
                 <span>AI Automation</span>
               </Button>
             </Link>
+            
+            <Link href="/events">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50">
+                <Trophy className="h-4 w-4" />
+                <span>Events</span>
+              </Button>
+            </Link>
 
             <Link href="/ai-mentor">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50">
@@ -154,6 +161,13 @@ export default function Header() {
                 <Button variant="ghost" size="sm" className="w-full justify-start text-purple-600">
                   <Star className="h-4 w-4 mr-2" />
                   Empower360
+                </Button>
+              </Link>
+              
+              <Link href="/events">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-indigo-600">
+                  <Trophy className="h-4 w-4 mr-2" />
+                  Events
                 </Button>
               </Link>
               
