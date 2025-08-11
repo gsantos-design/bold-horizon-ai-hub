@@ -23,7 +23,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Import images directly - PROPER GENDER MATCHED PHOTOS
-import pabloImage from '@assets/image_1754703082911.png';  // Pablo Santiago (male in suit)
+import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
 import nollyImage from '@assets/image_1754672328811.png';  // Nolly Santiago (professional female)  
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/image_1754703166961.png'; // Christian Santiago (young male in tuxedo)
