@@ -30,6 +30,15 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.growth_mindset': 'Growth Mindset',
     'nav.recruitment_journey': 'Recruitment Journey',
     'nav.career_quiz': 'Career Quiz',
+    'nav.join_santiago_team': 'Come be part of the Santiago team at WFG',
+    'nav.empower360': 'Empower360',
+    'nav.team': 'Team',
+    'nav.join_us': 'Join Us',
+    'nav.ai_tools': 'AI Tools',
+    'nav.leads': 'Leads',
+    'nav.events': 'Events',
+    'nav.board_view': 'Board View',
+    'nav.admin': 'Admin',
     
     // Hero
     'hero.title': 'Bold Horizons with World Financial Group',
@@ -235,6 +244,15 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.growth_mindset': 'Mentalidad de Crecimiento',
     'nav.recruitment_journey': 'Proceso de Reclutamiento',
     'nav.career_quiz': 'Test de Carrera',
+    'nav.join_santiago_team': 'Ven a ser parte del equipo Santiago en WFG',
+    'nav.empower360': 'Empower360',
+    'nav.team': 'Equipo',
+    'nav.join_us': 'Únete',
+    'nav.ai_tools': 'Herramientas IA',
+    'nav.leads': 'Contactos',
+    'nav.events': 'Eventos',
+    'nav.board_view': 'Vista Tablero',
+    'nav.admin': 'Administración',
     
     // Hero
     'hero.title': 'Horizontes Audaces con World Financial Group',

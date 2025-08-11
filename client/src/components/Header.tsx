@@ -32,7 +32,7 @@ export default function Header() {
                 WorldFinancialGroup.com
               </a>
               <span className="mx-2 text-gray-400">|</span>
-              <span className="text-blue-600 font-medium">Join WFG</span>
+              <span className="text-blue-600 font-medium">{t('nav.join_santiago_team')}</span>
             </div>
           </div>
 
@@ -42,35 +42,35 @@ export default function Header() {
             <Link href="/empower360">
               <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
                 <Star className="h-4 w-4 mr-1" />
-                <span>Empower360</span>
+                <span>{t('nav.empower360')}</span>
               </Button>
             </Link>
             
             <Link href="/team-santiago">
               <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
                 <Users className="h-4 w-4 mr-1" />
-                <span>Team</span>
+                <span>{t('nav.team')}</span>
               </Button>
             </Link>
             
             <Link href="/why-join-our-team">
               <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-700 hover:bg-green-50">
                 <Users className="h-4 w-4 mr-1" />
-                <span>Join Us</span>
+                <span>{t('nav.join_us')}</span>
               </Button>
             </Link>
             
             <Link href="/ai-automation">
               <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50">
                 <Bot className="h-4 w-4 mr-1" />
-                <span>AI Tools</span>
+                <span>{t('nav.ai_tools')}</span>
               </Button>
             </Link>
             
             <Link href="/lead-engine">
               <Button variant="ghost" size="sm">
                 <BarChart3 className="h-4 w-4 mr-1" />
-                <span>Leads</span>
+                <span>{t('nav.leads')}</span>
               </Button>
             </Link>
             
@@ -90,19 +90,19 @@ export default function Header() {
           {/* Medium Screen Navigation */}
           <nav className="hidden md:flex lg:hidden items-center space-x-2">
             <Link href="/empower360">
-              <Button variant="ghost" size="sm" className="text-purple-600">
+              <Button variant="ghost" size="sm" className="text-purple-600" title={t('nav.empower360')}>
                 <Star className="h-4 w-4" />
               </Button>
             </Link>
             
             <Link href="/team-santiago">
-              <Button variant="ghost" size="sm" className="text-orange-600">
+              <Button variant="ghost" size="sm" className="text-orange-600" title={t('nav.team')}>
                 <Users className="h-4 w-4" />
               </Button>
             </Link>
             
             <Link href="/lead-engine">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" title={t('nav.leads')}>
                 <BarChart3 className="h-4 w-4" />
               </Button>
             </Link>
@@ -146,42 +146,42 @@ export default function Header() {
               <Link href="/empower360">
                 <Button variant="ghost" size="sm" className="w-full justify-start text-purple-600">
                   <Star className="h-4 w-4 mr-2" />
-                  Empower360
+                  {t('nav.empower360')}
                 </Button>
               </Link>
               
               <Link href="/events">
                 <Button variant="ghost" size="sm" className="w-full justify-start text-indigo-600">
                   <Trophy className="h-4 w-4 mr-2" />
-                  Events
+                  {t('nav.events')}
                 </Button>
               </Link>
               
               <Link href="/why-join-our-team">
                 <Button variant="ghost" size="sm" className="w-full justify-start text-green-600">
                   <Users className="h-4 w-4 mr-2" />
-                  Join Our Team
+                  {t('nav.join_us')}
                 </Button>
               </Link>
               
               <Link href="/lead-engine">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <BarChart3 className="h-4 w-4 mr-2" />
-                  Lead Engine
+                  {t('nav.leads')}
                 </Button>
               </Link>
               
               <Link href="/lead-engine/board">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <Users className="h-4 w-4 mr-2" />
-                  Board View
+                  {t('nav.board_view')}
                 </Button>
               </Link>
               
               <Link href="/admin/owners">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <Settings className="h-4 w-4 mr-2" />
-                  Admin
+                  {t('nav.admin')}
                 </Button>
               </Link>
             </div>
@@ -191,7 +191,7 @@ export default function Header() {
                 WorldFinancialGroup.com
               </a>
               <span className="mx-2 text-gray-400">|</span>
-              <span className="text-sm text-blue-600 font-medium">Join WFG</span>
+              <span className="text-sm text-blue-600 font-medium">{t('nav.join_santiago_team')}</span>
             </div>
           </nav>
         )}
