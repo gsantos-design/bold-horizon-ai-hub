@@ -9,7 +9,7 @@ import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago
 import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago
-import santiagoTeamPhoto from '@assets/Image-1_1754701413805.jpeg'; // Santiago Team professional photo
+// Removed individual team photo - using family showcase instead
 import MultiHandedIncome from "@/components/MultiHandedIncome";
 import FinancialEducationModule from "@/components/FinancialEducationModule";
 import SelfImprovementModule from "@/components/SelfImprovementModule";
@@ -213,21 +213,68 @@ export default function Empower360() {
             </p>
           </div>
 
-          {/* Santiago Family Team Photo */}
+          {/* Santiago Family Team Showcase */}
           <div className="mb-16">
-            <Card className="overflow-hidden max-w-5xl mx-auto">
-              <div className="relative">
-                <img 
-                  src={santiagoTeamPhoto} 
-                  alt="The Santiago Family Team" 
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">The Santiago Family Team</h3>
-                  <p className="text-lg opacity-90">Three generations of excellence serving Florida and New York families</p>
+            <Card className="overflow-hidden max-w-5xl mx-auto bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+              <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
+                <CardTitle className="text-2xl">The Santiago Family Team</CardTitle>
+                <p className="text-blue-100 mt-2">Three generations of excellence serving Florida and New York families</p>
+              </CardHeader>
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Leadership Team - Pablo & Nolly */}
+                  <div className="text-center">
+                    <h4 className="font-bold text-gray-900 mb-4 text-lg">Leadership Team</h4>
+                    <div className="flex justify-center space-x-6 mb-4">
+                      <div className="text-center">
+                        <img 
+                          src={pabloImage} 
+                          alt="Pablo Santiago" 
+                          className="w-20 h-20 mx-auto rounded-full object-cover border-4 border-blue-200"
+                        />
+                        <p className="text-sm font-medium text-gray-900 mt-2">Pablo Santiago</p>
+                        <p className="text-xs text-blue-600">Senior Associate</p>
+                      </div>
+                      <div className="text-center">
+                        <img 
+                          src={nollyImage} 
+                          alt="Nolly Santiago" 
+                          className="w-20 h-20 mx-auto rounded-full object-cover border-4 border-purple-200"
+                        />
+                        <p className="text-sm font-medium text-gray-900 mt-2">Nolly Santiago</p>
+                        <p className="text-xs text-purple-600">Marketing Director</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">50+ years combined experience in law enforcement and telecommunications</p>
+                  </div>
+                  
+                  {/* Next Generation - Joseph & Christian */}
+                  <div className="text-center">
+                    <h4 className="font-bold text-gray-900 mb-4 text-lg">Next Generation</h4>
+                    <div className="flex justify-center space-x-6 mb-4">
+                      <div className="text-center">
+                        <img 
+                          src={josephImage} 
+                          alt="Joseph Santiago" 
+                          className="w-20 h-20 mx-auto rounded-full object-cover border-4 border-green-200"
+                        />
+                        <p className="text-sm font-medium text-gray-900 mt-2">Joseph Santiago</p>
+                        <p className="text-xs text-green-600">Investment Licensed</p>
+                      </div>
+                      <div className="text-center">
+                        <img 
+                          src={christianImage} 
+                          alt="Christian Santiago" 
+                          className="w-20 h-20 mx-auto rounded-full object-cover border-4 border-orange-200"
+                        />
+                        <p className="text-sm font-medium text-gray-900 mt-2">Christian Santiago</p>
+                        <p className="text-xs text-orange-600">Mathematics Expert</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">Bringing innovation and specialized expertise to financial services</p>
+                  </div>
                 </div>
-              </div>
+              </CardContent>
             </Card>
           </div>
 
