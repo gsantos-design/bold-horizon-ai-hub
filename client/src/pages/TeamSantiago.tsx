@@ -253,7 +253,7 @@ export default function TeamSantiago() {
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
-                          src="/christian-santiago.png" 
+                          src={christianImage} 
                           alt="Christian Santiago" 
                           className="w-full h-full object-cover"
                         />
