@@ -22,11 +22,11 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Import images directly - TRYING NEW COMBINATIONS
-import pabloImage from '@assets/IMG_0397_1754857771422.png';  // Try this for Pablo (male)
-import nollyImage from '@assets/Image-1_1754701413805.jpeg';  // Female (Nolly)
+// Import images directly - WORKING ASSIGNMENTS  
+import pabloImage from '@assets/Image-1_1754701413805.jpeg';  // Male (Pablo)
+import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';  // Female (Nolly)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph)
-import christianImage from '@assets/IMG_0398_1754857771422.png'; // Try this for Christian (male)
+import christianImage from '@assets/IMG_0322_1754704295010.png'; // Male, young (Christian)
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
 export default function TeamSantiago() {
