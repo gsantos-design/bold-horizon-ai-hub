@@ -22,11 +22,11 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Import images directly - WITH CORRECT PABLO PHOTO
-import pabloImage from '@assets/image_1754703082911.png';  // Male (Pablo) - working image
-import nollyImage from '@assets/IMG_0321_1754703873582.jpeg';  // Female (Nolly)
-import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph)
-import christianImage from '@assets/IMG_0397_1754857771422.png'; // Male, young (Christian) - different option
+// Import images directly - FINAL CORRECT ASSIGNMENTS
+import pabloImage from '@assets/IMG_0397_1754857771422.png';  // Male, older (Pablo)
+import nollyImage from '@assets/image_1754703082911.png';  // Female (Nolly)
+import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph) - CORRECT
+import christianImage from '@assets/image_1754703666032.png'; // Male, young in tuxedo (Christian)
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
 export default function TeamSantiago() {
