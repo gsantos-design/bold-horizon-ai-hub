@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import images directly - FINAL CORRECT ASSIGNMENTS
+// Import images directly - CACHE CLEARED ASSIGNMENTS
 import pabloImage from '@assets/IMG_0397_1754857771422.png';  // Male, older (Pablo) 
 import nollyImage from '@assets/image_1754703082911.png';  // Female (Nolly) 
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Male, young (Joseph) - CORRECT
