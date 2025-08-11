@@ -23,7 +23,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Import images directly - CORRECTED PABLO/NOLLY SWAP
-import pabloImage from '@assets/8357223228604543892_1754857339707.jpeg';  // Pablo Santiago (swapped from Nolly)
+import pabloImage from '@assets/image_1754698128431.png';  // Pablo Santiago (working male photo)
 import nollyImage from '@assets/image_1754917046338.png';  // Nolly Santiago (temporary until PNG fixed)  
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/image_1754703666032.png'; // Christian Santiago (young male in formal)
