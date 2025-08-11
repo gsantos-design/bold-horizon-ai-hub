@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink, Star, Sparkles, TrendingUp, Award, Heart, Globe } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 
 // Import the event flyer image - using the latest correct image provided by user
-// Note: Converting .jpeg to .png due to build system limitations with capitalized extensions
 import wealthWorkshopFlyer from '@assets/IMG_0412_1754924705272.jpeg';
 
 export default function Events() {
@@ -73,17 +72,6 @@ export default function Events() {
       status: 'Save the Date',
       description: 'Annual celebration honoring our valued clients and their financial achievements with the Santiago Team.',
       capacity: 'Invitation Only'
-    },
-    {
-      id: 'financial-literacy',
-      title: 'Financial Literacy for Young Professionals',
-      date: 'November 8th, 2025',
-      time: '7:00 PM - 9:00 PM',
-      location: 'Virtual Event',
-      type: 'Educational Webinar',
-      status: 'Coming Soon',
-      description: 'Interactive webinar focused on building wealth and financial independence for professionals under 35.',
-      capacity: 'Unlimited'
     }
   ];
 
@@ -92,38 +80,96 @@ export default function Events() {
       <Header />
       
       <main className="pt-20 pb-16">
-        {/* Hero Section */}
+        {/* Hero Section - Enhanced with cosmic theme */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="py-16 bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600"
+          className="relative py-24 overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)'
+          }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Animated background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-2 h-2 bg-white/30 rounded-full animate-bounce delay-1000"></div>
+            <div className="absolute bottom-20 left-20 w-3 h-3 bg-white/25 rounded-full animate-pulse delay-500"></div>
+            <div className="absolute top-60 left-1/2 w-1 h-1 bg-white/40 rounded-full animate-ping"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              {...fadeInUp}
+              className="mb-6"
+            >
+              <Badge className="bg-white/20 text-white border-white/30 text-lg px-6 py-2 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Premium Events
+              </Badge>
+            </motion.div>
+            
             <motion.h1 
               {...fadeInUp}
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
             >
-              WFG Events & Workshops
+              Transform Your
+              <span className="block bg-gradient-to-r from-yellow-200 to-pink-200 bg-clip-text text-transparent">
+                Financial Future
+              </span>
             </motion.h1>
+            
             <motion.p 
               {...fadeInUp}
               transition={{ delay: 0.2 }}
-              className="text-xl text-purple-100 max-w-3xl mx-auto mb-8"
+              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
             >
               Join the Santiago Team for exclusive financial education events, networking opportunities, 
               and professional development workshops designed to accelerate your wealth-building journey.
             </motion.p>
+            
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-purple-50 text-lg px-8 py-4"
+                className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 onClick={() => setSelectedEvent('i-wealth-workshop')}
               >
+                <Star className="w-5 h-5 mr-2" />
                 View Featured Event
               </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-full backdrop-blur-sm"
+                onClick={() => document.getElementById('upcoming-events')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Browse All Events
+              </Button>
+            </motion.div>
+
+            {/* Stats Section */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.6 }}
+              className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+            >
+              {[
+                { number: "2,500+", label: "Families Educated", icon: Users },
+                { number: "800+", label: "Legacy Plans Created", icon: Award },
+                { number: "1,500+", label: "Income Streams Built", icon: TrendingUp }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
+                    <stat.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-white/80">{stat.label}</div>
+                </div>
+              ))}
             </motion.div>
           </div>
         </motion.section>
@@ -131,221 +177,297 @@ export default function Events() {
         {/* Featured Event - I WEALTH Workshop */}
         <motion.section 
           {...fadeInUp}
-          className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="py-20 bg-gradient-to-br from-gray-50 to-white"
         >
-          <div className="text-center mb-12">
-            <Badge className="bg-purple-100 text-purple-800 text-lg px-4 py-2 mb-4">
-              {featuredEvent.status}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {featuredEvent.title}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {featuredEvent.subtitle}
-            </p>
-          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg px-6 py-3 mb-6 shadow-lg">
+                  <Wine className="w-4 h-4 mr-2" />
+                  {featuredEvent.status}
+                </Badge>
+              </motion.div>
+              
+              <motion.h2 
+                {...fadeInUp}
+                className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-800 to-pink-600 bg-clip-text text-transparent mb-6"
+              >
+                {featuredEvent.title}
+              </motion.h2>
+              
+              <motion.p 
+                {...fadeInUp}
+                transition={{ delay: 0.2 }}
+                className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              >
+                {featuredEvent.subtitle}
+              </motion.p>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Event Image */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="relative"
-            >
-              <img 
-                src={featuredEvent.image} 
-                alt="I WEALTH Workshop Flyer"
-                className="w-full rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Event Image */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.3 }}
+                className="relative group"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+                <div className="relative">
+                  <img 
+                    src={wealthWorkshopFlyer} 
+                    alt="I WEALTH Workshop Flyer featuring Nolly Santiago"
+                    className="w-full rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl" />
+                  
+                  {/* Floating elements */}
+                  <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-3 shadow-lg animate-bounce">
+                    <Star className="w-6 h-6 text-yellow-800" />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 bg-pink-500 rounded-full p-3 shadow-lg animate-pulse">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+              </motion.div>
 
-            {/* Event Details */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.4 }}
-              className="space-y-6"
-            >
-              <Card className="border-none shadow-lg">
-                <CardHeader className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-t-lg">
-                  <CardTitle className="text-2xl">Event Details</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Calendar className="h-5 w-5 text-purple-600" />
-                    <span className="text-lg font-semibold">{featuredEvent.date}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-purple-600" />
-                    <span>{featuredEvent.time}</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-purple-600 mt-1" />
-                    <span>{featuredEvent.location}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Users className="h-5 w-5 text-purple-600" />
-                    <span>{featuredEvent.type}</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-2">
-                    <Wine className="h-5 w-5 text-purple-600" />
-                    What to Expect
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {featuredEvent.highlights.map((highlight, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                      <span>{highlight}</span>
-                    </div>
+              {/* Event Details */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.4 }}
+                className="space-y-8"
+              >
+                {/* Event Info Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    { icon: Calendar, label: "Date", value: featuredEvent.date, color: "purple" },
+                    { icon: Clock, label: "Time", value: featuredEvent.time, color: "blue" },
+                    { icon: MapPin, label: "Location", value: featuredEvent.location, color: "pink" },
+                    { icon: Users, label: "Type", value: featuredEvent.type, color: "green" }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      className={`bg-gradient-to-br from-${item.color}-50 to-${item.color}-100 p-6 rounded-2xl border border-${item.color}-200 hover:shadow-lg transition-all duration-300 group`}
+                    >
+                      <div className="flex items-center mb-3">
+                        <div className={`p-3 bg-${item.color}-500 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                          <item.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className={`text-sm font-medium text-${item.color}-600 uppercase tracking-wide`}>{item.label}</p>
+                          <p className="text-lg font-bold text-gray-900">{item.value}</p>
+                        </div>
+                      </div>
+                    </motion.div>
                   ))}
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="border-none shadow-lg bg-gradient-to-r from-purple-50 to-pink-50">
-                <CardContent className="p-6 text-center">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Phone className="h-5 w-5 text-purple-600" />
-                    <span className="text-lg font-semibold">{featuredEvent.rsvp}</span>
+                {/* What to Expect Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-8 rounded-3xl border border-purple-100 shadow-lg"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mr-4">
+                      <Gift className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-800 to-pink-600 bg-clip-text text-transparent">
+                      What to Expect
+                    </h3>
                   </div>
-                  <p className="text-purple-700 font-medium mb-4">
-                    {featuredEvent.additionalInfo}
-                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {featuredEvent.highlights.map((highlight, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 + index * 0.1 }}
+                        className="flex items-start p-4 bg-white/80 backdrop-blur-sm rounded-xl hover:bg-white transition-all duration-300 group"
+                      >
+                        <div className="p-2 bg-green-100 rounded-lg mr-4 group-hover:bg-green-200 transition-colors duration-300">
+                          <CheckCircle className="h-5 w-5 text-green-600" />
+                        </div>
+                        <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
+                          {highlight}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 }}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
                   <Button 
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                    size="lg" 
+                    className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white font-bold py-6 px-10 rounded-2xl shadow-2xl transform hover:scale-105 hover:shadow-purple-500/25 transition-all duration-300 group"
                   >
-                    <Phone className="h-4 w-4 mr-2" />
-                    RSVP Now
+                    <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse" />
+                    RSVP Now - (407) 777-1087
+                    <Sparkles className="w-5 h-5 ml-2 opacity-75" />
                   </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 hover:border-purple-400 py-6 px-10 rounded-2xl font-bold group transition-all duration-300"
+                  >
+                    <ExternalLink className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                    Event Details
+                  </Button>
+                </motion.div>
+
+                {/* Additional Info */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.0 }}
+                  className="text-center p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl border border-yellow-200"
+                >
+                  <Wine className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <p className="text-lg font-semibold text-gray-800 mb-2">
+                    "Come Wine with us and Stay for the Transformation"
+                  </p>
+                  <p className="text-gray-600">
+                    Limited seating available. Reserve your spot today!
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </motion.section>
 
-        {/* Upcoming Events */}
+        {/* Upcoming Events Section */}
         <motion.section 
+          id="upcoming-events"
           {...fadeInUp}
-          className="py-16 bg-gray-50"
+          className="py-20 bg-white"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
+              <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2 mb-4">
+                Coming Soon
+              </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Upcoming Events
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Stay connected with the Santiago Team through our regular educational workshops, 
-                networking events, and professional development opportunities.
+                Mark your calendars for these exciting upcoming events and opportunities to grow with the Santiago Team.
               </p>
             </div>
 
-            <motion.div 
-              variants={staggerChildren}
-              initial="initial"
-              animate="animate"
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
+            <div className="grid md:grid-cols-2 gap-8">
               {upcomingEvents.map((event, index) => (
                 <motion.div
                   key={event.id}
-                  variants={fadeInUp}
-                  whileHover={{ y: -5 }}
-                  className="group"
+                  {...fadeInUp}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300">
-                    <CardHeader>
-                      <div className="flex justify-between items-start mb-2">
-                        <Badge 
-                          variant={event.status === 'Registration Open' ? 'default' : 'secondary'}
-                          className="text-xs"
-                        >
+                  <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                    <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                      <div className="flex items-center justify-between">
+                        <Badge className="bg-white/20 text-white border-white/30">
                           {event.status}
                         </Badge>
-                        <Badge variant="outline" className="text-xs">
-                          {event.type}
-                        </Badge>
+                        <Calendar className="h-6 w-6" />
                       </div>
-                      <CardTitle className="text-xl group-hover:text-purple-600 transition-colors">
-                        {event.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <CardDescription className="text-gray-600">
-                        {event.description}
+                      <CardTitle className="text-xl">{event.title}</CardTitle>
+                      <CardDescription className="text-blue-100">
+                        {event.type}
                       </CardDescription>
-                      
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sm">
-                          <Calendar className="h-4 w-4 text-purple-600" />
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="space-y-4 mb-6">
+                        <div className="flex items-center text-gray-700">
+                          <Calendar className="h-5 w-5 text-blue-600 mr-3" />
                           <span>{event.date}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Clock className="h-4 w-4 text-purple-600" />
+                        <div className="flex items-center text-gray-700">
+                          <Clock className="h-5 w-5 text-blue-600 mr-3" />
                           <span>{event.time}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <MapPin className="h-4 w-4 text-purple-600" />
+                        <div className="flex items-center text-gray-700">
+                          <MapPin className="h-5 w-5 text-blue-600 mr-3" />
                           <span>{event.location}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <Users className="h-4 w-4 text-purple-600" />
+                        <div className="flex items-center text-gray-700">
+                          <Users className="h-5 w-5 text-blue-600 mr-3" />
                           <span>{event.capacity}</span>
                         </div>
                       </div>
-
+                      
+                      <p className="text-gray-600 mb-6">
+                        {event.description}
+                      </p>
+                      
                       <Button 
-                        variant="outline" 
-                        className="w-full group-hover:bg-purple-600 group-hover:text-white transition-colors"
-                        disabled={event.status === 'Save the Date' || event.status === 'Coming Soon'}
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                        disabled={event.status === 'Save the Date'}
                       >
-                        {event.status === 'Registration Open' ? 'Register Now' : 
-                         event.status === 'Save the Date' ? 'Save the Date' : 
-                         'Coming Soon'}
-                        <ExternalLink className="h-4 w-4 ml-2" />
+                        {event.status === 'Save the Date' ? 'Coming Soon' : 'Learn More'}
                       </Button>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 
-        {/* Call to Action */}
+        {/* Call to Action Section */}
         <motion.section 
           {...fadeInUp}
-          className="py-16 bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600"
+          className="py-20 bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600"
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <motion.h2 
+              {...fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+            >
               Ready to Transform Your Financial Future?
-            </h2>
-            <p className="text-xl text-purple-100 mb-8">
-              Join the Santiago Team at our next event and discover proven strategies 
-              for building lasting wealth and financial independence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.h2>
+            <motion.p 
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-purple-100 mb-8"
+            >
+              Join the Santiago Team community and discover the power of financial education, 
+              professional development, and meaningful connections.
+            </motion.p>
+            <motion.div 
+              {...fadeInUp}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Button 
-                size="lg"
-                className="bg-white text-purple-600 hover:bg-purple-50 text-lg px-8 py-4"
+                size="lg" 
+                className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-3"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Phone className="h-5 w-5 mr-2" />
-                Contact Us Today
+                Get Started Today
               </Button>
               <Button 
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-600 text-lg px-8 py-4"
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10 px-8 py-3"
               >
-                View All Events
+                <Phone className="w-5 h-5 mr-2" />
+                Contact Us
               </Button>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
       </main>
