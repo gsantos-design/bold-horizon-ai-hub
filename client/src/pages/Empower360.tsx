@@ -9,6 +9,7 @@ import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago
 import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago
+import santiagoTeamPhoto from '@assets/Image-1_1754701413805.jpeg'; // Santiago Team professional photo
 import MultiHandedIncome from "@/components/MultiHandedIncome";
 import FinancialEducationModule from "@/components/FinancialEducationModule";
 import SelfImprovementModule from "@/components/SelfImprovementModule";
@@ -212,19 +213,19 @@ export default function Empower360() {
             </p>
           </div>
 
-          {/* Team Conference Photo */}
+          {/* Santiago Family Team Photo */}
           <div className="mb-16">
             <Card className="overflow-hidden max-w-5xl mx-auto">
               <div className="relative">
                 <img 
-                  src="/empower360-hero.png" 
-                  alt="Santiago Team at WFG Conference" 
+                  src={santiagoTeamPhoto} 
+                  alt="The Santiago Family Team" 
                   className="w-full h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">WFG Leadership Conference</h3>
-                  <p className="text-lg opacity-90">Celebrating excellence and building the future of financial education</p>
+                  <h3 className="text-2xl font-bold mb-2">The Santiago Family Team</h3>
+                  <p className="text-lg opacity-90">Three generations of excellence serving Florida and New York families</p>
                 </div>
               </div>
             </Card>
