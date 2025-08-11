@@ -132,8 +132,14 @@
   }
   
   /* Ensure button text is always visible */
-  button {
-    color: inherit !important;
+  button.bg-white, 
+  button[style*="background-color: white"],
+  button[class*="bg-white"] {
+    color: #1f2937 !important; /* Dark gray text for white buttons */
+  }
+  
+  button.text-white {
+    color: white !important;
   }
   
   .text-white {

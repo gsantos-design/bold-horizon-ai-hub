@@ -415,7 +415,7 @@ export default function ThreePhilosophies() {
               Join thousands of families who have already discovered the power of the Three Philosophies
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="px-8">
+              <Button size="lg" variant="secondary" className="px-8 bg-white text-blue-600 hover:bg-gray-100">
                 Schedule Your Free Consultation
               </Button>
               <Button size="lg" variant="outline" className="px-8 bg-white text-blue-600 border-white hover:bg-gray-100">
