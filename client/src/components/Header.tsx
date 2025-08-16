@@ -77,7 +77,7 @@ export default function Header() {
             <Link href="/localization-wizard">
               <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
                 <Languages className="h-4 w-4 mr-1" />
-                <span>Translations</span>
+                <span>{t('nav.translations')}</span>
               </Button>
             </Link>
             
@@ -202,7 +202,14 @@ export default function Header() {
               <Link href="/localization-wizard">
                 <Button variant="ghost" size="sm" className="w-full justify-start text-purple-600">
                   <Languages className="h-4 w-4 mr-2" />
-                  Translations
+                  {t('nav.translations')}
+                </Button>
+              </Link>
+              
+              <Link href="/registro-espanol">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-amber-600">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  {t('nav.spanish_registration')}
                 </Button>
               </Link>
             </div>

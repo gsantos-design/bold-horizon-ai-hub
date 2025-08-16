@@ -127,7 +127,7 @@ export default function SpanishRegistrationForm() {
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className="mt-1"
-                    placeholder="correo@ejemplo.com"
+                    placeholder={t('registration.email_placeholder')}
                   />
                 </div>
 
@@ -177,7 +177,7 @@ export default function SpanishRegistrationForm() {
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     className="mt-1"
-                    placeholder="(555) 123-4567"
+                    placeholder={t('registration.phone_placeholder')}
                   />
                 </div>
 
@@ -193,7 +193,7 @@ export default function SpanishRegistrationForm() {
                     value={formData.whoInvited}
                     onChange={(e) => handleInputChange('whoInvited', e.target.value)}
                     className="mt-1"
-                    placeholder="Pablo Santiago, Nolly Santiago, etc."
+                    placeholder={t('registration.who_invited_placeholder')}
                   />
                 </div>
 
@@ -215,14 +215,14 @@ export default function SpanishRegistrationForm() {
 
               {/* Direct Link Option */}
               <div className="mt-6 text-center">
-                <p className="text-gray-600 mb-2">O registrarse directamente en Zoom:</p>
+                <p className="text-gray-600 mb-2">{t('registration.or_register_directly')}</p>
                 <a 
                   href={t('meeting.spanish_zoom_link')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 underline"
                 >
-                  Enlace Directo de Registro de Zoom
+                  {t('registration.zoom_direct_link')}
                 </a>
               </div>
             </CardContent>

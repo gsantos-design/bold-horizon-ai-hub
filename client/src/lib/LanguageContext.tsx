@@ -324,6 +324,7 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Navigation
     'nav.spanish_registration': 'Spanish Registration',
+    'nav.translations': 'Translations',
     
     // Team Building
     'team.title': 'Team Building',
@@ -746,6 +747,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'registration.register_button': 'Registrarse',
     'registration.select_state': 'Seleccionar estado/provincia',
     'registration.privacy_notice': 'La información que proporciones al registrarte será compartida con el propietario de la cuenta y el anfitrión, y puede ser usada y compartida por ellos de acuerdo con sus Términos y Política de Privacidad.',
+    'registration.or_register_directly': 'O registrarse directamente en Zoom:',
+    'registration.zoom_direct_link': 'Enlace Directo de Registro de Zoom',
+    'registration.phone_placeholder': '(555) 123-4567',
+    'registration.who_invited_placeholder': 'Pablo Santiago, Nolly Santiago, etc.',
+    'registration.email_placeholder': 'correo@ejemplo.com',
     
     // Home Page Sections - Spanish
     'home.ai_mentor_badge': 'NUEVO: Mentor de Carrera con IA',
@@ -757,6 +763,7 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Navigation - Spanish
     'nav.spanish_registration': 'Registro en Español',
+    'nav.translations': 'Traducciones',
     
     // Team Building
     'team.title': 'Formación de Equipos',

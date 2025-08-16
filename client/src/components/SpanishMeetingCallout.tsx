@@ -56,7 +56,7 @@ export default function SpanishMeetingCallout() {
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
                 >
-                  Formulario en Español
+                  {t('nav.spanish_registration')}
                 </Button>
               </a>
             </div>
