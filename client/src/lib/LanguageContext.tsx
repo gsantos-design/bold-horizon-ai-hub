@@ -311,6 +311,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'meeting.schedule': 'Mondays & Wednesdays at 7:00 PM ET',
     'meeting.register_spanish': 'Register for Spanish Session',
     'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
+    'meeting.eastern_time': 'Eastern Time (US and Canada)',
+    'meeting.presented_by': 'Presented by Pablo & Nolly Santiago',
+    
+    // Home Page Sections
+    'home.ai_mentor_badge': 'NEW: AI Career Mentor',
+    'home.ai_mentor_title': 'AI Career Mentor with Emotional Intelligence',
+    'home.ai_mentor_description': 'Get personalized career guidance powered by the Santiago Team\'s expertise. Our AI mentor understands your emotions and provides tailored advice for your WFG journey.',
+    'home.start_career_chat': 'Start Career Chat',
+    'home.schedule_call': 'Schedule 1-on-1 Call',
+    'home.take_tour': 'Take Tour',
     
     // Team Building
     'team.title': 'Team Building',
@@ -609,6 +619,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'form.mobile': 'Móvil',
     'form.download_now': 'Descargar Ahora',
     'form.schedule_appointment': 'Programar Cita',
+    'form.privacy_statement': 'Declaración de Privacidad en Línea',
     
     // Office Information - Spanish
     'office.about_office': 'Acerca de la Oficina de Pablo y Nolly',
@@ -716,6 +727,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'meeting.schedule': 'Lunes y Miércoles a las 7:00 PM ET',
     'meeting.register_spanish': 'Registrarse para Sesión en Español',
     'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
+    'meeting.eastern_time': 'Hora del Este (EE.UU. y Canadá)',
+    'meeting.presented_by': 'Presentado por Pablo y Nolly Santiago',
+    
+    // Home Page Sections - Spanish
+    'home.ai_mentor_badge': 'NUEVO: Mentor de Carrera con IA',
+    'home.ai_mentor_title': 'Mentor de Carrera con IA e Inteligencia Emocional',
+    'home.ai_mentor_description': 'Obtén orientación profesional personalizada impulsada por la experiencia del Equipo Santiago. Nuestro mentor de IA comprende tus emociones y brinda consejos personalizados para tu viaje en WFG.',
+    'home.start_career_chat': 'Iniciar Chat Profesional',
+    'home.schedule_call': 'Programar Llamada 1-a-1',
+    'home.take_tour': 'Tomar Recorrido',
     
     // Team Building
     'team.title': 'Formación de Equipos',

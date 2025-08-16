@@ -54,7 +54,7 @@ export default function SpanishMeetingCallout() {
           </div>
 
           <p className="text-purple-200 text-sm">
-            Eastern Time (US and Canada) | Presented by Pablo & Nolly Santiago
+            {t('meeting.eastern_time')} | {t('meeting.presented_by')}
           </p>
         </div>
       </div>

@@ -100,7 +100,7 @@ export default function AppointmentForm() {
                 
                 <p className="text-xs text-gray-500 text-center">
                   <a href="https://www.worldfinancialgroup.com/legal/privacy-policy" className="text-blue-600 hover:underline">
-                    Online Privacy Statement
+                    {t('form.privacy_statement')}
                   </a>
                 </p>
               </form>

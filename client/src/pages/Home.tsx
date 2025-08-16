@@ -21,8 +21,10 @@ import LocalizationBanner from "@/components/LocalizationBanner";
 import SpanishMeetingCallout from "@/components/SpanishMeetingCallout";
 import Footer from "@/components/Footer";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('home-page');
 
   return (
@@ -52,7 +54,7 @@ export default function Home() {
             className="bg-white/90 backdrop-blur-sm border-blue-200 text-blue-600 hover:bg-blue-50 shadow-lg"
           >
             <PlayCircle className="h-5 w-5 mr-2" />
-            Take Tour
+            {t('home.take_tour')}
           </Button>
         </TipTooltip>
       </div>
@@ -72,15 +74,14 @@ export default function Home() {
                 title="🤖 AI-Powered Career Guidance"
               >
                 <Badge className="mb-4 bg-gradient-to-r from-emerald-600 to-purple-600 text-white px-4 py-2 cursor-help">
-                  🤖 NEW: AI Career Mentor
+                  🤖 {t('home.ai_mentor_badge')}
                 </Badge>
               </AITooltip>
               <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                AI Career Mentor with Emotional Intelligence
+                {t('home.ai_mentor_title')}
               </h2>
               <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                Get personalized career guidance powered by the Santiago Team's expertise. 
-                Our AI mentor understands your emotions and provides tailored advice for your WFG journey.
+                {t('home.ai_mentor_description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SmartTooltip 
@@ -90,7 +91,7 @@ export default function Home() {
                   <Link href="/ai-mentor">
                     <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-700 hover:to-purple-700 text-white">
                       <Bot className="h-5 w-5 mr-2" />
-                      Start Career Chat
+                      {t('home.start_career_chat')}
                       <MessageCircle className="h-5 w-5 ml-2" />
                     </Button>
                   </Link>
@@ -101,7 +102,7 @@ export default function Home() {
                   className="border-emerald-600 text-emerald-600 hover:bg-emerald-50"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
-                  Schedule 1-on-1 Call
+                  {t('home.schedule_call')}
                 </Button>
               </div>
             </CardContent>
