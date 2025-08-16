@@ -231,6 +231,80 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.pablo_bio_3': 'Now, my mission is clear: to protect the protectors. I educate and empower first responders to safeguard their income and build tax-free wealth using strategies the job never told us about.',
     'team.pablo_bio_4': 'We\'ve spent our careers protecting the public. It\'s time to protect our own.',
     
+    // Additional Team Members
+    'team.princhesca_title': 'Licensed Life Insurance Agent',
+    'team.princhesca_company': 'Owner, Rainier Tax Services LLC',
+    'team.princhesca_bio_1': 'Princhesca Rainier Turner is a Licensed Life Insurance Agent and the owner of Rainier Tax Services LLC. With more than 10 years of experience in financial services, she specializes in life insurance and annuities, personal and business tax planning and preparation, bookkeeping, and LLC formation.',
+    'team.princhesca_bio_2': 'Her mission is to empower families, small business owners, and young professionals through financial education and customized solutions. Before entering the financial industry, Princhesca built a strong foundation in telecommunications, excelling in customer service, project management, and sales leadership.',
+    'team.princhesca_bio_3': 'Rainier Tax Services was originally founded by her father in the 1990s. After his passing in 2018, Princhesca proudly took over the business to continue his legacy of service and integrity.',
+    'team.princhesca_service_1': 'Life Insurance & Annuities',
+    'team.princhesca_service_2': 'Tax Preparation',
+    'team.princhesca_service_3': 'Business Formation',
+    'team.princhesca_service_4': 'Bookkeeping Services',
+    
+    'team.joseph_title': 'Associate – World Financial Group',
+    'team.joseph_bio_1': 'I\'m excited to join the WFG team — a team that\'s also my family. I earned my investment license right out of high school, and later graduated with a degree in Finance. From day one, I knew I wanted to use my skills to help people take control of their money and their future.',
+    'team.joseph_bio_2': 'I grew up watching my parents work incredibly hard, sacrificing countless holidays and summers in service to others. That dedication taught me discipline and commitment, but it also showed me a hard truth: without financial education, even the most dedicated people can be left unprotected.',
+    'team.joseph_bio_3': 'My mission is to build lasting financial wealth, gain true freedom, and create a legacy that lasts for generations. If you have the heart of an entrepreneur and want to build real wealth, let\'s connect. I\'ve got you, brother.',
+    'team.joseph_skill_1': 'Investment License',
+    'team.joseph_skill_2': 'Finance Degree',
+    'team.joseph_skill_3': 'Wealth Building',
+    
+    'team.christian_title': 'Associate – World Financial Group',
+    'team.christian_bio_1': 'I\'m Christian Santiago. I recently graduated and, like my twin brother Joseph, I\'ve chosen to join my family\'s mission at WFG. I\'ve always been a bit of an introvert, keeping my circle small, but I\'m deeply loyal to the people I care about. Numbers have always been my strength — I\'ve loved math for as long as I can remember — but what truly grabbed my attention was learning about the power of compound interest.',
+    'team.christian_bio_2': 'It wasn\'t something I was ever taught in school, and my first reaction was: Why isn\'t this in schools? Everyone should know this. That moment sparked a passion in me to share this knowledge with others — especially with the younger generation.',
+    'team.christian_bio_3': 'I believe in empowering people to dream again, to rebuild self-belief, and to gain the confidence to create their own financial future. I see this as a new art of living — one where we use knowledge, entrepreneurship, and discipline to build not just wealth, but a lasting legacy.',
+    'team.christian_bio_4': 'My mission is to help young people understand that they have the power to take control of their money, their choices, and their future — starting today.',
+    'team.christian_skill_1': 'Mathematics & Analytics',
+    'team.christian_skill_2': 'Compound Interest Expert',
+    'team.christian_skill_3': 'Youth Financial Education',
+    
+    // Educational Content
+    'education.philosophy_title': 'Financial Education Philosophy',
+    'education.philosophy_subtitle': 'Empowering families through financial education and opportunity awareness',
+    'education.multi_income_title': 'Multi-Handed Income Education',
+    'education.multi_income_desc': 'Learn about creating multiple streams of income through financial education and opportunity. Our educational approach helps you understand strategies to diversify income sources and build lasting financial security through comprehensive learning programs.',
+    'education.literacy_title': 'Financial Education & Literacy',
+    'education.literacy_desc': 'Access financial education that covers fundamental money concepts and wealth-building strategies. We provide educational resources that help you understand financial principles and make informed decisions about your family\'s financial future.',
+    'education.development_title': 'Personal Development & Leadership',
+    'education.development_desc': 'Focus on personal growth and leadership development through our educational system. Learn the skills needed to succeed in life and business while developing the ability to help others in your community through financial education opportunities.',
+    
+    // Living Approach Content
+    'living.approach_desc': 'Our approach goes beyond traditional financial planning. We empower families through comprehensive financial education, multiple income strategies, and personal development that creates lasting transformation.',
+    'living.join_desc': 'Join the Santiago team and discover how the New Art of Living can transform your family\'s financial future through our proven system of building wealth, gaining knowledge, and developing yourself into the person you were meant to be.',
+    
+    // Brochure Section
+    'brochure.title': 'Money Matters Brochure',
+    'brochure.subtitle': 'Download Money Matters',
+    'brochure.description': 'An introduction to WFGIA and the key concepts that can help you build a solid financial foundation. Learn how WFG can help you and anticipate and overcome the challenges in saving for your future.',
+    
+    // Appointment Section
+    'appointment.title': 'Schedule a Complimentary, No-Obligation Appointment with Pablo & Nolly',
+    
+    // Platform Section
+    'platform.title': 'A Platform as Diverse as Those We Serve',
+    'platform.description': 'No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Our video showcases our business platform and what makes us unique in an industry that is not known for its diversity.',
+    
+    // Additional Localization Keys
+    
+    // Building section
+    'building.title': 'Building Entrepreneurs',
+    'building.subtitle': 'Master The New Art of Living',
+    'building.join_title': 'Join the Santiago Team',
+    'building.description': 'Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.',
+    'building.description_2': 'Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.',
+    'building.start_journey': 'Start Your Journey',
+    'building.call_team': 'Call Pablo & Nolly',
+    
+    // Philosophy sections
+    'philosophy.empowering_title': 'The New Art of Living: Empowering Families',
+    'philosophy.multi_income_title': 'Multi-Handed Income',
+    'philosophy.multi_income_desc': 'Create multiple streams of income to build lasting wealth',
+    'philosophy.financial_education_title': 'Financial Education',
+    'philosophy.financial_education_desc': 'Learn the strategies that truly build generational wealth',
+    'philosophy.self_improvement_title': 'Self Improvement',
+    'philosophy.self_improvement_desc': 'Develop the mindset and skills for lasting success',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -554,6 +628,80 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.pablo_bio_2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y restricciones.',
     'team.pablo_bio_3': 'Ahora, mi misión es clara: proteger a los protectores. Educo y empodero a los primeros respondedores para salvaguardar sus ingresos y construir riqueza libre de impuestos usando estrategias que el trabajo nunca nos enseñó.',
     'team.pablo_bio_4': 'Hemos pasado nuestras carreras protegiendo al público. Es hora de proteger a los nuestros.',
+    
+    // Additional Team Members - Spanish
+    'team.princhesca_title': 'Agente de Seguros de Vida Licenciada',
+    'team.princhesca_company': 'Propietaria, Rainier Tax Services LLC',
+    'team.princhesca_bio_1': 'Princhesca Rainier Turner es una Agente de Seguros de Vida Licenciada y propietaria de Rainier Tax Services LLC. Con más de 10 años de experiencia en servicios financieros, se especializa en seguros de vida y anualidades, planificación y preparación de impuestos personales y comerciales, contabilidad, y formación de LLC.',
+    'team.princhesca_bio_2': 'Su misión es empoderar a familias, pequeños empresarios, y jóvenes profesionales a través de educación financiera y soluciones personalizadas. Antes de ingresar a la industria financiera, Princhesca construyó una base sólida en telecomunicaciones, destacándose en servicio al cliente, gestión de proyectos, y liderazgo en ventas.',
+    'team.princhesca_bio_3': 'Rainier Tax Services fue originalmente fundada por su padre en los años 1990. Después de su fallecimiento en 2018, Princhesca orgullosamente se hizo cargo del negocio para continuar su legado de servicio e integridad.',
+    'team.princhesca_service_1': 'Seguros de Vida y Anualidades',
+    'team.princhesca_service_2': 'Preparación de Impuestos',
+    'team.princhesca_service_3': 'Formación de Negocios',
+    'team.princhesca_service_4': 'Servicios de Contabilidad',
+    
+    'team.joseph_title': 'Asociado – World Financial Group',
+    'team.joseph_bio_1': 'Estoy emocionado de unirme al equipo de WFG — un equipo que también es mi familia. Obtuve mi licencia de inversiones recién salido de la secundaria, y luego me gradué con un título en Finanzas. Desde el primer día, sabía que quería usar mis habilidades para ayudar a las personas a tomar control de su dinero y su futuro.',
+    'team.joseph_bio_2': 'Crecí viendo a mis padres trabajar increíblemente duro, sacrificando innumerables días festivos y veranos en servicio a otros. Esa dedicación me enseñó disciplina y compromiso, pero también me mostró una dura verdad: sin educación financiera, incluso las personas más dedicadas pueden quedar desprotegidas.',
+    'team.joseph_bio_3': 'Mi misión es construir riqueza financiera duradera, ganar verdadera libertad, y crear un legado que dure por generaciones. Si tienes el corazón de un empresario y quieres construir verdadera riqueza, conectemos. Te apoyo, hermano.',
+    'team.joseph_skill_1': 'Licencia de Inversiones',
+    'team.joseph_skill_2': 'Título en Finanzas',
+    'team.joseph_skill_3': 'Construcción de Riqueza',
+    
+    'team.christian_title': 'Asociado – World Financial Group',
+    'team.christian_bio_1': 'Soy Christian Santiago. Me gradué recientemente y, como mi hermano gemelo Joseph, he elegido unirme a la misión de mi familia en WFG. Siempre he sido un poco introvertido, manteniendo mi círculo pequeño, pero soy profundamente leal a las personas que me importan. Los números siempre han sido mi fortaleza — he amado las matemáticas desde que puedo recordar — pero lo que realmente captó mi atención fue aprender sobre el poder del interés compuesto.',
+    'team.christian_bio_2': 'No era algo que me enseñaran en la escuela, y mi primera reacción fue: ¿Por qué esto no está en las escuelas? Todos deberían saber esto. Ese momento encendió una pasión en mí para compartir este conocimiento con otros — especialmente con la generación más joven.',
+    'team.christian_bio_3': 'Creo en empoderar a las personas para soñar de nuevo, reconstruir la autoconfianza, y ganar la confianza para crear su propio futuro financiero. Veo esto como un nuevo arte de vivir — uno donde usamos conocimiento, emprendimiento, y disciplina para construir no solo riqueza, sino un legado duradero.',
+    'team.christian_bio_4': 'Mi misión es ayudar a los jóvenes a entender que tienen el poder de tomar control de su dinero, sus decisiones, y su futuro — comenzando hoy.',
+    'team.christian_skill_1': 'Matemáticas y Análisis',
+    'team.christian_skill_2': 'Experto en Interés Compuesto',
+    'team.christian_skill_3': 'Educación Financiera Juvenil',
+    
+    // Educational Content - Spanish
+    'education.philosophy_title': 'Filosofía de Educación Financiera',
+    'education.philosophy_subtitle': 'Empoderando familias a través de educación financiera y conciencia de oportunidades',
+    'education.multi_income_title': 'Educación de Ingresos Multi-Facéticos',
+    'education.multi_income_desc': 'Aprende sobre crear múltiples fuentes de ingresos a través de educación financiera y oportunidad. Nuestro enfoque educativo te ayuda a entender estrategias para diversificar fuentes de ingresos y construir seguridad financiera duradera a través de programas de aprendizaje integral.',
+    'education.literacy_title': 'Educación y Alfabetización Financiera',
+    'education.literacy_desc': 'Accede a educación financiera que cubre conceptos fundamentales de dinero y estrategias de construcción de riqueza. Proporcionamos recursos educativos que te ayudan a entender principios financieros y tomar decisiones informadas sobre el futuro financiero de tu familia.',
+    'education.development_title': 'Desarrollo Personal y Liderazgo',
+    'education.development_desc': 'Enfócate en crecimiento personal y desarrollo de liderazgo a través de nuestro sistema educativo. Aprende las habilidades necesarias para tener éxito en la vida y los negocios mientras desarrollas la capacidad de ayudar a otros en tu comunidad a través de oportunidades de educación financiera.',
+    
+    // Living Approach Content - Spanish
+    'living.approach_desc': 'Nuestro enfoque va más allá de la planificación financiera tradicional. Empoderamos familias a través de educación financiera integral, estrategias de ingresos múltiples, y desarrollo personal que crea transformación duradera.',
+    'living.join_desc': 'Únete al equipo Santiago y descubre cómo el Nuevo Arte de Vivir puede transformar el futuro financiero de tu familia a través de nuestro sistema probado de construir riqueza, ganar conocimiento, y desarrollarte en la persona que estás destinado a ser.',
+    
+    // Brochure Section - Spanish
+    'brochure.title': 'Folleto Asuntos del Dinero',
+    'brochure.subtitle': 'Descargar Asuntos del Dinero',
+    'brochure.description': 'Una introducción a WFGIA y los conceptos clave que pueden ayudarte a construir una base financiera sólida. Aprende cómo WFG puede ayudarte y anticipar y superar los desafíos en ahorrar para tu futuro.',
+    
+    // Appointment Section - Spanish
+    'appointment.title': 'Programa una Cita Gratuita y Sin Obligación con Pablo y Nolly',
+    
+    // Platform Section - Spanish
+    'platform.title': 'Una Plataforma Tan Diversa Como Aquellos A Quienes Servimos',
+    'platform.description': 'Sin importar tu historia de vida, WFG tiene la tecnología y experiencia para hacer realidad tus sueños financieros. Nuestro video muestra nuestra plataforma de negocios y lo que nos hace únicos en una industria que no es conocida por su diversidad.',
+    
+    // Additional Localization Keys - Spanish
+    
+    // Building section - Spanish
+    'building.title': 'Formando Empresarios',
+    'building.subtitle': 'Domina el Nuevo Arte de Vivir',
+    'building.join_title': 'Únete al Equipo Santiago',
+    'building.description': '¿Listo para transformar tu vida y ayudar a otros a hacer lo mismo? Nuestro sistema probado combina estrategias de ingresos multi-facéticos, educación financiera integral, y desarrollo personal para crear resultados extraordinarios.',
+    'building.description_2': 'Únete al equipo Santiago y conviértete en parte de una comunidad dedicada a empoderar familias en Florida y Nueva York. Aprende el nuevo arte de vivir mientras construyes un negocio que hace una diferencia real.',
+    'building.start_journey': 'Comienza Tu Viaje',
+    'building.call_team': 'Llama a Pablo y Nolly',
+    
+    // Philosophy sections - Spanish
+    'philosophy.empowering_title': 'El Nuevo Arte de Vivir: Empoderando Familias',
+    'philosophy.multi_income_title': 'Ingresos Multi-Facéticos',
+    'philosophy.multi_income_desc': 'Crea múltiples fuentes de ingresos para construir riqueza duradera',
+    'philosophy.financial_education_title': 'Educación Financiera',
+    'philosophy.financial_education_desc': 'Aprende las estrategias que realmente construyen riqueza generacional',
+    'philosophy.self_improvement_title': 'Superación Personal',
+    'philosophy.self_improvement_desc': 'Desarrolla la mentalidad y habilidades para el éxito duradero',
     
     // Team Building
     'team.title': 'Formación de Equipos',

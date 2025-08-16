@@ -82,26 +82,21 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Princhesca Rainier Turner</h3>
-                <p className="text-emerald-600 font-semibold mb-2">Licensed Life Insurance Agent</p>
-                <p className="text-gray-700 font-medium">Owner, Rainier Tax Services LLC</p>
+                <p className="text-emerald-600 font-semibold mb-2">{t('team.princhesca_title')}</p>
+                <p className="text-gray-700 font-medium">{t('team.princhesca_company')}</p>
               </div>
               
               {/* Princhesca Bio */}
               <div className="flex-1">
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Princhesca Rainier Turner is a Licensed Life Insurance Agent and the owner of Rainier Tax Services LLC. 
-                    With more than 10 years of experience in financial services, she specializes in life insurance and annuities, 
-                    personal and business tax planning and preparation, bookkeeping, and LLC formation.
+                    {t('team.princhesca_bio_1')}
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Her mission is to empower families, small business owners, and young professionals through financial 
-                    education and customized solutions. Before entering the financial industry, Princhesca built a strong 
-                    foundation in telecommunications, excelling in customer service, project management, and sales leadership.
+                    {t('team.princhesca_bio_2')}
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Rainier Tax Services was originally founded by her father in the 1990s. After his passing in 2018, 
-                    Princhesca proudly took over the business to continue his legacy of service and integrity.
+                    {t('team.princhesca_bio_3')}
                   </p>
                 </div>
                 
@@ -109,19 +104,19 @@ export default function AgentProfile() {
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <div className="flex items-center space-x-2 text-emerald-700">
                     <Building className="h-4 w-4" />
-                    <span className="text-sm font-medium">Life Insurance & Annuities</span>
+                    <span className="text-sm font-medium">{t('team.princhesca_service_1')}</span>
                   </div>
                   <div className="flex items-center space-x-2 text-emerald-700">
                     <FileText className="h-4 w-4" />
-                    <span className="text-sm font-medium">Tax Preparation</span>
+                    <span className="text-sm font-medium">{t('team.princhesca_service_2')}</span>
                   </div>
                   <div className="flex items-center space-x-2 text-emerald-700">
                     <Building className="h-4 w-4" />
-                    <span className="text-sm font-medium">Business Formation</span>
+                    <span className="text-sm font-medium">{t('team.princhesca_service_3')}</span>
                   </div>
                   <div className="flex items-center space-x-2 text-emerald-700">
                     <FileText className="h-4 w-4" />
-                    <span className="text-sm font-medium">Bookkeeping Services</span>
+                    <span className="text-sm font-medium">{t('team.princhesca_service_4')}</span>
                   </div>
                 </div>
               </div>
@@ -142,27 +137,27 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Joseph Santiago</h3>
-                <p className="text-blue-600 font-semibold mb-2">Associate – World Financial Group</p>
+                <p className="text-blue-600 font-semibold mb-2">{t('team.joseph_title')}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  I'm excited to join the WFG team — a team that's also my family. I earned my investment license right out of high school, and later graduated with a degree in Finance. From day one, I knew I wanted to use my skills to help people take control of their money and their future.
+                  {t('team.joseph_bio_1')}
                   <br/><br/>
-                  I grew up watching my parents work incredibly hard, sacrificing countless holidays and summers in service to others. That dedication taught me discipline and commitment, but it also showed me a hard truth: without financial education, even the most dedicated people can be left unprotected.
+                  {t('team.joseph_bio_2')}
                   <br/><br/>
-                  My mission is to build lasting financial wealth, gain true freedom, and create a legacy that lasts for generations. If you have the heart of an entrepreneur and want to build real wealth, let's connect. I've got you, brother.
+                  {t('team.joseph_bio_3')}
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-blue-700">
                   <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">Investment License</span>
+                  <span className="text-sm font-medium">{t('team.joseph_skill_1')}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-blue-700">
                   <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">Finance Degree</span>
+                  <span className="text-sm font-medium">{t('team.joseph_skill_2')}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-blue-700">
                   <Users className="h-4 w-4" />
-                  <span className="text-sm font-medium">Wealth Building</span>
+                  <span className="text-sm font-medium">{t('team.joseph_skill_3')}</span>
                 </div>
               </div>
             </div>
@@ -179,29 +174,29 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Christian Santiago</h3>
-                <p className="text-emerald-600 font-semibold mb-2">Associate – World Financial Group</p>
+                <p className="text-emerald-600 font-semibold mb-2">{t('team.christian_title')}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  I'm Christian Santiago. I recently graduated and, like my twin brother Joseph, I've chosen to join my family's mission at WFG. I've always been a bit of an introvert, keeping my circle small, but I'm deeply loyal to the people I care about. Numbers have always been my strength — I've loved math for as long as I can remember — but what truly grabbed my attention was learning about the power of compound interest.
+                  {t('team.christian_bio_1')}
                   <br/><br/>
-                  It wasn't something I was ever taught in school, and my first reaction was: Why isn't this in schools? Everyone should know this. That moment sparked a passion in me to share this knowledge with others — especially with the younger generation.
+                  {t('team.christian_bio_2')}
                   <br/><br/>
-                  I believe in empowering people to dream again, to rebuild self-belief, and to gain the confidence to create their own financial future. I see this as a new art of living — one where we use knowledge, entrepreneurship, and discipline to build not just wealth, but a lasting legacy.
+                  {t('team.christian_bio_3')}
                   <br/><br/>
-                  My mission is to help young people understand that they have the power to take control of their money, their choices, and their future — starting today.
+                  {t('team.christian_bio_4')}
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-emerald-700">
                   <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">Mathematics & Analytics</span>
+                  <span className="text-sm font-medium">{t('team.christian_skill_1')}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-emerald-700">
                   <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">Compound Interest Expert</span>
+                  <span className="text-sm font-medium">{t('team.christian_skill_2')}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-emerald-700">
                   <Users className="h-4 w-4" />
-                  <span className="text-sm font-medium">Youth Financial Education</span>
+                  <span className="text-sm font-medium">{t('team.christian_skill_3')}</span>
                 </div>
               </div>
             </div>
