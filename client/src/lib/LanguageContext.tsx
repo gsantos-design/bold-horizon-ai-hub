@@ -322,6 +322,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'home.schedule_call': 'Schedule 1-on-1 Call',
     'home.take_tour': 'Take Tour',
     
+    // Navigation
+    'nav.spanish_registration': 'Spanish Registration',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -730,6 +733,20 @@ export const translations: Record<Language, Record<string, string>> = {
     'meeting.eastern_time': 'Hora del Este (EE.UU. y Canadá)',
     'meeting.presented_by': 'Presentado por Pablo y Nolly Santiago',
     
+    // Spanish Registration Form
+    'registration.meeting_title': 'El Nuevo Arte de Vivir',
+    'registration.meeting_registration': 'Registro de Reunión',
+    'registration.first_name_required': 'Nombre *',
+    'registration.last_name_required': 'Apellido *',
+    'registration.email_required': 'Dirección de Email *',
+    'registration.city': 'Ciudad',
+    'registration.state_province': 'Estado/Provincia',
+    'registration.phone_required': 'Teléfono *',
+    'registration.who_invited': '¿Quién te invitó? *',
+    'registration.register_button': 'Registrarse',
+    'registration.select_state': 'Seleccionar estado/provincia',
+    'registration.privacy_notice': 'La información que proporciones al registrarte será compartida con el propietario de la cuenta y el anfitrión, y puede ser usada y compartida por ellos de acuerdo con sus Términos y Política de Privacidad.',
+    
     // Home Page Sections - Spanish
     'home.ai_mentor_badge': 'NUEVO: Mentor de Carrera con IA',
     'home.ai_mentor_title': 'Mentor de Carrera con IA e Inteligencia Emocional',
@@ -737,6 +754,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'home.start_career_chat': 'Iniciar Chat Profesional',
     'home.schedule_call': 'Programar Llamada 1-a-1',
     'home.take_tour': 'Tomar Recorrido',
+    
+    // Navigation - Spanish
+    'nav.spanish_registration': 'Registro en Español',
     
     // Team Building
     'team.title': 'Formación de Equipos',

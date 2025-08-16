@@ -37,7 +37,7 @@ export default function SpanishMeetingCallout() {
               </div>
             </div>
             
-            <div className="text-center">
+            <div className="text-center space-x-4">
               <a 
                 href={t('meeting.spanish_zoom_link')}
                 target="_blank"
@@ -48,6 +48,15 @@ export default function SpanishMeetingCallout() {
                   className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-4 text-lg font-semibold shadow-lg"
                 >
                   {t('meeting.register_spanish')}
+                </Button>
+              </a>
+              <a href="/registro-espanol">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
+                >
+                  Formulario en Español
                 </Button>
               </a>
             </div>
