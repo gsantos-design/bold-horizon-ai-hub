@@ -163,7 +163,7 @@ export default function LanguageDifficultyHeatmap() {
   );
 
   const handleSectionHover = (sectionId: string) => {
-    setAnimatedSections(prev => new Set([...prev, sectionId]));
+    setAnimatedSections(prev => new Set(Array.from(prev).concat([sectionId])));
   };
 
   const categories = [

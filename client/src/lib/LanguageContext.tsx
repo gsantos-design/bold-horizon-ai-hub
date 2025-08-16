@@ -327,6 +327,30 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.translations': 'Translations',
     'nav.language_heatmap': 'Language Heatmap',
     
+    // Footer
+    'footer.santiago_team': 'The Santiago Team',
+    'footer.independent_associates': 'Independent WFG Associates',
+    'footer.empowering_families': 'Empowering families through financial education and opportunity.',
+    'footer.disclaimer': 'The Santiago Team consists of independent contractors affiliated with WFGIA. This website provides educational information about financial concepts and WFG opportunities. All content is for informational purposes only and does not constitute financial advice. Individual results may vary and are not guaranteed. Please consult with one of our licensed professionals for specific financial guidance.',
+    'footer.quick_links': 'Quick Links',
+    'footer.about_wfg': 'About WFG',
+    'footer.careers': 'Careers',
+    'footer.products': 'Products',
+    'footer.leadership': 'Leadership',
+    'footer.success_stories': 'Success Stories',
+    'footer.resources': 'Resources',
+    'footer.agent_portal': 'Agent Portal',
+    'footer.training_calendar': 'Training Calendar',
+    'footer.compliance': 'Compliance',
+    'footer.marketing_materials': 'Marketing Materials',
+    'footer.support_center': 'Support Center',
+    'footer.stay_updated': 'Stay Updated',
+    'footer.subscribe_newsletter': 'Subscribe to our newsletter for the latest updates and opportunities.',
+    'footer.copyright': '© 2024-2025 Transamerica Corporation. All rights reserved.',
+    'footer.trademark': 'World Financial Group and the WFG logo are registered trademarks of Transamerica Corporation.',
+    'footer.privacy_policy': 'Privacy Policy',
+    'footer.terms_service': 'Terms of Service',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -352,9 +376,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.submit': 'Submit',
     'contact.success': 'Message sent successfully!',
     
-    // Footer
+    // Footer Legacy (keeping for compatibility)
     'footer.rights': 'All rights reserved',
-    'footer.disclaimer': 'This website is for recruitment purposes only and is not an offer of securities or insurance products.',
+    'footer.legacy_disclaimer': 'This website is for recruitment purposes only and is not an offer of securities or insurance products.',
     
     // Language Toggle
     'language': 'English',
@@ -767,6 +791,30 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.translations': 'Traducciones',
     'nav.language_heatmap': 'Mapa de Calor del Idioma',
     
+    // Footer - Spanish
+    'footer.santiago_team': 'El Equipo Santiago',
+    'footer.independent_associates': 'Asociados Independientes de WFG',
+    'footer.empowering_families': 'Empoderando familias a través de educación financiera y oportunidades.',
+    'footer.disclaimer': 'El Equipo Santiago consiste de contratistas independientes afiliados con WFGIA. Este sitio web proporciona información educativa sobre conceptos financieros y oportunidades de WFG. Todo el contenido es solo para fines informativos y no constituye asesoramiento financiero. Los resultados individuales pueden variar y no están garantizados. Por favor consulte con uno de nuestros profesionales licenciados para orientación financiera específica.',
+    'footer.quick_links': 'Enlaces Rápidos',
+    'footer.about_wfg': 'Acerca de WFG',
+    'footer.careers': 'Carreras',
+    'footer.products': 'Productos',
+    'footer.leadership': 'Liderazgo',
+    'footer.success_stories': 'Historias de Éxito',
+    'footer.resources': 'Recursos',
+    'footer.agent_portal': 'Portal del Agente',
+    'footer.training_calendar': 'Calendario de Entrenamiento',
+    'footer.compliance': 'Cumplimiento',
+    'footer.marketing_materials': 'Materiales de Marketing',
+    'footer.support_center': 'Centro de Apoyo',
+    'footer.stay_updated': 'Manténgase Actualizado',
+    'footer.subscribe_newsletter': 'Suscríbase a nuestro boletín para las últimas actualizaciones y oportunidades.',
+    'footer.copyright': '© 2024-2025 Transamerica Corporation. Todos los derechos reservados.',
+    'footer.trademark': 'World Financial Group y el logo de WFG son marcas registradas de Transamerica Corporation.',
+    'footer.privacy_policy': 'Política de Privacidad',
+    'footer.terms_service': 'Términos de Servicio',
+    
     // Team Building
     'team.title': 'Formación de Equipos',
     'team.subtitle': 'Construye un equipo exitoso con nuestras estrategias probadas',
@@ -792,9 +840,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.submit': 'Enviar',
     'contact.success': '¡Mensaje enviado con éxito!',
     
-    // Footer
+    // Footer Legacy (keeping for compatibility) - Spanish
     'footer.rights': 'Todos los derechos reservados',
-    'footer.disclaimer': 'Este sitio web es solo para fines de reclutamiento y no constituye una oferta de valores o productos de seguros.',
+    'footer.legacy_disclaimer': 'Este sitio web es solo para fines de reclutamiento y no constituye una oferta de valores o productos de seguros.',
     
     // Language Toggle
     'language': 'Español',

@@ -1,53 +1,53 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-neutral-800 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="font-heading font-bold text-xl mb-4">The Santiago Team</h3>
-            <p className="text-neutral-400 mb-2">Independent WFG Associates</p>
-            <p className="text-neutral-400 text-sm">Empowering families through financial education and opportunity.</p>
+            <h3 className="font-heading font-bold text-xl mb-4">{t('footer.santiago_team')}</h3>
+            <p className="text-neutral-400 mb-2">{t('footer.independent_associates')}</p>
+            <p className="text-neutral-400 text-sm">{t('footer.empowering_families')}</p>
             <p className="text-neutral-400 text-xs mt-2">
-              The Santiago Team consists of independent contractors affiliated with WFGIA. 
-              This website provides educational information about financial concepts and WFG opportunities. 
-              All content is for informational purposes only and does not constitute financial advice. 
-              Individual results may vary and are not guaranteed. Please consult with one of our licensed professionals for specific financial guidance.
+              {t('footer.disclaimer')}
             </p>
           </div>
           
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-heading font-semibold text-lg mb-4">{t('footer.quick_links')}</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">About WFG</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Careers</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Products</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Leadership</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Success Stories</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.about_wfg')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.careers')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.products')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.leadership')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.success_stories')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Resources</h4>
+            <h4 className="font-heading font-semibold text-lg mb-4">{t('footer.resources')}</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Agent Portal</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Training Calendar</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Compliance</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Marketing Materials</a></li>
-              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Support Center</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.agent_portal')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.training_calendar')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.compliance')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.marketing_materials')}</a></li>
+              <li><a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.support_center')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Stay Updated</h4>
-            <p className="text-neutral-400 mb-4">Subscribe to our newsletter for the latest updates and opportunities.</p>
+            <h4 className="font-heading font-semibold text-lg mb-4">{t('footer.stay_updated')}</h4>
+            <p className="text-neutral-400 mb-4">{t('footer.subscribe_newsletter')}</p>
             <div className="flex">
               <Input 
                 type="email" 
-                placeholder="Your email address" 
+                placeholder={t('form.email_address')} 
                 className="p-2 flex-grow text-neutral-800 focus:outline-none rounded-l-md rounded-r-none"
               />
               <Button className="bg-accent hover:bg-accent-dark text-white p-2 rounded-l-none rounded-r-md transition-colors duration-300">
@@ -59,13 +59,13 @@ export default function Footer() {
         
         <div className="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-neutral-400 mb-4 md:mb-0 text-sm">
-            <p>© 2024-2025 Transamerica Corporation. All rights reserved.</p>
-            <p className="text-xs mt-1">World Financial Group and the WFG logo are registered trademarks of Transamerica Corporation.</p>
+            <p>{t('footer.copyright')}</p>
+            <p className="text-xs mt-1">{t('footer.trademark')}</p>
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
-            <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">Terms of Service</a>
-            <a href="https://www.worldfinancialgroup.com/compliance" className="text-neutral-400 hover:text-white transition-colors duration-300">Compliance</a>
+            <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.privacy_policy')}</a>
+            <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.terms_service')}</a>
+            <a href="https://www.worldfinancialgroup.com/compliance" className="text-neutral-400 hover:text-white transition-colors duration-300">{t('footer.compliance')}</a>
           </div>
         </div>
       </div>
