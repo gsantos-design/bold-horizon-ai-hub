@@ -17,8 +17,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function AboutUs() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<string>("mission");
   const [showTestimonial, setShowTestimonial] = useState<number | null>(null);
 
@@ -48,9 +50,9 @@ export default function AboutUs() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-          <span className="text-accent font-semibold tracking-wider text-sm uppercase">Our Story</span>
+          <span className="text-accent font-semibold tracking-wider text-sm uppercase">{t('team.our_story')}</span>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            About The Santiago Team
+            {t('team.about_title')}
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
             Led by Pablo and Nolly Santiago, we're dedicated to empowering individuals with 

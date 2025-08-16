@@ -21,6 +21,7 @@ import {
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // Import images directly - ALL CORRECT SANTIAGO FAMILY PHOTOS
 import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
@@ -30,6 +31,8 @@ import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian S
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
 export default function TeamSantiago() {
+  const { t } = useLanguage();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },

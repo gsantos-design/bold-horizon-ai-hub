@@ -155,10 +155,10 @@ export default function LandingHero() {
           >
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                About the Santiago Team
+                {t('team.about_title')}
               </h2>
               <p className="text-xl text-gray-600">
-                Four generations united by service, driven by mission
+{t('team.about_subtitle')}
               </p>
             </div>
 
@@ -166,29 +166,23 @@ export default function LandingHero() {
               {/* Story Content */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Story</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('team.our_story')}</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    The Santiago family story begins with service and sacrifice. Pablo's 30+ years protecting communities 
-                    as NYPD and Orange County law enforcement, combined with Nolly's two decades serving businesses in 
-                    telecommunications, created a foundation of dedication to others.
+                    {t('team.story_text')}
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Transformation</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('team.our_transformation')}</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    After Pablo survived a major heart attack and realized the financial vulnerabilities that even 
-                    dedicated servants face, our family discovered World Financial Group. For the first time, we learned 
-                    how money really works and how to protect families from life's uncertainties.
+                    {t('team.transformation_text')}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission Today</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('team.our_mission_today')}</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Now, with Joseph's investment expertise and Christian's passion for educating young people, we're 
-                    four family members strong, united in helping families break free from financial uncertainty and 
-                    build lasting generational wealth.
+                    {t('team.mission_today_text')}
                   </p>
                 </div>
               </div>
@@ -196,32 +190,32 @@ export default function LandingHero() {
               {/* Impact Stats */}
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Impact with WFG</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('team.our_impact')}</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-white rounded-lg shadow">
                       <div className="text-3xl font-bold text-blue-600 mb-1">5,000+</div>
-                      <div className="text-sm text-gray-600">Families Served</div>
+                      <div className="text-sm text-gray-600">{t('team.families_served')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
                       <div className="text-3xl font-bold text-purple-600 mb-1">75+</div>
-                      <div className="text-sm text-gray-600">Years Experience</div>
+                      <div className="text-sm text-gray-600">{t('team.years_experience')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
                       <div className="text-3xl font-bold text-green-600 mb-1">3,800+</div>
-                      <div className="text-sm text-gray-600">Financial Plans</div>
+                      <div className="text-sm text-gray-600">{t('team.financial_plans')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
                       <div className="text-3xl font-bold text-orange-600 mb-1">100%</div>
-                      <div className="text-sm text-gray-600">Family Commitment</div>
+                      <div className="text-sm text-gray-600">{t('team.family_commitment')}</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6 text-center">
-                  <h4 className="text-xl font-bold mb-2">Ready to Secure Your Family's Future?</h4>
+                  <h4 className="text-xl font-bold mb-2">{t('team.ready_secure')}</h4>
                   <p className="mb-4 opacity-90">
-                    Join thousands of families who've transformed their financial future with the Santiago Team.
+                    {t('team.join_thousands')}
                   </p>
                   <Button 
                     size="lg" 
@@ -229,7 +223,7 @@ export default function LandingHero() {
                     onClick={() => window.location.href = 'tel:407-777-1087'}
                   >
                     <Phone className="h-5 w-5 mr-2" />
-                    Start Your Journey Today
+{t('team.start_journey')}
                   </Button>
                 </div>
               </div>
@@ -244,7 +238,7 @@ export default function LandingHero() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              How We Serve You
+              {t('team.how_we_serve')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">

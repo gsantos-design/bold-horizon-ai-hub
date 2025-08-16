@@ -128,6 +128,25 @@ export const translations: Record<Language, Record<string, string>> = {
     'about.values': 'Our Values',
     'about.success': 'Our Success Stories',
     
+    // Team Santiago Page Content
+    'team.about_title': 'About the Santiago Team',
+    'team.about_subtitle': 'Four generations united by service, driven by mission',
+    'team.our_story': 'Our Story',
+    'team.story_text': 'The Santiago family story begins with service and sacrifice. Pablo\'s 30+ years protecting communities as NYPD and Orange County law enforcement, combined with Nolly\'s two decades serving businesses in telecommunications, created a foundation of dedication to others.',
+    'team.our_transformation': 'Our Transformation',
+    'team.transformation_text': 'After Pablo survived a major heart attack and realized the financial vulnerabilities that even dedicated servants face, our family discovered World Financial Group. For the first time, we learned how money really works and how to protect families from life\'s uncertainties.',
+    'team.our_mission_today': 'Our Mission Today',
+    'team.mission_today_text': 'Now, with Joseph\'s investment expertise and Christian\'s passion for educating young people, we\'re four family members strong, united in helping families break free from financial uncertainty and build lasting generational wealth.',
+    'team.our_impact': 'Our Impact with WFG',
+    'team.families_served': 'Families Served',
+    'team.years_experience': 'Years Experience',
+    'team.financial_plans': 'Financial Plans',
+    'team.family_commitment': 'Family Commitment',
+    'team.ready_secure': 'Ready to Secure Your Family\'s Future?',
+    'team.join_thousands': 'Join thousands of families who\'ve transformed their financial future with the Santiago Team.',
+    'team.start_journey': 'Start Your Journey Today',
+    'team.how_we_serve': 'How We Serve You',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -348,6 +367,25 @@ export const translations: Record<Language, Record<string, string>> = {
     'about.team': 'Nuestro Equipo',
     'about.values': 'Nuestros Valores',
     'about.success': 'Nuestras Historias de Éxito',
+    
+    // Team Santiago Page Content - Spanish
+    'team.about_title': 'Acerca del Equipo Santiago',
+    'team.about_subtitle': 'Cuatro generaciones unidas por el servicio, impulsadas por la misión',
+    'team.our_story': 'Nuestra Historia',
+    'team.story_text': 'La historia de la familia Santiago comienza con servicio y sacrificio. Los más de 30 años de Pablo protegiendo comunidades como NYPD y Orange County law enforcement, combinados con las dos décadas de Nolly sirviendo empresas en telecomunicaciones, crearon una base de dedicación hacia otros.',
+    'team.our_transformation': 'Nuestra Transformación',
+    'team.transformation_text': 'Después de que Pablo sobrevivió a un infarto mayor y se dio cuenta de las vulnerabilidades financieras que enfrentan incluso los servidores dedicados, nuestra familia descubrió World Financial Group. Por primera vez, aprendimos cómo funciona realmente el dinero y cómo proteger a las familias de las incertidumbres de la vida.',
+    'team.our_mission_today': 'Nuestra Misión Hoy',
+    'team.mission_today_text': 'Ahora, con la experiencia en inversiones de Joseph y la pasión de Christian por educar a los jóvenes, somos cuatro miembros familiares fuertes, unidos en ayudar a las familias a liberarse de la incertidumbre financiera y construir riqueza generacional duradera.',
+    'team.our_impact': 'Nuestro Impacto con WFG',
+    'team.families_served': 'Familias Servidas',
+    'team.years_experience': 'Años de Experiencia',
+    'team.financial_plans': 'Planes Financieros',
+    'team.family_commitment': 'Compromiso Familiar',
+    'team.ready_secure': '¿Listo para Asegurar el Futuro de Tu Familia?',
+    'team.join_thousands': 'Únete a miles de familias que han transformado su futuro financiero con el Equipo Santiago.',
+    'team.start_journey': 'Comienza Tu Jornada Hoy',
+    'team.how_we_serve': 'Cómo Te Servimos',
     
     // Team Building
     'team.title': 'Formación de Equipos',
