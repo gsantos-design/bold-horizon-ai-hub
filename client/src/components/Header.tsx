@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Link } from "wouter";
@@ -71,6 +71,13 @@ export default function Header() {
               <Button variant="ghost" size="sm">
                 <BarChart3 className="h-4 w-4 mr-1" />
                 <span>{t('nav.leads')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/localization-wizard">
+              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+                <Languages className="h-4 w-4 mr-1" />
+                <span>Translations</span>
               </Button>
             </Link>
             
@@ -182,6 +189,13 @@ export default function Header() {
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <Settings className="h-4 w-4 mr-2" />
                   {t('nav.admin')}
+                </Button>
+              </Link>
+              
+              <Link href="/localization-wizard">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-purple-600">
+                  <Languages className="h-4 w-4 mr-2" />
+                  Translations
                 </Button>
               </Link>
             </div>

@@ -17,6 +17,7 @@ import InteractiveTourGuide, { homePageTour, useTourGuide } from "@/components/I
 import WFGCompliance from "@/components/WFGCompliance";
 import DynamicTeamMissionHighlightReel from "@/components/DynamicTeamMissionHighlightReel";
 import LandingHero from "@/components/LandingHero";
+import LocalizationBanner from "@/components/LocalizationBanner";
 import Footer from "@/components/Footer";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 
@@ -26,6 +27,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
+      
+      {/* Localization Progress Banner */}
+      <LocalizationBanner />
       
       {/* Interactive Tour Guide */}
       <InteractiveTourGuide 

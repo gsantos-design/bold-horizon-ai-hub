@@ -13,6 +13,7 @@ import ThreePhilosophiesPage from "@/pages/ThreePhilosophiesPage";
 import AiAutomationHub from "@/pages/AiAutomationHub";
 import SetupGuide from "@/pages/SetupGuide";
 import WorkflowVisualization from "@/pages/WorkflowVisualization";
+import LocalizationWizard from "@/pages/LocalizationWizard";
 import TeamSantiago from "@/pages/TeamSantiago";
 import MissionHighlightReel from "@/pages/MissionHighlightReel";
 import Events from "@/pages/Events";
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/ai-automation" component={AiAutomationHub} />
       <Route path="/setup-guide" component={SetupGuide} />
       <Route path="/workflow-visualization" component={WorkflowVisualization} />
+      <Route path="/localization-wizard" component={LocalizationWizard} />
       <Route path="/team-santiago" component={TeamSantiago} />
       <Route path="/mission-highlights" component={MissionHighlightReel} />
       <Route path="/events" component={Events} />
