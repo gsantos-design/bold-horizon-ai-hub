@@ -325,6 +325,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.spanish_registration': 'Spanish Registration',
     'nav.translations': 'Translations',
+    'nav.language_heatmap': 'Language Heatmap',
     
     // Team Building
     'team.title': 'Team Building',
@@ -764,6 +765,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Navigation - Spanish
     'nav.spanish_registration': 'Registro en Español',
     'nav.translations': 'Traducciones',
+    'nav.language_heatmap': 'Mapa de Calor del Idioma',
     
     // Team Building
     'team.title': 'Formación de Equipos',
