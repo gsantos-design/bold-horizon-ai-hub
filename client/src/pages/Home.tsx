@@ -18,6 +18,7 @@ import WFGCompliance from "@/components/WFGCompliance";
 import DynamicTeamMissionHighlightReel from "@/components/DynamicTeamMissionHighlightReel";
 import LandingHero from "@/components/LandingHero";
 import LocalizationBanner from "@/components/LocalizationBanner";
+import SpanishMeetingCallout from "@/components/SpanishMeetingCallout";
 import Footer from "@/components/Footer";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 
@@ -57,6 +58,9 @@ export default function Home() {
       </div>
       
       <LandingHero />
+      
+      {/* Spanish Meeting Callout */}
+      <SpanishMeetingCallout />
 
       {/* AI Career Mentor Featured Section */}
       <section className="bg-gradient-to-r from-emerald-50 via-blue-50 to-purple-50 py-12">

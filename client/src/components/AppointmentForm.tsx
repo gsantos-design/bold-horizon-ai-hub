@@ -119,9 +119,15 @@ export default function AppointmentForm() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {t('meeting.spanish_title')}
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 mb-3">
                   {t('meeting.spanish_description')}
                 </p>
+                <div className="flex items-center text-purple-700 font-semibold mb-4">
+                  <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {t('meeting.schedule')}
+                </div>
                 <a 
                   href={t('meeting.spanish_zoom_link')}
                   target="_blank"

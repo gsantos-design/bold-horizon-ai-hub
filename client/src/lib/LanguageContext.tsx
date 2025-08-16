@@ -308,6 +308,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Spanish Meeting Links
     'meeting.spanish_title': 'New Art of Living - Spanish Session',
     'meeting.spanish_description': 'Join our Spanish-language presentation about the New Art of Living',
+    'meeting.schedule': 'Mondays & Wednesdays at 7:00 PM ET',
     'meeting.register_spanish': 'Register for Spanish Session',
     'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
     
@@ -712,6 +713,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Spanish Meeting Links - Spanish
     'meeting.spanish_title': 'Nuevo Arte de Vivir - Sesión en Español',
     'meeting.spanish_description': 'Únete a nuestra presentación en español sobre el Nuevo Arte de Vivir',
+    'meeting.schedule': 'Lunes y Miércoles a las 7:00 PM ET',
     'meeting.register_spanish': 'Registrarse para Sesión en Español',
     'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
     
