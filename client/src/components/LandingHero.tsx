@@ -245,9 +245,9 @@ export default function LandingHero() {
                 <div className="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
                   <Shield className="h-10 w-10 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Financial Protection</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.financial_protection')}</h3>
                 <p className="text-gray-600">
-                  Comprehensive strategies to protect your income and build tax-free wealth for your family's future.
+                  {t('services.financial_protection_desc')}
                 </p>
               </div>
               
@@ -255,9 +255,9 @@ export default function LandingHero() {
                 <div className="w-20 h-20 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
                   <Building className="h-10 w-10 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Business Building</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.business_building')}</h3>
                 <p className="text-gray-600">
-                  Entrepreneurial opportunities and multiple income streams to create lasting financial independence.
+                  {t('services.business_building_desc')}
                 </p>
               </div>
               
@@ -265,9 +265,9 @@ export default function LandingHero() {
                 <div className="w-20 h-20 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
                   <Users className="h-10 w-10 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Family Legacy</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.family_legacy')}</h3>
                 <p className="text-gray-600">
-                  Generational wealth strategies that ensure your family's security for decades to come.
+                  {t('services.family_legacy_desc')}
                 </p>
               </div>
             </div>
@@ -282,10 +282,10 @@ export default function LandingHero() {
           >
             <div className="max-w-4xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Meet the Santiago Family
+                {t('services.meet_family')}
               </h3>
               <p className="text-lg text-gray-600 mb-8">
-                Four generations united in transforming lives through financial education
+                {t('services.meet_family_desc')}
               </p>
               <img 
                 src={newTeamPhoto} 

@@ -147,6 +147,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.start_journey': 'Start Your Journey Today',
     'team.how_we_serve': 'How We Serve You',
     
+    // Services Section
+    'services.financial_protection': 'Financial Protection',
+    'services.financial_protection_desc': 'Comprehensive strategies to protect your income and build tax-free wealth for your family\'s future.',
+    'services.business_building': 'Business Building',
+    'services.business_building_desc': 'Entrepreneurial opportunities and multiple income streams to create lasting financial independence.',
+    'services.family_legacy': 'Family Legacy',
+    'services.family_legacy_desc': 'Generational wealth strategies that ensure your family\'s security for decades to come.',
+    'services.meet_family': 'Meet the Santiago Family',
+    'services.meet_family_desc': 'Four generations united in transforming lives through financial education',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -386,6 +396,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.join_thousands': 'Únete a miles de familias que han transformado su futuro financiero con el Equipo Santiago.',
     'team.start_journey': 'Comienza Tu Jornada Hoy',
     'team.how_we_serve': 'Cómo Te Servimos',
+    
+    // Services Section - Spanish
+    'services.financial_protection': 'Protección Financiera',
+    'services.financial_protection_desc': 'Estrategias integrales para proteger tus ingresos y construir riqueza libre de impuestos para el futuro de tu familia.',
+    'services.business_building': 'Construcción de Negocios',
+    'services.business_building_desc': 'Oportunidades empresariales y múltiples fuentes de ingresos para crear independencia financiera duradera.',
+    'services.family_legacy': 'Legado Familiar',
+    'services.family_legacy_desc': 'Estrategias de riqueza generacional que aseguran la seguridad de tu familia por décadas.',
+    'services.meet_family': 'Conoce a la Familia Santiago',
+    'services.meet_family_desc': 'Cuatro generaciones unidas en transformar vidas a través de la educación financiera',
     
     // Team Building
     'team.title': 'Formación de Equipos',
