@@ -8,6 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { useLanguage } from '@/lib/LanguageContext';
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   MessageCircle, 
@@ -66,6 +67,7 @@ const mentorColors = {
 };
 
 export default function AiCareerMentor() {
+  const { t } = useLanguage();
   const [currentSession, setCurrentSession] = useState<ChatSession | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState("");
@@ -191,10 +193,10 @@ export default function AiCareerMentor() {
                   </div>
                 </div>
                 <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Pablo & Nolly's Office
+                  {t('leaders.subtitle')}
                 </CardTitle>
                 <p className="text-gray-600 mt-2">
-                  Your personal career guide powered by Licensed WFG Associates
+                  {t('ai.description')}
                 </p>
               </CardHeader>
               <CardContent>
@@ -202,7 +204,7 @@ export default function AiCareerMentor() {
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Name
+                        {t('form.your_name')}
                       </label>
                       <Input
                         value={userProfile.name}
@@ -214,7 +216,7 @@ export default function AiCareerMentor() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address
+                        {t('form.email_address')}
                       </label>
                       <Input
                         type="email"
@@ -257,7 +259,7 @@ export default function AiCareerMentor() {
                     ) : (
                       <div className="flex items-center">
                         <MessageCircle className="w-4 h-4 mr-2" />
-                        Enter Pablo & Nolly's Office
+                        {t('ai.start_chat')}
                       </div>
                     )}
                   </Button>

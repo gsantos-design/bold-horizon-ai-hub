@@ -34,10 +34,10 @@ export default function AgentProfile() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
                 <p className="text-purple-600 font-semibold mb-2">Marketing Director – World Financial Group</p>
                 <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
-                  <p>I've spent over two decades in telecommunications, working as an account executive and serving small and medium-sized businesses. Those businesses have always reminded me of my parents — hardworking, dedicated, and doing whatever it takes to provide for their families.</p>
-                  <p>Both of my parents passed away far too early. I'm deeply grateful for the sacrifices they made, but they never had the chance to teach me about financial education. The truth is, they didn't know much about it themselves — and like many families, we were never shown how to build real financial security.</p>
-                  <p><strong>That changed when I came to WFG.</strong> For the first time, I learned how money really works — and more importantly, how to protect families from the uncertainties life throws our way.</p>
-                  <p>Now, my mission is simple: to educate and empower others so they can create financial freedom, build multiple streams of income, and protect what matters most. Because every family deserves the knowledge and tools to secure their future — before it's too late.</p>
+                  <p>{t('team.nolly_bio_1')}</p>
+                  <p>{t('team.nolly_bio_2')}</p>
+                  <p><strong>{t('team.nolly_bio_3')}</strong></p>
+                  <p>{t('team.nolly_bio_4')}</p>
                 </div>
               </div>
               
@@ -54,11 +54,11 @@ export default function AgentProfile() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
                 <p className="text-blue-600 font-semibold mb-2">Former NYPD & Orange County Law Enforcement | WFG Associate</p>
                 <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
-                  <p><strong>My Story, My Mission</strong></p>
-                  <p>For over 30 years, I served with the NYPD and Orange County law enforcement. I stood side by side with my brothers and sisters — protecting strangers, running toward danger, and sacrificing time with my family because that's what the job demands.</p>
-                  <p>The day I survived a major heart attack, I saw a truth I wish I'd known earlier: if I couldn't go back to work, my family would be left struggling. My pension wouldn't have been enough. My 401(k) was filled with hidden taxes and restrictions.</p>
-                  <p><strong>Now, my mission is clear: to protect the protectors.</strong> I educate and empower first responders to safeguard their income and build tax-free wealth using strategies the job never told us about.</p>
-                  <p>We've spent our careers protecting the public. It's time to protect our own.</p>
+                  <p><strong>{t('team.pablo_bio_title')}</strong></p>
+                  <p>{t('team.pablo_bio_1')}</p>
+                  <p>{t('team.pablo_bio_2')}</p>
+                  <p><strong>{t('team.pablo_bio_3')}</strong></p>
+                  <p>{t('team.pablo_bio_4')}</p>
                 </div>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function AgentProfile() {
               <div>
                 <p className="text-sm text-gray-600">Email</p>
                 <Button variant="link" className="p-0 h-auto text-blue-600 font-semibold">
-                  Email Me
+                  {t('contact.email_me')}
                 </Button>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function AgentProfile() {
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg md:col-span-2">
               <MapPin className="h-5 w-5 text-blue-600" />
               <div>
-                <p className="text-sm text-gray-600">Location</p>
+                <p className="text-sm text-gray-600">{t('contact.location')}</p>
                 <p className="font-semibold text-gray-900">
                   235 N Westmonte Dr, Suite 107<br />
                   Altamonte Springs, FL 32714
@@ -254,9 +254,9 @@ export default function AgentProfile() {
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
               <Clock className="h-5 w-5 text-blue-600" />
               <div>
-                <p className="text-sm text-gray-600">Office Hours</p>
+                <p className="text-sm text-gray-600">{t('contact.office_hours')}</p>
                 <Button variant="link" className="p-0 h-auto text-blue-600 font-semibold">
-                  Click to See Office Hours
+                  {t('office.click_office_hours')}
                 </Button>
               </div>
             </div>
@@ -265,8 +265,8 @@ export default function AgentProfile() {
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg md:col-span-3">
               <MessageCircle className="h-5 w-5 text-blue-600" />
               <div>
-                <p className="text-sm text-gray-600">Languages</p>
-                <p className="font-semibold text-gray-900">Spanish/English</p>
+                <p className="text-sm text-gray-600">{t('contact.languages')}</p>
+                <p className="font-semibold text-gray-900">{t('contact.spanish_english')}</p>
               </div>
             </div>
           </div>
@@ -278,14 +278,14 @@ export default function AgentProfile() {
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg"
               onClick={() => window.location.href = 'tel:407-777-1087'}
             >
-              Call The Santiago Team
+              {t('contact.call_team')}
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-3 text-lg"
             >
-              Schedule Your Consultation
+              {t('contact.schedule_consultation')}
             </Button>
           </div>
         </div>

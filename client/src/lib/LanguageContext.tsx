@@ -157,6 +157,80 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.meet_family': 'Meet the Santiago Family',
     'services.meet_family_desc': 'Four generations united in transforming lives through financial education',
     
+    // AI Career Mentor Section
+    'ai.badge': '🤖 NEW: AI Career Mentor',
+    'ai.title': 'AI Career Mentor with Emotional Intelligence',
+    'ai.description': 'Get personalized career guidance powered by the Santiago Team\'s expertise. Our AI mentor understands your emotions and provides tailored advice for your WFG journey.',
+    'ai.start_chat': 'Start Career Chat',
+    'ai.schedule_call': 'Schedule 1-on-1 Call',
+    
+    // Team Leaders Section
+    'leaders.title': 'THE SANTIAGO TEAM',
+    'leaders.subtitle': 'Pablo & Nolly Santiago - Team Leaders',
+    'leaders.mission': 'Empowering Families Through The New Art of Living',
+    
+    // Contact Information
+    'contact.call_team': 'Call The Santiago Team',
+    'contact.schedule_consultation': 'Schedule Your Consultation',
+    'contact.email_me': 'Email Me',
+    'contact.location': 'Location',
+    'contact.office_hours': 'Office Hours',
+    'contact.languages': 'Languages',
+    'contact.spanish_english': 'Spanish/English',
+    
+    // New Art of Living Section
+    'living.title': 'The New Art of Living: Empowering Families',
+    'living.multi_income': 'Multi-Handed Income',
+    'living.multi_income_desc': 'Create multiple streams of income to build lasting wealth',
+    'living.financial_education': 'Financial Education',
+    'living.financial_education_desc': 'Learn the strategies that truly build generational wealth',
+    'living.self_improvement': 'Self Improvement',
+    'living.self_improvement_desc': 'Develop the mindset and skills for lasting success',
+    
+    // Building Entrepreneurs Section
+    'entrepreneurs.title': 'Building Entrepreneurs',
+    'entrepreneurs.subtitle': 'Master The New Art of Living',
+    'entrepreneurs.join_team': 'Join the Santiago Team',
+    'entrepreneurs.description': 'Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.',
+    'entrepreneurs.community': 'Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.',
+    'entrepreneurs.start_journey': 'Start Your Journey',
+    'entrepreneurs.call_pablo_nolly': 'Call Pablo & Nolly',
+    
+    // Form Labels
+    'form.your_name': 'Your Name',
+    'form.email_address': 'Email Address',
+    'form.first_name': 'First Name',
+    'form.last_name': 'Last Name',
+    'form.mobile': 'Mobile',
+    'form.download_now': 'Download Now',
+    'form.schedule_appointment': 'Schedule Appointment',
+    
+    // Office Information
+    'office.about_office': 'About Pablo & Nolly\'s Office',
+    'office.office_location': 'Office Location',
+    'office.office_hours': 'Office Hours',
+    'office.click_office_hours': 'Click to See Office Hours',
+    'office.monday': 'Monday',
+    'office.tuesday': 'Tuesday',
+    'office.wednesday': 'Wednesday',
+    'office.thursday': 'Thursday',
+    'office.friday': 'Friday',
+    'office.saturday': 'Saturday',
+    'office.sunday': 'Sunday',
+    'office.closed': 'Closed',
+    
+    // Team Member Profiles
+    'team.nolly_bio_1': 'I\'ve spent over two decades in telecommunications, working as an account executive and serving small and medium-sized businesses. Those businesses have always reminded me of my parents — hardworking, dedicated, and doing whatever it takes to provide for their families.',
+    'team.nolly_bio_2': 'Both of my parents passed away far too early. I\'m deeply grateful for the sacrifices they made, but they never had the chance to teach me about financial education. The truth is, they didn\'t know much about it themselves — and like many families, we were never shown how to build real financial security.',
+    'team.nolly_bio_3': 'That changed when I came to WFG. For the first time, I learned how money really works — and more importantly, how to protect families from the uncertainties life throws our way.',
+    'team.nolly_bio_4': 'Now, my mission is simple: to educate and empower others so they can create financial freedom, build multiple streams of income, and protect what matters most. Because every family deserves the knowledge and tools to secure their future — before it\'s too late.',
+    
+    'team.pablo_bio_title': 'My Story, My Mission',
+    'team.pablo_bio_1': 'For over 30 years, I served with the NYPD and Orange County law enforcement. I stood side by side with my brothers and sisters — protecting strangers, running toward danger, and sacrificing time with my family because that\'s what the job demands.',
+    'team.pablo_bio_2': 'The day I survived a major heart attack, I saw a truth I wish I\'d known earlier: if I couldn\'t go back to work, my family would be left struggling. My pension wouldn\'t have been enough. My 401(k) was filled with hidden taxes and restrictions.',
+    'team.pablo_bio_3': 'Now, my mission is clear: to protect the protectors. I educate and empower first responders to safeguard their income and build tax-free wealth using strategies the job never told us about.',
+    'team.pablo_bio_4': 'We\'ve spent our careers protecting the public. It\'s time to protect our own.',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -406,6 +480,80 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.family_legacy_desc': 'Estrategias de riqueza generacional que aseguran la seguridad de tu familia por décadas.',
     'services.meet_family': 'Conoce a la Familia Santiago',
     'services.meet_family_desc': 'Cuatro generaciones unidas en transformar vidas a través de la educación financiera',
+    
+    // AI Career Mentor Section - Spanish
+    'ai.badge': '🤖 NUEVO: Mentor de Carrera IA',
+    'ai.title': 'Mentor de Carrera IA con Inteligencia Emocional',
+    'ai.description': 'Obtén orientación profesional personalizada impulsada por la experiencia del Equipo Santiago. Nuestro mentor IA entiende tus emociones y proporciona consejos personalizados para tu viaje en WFG.',
+    'ai.start_chat': 'Iniciar Chat de Carrera',
+    'ai.schedule_call': 'Programar Llamada 1-a-1',
+    
+    // Team Leaders Section - Spanish
+    'leaders.title': 'EL EQUIPO SANTIAGO',
+    'leaders.subtitle': 'Pablo y Nolly Santiago - Líderes del Equipo',
+    'leaders.mission': 'Empoderando Familias a Través del Nuevo Arte de Vivir',
+    
+    // Contact Information - Spanish
+    'contact.call_team': 'Llama al Equipo Santiago',
+    'contact.schedule_consultation': 'Programa Tu Consulta',
+    'contact.email_me': 'Envíame un Email',
+    'contact.location': 'Ubicación',
+    'contact.office_hours': 'Horario de Oficina',
+    'contact.languages': 'Idiomas',
+    'contact.spanish_english': 'Español/Inglés',
+    
+    // New Art of Living Section - Spanish
+    'living.title': 'El Nuevo Arte de Vivir: Empoderando Familias',
+    'living.multi_income': 'Ingresos Multi-Facéticos',
+    'living.multi_income_desc': 'Crea múltiples fuentes de ingresos para construir riqueza duradera',
+    'living.financial_education': 'Educación Financiera',
+    'living.financial_education_desc': 'Aprende las estrategias que verdaderamente construyen riqueza generacional',
+    'living.self_improvement': 'Automejoramiento',
+    'living.self_improvement_desc': 'Desarrolla la mentalidad y habilidades para el éxito duradero',
+    
+    // Building Entrepreneurs Section - Spanish
+    'entrepreneurs.title': 'Construyendo Empresarios',
+    'entrepreneurs.subtitle': 'Domina el Nuevo Arte de Vivir',
+    'entrepreneurs.join_team': 'Únete al Equipo Santiago',
+    'entrepreneurs.description': '¿Listo para transformar tu vida y ayudar a otros a hacer lo mismo? Nuestro sistema probado combina estrategias de ingresos multi-facéticos, educación financiera integral y desarrollo personal para crear resultados extraordinarios.',
+    'entrepreneurs.community': 'Únete al equipo Santiago y conviértete en parte de una comunidad dedicada a empoderar familias en Florida y Nueva York. Aprende el nuevo arte de vivir mientras construyes un negocio que hace una diferencia real.',
+    'entrepreneurs.start_journey': 'Comienza Tu Jornada',
+    'entrepreneurs.call_pablo_nolly': 'Llama a Pablo y Nolly',
+    
+    // Form Labels - Spanish
+    'form.your_name': 'Tu Nombre',
+    'form.email_address': 'Dirección de Email',
+    'form.first_name': 'Nombre',
+    'form.last_name': 'Apellido',
+    'form.mobile': 'Móvil',
+    'form.download_now': 'Descargar Ahora',
+    'form.schedule_appointment': 'Programar Cita',
+    
+    // Office Information - Spanish
+    'office.about_office': 'Acerca de la Oficina de Pablo y Nolly',
+    'office.office_location': 'Ubicación de la Oficina',
+    'office.office_hours': 'Horario de Oficina',
+    'office.click_office_hours': 'Haz Clic para Ver Horarios de Oficina',
+    'office.monday': 'Lunes',
+    'office.tuesday': 'Martes',
+    'office.wednesday': 'Miércoles',
+    'office.thursday': 'Jueves',
+    'office.friday': 'Viernes',
+    'office.saturday': 'Sábado',
+    'office.sunday': 'Domingo',
+    'office.closed': 'Cerrado',
+    
+    // Team Member Profiles - Spanish
+    'team.nolly_bio_1': 'He pasado más de dos décadas en telecomunicaciones, trabajando como ejecutiva de cuentas y sirviendo a pequeñas y medianas empresas. Esas empresas siempre me han recordado a mis padres: trabajadores, dedicados, y haciendo todo lo necesario para proveer para sus familias.',
+    'team.nolly_bio_2': 'Ambos padres fallecieron demasiado temprano. Estoy profundamente agradecida por los sacrificios que hicieron, pero nunca tuvieron la oportunidad de enseñarme sobre educación financiera. La verdad es que no sabían mucho al respecto — y como muchas familias, nunca nos mostraron cómo construir verdadera seguridad financiera.',
+    'team.nolly_bio_3': 'Eso cambió cuando llegué a WFG. Por primera vez, aprendí cómo realmente funciona el dinero — y más importante, cómo proteger a las familias de las incertidumbres que la vida nos presenta.',
+    'team.nolly_bio_4': 'Ahora, mi misión es simple: educar y empoderar a otros para que puedan crear libertad financiera, construir múltiples fuentes de ingresos, y proteger lo que más importa. Porque cada familia merece el conocimiento y las herramientas para asegurar su futuro — antes de que sea demasiado tarde.',
+    
+    'team.pablo_bio_title': 'Mi Historia, Mi Misión',
+    'team.pablo_bio_1': 'Durante más de 30 años, serví con NYPD y las fuerzas del orden del Condado de Orange. Estuve lado a lado con mis hermanos y hermanas — protegiendo extraños, corriendo hacia el peligro, y sacrificando tiempo con mi familia porque eso es lo que el trabajo demanda.',
+    'team.pablo_bio_2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y restricciones.',
+    'team.pablo_bio_3': 'Ahora, mi misión es clara: proteger a los protectores. Educo y empodero a los primeros respondedores para salvaguardar sus ingresos y construir riqueza libre de impuestos usando estrategias que el trabajo nunca nos enseñó.',
+    'team.pablo_bio_4': 'Hemos pasado nuestras carreras protegiendo al público. Es hora de proteger a los nuestros.',
     
     // Team Building
     'team.title': 'Formación de Equipos',
