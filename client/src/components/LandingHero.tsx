@@ -16,11 +16,14 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // Import images directly
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
 
 export default function LandingHero() {
+  const { t } = useLanguage();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -34,19 +37,17 @@ export default function LandingHero() {
           {/* Main Hero Content */}
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 text-lg">
-              🏆 Santiago Team - World Financial Group
+              🏆 {t('hero.badge')}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Protecting Those Who
+              {t('hero.title_part1')}
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Protect Others
+                {t('hero.title_part2')}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              From 30+ years in law enforcement to telecommunications expertise, the Santiago family 
-              transforms lives through financial education, building generational wealth, and 
-              protecting what matters most.
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
@@ -55,7 +56,7 @@ export default function LandingHero() {
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call Now: (407) 777-1087
+                {t('hero.call_now')}
               </Button>
               <Link href="/mission-highlights">
                 <Button 
@@ -63,7 +64,7 @@ export default function LandingHero() {
                   variant="outline" 
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg"
                 >
-                  Discover Our Mission
+                  {t('hero.discover_mission')}
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </Link>
@@ -82,9 +83,9 @@ export default function LandingHero() {
                   <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
                     <Shield className="h-8 w-8 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Protect the Protectors</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.protect_protectors')}</h3>
                   <p className="text-gray-600 text-sm">
-                    Pablo's 30+ years in law enforcement drives our mission to protect first responders and their families.
+                    {t('hero.protect_protectors_desc')}
                   </p>
                 </CardContent>
               </Card>
@@ -100,9 +101,9 @@ export default function LandingHero() {
                   <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
                     <Heart className="h-8 w-8 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Family Legacy</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.family_legacy')}</h3>
                   <p className="text-gray-600 text-sm">
-                    Nolly's mission ensures every family has financial education to secure their future before it's too late.
+                    {t('hero.family_legacy_desc')}
                   </p>
                 </CardContent>
               </Card>
@@ -118,9 +119,9 @@ export default function LandingHero() {
                   <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
                     <TrendingUp className="h-8 w-8 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Entrepreneurial Wealth</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.entrepreneurial_wealth')}</h3>
                   <p className="text-gray-600 text-sm">
-                    Joseph empowers entrepreneurs to build real wealth through investment strategies and compound interest.
+                    {t('hero.entrepreneurial_wealth_desc')}
                   </p>
                 </CardContent>
               </Card>
@@ -136,9 +137,9 @@ export default function LandingHero() {
                   <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
                     <GraduationCap className="h-8 w-8 text-orange-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Youth Education</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.youth_education')}</h3>
                   <p className="text-gray-600 text-sm">
-                    Christian empowers young people to take control of their financial future through the new art of living.
+                    {t('hero.youth_education_desc')}
                   </p>
                 </CardContent>
               </Card>
