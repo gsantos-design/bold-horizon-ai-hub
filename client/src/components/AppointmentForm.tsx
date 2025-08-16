@@ -28,7 +28,7 @@ export default function AppointmentForm() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Schedule a Complimentary, No-Obligation Appointment with Pablo & Nolly
+            {t('appointment.title')}
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -38,7 +38,7 @@ export default function AppointmentForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName2" className="text-sm font-medium text-gray-700">
-                      First Name*
+                      {t('form.first_name')}*
                     </Label>
                     <Input
                       id="firstName2"
@@ -51,7 +51,7 @@ export default function AppointmentForm() {
                   </div>
                   <div>
                     <Label htmlFor="lastName2" className="text-sm font-medium text-gray-700">
-                      Last Name*
+                      {t('form.last_name')}*
                     </Label>
                     <Input
                       id="lastName2"
@@ -66,7 +66,7 @@ export default function AppointmentForm() {
                 
                 <div>
                   <Label htmlFor="email2" className="text-sm font-medium text-gray-700">
-                    Email Address*
+                    {t('form.email_address')}*
                   </Label>
                   <Input
                     id="email2"
@@ -80,7 +80,7 @@ export default function AppointmentForm() {
                 
                 <div>
                   <Label htmlFor="mobile2" className="text-sm font-medium text-gray-700">
-                    Mobile
+                    {t('form.mobile')}
                   </Label>
                   <Input
                     id="mobile2"
@@ -95,7 +95,7 @@ export default function AppointmentForm() {
                   type="submit" 
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
                 >
-                  Schedule Appointment
+                  {t('form.schedule_appointment')}
                 </Button>
                 
                 <p className="text-xs text-gray-500 text-center">
@@ -106,13 +106,33 @@ export default function AppointmentForm() {
               </form>
             </div>
 
-            {/* Image */}
+            {/* Image and Spanish Meeting Section */}
             <div className="space-y-8">
               <img 
                 src="https://cdn.bfldr.com/801X31N1/at/x82fx46k3q5mhr8njqpxtgh/Calendar_1900x1900.jpg?auto=webp&format=jpg&width=1900&height=1900" 
                 alt="Schedule Appointment" 
                 className="w-full rounded-lg shadow-lg"
               />
+              
+              {/* Spanish Meeting Registration */}
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border border-purple-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {t('meeting.spanish_title')}
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  {t('meeting.spanish_description')}
+                </p>
+                <a 
+                  href={t('meeting.spanish_zoom_link')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                    {t('meeting.register_spanish')}
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>

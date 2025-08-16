@@ -305,6 +305,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'philosophy.self_improvement_title': 'Self Improvement',
     'philosophy.self_improvement_desc': 'Develop the mindset and skills for lasting success',
     
+    // Spanish Meeting Links
+    'meeting.spanish_title': 'New Art of Living - Spanish Session',
+    'meeting.spanish_description': 'Join our Spanish-language presentation about the New Art of Living',
+    'meeting.register_spanish': 'Register for Spanish Session',
+    'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
+    
     // Team Building
     'team.title': 'Team Building',
     'team.subtitle': 'Build a successful team with our proven strategies',
@@ -702,6 +708,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'philosophy.financial_education_desc': 'Aprende las estrategias que realmente construyen riqueza generacional',
     'philosophy.self_improvement_title': 'Superación Personal',
     'philosophy.self_improvement_desc': 'Desarrolla la mentalidad y habilidades para el éxito duradero',
+    
+    // Spanish Meeting Links - Spanish
+    'meeting.spanish_title': 'Nuevo Arte de Vivir - Sesión en Español',
+    'meeting.spanish_description': 'Únete a nuestra presentación en español sobre el Nuevo Arte de Vivir',
+    'meeting.register_spanish': 'Registrarse para Sesión en Español',
+    'meeting.spanish_zoom_link': 'https://us06web.zoom.us/meeting/register/nPW12W6nQp6TDcOL6vob1A#/registration',
     
     // Team Building
     'team.title': 'Formación de Equipos',
