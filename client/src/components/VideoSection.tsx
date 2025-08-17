@@ -8,11 +8,10 @@ export default function VideoSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            A Platform as Diverse as<br />
-            <span className="text-blue-600">Those We Serve</span>
+            {t('video.platform_diverse')}
           </h2>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
-            No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Our video showcases our business platform and what makes us unique in an industry that is not known for its diversity.
+            {t('video.diversity_description')}
           </p>
           
           {/* YouTube Video Embed */}

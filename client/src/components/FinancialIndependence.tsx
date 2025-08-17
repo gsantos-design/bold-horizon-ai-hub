@@ -31,31 +31,30 @@ export default function FinancialIndependence() {
             {/* Content */}
             <div className="flex flex-col justify-start h-full">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-left">
-                The New Art of Living:<br />
-                <span className="text-blue-600">Empowering Families</span>
+                {t('page.new_art_of_living')}
               </h2>
               
               {/* Core Philosophy */}
               <div className="grid grid-cols-1 gap-4 mb-8">
                 <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
-                  <h3 className="font-bold text-blue-600 mb-2">Multi-Handed Income</h3>
-                  <p className="text-sm text-gray-600">Create multiple streams of income to build lasting wealth</p>
+                  <h3 className="font-bold text-blue-600 mb-2">{t('page.multi_handed_income')}</h3>
+                  <p className="text-sm text-gray-600">{t('module.multi_income_desc')}</p>
                 </div>
                 <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
-                  <h3 className="font-bold text-blue-600 mb-2">Financial Education</h3>
-                  <p className="text-sm text-gray-600">Learn the strategies that truly build generational wealth</p>
+                  <h3 className="font-bold text-blue-600 mb-2">{t('page.financial_education')}</h3>
+                  <p className="text-sm text-gray-600">{t('module.financial_education_desc')}</p>
                 </div>
                 <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
-                  <h3 className="font-bold text-blue-600 mb-2">Self Improvement</h3>
-                  <p className="text-sm text-gray-600">Develop the mindset and skills for lasting success</p>
+                  <h3 className="font-bold text-blue-600 mb-2">{t('page.self_improvement')}</h3>
+                  <p className="text-sm text-gray-600">{t('module.self_improvement_desc')}</p>
                 </div>
               </div>
               
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our approach goes beyond traditional financial planning. We empower families through comprehensive financial education, multiple income strategies, and personal development that creates lasting transformation.
+                {t('module.platform_description')}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Join the Santiago team and discover how the New Art of Living can transform your family's financial future through our proven system of building wealth, gaining knowledge, and developing yourself into the person you were meant to be.
+                {t('module.join_santiago_team')}
               </p>
             </div>
 

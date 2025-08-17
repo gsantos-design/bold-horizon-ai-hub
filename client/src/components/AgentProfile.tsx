@@ -14,10 +14,10 @@ export default function AgentProfile() {
           {/* Leadership Team Header */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              THE SANTIAGO TEAM
+              {t('page.santiago_team_title')}
             </h1>
-            <p className="text-xl text-gray-600 mb-2">Pablo &amp; Nolly Santiago - Team Leaders</p>
-            <p className="text-lg font-semibold text-blue-600 mb-8">Empowering Families Through The New Art of Living</p>
+            <p className="text-xl text-gray-600 mb-2">{t('page.team_leaders')}</p>
+            <p className="text-lg font-semibold text-blue-600 mb-8">{t('page.empowering_through_new_art')}</p>
             
             {/* Leadership Photos */}
             <div className="flex flex-col md:flex-row justify-center items-start gap-12 mb-8">
@@ -32,7 +32,7 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
-                <p className="text-purple-600 font-semibold mb-2">Marketing Director – World Financial Group</p>
+                <p className="text-purple-600 font-semibold mb-2">{t('team.nolly_title')}</p>
                 <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
                   <p>{t('team.nolly_bio_1')}</p>
                   <p>{t('team.nolly_bio_2')}</p>
@@ -52,7 +52,7 @@ export default function AgentProfile() {
                   />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
-                <p className="text-blue-600 font-semibold mb-2">Former NYPD & Orange County Law Enforcement | WFG Associate</p>
+                <p className="text-blue-600 font-semibold mb-2">{t('team.pablo_title')}</p>
                 <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
                   <p><strong>{t('team.pablo_bio_title')}</strong></p>
                   <p>{t('team.pablo_bio_1')}</p>

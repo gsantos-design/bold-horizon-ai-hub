@@ -21,14 +21,14 @@ export default function BuildingEntrepreneurs() {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Master The New Art of Living<br />
-                <span className="text-blue-600">Join the Santiago Team</span>
+                {t('building.master_new_art')}<br />
+                <span className="text-blue-600">{t('building.join_santiago_team')}</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.
+                {t('building.transform_description')}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.
+                {t('building.community_description')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -37,7 +37,7 @@ export default function BuildingEntrepreneurs() {
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
                   onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
                 >
-                  Start Your Journey
+                  {t('building.start_journey')}
                 </Button>
                 <Button 
                   size="lg" 
@@ -45,7 +45,7 @@ export default function BuildingEntrepreneurs() {
                   className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
-                  Call Pablo & Nolly
+                  {t('building.call_pablo_nolly')}
                 </Button>
               </div>
             </div>

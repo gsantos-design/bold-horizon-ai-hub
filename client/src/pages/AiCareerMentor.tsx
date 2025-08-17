@@ -229,19 +229,19 @@ export default function AiCareerMentor() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Career Stage (Optional)
+                        {t('ai.career_stage_label')}
                       </label>
                       <select
                         value={userProfile.careerStage}
                         onChange={(e) => setUserProfile(prev => ({ ...prev, careerStage: e.target.value }))}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white/50 focus:ring-purple-500 focus:border-purple-500"
                       >
-                        <option value="">Select your current stage</option>
-                        <option value="exploring">Exploring career options</option>
-                        <option value="entry_level">Entry level professional</option>
-                        <option value="experienced">Experienced professional</option>
-                        <option value="management">Management/Leadership</option>
-                        <option value="career_change">Considering career change</option>
+                        <option value="">{t('ai.select_current_stage')}</option>
+                        <option value="exploring">{t('ai.exploring_options')}</option>
+                        <option value="entry_level">{t('ai.entry_level')}</option>
+                        <option value="experienced">{t('ai.experienced_professional')}</option>
+                        <option value="management">{t('ai.management_leadership')}</option>
+                        <option value="career_change">{t('ai.career_change')}</option>
                       </select>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ export default function AiCareerMentor() {
                     {createSessionMutation.isPending ? (
                       <div className="flex items-center">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Connecting to your mentor...
+                        {t('ai.connecting_mentor')}
                       </div>
                     ) : (
                       <div className="flex items-center">
@@ -283,10 +283,10 @@ export default function AiCareerMentor() {
             className="text-center mb-6"
           >
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Pablo & Nolly's Office
+              {t('ai.pablo_nolly_office')}
             </h1>
             <p className="text-gray-600 mt-2">
-              AI Career Mentor • Licensed WFG Associates • Emotional Intelligence enabled
+              {t('ai.office_subtitle')}
             </p>
           </motion.div>
 

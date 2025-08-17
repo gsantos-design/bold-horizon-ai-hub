@@ -45,8 +45,8 @@ export default function Home() {
       {/* Tour Trigger Button (always visible for demo) */}
       <div className="fixed bottom-4 left-4 z-30">
         <TipTooltip 
-          content="Take a guided tour to discover all the powerful features available to grow your Santiago Team success!"
-          title="🚀 Quick Start Tour"
+          content={t('tooltip.guided_tour_content')}
+          title={t('tooltip.quick_start_tour')}
         >
           <Button
             onClick={startTour}
@@ -70,8 +70,8 @@ export default function Home() {
           <Card className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-xl">
             <CardContent className="p-8 text-center">
               <AITooltip 
-                content="Experience our revolutionary AI Career Mentor powered by GPT-4o with emotional intelligence. Get personalized guidance from Nolly Santiago, Pablo Santiago, and Santiago Team mentors - each with unique personalities and expertise tailored to your WFG journey."
-                title="🤖 AI-Powered Career Guidance"
+                content={t('tooltip.ai_mentor_content')}
+                title={t('tooltip.ai_powered_guidance')}
               >
                 <Badge className="mb-4 bg-gradient-to-r from-emerald-600 to-purple-600 text-white px-4 py-2 cursor-help">
                   🤖 {t('home.ai_mentor_badge')}
@@ -85,7 +85,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SmartTooltip 
-                  content="Chat with AI mentors featuring the personalities and expertise of Nolly Santiago, Pablo Santiago, and the Santiago Team. Get personalized career advice, income strategies, and emotional support for your financial services journey."
+                  content={t('tooltip.smart_content')}
                   context="ai-automation"
                 >
                   <Link href="/ai-mentor">

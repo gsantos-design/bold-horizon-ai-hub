@@ -7,18 +7,18 @@ export default function Services() {
   const services = [
     {
       icon: Shield,
-      title: "Multi-Handed Income Education",
-      description: "Learn about creating multiple streams of income through financial education and opportunity. Our educational approach helps you understand strategies to diversify income sources and build lasting financial security through comprehensive learning programs."
+      title: t('services.multi_income_title'),
+      description: t('services.multi_income_desc')
     },
     {
       icon: TrendingUp,
-      title: "Financial Education & Literacy", 
-      description: "Access financial education that covers fundamental money concepts and wealth-building strategies. We provide educational resources that help you understand financial principles and make informed decisions about your family's financial future."
+      title: t('services.financial_education_title'), 
+      description: t('services.financial_education_desc')
     },
     {
       icon: Briefcase,
-      title: "Personal Development & Leadership",
-      description: "Focus on personal growth and leadership development through our educational system. Learn the skills needed to succeed in life and business while developing the ability to help others in your community through financial education opportunities."
+      title: t('services.personal_development_title'),
+      description: t('services.personal_development_desc')
     }
   ];
 
@@ -27,10 +27,10 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-            Financial Education Philosophy
+            {t('services.philosophy_title')}
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Empowering families through financial education and opportunity awareness
+            {t('services.philosophy_subtitle')}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

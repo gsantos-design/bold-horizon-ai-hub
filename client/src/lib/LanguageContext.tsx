@@ -327,6 +327,85 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.translations': 'Translations',
     'nav.language_heatmap': 'Language Heatmap',
     
+    // Main Page Headers
+    'page.santiago_team_title': 'THE SANTIAGO TEAM',
+    'page.team_leaders': 'Pablo & Nolly Santiago - Team Leaders', 
+    'page.empowering_through_new_art': 'Empowering Families Through The New Art of Living',
+    'page.new_art_of_living': 'The New Art of Living: Empowering Families',
+    'page.multi_handed_income': 'Multi-Handed Income',
+    'page.financial_education': 'Financial Education',
+    'page.self_improvement': 'Self Improvement',
+    'page.platform_diverse': 'A Platform as Diverse as Those We Serve',
+    
+    // Team Member Info
+    'team.nolly_title': 'Marketing Director - World Financial Group',
+    'team.nolly_bio_part1': 'Specialized in telecommunications, working as an executive specialist in',
+    'team.pablo_title': 'Former NYPD & Orange County Law Enforcement | WFG Associate',
+    'team.pablo_mission_title': 'Mi Historia, Mi Misión',
+    'team.pablo_bio_part1': 'Durante más de 30 años, serví con NYPD y las fuerzas del orden del Condado de Orange. Estuve lado a lado con mis hermanos y hermanas — protegiendo extraños, corriendo hacia el peligro, y sacrificando tiempo con mi familia porque eso es lo que el trabajo demanda.',
+    'team.pablo_bio_part2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y',
+    'team.pablo_mission_clear': 'Ahora, mi misión es clara: proteger a los',
+    
+    // Module Descriptions
+    'module.multi_income_desc': 'Create multiple streams of income to build lasting wealth',
+    'module.financial_education_desc': 'Learn the strategies that truly build generational wealth',
+    'module.self_improvement_desc': 'Develop the mindset and skills for lasting success',
+    'module.platform_description': 'Our approach goes beyond traditional financial planning. We empower families through comprehensive financial education, multiple income strategies, and personal development that creates lasting transformation.',
+    'module.join_santiago_team': 'Join the Santiago team and discover how the New Art of Living can transform your family\'s financial future through our proven system of building wealth, gaining knowledge, and developing yourself into the person you were meant to be.',
+    'module.platform_diversity_desc': 'No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Our video showcases our business platform and what makes us unique in an industry that is not known for its diversity.',
+    
+    // Services Section
+    'services.philosophy_title': 'Financial Education Philosophy',
+    'services.philosophy_subtitle': 'Empowering families through financial education and opportunity awareness',
+    'services.multi_income_title': 'Multi-Handed Income Education',
+    'services.multi_income_desc': 'Learn about creating multiple streams of income through financial education and opportunity. Our educational approach helps you understand strategies to diversify income sources and build lasting financial security through comprehensive learning programs.',
+    'services.financial_education_title': 'Financial Education & Literacy',
+    'services.financial_education_desc': 'Access financial education that covers fundamental money concepts and wealth-building strategies. We provide educational resources that help you understand financial principles and make informed decisions about your family\'s financial future.',
+    'services.personal_development_title': 'Personal Development & Leadership',
+    'services.personal_development_desc': 'Focus on personal growth and leadership development through our educational system. Learn the skills needed to succeed in life and business while developing the ability to help others in your community through financial education opportunities.',
+    
+    // Building Entrepreneurs Section
+    'building.master_new_art': 'Master The New Art of Living',
+    'building.join_santiago_team': 'Join the Santiago Team',
+    'building.transform_description': 'Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.',
+    'building.community_description': 'Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.',
+    'building.start_journey': 'Start Your Journey',
+    'building.call_pablo_nolly': 'Call Pablo & Nolly',
+    
+    // Video Section
+    'video.platform_diverse': 'A Platform as Diverse as Those We Serve',
+    'video.diversity_description': 'No matter your life story, WFG has the technology and experience to make your financial dreams a reality. Our video showcases our business platform and what makes us unique in an industry that is not known for its diversity.',
+    
+    // AI Career Mentor
+    'ai.connecting_mentor': 'Connecting to your mentor...',
+    'ai.pablo_nolly_office': 'Pablo & Nolly\'s Office',
+    'ai.office_subtitle': 'AI Career Mentor • Licensed WFG Associates • Emotional Intelligence enabled',
+    'ai.career_stage_label': 'Career Stage (Optional)',
+    'ai.select_current_stage': 'Select your current stage',
+    'ai.exploring_options': 'Exploring career options',
+    'ai.entry_level': 'Entry level professional',
+    'ai.experienced_professional': 'Experienced professional',
+    'ai.management_leadership': 'Management/Leadership',
+    'ai.career_change': 'Considering career change',
+    
+    // Tooltips and Help Text
+    'tooltip.guided_tour_content': 'Take a guided tour to discover all the powerful features available to grow your Santiago Team success!',
+    'tooltip.quick_start_tour': '🚀 Quick Start Tour',
+    'tooltip.ai_powered_guidance': '🤖 AI-Powered Career Guidance',
+    'tooltip.ai_mentor_content': 'Experience our revolutionary AI Career Mentor powered by GPT-4o with emotional intelligence. Get personalized guidance from Nolly Santiago, Pablo Santiago, and Santiago Team mentors - each with unique personalities and expertise tailored to your WFG journey.',
+    'tooltip.smart_content': 'Chat with AI mentors featuring the personalities and expertise of Nolly Santiago, Pablo Santiago, and the Santiago Team. Get personalized career advice, income strategies, and emotional support for your financial services journey.',
+    
+    // Quick Actions
+    'actions.take_platform_tour': 'Take Platform Tour',
+    'actions.platform_tour_desc': '5-minute guided tour of key features',
+    'actions.ai_career_mentor': 'AI Career Mentor',
+    'actions.ai_mentor_desc': 'Chat with AI-powered career guidance',
+    'actions.call_santiago_team': 'Call Santiago Team',
+    'actions.call_team_desc': 'Speak with Pablo & Nolly directly',
+    'actions.empower360_philosophy': 'Empower360 Philosophy',
+    'actions.philosophy_desc': 'Learn our Three Philosophies system',
+    'actions.personal_help': 'Need personal help? Call Pablo & Nolly at',
+    
     // Footer
     'footer.santiago_team': 'The Santiago Team',
     'footer.independent_associates': 'Independent WFG Associates',
@@ -790,6 +869,85 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.spanish_registration': 'Registro en Español',
     'nav.translations': 'Traducciones',
     'nav.language_heatmap': 'Mapa de Calor del Idioma',
+    
+    // Main Page Headers - Spanish
+    'page.santiago_team_title': 'EL EQUIPO SANTIAGO',
+    'page.team_leaders': 'Pablo y Nolly Santiago - Líderes del Equipo',
+    'page.empowering_through_new_art': 'Empoderando Familias a Través del Nuevo Arte de Vivir',
+    'page.new_art_of_living': 'El Nuevo Arte de Vivir: Empoderando Familias',
+    'page.multi_handed_income': 'Ingresos Múltiples',
+    'page.financial_education': 'Educación Financiera',
+    'page.self_improvement': 'Superación Personal',
+    'page.platform_diverse': 'Una Plataforma Tan Diversa Como Aquellos a Quienes Servimos',
+    
+    // Team Member Info - Spanish
+    'team.nolly_title': 'Directora de Marketing - World Financial Group',
+    'team.nolly_bio_part1': 'Especializada en telecomunicaciones, trabajando como ejecutiva especialista en',
+    'team.pablo_title': 'Ex NYPD y Fuerzas del Orden del Condado de Orange | Asociado WFG',
+    'team.pablo_mission_title': 'Mi Historia, Mi Misión',
+    'team.pablo_bio_part1': 'Durante más de 30 años, serví con NYPD y las fuerzas del orden del Condado de Orange. Estuve lado a lado con mis hermanos y hermanas — protegiendo extraños, corriendo hacia el peligro, y sacrificando tiempo con mi familia porque eso es lo que el trabajo demanda.',
+    'team.pablo_bio_part2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y',
+    'team.pablo_mission_clear': 'Ahora, mi misión es clara: proteger a los',
+    
+    // Module Descriptions - Spanish
+    'module.multi_income_desc': 'Crear múltiples fuentes de ingresos para construir riqueza duradera',
+    'module.financial_education_desc': 'Aprender las estrategias que verdaderamente construyen riqueza generacional',
+    'module.self_improvement_desc': 'Desarrollar la mentalidad y habilidades para el éxito duradero',
+    'module.platform_description': 'Nuestro enfoque va más allá de la planificación financiera tradicional. Empoderamos familias a través de educación financiera integral, estrategias de ingresos múltiples, y desarrollo personal que crea transformación duradera.',
+    'module.join_santiago_team': 'Únete al equipo Santiago y descubre cómo el Nuevo Arte de Vivir puede transformar el futuro financiero de tu familia a través de nuestro sistema comprobado de construir riqueza, ganar conocimiento, y desarrollarte en la persona que estás destinado a ser.',
+    'module.platform_diversity_desc': 'Sin importar tu historia de vida, WFG tiene la tecnología y experiencia para hacer realidad tus sueños financieros. Nuestro video muestra nuestra plataforma empresarial y lo que nos hace únicos en una industria que no es conocida por su diversidad.',
+    
+    // Services Section - Spanish
+    'services.philosophy_title': 'Filosofía de Educación Financiera',
+    'services.philosophy_subtitle': 'Empoderando familias a través de educación financiera y conciencia de oportunidades',
+    'services.multi_income_title': 'Educación de Ingresos Múltiples',
+    'services.multi_income_desc': 'Aprende a crear múltiples fuentes de ingresos a través de educación financiera y oportunidades. Nuestro enfoque educativo te ayuda a entender estrategias para diversificar fuentes de ingresos y construir seguridad financiera duradera a través de programas de aprendizaje integral.',
+    'services.financial_education_title': 'Educación y Alfabetización Financiera',
+    'services.financial_education_desc': 'Accede a educación financiera que cubre conceptos fundamentales del dinero y estrategias de construcción de riqueza. Proporcionamos recursos educativos que te ayudan a entender principios financieros y tomar decisiones informadas sobre el futuro financiero de tu familia.',
+    'services.personal_development_title': 'Desarrollo Personal y Liderazgo',
+    'services.personal_development_desc': 'Enfócate en el crecimiento personal y desarrollo de liderazgo a través de nuestro sistema educativo. Aprende las habilidades necesarias para tener éxito en la vida y los negocios mientras desarrollas la habilidad de ayudar a otros en tu comunidad a través de oportunidades de educación financiera.',
+    
+    // Building Entrepreneurs Section - Spanish
+    'building.master_new_art': 'Domina El Nuevo Arte de Vivir',
+    'building.join_santiago_team': 'Únete al Equipo Santiago',
+    'building.transform_description': '¿Listo para transformar tu vida y ayudar a otros a hacer lo mismo? Nuestro sistema comprobado combina estrategias de ingresos múltiples, educación financiera integral, y desarrollo personal para crear resultados extraordinarios.',
+    'building.community_description': 'Únete al equipo Santiago y conviértete en parte de una comunidad dedicada a empoderar familias en Florida y Nueva York. Aprende el nuevo arte de vivir mientras construyes un negocio que hace una diferencia real.',
+    'building.start_journey': 'Comienza Tu Jornada',
+    'building.call_pablo_nolly': 'Llamar a Pablo y Nolly',
+    
+    // Video Section - Spanish
+    'video.platform_diverse': 'Una Plataforma Tan Diversa Como Aquellos a Quienes Servimos',
+    'video.diversity_description': 'Sin importar tu historia de vida, WFG tiene la tecnología y experiencia para hacer realidad tus sueños financieros. Nuestro video muestra nuestra plataforma empresarial y lo que nos hace únicos en una industria que no es conocida por su diversidad.',
+    
+    // AI Career Mentor - Spanish
+    'ai.connecting_mentor': 'Conectando con tu mentor...',
+    'ai.pablo_nolly_office': 'Oficina de Pablo y Nolly',
+    'ai.office_subtitle': 'Mentor Profesional AI • Asociados WFG Licenciados • Inteligencia Emocional habilitada',
+    'ai.career_stage_label': 'Etapa Profesional (Opcional)',
+    'ai.select_current_stage': 'Selecciona tu etapa actual',
+    'ai.exploring_options': 'Explorando opciones profesionales',
+    'ai.entry_level': 'Profesional nivel inicial',
+    'ai.experienced_professional': 'Profesional experimentado',
+    'ai.management_leadership': 'Gerencia/Liderazgo',
+    'ai.career_change': 'Considerando cambio de carrera',
+    
+    // Tooltips and Help Text - Spanish
+    'tooltip.guided_tour_content': '¡Toma un recorrido guiado para descubrir todas las características poderosas disponibles para hacer crecer tu éxito con el Equipo Santiago!',
+    'tooltip.quick_start_tour': '🚀 Recorrido de Inicio Rápido',
+    'tooltip.ai_powered_guidance': '🤖 Orientación Impulsada por AI',
+    'tooltip.ai_mentor_content': 'Experimenta nuestro revolucionario Mentor Profesional AI impulsado por GPT-4o con inteligencia emocional. Obtén orientación personalizada de Nolly Santiago, Pablo Santiago, y mentores del Equipo Santiago - cada uno con personalidades y experiencia únicas adaptadas a tu jornada WFG.',
+    'tooltip.smart_content': 'Conversa con mentores AI que presentan las personalidades y experiencia de Nolly Santiago, Pablo Santiago, y el Equipo Santiago. Obtén consejos profesionales personalizados, estrategias de ingresos, y apoyo emocional para tu jornada en servicios financieros.',
+    
+    // Quick Actions - Spanish
+    'actions.take_platform_tour': 'Tomar Recorrido de la Plataforma',
+    'actions.platform_tour_desc': 'Recorrido guiado de 5 minutos de características clave',
+    'actions.ai_career_mentor': 'Mentor Profesional AI',
+    'actions.ai_mentor_desc': 'Conversa con orientación profesional impulsada por AI',
+    'actions.call_santiago_team': 'Llamar al Equipo Santiago',
+    'actions.call_team_desc': 'Habla directamente con Pablo y Nolly',
+    'actions.empower360_philosophy': 'Filosofía Empower360',
+    'actions.philosophy_desc': 'Aprende nuestro sistema de Tres Filosofías',
+    'actions.personal_help': '¿Necesitas ayuda personal? Llama a Pablo y Nolly al',
     
     // Footer - Spanish
     'footer.santiago_team': 'El Equipo Santiago',
