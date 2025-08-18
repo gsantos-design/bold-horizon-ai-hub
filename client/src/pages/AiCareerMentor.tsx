@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useLanguage } from '@/lib/LanguageContext';
+import { DictionaryTerm } from '@/components/TooltipDictionary';
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   MessageCircle, 
@@ -196,7 +197,8 @@ export default function AiCareerMentor() {
                   {t('leaders.subtitle')}
                 </CardTitle>
                 <p className="text-gray-600 mt-2">
-                  {t('ai.description')}
+                  {t('ai.description')} Get personalized guidance on <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm>, 
+                  <DictionaryTerm termId="liderazgo">leadership development</DictionaryTerm>, and building <DictionaryTerm termId="libertad_financiera">financial freedom</DictionaryTerm> with our team.
                 </p>
               </CardHeader>
               <CardContent>

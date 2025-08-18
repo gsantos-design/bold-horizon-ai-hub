@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import AgentProfile from "@/components/AgentProfile";
+import { DictionaryTerm } from "@/components/TooltipDictionary";
 import FinancialIndependence from "@/components/FinancialIndependence";
 import VideoSection from "@/components/VideoSection";
 import Services from "@/components/Services";
@@ -81,7 +82,7 @@ export default function Home() {
                 {t('home.ai_mentor_title')}
               </h2>
               <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                {t('home.ai_mentor_description')}
+                {t('home.ai_mentor_description')} Explore <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> pathways and discover how to build <DictionaryTerm termId="ingreso_multiple">multiple income streams</DictionaryTerm> with expert guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <SmartTooltip 

@@ -63,6 +63,62 @@ const financialTerms: Record<string, TooltipTerm> = {
     ],
     relatedTerms: ['jubilación', 'inversión', 'ingresos_fijos']
   },
+  'interes_compuesto': {
+    id: 'interes_compuesto',
+    term: 'Interés Compuesto',
+    definition: 'El interés calculado sobre el capital inicial y también sobre los intereses acumulados de períodos anteriores.',
+    culturalInsight: 'Concepto clave para el crecimiento de riqueza a largo plazo, especialmente valorado en familias que planifican para futuras generaciones.',
+    pronunciation: 'in-te-RÉS com-PUES-to',
+    category: 'financial',
+    difficulty: 'intermediate',
+    examples: [
+      'El interés compuesto hizo crecer nuestros ahorros exponencialmente.',
+      'Einstein llamó al interés compuesto la octava maravilla del mundo.'
+    ],
+    relatedTerms: ['inversión', 'ahorro', 'capital']
+  },
+  'ingreso_multiple': {
+    id: 'ingreso_multiple',
+    term: 'Ingreso Múltiple',
+    definition: 'Estrategia de tener varias fuentes de ingresos para diversificar y aumentar los ingresos totales.',
+    culturalInsight: 'En la comunidad hispana, tener múltiples fuentes de ingresos es tradicionalmente visto como una forma de proteger a la familia y crear estabilidad.',
+    pronunciation: 'in-GRE-so MÚL-ti-ple',
+    category: 'business',
+    difficulty: 'intermediate',
+    examples: [
+      'Desarrollamos ingresos múltiples para asegurar estabilidad financiera.',
+      'El ingreso múltiple nos permite tener más opciones y flexibilidad.'
+    ],
+    relatedTerms: ['diversificación', 'emprendimiento', 'inversión']
+  },
+  'liderazgo': {
+    id: 'liderazgo',
+    term: 'Liderazgo',
+    definition: 'La capacidad de influir, motivar y dirigir a otros hacia el logro de objetivos comunes.',
+    culturalInsight: 'En la cultura latina, el liderazgo se ve como un servicio a la comunidad y la familia, donde el líder tiene la responsabilidad de elevar a otros.',
+    pronunciation: 'li-de-RAZ-go',
+    category: 'business',
+    difficulty: 'beginner',
+    examples: [
+      'El liderazgo auténtico empieza con servir a otros.',
+      'Desarrollamos liderazgo para impactar positivamente nuestra comunidad.'
+    ],
+    relatedTerms: ['servicio', 'responsabilidad', 'influencia']
+  },
+  'libertad_financiera': {
+    id: 'libertad_financiera',
+    term: 'Libertad Financiera',
+    definition: 'El estado de tener suficientes recursos financieros para vivir sin depender de un empleo activo.',
+    culturalInsight: 'Para muchas familias latinas, la libertad financiera representa la capacidad de cuidar a las generaciones mayores y menores sin sacrificar tiempo familiar.',
+    pronunciation: 'li-ber-TAD fi-nan-CIE-ra',
+    category: 'financial',
+    difficulty: 'advanced',
+    examples: [
+      'La libertad financiera nos permite enfocarnos en lo que realmente importa.',
+      'Trabajamos hacia la libertad financiera para nuestras familias.'
+    ],
+    relatedTerms: ['independencia', 'inversión_pasiva', 'tiempo_libre']
+  },
   'prosperidad': {
     id: 'prosperidad',
     term: 'Prosperidad',

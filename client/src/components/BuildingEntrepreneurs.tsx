@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
+import { DictionaryTerm } from "@/components/TooltipDictionary";
 
 export default function BuildingEntrepreneurs() {
   const { t } = useLanguage();
@@ -25,10 +26,10 @@ export default function BuildingEntrepreneurs() {
                 <span className="text-blue-600">{t('building.join_santiago_team')}</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                {t('building.transform_description')}
+                {t('building.transform_description')} Learn proven strategies for <DictionaryTerm termId="ingreso_multiple">multiple income streams</DictionaryTerm> and <DictionaryTerm termId="libertad_financiera">financial freedom</DictionaryTerm>.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                {t('building.community_description')}
+                {t('building.community_description')} Experience comprehensive <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> and <DictionaryTerm termId="liderazgo">leadership development</DictionaryTerm>.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

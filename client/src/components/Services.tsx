@@ -1,5 +1,6 @@
 import { Shield, TrendingUp, Briefcase } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { DictionaryTerm } from "@/components/TooltipDictionary";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -49,6 +50,21 @@ export default function Services() {
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-center">
                     {service.description}
+                    {index === 0 && (
+                      <span className="block mt-2">
+                        Build <DictionaryTerm termId="prosperidad">prosperidad</DictionaryTerm> through <DictionaryTerm termId="ingreso_multiple">multiple income</DictionaryTerm> strategies.
+                      </span>
+                    )}
+                    {index === 1 && (
+                      <span className="block mt-2">
+                        Master <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> and <DictionaryTerm termId="anualidad">annuity</DictionaryTerm> planning.
+                      </span>
+                    )}
+                    {index === 2 && (
+                      <span className="block mt-2">
+                        Develop <DictionaryTerm termId="liderazgo">leadership</DictionaryTerm> and achieve <DictionaryTerm termId="libertad_financiera">financial freedom</DictionaryTerm>.
+                      </span>
+                    )}
                   </p>
                 </div>
               );

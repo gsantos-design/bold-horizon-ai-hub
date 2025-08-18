@@ -22,6 +22,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly - ALL CORRECT SANTIAGO FAMILY PHOTOS
 import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
@@ -113,8 +114,8 @@ export default function TeamSantiago() {
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
                         <strong>Two decades in telecommunications.</strong> After losing both parents too early and realizing 
-                        they never had financial education, Nolly discovered WFG. Her mission: ensure every family has 
-                        the knowledge and tools to secure their future before it's too late.
+                        they never had <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm>, Nolly discovered WFG. Her mission: ensure every family has 
+                        the knowledge and tools to secure their <DictionaryTerm termId="prosperidad">future prosperity</DictionaryTerm> before it's too late.
                       </p>
                       
                       <div className="space-y-2">
@@ -166,7 +167,7 @@ export default function TeamSantiago() {
                       <p className="text-gray-700 leading-relaxed">
                         <strong>30+ years in law enforcement.</strong> After surviving a major heart attack, Pablo realized 
                         the financial vulnerabilities first responders face. His mission: protect the protectors through 
-                        financial education and tax-free wealth building strategies.
+                        <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> and <DictionaryTerm termId="libertad_financiera">tax-free wealth building</DictionaryTerm> strategies.
                       </p>
                       
                       <div className="space-y-2">

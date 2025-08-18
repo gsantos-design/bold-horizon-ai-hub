@@ -239,6 +239,15 @@ export default function SpanishTutorial() {
                                     </h4>
                                     <p className="text-sm text-gray-600">
                                       {t(`${lessonKey}_desc`)}
+                                      {lessonKey.includes('compound_interest') && (
+                                        <span> Learn about <DictionaryTerm termId="interes_compuesto">interés compuesto</DictionaryTerm> and <DictionaryTerm termId="prosperidad">prosperidad</DictionaryTerm>.</span>
+                                      )}
+                                      {lessonKey.includes('multiple_income') && (
+                                        <span> Discover <DictionaryTerm termId="ingreso_multiple">ingreso múltiple</DictionaryTerm> strategies.</span>
+                                      )}
+                                      {lessonKey.includes('protection') && (
+                                        <span> Understand <DictionaryTerm termId="seguro_vida">seguro de vida</DictionaryTerm> importance.</span>
+                                      )}
                                     </p>
                                   </div>
                                 </div>

@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/lib/LanguageContext";
+import { DictionaryTerm } from "@/components/TooltipDictionary";
 
 export default function FAQ() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What is World Financial Group (WFG)?",
-      answer: "World Financial Group (WFG) is a leading financial services company that provides comprehensive financial solutions including life insurance, retirement planning, and investment services. We help families and individuals secure their financial future through personalized planning and professional guidance."
+      answer: "World Financial Group (WFG) is a leading financial services company that provides comprehensive financial solutions including <DictionaryTerm termId='seguro_vida'>life insurance</DictionaryTerm>, retirement planning, and investment services. We help families and individuals secure their financial future through personalized <DictionaryTerm termId='educacion_financiera'>financial education</DictionaryTerm> and professional guidance."
     },
     {
       question: "Why Should I Talk to a WFG Agent?",
@@ -20,7 +21,7 @@ export default function FAQ() {
     },
     {
       question: "Why join WFG?",
-      answer: "WFG offers an exceptional opportunity to build your own financial services business with unlimited income potential, flexible scheduling, comprehensive training, and ongoing support. You can help families while building financial security for yourself."
+      answer: "WFG offers an exceptional opportunity to build your own financial services business with unlimited income potential, flexible scheduling, comprehensive training, and ongoing support. You can help families while building <DictionaryTerm termId='libertad_financiera'>financial security</DictionaryTerm> for yourself through <DictionaryTerm termId='ingreso_multiple'>multiple income streams</DictionaryTerm>."
     },
     {
       question: "How do I join WFG?",

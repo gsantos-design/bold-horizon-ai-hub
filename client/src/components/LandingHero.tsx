@@ -17,6 +17,7 @@ import {
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { useLanguage } from '@/lib/LanguageContext';
+import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly
 import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
@@ -47,7 +48,7 @@ export default function LandingHero() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {t('hero.subtitle')}
+              {t('hero.subtitle')} Build <DictionaryTerm termId="prosperidad">lasting prosperity</DictionaryTerm> through <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> and <DictionaryTerm termId="liderazgo">strong leadership</DictionaryTerm>.
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
