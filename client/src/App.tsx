@@ -19,6 +19,7 @@ import MissionHighlightReel from "@/pages/MissionHighlightReel";
 import Events from "@/pages/Events";
 import WhyJoinOurTeam from "@/pages/WhyJoinOurTeam";
 import SpanishRegistration from "@/pages/SpanishRegistration";
+import SpanishTutorial from "@/pages/SpanishTutorial";
 import LanguageHeatmap from "@/pages/LanguageHeatmap";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/events" component={Events} />
       <Route path="/why-join-our-team" component={WhyJoinOurTeam} />
       <Route path="/registro-espanol" component={SpanishRegistration} />
+      <Route path="/tutorial-espanol" component={SpanishTutorial} />
       <Route path="/language-heatmap" component={LanguageHeatmap} />
       <Route path="/ai-mentor" component={AiCareerMentor} />
       <Route path="/lead-engine" component={LeadEngine} />
