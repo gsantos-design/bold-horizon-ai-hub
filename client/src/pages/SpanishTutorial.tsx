@@ -261,11 +261,35 @@ export default function SpanishTutorial() {
                             <CheckCircle2 className="w-4 h-4 mr-2" />
                             {t('tutorial.mark_section_complete')}
                           </Button>
-                          <Button variant="outline">
+                          <Button 
+                            variant="outline"
+                            onClick={() => {
+                              // Create a simple PDF with tutorial materials
+                              const link = document.createElement('a');
+                              link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(
+                                `Santiago Team Tutorial Materials\n\n` +
+                                `Section: ${t(section.titleKey)}\n` +
+                                `Description: ${t(section.descriptionKey)}\n\n` +
+                                `Key Topics:\n` +
+                                section.lessons.map(lesson => `- ${t(lesson)}`).join('\n') +
+                                `\n\nContact Information:\n` +
+                                `Phone: (407) 777-1087\n` +
+                                `Email: santiago.team@wfg.com\n` +
+                                `Registration: /registro-espanol`
+                              );
+                              link.download = `Santiago_Tutorial_${section.id}_Materials.txt`;
+                              link.click();
+                            }}
+                          >
                             <Download className="w-4 h-4 mr-2" />
                             {t('tutorial.download_materials')}
                           </Button>
-                          <Button variant="outline">
+                          <Button 
+                            variant="outline"
+                            onClick={() => {
+                              window.location.href = 'tel:407-777-1087';
+                            }}
+                          >
                             <MessageSquare className="w-4 h-4 mr-2" />
                             {t('tutorial.ask_question')}
                           </Button>
@@ -296,7 +320,7 @@ export default function SpanishTutorial() {
                     <Button 
                       size="lg" 
                       className="bg-white text-emerald-600 hover:bg-emerald-50"
-                      onClick={() => window.location.href = '/spanish-registration'}
+                      onClick={() => window.location.href = '/registro-espanol'}
                     >
                       <Star className="w-5 h-5 mr-2" />
                       {t('tutorial.register_now')}
