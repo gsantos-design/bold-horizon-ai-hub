@@ -8,6 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import { DictionaryTerm } from '@/components/TooltipDictionary';
 import { 
   PlayCircle, 
   CheckCircle2, 

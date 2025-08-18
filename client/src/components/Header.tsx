@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages, Calendar, Thermometer, BookOpen } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages, Calendar, Thermometer, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import { Link } from "wouter";
@@ -99,6 +99,13 @@ export default function Header() {
               <Button variant="ghost" size="sm" className="text-pink-600 hover:text-pink-700 hover:bg-pink-50">
                 <Thermometer className="h-4 w-4 mr-1" />
                 <span>{t('nav.language_heatmap')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/diccionario">
+              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+                <Sparkles className="h-4 w-4 mr-1" />
+                <span>Dictionary</span>
               </Button>
             </Link>
             

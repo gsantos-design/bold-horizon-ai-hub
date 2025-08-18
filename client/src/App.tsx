@@ -20,6 +20,7 @@ import Events from "@/pages/Events";
 import WhyJoinOurTeam from "@/pages/WhyJoinOurTeam";
 import SpanishRegistration from "@/pages/SpanishRegistration";
 import SpanishTutorial from "@/pages/SpanishTutorial";
+import TooltipDemo from "@/pages/TooltipDemo";
 import LanguageHeatmap from "@/pages/LanguageHeatmap";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
@@ -41,6 +42,7 @@ function Router() {
       <Route path="/why-join-our-team" component={WhyJoinOurTeam} />
       <Route path="/registro-espanol" component={SpanishRegistration} />
       <Route path="/tutorial-espanol" component={SpanishTutorial} />
+      <Route path="/diccionario" component={TooltipDemo} />
       <Route path="/language-heatmap" component={LanguageHeatmap} />
       <Route path="/ai-mentor" component={AiCareerMentor} />
       <Route path="/lead-engine" component={LeadEngine} />
