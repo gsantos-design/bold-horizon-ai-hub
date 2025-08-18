@@ -3,6 +3,7 @@
 Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG), specifically designed for the Santiago Team. This cosmic-themed digital recruitment platform transforms career exploration through immersive 3D visualizations, AI-powered career assessments, and innovative engagement strategies. The application serves as a comprehensive recruitment and education tool for financial professionals in the Florida and New York markets.
 
 ## Recent v12 Enhancements (August 2025)
+- **Comprehensive Santiago Family User Guide**: Complete end-to-end documentation covering all AI automation features, sales tools, video generation, call automation, lead management, and Spanish language tools with step-by-step instructions and troubleshooting
 - **Image Import Compatibility Issue**: Build system cannot handle capitalized file extensions (.JPG, .PNG) - requires .jpeg or .png for proper import functionality
 - **Enhanced Landing Page Content**: Complete redesign with compelling mission statement, about us story, and service previews replacing generic hero content
 - **Detailed Bios Moved to Mission Page**: Team member biographies relocated from home page to dedicated mission highlights page for better content organization

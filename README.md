@@ -26,12 +26,28 @@ To add the image of Nolly and Paul Santiago to the About Us section:
 
 4. **Remove the Instructions**: You can remove the instructions div (the one with "Manual Image Integration" text) once your image is working properly
 
+## 📖 Santiago Family User Guide
+
+**For comprehensive instructions on all AI automation features, see [SANTIAGO_FAMILY_USER_GUIDE.md](SANTIAGO_FAMILY_USER_GUIDE.md)**
+
+This detailed guide covers:
+- AI Career Mentor System with emotional intelligence
+- Lead Generation Engine with deal estimation
+- AI Automation Hub (voice synthesis, video generation, call automation)
+- Team Performance Dashboards and analytics
+- Spanish language tools and translation system
+- Complete API reference and troubleshooting
+
 ## Project Features
 
 - React.js with TypeScript frontend
-- AI-powered career quiz and recommendation system
+- AI-powered career quiz and recommendation system with GPT-4 integration
+- Advanced lead generation with HubSpot CRM integration
+- AI automation hub with voice synthesis (ElevenLabs), video generation (HeyGen), and call automation (Retell)
+- Comprehensive Spanish localization with interactive dictionary
 - 3D/4D cosmic background design
 - Animated recruitment journey visualization
+- Team performance tracking and leaderboards
 - Responsive, interactive career exploration tools
 - Glassmorphic UI with cosmic design elements
-- Bilingual support (English/Spanish)
+- Real-time workflow visualization
