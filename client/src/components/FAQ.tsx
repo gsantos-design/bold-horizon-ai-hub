@@ -88,7 +88,7 @@ export default function FAQ() {
                   <span className="font-semibold text-gray-900">{faq.question}</span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  <div className="text-gray-700 leading-relaxed">{faq.answer}</div>
                 </AccordionContent>
               </AccordionItem>
             ))}
