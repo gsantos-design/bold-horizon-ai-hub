@@ -115,8 +115,9 @@ export default function Header() {
                 variant="outline" 
                 size="sm"
                 onClick={toggleLanguage}
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-4"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold px-4 bg-white shadow-lg"
               >
+                <Languages className="h-4 w-4 mr-1" />
                 {language === 'en' ? 'Español' : 'English'}
               </Button>
             </div>
@@ -147,8 +148,9 @@ export default function Header() {
               variant="outline" 
               size="sm"
               onClick={toggleLanguage}
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 ml-2"
+              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 ml-2 bg-white font-bold shadow-lg"
             >
+              <Languages className="h-4 w-4 mr-1" />
               {language === 'en' ? 'ES' : 'EN'}
             </Button>
           </nav>
@@ -159,8 +161,9 @@ export default function Header() {
               variant="outline" 
               size="sm"
               onClick={toggleLanguage}
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 text-xs px-2 py-1"
+              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 text-xs px-2 py-1 bg-white font-bold shadow-lg"
             >
+              <Languages className="h-3 w-3 mr-1" />
               {language === 'en' ? 'ES' : 'EN'}
             </Button>
             <Button 
