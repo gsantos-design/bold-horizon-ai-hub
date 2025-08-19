@@ -22,6 +22,7 @@ import SpanishRegistration from "@/pages/SpanishRegistration";
 import SpanishTutorial from "@/pages/SpanishTutorial";
 import TooltipDemo from "@/pages/TooltipDemo";
 import LanguageHeatmap from "@/pages/LanguageHeatmap";
+import Documentation from "@/pages/Documentation";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
@@ -49,6 +50,7 @@ function Router() {
       <Route path="/lead-engine/board" component={LeadBoard} />
       <Route path="/team/leaderboard" component={Leaderboard} />
       <Route path="/admin/owners" component={AdminOwners} />
+      <Route path="/docs" component={Documentation} />
       <Route component={NotFound} />
     </Switch>
   );
