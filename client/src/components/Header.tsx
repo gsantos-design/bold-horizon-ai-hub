@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md border-b">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+        <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* WFG Logo and Branding */}
           <div className="flex items-center space-x-4">
             <img 
@@ -36,140 +36,19 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Right side with navigation and language toggle */}
-          <div className="flex items-center space-x-4">
+          {/* Language Toggle - Prominently Displayed */}
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={toggleLanguage}
+            className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-4 py-2 shadow-sm"
+          >
+            <Languages className="h-4 w-4 mr-2" />
+            {language === 'en' ? 'Español' : 'English'}
+          </Button>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-            {/* Core Navigation */}
-            <Link href="/empower360">
-              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
-                <Star className="h-4 w-4 mr-1" />
-                <span>{t('nav.empower360')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/team-santiago">
-              <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
-                <Users className="h-4 w-4 mr-1" />
-                <span>{t('nav.team')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/why-join-our-team">
-              <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-700 hover:bg-green-50">
-                <Users className="h-4 w-4 mr-1" />
-                <span>{t('nav.join_us')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/ai-automation">
-              <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50">
-                <Bot className="h-4 w-4 mr-1" />
-                <span>{t('nav.ai_tools')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/lead-engine">
-              <Button variant="ghost" size="sm">
-                <BarChart3 className="h-4 w-4 mr-1" />
-                <span>{t('nav.leads')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/localization-wizard">
-              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
-                <Languages className="h-4 w-4 mr-1" />
-                <span>{t('nav.translations')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/registro-espanol">
-              <Button variant="ghost" size="sm" className="text-amber-600 hover:text-amber-700 hover:bg-amber-50">
-                <Calendar className="h-4 w-4 mr-1" />
-                <span>{t('nav.spanish_registration')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/tutorial-espanol">
-              <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50">
-                <BookOpen className="h-4 w-4 mr-1" />
-                <span>{t('nav.spanish_tutorial')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/language-heatmap">
-              <Button variant="ghost" size="sm" className="text-pink-600 hover:text-pink-700 hover:bg-pink-50">
-                <Thermometer className="h-4 w-4 mr-1" />
-                <span>{t('nav.language_heatmap')}</span>
-              </Button>
-            </Link>
-            
-            <Link href="/diccionario">
-              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
-                <Sparkles className="h-4 w-4 mr-1" />
-                <span>Dictionary</span>
-              </Button>
-            </Link>
-            
-            </nav>
-
-            {/* Language Toggle Button */}
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={toggleLanguage}
-              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-3 py-1 hidden lg:flex"
-            >
-              <Languages className="h-4 w-4 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
-
-            {/* Medium Screen Navigation */}
-            <nav className="hidden md:flex lg:hidden items-center space-x-1">
-            <Link href="/empower360">
-              <Button variant="ghost" size="sm" className="text-purple-600" title={t('nav.empower360')}>
-                <Star className="h-4 w-4" />
-              </Button>
-            </Link>
-            
-            <Link href="/team-santiago">
-              <Button variant="ghost" size="sm" className="text-orange-600" title={t('nav.team')}>
-                <Users className="h-4 w-4" />
-              </Button>
-            </Link>
-            
-            <Link href="/lead-engine">
-              <Button variant="ghost" size="sm" title={t('nav.leads')}>
-                <BarChart3 className="h-4 w-4" />
-              </Button>
-            </Link>
-            
-            </nav>
-
-            {/* Language Toggle for Medium Screens */}
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={toggleLanguage}
-              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 hidden md:flex lg:hidden"
-            >
-              <Languages className="h-4 w-4 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-2">
-              {/* Language Toggle for Mobile */}
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={toggleLanguage}
-                className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 text-xs"
-              >
-                <Languages className="h-3 w-3 mr-1" />
-                {language === 'en' ? 'ES' : 'EN'}
-              </Button>
+          {/* Mobile Menu Button with Language Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
             <Button 
               variant="outline" 
               size="icon" 
@@ -178,7 +57,6 @@ export default function Header() {
             >
               {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
-            </div>
           </div>
         </div>
 
