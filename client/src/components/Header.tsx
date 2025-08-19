@@ -36,19 +36,105 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Language Toggle - Prominently Displayed */}
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={toggleLanguage}
-            className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-4 py-2 shadow-sm"
-          >
-            <Languages className="h-4 w-4 mr-2" />
-            {language === 'en' ? 'Español' : 'English'}
-          </Button>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-2">
+            <Link href="/empower360">
+              <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+                <Star className="h-4 w-4 mr-1" />
+                <span>{t('nav.empower360')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/team-santiago">
+              <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
+                <Users className="h-4 w-4 mr-1" />
+                <span>{t('nav.team')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/ai-automation">
+              <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50">
+                <Bot className="h-4 w-4 mr-1" />
+                <span>{t('nav.ai_tools')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/lead-engine">
+              <Button variant="ghost" size="sm">
+                <BarChart3 className="h-4 w-4 mr-1" />
+                <span>{t('nav.leads')}</span>
+              </Button>
+            </Link>
+            
+            <Link href="/tutorial-espanol">
+              <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50">
+                <BookOpen className="h-4 w-4 mr-1" />
+                <span>{t('nav.spanish_tutorial')}</span>
+              </Button>
+            </Link>
+            
+            {/* Language Toggle */}
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-3 py-2 ml-2"
+            >
+              <Languages className="h-4 w-4 mr-1" />
+              {language === 'en' ? 'ES' : 'EN'}
+            </Button>
+          </nav>
 
-          {/* Mobile Menu Button with Language Toggle */}
+          {/* Medium Screen Navigation */}
+          <nav className="hidden md:flex lg:hidden items-center space-x-2">
+            <Link href="/empower360">
+              <Button variant="ghost" size="sm" className="text-purple-600" title={t('nav.empower360')}>
+                <Star className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            <Link href="/team-santiago">
+              <Button variant="ghost" size="sm" className="text-orange-600" title={t('nav.team')}>
+                <Users className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            <Link href="/ai-automation">
+              <Button variant="ghost" size="sm" className="text-red-600" title={t('nav.ai_tools')}>
+                <Bot className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            <Link href="/lead-engine">
+              <Button variant="ghost" size="sm" title={t('nav.leads')}>
+                <BarChart3 className="h-4 w-4" />
+              </Button>
+            </Link>
+            
+            {/* Language Toggle */}
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 ml-2"
+            >
+              <Languages className="h-4 w-4 mr-1" />
+              {language === 'en' ? 'ES' : 'EN'}
+            </Button>
+          </nav>
+
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 text-xs"
+            >
+              <Languages className="h-3 w-3 mr-1" />
+              {language === 'en' ? 'ES' : 'EN'}
+            </Button>
+            
             <Button 
               variant="outline" 
               size="icon" 
