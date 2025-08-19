@@ -36,6 +36,19 @@ export default function Header() {
             </div>
           </div>
 
+          {/* Prominent Language Toggle - Always Visible */}
+          <div className="flex items-center">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-6 py-2 shadow-lg"
+            >
+              <Languages className="h-5 w-5 mr-2" />
+              {language === 'en' ? 'Español' : 'English'}
+            </Button>
+          </div>
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
             {/* Core Navigation */}
@@ -109,18 +122,7 @@ export default function Header() {
               </Button>
             </Link>
             
-            {/* Language Toggle - More Prominent */}
-            <div className="border-l border-gray-200 pl-4 ml-2">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={toggleLanguage}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold px-4 bg-white shadow-lg"
-              >
-                <Languages className="h-4 w-4 mr-1" />
-                {language === 'en' ? 'Español' : 'English'}
-              </Button>
-            </div>
+
           </nav>
 
           {/* Medium Screen Navigation */}
@@ -143,29 +145,11 @@ export default function Header() {
               </Button>
             </Link>
             
-            {/* Language Toggle for Medium Screens */}
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={toggleLanguage}
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 ml-2 bg-white font-bold shadow-lg"
-            >
-              <Languages className="h-4 w-4 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
+
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={toggleLanguage}
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 text-xs px-2 py-1 bg-white font-bold shadow-lg"
-            >
-              <Languages className="h-3 w-3 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
             <Button 
               variant="outline" 
               size="icon" 
