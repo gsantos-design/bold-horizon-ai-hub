@@ -19,9 +19,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md border-b">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* WFG Logo and Branding */}
-          <div className="flex items-center space-x-4 flex-shrink-0">
+          <div className="flex items-center space-x-4">
             <img 
               src="https://assets.worldfinancialgroup.com/assets/images/WFG_Logo.svg" 
               alt="WFG Logo" 
@@ -36,24 +36,11 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Center spacer */}
-          <div className="flex-1"></div>
+          {/* Right side with navigation and language toggle */}
+          <div className="flex items-center space-x-4">
 
-          {/* Language Toggle - Right Side */}
-          <div className="flex items-center mr-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={toggleLanguage}
-              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-4 py-2 shadow-sm"
-            >
-              <Languages className="h-4 w-4 mr-2" />
-              {language === 'en' ? 'Español' : 'English'}
-            </Button>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1 flex-shrink-0">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-1">
             {/* Core Navigation */}
             <Link href="/empower360">
               <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
@@ -125,11 +112,21 @@ export default function Header() {
               </Button>
             </Link>
             
+            </nav>
 
-          </nav>
+            {/* Language Toggle Button */}
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-3 py-1 hidden lg:flex"
+            >
+              <Languages className="h-4 w-4 mr-1" />
+              {language === 'en' ? 'ES' : 'EN'}
+            </Button>
 
-          {/* Medium Screen Navigation */}
-          <nav className="hidden md:flex lg:hidden items-center space-x-1 flex-shrink-0">
+            {/* Medium Screen Navigation */}
+            <nav className="hidden md:flex lg:hidden items-center space-x-1">
             <Link href="/empower360">
               <Button variant="ghost" size="sm" className="text-purple-600" title={t('nav.empower360')}>
                 <Star className="h-4 w-4" />
@@ -148,11 +145,31 @@ export default function Header() {
               </Button>
             </Link>
             
+            </nav>
 
-          </nav>
+            {/* Language Toggle for Medium Screens */}
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={toggleLanguage}
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 hidden md:flex lg:hidden"
+            >
+              <Languages className="h-4 w-4 mr-1" />
+              {language === 'en' ? 'ES' : 'EN'}
+            </Button>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center space-x-2">
+              {/* Language Toggle for Mobile */}
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={toggleLanguage}
+                className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-2 py-1 text-xs"
+              >
+                <Languages className="h-3 w-3 mr-1" />
+                {language === 'en' ? 'ES' : 'EN'}
+              </Button>
             <Button 
               variant="outline" 
               size="icon" 
@@ -161,6 +178,7 @@ export default function Header() {
             >
               {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
+            </div>
           </div>
         </div>
 
