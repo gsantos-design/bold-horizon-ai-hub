@@ -81,9 +81,9 @@ export default function AiAutomationHub() {
                   content="Launch your first AI automation campaign targeting 401k rollover prospects, high-yield savers, or entrepreneurs. Expected results: 8-12% conversion rate, 200+ appointments monthly, $2.5M+ pipeline value."
                   title="🚀 Campaign Launch"
                 >
-                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8">
-                    <PlayCircle className="h-5 w-5 mr-2" />
-                    Start AI Campaign
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 font-bold border-2 border-white shadow-lg">
+                    <PlayCircle className="h-5 w-5 mr-2 text-purple-600" />
+                    <span className="text-purple-600">Start AI Campaign</span>
                   </Button>
                 </TipTooltip>
                 
@@ -91,9 +91,9 @@ export default function AiAutomationHub() {
                   content="Configure your AI phone calls and video avatars with custom scripts, targeting parameters, and integration settings. Setup includes voice cloning, avatar training, and CRM synchronization."
                   title="⚙️ AI Configuration"
                 >
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 font-bold bg-transparent">
                     <Settings className="h-5 w-5 mr-2" />
-                    Configuration
+                    <span>Configuration</span>
                   </Button>
                 </HelpTooltip>
               </div>
@@ -107,10 +107,10 @@ export default function AiAutomationHub() {
                     <Button 
                       onClick={startTour}
                       variant="outline" 
-                      className="border-white/50 text-white hover:bg-white/10"
+                      className="border-2 border-white/70 text-white hover:bg-white/10 font-bold bg-transparent"
                     >
-                      <PlayCircle className="h-4 w-4 mr-2" />
-                      Take AI Automation Tour
+                      <PlayCircle className="h-4 w-4 mr-2 text-white" />
+                      <span className="text-white">Take AI Automation Tour</span>
                     </Button>
                   </TipTooltip>
                 </div>
