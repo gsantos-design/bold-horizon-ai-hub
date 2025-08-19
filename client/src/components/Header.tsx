@@ -21,7 +21,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* WFG Logo and Branding */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 flex-shrink-0">
             <img 
               src="https://assets.worldfinancialgroup.com/assets/images/WFG_Logo.svg" 
               alt="WFG Logo" 
@@ -36,21 +36,24 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Prominent Language Toggle - Always Visible */}
-          <div className="flex items-center">
+          {/* Center spacer */}
+          <div className="flex-1"></div>
+
+          {/* Language Toggle - Right Side */}
+          <div className="flex items-center mr-4">
             <Button 
               variant="outline" 
-              size="lg"
+              size="sm"
               onClick={toggleLanguage}
-              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-6 py-2 shadow-lg"
+              className="bg-blue-600 text-white hover:bg-blue-700 border-blue-600 font-bold px-4 py-2 shadow-sm"
             >
-              <Languages className="h-5 w-5 mr-2" />
+              <Languages className="h-4 w-4 mr-2" />
               {language === 'en' ? 'Español' : 'English'}
             </Button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2">
+          <nav className="hidden lg:flex items-center space-x-1 flex-shrink-0">
             {/* Core Navigation */}
             <Link href="/empower360">
               <Button variant="ghost" size="sm" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
@@ -126,7 +129,7 @@ export default function Header() {
           </nav>
 
           {/* Medium Screen Navigation */}
-          <nav className="hidden md:flex lg:hidden items-center space-x-2">
+          <nav className="hidden md:flex lg:hidden items-center space-x-1 flex-shrink-0">
             <Link href="/empower360">
               <Button variant="ghost" size="sm" className="text-purple-600" title={t('nav.empower360')}>
                 <Star className="h-4 w-4" />
