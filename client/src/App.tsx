@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
@@ -27,7 +27,7 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
 
-function Router() {
+function AppRouter() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -58,11 +58,17 @@ function Router() {
 
 
 function AppContent() {
+  // Auto-detect base URL for different deployment environments
+  const base = typeof window !== 'undefined' ? 
+    window.location.pathname.includes('/app/') ? '/app' : '' : '';
+
   return (
     <>
-      <Toaster />
-      <Router />
-      <AchievementNotificationContainer />
+      <Router base={base}>
+        <Toaster />
+        <AppRouter />
+        <AchievementNotificationContainer />
+      </Router>
     </>
   );
 }
