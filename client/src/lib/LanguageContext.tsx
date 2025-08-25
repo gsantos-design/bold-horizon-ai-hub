@@ -293,7 +293,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'building.join_title': 'Join the Santiago Team',
     'building.description': 'Ready to transform your life and help others do the same? Our proven system combines multi-handed income strategies, comprehensive financial education, and personal development to create extraordinary results.',
     'building.description_2': 'Join the Santiago team and become part of a community dedicated to empowering families across Florida and New York. Learn the new art of living while building a business that makes a real difference.',
-    'building.start_journey': 'Start Your Journey',
+    'building.journey_start': 'Start Your Journey',
     'building.call_team': 'Call Pablo & Nolly',
     
     // Philosophy sections
@@ -981,7 +981,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'building.join_santiago_team': 'Únete al Equipo Santiago',
     'building.transform_description': '¿Listo para transformar tu vida y ayudar a otros a hacer lo mismo? Nuestro sistema comprobado combina estrategias de ingresos múltiples, educación financiera integral, y desarrollo personal para crear resultados extraordinarios.',
     'building.community_description': 'Únete al equipo Santiago y conviértete en parte de una comunidad dedicada a empoderar familias en Florida y Nueva York. Aprende el nuevo arte de vivir mientras construyes un negocio que hace una diferencia real.',
-    'building.start_journey': 'Comienza Tu Jornada',
+    'building.start_journey_es': 'Comienza Tu Jornada',
     'building.call_pablo_nolly': 'Llamar a Pablo y Nolly',
     
     // Video Section - Spanish

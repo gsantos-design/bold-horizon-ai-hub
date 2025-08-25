@@ -217,14 +217,14 @@ export function TooltipDictionary({ trigger, termId, className = '' }: TooltipDi
   if (!selectedTerm) return null;
 
   return (
-    <div className={`relative inline-block ${className}`} ref={tooltipRef}>
-      <div 
+    <span className={`relative inline-block ${className}`} ref={tooltipRef}>
+      <span 
         className="cursor-pointer inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 underline decoration-dotted transition-colors"
         onClick={handleTriggerClick}
       >
         {trigger}
         <Sparkles className="w-3 h-3 opacity-70" />
-      </div>
+      </span>
 
       <AnimatePresence>
         {isOpen && (
@@ -352,7 +352,7 @@ export function TooltipDictionary({ trigger, termId, className = '' }: TooltipDi
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </span>
   );
 }
 
