@@ -23,7 +23,7 @@ export default function LocalizationBanner() {
   if (completionRate > 90) return null;
 
   return (
-    <Card className="mx-4 mt-4 border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50">
+    <Card className="mx-4 mt-4 border-purple-200 bg-white">
       <CardContent className="p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -68,7 +68,7 @@ export default function LocalizationBanner() {
         <div className="mt-3">
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full transition-all duration-500"
+              className="bg-primary h-2 rounded-full transition-all duration-500"
               style={{ width: `${completionRate}%` }}
             ></div>
           </div>

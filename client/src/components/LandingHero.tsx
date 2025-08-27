@@ -76,7 +76,7 @@ export default function LandingHero() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white px-8 py-4 text-lg"
+                  className="bg-secondary hover:bg-secondary/90 text-primary px-8 py-4 text-lg"
                 >
                   <Users className="h-5 w-5 mr-2" />
                   {t('meeting.register_spanish')}
@@ -203,7 +203,7 @@ export default function LandingHero() {
 
               {/* Impact Stats */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6">
+                <div className="bg-primary/5 rounded-xl p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('team.our_impact')}</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -226,7 +226,7 @@ export default function LandingHero() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl p-6 text-center">
+                <div className="bg-primary text-secondary rounded-xl p-6 text-center">
                   <h4 className="text-xl font-bold mb-2">{t('team.ready_secure')}</h4>
                   <p className="mb-4 opacity-90">
                     {t('team.join_thousands')}
