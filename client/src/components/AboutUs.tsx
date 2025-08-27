@@ -69,7 +69,7 @@ export default function AboutUs() {
                   <img 
                     src="/nolly-santiago.png" 
                     alt="Nolly Santiago" 
-                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-secondary/20 shadow-lg mb-4"
+                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-primary shadow-lg mb-4"
                     style={{ objectPosition: 'center top' }}
                   />
                   <h4 className="text-lg font-bold text-primary">Nolly Santiago</h4>
@@ -79,7 +79,7 @@ export default function AboutUs() {
                   <img 
                     src="/pablo-santiago.png" 
                     alt="Pablo Santiago" 
-                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-primary/20 shadow-lg mb-4"
+                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-primary shadow-lg mb-4"
                     style={{ objectPosition: 'center top' }}
                   />
                   <h4 className="text-lg font-bold text-primary">Pablo Santiago</h4>

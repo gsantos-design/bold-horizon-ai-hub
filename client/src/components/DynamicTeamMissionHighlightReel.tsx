@@ -289,7 +289,7 @@ export default function DynamicTeamMissionHighlightReel() {
                             transition={{ delay: 0.4, duration: 0.8 }}
                             className="relative"
                           >
-                            <div className="w-64 h-64 rounded-full overflow-hidden border-8 border-white/30 shadow-2xl">
+                            <div className="w-64 h-64 rounded-full overflow-hidden border-8 border-primary shadow-2xl">
                               <img 
                                 src={currentHighlight.image} 
                                 alt={currentHighlight.teamMember} 
@@ -426,7 +426,7 @@ export default function DynamicTeamMissionHighlightReel() {
               <img 
                 src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
-                className="w-full rounded-2xl shadow-2xl border-4 border-white"
+                className="w-full rounded-2xl shadow-2xl border-4 border-primary"
               />
               <p className="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
                 Four generations united in service, transformed by financial education, 

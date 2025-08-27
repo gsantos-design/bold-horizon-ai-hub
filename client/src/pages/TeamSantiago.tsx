@@ -99,7 +99,7 @@ export default function TeamSantiago() {
                 <Card className="h-full border-2 border-primary shadow-xl">
                   <CardHeader className="bg-primary text-white">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
                         <img 
                           src={nollyImage} 
                           alt="Nolly Santiago" 
@@ -151,7 +151,7 @@ export default function TeamSantiago() {
                 <Card className="h-full border-2 border-primary shadow-xl">
                   <CardHeader className="bg-primary text-white">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
                         <img 
                           src={pabloImage} 
                           alt="Pablo Santiago" 
@@ -203,7 +203,7 @@ export default function TeamSantiago() {
                 <Card className="h-full border-2 border-primary shadow-xl">
                   <CardHeader className="bg-primary text-white">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
                         <img 
                           src={josephImage} 
                           alt="Joseph Santiago" 
@@ -255,7 +255,7 @@ export default function TeamSantiago() {
                 <Card className="h-full border-2 border-primary shadow-xl">
                   <CardHeader className="bg-primary text-white">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
                         <img 
                           src={christianImage} 
                           alt="Christian Santiago" 
@@ -475,7 +475,7 @@ export default function TeamSantiago() {
               <img 
                 src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
-                className="w-full rounded-3xl shadow-2xl border-8 border-white"
+                className="w-full rounded-3xl shadow-2xl border-8 border-primary"
               />
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">

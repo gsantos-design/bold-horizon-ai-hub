@@ -303,7 +303,7 @@ export default function LandingHero() {
               <img 
                 src={newTeamPhoto} 
                 alt="Santiago Team Family Photo" 
-                className="w-full rounded-2xl shadow-2xl border-4 border-white"
+                className="w-full rounded-2xl shadow-2xl border-4 border-primary"
               />
             </div>
           </motion.div>
