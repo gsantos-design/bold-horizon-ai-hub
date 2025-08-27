@@ -67,6 +67,303 @@ interface AutomationWorkflow {
   active: boolean;
 }
 
+// CSV Upload Component
+function CSVUploadComponent({ onUpload }: { onUpload: () => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const handleFileUpload = async () => {
+    if (!file) return;
+
+    setIsUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append('csv', file);
+
+      const response = await fetch('/api/leads/import-csv', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`✅ Imported ${data.count} leads successfully!`);
+        onUpload();
+        setFile(null);
+      } else {
+        alert('❌ Failed to import CSV');
+      }
+    } catch (error) {
+      alert('❌ Upload failed');
+    }
+    setIsUploading(false);
+  };
+
+  return (
+    <div className="space-y-3">
+      <input
+        type="file"
+        accept=".csv"
+        onChange={(e) => setFile(e.target.files?.[0] || null)}
+        className="w-full text-sm"
+      />
+      <Button 
+        onClick={handleFileUpload} 
+        disabled={!file || isUploading}
+        className="w-full"
+      >
+        {isUploading ? '⏳ Uploading...' : '📤 Upload CSV'}
+      </Button>
+    </div>
+  );
+}
+
+// Apollo.io Connection Component
+function ApolloConnectionComponent({ onImport }: { onImport: () => void }) {
+  const [apiKey, setApiKey] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const handleApolloImport = async () => {
+    if (!apiKey || !searchQuery) return;
+
+    setIsConnecting(true);
+    try {
+      const response = await fetch('/api/leads/apollo-import', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey, searchQuery }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`✅ Imported ${data.count} leads from Apollo.io!`);
+        onImport();
+      } else {
+        alert('❌ Apollo.io connection failed');
+      }
+    } catch (error) {
+      alert('❌ Import failed');
+    }
+    setIsConnecting(false);
+  };
+
+  return (
+    <div className="space-y-3">
+      <Input
+        placeholder="Apollo.io API Key"
+        type="password"
+        value={apiKey}
+        onChange={(e) => setApiKey(e.target.value)}
+      />
+      <Input
+        placeholder="Search query (e.g., 'CEO at tech companies')"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <Button 
+        onClick={handleApolloImport}
+        disabled={!apiKey || !searchQuery || isConnecting}
+        className="w-full"
+      >
+        {isConnecting ? '🔄 Importing...' : '🚀 Import from Apollo'}
+      </Button>
+    </div>
+  );
+}
+
+// LinkedIn Connection Component
+function LinkedInConnectionComponent({ onImport }: { onImport: () => void }) {
+  const [linkedinData, setLinkedinData] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleLinkedInImport = async () => {
+    if (!linkedinData.trim()) return;
+
+    setIsProcessing(true);
+    try {
+      const response = await fetch('/api/leads/linkedin-import', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: linkedinData }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`✅ Processed ${data.count} LinkedIn leads!`);
+        onImport();
+        setLinkedinData('');
+      } else {
+        alert('❌ LinkedIn import failed');
+      }
+    } catch (error) {
+      alert('❌ Processing failed');
+    }
+    setIsProcessing(false);
+  };
+
+  return (
+    <div className="space-y-3">
+      <textarea
+        placeholder="Paste LinkedIn Sales Navigator search results or connection data..."
+        value={linkedinData}
+        onChange={(e) => setLinkedinData(e.target.value)}
+        className="w-full h-20 p-2 border rounded resize-none text-sm"
+      />
+      <Button 
+        onClick={handleLinkedInImport}
+        disabled={!linkedinData.trim() || isProcessing}
+        className="w-full"
+      >
+        {isProcessing ? '⚙️ Processing...' : '💼 Import from LinkedIn'}
+      </Button>
+    </div>
+  );
+}
+
+// HubSpot Connection Component
+function HubSpotConnectionComponent({ onImport }: { onImport: () => void }) {
+  const [hubspotKey, setHubspotKey] = useState('');
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const handleHubSpotSync = async () => {
+    if (!hubspotKey) return;
+
+    setIsConnecting(true);
+    try {
+      const response = await fetch('/api/leads/hubspot-sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: hubspotKey }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`✅ Synced ${data.count} leads from HubSpot!`);
+        onImport();
+      } else {
+        alert('❌ HubSpot sync failed');
+      }
+    } catch (error) {
+      alert('❌ Sync failed');
+    }
+    setIsConnecting(false);
+  };
+
+  return (
+    <div className="space-y-3">
+      <Input
+        placeholder="HubSpot API Key"
+        type="password"
+        value={hubspotKey}
+        onChange={(e) => setHubspotKey(e.target.value)}
+      />
+      <Button 
+        onClick={handleHubSpotSync}
+        disabled={!hubspotKey || isConnecting}
+        className="w-full"
+      >
+        {isConnecting ? '🔄 Syncing...' : '🔗 Sync from HubSpot'}
+      </Button>
+    </div>
+  );
+}
+
+// Manual Lead Entry Component
+function ManualLeadEntryComponent({ onAdd }: { onAdd: () => void }) {
+  const [newLead, setNewLead] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    title: '',
+  });
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddLead = async () => {
+    if (!newLead.firstName || !newLead.lastName || !newLead.email) return;
+
+    setIsAdding(true);
+    try {
+      const response = await fetch('/api/leads/manual-add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...newLead,
+          source: 'manual',
+          status: 'new'
+        }),
+      });
+
+      if (response.ok) {
+        alert(`✅ Added ${newLead.firstName} ${newLead.lastName} as new lead!`);
+        onAdd();
+        setNewLead({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          title: '',
+        });
+      } else {
+        alert('❌ Failed to add lead');
+      }
+    } catch (error) {
+      alert('❌ Add failed');
+    }
+    setIsAdding(false);
+  };
+
+  return (
+    <div className="space-y-2">
+      <div className="grid grid-cols-2 gap-2">
+        <Input
+          placeholder="First Name"
+          value={newLead.firstName}
+          onChange={(e) => setNewLead({...newLead, firstName: e.target.value})}
+        />
+        <Input
+          placeholder="Last Name"
+          value={newLead.lastName}
+          onChange={(e) => setNewLead({...newLead, lastName: e.target.value})}
+        />
+      </div>
+      <Input
+        placeholder="Email"
+        type="email"
+        value={newLead.email}
+        onChange={(e) => setNewLead({...newLead, email: e.target.value})}
+      />
+      <Input
+        placeholder="Phone (optional)"
+        value={newLead.phone}
+        onChange={(e) => setNewLead({...newLead, phone: e.target.value})}
+      />
+      <div className="grid grid-cols-2 gap-2">
+        <Input
+          placeholder="Company"
+          value={newLead.company}
+          onChange={(e) => setNewLead({...newLead, company: e.target.value})}
+        />
+        <Input
+          placeholder="Title"
+          value={newLead.title}
+          onChange={(e) => setNewLead({...newLead, title: e.target.value})}
+        />
+      </div>
+      <Button 
+        onClick={handleAddLead}
+        disabled={!newLead.firstName || !newLead.lastName || !newLead.email || isAdding}
+        className="w-full"
+      >
+        {isAdding ? '➕ Adding...' : '✏️ Add Lead'}
+      </Button>
+    </div>
+  );
+}
+
 export default function LeadEngine() {
   const [userEmail, setUserEmail] = useState("nolly@santiago-team.com");
   const [userRole, setUserRole] = useState<"team" | "founder">("founder");
@@ -1263,6 +1560,106 @@ Best,
         </TabsContent>
 
         <TabsContent value="targeting" className="space-y-6">
+          {/* Lead Source Connections */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Current Database */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  🗃️ Current Database
+                  <Badge className="bg-green-100 text-green-800">{leads.length} leads</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Your existing leads ready for campaigns</p>
+                <div className="space-y-2">
+                  <Button 
+                    onClick={() => {
+                      const emails = leads.map((lead: Lead) => lead.email).filter(Boolean).join('\n');
+                      navigator.clipboard.writeText(emails);
+                      alert(`✅ Copied ${leads.filter((lead: Lead) => lead.email).length} emails to clipboard!`);
+                    }}
+                    className="w-full"
+                  >
+                    📧 Copy All Emails
+                  </Button>
+                  <Button variant="outline" onClick={handleExportCSV} className="w-full">
+                    📥 Export CSV
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* CSV Upload */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  📂 CSV Upload
+                  <Badge className="bg-blue-100 text-blue-800">Ready</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Upload your lead lists from spreadsheets</p>
+                <CSVUploadComponent onUpload={refetch} />
+              </CardContent>
+            </Card>
+
+            {/* Apollo.io Connection */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  🚀 Apollo.io
+                  <Badge className="bg-purple-100 text-purple-800">Connect</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Import B2B leads from Apollo.io API</p>
+                <ApolloConnectionComponent onImport={refetch} />
+              </CardContent>
+            </Card>
+
+            {/* LinkedIn Sales Navigator */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  💼 LinkedIn Sales Navigator
+                  <Badge className="bg-blue-100 text-blue-800">Connect</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Extract leads from LinkedIn searches</p>
+                <LinkedInConnectionComponent onImport={refetch} />
+              </CardContent>
+            </Card>
+
+            {/* HubSpot CRM */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  🔗 HubSpot CRM
+                  <Badge className="bg-orange-100 text-orange-800">Sync</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Import from your HubSpot CRM</p>
+                <HubSpotConnectionComponent onImport={refetch} />
+              </CardContent>
+            </Card>
+
+            {/* Manual Entry */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  ✏️ Manual Entry
+                  <Badge className="bg-gray-100 text-gray-800">Quick Add</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600 mb-4">Add individual high-value prospects</p>
+                <ManualLeadEntryComponent onAdd={refetch} />
+              </CardContent>
+            </Card>
+          </div>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

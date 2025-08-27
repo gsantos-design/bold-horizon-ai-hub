@@ -1306,6 +1306,124 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Lead Import Endpoints
+
+  // CSV Upload
+  app.post("/api/leads/import-csv", async (req, res) => {
+    try {
+      // Mock CSV processing - in production would parse actual CSV
+      const mockLeads = [
+        { firstName: 'CSV', lastName: 'Import1', email: 'csv1@example.com', source: 'csv' },
+        { firstName: 'CSV', lastName: 'Import2', email: 'csv2@example.com', source: 'csv' },
+        { firstName: 'CSV', lastName: 'Import3', email: 'csv3@example.com', source: 'csv' }
+      ];
+
+      for (const leadData of mockLeads) {
+        await storage.createLead({
+          ...leadData,
+          status: 'new',
+          ownerEmail: 'nolly@santiago-team.com'
+        });
+      }
+
+      res.json({ success: true, count: mockLeads.length });
+    } catch (error) {
+      res.status(500).json({ success: false, error: 'CSV import failed' });
+    }
+  });
+
+  // Apollo.io Import
+  app.post("/api/leads/apollo-import", async (req, res) => {
+    try {
+      const { apiKey, searchQuery } = req.body;
+      
+      // Mock Apollo.io results - in production would call Apollo API
+      const mockApolloLeads = [
+        { firstName: 'Apollo', lastName: 'CEO1', email: 'ceo1@apollocompany.com', company: 'Apollo Corp', title: 'CEO', source: 'apollo' },
+        { firstName: 'Apollo', lastName: 'VP2', email: 'vp2@apollotech.com', company: 'Apollo Tech', title: 'VP Sales', source: 'apollo' },
+        { firstName: 'Apollo', lastName: 'Director3', email: 'dir3@apollosys.com', company: 'Apollo Systems', title: 'Director', source: 'apollo' }
+      ];
+
+      for (const leadData of mockApolloLeads) {
+        await storage.createLead({
+          ...leadData,
+          status: 'new',
+          ownerEmail: 'nolly@santiago-team.com'
+        });
+      }
+
+      res.json({ success: true, count: mockApolloLeads.length });
+    } catch (error) {
+      res.status(500).json({ success: false, error: 'Apollo import failed' });
+    }
+  });
+
+  // LinkedIn Import
+  app.post("/api/leads/linkedin-import", async (req, res) => {
+    try {
+      const { data } = req.body;
+      
+      // Mock LinkedIn processing - in production would parse LinkedIn data
+      const mockLinkedInLeads = [
+        { firstName: 'LinkedIn', lastName: 'Executive1', email: 'exec1@linkedin-company.com', company: 'LinkedIn Corp', title: 'Executive', source: 'linkedin' },
+        { firstName: 'LinkedIn', lastName: 'Manager2', email: 'mgr2@linkedin-firm.com', company: 'LinkedIn Firm', title: 'Manager', source: 'linkedin' }
+      ];
+
+      for (const leadData of mockLinkedInLeads) {
+        await storage.createLead({
+          ...leadData,
+          status: 'new',
+          ownerEmail: 'nolly@santiago-team.com'
+        });
+      }
+
+      res.json({ success: true, count: mockLinkedInLeads.length });
+    } catch (error) {
+      res.status(500).json({ success: false, error: 'LinkedIn import failed' });
+    }
+  });
+
+  // HubSpot Sync
+  app.post("/api/leads/hubspot-sync", async (req, res) => {
+    try {
+      const { apiKey } = req.body;
+      
+      // Mock HubSpot sync - in production would call HubSpot API
+      const mockHubSpotLeads = [
+        { firstName: 'HubSpot', lastName: 'Contact1', email: 'contact1@hubspot-client.com', company: 'HubSpot Client', title: 'Contact', source: 'hubspot' },
+        { firstName: 'HubSpot', lastName: 'Lead2', email: 'lead2@hubspot-prospect.com', company: 'HubSpot Prospect', title: 'Lead', source: 'hubspot' }
+      ];
+
+      for (const leadData of mockHubSpotLeads) {
+        await storage.createLead({
+          ...leadData,
+          status: 'new',
+          ownerEmail: 'nolly@santiago-team.com'
+        });
+      }
+
+      res.json({ success: true, count: mockHubSpotLeads.length });
+    } catch (error) {
+      res.status(500).json({ success: false, error: 'HubSpot sync failed' });
+    }
+  });
+
+  // Manual Lead Add
+  app.post("/api/leads/manual-add", async (req, res) => {
+    try {
+      const leadData = req.body;
+      
+      const newLead = await storage.createLead({
+        ...leadData,
+        ownerEmail: leadData.ownerEmail || 'nolly@santiago-team.com'
+      });
+
+      res.json({ success: true, lead: newLead });
+    } catch (error) {
+      res.status(500).json({ success: false, error: 'Manual add failed' });
+    }
+  });
+
   // Email Campaign Launch Endpoint
   app.post("/api/launch-email-campaign", async (req, res) => {
     try {
