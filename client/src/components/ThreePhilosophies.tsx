@@ -12,7 +12,7 @@ export default function ThreePhilosophies() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-secondary text-primary px-6 py-2">
+          <Badge className="mb-4 bg-primary text-white px-6 py-2">
             🎯 Empowering Families
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

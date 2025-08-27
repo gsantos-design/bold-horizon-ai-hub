@@ -205,7 +205,7 @@ export default function MultiHandedIncome() {
                       <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                         <div className="flex justify-between items-center">
                           <span className="font-medium text-blue-900">System-Based Growth ({systemFactor}x)</span>
-                          <Badge className="bg-blue-600">${results.projections.systemBased.toLocaleString()}</Badge>
+                          <Badge className="bg-primary text-white">${results.projections.systemBased.toLocaleString()}</Badge>
                         </div>
                         <div className="text-sm text-blue-700 mt-1">
                           Potential annual income with {systemFactor}x system replication
@@ -215,7 +215,7 @@ export default function MultiHandedIncome() {
                       <div className="p-4 bg-green-50 rounded-lg border border-green-200">
                         <div className="flex justify-between items-center">
                           <span className="font-medium text-green-900">5x Growth Target</span>
-                          <Badge className="bg-green-600">${results.projections.fiveX.toLocaleString()}</Badge>
+                          <Badge className="bg-primary text-white">${results.projections.fiveX.toLocaleString()}</Badge>
                         </div>
                         <div className="text-sm text-green-700 mt-1">
                           Conservative system-based projection
@@ -225,7 +225,7 @@ export default function MultiHandedIncome() {
                       <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-200">
                         <div className="flex justify-between items-center">
                           <span className="font-medium text-emerald-900">10x Growth Potential</span>
-                          <Badge className="bg-emerald-600">${results.projections.tenX.toLocaleString()}</Badge>
+                          <Badge className="bg-primary text-white">${results.projections.tenX.toLocaleString()}</Badge>
                         </div>
                         <div className="text-sm text-emerald-700 mt-1">
                           Advanced system-based potential
