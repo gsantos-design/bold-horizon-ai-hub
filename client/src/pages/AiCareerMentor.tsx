@@ -251,7 +251,7 @@ export default function AiCareerMentor() {
                   <Button 
                     type="submit" 
                     disabled={createSessionMutation.isPending}
-                    className="w-full bg-primary hover:bg-primary/90 text-secondary py-3"
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-3"
                   >
                     {createSessionMutation.isPending ? (
                       <div className="flex items-center">
@@ -442,7 +442,7 @@ export default function AiCareerMentor() {
                 <Button 
                   type="submit" 
                   disabled={!newMessage.trim() || sendMessageMutation.isPending}
-                  className="bg-primary hover:bg-primary/90 text-secondary"
+                  className="bg-primary hover:bg-primary/90 text-white"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

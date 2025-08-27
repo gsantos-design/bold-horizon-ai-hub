@@ -730,11 +730,11 @@ export default function AiAutomationHub() {
                           Transform your Florida and New York lead generation with AI-powered phone calls and personalized video outreach
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
-                          <Button size="lg" className="bg-secondary text-primary px-8">
+                          <Button size="lg" className="bg-primary text-white px-8">
                             <Bot className="h-5 w-5 mr-2" />
                             Deploy AI Automation
                           </Button>
-                          <Button size="lg" variant="outline" className="px-8">
+                          <Button size="lg" className="bg-primary text-white px-8">
                             <Calendar className="h-5 w-5 mr-2" />
                             Schedule Strategy Call
                           </Button>
