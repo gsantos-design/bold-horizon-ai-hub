@@ -32,18 +32,18 @@ export default function LandingHero() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary/5 via-white to-secondary/5 py-20">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Main Hero Content */}
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <Badge className="mb-4 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 text-lg">
+            <Badge className="mb-4 bg-primary text-secondary px-6 py-3 text-lg">
               🏆 {t('hero.badge')}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               {t('hero.title_part1')}
               <br />
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-primary">
                 {t('hero.title_part2')}
               </span>
             </h1>
@@ -53,7 +53,7 @@ export default function LandingHero() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg"
+                className="bg-primary hover:bg-primary/90 text-secondary px-8 py-4 text-lg"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 <Phone className="h-5 w-5 mr-2" />
