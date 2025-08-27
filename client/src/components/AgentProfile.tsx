@@ -132,12 +132,12 @@ export default function AgentProfile() {
                   <img 
                     src={josephImage} 
                     alt="Joseph Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-blue-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Joseph Santiago</h3>
-                <p className="text-blue-600 font-semibold mb-2">{t('team.joseph_title')}</p>
+                <p className="text-primary font-semibold mb-2">{t('team.joseph_title')}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {t('team.joseph_bio_1')}
                   <br/><br/>
@@ -147,15 +147,15 @@ export default function AgentProfile() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-blue-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <Building className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.joseph_skill_1')}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-blue-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <FileText className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.joseph_skill_2')}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-blue-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <Users className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.joseph_skill_3')}</span>
                 </div>
