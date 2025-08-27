@@ -581,19 +581,19 @@ export default function SelfImprovementModule() {
 
           {/* Motivational Call to Action */}
           <div className="mt-12">
-            <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
+            <Card className="bg-primary/5 border-primary/20">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-purple-900 mb-4">
+                <h3 className="text-2xl font-bold text-primary mb-4">
                   Transform Your Reality Through Confidence
                 </h3>
-                <p className="text-purple-700 mb-6 max-w-2xl mx-auto">
+                <p className="text-primary/80 mb-6 max-w-2xl mx-auto">
                   "Confidence bends your reality. It begins to change the filter that you see things through." 
                   Your self-improvement journey starts with recognizing your true potential.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg" 
-                    className="bg-purple-600 hover:bg-purple-700"
+                    className="bg-primary hover:bg-primary/90"
                     onClick={() => window.open('https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D', '_blank')}
                   >
                     Begin Your Transformation
@@ -601,7 +601,7 @@ export default function SelfImprovementModule() {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-purple-600 text-purple-600 hover:bg-purple-50"
+                    className="border-primary text-primary hover:bg-primary/5"
                     onClick={() => window.location.href = 'tel:407-777-1087'}
                   >
                     Speak with Nolly

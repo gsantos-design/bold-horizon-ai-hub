@@ -444,7 +444,7 @@ export default function Events() {
               {...fadeInUp}
               className="text-center mb-16"
             >
-              <Badge className="bg-blue-50 text-blue-600 text-lg px-6 py-3 mb-6 shadow-lg">
+              <Badge className="bg-primary/10 text-primary text-lg px-6 py-3 mb-6 shadow-lg">
                 <Calendar className="w-4 h-4 mr-2" />
                 Upcoming Events
               </Badge>
@@ -475,10 +475,10 @@ export default function Events() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 group border border-blue-100"
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 group border border-primary/20"
                 >
                   {/* Header with gradient */}
-                  <div className="bg-gradient-to-r from-primary to-blue-600 p-6 text-white relative overflow-hidden">
+                  <div className="bg-primary p-6 text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
                     <div className="relative z-10">
@@ -542,7 +542,7 @@ export default function Events() {
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.6 }}
-              className="mt-16 text-center bg-gradient-to-r from-primary to-blue-600 rounded-3xl p-12 text-white"
+              className="mt-16 text-center bg-primary rounded-3xl p-12 text-white"
             >
               <h3 className="text-3xl font-bold mb-4">Ready to Break Barriers?</h3>
               <p className="text-xl mb-8 opacity-90">

@@ -954,7 +954,7 @@ Best,
             <img 
               src={nollyImage} 
               alt="Nolly Santiago" 
-              className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
+              className="w-16 h-16 rounded-full object-cover border-2 border-primary/20"
             />
             <img 
               src={pabloImage} 
@@ -995,7 +995,7 @@ Best,
       </div>
 
       {/* Fast-Track Plan Progress */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-8 border border-blue-200">
+      <div className="bg-primary/5 rounded-xl p-6 mb-8 border border-primary/20">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">🚀 Fast-Track Santiago Lead Engine Plan</h2>
@@ -1024,10 +1024,10 @@ Best,
             <div className="text-sm text-gray-600">Data Pull &amp; AI Scoring</div>
           </div>
           
-          <div className="bg-white rounded-lg p-4 border border-purple-200">
+          <div className="bg-white rounded-lg p-4 border border-primary/20">
             <div className="flex items-center gap-2 mb-2">
-              <MessageSquare className="h-5 w-5 text-purple-600" />
-              <span className="font-semibold text-purple-900">Day 3</span>
+              <MessageSquare className="h-5 w-5 text-primary" />
+              <span className="font-semibold text-primary">Day 3</span>
             </div>
             <div className="text-sm text-gray-600">Outreach System Live</div>
           </div>
@@ -1117,7 +1117,7 @@ Best,
                 <Calendar className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-purple-600">{groupedLeads.meeting_booked?.length || 0}</div>
+                <div className="text-2xl font-bold text-primary">{groupedLeads.meeting_booked?.length || 0}</div>
                 <p className="text-xs text-muted-foreground">This week: +3</p>
               </CardContent>
             </Card>
@@ -1138,7 +1138,7 @@ Best,
                   </div>
                 </Button>
                 
-                <Button className="h-auto p-4 flex flex-col items-start bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200">
+                <Button className="h-auto p-4 flex flex-col items-start bg-primary/5 hover:bg-primary/10 text-primary border border-primary/20">
                   <Play className="h-5 w-5 mb-2" />
                   <div className="text-left">
                     <div className="font-semibold">Start Outreach Campaign</div>
@@ -1224,7 +1224,7 @@ Best,
                 
                 {/* Estimated Results */}
                 <div className="space-y-4">
-                  <div className="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+                  <div className="p-4 bg-primary/5 rounded-lg border border-green-200">
                     <h4 className="font-semibold text-green-900 mb-2">Estimated Deal Value</h4>
                     <div className="text-2xl font-bold text-green-700">$15,000 - $45,000</div>
                     <div className="text-sm text-green-600 mt-1">Annual premium potential</div>
@@ -1236,15 +1236,15 @@ Best,
                     <div className="text-sm text-yellow-600 mt-1">First year commission (15% avg)</div>
                   </div>
                   
-                  <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                    <h4 className="font-semibold text-purple-900 mb-2">Success Probability</h4>
+                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                    <h4 className="font-semibold text-primary mb-2">Success Probability</h4>
                     <div className="flex items-center gap-2">
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-purple-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                        <div className="bg-primary h-2 rounded-full" style={{ width: '75%' }}></div>
                       </div>
-                      <span className="text-purple-700 font-medium">75%</span>
+                      <span className="text-primary font-medium">75%</span>
                     </div>
-                    <div className="text-sm text-purple-600 mt-1">Based on Santiago team historical data</div>
+                    <div className="text-sm text-primary mt-1">Based on Santiago team historical data</div>
                   </div>
                   
                   <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -1464,7 +1464,7 @@ Best,
                     <div className="p-3 bg-white rounded border border-blue-200">
                       <div className="flex items-center justify-between mb-2">
                         <div className="font-medium text-gray-900">Retirement Seminar Attendees</div>
-                        <Badge className="bg-purple-100 text-purple-800">Qualified Leads</Badge>
+                        <Badge className="bg-primary/10 text-primary">Qualified Leads</Badge>
                       </div>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Local chamber retirement workshops</li>
@@ -1480,7 +1480,7 @@ Best,
               <div className="mt-6 pt-6 border-t border-blue-200">
                 <h4 className="font-semibold mb-3 text-blue-900">💰 Tax-Free Account Advantages</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg border border-blue-300">
+                  <div className="p-4 bg-primary/10 rounded-lg border border-blue-300">
                     <div className="font-semibold text-blue-900 mb-2">Indexed Universal Life (IUL)</div>
                     <ul className="text-sm text-blue-800 space-y-1">
                       <li>• Tax-free growth potential</li>
@@ -1490,7 +1490,7 @@ Best,
                     </ul>
                   </div>
                   
-                  <div className="p-4 bg-gradient-to-br from-green-100 to-emerald-100 rounded-lg border border-green-300">
+                  <div className="p-4 bg-primary/5 rounded-lg border border-green-300">
                     <div className="font-semibold text-green-900 mb-2">Fixed Annuities</div>
                     <ul className="text-sm text-green-800 space-y-1">
                       <li>• Guaranteed income stream</li>
@@ -1500,9 +1500,9 @@ Best,
                     </ul>
                   </div>
                   
-                  <div className="p-4 bg-gradient-to-br from-purple-100 to-violet-100 rounded-lg border border-purple-300">
-                    <div className="font-semibold text-purple-900 mb-2">Strategic Investments</div>
-                    <ul className="text-sm text-purple-800 space-y-1">
+                  <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
+                    <div className="font-semibold text-primary mb-2">Strategic Investments</div>
+                    <ul className="text-sm text-primary space-y-1">
                       <li>• Roth IRA conversions</li>
                       <li>• Municipal bonds</li>
                       <li>• Tax-managed portfolios</li>
@@ -1532,7 +1532,7 @@ Best,
                     </div>
                   </Button>
                   
-                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-primary/10 hover:bg-purple-200 text-primary border border-primary/30">
                     <MessageSquare className="h-5 w-5 mb-2" />
                     <div className="text-left">
                       <div className="font-semibold">Tax Strategy Content</div>
@@ -1556,8 +1556,8 @@ Best,
                       <div className="text-green-600">Qualified rollover leads</div>
                     </div>
                     <div>
-                      <div className="font-bold text-purple-700">12-20</div>
-                      <div className="text-purple-600">Tax strategy consultations</div>
+                      <div className="font-bold text-primary">12-20</div>
+                      <div className="text-primary">Tax strategy consultations</div>
                     </div>
                     <div>
                       <div className="font-bold text-orange-700">$2.5M-$8M</div>
@@ -1724,7 +1724,7 @@ Best,
                     </div>
                   </Button>
                   
-                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-primary/10 hover:bg-purple-200 text-primary border border-primary/30">
                     <MessageSquare className="h-5 w-5 mb-2" />
                     <div className="text-left">
                       <div className="font-semibold">Rate Comparison Content</div>
@@ -1752,8 +1752,8 @@ Best,
                       <div className="text-blue-600">High yield account opens</div>
                     </div>
                     <div>
-                      <div className="font-bold text-purple-700">$1.2M-$4.5M</div>
-                      <div className="text-purple-600">Assets under management</div>
+                      <div className="font-bold text-primary">$1.2M-$4.5M</div>
+                      <div className="text-primary">Assets under management</div>
                     </div>
                   </div>
                 </div>
@@ -1893,7 +1893,7 @@ Best,
                   </Button>
                 </div>
                 
-                <div className="mt-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+                <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-green-200">
                   <div className="flex items-center gap-2 mb-2">
                     <TrendingUp className="h-5 w-5 text-green-600" />
                     <span className="font-semibold text-green-900">Expected Results (30 Days)</span>
@@ -1908,8 +1908,8 @@ Best,
                       <div className="text-blue-600">Qualified responses</div>
                     </div>
                     <div>
-                      <div className="font-bold text-purple-700">12-18</div>
-                      <div className="text-purple-600">High-probability meetings</div>
+                      <div className="font-bold text-primary">12-18</div>
+                      <div className="text-primary">High-probability meetings</div>
                     </div>
                   </div>
                 </div>
@@ -2207,23 +2207,23 @@ Best,
                     </div>
 
                     {/* Territory-Specific Data */}
-                    <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                    <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
                       <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="h-4 w-4 text-purple-600" />
-                        <span className="font-semibold text-purple-900">Territory Performance</span>
+                        <MapPin className="h-4 w-4 text-primary" />
+                        <span className="font-semibold text-primary">Territory Performance</span>
                       </div>
                       <div className="grid grid-cols-2 gap-3 text-sm">
                         <div>
-                          <div className="font-medium text-purple-800">Florida Markets</div>
-                          <div className="text-purple-700">
+                          <div className="font-medium text-primary">Florida Markets</div>
+                          <div className="text-primary">
                             • Miami-Dade: 89% success rate<br/>
                             • Orlando: 85% success rate<br/>
                             • Tampa: 82% success rate
                           </div>
                         </div>
                         <div>
-                          <div className="font-medium text-purple-800">New York Markets</div>
-                          <div className="text-purple-700">
+                          <div className="font-medium text-primary">New York Markets</div>
+                          <div className="text-primary">
                             • Manhattan: 91% success rate<br/>
                             • Brooklyn: 87% success rate<br/>
                             • Long Island: 83% success rate
@@ -2255,7 +2255,7 @@ Best,
                     </div>
                   </Button>
                   
-                  <Button className="h-auto p-4 flex flex-col items-start bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300">
+                  <Button className="h-auto p-4 flex flex-col items-start bg-primary/10 hover:bg-purple-200 text-primary border border-primary/30">
                     <TrendingUp className="h-5 w-5 mb-2" />
                     <div className="text-left">
                       <div className="font-semibold">Scale Top Markets</div>
