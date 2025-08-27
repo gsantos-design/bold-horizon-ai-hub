@@ -7,8 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-// Import the event flyer image - using the latest correct image provided by user
+// Import the event flyer images
 import wealthWorkshopFlyer from '@assets/IMG_0412_1754924705272.jpeg';
+import grandOpeningFlyer from '@assets/grand-opening-2025.png';
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
@@ -49,6 +50,25 @@ export default function Events() {
     additionalInfo: 'Come Wine with us and Stay for the Transformation.',
     image: wealthWorkshopFlyer
   };
+
+  // Past Events
+  const pastEvents = [
+    {
+      id: 'bold-horizons-grand-opening',
+      title: 'Bold Horizons Financial Grand Opening',
+      date: 'Saturday, June 28, 2025',
+      time: '4:30 PM',
+      location: '235 N Westmonte Dr, Altamonte Springs, FL 32714',
+      type: 'Grand Opening Celebration',
+      status: 'Past Event',
+      description: 'The official grand opening celebration of Bold Horizons Financial - marking a new chapter in financial empowerment for families nationwide.',
+      rsvpDeadline: 'June 20, 2025',
+      phone: '407-777-1087',
+      image: grandOpeningFlyer,
+      success: true,
+      attendees: '100+ financial professionals and community leaders'
+    }
+  ];
 
   // Only show real events - upcoming events will be added when they are actually scheduled
 
@@ -320,6 +340,97 @@ export default function Events() {
                   </p>
                 </motion.div>
               </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Past Events Section */}
+        <motion.section 
+          {...fadeInUp}
+          className="py-20 bg-gray-50"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              {...fadeInUp}
+              className="text-center mb-16"
+            >
+              <Badge className="bg-primary/10 text-primary text-lg px-4 py-2 mb-6">
+                <Award className="w-4 h-4 mr-2" />
+                Past Events
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Successful Events
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Take a look at some of our previous events where we brought together
+                financial professionals and community members for education and growth.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {pastEvents.map((event, index) => (
+                <motion.div
+                  key={event.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 group"
+                >
+                  <div className="relative">
+                    <img 
+                      src={event.image} 
+                      alt={`${event.title} event flyer`}
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-green-500 text-white">
+                        <CheckCircle className="w-4 h-4 mr-2" />
+                        {event.status}
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {event.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {event.description}
+                    </p>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                      <div className="flex items-center text-gray-700">
+                        <Calendar className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.date}</span>
+                      </div>
+                      <div className="flex items-center text-gray-700">
+                        <Clock className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.time}</span>
+                      </div>
+                      <div className="flex items-center text-gray-700 sm:col-span-2">
+                        <MapPin className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.location}</span>
+                      </div>
+                      <div className="flex items-center text-gray-700 sm:col-span-2">
+                        <Users className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.attendees}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-green-50 p-4 rounded-xl border border-green-200">
+                      <div className="flex items-center">
+                        <div className="p-2 bg-green-500 rounded-lg mr-3">
+                          <CheckCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <p className="text-green-800 font-semibold">Event Completed Successfully!</p>
+                          <p className="text-green-600 text-sm">Thank you to everyone who attended.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.section>
