@@ -58,6 +58,17 @@
     @apply border-border;
   }
   
+  /* Custom text selection to match navy theme */
+  ::selection {
+    background: hsl(215, 100%, 12%); /* Navy blue background */
+    color: white; /* White text */
+  }
+  
+  ::-moz-selection {
+    background: hsl(215, 100%, 12%); /* Navy blue background for Firefox */
+    color: white; /* White text */
+  }
+  
   html, body {
     @apply bg-white text-foreground font-body;
     min-height: 100%;
