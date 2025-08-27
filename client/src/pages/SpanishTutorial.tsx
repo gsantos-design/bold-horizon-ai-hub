@@ -96,11 +96,11 @@ export default function SpanishTutorial() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-16">
+      <section className="bg-primary text-white py-16">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-4xl mx-auto"
@@ -113,7 +113,7 @@ export default function SpanishTutorial() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {t('tutorial.main_title')}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-white">
               {t('tutorial.main_subtitle')}
             </p>
             
@@ -129,7 +129,7 @@ export default function SpanishTutorial() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-purple-50"
+                className="bg-white text-primary hover:bg-gray-100"
                 onClick={() => setActiveSection('introduction')}
               >
                 <PlayCircle className="w-5 w-5 mr-2" />
@@ -188,13 +188,13 @@ export default function SpanishTutorial() {
                 {tutorialSections.map((section) => (
                   <TabsContent key={section.id} value={section.id}>
                     <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
-                      <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                      <CardHeader className="bg-primary text-white">
                         <div className="flex items-center justify-between">
                           <div>
                             <CardTitle className="text-2xl mb-2">
                               {t(section.titleKey)}
                             </CardTitle>
-                            <p className="text-purple-100">
+                            <p className="text-white">
                               {t(section.descriptionKey)}
                             </p>
                           </div>
@@ -213,7 +213,7 @@ export default function SpanishTutorial() {
                               className={`border rounded-lg p-6 cursor-pointer transition-all ${
                                 completedLessons.includes(lessonKey) 
                                   ? 'border-green-500 bg-green-50' 
-                                  : 'border-gray-200 hover:border-purple-300 hover:bg-purple-50'
+                                  : 'border-gray-200 hover:border-primary hover:bg-primary/5'
                               }`}
                               onClick={() => handleLessonComplete(lessonKey)}
                               initial={{ opacity: 0, x: -20 }}
@@ -225,7 +225,7 @@ export default function SpanishTutorial() {
                                   <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                                     completedLessons.includes(lessonKey)
                                       ? 'bg-green-500 text-white'
-                                      : 'bg-purple-100 text-purple-600'
+                                      : 'bg-primary/10 text-primary'
                                   }`}>
                                     {completedLessons.includes(lessonKey) ? (
                                       <CheckCircle2 className="w-5 h-5" />
@@ -252,7 +252,7 @@ export default function SpanishTutorial() {
                                   </div>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                  <Video className="w-5 h-5 text-purple-600" />
+                                  <Video className="w-5 h-5 text-primary" />
                                   <span className="text-sm text-gray-500">5-10 min</span>
                                 </div>
                               </div>
@@ -263,7 +263,7 @@ export default function SpanishTutorial() {
                         {/* Section Action Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-6 border-t">
                           <Button 
-                            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                            className="bg-primary hover:bg-primary/90"
                             onClick={() => {
                               section.lessons.forEach(lesson => handleLessonComplete(lesson));
                             }}
@@ -318,7 +318,7 @@ export default function SpanishTutorial() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Card className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white border-0">
+              <Card className="bg-primary text-white border-0">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">
                     {t('tutorial.ready_to_start')}
@@ -359,7 +359,7 @@ export default function SpanishTutorial() {
               <Card className="text-center bg-white/80 backdrop-blur-sm border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-center mb-4">
-                    <Users className="w-8 h-8 text-blue-600" />
+                    <Users className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">500+</h4>
                   <p className="text-gray-600">{t('tutorial.families_helped')}</p>
@@ -369,7 +369,7 @@ export default function SpanishTutorial() {
               <Card className="text-center bg-white/80 backdrop-blur-sm border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-center mb-4">
-                    <Target className="w-8 h-8 text-purple-600" />
+                    <Target className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">95%</h4>
                   <p className="text-gray-600">{t('tutorial.success_rate')}</p>
