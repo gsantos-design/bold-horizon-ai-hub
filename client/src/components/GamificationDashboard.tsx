@@ -108,10 +108,10 @@ export default function GamificationDashboard() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-200">
+    <div className="bg-white rounded-xl p-6 border border-gray-200">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <Trophy className="h-8 w-8 text-yellow-600" />
+          <Trophy className="h-8 w-8 text-accent" />
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Your Journey Progress</h2>
             <p className="text-gray-600">Track your growth with the Santiago Team</p>
@@ -119,7 +119,7 @@ export default function GamificationDashboard() {
         </div>
         
         <div className="text-right">
-          <div className="text-3xl font-bold text-purple-600">Level {progress.level}</div>
+          <div className="text-3xl font-bold text-accent">Level {progress.level}</div>
           <div className="text-sm text-gray-600">{progress.totalPoints} points</div>
         </div>
       </div>
@@ -136,25 +136,25 @@ export default function GamificationDashboard() {
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-lg p-4 text-center">
-          <Flame className="h-6 w-6 text-orange-500 mx-auto mb-2" />
+          <Flame className="h-6 w-6 text-primary mx-auto mb-2" />
           <div className="text-2xl font-bold text-gray-900">{progress.dailyLoginStreak}</div>
           <div className="text-sm text-gray-600">Day Streak</div>
         </div>
         
         <div className="bg-white rounded-lg p-4 text-center">
-          <Target className="h-6 w-6 text-green-500 mx-auto mb-2" />
+          <Target className="h-6 w-6 text-primary mx-auto mb-2" />
           <div className="text-2xl font-bold text-gray-900">{unlockedAchievements.length}</div>
           <div className="text-sm text-gray-600">Achievements</div>
         </div>
         
         <div className="bg-white rounded-lg p-4 text-center">
-          <Users className="h-6 w-6 text-blue-500 mx-auto mb-2" />
+          <Users className="h-6 w-6 text-primary mx-auto mb-2" />
           <div className="text-2xl font-bold text-gray-900">{progress.referralCount}</div>
           <div className="text-sm text-gray-600">Referrals</div>
         </div>
         
         <div className="bg-white rounded-lg p-4 text-center">
-          <Calendar className="h-6 w-6 text-purple-500 mx-auto mb-2" />
+          <Calendar className="h-6 w-6 text-primary mx-auto mb-2" />
           <div className="text-2xl font-bold text-gray-900">{progress.activeChallenges.length}</div>
           <div className="text-sm text-gray-600">Active Challenges</div>
         </div>
@@ -181,7 +181,7 @@ export default function GamificationDashboard() {
             {/* Unlocked Achievements */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700">
+                <CardTitle className="flex items-center gap-2 text-primary">
                   <Trophy className="h-5 w-5" />
                   Unlocked ({unlockedAchievements.length})
                 </CardTitle>
@@ -193,13 +193,13 @@ export default function GamificationDashboard() {
                   </p>
                 ) : (
                   unlockedAchievements.map((achievement) => (
-                    <div key={achievement.id} className="flex items-center gap-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div key={achievement.id} className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg border border-primary/20">
                       <div className="text-2xl">{achievement.icon}</div>
                       <div className="flex-1">
-                        <div className="font-semibold text-green-900">{achievement.title}</div>
-                        <div className="text-sm text-green-700">{achievement.description}</div>
+                        <div className="font-semibold text-primary">{achievement.title}</div>
+                        <div className="text-sm text-gray-700">{achievement.description}</div>
                       </div>
-                      <Badge className="bg-green-100 text-green-800">
+                      <Badge className="bg-primary/10 text-primary">
                         {getCategoryIcon(achievement.category)}
                       </Badge>
                     </div>
@@ -239,20 +239,20 @@ export default function GamificationDashboard() {
           {progress.activeChallenges.length > 0 && (
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-blue-700">
+                <CardTitle className="flex items-center gap-2 text-primary">
                   <Zap className="h-5 w-5" />
                   Your Active Challenges
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {progress.activeChallenges.map((challenge) => (
-                  <div key={challenge.id} className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div key={challenge.id} className="p-4 bg-primary/5 rounded-lg border border-primary/20">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h4 className="font-semibold text-blue-900">{challenge.title}</h4>
-                        <p className="text-sm text-blue-700">{challenge.description}</p>
+                        <h4 className="font-semibold text-primary">{challenge.title}</h4>
+                        <p className="text-sm text-gray-700">{challenge.description}</p>
                       </div>
-                      <Badge className="bg-blue-100 text-blue-800">
+                      <Badge className="bg-primary/10 text-primary">
                         {Math.ceil((challenge.endDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))} days left
                       </Badge>
                     </div>
@@ -366,13 +366,13 @@ export default function GamificationDashboard() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Heart className="h-5 w-5 text-red-500" />
+                  <Heart className="h-5 w-5 text-accent" />
                   Grow the Santiago Team
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">
+                <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="text-2xl font-bold text-accent mb-1">
                     Level {progress.referralLevel} Referrer
                   </div>
                   <div className="text-sm text-gray-600 mb-3">
@@ -395,7 +395,7 @@ export default function GamificationDashboard() {
                 
                 <div className="pt-4 border-t">
                   <Button 
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                    className="w-full bg-primary text-white hover:bg-primary/90"
                     onClick={() => {
                       addReferral();
                       // In a real app, this would open a sharing dialog or copy referral link
