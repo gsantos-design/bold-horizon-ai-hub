@@ -20,7 +20,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly
-import newTeamPhoto from '@assets/8357223228604543892_1754857339707.jpeg';
+import newTeamPhoto from '@assets/IMG_2259_1756309198291.jpeg';
 
 export default function LandingHero() {
   const { t } = useLanguage();
