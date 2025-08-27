@@ -4,31 +4,31 @@
 
 :root {
   --background: 0 0% 100%; /* Clean white background */
-  --foreground: 213 84% 16%; /* Navy blue text */
+  --foreground: 215 100% 12%; /* Deep navy blue text */
   --muted: 210 40% 96.1%;
   --muted-foreground: 213 16.3% 46.9%;
   --popover: 0 0% 100%;
-  --popover-foreground: 213 84% 16%;
+  --popover-foreground: 215 100% 12%;
   --card: 0 0% 100%;
-  --card-foreground: 213 84% 16%;
+  --card-foreground: 215 100% 12%;
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --primary: 213 84% 16%; /* Navy Blue #1e3a8a */
-  --primary-foreground: 0 0% 100%; /* Pure white text */
-  --secondary: 36 100% 50%; /* Gold #d97706 */
-  --secondary-foreground: 0 0% 100%; /* White text on gold */
-  --accent: 36 100% 50%; /* Gold accent */
-  --accent-foreground: 0 0% 100%; /* White text on gold */
+  --primary: 215 100% 12%; /* Deep Navy Blue (like the starry background) */
+  --primary-foreground: 43 100% 65%; /* Elegant Gold text on navy */
+  --secondary: 43 100% 65%; /* Elegant Gold #fbbf24 */
+  --secondary-foreground: 215 100% 12%; /* Navy text on gold */
+  --accent: 43 100% 65%; /* Gold accent */
+  --accent-foreground: 215 100% 12%; /* Navy text on gold */
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
-  --ring: 213 84% 16%; /* Navy blue ring */
+  --ring: 215 100% 12%; /* Deep navy blue ring */
   --radius: 0.5rem;
   
-  --chart-1: 213 84% 16%; /* Navy blue */
-  --chart-2: 36 100% 50%; /* Gold */
-  --chart-3: 213 84% 26%; /* Lighter navy */
-  --chart-4: 36 100% 60%; /* Lighter gold */
-  --chart-5: 213 84% 36%; /* Even lighter navy */
+  --chart-1: 215 100% 12%; /* Deep navy blue */
+  --chart-2: 43 100% 65%; /* Elegant gold */
+  --chart-3: 215 100% 18%; /* Lighter navy */
+  --chart-4: 43 100% 75%; /* Lighter gold */
+  --chart-5: 215 100% 25%; /* Even lighter navy */
 }
 
 .dark {
