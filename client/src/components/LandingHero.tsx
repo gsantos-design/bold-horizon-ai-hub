@@ -37,7 +37,7 @@ export default function LandingHero() {
         <div className="max-w-6xl mx-auto">
           {/* Main Hero Content */}
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <Badge className="mb-4 bg-primary text-secondary px-6 py-3 text-lg">
+            <Badge className="mb-4 bg-primary text-white px-6 py-3 text-lg">
               🏆 {t('hero.badge')}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">

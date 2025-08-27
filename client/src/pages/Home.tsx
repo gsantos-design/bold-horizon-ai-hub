@@ -74,7 +74,7 @@ export default function Home() {
                 content={t('tooltip.ai_mentor_content')}
                 title={t('tooltip.ai_powered_guidance')}
               >
-                <Badge className="mb-4 bg-secondary text-primary px-4 py-2 cursor-help">
+                <Badge className="mb-4 bg-primary text-white px-4 py-2 cursor-help">
                   🤖 {t('home.ai_mentor_badge')}
                 </Badge>
               </AITooltip>
