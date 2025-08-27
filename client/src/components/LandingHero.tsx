@@ -211,7 +211,7 @@ export default function LandingHero() {
                       <div className="text-sm text-gray-600">{t('team.families_served')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-secondary mb-1">75+</div>
+                      <div className="text-3xl font-bold text-primary mb-1">75+</div>
                       <div className="text-sm text-gray-600">{t('team.years_experience')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
@@ -219,7 +219,7 @@ export default function LandingHero() {
                       <div className="text-sm text-gray-600">{t('team.financial_plans')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-secondary mb-1">100%</div>
+                      <div className="text-3xl font-bold text-primary mb-1">100%</div>
                       <div className="text-sm text-gray-600">{t('team.family_commitment')}</div>
                     </div>
                   </div>
