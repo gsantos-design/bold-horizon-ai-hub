@@ -70,7 +70,51 @@ export default function Events() {
     }
   ];
 
-  // Only show real events - upcoming events will be added when they are actually scheduled
+  // Upcoming Events - WFG Breaking Barriers Convention Series
+  const upcomingEvents = [
+    {
+      id: 'breaking-barriers-atlanta',
+      title: 'Breaking Barriers Convention - Atlanta',
+      date: 'October 9-11, 2025',
+      time: 'Multi-Day Event',
+      location: 'Atlanta, Georgia',
+      type: 'WFG National Convention',
+      status: 'Upcoming Event',
+      description: 'Join thousands of WFG associates and leaders from across the nation for the Breaking Barriers Convention in Atlanta. Three days of intensive training, networking, and inspiration.',
+      highlights: [
+        'Top WFG leaders sharing success strategies',
+        'Advanced financial planning techniques',
+        'Team building and leadership workshops',
+        'Networking with top performers nationwide',
+        'Recognition ceremonies and awards',
+        'New product launches and announcements'
+      ],
+      registrationInfo: 'Contact Santiago Team for registration details',
+      phone: '407-777-1087',
+      promo: 'Featured in WFG promotional video series'
+    },
+    {
+      id: 'breaking-barriers-seattle',
+      title: 'Breaking Barriers Convention - Seattle',
+      date: 'October 16-18, 2025',
+      time: 'Multi-Day Event',
+      location: 'Seattle, Washington',
+      type: 'WFG National Convention',
+      status: 'Upcoming Event',
+      description: 'The West Coast edition of the Breaking Barriers Convention series. Experience three days of transformational training and professional development in beautiful Seattle.',
+      highlights: [
+        'West Coast regional success stories',
+        'Advanced sales and recruitment strategies',
+        'Digital marketing and social media training',
+        'Family financial planning workshops',
+        'Leadership development sessions',
+        'Pacific Northwest team networking'
+      ],
+      registrationInfo: 'Contact Santiago Team for registration details',
+      phone: '407-777-1087',
+      promo: 'Featured in WFG promotional video series'
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -341,6 +385,143 @@ export default function Events() {
                 </motion.div>
               </motion.div>
             </div>
+          </div>
+        </motion.section>
+
+        {/* Upcoming Events Section - WFG Breaking Barriers Convention */}
+        <motion.section 
+          {...fadeInUp}
+          className="py-20 bg-white"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              {...fadeInUp}
+              className="text-center mb-16"
+            >
+              <Badge className="bg-blue-50 text-blue-600 text-lg px-6 py-3 mb-6 shadow-lg">
+                <Calendar className="w-4 h-4 mr-2" />
+                Upcoming Events
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Breaking Barriers Convention Series
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+                Join thousands of WFG professionals nationwide for the most anticipated events of 2025. 
+                Three days of intensive training, networking, and breakthrough strategies.
+              </p>
+              
+              {/* YouTube Promo Badge */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center bg-red-50 text-red-600 px-6 py-3 rounded-full border border-red-200 mb-8"
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                <span className="font-medium">Featured in Official WFG Promo Video</span>
+              </motion.div>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {upcomingEvents.map((event, index) => (
+                <motion.div
+                  key={event.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 group border border-blue-100"
+                >
+                  {/* Header with gradient */}
+                  <div className="bg-gradient-to-r from-primary to-blue-600 p-6 text-white relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                    <div className="relative z-10">
+                      <Badge className="bg-white/20 text-white border-white/30 mb-3">
+                        <Globe className="w-4 h-4 mr-2" />
+                        {event.status}
+                      </Badge>
+                      <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
+                      <p className="text-blue-100">{event.type}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="p-8">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                      {event.description}
+                    </p>
+                    
+                    {/* Event Details */}
+                    <div className="grid grid-cols-1 gap-4 mb-6">
+                      <div className="flex items-center text-gray-700">
+                        <Calendar className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.date}</span>
+                      </div>
+                      <div className="flex items-center text-gray-700">
+                        <MapPin className="w-5 h-5 mr-3 text-primary" />
+                        <span className="font-medium">{event.location}</span>
+                      </div>
+                    </div>
+
+                    {/* Highlights */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <Star className="w-4 h-4 mr-2 text-yellow-500" />
+                        Convention Highlights
+                      </h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {event.highlights.slice(0, 4).map((highlight, i) => (
+                          <div key={i} className="flex items-start">
+                            <CheckCircle className="w-4 h-4 mt-0.5 mr-2 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-600 text-sm">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Registration Button */}
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-2xl font-bold text-lg group transition-all duration-300"
+                      onClick={() => window.location.href = 'tel:407-777-1087'}
+                    >
+                      <Phone className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+                      Register Now - (407) 777-1087
+                      <Sparkles className="w-4 h-4 ml-2 opacity-75" />
+                    </Button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Call to Action for Registration */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.6 }}
+              className="mt-16 text-center bg-gradient-to-r from-primary to-blue-600 rounded-3xl p-12 text-white"
+            >
+              <h3 className="text-3xl font-bold mb-4">Ready to Break Barriers?</h3>
+              <p className="text-xl mb-8 opacity-90">
+                Don't miss these transformational events. Secure your spot with the Santiago Team today!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 rounded-full shadow-lg"
+                  onClick={() => window.location.href = 'tel:407-777-1087'}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call (407) 777-1087
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 rounded-full backdrop-blur-sm"
+                  onClick={() => window.open('https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D', '_blank')}
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Join Santiago Team
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </motion.section>
 
