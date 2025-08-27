@@ -27,7 +27,7 @@ export default function Empower360() {
       subtitle: "Multiply Your Income Through Systems",
       description: "Stop thinking about growing your income. Start multiplying it through system-driven approaches that can 5x to 10x your earnings.",
       icon: <TrendingUp className="h-8 w-8" />,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-primary to-primary",
       features: [
         "Income Multiplier Calculator",
         "System vs Skill-Based Learning",
@@ -41,7 +41,7 @@ export default function Empower360() {
       subtitle: "Master How Money Really Works",
       description: "Learn the three rules of money: compound interest, growth strategies, and tax optimization. Build wealth systematically.",
       icon: <GraduationCap className="h-8 w-8" />,
-      color: "from-green-500 to-emerald-500",
+      color: "from-primary to-primary",
       features: [
         "Budget vs Priority Savings Simulator",
         "Compound Interest Calculator",
@@ -55,7 +55,7 @@ export default function Empower360() {
       subtitle: "Build Confidence That Bends Reality",
       description: "Discover your life lens and learn to operate from imagination and dreams rather than history and memory.",
       icon: <Target className="h-8 w-8" />,
-      color: "from-purple-500 to-pink-500",
+      color: "from-primary to-primary",
       features: [
         "Lens of Life Assessment Quiz",
         "Confidence Building Exercises",
