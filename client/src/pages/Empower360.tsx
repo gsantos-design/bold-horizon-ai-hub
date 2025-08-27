@@ -66,24 +66,24 @@ export default function Empower360() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-primary">
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <div className="mb-8">
-            <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
+            <Badge className="mb-4 bg-primary text-white px-6 py-2">
               Led by Pablo & Nolly Santiago
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-accent mb-6">
               Empower360
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-4xl mx-auto">
               Experience the <strong>New Art of Living</strong> through Pablo and Nolly Santiago's proven three-pillar system: 
               Multi-Handed Income, Financial Education, and Self-Improvement
             </p>
             
             {/* Leadership Introduction */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 max-w-6xl mx-auto mb-8 border border-purple-200">
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl p-8 max-w-6xl mx-auto mb-8 border border-primary/20">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Your Leaders</h3>
                 <p className="text-gray-600 text-lg">The driving force behind The Santiago Team's proven system</p>
@@ -101,7 +101,7 @@ export default function Empower360() {
                     <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-blue-400/20"></div>
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h4>
-                  <p className="text-purple-600 font-semibold mb-4">Marketing Director – World Financial Group</p>
+                  <p className="text-primary font-semibold mb-4">Marketing Director – World Financial Group</p>
                   <p className="text-gray-700 leading-relaxed">
                     With 20+ years in telecommunications, Nolly discovered WFG after losing both parents too early 
                     and realizing they never had financial education. Her mission: ensure every family has the knowledge 
@@ -120,7 +120,7 @@ export default function Empower360() {
                     <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h4>
-                  <p className="text-blue-600 font-semibold mb-4">Senior Associate – World Financial Group</p>
+                  <p className="text-primary font-semibold mb-4">Senior Associate – World Financial Group</p>
                   <p className="text-gray-700 leading-relaxed">
                     30+ years of law enforcement experience drives Pablo's commitment to protecting first responders 
                     and their families through financial education. His dedication to "protecting the protectors" 
@@ -130,7 +130,7 @@ export default function Empower360() {
               </div>
               
               {/* Combined Achievement */}
-              <div className="mt-8 text-center p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
+              <div className="mt-8 text-center p-6 bg-primary/5 rounded-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
                   Together, <strong>Pablo and Nolly Santiago</strong> have built a legacy of empowering families to achieve financial 
                   freedom through systematic approaches to wealth building, education, and personal growth. Their proven 
@@ -175,14 +175,13 @@ export default function Empower360() {
               Ready to transform your financial future? Start your journey below.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
                 <PlayCircle className="h-5 w-5 mr-2" />
                 Begin Your Journey
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="border-purple-600 text-purple-600 hover:bg-purple-50"
+                className="bg-primary hover:bg-primary/90 text-white"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 Speak with Nolly
@@ -198,10 +197,10 @@ export default function Empower360() {
       </section>
 
       {/* Team Showcase Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
+            <Badge className="mb-4 bg-primary text-white px-6 py-2">
               🏆 Award-Winning Team
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -215,8 +214,8 @@ export default function Empower360() {
 
           {/* Santiago Family Team Showcase */}
           <div className="mb-16">
-            <Card className="overflow-hidden max-w-5xl mx-auto bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
+            <Card className="overflow-hidden max-w-5xl mx-auto bg-white border-2 border-primary/20">
+              <CardHeader className="bg-primary text-white text-center">
                 <CardTitle className="text-2xl">The Santiago Family Team</CardTitle>
                 <p className="text-blue-100 mt-2">Three generations of excellence serving Florida and New York families</p>
               </CardHeader>
@@ -344,7 +343,7 @@ export default function Empower360() {
 
             {/* Team Achievement Banner */}
             <div className="mt-12 text-center">
-              <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              <Card className="bg-primary text-white">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">Why Choose The Santiago Team?</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -380,24 +379,24 @@ export default function Empower360() {
         <div className="container mx-auto px-4">
           <Tabs defaultValue="multi-handed-income" className="max-w-7xl mx-auto">
             <div className="flex justify-center mb-8">
-              <TabsList className="grid w-full max-w-3xl grid-cols-3 h-auto p-2 bg-white/80 backdrop-blur-sm">
+              <TabsList className="grid w-full max-w-3xl grid-cols-3 h-auto p-2 bg-white/95 backdrop-blur-sm">
                 <TabsTrigger 
                   value="multi-handed-income" 
-                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white"
+                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-primary data-[state=active]:text-white"
                 >
                   <TrendingUp className="h-5 w-5" />
                   <span className="text-xs md:text-sm font-medium">Multi-Handed Income</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="financial-education"
-                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-green-500 data-[state=active]:to-emerald-500 data-[state=active]:text-white"
+                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-primary data-[state=active]:text-white"
                 >
                   <GraduationCap className="h-5 w-5" />
                   <span className="text-xs md:text-sm font-medium">Financial Education</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="self-improvement"
-                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white"
+                  className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-primary data-[state=active]:text-white"
                 >
                   <Brain className="h-5 w-5" />
                   <span className="text-xs md:text-sm font-medium">Self-Improvement</span>
@@ -421,7 +420,7 @@ export default function Empower360() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -434,7 +433,7 @@ export default function Empower360() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 font-semibold"
+                className="bg-accent hover:bg-accent/90 text-primary font-semibold"
                 onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
@@ -442,8 +441,7 @@ export default function Empower360() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-600 font-semibold"
+                className="bg-accent hover:bg-accent/90 text-primary font-semibold"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 Schedule a Call with Nolly

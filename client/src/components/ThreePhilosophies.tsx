@@ -16,7 +16,7 @@ export default function ThreePhilosophies() {
             🎯 Empowering Families
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            The <span className="text-blue-600">Three Philosophies</span><br/>
+            The <span className="text-accent">Three Philosophies</span><br/>
             That Transform Lives
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -59,8 +59,8 @@ export default function ThreePhilosophies() {
         {/* Philosophy 1: Multi-Handed Income */}
         {activePhilosophy === 1 && (
           <div className="max-w-6xl mx-auto">
-            <Card className="mb-8 border-2 border-blue-200 shadow-xl">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+            <Card className="mb-8 border-2 border-primary shadow-xl">
+              <CardHeader className="bg-primary text-white">
                 <CardTitle className="text-2xl md:text-3xl text-center">
                   <Users className="h-8 w-8 inline-block mr-3" />
                   Philosophy #1: Multi-Handed Income
@@ -74,7 +74,7 @@ export default function ThreePhilosophies() {
                     <Card className="border-2 border-gray-200">
                       <CardContent className="p-6 text-center">
                         <h4 className="font-bold text-lg mb-2">Family A</h4>
-                        <p className="text-2xl font-bold text-blue-600">$50K/yr</p>
+                        <p className="text-2xl font-bold text-primary">$50K/yr</p>
                         <div className="mt-4 text-sm text-gray-600">
                           <p className="font-semibold">$1 Million Mortgage Debt</p>
                         </div>
@@ -83,7 +83,7 @@ export default function ThreePhilosophies() {
                     <Card className="border-2 border-gray-200">
                       <CardContent className="p-6 text-center">
                         <h4 className="font-bold text-lg mb-2">Family B</h4>
-                        <p className="text-2xl font-bold text-blue-600">$100K/yr</p>
+                        <p className="text-2xl font-bold text-primary">$100K/yr</p>
                         <div className="mt-4 text-sm text-gray-600">
                           <p className="font-semibold">$1 Million Mortgage Debt</p>
                         </div>
@@ -92,7 +92,7 @@ export default function ThreePhilosophies() {
                     <Card className="border-2 border-gray-200">
                       <CardContent className="p-6 text-center">
                         <h4 className="font-bold text-lg mb-2">Family C</h4>
-                        <p className="text-2xl font-bold text-blue-600">$500K/yr</p>
+                        <p className="text-2xl font-bold text-primary">$500K/yr</p>
                         <div className="mt-4 text-sm text-gray-600">
                           <p className="font-semibold">$1 Million Mortgage Debt</p>
                         </div>
@@ -141,29 +141,29 @@ export default function ThreePhilosophies() {
                 </div>
 
                 {/* Dreams Section */}
-                <div className="text-center bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-8">
+                <div className="text-center bg-primary/5 rounded-lg p-8">
                   <h4 className="text-2xl font-bold text-gray-900 mb-6">Do You Desire?</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="flex flex-col items-center">
-                      <TrendingUp className="h-8 w-8 text-purple-600 mb-2" />
+                      <TrendingUp className="h-8 w-8 text-primary mb-2" />
                       <p className="font-semibold">5X-10X Your Income</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Star className="h-8 w-8 text-purple-600 mb-2" />
+                      <Star className="h-8 w-8 text-primary mb-2" />
                       <p className="font-semibold">Freedom of Time</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Heart className="h-8 w-8 text-purple-600 mb-2" />
+                      <Heart className="h-8 w-8 text-primary mb-2" />
                       <p className="font-semibold">Lifestyle</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Users className="h-8 w-8 text-purple-600 mb-2" />
+                      <Users className="h-8 w-8 text-primary mb-2" />
                       <p className="font-semibold">Generational Wealth</p>
                     </div>
                   </div>
-                  <div className="mt-6 bg-white rounded-lg p-4 border-2 border-purple-200">
-                    <p className="text-lg font-bold text-purple-800">Which pathway goes to your dreams?</p>
-                    <p className="text-purple-600 mt-2">It's not about changing the vehicle (work), it's about changing the path</p>
+                  <div className="mt-6 bg-white rounded-lg p-4 border-2 border-primary">
+                    <p className="text-lg font-bold text-primary">Which pathway goes to your dreams?</p>
+                    <p className="text-primary mt-2">It's not about changing the vehicle (work), it's about changing the path</p>
                   </div>
                 </div>
               </CardContent>
@@ -199,8 +199,8 @@ export default function ThreePhilosophies() {
                   <Card className="border-2 border-blue-200">
                     <CardContent className="p-6">
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                          <PiggyBank className="h-6 w-6 text-blue-600" />
+                        <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                          <PiggyBank className="h-6 w-6 text-primary" />
                         </div>
                         <h4 className="text-xl font-bold text-blue-800">SAVE 10% FROM NET-PAYCHECK</h4>
                       </div>
@@ -209,7 +209,7 @@ export default function ThreePhilosophies() {
                   </Card>
 
                   {/* 3 Rules */}
-                  <Card className="border-2 border-purple-200">
+                  <Card className="border-2 border-primary">
                     <CardContent className="p-6">
                       <h4 className="text-xl font-bold text-purple-800 mb-4">APPLY 3 RULES IN YOUR FAVOR</h4>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -269,7 +269,7 @@ export default function ThreePhilosophies() {
         {/* Philosophy 3: Self-Improvement */}
         {activePhilosophy === 3 && (
           <div className="max-w-6xl mx-auto">
-            <Card className="mb-8 border-2 border-purple-200 shadow-xl">
+            <Card className="mb-8 border-2 border-primary shadow-xl">
               <CardHeader className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
                 <CardTitle className="text-2xl md:text-3xl text-center">
                   <Zap className="h-8 w-8 inline-block mr-3" />
@@ -372,14 +372,14 @@ export default function ThreePhilosophies() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-8">
+                <div className="text-center bg-primary/5 rounded-lg p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
                     Those Who Stay Open Towards Learning Always Find Ways to Transform Their Life
                   </h3>
                   <p className="text-lg text-gray-700 mb-6">
                     If you are one of those who are hungry for success and open-minded
                   </p>
-                  <div className="bg-white rounded-lg p-6 border-2 border-purple-200 mb-6">
+                  <div className="bg-white rounded-lg p-6 border-2 border-primary mb-6">
                     <p className="text-lg font-bold text-purple-800 mb-4">
                       SET ONE-ON-ONE TIME TO LEARN HOW YOUR FAMILY CAN BE EMPOWERED WITH THE 3 PHILOSOPHIES
                     </p>
