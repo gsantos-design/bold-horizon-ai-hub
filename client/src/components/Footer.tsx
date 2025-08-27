@@ -50,7 +50,7 @@ export default function Footer() {
                 placeholder={t('form.email_address')} 
                 className="p-2 flex-grow text-primary focus:outline-none rounded-l-md rounded-r-none"
               />
-              <Button className="bg-secondary hover:bg-secondary/90 text-primary p-2 rounded-l-none rounded-r-md transition-colors duration-300">
+              <Button className="bg-primary hover:bg-primary/90 text-white p-2 rounded-l-none rounded-r-md transition-colors duration-300">
                 <Send className="h-5 w-5" />
               </Button>
             </div>
