@@ -143,7 +143,7 @@ export default function AIAutomationDashboard() {
       </Card>
 
       {/* Lead Sources Section */}
-      <div className="border-2 border-navy rounded-xl bg-navy p-6">
+      <div className="border-2 border-primary rounded-xl bg-primary p-6">
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-white mb-2">📊 YOUR LEAD SOURCES 📊</h2>
           <p className="text-white">Import leads from multiple sources for your campaigns</p>
@@ -152,68 +152,68 @@ export default function AIAutomationDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">🗃️</div>
-            <h4 className="font-bold text-navy">Current Lead Database</h4>
-            <div className="text-xl font-bold text-navy mt-1">{currentLeadsCount}</div>
+            <h4 className="font-bold text-primary">Current Lead Database</h4>
+            <div className="text-xl font-bold text-primary mt-1">{currentLeadsCount}</div>
             <p className="text-sm text-gray-600 mt-2">Your existing leads in the system</p>
           </div>
 
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">🚀</div>
-            <h4 className="font-bold text-navy">Apollo.io Import</h4>
-            <div className="text-xl font-bold text-navy mt-1">Unlimited</div>
+            <h4 className="font-bold text-primary">Apollo.io Import</h4>
+            <div className="text-xl font-bold text-primary mt-1">Unlimited</div>
             <p className="text-sm text-gray-600 mt-2">Import B2B leads from Apollo.io</p>
           </div>
 
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">💼</div>
-            <h4 className="font-bold text-navy">LinkedIn Sales Navigator</h4>
-            <div className="text-xl font-bold text-navy mt-1">Pro Access</div>
+            <h4 className="font-bold text-primary">LinkedIn Sales Navigator</h4>
+            <div className="text-xl font-bold text-primary mt-1">Pro Access</div>
             <p className="text-sm text-gray-600 mt-2">Extract leads from LinkedIn searches</p>
           </div>
 
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">🔗</div>
-            <h4 className="font-bold text-navy">HubSpot CRM</h4>
-            <div className="text-xl font-bold text-navy mt-1">Sync Ready</div>
+            <h4 className="font-bold text-primary">HubSpot CRM</h4>
+            <div className="text-xl font-bold text-primary mt-1">Sync Ready</div>
             <p className="text-sm text-gray-600 mt-2">Import from your HubSpot CRM</p>
           </div>
 
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">📂</div>
-            <h4 className="font-bold text-navy">CSV Upload</h4>
-            <div className="text-xl font-bold text-navy mt-1">File Ready</div>
+            <h4 className="font-bold text-primary">CSV Upload</h4>
+            <div className="text-xl font-bold text-primary mt-1">File Ready</div>
             <p className="text-sm text-gray-600 mt-2">Upload your own lead lists</p>
           </div>
 
           <div 
             onClick={() => window.location.href = '/lead-engine'}
-            className="p-4 bg-white border-2 border-navy rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
+            className="p-4 bg-white border-2 border-primary rounded-lg cursor-pointer hover:bg-gray-100 transition-all text-center"
           >
             <div className="text-3xl mb-2">🌐</div>
-            <h4 className="font-bold text-navy">Website Forms</h4>
-            <div className="text-xl font-bold text-navy mt-1">Live Capture</div>
+            <h4 className="font-bold text-primary">Website Forms</h4>
+            <div className="text-xl font-bold text-primary mt-1">Live Capture</div>
             <p className="text-sm text-gray-600 mt-2">Leads from your website forms</p>
           </div>
         </div>
       </div>
 
       {/* Email Campaigns Section */}
-      <div className="border-2 border-navy rounded-xl bg-navy p-6">
+      <div className="border-2 border-primary rounded-xl bg-primary p-6">
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-white mb-2">🚀 LAUNCH EMAIL CAMPAIGNS 🚀</h2>
           <p className="text-white">Start sending emails to your leads right now!</p>
@@ -226,13 +226,13 @@ export default function AIAutomationDashboard() {
               onClick={() => setSelectedCampaign(key)}
               className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
                 selectedCampaign === key 
-                  ? 'border-navy bg-white shadow-md' 
-                  : 'border-navy bg-white hover:bg-gray-100'
+                  ? 'border-primary bg-white shadow-md' 
+                  : 'border-primary bg-white hover:bg-gray-100'
               }`}
             >
               <div className="text-center">
                 <div className="text-2xl mb-2">{template.icon}</div>
-                <h4 className="font-bold text-navy">{template.name}</h4>
+                <h4 className="font-bold text-primary">{template.name}</h4>
                 <p className="text-sm text-gray-600 mt-1">{template.description}</p>
               </div>
             </div>
@@ -240,8 +240,8 @@ export default function AIAutomationDashboard() {
         </div>
 
         {selectedCampaign && (
-          <div className="bg-white border-2 border-navy rounded-lg p-4">
-            <h4 className="text-lg font-bold text-navy mb-3">📧 EMAIL LIST FOR CAMPAIGN</h4>
+          <div className="bg-white border-2 border-primary rounded-lg p-4">
+            <h4 className="text-lg font-bold text-primary mb-3">📧 EMAIL LIST FOR CAMPAIGN</h4>
             <textarea
               placeholder="Enter email addresses (one per line):&#10;example1@email.com&#10;example2@email.com&#10;example3@email.com"
               value={targetEmails}
@@ -255,7 +255,7 @@ export default function AIAutomationDashboard() {
               <Button 
                 onClick={handleLaunchCampaign}
                 disabled={isLaunching}
-                className="bg-navy hover:bg-navy/90 text-white px-8"
+                className="bg-primary hover:bg-primary/90 text-white px-8"
                 size="lg"
               >
                 {isLaunching ? (
@@ -275,13 +275,13 @@ export default function AIAutomationDashboard() {
         )}
         
         {result && (
-          <Alert className={result.success ? 'border-navy bg-white mt-4' : 'border-red-600 bg-red-50 mt-4'}>
+          <Alert className={result.success ? 'border-primary bg-white mt-4' : 'border-red-600 bg-red-50 mt-4'}>
             {result.success ? (
-              <CheckCircle className="h-4 w-4 text-navy" />
+              <CheckCircle className="h-4 w-4 text-primary" />
             ) : (
               <AlertCircle className="h-4 w-4 text-red-600" />
             )}
-            <AlertDescription className={result.success ? 'text-navy' : 'text-red-800'}>
+            <AlertDescription className={result.success ? 'text-primary' : 'text-red-800'}>
               {result.message}
             </AlertDescription>
           </Alert>
