@@ -23,7 +23,7 @@ export default function AgentProfile() {
                     <img 
                       src="/pablo-santiago.png" 
                       alt="Pablo Santiago" 
-                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                       style={{ objectPosition: 'center top' }}
                     />
                   </div>
@@ -37,7 +37,7 @@ export default function AgentProfile() {
                     <img 
                       src="/nolly-santiago.png" 
                       alt="Nolly Santiago" 
-                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                       style={{ objectPosition: 'center top' }}
                     />
                   </div>
@@ -58,7 +58,7 @@ export default function AgentProfile() {
                     <img 
                       src={josephImage} 
                       alt="Joseph Santiago" 
-                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                       style={{ objectPosition: 'center top' }}
                     />
                   </div>
@@ -72,7 +72,7 @@ export default function AgentProfile() {
                     <img 
                       src="/christian-santiago.png" 
                       alt="Christian Santiago" 
-                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                       style={{ objectPosition: 'center top' }}
                     />
                   </div>
