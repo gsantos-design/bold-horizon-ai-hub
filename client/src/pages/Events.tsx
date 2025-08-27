@@ -383,6 +383,52 @@ export default function Events() {
                     Limited seating available. Reserve your spot today!
                   </p>
                 </motion.div>
+
+                {/* Behind the Scenes - Pablo's Event Prep */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2 }}
+                  className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-blue-50 rounded-2xl border border-primary/20"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">Behind the Scenes</h4>
+                      <p className="text-sm text-gray-600">Team Preparation Update</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/50">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">PS</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <p className="font-semibold text-gray-900">Pablo Santiago</p>
+                          <Badge className="bg-blue-100 text-blue-700 text-xs">Team Leader</Badge>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">
+                          "The team and I have been working hard behind the scenes preparing for our upcoming events. 
+                          From perfecting our presentations to ensuring every detail is covered - we're committed to 
+                          delivering exceptional value to every family that joins us. The preparation shows our dedication 
+                          to your financial success!"
+                        </p>
+                        <div className="flex items-center mt-3 text-sm text-gray-500">
+                          <Heart className="w-4 h-4 mr-1 text-red-500" />
+                          <span className="mr-4">Team Dedication</span>
+                          <Clock className="w-4 h-4 mr-1" />
+                          <span>Recent Update</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
