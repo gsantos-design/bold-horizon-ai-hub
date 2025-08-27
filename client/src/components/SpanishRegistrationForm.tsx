@@ -207,7 +207,7 @@ export default function SpanishRegistrationForm() {
                 {/* Submit Button */}
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-secondary py-3 text-lg font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-lg font-semibold"
                 >
                   {t('registration.register_button')}
                 </Button>

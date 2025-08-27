@@ -53,8 +53,7 @@ export default function SpanishMeetingCallout() {
               <a href="/registro-espanol">
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold"
+                  className="bg-primary text-white hover:bg-primary/90 px-8 py-4 text-lg font-semibold"
                 >
                   {t('nav.spanish_registration')}
                 </Button>
