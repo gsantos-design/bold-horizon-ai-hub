@@ -65,7 +65,7 @@ export default function AgentProfile() {
           </div>
 
           {/* Team Members Section */}
-          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8 mb-12">
+          <div className="bg-white rounded-xl p-8 mb-12 border border-gray-200">
             <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
               Santiago Team Members
             </h2>
@@ -270,7 +270,7 @@ export default function AgentProfile() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg"
+              className="bg-primary hover:bg-primary/90 text-secondary px-8 py-3 text-lg"
               onClick={() => window.location.href = 'tel:407-777-1087'}
             >
               {t('contact.call_team')}
@@ -278,7 +278,7 @@ export default function AgentProfile() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-3 text-lg"
+              className="border-primary text-primary hover:bg-primary/5 px-8 py-3 text-lg"
             >
               {t('contact.schedule_consultation')}
             </Button>
