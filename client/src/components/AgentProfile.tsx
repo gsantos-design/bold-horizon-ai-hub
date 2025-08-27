@@ -77,12 +77,12 @@ export default function AgentProfile() {
                   <img 
                     src={princhescaPhoto} 
                     alt="Princhesca Rainier Turner" 
-                    className="w-48 h-48 mx-auto lg:mx-0 rounded-full object-cover object-top shadow-lg border-4 border-emerald-200"
+                    className="w-48 h-48 mx-auto lg:mx-0 rounded-full object-cover object-top shadow-lg border-4 border-primary"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Princhesca Rainier Turner</h3>
-                <p className="text-emerald-600 font-semibold mb-2">{t('team.princhesca_title')}</p>
+                <p className="text-primary font-semibold mb-2">{t('team.princhesca_title')}</p>
                 <p className="text-gray-700 font-medium">{t('team.princhesca_company')}</p>
               </div>
               
@@ -102,19 +102,19 @@ export default function AgentProfile() {
                 
                 {/* Services Offered */}
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  <div className="flex items-center space-x-2 text-emerald-700">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Building className="h-4 w-4" />
                     <span className="text-sm font-medium">{t('team.princhesca_service_1')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-emerald-700">
+                  <div className="flex items-center space-x-2 text-primary">
                     <FileText className="h-4 w-4" />
                     <span className="text-sm font-medium">{t('team.princhesca_service_2')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-emerald-700">
+                  <div className="flex items-center space-x-2 text-primary">
                     <Building className="h-4 w-4" />
                     <span className="text-sm font-medium">{t('team.princhesca_service_3')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-emerald-700">
+                  <div className="flex items-center space-x-2 text-primary">
                     <FileText className="h-4 w-4" />
                     <span className="text-sm font-medium">{t('team.princhesca_service_4')}</span>
                   </div>
@@ -169,12 +169,12 @@ export default function AgentProfile() {
                   <img 
                     src="/christian-santiago.png" 
                     alt="Christian Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-emerald-200"
+                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Christian Santiago</h3>
-                <p className="text-emerald-600 font-semibold mb-2">{t('team.christian_title')}</p>
+                <p className="text-primary font-semibold mb-2">{t('team.christian_title')}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {t('team.christian_bio_1')}
                   <br/><br/>
@@ -186,15 +186,15 @@ export default function AgentProfile() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-emerald-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <Building className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.christian_skill_1')}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-emerald-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <FileText className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.christian_skill_2')}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-emerald-700">
+                <div className="flex items-center space-x-2 text-primary">
                   <Users className="h-4 w-4" />
                   <span className="text-sm font-medium">{t('team.christian_skill_3')}</span>
                 </div>
