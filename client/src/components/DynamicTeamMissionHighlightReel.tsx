@@ -84,7 +84,7 @@ export default function DynamicTeamMissionHighlightReel() {
       id: 'entrepreneurial-wealth',
       title: 'Entrepreneurial Wealth Building',
       subtitle: 'Joseph\'s Focus',
-      description: 'Investment licensed since high school with a Finance degree, Joseph empowers entrepreneurs to build real wealth and create lasting legacies through compound interest mastery.',
+      description: 'Licensed financial advisor fresh out of high school, Joseph empowers entrepreneurs to build real wealth and create lasting legacies through compound interest mastery.',
       icon: <TrendingUp className="h-8 w-8" />,
       color: 'green',
       gradient: 'bg-primary',

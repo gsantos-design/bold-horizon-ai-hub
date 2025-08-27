@@ -218,15 +218,15 @@ export default function TeamSantiago() {
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        Twin brother and entrepreneurial force. With his investment license earned straight 
-                        out of high school and a Finance degree, Joseph brings passion for helping entrepreneurs 
-                        build wealth and create lasting legacies.
+                        Twin brother and entrepreneurial force. Fresh out of high school with his financial advisor 
+                        license already earned, Joseph brings passion for helping entrepreneurs build wealth 
+                        and create lasting legacies.
                       </p>
                       
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-primary">
                           <GraduationCap className="h-4 w-4" />
-                          <span className="text-sm font-medium">Finance Degree</span>
+                          <span className="text-sm font-medium">High School Graduate</span>
                         </div>
                         <div className="flex items-center gap-2 text-primary">
                           <Building className="h-4 w-4" />
