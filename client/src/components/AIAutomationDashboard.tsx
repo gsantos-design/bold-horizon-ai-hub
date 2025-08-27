@@ -462,7 +462,7 @@ export default function AIAutomationDashboard() {
                   </Button>
                   <Button 
                     variant="outline"
-                    onClick={() => window.open('/RECORDING_SCRIPTS_TEMPLATE.md', '_blank')}
+                    onClick={() => alert('Recording scripts feature coming soon!')}
                   >
                     Download Scripts
                   </Button>

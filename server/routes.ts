@@ -1228,7 +1228,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const testEmailData = {
         to: testEmail,
-        from: 'nolly@santiagoteam.com', // Replace with your verified sender
+        from: 'support@replit.dev', // Using Replit domain for testing
         subject: '✅ Santiago Team Email System Test - Working!',
         text: 'Your email campaigns are working perfectly! This test confirms your SendGrid integration is active.',
         html: `

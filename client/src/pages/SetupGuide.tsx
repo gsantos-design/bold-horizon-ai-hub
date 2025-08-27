@@ -352,7 +352,7 @@ export default function SetupGuide() {
                   size="lg" 
                   variant="outline" 
                   className="border-white text-white hover:bg-white hover:text-purple-600"
-                  onClick={() => window.open('/RECORDING_SCRIPTS_TEMPLATE.md', '_blank')}
+                  onClick={() => alert('Recording scripts template will be available soon!')}
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Download Scripts
