@@ -241,10 +241,10 @@ export default function AIAutomationDashboard() {
         </Alert>
       )}
 
-      <Tabs defaultValue="services" className="w-full">
+      <Tabs defaultValue="campaigns" className="w-full">
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="services">Services</TabsTrigger>
-          <TabsTrigger value="campaigns">Campaigns</TabsTrigger>
+          <TabsTrigger value="campaigns">📧 Email Campaigns</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="setup">Setup Guide</TabsTrigger>
         </TabsList>
@@ -353,11 +353,11 @@ export default function AIAutomationDashboard() {
                   </div>
                 </div>
 
-                {/* Email Test Section */}
-                <div className="mt-6 p-4 border rounded-lg bg-primary/5">
-                  <h4 className="font-semibold text-primary mb-2">📧 Test Email System</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Verify your SendGrid integration is working properly
+                {/* Email Test Section - FEATURED */}
+                <div className="mt-6 p-6 border-2 border-primary rounded-lg bg-primary/10">
+                  <h3 className="text-xl font-bold text-primary mb-2">📧 Email Campaign System</h3>
+                  <p className="text-sm text-gray-700 mb-4 font-medium">
+                    Test your email integration and start sending campaigns to leads
                   </p>
                   <EmailTestComponent />
                 </div>
