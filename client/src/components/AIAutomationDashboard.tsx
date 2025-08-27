@@ -353,13 +353,20 @@ export default function AIAutomationDashboard() {
                   </div>
                 </div>
 
-                {/* Email Test Section - FEATURED */}
-                <div className="mt-6 p-6 border-2 border-primary rounded-lg bg-primary/10">
-                  <h3 className="text-xl font-bold text-primary mb-2">📧 Email Campaign System</h3>
-                  <p className="text-sm text-gray-700 mb-4 font-medium">
-                    Test your email integration and start sending campaigns to leads
-                  </p>
+                {/* EMAIL SYSTEM - START HERE */}
+                <div className="mt-6 p-8 border-4 border-blue-500 rounded-xl bg-blue-50 shadow-lg">
+                  <div className="text-center mb-6">
+                    <h2 className="text-3xl font-bold text-blue-600 mb-2">✉️ YOUR EMAIL SYSTEM IS HERE! ✉️</h2>
+                    <p className="text-lg text-blue-800 font-semibold">
+                      👇 Enter your email below to test and start sending campaigns 👇
+                    </p>
+                  </div>
                   <EmailTestComponent />
+                  <div className="mt-4 p-4 bg-yellow-100 border border-yellow-400 rounded-lg">
+                    <p className="text-yellow-800 font-medium text-center">
+                      ⬆️ EMAIL INPUT FIELD IS RIGHT ABOVE THIS MESSAGE ⬆️
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -513,32 +520,36 @@ function EmailTestComponent() {
   };
 
   return (
-    <div className="space-y-3">
-      <div className="flex gap-2">
-        <Input
-          type="email"
-          placeholder="Enter your email to test..."
-          value={testEmail}
-          onChange={(e) => setTestEmail(e.target.value)}
-          className="flex-1"
-        />
-        <Button 
-          onClick={handleTestEmail}
-          disabled={isLoading}
-          className="bg-primary hover:bg-primary/90"
-        >
-          {isLoading ? (
-            <>
-              <Clock className="h-4 w-4 mr-2 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            <>
-              <Send className="h-4 w-4 mr-2" />
-              Test Email
-            </>
-          )}
-        </Button>
+    <div className="space-y-4">
+      <div className="p-4 bg-white border-2 border-blue-300 rounded-lg">
+        <h4 className="text-lg font-bold text-blue-600 mb-3 text-center">📧 EMAIL INPUT FORM 📧</h4>
+        <div className="flex gap-3">
+          <Input
+            type="email"
+            placeholder="👉 TYPE YOUR EMAIL ADDRESS HERE 👈"
+            value={testEmail}
+            onChange={(e) => setTestEmail(e.target.value)}
+            className="flex-1 h-12 text-lg border-2 border-blue-400 focus:border-blue-600"
+          />
+          <Button 
+            onClick={handleTestEmail}
+            disabled={isLoading}
+            className="bg-blue-600 hover:bg-blue-700 h-12 px-6 text-lg font-bold"
+            size="lg"
+          >
+            {isLoading ? (
+              <>
+                <Clock className="h-5 w-5 mr-2 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send className="h-5 w-5 mr-2" />
+                📧 SEND TEST EMAIL
+              </>
+            )}
+          </Button>
+        </div>
       </div>
       
       {result && (
