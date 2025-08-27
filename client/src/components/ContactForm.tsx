@@ -125,9 +125,9 @@ export default function ContactForm() {
                 </p>
               </div>
               {isSuccess ? (
-                <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
+                <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20 text-center">
+                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-secondary" />
                   </div>
                   <h3 className="font-heading font-semibold text-xl mb-2">Application Received!</h3>
                   <p className="mb-4 text-neutral-600">
@@ -302,8 +302,8 @@ export default function ContactForm() {
                       </div>
                       
                       {selectedInterest && (
-                        <div className="mb-4 p-3 bg-green-50 border border-green-100 rounded-md">
-                          <p className="text-sm text-green-800">{getInterestMessage(selectedInterest)}</p>
+                        <div className="mb-4 p-3 bg-secondary/5 border border-secondary/10 rounded-md">
+                          <p className="text-sm text-secondary/90">{getInterestMessage(selectedInterest)}</p>
                         </div>
                       )}
                       

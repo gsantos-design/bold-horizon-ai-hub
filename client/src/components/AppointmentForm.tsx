@@ -93,13 +93,13 @@ export default function AppointmentForm() {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-lg"
                 >
                   {t('form.schedule_appointment')}
                 </Button>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  <a href="https://www.worldfinancialgroup.com/legal/privacy-policy" className="text-blue-600 hover:underline">
+                  <a href="https://www.worldfinancialgroup.com/legal/privacy-policy" className="text-primary hover:underline">
                     {t('form.privacy_statement')}
                   </a>
                 </p>
@@ -115,14 +115,14 @@ export default function AppointmentForm() {
               />
               
               {/* Spanish Meeting Registration */}
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border border-purple-200">
+              <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg border border-primary/20">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {t('meeting.spanish_title')}
                 </h3>
                 <p className="text-gray-700 mb-3">
                   {t('meeting.spanish_description')}
                 </p>
-                <div className="flex items-center text-purple-700 font-semibold mb-4">
+                <div className="flex items-center text-primary font-semibold mb-4">
                   <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -134,7 +134,7 @@ export default function AppointmentForm() {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                  <Button className="bg-primary hover:bg-primary/90 text-white">
                     {t('meeting.register_spanish')}
                   </Button>
                 </a>

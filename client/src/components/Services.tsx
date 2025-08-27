@@ -42,8 +42,8 @@ export default function Services() {
                   key={index}
                   className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow border border-gray-100"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6 mx-auto">
-                    <IconComponent className="h-8 w-8 text-blue-600" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 mx-auto">
+                    <IconComponent className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
                     {service.title}

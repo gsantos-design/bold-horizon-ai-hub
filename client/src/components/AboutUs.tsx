@@ -69,7 +69,7 @@ export default function AboutUs() {
                   <img 
                     src="/nolly-santiago.png" 
                     alt="Nolly Santiago" 
-                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-purple-200 shadow-lg mb-4"
+                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-secondary/20 shadow-lg mb-4"
                     style={{ objectPosition: 'center top' }}
                   />
                   <h4 className="text-lg font-bold text-primary">Nolly Santiago</h4>
@@ -79,20 +79,20 @@ export default function AboutUs() {
                   <img 
                     src="/pablo-santiago.png" 
                     alt="Pablo Santiago" 
-                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-blue-200 shadow-lg mb-4"
+                    className="w-40 h-40 rounded-full object-cover object-top mx-auto border-4 border-primary/20 shadow-lg mb-4"
                     style={{ objectPosition: 'center top' }}
                   />
                   <h4 className="text-lg font-bold text-primary">Pablo Santiago</h4>
                   <p className="text-sm text-gray-600">Co-Leader</p>
                 </div>
               </div>
-              <div className="bg-white/90 backdrop-blur-md p-6 rounded-xl text-center border border-blue-100">
+              <div className="bg-white/90 backdrop-blur-md p-6 rounded-xl text-center border border-primary/10">
                 <h3 className="text-xl font-bold text-primary mb-2">The Santiago Team</h3>
                 <p className="text-sm text-gray-700 mb-3">Licensed WFG Associates</p>
                 <p className="text-sm italic text-primary/70 max-w-md mx-auto">
                   Empowering families to achieve financial freedom through proven WFG strategies and team building.
                 </p>
-                <div className="mt-4 text-sm text-blue-500 flex justify-center gap-1">
+                <div className="mt-4 text-sm text-secondary flex justify-center gap-1">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
               </div>
@@ -291,87 +291,87 @@ export default function AboutUs() {
                 </div>
 
                 {/* AI Sales Force - Unique Competitive Advantage */}
-                <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8 rounded-xl border-2 border-purple-200 mb-6">
+                <div className="bg-gradient-to-br from-primary/5 via-secondary/5 to-secondary/10 p-8 rounded-xl border-2 border-secondary/20 mb-6">
                   <div className="flex items-center mb-4">
-                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-14 h-14 rounded-full flex items-center justify-center mr-4">
+                    <div className="bg-gradient-to-r from-primary to-secondary w-14 h-14 rounded-full flex items-center justify-center mr-4">
                       <Bot className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-2xl text-purple-800 mb-1">Revolutionary AI Sales Force</h4>
-                      <p className="text-purple-600 font-medium">The Santiago Team's Exclusive Competitive Edge</p>
+                      <h4 className="font-bold text-2xl text-primary mb-1">Revolutionary AI Sales Force</h4>
+                      <p className="text-secondary font-medium">The Santiago Team's Exclusive Competitive Edge</p>
                     </div>
                   </div>
                   
                   <div className="space-y-4 text-gray-700">
                     <p className="text-lg leading-relaxed">
-                      <strong className="text-purple-800">The Santiago Team stands as one of the only organizations in the financial services industry</strong> 
+                      <strong className="text-primary">The Santiago Team stands as one of the only organizations in the financial services industry</strong> 
                       providing a complete AI-powered sales ecosystem that revolutionizes how we generate, qualify, and convert prospects into satisfied clients.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-6 mt-6">
-                      <div className="bg-white p-6 rounded-lg border border-purple-100">
-                        <h5 className="font-bold text-lg text-purple-800 mb-3 flex items-center">
+                      <div className="bg-white p-6 rounded-lg border border-primary/10">
+                        <h5 className="font-bold text-lg text-primary mb-3 flex items-center">
                           <Target className="h-5 w-5 mr-2" />
                           AI-Powered Lead Generation
                         </h5>
                         <ul className="space-y-2 text-sm">
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Intelligent prospect identification targeting high-net-worth individuals</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Automated LinkedIn and email outreach with personalized messaging</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Real-time lead scoring and qualification algorithms</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Multi-channel campaign orchestration across all platforms</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Intelligent prospect identification targeting high-net-worth individuals</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Automated LinkedIn and email outreach with personalized messaging</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Real-time lead scoring and qualification algorithms</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Multi-channel campaign orchestration across all platforms</li>
                         </ul>
                       </div>
                       
-                      <div className="bg-white p-6 rounded-lg border border-purple-100">
-                        <h5 className="font-bold text-lg text-purple-800 mb-3 flex items-center">
+                      <div className="bg-white p-6 rounded-lg border border-primary/10">
+                        <h5 className="font-bold text-lg text-primary mb-3 flex items-center">
                           <Bot className="h-5 w-5 mr-2" />
                           AI Appointment Setting
                         </h5>
                         <ul className="space-y-2 text-sm">
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Automated phone calls with human-like AI voice technology</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Intelligent conversation flows that qualify prospects automatically</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Seamless calendar integration for immediate appointment booking</li>
-                          <li className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />Follow-up sequences that nurture prospects until appointment confirmation</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Automated phone calls with human-like AI voice technology</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Intelligent conversation flows that qualify prospects automatically</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Seamless calendar integration for immediate appointment booking</li>
+                          <li className="flex items-start"><Check className="h-4 w-4 text-secondary mr-2 mt-0.5" />Follow-up sequences that nurture prospects until appointment confirmation</li>
                         </ul>
                       </div>
                     </div>
                     
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200 mt-6">
-                      <h5 className="font-bold text-xl text-green-800 mb-3 flex items-center">
+                    <div className="bg-gradient-to-r from-secondary/5 to-secondary/10 p-6 rounded-lg border border-secondary/20 mt-6">
+                      <h5 className="font-bold text-xl text-secondary mb-3 flex items-center">
                         <Trophy className="h-6 w-6 mr-2" />
                         Exceptional Results & High Close Rates
                       </h5>
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-green-700">90%+</div>
-                          <div className="text-sm text-green-600">Qualified Appointment Rate</div>
+                          <div className="text-3xl font-bold text-secondary">90%+</div>
+                          <div className="text-sm text-secondary/80">Qualified Appointment Rate</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-green-700">75%+</div>
-                          <div className="text-sm text-green-600">First Meeting Close Rate</div>
+                          <div className="text-3xl font-bold text-secondary">75%+</div>
+                          <div className="text-sm text-secondary/80">First Meeting Close Rate</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-green-700">3x</div>
-                          <div className="text-sm text-green-600">Industry Average Conversion</div>
+                          <div className="text-3xl font-bold text-secondary">3x</div>
+                          <div className="text-sm text-secondary/80">Industry Average Conversion</div>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                      <h5 className="font-bold text-lg text-yellow-800 mb-3">What This Means for Santiago Team Members:</h5>
+                    <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20">
+                      <h5 className="font-bold text-lg text-primary mb-3">What This Means for Santiago Team Members:</h5>
                       <div className="grid md:grid-cols-2 gap-4 text-sm">
                         <div>
                           <ul className="space-y-2">
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Pre-qualified prospects delivered to your calendar daily</li>
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Higher conversion rates leading to increased income potential</li>
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />More time focusing on closing deals, not chasing leads</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />Pre-qualified prospects delivered to your calendar daily</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />Higher conversion rates leading to increased income potential</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />More time focusing on closing deals, not chasing leads</li>
                           </ul>
                         </div>
                         <div>
                           <ul className="space-y-2">
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Professional development through advanced AI tools training</li>
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Competitive advantage over traditional financial services teams</li>
-                            <li className="flex items-start"><Award className="h-4 w-4 text-yellow-600 mr-2 mt-0.5" />Access to cutting-edge technology usually reserved for Fortune 500 companies</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />Professional development through advanced AI tools training</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />Competitive advantage over traditional financial services teams</li>
+                            <li className="flex items-start"><Award className="h-4 w-4 text-secondary mr-2 mt-0.5" />Access to cutting-edge technology usually reserved for Fortune 500 companies</li>
                           </ul>
                         </div>
                       </div>
@@ -444,7 +444,7 @@ export default function AboutUs() {
                     <div className="flex items-center justify-between">
                       <div className="flex space-x-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" />
+                          <Star key={i} className="h-4 w-4 text-secondary" fill="currentColor" />
                         ))}
                       </div>
                       <span className="text-xs text-neutral-500">Joined 2022</span>

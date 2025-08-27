@@ -32,18 +32,18 @@ export default function LandingHero() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+    <section className="bg-gradient-to-br from-primary/5 via-white to-secondary/5 py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Main Hero Content */}
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 text-lg">
+            <Badge className="mb-4 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 text-lg">
               🏆 {t('hero.badge')}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               {t('hero.title_part1')}
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {t('hero.title_part2')}
               </span>
             </h1>
@@ -53,7 +53,7 @@ export default function LandingHero() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 <Phone className="h-5 w-5 mr-2" />
@@ -63,7 +63,7 @@ export default function LandingHero() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg"
+                  className="border-primary text-primary hover:bg-primary/5 px-8 py-4 text-lg"
                 >
                   {t('hero.discover_mission')}
                   <ArrowRight className="h-5 w-5 ml-2" />
@@ -76,7 +76,7 @@ export default function LandingHero() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg"
+                  className="bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white px-8 py-4 text-lg"
                 >
                   <Users className="h-5 w-5 mr-2" />
                   {t('meeting.register_spanish')}
@@ -92,10 +92,10 @@ export default function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <Card className="border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-2 border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Shield className="h-8 w-8 text-blue-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.protect_protectors')}</h3>
                   <p className="text-gray-600 text-sm">
@@ -110,10 +110,10 @@ export default function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <Card className="border-2 border-purple-200 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-2 border-secondary/20 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Heart className="h-8 w-8 text-purple-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
+                    <Heart className="h-8 w-8 text-secondary" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.family_legacy')}</h3>
                   <p className="text-gray-600 text-sm">
@@ -128,10 +128,10 @@ export default function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              <Card className="border-2 border-green-200 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-2 border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                    <TrendingUp className="h-8 w-8 text-green-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                    <TrendingUp className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.entrepreneurial_wealth')}</h3>
                   <p className="text-gray-600 text-sm">
@@ -146,10 +146,10 @@ export default function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              <Card className="border-2 border-orange-200 shadow-lg hover:shadow-xl transition-shadow">
+              <Card className="border-2 border-secondary/20 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                    <GraduationCap className="h-8 w-8 text-orange-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
+                    <GraduationCap className="h-8 w-8 text-secondary" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('hero.youth_education')}</h3>
                   <p className="text-gray-600 text-sm">
@@ -203,37 +203,37 @@ export default function LandingHero() {
 
               {/* Impact Stats */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
+                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('team.our_impact')}</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-blue-600 mb-1">5,000+</div>
+                      <div className="text-3xl font-bold text-primary mb-1">5,000+</div>
                       <div className="text-sm text-gray-600">{t('team.families_served')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-purple-600 mb-1">75+</div>
+                      <div className="text-3xl font-bold text-secondary mb-1">75+</div>
                       <div className="text-sm text-gray-600">{t('team.years_experience')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-green-600 mb-1">3,800+</div>
+                      <div className="text-3xl font-bold text-primary mb-1">3,800+</div>
                       <div className="text-sm text-gray-600">{t('team.financial_plans')}</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg shadow">
-                      <div className="text-3xl font-bold text-orange-600 mb-1">100%</div>
+                      <div className="text-3xl font-bold text-secondary mb-1">100%</div>
                       <div className="text-sm text-gray-600">{t('team.family_commitment')}</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6 text-center">
+                <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl p-6 text-center">
                   <h4 className="text-xl font-bold mb-2">{t('team.ready_secure')}</h4>
                   <p className="mb-4 opacity-90">
                     {t('team.join_thousands')}
                   </p>
                   <Button 
                     size="lg" 
-                    className="bg-white text-blue-600 hover:bg-gray-100"
+                    className="bg-white text-primary hover:bg-gray-100"
                     onClick={() => window.location.href = 'tel:407-777-1087'}
                   >
                     <Phone className="h-5 w-5 mr-2" />
@@ -256,8 +256,8 @@ export default function LandingHero() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Shield className="h-10 w-10 text-blue-600" />
+                <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Shield className="h-10 w-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.financial_protection')}</h3>
                 <p className="text-gray-600">
@@ -266,8 +266,8 @@ export default function LandingHero() {
               </div>
               
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                  <Building className="h-10 w-10 text-purple-600" />
+                <div className="w-20 h-20 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center">
+                  <Building className="h-10 w-10 text-secondary" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.business_building')}</h3>
                 <p className="text-gray-600">
@@ -276,8 +276,8 @@ export default function LandingHero() {
               </div>
               
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="h-10 w-10 text-green-600" />
+                <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Users className="h-10 w-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{t('services.family_legacy')}</h3>
                 <p className="text-gray-600">

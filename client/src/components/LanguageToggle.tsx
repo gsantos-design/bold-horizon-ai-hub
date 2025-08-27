@@ -18,20 +18,20 @@ export const LanguageToggle: React.FC = () => {
       className="relative cosmic-3d"
     >
       {/* Stronger glow effect */}
-      <div className="absolute inset-0 bg-blue-500/40 blur-md rounded-lg opacity-80"></div>
-      <div className="absolute inset-0 bg-blue-400/30 animate-pulse rounded-lg"></div>
+      <div className="absolute inset-0 bg-primary/40 blur-md rounded-lg opacity-80"></div>
+      <div className="absolute inset-0 bg-secondary/30 animate-pulse rounded-lg"></div>
       
       <Button 
         onClick={toggleLanguage}
         variant="secondary"
         size="sm"
-        className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-2 px-4 rounded-lg border-2 border-blue-400/50 shadow-lg flex items-center gap-2 relative z-10"
+        className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-2 px-4 rounded-lg border-2 border-primary/50 shadow-lg flex items-center gap-2 relative z-10"
       >
         <Globe className="h-4 w-4 text-white" />
         <span className="font-semibold text-white">{t('language.toggle')}</span>
         
         {/* Language indicator */}
-        <div className="absolute -top-2 -right-2 bg-white text-blue-700 text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-blue-500 shadow-md">
+        <div className="absolute -top-2 -right-2 bg-white text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-primary shadow-md">
           {language.toUpperCase()}
         </div>
       </Button>

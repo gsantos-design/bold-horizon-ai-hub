@@ -79,7 +79,7 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-50 flex items-center justify-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-950 via-indigo-900 to-black overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-secondary/80 to-black overflow-hidden">
             {/* Stars Background */}
             {starElements}
             
@@ -97,12 +97,12 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
               {/* Pulsing cosmic orb */}
               <div className="relative w-20 h-20 mb-6">
                 <motion.div 
-                  className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600"
+                  className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary"
                   animate={{ 
                     boxShadow: [
-                      "0 0 20px 5px rgba(147, 197, 253, 0.7), 0 0 40px 15px rgba(79, 70, 229, 0.5)", 
-                      "0 0 30px 10px rgba(147, 197, 253, 0.8), 0 0 60px 25px rgba(79, 70, 229, 0.6)",
-                      "0 0 20px 5px rgba(147, 197, 253, 0.7), 0 0 40px 15px rgba(79, 70, 229, 0.5)"
+                      "0 0 20px 5px rgba(30, 64, 175, 0.7), 0 0 40px 15px rgba(217, 119, 6, 0.5)", 
+                      "0 0 30px 10px rgba(30, 64, 175, 0.8), 0 0 60px 25px rgba(217, 119, 6, 0.6)",
+                      "0 0 20px 5px rgba(30, 64, 175, 0.7), 0 0 40px 15px rgba(217, 119, 6, 0.5)"
                     ],
                     scale: [1, 1.1, 1]
                   }}
@@ -115,7 +115,7 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
                 
                 {/* Inner glow */}
                 <motion.div 
-                  className="absolute inset-2 rounded-full bg-gradient-to-br from-blue-300/50 to-indigo-400/50 backdrop-blur-sm"
+                  className="absolute inset-2 rounded-full bg-gradient-to-br from-primary/50 to-secondary/50 backdrop-blur-sm"
                   animate={{ 
                     opacity: [0.5, 0.8, 0.5] 
                   }}
@@ -128,7 +128,7 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
                 
                 {/* Rotating cosmic ring */}
                 <motion.div
-                  className="absolute -inset-3 border-2 border-blue-400/30 rounded-full"
+                  className="absolute -inset-3 border-2 border-primary/30 rounded-full"
                   style={{ borderRadius: "100%" }}
                   animate={{ rotate: 360 }}
                   transition={{ 
@@ -139,7 +139,7 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
                 />
                 
                 <motion.div
-                  className="absolute -inset-6 border border-indigo-500/20 rounded-full"
+                  className="absolute -inset-6 border border-secondary/20 rounded-full"
                   style={{ borderRadius: "100%" }}
                   animate={{ rotate: -360 }}
                   transition={{ 
@@ -152,12 +152,12 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
               
               {/* Loading text with cosmic glow */}
               <motion.div 
-                className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-100"
+                className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200"
                 animate={{ 
                   textShadow: [
-                    "0 0 8px rgba(147, 197, 253, 0.7), 0 0 12px rgba(79, 70, 229, 0.5)",
-                    "0 0 12px rgba(147, 197, 253, 0.8), 0 0 20px rgba(79, 70, 229, 0.6)",
-                    "0 0 8px rgba(147, 197, 253, 0.7), 0 0 12px rgba(79, 70, 229, 0.5)"
+                    "0 0 8px rgba(30, 64, 175, 0.7), 0 0 12px rgba(217, 119, 6, 0.5)",
+                    "0 0 12px rgba(30, 64, 175, 0.8), 0 0 20px rgba(217, 119, 6, 0.6)",
+                    "0 0 8px rgba(30, 64, 175, 0.7), 0 0 12px rgba(217, 119, 6, 0.5)"
                   ]
                 }}
                 transition={{ 
@@ -174,7 +174,7 @@ const LoadingTransition: FC<LoadingTransitionProps> = ({
                 {[1, 2, 3].map((dot) => (
                   <motion.div
                     key={`loading-dot-${dot}`}
-                    className="w-2 h-2 rounded-full bg-blue-300"
+                    className="w-2 h-2 rounded-full bg-secondary"
                     animate={{ 
                       opacity: [0.3, 1, 0.3],
                       y: [0, -6, 0],

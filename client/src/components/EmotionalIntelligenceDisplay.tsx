@@ -12,33 +12,33 @@ interface EmotionalIntelligenceDisplayProps {
 }
 
 const emotionalIcons = {
-  confident: { icon: <Smile className="w-4 h-4" />, color: "text-green-600", bg: "bg-green-50" },
-  anxious: { icon: <Heart className="w-4 h-4" />, color: "text-orange-600", bg: "bg-orange-50" },
-  excited: { icon: <Star className="w-4 h-4" />, color: "text-yellow-600", bg: "bg-yellow-50" },
-  uncertain: { icon: <Brain className="w-4 h-4" />, color: "text-blue-600", bg: "bg-blue-50" },
-  motivated: { icon: <Target className="w-4 h-4" />, color: "text-purple-600", bg: "bg-purple-50" },
-  overwhelmed: { icon: <Coffee className="w-4 h-4" />, color: "text-red-600", bg: "bg-red-50" },
+  confident: { icon: <Smile className="w-4 h-4" />, color: "text-secondary", bg: "bg-secondary/10" },
+  anxious: { icon: <Heart className="w-4 h-4" />, color: "text-primary", bg: "bg-primary/10" },
+  excited: { icon: <Star className="w-4 h-4" />, color: "text-secondary", bg: "bg-secondary/10" },
+  uncertain: { icon: <Brain className="w-4 h-4" />, color: "text-primary", bg: "bg-primary/10" },
+  motivated: { icon: <Target className="w-4 h-4" />, color: "text-primary", bg: "bg-primary/10" },
+  overwhelmed: { icon: <Coffee className="w-4 h-4" />, color: "text-secondary", bg: "bg-secondary/10" },
   neutral: { icon: <Brain className="w-4 h-4" />, color: "text-gray-600", bg: "bg-gray-50" },
-  encouraging: { icon: <Lightbulb className="w-4 h-4" />, color: "text-emerald-600", bg: "bg-emerald-50" },
-  supportive: { icon: <Heart className="w-4 h-4" />, color: "text-blue-600", bg: "bg-blue-50" },
-  understanding: { icon: <Brain className="w-4 h-4" />, color: "text-purple-600", bg: "bg-purple-50" },
-  welcoming: { icon: <Smile className="w-4 h-4" />, color: "text-green-600", bg: "bg-green-50" }
+  encouraging: { icon: <Lightbulb className="w-4 h-4" />, color: "text-secondary", bg: "bg-secondary/10" },
+  supportive: { icon: <Heart className="w-4 h-4" />, color: "text-primary", bg: "bg-primary/10" },
+  understanding: { icon: <Brain className="w-4 h-4" />, color: "text-primary", bg: "bg-primary/10" },
+  welcoming: { icon: <Smile className="w-4 h-4" />, color: "text-secondary", bg: "bg-secondary/10" }
 };
 
 const mentorStyles = {
   nolly: {
     name: "Nolly Santiago",
-    style: "bg-blue-50 border-blue-200 text-blue-800",
+    style: "bg-primary/10 border-primary/20 text-primary",
     description: "Empathetic & Detail-Oriented"
   },
   pablo: {
     name: "Pablo Santiago", 
-    style: "bg-purple-50 border-purple-200 text-purple-800",
+    style: "bg-secondary/10 border-secondary/20 text-secondary",
     description: "Visionary & Strategic"
   },
   santiago_team: {
     name: "Pablo & Nolly's Office",
-    style: "bg-emerald-50 border-emerald-200 text-emerald-800",
+    style: "bg-primary/10 border-primary/20 text-primary",
     description: "Balanced Expertise"
   }
 };
@@ -98,7 +98,7 @@ export function EmotionalIntelligenceDisplay({
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => onActionClick?.(action)}
-                  className="text-xs px-3 py-1 bg-white hover:bg-purple-50 text-purple-700 rounded-full border border-purple-200 transition-colors"
+                  className="text-xs px-3 py-1 bg-white hover:bg-primary/5 text-primary rounded-full border border-primary/20 transition-colors"
                 >
                   {action}
                 </motion.button>

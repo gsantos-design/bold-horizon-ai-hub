@@ -103,9 +103,9 @@ export default function Hero() {
       {/* Animated Cosmic Elements (to enhance the global cosmic background) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Glowing orbs specific to hero section */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-blue-300/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
         
         {/* Animated stars */}
         {Array.from({ length: 8 }).map((_, i) => (
@@ -478,7 +478,7 @@ export default function Hero() {
           </Button>
           <Button 
             variant="secondary"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-md transition-colors duration-300 text-lg border-2 border-blue-400 shadow-lg"
+            className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 rounded-md transition-colors duration-300 text-lg border-2 border-primary/50 shadow-lg"
             onClick={() => scrollToSection("contact")}
           >
             {t('hero.cta')}

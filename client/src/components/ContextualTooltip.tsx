@@ -44,12 +44,12 @@ const tooltipIcons = {
 };
 
 const tooltipColors = {
-  help: 'border-blue-200 bg-blue-50 text-blue-800',
-  tip: 'border-yellow-200 bg-yellow-50 text-yellow-800',
-  feature: 'border-purple-200 bg-purple-50 text-purple-800',
-  success: 'border-green-200 bg-green-50 text-green-800',
-  warning: 'border-orange-200 bg-orange-50 text-orange-800',
-  ai: 'border-pink-200 bg-gradient-to-r from-pink-50 to-purple-50 text-pink-800'
+  help: 'border-primary/20 bg-primary/5 text-primary',
+  tip: 'border-secondary/20 bg-secondary/5 text-secondary',
+  feature: 'border-primary/20 bg-primary/5 text-primary',
+  success: 'border-secondary/20 bg-secondary/5 text-secondary',
+  warning: 'border-secondary/20 bg-secondary/5 text-secondary',
+  ai: 'border-primary/20 bg-gradient-to-r from-primary/5 to-secondary/5 text-primary'
 };
 
 const playfulAnimations = {
@@ -132,7 +132,7 @@ export default function ContextualTooltip({
             {children}
             {/* Floating help indicator */}
             <motion.div
-              className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center cursor-help"
+              className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center cursor-help"
               animate={{
                 scale: [1, 1.2, 1],
                 rotate: [0, 10, -10, 0]
@@ -179,7 +179,7 @@ export default function ContextualTooltip({
                 {playful && (
                   <div className="absolute -top-1 -left-1">
                     <motion.div
-                      className="w-2 h-2 rounded-full bg-yellow-400"
+                      className="w-2 h-2 rounded-full bg-secondary"
                       animate={{
                         scale: [0, 1, 0],
                         opacity: [0, 1, 0]
@@ -196,7 +196,7 @@ export default function ContextualTooltip({
                 {playful && (
                   <div className="absolute -bottom-1 -right-1">
                     <motion.div
-                      className="w-3 h-3 rounded-full bg-pink-400"
+                      className="w-3 h-3 rounded-full bg-primary"
                       animate={{
                         scale: [1, 1.5, 1],
                         rotate: [0, 180, 360]
