@@ -96,9 +96,8 @@ export default function Empower360() {
                     <img 
                       src={nollyImage} 
                       alt="Nolly Santiago" 
-                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-purple-200"
+                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-primary bg-blue-100"
                     />
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-blue-400/20"></div>
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h4>
                   <p className="text-primary font-semibold mb-4">Marketing Director – World Financial Group</p>
@@ -115,9 +114,8 @@ export default function Empower360() {
                     <img 
                       src={pabloImage} 
                       alt="Pablo Santiago" 
-                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-blue-200"
+                      className="w-64 h-64 mx-auto rounded-full object-cover shadow-lg border-4 border-primary bg-blue-100"
                     />
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 to-cyan-400/20"></div>
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h4>
                   <p className="text-primary font-semibold mb-4">Senior Associate – World Financial Group</p>
