@@ -1342,33 +1342,82 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ success: false, error: 'API Key and Search Query are required' });
       }
       
-      // Mock Apollo.io results - in production would call Apollo API
-      const mockApolloLeads = [
-        { firstName: 'Apollo', lastName: 'CEO1', email: 'ceo1@apollocompany.com', company: 'Apollo Corp', title: 'CEO', source: 'apollo' },
-        { firstName: 'Apollo', lastName: 'VP2', email: 'vp2@apollotech.com', company: 'Apollo Tech', title: 'VP Sales', source: 'apollo' },
-        { firstName: 'Apollo', lastName: 'Director3', email: 'dir3@apollosys.com', company: 'Apollo Systems', title: 'Director', source: 'apollo' }
-      ];
+      // Real Apollo.io API call
+      const apolloResponse = await fetch('https://api.apollo.io/v1/mixed_people/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
+          'X-Api-Key': apiKey
+        },
+        body: JSON.stringify({
+          q_keywords: searchQuery,
+          page: 1,
+          per_page: 25, // Get up to 25 leads
+          person_titles: ["founder", "ceo", "president", "director", "vp", "vice president", "owner", "manager"],
+          person_seniorities: ["founder", "c_suite", "vp", "director", "manager"]
+        })
+      });
 
-      console.log('Creating leads:', mockApolloLeads.length);
+      console.log('Apollo API response status:', apolloResponse.status);
+
+      if (!apolloResponse.ok) {
+        const errorText = await apolloResponse.text();
+        console.error('Apollo API error response:', errorText);
+        return res.status(400).json({ 
+          success: false, 
+          error: `Apollo.io API error: ${apolloResponse.status} - ${errorText.slice(0, 200)}` 
+        });
+      }
+
+      const apolloData = await apolloResponse.json();
+      console.log('Apollo API returned:', apolloData.people?.length || 0, 'people');
+
+      if (!apolloData.people || apolloData.people.length === 0) {
+        return res.json({ success: true, count: 0, message: 'No leads found for your search criteria' });
+      }
+
+      let createdCount = 0;
       
-      for (const leadData of mockApolloLeads) {
+      for (const person of apolloData.people) {
         try {
-          await storage.createLead({
-            ...leadData,
+          // Extract and clean the data
+          const leadData = {
+            firstName: person.first_name || 'Unknown',
+            lastName: person.last_name || 'Name',
+            email: person.email || `${person.first_name?.toLowerCase() || 'contact'}@${person.organization?.primary_domain || 'company.com'}`,
+            company: person.organization?.name || 'Unknown Company',
+            title: person.title || 'Unknown Title',
+            phone: person.phone_numbers?.[0]?.raw_number || '',
+            source: 'apollo',
             status: 'new',
             ownerEmail: 'nolly@santiago-team.com'
-          });
+          };
+
+          // Only create if we have essential data
+          if (leadData.firstName !== 'Unknown' && leadData.lastName !== 'Name') {
+            await storage.createLead(leadData);
+            createdCount++;
+          }
         } catch (leadError) {
           console.error('Error creating individual lead:', leadError);
           // Continue with other leads even if one fails
         }
       }
 
-      console.log('Apollo import successful');
-      res.status(200).json({ success: true, count: mockApolloLeads.length });
+      console.log(`Apollo import successful: ${createdCount} leads created`);
+      res.status(200).json({ 
+        success: true, 
+        count: createdCount,
+        total_found: apolloData.people.length,
+        message: `Successfully imported ${createdCount} real leads from Apollo.io`
+      });
     } catch (error) {
       console.error('Apollo import error:', error);
-      res.status(500).json({ success: false, error: error instanceof Error ? error.message : 'Apollo import failed' });
+      res.status(500).json({ 
+        success: false, 
+        error: error instanceof Error ? error.message : 'Apollo import failed' 
+      });
     }
   });
 
