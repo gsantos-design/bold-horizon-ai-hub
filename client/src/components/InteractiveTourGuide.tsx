@@ -158,7 +158,7 @@ export default function InteractiveTourGuide({ steps, isActive, onComplete, onSk
                 {/* Progress bar */}
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                   <motion.div 
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                    className="bg-secondary h-2 rounded-full"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.5 }}
@@ -196,7 +196,7 @@ export default function InteractiveTourGuide({ steps, isActive, onComplete, onSk
                     <Button
                       size="sm"
                       onClick={handleNext}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center gap-2"
+                      className="bg-primary text-secondary flex items-center gap-2"
                     >
                       {currentStep === steps.length - 1 ? (
                         <>

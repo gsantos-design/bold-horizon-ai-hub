@@ -656,7 +656,7 @@ export default function DynamicWorkflowVisualization() {
                               </div>
                               <div className="w-full bg-gray-200 rounded-full h-2">
                                 <motion.div
-                                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                                  className="bg-secondary h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: `${percentage}%` }}
                                   transition={{ duration: 1, delay: index * 0.2 }}
@@ -673,7 +673,7 @@ export default function DynamicWorkflowVisualization() {
 
                   <div>
                     <h4 className="font-semibold mb-3">ROI Analysis</h4>
-                    <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4">
+                    <div className="bg-primary/5 rounded-lg p-4">
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span>Campaign Investment:</span>

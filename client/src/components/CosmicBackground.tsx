@@ -41,10 +41,10 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
     },
     purple: {
       moonColor: "text-purple-200/60",
-      starColor: "bg-purple-50",
+      starColor: "bg-secondary/20",
       starFillColor: "text-yellow-100 fill-yellow-100",
-      orbColors: ["bg-purple-400/20", "bg-fuchsia-400/20", "bg-pink-400/20"],
-      backdropColor: "bg-purple-950/40",
+      orbColors: ["bg-primary/20", "bg-secondary/20", "bg-primary/30"],
+      backdropColor: "bg-primary/40",
       galaxyColors: ["from-purple-300/30", "from-fuchsia-300/30", "from-pink-300/30"]
     },
     // Add more color themes if needed

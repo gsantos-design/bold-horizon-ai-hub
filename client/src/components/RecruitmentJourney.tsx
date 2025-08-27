@@ -216,7 +216,7 @@ export default function RecruitmentJourney() {
           <Badge variant="outline" className="mb-3 px-3 py-1 bg-primary/5 text-primary border-primary/20">
             Your Path to Success
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-primary mb-4">
             WFG Recruitment Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -230,7 +230,7 @@ export default function RecruitmentJourney() {
           {/* Progress Line */}
           <div className="hidden md:block h-2 bg-blue-200/50 rounded-full absolute top-7 left-7 right-7 z-0">
             <motion.div 
-              className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
+              className="h-full bg-secondary rounded-full"
               style={{ 
                 width: `${(activeStep - 1) * (100 / (journeySteps.length - 1))}%`
               }}
@@ -417,7 +417,7 @@ export default function RecruitmentJourney() {
                               transition={{ duration: 0.4, delay: i * 0.2 }}
                               className="flex items-start gap-4 p-3 rounded-lg bg-blue-50 border border-blue-100"
                             >
-                              <div className="flex-shrink-0 h-7 w-7 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mt-0.5 border border-blue-300">
+                              <div className="flex-shrink-0 h-7 w-7 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 border border-secondary/30">
                                 <Check className="h-4 w-4 text-blue-600" />
                               </div>
                               <span className="text-neutral-700">{milestone}</span>

@@ -237,7 +237,7 @@ export function TooltipDictionary({ trigger, termId, className = '' }: TooltipDi
           >
             <Card className="bg-white shadow-xl border-2 border-purple-200 overflow-hidden">
               {/* Header */}
-              <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4">
+              <div className="bg-primary text-secondary p-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <BookOpen className="w-5 h-5" />

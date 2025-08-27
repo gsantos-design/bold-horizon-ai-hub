@@ -55,7 +55,7 @@ export default function DynamicTeamMissionHighlightReel() {
       description: '30+ years of law enforcement experience drives our commitment to protecting first responders and their families through financial education and tax-free wealth strategies.',
       icon: <Shield className="h-8 w-8" />,
       color: 'blue',
-      gradient: 'from-blue-600 to-indigo-600',
+      gradient: 'bg-primary',
       stats: [
         { label: 'Years in Law Enforcement', value: '30+' },
         { label: 'First Responders Helped', value: '500+' },
@@ -71,7 +71,7 @@ export default function DynamicTeamMissionHighlightReel() {
       description: 'With 20+ years in telecommunications and a personal mission born from loss, we ensure every family has the financial education to secure their future before it\'s too late.',
       icon: <Heart className="h-8 w-8" />,
       color: 'purple',
-      gradient: 'from-purple-600 to-pink-600',
+      gradient: 'bg-primary',
       stats: [
         { label: 'Families Educated', value: '2,500+' },
         { label: 'Legacy Plans Created', value: '800+' },
@@ -119,7 +119,7 @@ export default function DynamicTeamMissionHighlightReel() {
       description: 'Four generations united in transforming lives through financial education, building generational wealth, and creating lasting legacies across Florida and New York markets.',
       icon: <Users className="h-8 w-8" />,
       color: 'indigo',
-      gradient: 'from-indigo-600 to-purple-600',
+      gradient: 'bg-primary',
       stats: [
         { label: 'Total Families Served', value: '5,000+' },
         { label: 'Combined Experience', value: '75+ Years' },
@@ -196,7 +196,7 @@ export default function DynamicTeamMissionHighlightReel() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
+    <section className="py-16 bg-primary overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -206,12 +206,12 @@ export default function DynamicTeamMissionHighlightReel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
+            <Badge className="mb-4 bg-secondary text-primary px-6 py-2">
               🎯 Team Mission Highlights
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Dynamic Team Mission
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Highlight Reel</span>
+              <span className="text-secondary"> Highlight Reel</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover the powerful missions driving each Santiago family member and their collective impact 
@@ -235,7 +235,7 @@ export default function DynamicTeamMissionHighlightReel() {
                     opacity: { duration: 0.2 }
                   }}
                 >
-                  <CardContent className={`bg-gradient-to-r ${currentHighlight.gradient} text-white p-0`}>
+                  <CardContent className={`${currentHighlight.gradient} text-secondary p-0`}>
                     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
                       {/* Content Side */}
                       <div className="p-8 lg:p-12 flex flex-col justify-center">

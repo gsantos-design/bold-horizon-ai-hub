@@ -684,7 +684,7 @@ const CareerConstellation: React.FC = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8"
+            className="bg-primary hover:bg-primary/90 text-secondary px-8"
             onClick={() => document.getElementById('career-quiz')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('constellation.cta') || 'Find Your Place In The Constellation'} <Rocket className="ml-2 h-4 w-4" />

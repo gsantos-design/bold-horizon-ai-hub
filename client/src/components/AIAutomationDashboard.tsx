@@ -146,7 +146,7 @@ export default function AIAutomationDashboard() {
           <h2 className="text-3xl font-bold text-gray-900">AI Automation Control Center</h2>
           <p className="text-gray-600">Santiago Team AI-powered lead generation and outreach system</p>
         </div>
-        <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2">
+        <Badge className="bg-secondary text-primary px-4 py-2">
           🤖 Fully Activated
         </Badge>
       </div>
@@ -188,7 +188,7 @@ export default function AIAutomationDashboard() {
                 <p className="text-sm font-medium text-gray-600">Monthly Investment</p>
                 <p className="text-2xl font-bold text-purple-600">${totalMonthlyCost}+</p>
               </div>
-              <div className="p-3 bg-purple-100 rounded-lg">
+              <div className="p-3 bg-secondary/10 rounded-lg">
                 <DollarSign className="h-6 w-6 text-purple-600" />
               </div>
             </div>
