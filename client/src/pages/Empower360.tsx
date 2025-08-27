@@ -431,7 +431,7 @@ export default function Empower360() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-primary font-semibold"
+                className="bg-primary hover:bg-primary/90 text-white font-semibold"
                 onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
@@ -439,7 +439,7 @@ export default function Empower360() {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-primary font-semibold"
+                className="bg-primary hover:bg-primary/90 text-white font-semibold"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 Schedule a Call with Nolly

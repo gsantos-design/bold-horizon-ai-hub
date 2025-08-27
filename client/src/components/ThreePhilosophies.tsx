@@ -415,10 +415,10 @@ export default function ThreePhilosophies() {
               Join thousands of families who have already discovered the power of the Three Philosophies
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <Button size="lg" className="px-8 bg-accent text-primary hover:bg-accent/90">
+              <Button size="lg" className="px-8 bg-primary text-white hover:bg-primary/90">
                 Schedule Your Free Consultation
               </Button>
-              <Button size="lg" className="px-8 bg-accent text-primary hover:bg-accent/90">
+              <Button size="lg" className="px-8 bg-primary text-white hover:bg-primary/90">
                 Contact Pablo & Nolly Santiago
               </Button>
             </div>
