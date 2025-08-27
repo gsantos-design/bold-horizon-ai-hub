@@ -57,7 +57,7 @@ export default function AiAutomationHub() {
       />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-16 ai-overview-section">
+        <section className="bg-primary text-secondary py-16 ai-overview-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <AITooltip 
@@ -207,7 +207,7 @@ export default function AiAutomationHub() {
 
                   {/* AI Video Avatars */}
                   <Card className="border-2 border-purple-200 shadow-xl">
-                    <CardHeader className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+                    <CardHeader className="bg-primary text-secondary">
                       <CardTitle className="flex items-center text-xl">
                         <Video className="h-6 w-6 mr-3" />
                         AI Video Avatars & Cloning
@@ -730,7 +730,7 @@ export default function AiAutomationHub() {
                           Transform your Florida and New York lead generation with AI-powered phone calls and personalized video outreach
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
-                          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8">
+                          <Button size="lg" className="bg-secondary text-primary px-8">
                             <Bot className="h-5 w-5 mr-2" />
                             Deploy AI Automation
                           </Button>

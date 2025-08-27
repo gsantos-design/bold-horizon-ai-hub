@@ -87,7 +87,7 @@ export default function DynamicTeamMissionHighlightReel() {
       description: 'Investment licensed since high school with a Finance degree, Joseph empowers entrepreneurs to build real wealth and create lasting legacies through compound interest mastery.',
       icon: <TrendingUp className="h-8 w-8" />,
       color: 'green',
-      gradient: 'from-green-600 to-emerald-600',
+      gradient: 'bg-primary',
       stats: [
         { label: 'Entrepreneurs Coached', value: '350+' },
         { label: 'Investment Strategies', value: '75+' },

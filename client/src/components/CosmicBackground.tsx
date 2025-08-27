@@ -37,7 +37,7 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
       starFillColor: "text-yellow-100 fill-yellow-100",
       orbColors: ["bg-blue-400/20", "bg-indigo-400/20", "bg-violet-400/20"],
       backdropColor: "bg-blue-950/40",
-      galaxyColors: ["from-blue-300/30", "from-indigo-300/30", "from-cyan-300/30"]
+      galaxyColors: ["from-primary/30", "from-secondary/30", "from-primary/20"]
     },
     purple: {
       moonColor: "text-purple-200/60",
@@ -54,7 +54,7 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
     starFillColor: "text-yellow-100 fill-yellow-100",
     orbColors: ["bg-blue-400/20", "bg-indigo-400/20", "bg-violet-400/20"],
     backdropColor: "bg-blue-950/40",
-    galaxyColors: ["from-blue-300/30", "from-indigo-300/30", "from-cyan-300/30"]
+    galaxyColors: ["from-primary/30", "from-secondary/30", "from-primary/20"]
   };
 
   const getRandomOrbColor = () => {
@@ -243,7 +243,7 @@ const CosmicBackground: React.FC<CosmicBackgroundProps> = ({
             }}
           >
             <motion.div
-              className={`w-full h-full bg-gradient-radial ${galaxyColor} via-transparent to-transparent`}
+              className={`w-full h-full opacity-30`}
               animate={{
                 rotate: 360,
                 scale: [1, 1.15, 1],

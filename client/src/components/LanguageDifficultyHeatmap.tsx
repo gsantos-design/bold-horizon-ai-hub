@@ -127,7 +127,7 @@ export default function LanguageDifficultyHeatmap() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'complete': return 'bg-gradient-to-br from-green-400 to-emerald-500';
+      case 'complete': return 'bg-secondary';
       case 'easy': return 'bg-gradient-to-br from-yellow-300 to-orange-400';
       case 'medium': return 'bg-gradient-to-br from-orange-400 to-red-400';
       case 'hard': return 'bg-gradient-to-br from-red-500 to-red-700';
@@ -183,12 +183,12 @@ export default function LanguageDifficultyHeatmap() {
           <div className="p-3 bg-primary rounded-full">
             <Thermometer className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-primary">
             Interactive Language Difficulty Heatmap
           </h1>
         </div>
         
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-purple-200">
+        <div className="bg-primary/5 p-6 rounded-2xl border border-primary/20">
           <div className="flex items-center justify-center space-x-6 mb-4">
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-600">{totalCompletion}%</div>
@@ -212,7 +212,7 @@ export default function LanguageDifficultyHeatmap() {
           
           <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-green-400 to-purple-500 rounded-full transition-all duration-1000 ease-out"
+              className="h-full bg-secondary rounded-full transition-all duration-1000 ease-out"
               style={{ width: `${totalCompletion}%` }}
             ></div>
           </div>
@@ -238,7 +238,7 @@ export default function LanguageDifficultyHeatmap() {
                   onClick={() => setFilterCategory(category.id)}
                   className={`transition-all duration-200 ${
                     filterCategory === category.id 
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' 
+                      ? 'bg-primary text-secondary' 
                       : 'hover:bg-purple-50'
                   }`}
                 >
@@ -315,7 +315,7 @@ export default function LanguageDifficultyHeatmap() {
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="flex items-center space-x-3">
-              <div className="w-4 h-4 rounded bg-gradient-to-br from-green-400 to-emerald-500"></div>
+              <div className="w-4 h-4 rounded bg-secondary"></div>
               <span className="text-sm font-medium">Complete (90-100%)</span>
             </div>
             <div className="flex items-center space-x-3">

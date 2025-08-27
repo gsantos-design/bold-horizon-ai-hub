@@ -66,7 +66,7 @@ export default function Home() {
       <SpanishMeetingCallout />
 
       {/* AI Career Mentor Featured Section */}
-      <section className="bg-gradient-to-r from-emerald-50 via-blue-50 to-purple-50 py-12">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4">
           <Card className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-xl">
             <CardContent className="p-8 text-center">
@@ -74,11 +74,11 @@ export default function Home() {
                 content={t('tooltip.ai_mentor_content')}
                 title={t('tooltip.ai_powered_guidance')}
               >
-                <Badge className="mb-4 bg-gradient-to-r from-emerald-600 to-purple-600 text-white px-4 py-2 cursor-help">
+                <Badge className="mb-4 bg-secondary text-primary px-4 py-2 cursor-help">
                   🤖 {t('home.ai_mentor_badge')}
                 </Badge>
               </AITooltip>
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 {t('home.ai_mentor_title')}
               </h2>
               <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ export default function Home() {
                   context="ai-automation"
                 >
                   <Link href="/ai-mentor">
-                    <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-700 hover:to-purple-700 text-white">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary">
                       <Bot className="h-5 w-5 mr-2" />
                       {t('home.start_career_chat')}
                       <MessageCircle className="h-5 w-5 ml-2" />

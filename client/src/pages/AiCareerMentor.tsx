@@ -178,7 +178,7 @@ export default function AiCareerMentor() {
 
   if (showProfileSetup) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+      <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ export default function AiCareerMentor() {
                     <Sparkles className="w-6 h-6 text-yellow-500 absolute -top-1 -right-1" />
                   </div>
                 </div>
-                <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <CardTitle className="text-3xl font-bold text-primary">
                   {t('leaders.subtitle')}
                 </CardTitle>
                 <p className="text-gray-600 mt-2">
@@ -251,7 +251,7 @@ export default function AiCareerMentor() {
                   <Button 
                     type="submit" 
                     disabled={createSessionMutation.isPending}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-3"
+                    className="w-full bg-primary hover:bg-primary/90 text-secondary py-3"
                   >
                     {createSessionMutation.isPending ? (
                       <div className="flex items-center">
@@ -275,7 +275,7 @@ export default function AiCareerMentor() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -284,7 +284,7 @@ export default function AiCareerMentor() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-6"
           >
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-primary">
               {t('ai.pablo_nolly_office')}
             </h1>
             <p className="text-gray-600 mt-2">
@@ -442,7 +442,7 @@ export default function AiCareerMentor() {
                 <Button 
                   type="submit" 
                   disabled={!newMessage.trim() || sendMessageMutation.isPending}
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  className="bg-primary hover:bg-primary/90 text-secondary"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

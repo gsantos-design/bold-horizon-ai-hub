@@ -40,15 +40,15 @@ export default function SpanishRegistrationForm() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           {/* Meeting Logo and Title */}
           <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl mb-8">
             <CardHeader className="text-center pb-6">
-              <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-100 to-orange-100 rounded-lg flex items-center justify-center">
+              <div className="w-32 h-32 mx-auto mb-6 bg-secondary/10 rounded-lg flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-r from-green-600 to-orange-600 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-2 bg-primary rounded-full flex items-center justify-center">
                     <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/>
                     </svg>
@@ -58,7 +58,7 @@ export default function SpanishRegistrationForm() {
                   </h1>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg border border-blue-200">
+              <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
                 <h2 className="text-xl font-bold text-gray-900 mb-2">
                   {t('meeting.spanish_title')}
                 </h2>
@@ -207,7 +207,7 @@ export default function SpanishRegistrationForm() {
                 {/* Submit Button */}
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90 text-secondary py-3 text-lg font-semibold"
                 >
                   {t('registration.register_button')}
                 </Button>

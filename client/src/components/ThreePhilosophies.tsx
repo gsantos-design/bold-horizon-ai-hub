@@ -8,11 +8,11 @@ export default function ThreePhilosophies() {
   const [activePhilosophy, setActivePhilosophy] = useState(1);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2">
+          <Badge className="mb-4 bg-secondary text-primary px-6 py-2">
             🎯 Empowering Families
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
