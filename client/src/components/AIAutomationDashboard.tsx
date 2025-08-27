@@ -116,9 +116,9 @@ export default function AIAutomationDashboard() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'connected': return 'text-green-600 bg-green-100';
-      case 'pending': return 'text-yellow-600 bg-yellow-100';
-      default: return 'text-red-600 bg-red-100';
+      case 'connected': return 'text-primary bg-primary/20';
+      case 'pending': return 'text-primary bg-primary/20';
+      default: return 'text-primary bg-primary/20';
     }
   };
 
@@ -146,7 +146,7 @@ export default function AIAutomationDashboard() {
           <h2 className="text-3xl font-bold text-gray-900">AI Automation Control Center</h2>
           <p className="text-gray-600">Santiago Team AI-powered lead generation and outreach system</p>
         </div>
-        <Badge className="bg-secondary text-primary px-4 py-2">
+        <Badge className="bg-primary text-white px-4 py-2">
           🤖 Fully Activated
         </Badge>
       </div>
@@ -158,10 +158,10 @@ export default function AIAutomationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">System Status</p>
-                <p className="text-2xl font-bold text-green-600">Active</p>
+                <p className="text-2xl font-bold text-primary">Active</p>
               </div>
-              <div className="p-3 bg-green-100 rounded-lg">
-                <Zap className="h-6 w-6 text-green-600" />
+              <div className="p-3 bg-primary/20 rounded-lg">
+                <Zap className="h-6 w-6 text-primary" />
               </div>
             </div>
           </CardContent>
@@ -172,10 +172,10 @@ export default function AIAutomationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Connected Services</p>
-                <p className="text-2xl font-bold text-blue-600">{connectedServices}/4</p>
+                <p className="text-2xl font-bold text-primary">{connectedServices}/4</p>
               </div>
-              <div className="p-3 bg-blue-100 rounded-lg">
-                <Bot className="h-6 w-6 text-blue-600" />
+              <div className="p-3 bg-primary/20 rounded-lg">
+                <Bot className="h-6 w-6 text-primary" />
               </div>
             </div>
           </CardContent>
@@ -200,10 +200,10 @@ export default function AIAutomationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Expected ROI</p>
-                <p className="text-2xl font-bold text-green-600">9,500%+</p>
+                <p className="text-2xl font-bold text-primary">9,500%+</p>
               </div>
-              <div className="p-3 bg-green-100 rounded-lg">
-                <TrendingUp className="h-6 w-6 text-green-600" />
+              <div className="p-3 bg-primary/20 rounded-lg">
+                <TrendingUp className="h-6 w-6 text-primary" />
               </div>
             </div>
           </CardContent>
@@ -308,7 +308,7 @@ export default function AIAutomationDashboard() {
                       <h4 className="font-semibold">401k Rollover Outreach</h4>
                       <p className="text-sm text-gray-600">Targeting pre-retirees with tax-free rollover strategies</p>
                     </div>
-                    <Badge className="bg-green-100 text-green-800">Active</Badge>
+                    <Badge className="bg-primary/20 text-green-800">Active</Badge>
                   </div>
                   <div className="mt-3 grid grid-cols-3 gap-4 text-sm">
                     <div>
@@ -332,7 +332,7 @@ export default function AIAutomationDashboard() {
                       <h4 className="font-semibold">High-Yield Account Targeting</h4>
                       <p className="text-sm text-gray-600">Conservative investors seeking CD alternatives</p>
                     </div>
-                    <Badge className="bg-blue-100 text-blue-800">Active</Badge>
+                    <Badge className="bg-primary/20 text-blue-800">Active</Badge>
                   </div>
                   <div className="mt-3 grid grid-cols-3 gap-4 text-sm">
                     <div>
@@ -368,11 +368,11 @@ export default function AIAutomationDashboard() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Overall Response Rate</span>
-                    <span className="font-semibold text-green-600">31.2%</span>
+                    <span className="font-semibold text-primary">31.2%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Meetings Booked</span>
-                    <span className="font-semibold text-blue-600">94</span>
+                    <span className="font-semibold text-primary">94</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Estimated Pipeline Value</span>
@@ -394,15 +394,15 @@ export default function AIAutomationDashboard() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Revenue Generated</span>
-                    <span className="font-semibold text-green-600">$147,500</span>
+                    <span className="font-semibold text-primary">$147,500</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">ROI Percentage</span>
-                    <span className="font-semibold text-green-600">14,356%</span>
+                    <span className="font-semibold text-primary">14,356%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Payback Period</span>
-                    <span className="font-semibold text-blue-600">2.1 days</span>
+                    <span className="font-semibold text-primary">2.1 days</span>
                   </div>
                 </div>
               </CardContent>
@@ -430,7 +430,7 @@ export default function AIAutomationDashboard() {
                     <ul className="space-y-1">
                       {automationStatus.next_steps.map((step, index) => (
                         <li key={index} className="flex items-center gap-2 text-sm">
-                          <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
+                          <div className="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold">
                             {index + 1}
                           </div>
                           {step}

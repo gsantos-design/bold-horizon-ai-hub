@@ -81,9 +81,9 @@ export default function AiAutomationHub() {
                   content="Launch your first AI automation campaign targeting 401k rollover prospects, high-yield savers, or entrepreneurs. Expected results: 8-12% conversion rate, 200+ appointments monthly, $2.5M+ pipeline value."
                   title="🚀 Campaign Launch"
                 >
-                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 font-bold border-2 border-white shadow-lg">
-                    <PlayCircle className="h-5 w-5 mr-2 text-purple-600" />
-                    <span className="text-purple-600">Start AI Campaign</span>
+                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 font-bold border-2 border-white shadow-lg">
+                    <PlayCircle className="h-5 w-5 mr-2 text-primary" />
+                    <span className="text-primary">Start AI Campaign</span>
                   </Button>
                 </TipTooltip>
                 
@@ -91,7 +91,7 @@ export default function AiAutomationHub() {
                   content="Configure your AI phone calls and video avatars with custom scripts, targeting parameters, and integration settings. Setup includes voice cloning, avatar training, and CRM synchronization."
                   title="⚙️ AI Configuration"
                 >
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 font-bold bg-transparent">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 font-bold bg-transparent">
                     <Settings className="h-5 w-5 mr-2" />
                     <span>Configuration</span>
                   </Button>
@@ -162,7 +162,7 @@ export default function AiAutomationHub() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 mt-8">
                   {/* AI Phone Calls */}
                   <Card className="border-2 border-blue-200 shadow-xl">
-                    <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                    <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center text-xl">
                         <Phone className="h-6 w-6 mr-3" />
                         AI Phone Calls with Voice Cloning
@@ -176,19 +176,19 @@ export default function AiAutomationHub() {
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
-                            <Volume2 className="h-4 w-4 text-blue-600 mr-3" />
+                            <Volume2 className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Voice clones of Nolly & Pablo Santiago</span>
                           </div>
                           <div className="flex items-center">
-                            <Clock className="h-4 w-4 text-blue-600 mr-3" />
+                            <Clock className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Sub-500ms response latency</span>
                           </div>
                           <div className="flex items-center">
-                            <Users className="h-4 w-4 text-blue-600 mr-3" />
+                            <Users className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Thousands of concurrent calls</span>
                           </div>
                           <div className="flex items-center">
-                            <Target className="h-4 w-4 text-blue-600 mr-3" />
+                            <Target className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Lead qualification & appointment booking</span>
                           </div>
                         </div>
@@ -206,7 +206,7 @@ export default function AiAutomationHub() {
                   </Card>
 
                   {/* AI Video Avatars */}
-                  <Card className="border-2 border-purple-200 shadow-xl">
+                  <Card className="border-2 border-primary shadow-xl">
                     <CardHeader className="bg-primary text-secondary">
                       <CardTitle className="flex items-center text-xl">
                         <Video className="h-6 w-6 mr-3" />
@@ -217,23 +217,23 @@ export default function AiAutomationHub() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold">Platform Integration:</span>
-                          <Badge className="bg-purple-100 text-purple-800">HeyGen + Tavus</Badge>
+                          <Badge className="bg-primary text-white">HeyGen + Tavus</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
-                            <Camera className="h-4 w-4 text-purple-600 mr-3" />
+                            <Camera className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Video avatars of Nolly & Pablo Santiago</span>
                           </div>
                           <div className="flex items-center">
-                            <MessageSquare className="h-4 w-4 text-purple-600 mr-3" />
+                            <MessageSquare className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Personalized prospect messaging</span>
                           </div>
                           <div className="flex items-center">
-                            <Zap className="h-4 w-4 text-purple-600 mr-3" />
+                            <Zap className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">Bulk video generation at scale</span>
                           </div>
                           <div className="flex items-center">
-                            <TrendingUp className="h-4 w-4 text-purple-600 mr-3" />
+                            <TrendingUp className="h-4 w-4 text-primary mr-3" />
                             <span className="text-sm">CRM integration & automation</span>
                           </div>
                         </div>
@@ -252,8 +252,8 @@ export default function AiAutomationHub() {
                 </div>
 
                 {/* Implementation Roadmap */}
-                <Card className="border-2 border-green-200 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+                <Card className="border-2 border-primary shadow-xl">
+                  <CardHeader className="bg-primary text-white">
                     <CardTitle className="flex items-center text-xl">
                       <Settings className="h-6 w-6 mr-3" />
                       Implementation Roadmap
@@ -262,22 +262,22 @@ export default function AiAutomationHub() {
                   <CardContent className="p-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       <div className="text-center">
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-blue-600">1</span>
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">1</span>
                         </div>
                         <h3 className="font-bold text-lg mb-2">Voice & Video Training</h3>
                         <p className="text-sm text-gray-600">Collect 2-minute voice samples and video training footage from Nolly and Pablo Santiago for AI cloning</p>
                       </div>
                       <div className="text-center">
-                        <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-purple-600">2</span>
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">2</span>
                         </div>
                         <h3 className="font-bold text-lg mb-2">API Integration</h3>
                         <p className="text-sm text-gray-600">Integrate Retell AI, ElevenLabs, HeyGen, and Tavus APIs into the existing Santiago Lead Engine</p>
                       </div>
                       <div className="text-center">
-                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-green-600">3</span>
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-white">3</span>
                         </div>
                         <h3 className="font-bold text-lg mb-2">Campaign Launch</h3>
                         <p className="text-sm text-gray-600">Deploy AI automation for Florida and New York market targeting with personalized outreach</p>
@@ -397,7 +397,7 @@ export default function AiAutomationHub() {
                       <CardContent className="space-y-4">
                         <div className="bg-blue-50 rounded-lg p-4">
                           <h4 className="font-semibold text-blue-800">Retell AI + ElevenLabs</h4>
-                          <div className="text-sm text-blue-600 space-y-1 mt-2">
+                          <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Voice Cloning: $22/month (Creator Plan)</p>
                             <p>• Phone Calls: $0.10-0.30/minute</p>
                             <p>• Setup: $500-1,000 one-time</p>
@@ -534,7 +534,7 @@ export default function AiAutomationHub() {
                       <CardContent className="space-y-4">
                         <div className="bg-purple-50 rounded-lg p-4">
                           <h4 className="font-semibold text-purple-800">HeyGen + Tavus</h4>
-                          <div className="text-sm text-purple-600 space-y-1 mt-2">
+                          <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Avatar Creation: $99/month</p>
                             <p>• Video Generation: $0.50-1.00/minute</p>
                             <p>• Personalization: Included</p>
@@ -564,7 +564,7 @@ export default function AiAutomationHub() {
               <TabsContent value="campaigns" className="mt-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <Card className="border-2 border-green-200">
-                    <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+                    <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center">
                         <Calendar className="h-5 w-5 mr-2" />
                         Active AI Campaigns
@@ -651,7 +651,7 @@ export default function AiAutomationHub() {
                   </Card>
 
                   <Card className="border-2 border-blue-200">
-                    <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                    <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center">
                         <TrendingUp className="h-5 w-5 mr-2" />
                         Performance Analytics
@@ -676,7 +676,7 @@ export default function AiAutomationHub() {
                             </div>
                             <div className="flex items-center justify-between">
                               <span className="text-sm">Estimated Pipeline Value</span>
-                              <span className="font-bold text-green-600">$87,500</span>
+                              <span className="font-bold text-primary">$87,500</span>
                             </div>
                           </div>
                         </div>
@@ -694,7 +694,7 @@ export default function AiAutomationHub() {
                             </div>
                             <div className="flex justify-between border-t pt-2">
                               <span className="font-semibold">Return on Investment:</span>
-                              <span className="font-bold text-green-600">10,838%</span>
+                              <span className="font-bold text-primary">10,838%</span>
                             </div>
                           </div>
                         </div>
@@ -704,15 +704,15 @@ export default function AiAutomationHub() {
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center justify-between bg-green-50 rounded px-3 py-2">
                               <span>"Tax-Free Rollover Strategy"</span>
-                              <span className="font-semibold text-green-600">12.4% conversion</span>
+                              <span className="font-semibold text-primary">12.4% conversion</span>
                             </div>
                             <div className="flex items-center justify-between bg-blue-50 rounded px-3 py-2">
                               <span>"High-Yield Alternative"</span>
-                              <span className="font-semibold text-blue-600">8.9% conversion</span>
+                              <span className="font-semibold text-primary">8.9% conversion</span>
                             </div>
                             <div className="flex items-center justify-between bg-purple-50 rounded px-3 py-2">
                               <span>"Entrepreneur Income"</span>
-                              <span className="font-semibold text-purple-600">15.2% conversion</span>
+                              <span className="font-semibold text-primary">15.2% conversion</span>
                             </div>
                           </div>
                         </div>
