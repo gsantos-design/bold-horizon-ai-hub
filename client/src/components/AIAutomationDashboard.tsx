@@ -21,8 +21,11 @@ import {
   Camera,
   Zap,
   Target,
-  ExternalLink
+  ExternalLink,
+  Mail,
+  Send
 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
@@ -349,6 +352,15 @@ export default function AIAutomationDashboard() {
                     </div>
                   </div>
                 </div>
+
+                {/* Email Test Section */}
+                <div className="mt-6 p-4 border rounded-lg bg-primary/5">
+                  <h4 className="font-semibold text-primary mb-2">📧 Test Email System</h4>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Verify your SendGrid integration is working properly
+                  </p>
+                  <EmailTestComponent />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -460,6 +472,87 @@ export default function AIAutomationDashboard() {
           </Card>
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// Email Test Component
+function EmailTestComponent() {
+  const [testEmail, setTestEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
+
+  const handleTestEmail = async () => {
+    if (!testEmail) {
+      setResult({ success: false, message: 'Please enter a valid email address' });
+      return;
+    }
+
+    setIsLoading(true);
+    setResult(null);
+
+    try {
+      const response = await fetch('/api/test-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ testEmail }),
+      });
+
+      const data = await response.json();
+      setResult(data);
+    } catch (error) {
+      setResult({ 
+        success: false, 
+        message: 'Failed to send test email. Please try again.' 
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-3">
+      <div className="flex gap-2">
+        <Input
+          type="email"
+          placeholder="Enter your email to test..."
+          value={testEmail}
+          onChange={(e) => setTestEmail(e.target.value)}
+          className="flex-1"
+        />
+        <Button 
+          onClick={handleTestEmail}
+          disabled={isLoading}
+          className="bg-primary hover:bg-primary/90"
+        >
+          {isLoading ? (
+            <>
+              <Clock className="h-4 w-4 mr-2 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4 mr-2" />
+              Test Email
+            </>
+          )}
+        </Button>
+      </div>
+      
+      {result && (
+        <Alert className={result.success ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}>
+          {result.success ? (
+            <CheckCircle className="h-4 w-4 text-green-600" />
+          ) : (
+            <AlertCircle className="h-4 w-4 text-red-600" />
+          )}
+          <AlertDescription className={result.success ? 'text-green-800' : 'text-red-800'}>
+            {result.message}
+          </AlertDescription>
+        </Alert>
+      )}
     </div>
   );
 }
