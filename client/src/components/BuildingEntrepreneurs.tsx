@@ -23,7 +23,7 @@ export default function BuildingEntrepreneurs() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 {t('building.master_new_art')}<br />
-                <span className="text-blue-600">{t('building.join_santiago_team')}</span>
+                <span className="text-primary">{t('building.join_santiago_team')}</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 {t('building.transform_description')} Learn proven strategies for <DictionaryTerm termId="ingreso_multiple">multiple income streams</DictionaryTerm> and <DictionaryTerm termId="libertad_financiera">financial freedom</DictionaryTerm>.
@@ -35,7 +35,7 @@ export default function BuildingEntrepreneurs() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-secondary px-8 py-3 text-lg"
                   onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
                 >
                   {t('building.start_journey')}
@@ -43,7 +43,7 @@ export default function BuildingEntrepreneurs() {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
+                  className="border-primary text-primary hover:bg-primary/5 px-8 py-3 text-lg"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
                   {t('building.call_pablo_nolly')}
