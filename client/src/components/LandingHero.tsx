@@ -226,7 +226,7 @@ export default function LandingHero() {
                   </div>
                 </div>
 
-                <div className="bg-primary text-secondary rounded-xl p-6 text-center">
+                <div className="bg-primary text-secondary rounded-xl p-6 text-center" style={{background: 'hsl(215, 100%, 12%)'}}>
                   <h4 className="text-xl font-bold mb-2">{t('team.ready_secure')}</h4>
                   <p className="mb-4 opacity-90">
                     {t('team.join_thousands')}
