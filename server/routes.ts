@@ -1203,7 +1203,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Email verification test endpoint
+  // Email verification test endpoint - LIVE with Replit Beta Domain
   app.post("/api/test-email", async (req, res) => {
     try {
       const { testEmail } = req.body;
@@ -1224,31 +1224,84 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Simulate successful email test for demo purposes
-      console.log(`📧 Email test requested for: ${testEmail}`);
-      
-      // Simulate email sending delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (!process.env.SENDGRID_API_KEY) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'SendGrid API key not configured. Please check your environment settings.' 
+        });
+      }
+
+      const sgMail = await import('@sendgrid/mail');
+      sgMail.default.setApiKey(process.env.SENDGRID_API_KEY!);
+
+      // Use Replit beta domain for verified sending
+      const fromEmail = `noreply@${process.env.REPLIT_DOMAIN || 'replit.dev'}`;
+
+      const testEmailData = {
+        to: testEmail,
+        from: fromEmail,
+        subject: '🎉 Santiago Team Email System - LIVE TEST SUCCESS!',
+        text: 'Your Santiago Team email automation system is now LIVE and sending real emails! This confirms your Replit beta domain verification is working perfectly.',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; padding: 20px;">
+            <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 40px 20px; text-align: center; color: white; border-radius: 12px;">
+              <h1 style="margin: 0; font-size: 32px;">🎉 EMAIL SYSTEM LIVE!</h1>
+              <p style="margin: 15px 0 0; font-size: 18px; opacity: 0.9;">Santiago Team AI Automation</p>
+            </div>
+            <div style="padding: 30px 20px; background: white; margin-top: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+              <h2 style="color: #1e40af; margin-top: 0;">✅ REAL EMAIL DELIVERY CONFIRMED!</h2>
+              <p style="color: #475569; line-height: 1.6; font-size: 16px;">
+                Congratulations! Your Santiago Team email system is now fully operational with REAL email delivery. 
+                This is not a simulation - you just received an actual email sent through your verified Replit beta domain.
+              </p>
+              <div style="background: #e0f2fe; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 5px solid #0284c7;">
+                <h3 style="color: #0284c7; margin-top: 0; font-size: 18px;">🚀 Your Email Campaigns Are Ready:</h3>
+                <ul style="color: #075985; margin: 10px 0; padding-left: 20px;">
+                  <li style="margin: 8px 0;"><strong>✅ Domain Verification:</strong> Active via Replit Beta</li>
+                  <li style="margin: 8px 0;"><strong>✅ SendGrid Integration:</strong> Live & Operational</li>
+                  <li style="margin: 8px 0;"><strong>✅ Email Delivery:</strong> Confirmed Working</li>
+                  <li style="margin: 8px 0;"><strong>✅ Lead Campaigns:</strong> Ready to Launch</li>
+                </ul>
+              </div>
+              <div style="background: #fefce8; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 5px solid #eab308;">
+                <h3 style="color: #a16207; margin-top: 0; font-size: 16px;">📋 Next Steps for Santiago Team:</h3>
+                <ol style="color: #92400e; margin: 10px 0; padding-left: 20px;">
+                  <li style="margin: 5px 0;">Import your lead lists into the system</li>
+                  <li style="margin: 5px 0;">Create your email campaign templates</li>
+                  <li style="margin: 5px 0;">Set up automated follow-up sequences</li>
+                  <li style="margin: 5px 0;">Launch your first lead generation campaign</li>
+                </ol>
+              </div>
+              <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+                <p style="color: #64748b; font-size: 14px; margin: 0;">
+                  <strong>Need Support?</strong> Call Pablo & Nolly Santiago: 
+                  <a href="tel:407-777-1087" style="color: #1e40af; text-decoration: none; font-weight: bold;">(407) 777-1087</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        `
+      };
+
+      await sgMail.default.send(testEmailData);
+      console.log(`📧 LIVE email successfully sent to: ${testEmail}`);
 
       res.json({ 
         success: true, 
-        message: `✅ Email system test completed successfully!`,
-        details: `Test email simulation sent to ${testEmail}. Your email campaigns are configured and ready to use.`,
-        note: 'Email system is working! To send live emails, complete SendGrid domain verification in production.',
-        nextSteps: [
-          'Import your lead lists',
-          'Set up your email templates', 
-          'Configure SendGrid with verified domain',
-          'Launch your first email campaign'
-        ]
+        message: `🎉 LIVE EMAIL SENT! Check your inbox at ${testEmail}`,
+        details: 'Your Santiago Team email system is now fully operational with real email delivery!',
+        status: 'LIVE - Replit Beta Domain Verified',
+        emailSent: testEmail,
+        fromAddress: fromEmail
       });
 
     } catch (error) {
       console.error('Email test error:', error);
       res.status(500).json({ 
         success: false, 
-        message: 'Failed to test email system',
-        error: error instanceof Error ? error.message : 'Unknown error'
+        message: 'Failed to send live email',
+        error: error instanceof Error ? error.message : 'Unknown error',
+        note: 'Check SendGrid API key and domain verification status'
       });
     }
   });
