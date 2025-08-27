@@ -1306,6 +1306,117 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Email Campaign Launch Endpoint
+  app.post("/api/launch-email-campaign", async (req, res) => {
+    try {
+      const { campaignType, emails, template } = req.body;
+      
+      if (!campaignType || !emails || !template) {
+        return res.status(400).json({
+          success: false,
+          message: 'Campaign type, emails, and template are required'
+        });
+      }
+
+      if (!Array.isArray(emails) || emails.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: 'Please provide at least one email address'
+        });
+      }
+
+      if (!process.env.SENDGRID_API_KEY) {
+        return res.status(400).json({
+          success: false,
+          message: 'Email service not configured. Please contact administrator.'
+        });
+      }
+
+      const sgMail = await import('@sendgrid/mail');
+      sgMail.default.setApiKey(process.env.SENDGRID_API_KEY!);
+
+      const fromEmail = `noreply@${process.env.REPLIT_DOMAIN || 'replit.dev'}`;
+      let successCount = 0;
+      let errorCount = 0;
+      const errors: string[] = [];
+
+      // Send emails with delay to avoid rate limiting
+      for (const email of emails) {
+        try {
+          const emailData = {
+            to: email,
+            from: fromEmail,
+            subject: template.subject,
+            text: template.template.replace(/\[NAME\]/g, 'Valued Client').replace(/\[STATE\]/g, 'your state'),
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; padding: 20px;">
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 30px 20px; text-align: center; color: white; border-radius: 12px;">
+                  <h1 style="margin: 0; font-size: 24px;">${template.subject}</h1>
+                  <p style="margin: 10px 0 0; opacity: 0.9;">Santiago Team - World Financial Group</p>
+                </div>
+                <div style="padding: 30px 20px; background: white; margin-top: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                  <div style="white-space: pre-line; line-height: 1.6; color: #374151;">
+                    ${template.template.replace(/\[NAME\]/g, 'Valued Client').replace(/\[STATE\]/g, 'your state')}
+                  </div>
+                  <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center;">
+                    <p style="color: #6b7280; font-size: 14px; margin: 0;">
+                      Santiago Team | World Financial Group<br>
+                      📞 <a href="tel:407-777-1087" style="color: #1e40af; text-decoration: none;">(407) 777-1087</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            `
+          };
+
+          await sgMail.default.send(emailData);
+          successCount++;
+          console.log(`📧 Campaign email sent to: ${email}`);
+          
+          // Rate limiting - wait 500ms between emails
+          await new Promise(resolve => setTimeout(resolve, 500));
+          
+        } catch (error) {
+          errorCount++;
+          errors.push(`Failed to send to ${email}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+          console.error(`Email campaign error for ${email}:`, error);
+        }
+      }
+
+      // Log campaign launch
+      console.log(`📊 Email Campaign "${template.name}" launched: ${successCount} sent, ${errorCount} failed`);
+
+      if (successCount === 0) {
+        return res.status(500).json({
+          success: false,
+          message: 'Failed to send any emails in the campaign',
+          errors: errors.slice(0, 3) // Show first 3 errors
+        });
+      }
+
+      res.json({
+        success: true,
+        message: `🎉 Campaign "${template.name}" launched successfully!`,
+        count: successCount,
+        details: {
+          sent: successCount,
+          failed: errorCount,
+          total: emails.length,
+          campaignType,
+          timestamp: new Date().toISOString()
+        }
+      });
+
+    } catch (error) {
+      console.error('Email campaign launch error:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to launch email campaign',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

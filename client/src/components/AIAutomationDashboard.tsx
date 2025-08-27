@@ -353,20 +353,26 @@ export default function AIAutomationDashboard() {
                   </div>
                 </div>
 
-                {/* EMAIL SYSTEM - START HERE */}
-                <div className="mt-6 p-8 border-4 border-blue-500 rounded-xl bg-blue-50 shadow-lg">
+                {/* EMAIL CAMPAIGN LAUNCHER */}
+                <div className="mt-6 p-8 border-4 border-green-500 rounded-xl bg-green-50 shadow-lg">
                   <div className="text-center mb-6">
-                    <h2 className="text-3xl font-bold text-blue-600 mb-2">✉️ YOUR EMAIL SYSTEM IS HERE! ✉️</h2>
-                    <p className="text-lg text-blue-800 font-semibold">
-                      👇 Enter your email below to test and start sending campaigns 👇
+                    <h2 className="text-3xl font-bold text-green-600 mb-2">🚀 LAUNCH EMAIL CAMPAIGNS 🚀</h2>
+                    <p className="text-lg text-green-800 font-semibold">
+                      Start sending emails to your leads right now!
+                    </p>
+                  </div>
+                  <EmailCampaignLauncher />
+                </div>
+
+                {/* EMAIL SYSTEM TEST */}
+                <div className="mt-6 p-6 border-2 border-blue-500 rounded-xl bg-blue-50">
+                  <div className="text-center mb-4">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">📧 Test Email System</h3>
+                    <p className="text-blue-800">
+                      Verify your email delivery is working
                     </p>
                   </div>
                   <EmailTestComponent />
-                  <div className="mt-4 p-4 bg-yellow-100 border border-yellow-400 rounded-lg">
-                    <p className="text-yellow-800 font-medium text-center">
-                      ⬆️ EMAIL INPUT FIELD IS RIGHT ABOVE THIS MESSAGE ⬆️
-                    </p>
-                  </div>
                 </div>
               </div>
             </CardContent>
@@ -479,6 +485,214 @@ export default function AIAutomationDashboard() {
           </Card>
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// Email Campaign Launcher
+function EmailCampaignLauncher() {
+  const [campaignType, setCampaignType] = useState('');
+  const [targetEmails, setTargetEmails] = useState('');
+  const [isLaunching, setIsLaunching] = useState(false);
+  const [result, setResult] = useState<{ success: boolean; message: string; count?: number } | null>(null);
+
+  const campaignTemplates = {
+    '401k': {
+      name: '401k Rollover Campaign',
+      subject: '💰 Turn Your 401k Into Tax-Free Income - Santiago Team',
+      template: `Hi [NAME],
+
+Are you concerned about taxes eating into your retirement savings? 
+
+Many successful professionals like you are discovering how to convert their 401k into TAX-FREE income using strategies the wealthy have used for decades.
+
+The Santiago Team at World Financial Group has helped hundreds of families in [STATE] protect their retirement from taxes while building guaranteed wealth.
+
+Here's what we can show you:
+✅ How to move 401k money WITHOUT penalties
+✅ Tax-free income strategies that banks won't tell you
+✅ Guaranteed growth with NO market risk
+✅ Legacy wealth for your family
+
+Would you like a complimentary 15-minute call to see if this makes sense for your situation?
+
+Best regards,
+Nolly & Pablo Santiago
+World Financial Group
+📞 (407) 777-1087
+
+P.S. This opportunity has income requirements. We only work with individuals earning $75k+ annually.`
+    },
+    'high-yield': {
+      name: 'High-Yield Account Campaign',
+      subject: '🏦 Earn 5.8% Guaranteed (CD Alternative) - Santiago Team',
+      template: `Hi [NAME],
+
+Tired of your money earning less than 1% while inflation steals your purchasing power?
+
+Conservative investors are discovering accounts paying 5.8% GUARANTEED with:
+✅ NO market risk
+✅ Principal protection 
+✅ Higher returns than CDs
+✅ Immediate liquidity options
+
+The Santiago Team has helped families in [STATE] secure their savings while earning real returns.
+
+Want to see if you qualify for these exclusive high-yield accounts?
+
+Schedule a brief call: (407) 777-1087
+
+Best regards,
+Nolly & Pablo Santiago
+World Financial Group
+
+P.S. These accounts have limited availability and income requirements. Call today to secure your spot.`
+    },
+    'entrepreneur': {
+      name: 'Entrepreneur Income Campaign', 
+      subject: '🚀 $100k-$250k Additional Income for Business Owners',
+      template: `Hi [NAME],
+
+As a successful business owner, you understand the value of multiple income streams.
+
+What if you could build a $100k-$250k additional income stream that:
+✅ Requires NO inventory or employees
+✅ Leverages your existing network
+✅ Builds residual income for life
+✅ Helps other families achieve financial freedom
+
+The Santiago Team at World Financial Group has created a proven system for entrepreneurs to build substantial additional income in the financial services industry.
+
+This isn't for everyone - we only work with established business owners who are serious about growth.
+
+Interested in learning more?
+Call: (407) 777-1087
+
+Best regards,
+Nolly & Pablo Santiago
+World Financial Group
+
+P.S. We're looking for 3 serious entrepreneurs this month. If that's you, don't wait.`
+    }
+  };
+
+  const handleLaunchCampaign = async () => {
+    if (!campaignType || !targetEmails.trim()) {
+      setResult({ success: false, message: 'Please select a campaign type and enter email addresses' });
+      return;
+    }
+
+    const emails = targetEmails.split('\n').filter(email => email.trim()).map(email => email.trim());
+    if (emails.length === 0) {
+      setResult({ success: false, message: 'Please enter at least one valid email address' });
+      return;
+    }
+
+    setIsLaunching(true);
+    setResult(null);
+
+    try {
+      const template = campaignTemplates[campaignType as keyof typeof campaignTemplates];
+      
+      const response = await fetch('/api/launch-email-campaign', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          campaignType,
+          emails,
+          template
+        }),
+      });
+
+      const data = await response.json();
+      setResult(data);
+      
+      if (data.success) {
+        setTargetEmails(''); // Clear the form on success
+      }
+    } catch (error) {
+      setResult({ 
+        success: false, 
+        message: 'Failed to launch campaign. Please try again.' 
+      });
+    } finally {
+      setIsLaunching(false);
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {Object.entries(campaignTemplates).map(([key, template]) => (
+          <div 
+            key={key}
+            onClick={() => setCampaignType(key)}
+            className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
+              campaignType === key 
+                ? 'border-green-500 bg-green-100' 
+                : 'border-gray-300 hover:border-green-300'
+            }`}
+          >
+            <h4 className="font-bold text-green-700">{template.name}</h4>
+            <p className="text-sm text-gray-600 mt-1">{template.subject}</p>
+          </div>
+        ))}
+      </div>
+
+      {campaignType && (
+        <div className="p-4 bg-white border-2 border-green-300 rounded-lg">
+          <h4 className="text-lg font-bold text-green-600 mb-3">📧 EMAIL LIST FOR CAMPAIGN</h4>
+          <textarea
+            placeholder="Enter email addresses (one per line):&#10;example1@email.com&#10;example2@email.com&#10;example3@email.com"
+            value={targetEmails}
+            onChange={(e) => setTargetEmails(e.target.value)}
+            className="w-full h-32 p-3 border border-gray-300 rounded-lg resize-none"
+          />
+          <div className="mt-4 flex justify-between items-center">
+            <p className="text-sm text-gray-600">
+              {targetEmails.split('\n').filter(email => email.trim()).length} emails ready to send
+            </p>
+            <Button 
+              onClick={handleLaunchCampaign}
+              disabled={isLaunching}
+              className="bg-green-600 hover:bg-green-700 px-8"
+              size="lg"
+            >
+              {isLaunching ? (
+                <>
+                  <Clock className="h-5 w-5 mr-2 animate-spin" />
+                  Launching...
+                </>
+              ) : (
+                <>
+                  <Send className="h-5 w-5 mr-2" />
+                  🚀 LAUNCH CAMPAIGN
+                </>
+              )}
+            </Button>
+          </div>
+        </div>
+      )}
+      
+      {result && (
+        <Alert className={result.success ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}>
+          {result.success ? (
+            <CheckCircle className="h-4 w-4 text-green-600" />
+          ) : (
+            <AlertCircle className="h-4 w-4 text-red-600" />
+          )}
+          <AlertDescription className={result.success ? 'text-green-800' : 'text-red-800'}>
+            {result.message}
+            {result.count && (
+              <div className="mt-2 font-semibold">
+                📊 Campaign sent to {result.count} leads successfully!
+              </div>
+            )}
+          </AlertDescription>
+        </Alert>
+      )}
     </div>
   );
 }
