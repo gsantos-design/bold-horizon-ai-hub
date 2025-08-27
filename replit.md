@@ -1,6 +1,6 @@
 # Overview
 
-Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG), specifically designed for the Santiago Team. This cosmic-themed digital recruitment platform transforms career exploration through immersive 3D visualizations, AI-powered career assessments, and innovative engagement strategies. The application serves as a comprehensive recruitment and education tool for financial professionals in the Florida and New York markets.
+Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG), specifically designed for the Santiago Team. This cosmic-themed digital recruitment platform transforms career exploration through immersive 3D visualizations, AI-powered career assessments, and innovative engagement strategies. The application serves as a comprehensive recruitment and education tool for financial professionals nationwide.
 
 ## Recent v12 Enhancements (August 2025)
 - **Comprehensive Santiago Family User Guide**: Complete end-to-end documentation covering all AI automation features, sales tools, video generation, call automation, lead management, and Spanish language tools with step-by-step instructions and troubleshooting
@@ -20,7 +20,7 @@ Bold Horizons is a dynamic recruitment platform for World Financial Group (WFG),
 - **Revenue Intelligence**: Smart calculation engine using title, industry, company size, and location multipliers
 - **Entrepreneur-Focused Lead Generation**: New targeting system for entrepreneurs seeking $100K-$250K additional income with 90% close rate potential
 - **High-Converting Outreach Templates**: Specialized email sequences and LinkedIn campaigns targeting successful business owners and founders
-- **Territory Optimization**: Updated all components to focus exclusively on Florida and New York markets (Caribbean and Puerto Rico fully removed)
+- **Territory Optimization**: Updated all components to serve all United States markets nationwide
 - **Industry Success Probability Heat Map**: Interactive visual analytics showing conversion rates, deal values, and strategic insights across 9 industry sectors with territory-specific performance data
 - **401k Rollover Targeting**: Comprehensive lead generation system targeting individuals seeking tax-free rollover strategies (IUL, Annuities, Strategic Investments) with specialized templates for pre-retirees, job changers, and high-income professionals
 - **High Yield No-Loss Targeting**: Lead generation system for conservative investors seeking CD alternatives with guaranteed principal protection and higher yields (4.5-6.8% vs traditional CD rates)
@@ -107,7 +107,7 @@ Currently implements a minimal authentication structure with room for expansion:
 
 ### Multilingual Support
 - React Context-based language switching (English/Spanish)
-- Comprehensive translation system for Caribbean and Florida markets
+- Comprehensive translation system for United States markets
 - Dynamic content adaptation based on user language preference
 
 ### 3D Cosmic Interface
@@ -158,4 +158,4 @@ Currently implements a minimal authentication structure with room for expansion:
 ## Additional Integrations
 - **World Financial Group**: Direct integration with WFG registration systems
 - **Transamerica**: Commission calculation based on Transamerica products
-- **Multi-regional Support**: Specialized configurations for Florida and New York markets (Caribbean territory removed)
+- **Multi-regional Support**: Specialized configurations for nationwide United States markets

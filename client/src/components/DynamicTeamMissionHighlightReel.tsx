@@ -116,7 +116,7 @@ export default function DynamicTeamMissionHighlightReel() {
       id: 'team-impact',
       title: 'Combined Team Impact',
       subtitle: 'Santiago Family Legacy',
-      description: 'Four generations united in transforming lives through financial education, building generational wealth, and creating lasting legacies across Florida and New York markets.',
+      description: 'Four generations united in transforming lives through financial education, building generational wealth, and creating lasting legacies across the United States.',
       icon: <Users className="h-8 w-8" />,
       color: 'indigo',
       gradient: 'bg-primary',
@@ -430,7 +430,7 @@ export default function DynamicTeamMissionHighlightReel() {
               />
               <p className="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
                 Four generations united in service, transformed by financial education, 
-                and committed to protecting families across Florida and New York.
+                and committed to protecting families nationwide.
               </p>
             </div>
           </motion.div>
