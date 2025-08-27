@@ -90,7 +90,7 @@ export default function Home() {
                   context="ai-automation"
                 >
                   <Link href="/ai-mentor">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
                       <Bot className="h-5 w-5 mr-2" />
                       {t('home.start_career_chat')}
                       <MessageCircle className="h-5 w-5 ml-2" />
@@ -99,8 +99,7 @@ export default function Home() {
                 </SmartTooltip>
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+                  className="bg-primary hover:bg-primary/90 text-white"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
                   {t('home.schedule_call')}
