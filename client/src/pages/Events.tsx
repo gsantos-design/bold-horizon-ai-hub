@@ -53,7 +53,7 @@ export default function Events() {
   // Only show real events - upcoming events will be added when they are actually scheduled
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+    <div className="min-h-screen bg-white">
       <Header />
       
       <main className="pt-20 pb-16">
@@ -61,10 +61,7 @@ export default function Events() {
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative py-24 overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)'
-          }}
+          className="relative py-24 overflow-hidden bg-primary"
         >
           {/* Animated background elements */}
           <div className="absolute inset-0">
@@ -90,7 +87,7 @@ export default function Events() {
               className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
             >
               Transform Your
-              <span className="block bg-gradient-to-r from-yellow-200 to-pink-200 bg-clip-text text-transparent">
+              <span className="block text-white">
                 Financial Future
               </span>
             </motion.h1>
@@ -111,7 +108,7 @@ export default function Events() {
             >
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 onClick={() => setSelectedEvent('i-wealth-workshop')}
               >
                 <Star className="w-5 h-5 mr-2" />
@@ -154,7 +151,7 @@ export default function Events() {
         {/* Featured Event - I WEALTH Workshop */}
         <motion.section 
           {...fadeInUp}
-          className="py-20 bg-gradient-to-br from-gray-50 to-white"
+          className="py-20 bg-white"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -163,7 +160,7 @@ export default function Events() {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg px-6 py-3 mb-6 shadow-lg">
+                <Badge className="bg-primary text-white text-lg px-6 py-3 mb-6 shadow-lg">
                   <Wine className="w-4 h-4 mr-2" />
                   {featuredEvent.status}
                 </Badge>
@@ -171,7 +168,7 @@ export default function Events() {
               
               <motion.h2 
                 {...fadeInUp}
-                className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-800 to-pink-600 bg-clip-text text-transparent mb-6"
+                className="text-4xl md:text-6xl font-bold text-primary mb-6"
               >
                 {featuredEvent.title}
               </motion.h2>
@@ -192,20 +189,20 @@ export default function Events() {
                 transition={{ delay: 0.3 }}
                 className="relative group"
               >
-                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+                <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
                 <div className="relative">
                   <img 
                     src={wealthWorkshopFlyer} 
                     alt="I WEALTH Workshop Flyer featuring Nolly Santiago"
                     className="w-full rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl" />
+                  <div className="absolute inset-0 bg-black/5 rounded-2xl" />
                   
                   {/* Floating elements */}
-                  <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-3 shadow-lg animate-bounce">
-                    <Star className="w-6 h-6 text-yellow-800" />
+                  <div className="absolute -top-4 -right-4 bg-primary rounded-full p-3 shadow-lg animate-bounce">
+                    <Star className="w-6 h-6 text-white" />
                   </div>
-                  <div className="absolute -bottom-4 -left-4 bg-pink-500 rounded-full p-3 shadow-lg animate-pulse">
+                  <div className="absolute -bottom-4 -left-4 bg-primary rounded-full p-3 shadow-lg animate-pulse">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -230,14 +227,14 @@ export default function Events() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + index * 0.1 }}
-                      className={`bg-gradient-to-br from-${item.color}-50 to-${item.color}-100 p-6 rounded-2xl border border-${item.color}-200 hover:shadow-lg transition-all duration-300 group`}
+                      className="bg-primary/5 p-6 rounded-2xl border border-primary/20 hover:shadow-lg transition-all duration-300 group"
                     >
                       <div className="flex items-center mb-3">
-                        <div className={`p-3 bg-${item.color}-500 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="p-3 bg-primary rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300">
                           <item.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <p className={`text-sm font-medium text-${item.color}-600 uppercase tracking-wide`}>{item.label}</p>
+                          <p className="text-sm font-medium text-primary uppercase tracking-wide">{item.label}</p>
                           <p className="text-lg font-bold text-gray-900">{item.value}</p>
                         </div>
                       </div>
@@ -250,13 +247,13 @@ export default function Events() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
-                  className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-8 rounded-3xl border border-purple-100 shadow-lg"
+                  className="bg-gray-50 p-8 rounded-3xl border border-gray-200 shadow-lg"
                 >
                   <div className="flex items-center mb-6">
-                    <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mr-4">
+                    <div className="p-3 bg-primary rounded-xl mr-4">
                       <Gift className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-800 to-pink-600 bg-clip-text text-transparent">
+                    <h3 className="text-2xl font-bold text-primary">
                       What to Expect
                     </h3>
                   </div>
@@ -270,8 +267,8 @@ export default function Events() {
                         transition={{ delay: 0.8 + index * 0.1 }}
                         className="flex items-start p-4 bg-white/80 backdrop-blur-sm rounded-xl hover:bg-white transition-all duration-300 group"
                       >
-                        <div className="p-2 bg-green-100 rounded-lg mr-4 group-hover:bg-green-200 transition-colors duration-300">
-                          <CheckCircle className="h-5 w-5 text-green-600" />
+                        <div className="p-2 bg-primary/10 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors duration-300">
+                          <CheckCircle className="h-5 w-5 text-primary" />
                         </div>
                         <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                           {highlight}
@@ -290,7 +287,7 @@ export default function Events() {
                 >
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white font-bold py-6 px-10 rounded-2xl shadow-2xl transform hover:scale-105 hover:shadow-purple-500/25 transition-all duration-300 group"
+                    className="bg-primary hover:bg-primary/90 text-white font-bold py-6 px-10 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 group"
                   >
                     <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse" />
                     RSVP Now - (407) 777-1087
@@ -300,7 +297,7 @@ export default function Events() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 hover:border-purple-400 py-6 px-10 rounded-2xl font-bold group transition-all duration-300"
+                    className="border-2 border-primary text-primary hover:bg-primary/5 hover:border-primary py-6 px-10 rounded-2xl font-bold group transition-all duration-300"
                   >
                     <ExternalLink className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
                     Event Details
@@ -312,9 +309,9 @@ export default function Events() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.0 }}
-                  className="text-center p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl border border-yellow-200"
+                  className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-200"
                 >
-                  <Wine className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                  <Wine className="w-8 h-8 text-primary mx-auto mb-3" />
                   <p className="text-lg font-semibold text-gray-800 mb-2">
                     "Come Wine with us and Stay for the Transformation"
                   </p>
@@ -334,7 +331,7 @@ export default function Events() {
           className="py-20 bg-white"
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Badge className="bg-blue-100 text-blue-800 text-lg px-4 py-2 mb-6">
+            <Badge className="bg-primary/10 text-primary text-lg px-4 py-2 mb-6">
               Stay Tuned
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -348,7 +345,7 @@ export default function Events() {
             </p>
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -360,7 +357,7 @@ export default function Events() {
         {/* Call to Action Section */}
         <motion.section 
           {...fadeInUp}
-          className="py-20 bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600"
+          className="py-20 bg-primary"
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
@@ -372,7 +369,7 @@ export default function Events() {
             <motion.p 
               {...fadeInUp}
               transition={{ delay: 0.2 }}
-              className="text-xl text-purple-100 mb-8"
+              className="text-xl text-white mb-8"
             >
               Join the Santiago Team community and discover the power of financial education, 
               professional development, and meaningful connections.
@@ -384,7 +381,7 @@ export default function Events() {
             >
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-3"
+                className="bg-white text-primary hover:bg-gray-100 px-8 py-3"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Started Today
