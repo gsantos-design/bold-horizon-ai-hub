@@ -67,115 +67,6 @@ interface AutomationWorkflow {
   active: boolean;
 }
 
-// Instant Lead Generator Component - NEW URGENT FEATURE
-function InstantLeadGeneratorComponent({ onImport }: { onImport: () => void }) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [location, setLocation] = useState('');
-  const [industry, setIndustry] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const handleInstantGenerate = async () => {
-    if (!searchTerm || !location) {
-      alert('⚠️ Please enter search term and location');
-      return;
-    }
-
-    setIsGenerating(true);
-    try {
-      const response = await fetch('/api/leads/instant-generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ searchTerm, location, industry }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        alert(`✅ Generated ${data.count} leads instantly from public sources!`);
-        setSearchTerm('');
-        setLocation('');
-        setIndustry('');
-        setTimeout(() => onImport(), 500);
-      } else {
-        const errorData = await response.json();
-        alert(`❌ Generation failed: ${errorData.error}`);
-      }
-    } catch (error) {
-      alert(`❌ Network error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-    setIsGenerating(false);
-  };
-
-  return (
-    <Card className="h-full border-2 border-purple-300">
-      <CardHeader className="bg-gradient-to-r from-purple-500 to-purple-600 text-white">
-        <CardTitle className="flex items-center gap-2">
-          <Zap className="h-5 w-5" />
-          ⚡ INSTANT Lead Generator
-        </CardTitle>
-        <p className="text-purple-100 text-sm">Works RIGHT NOW - No API keys needed!</p>
-      </CardHeader>
-      <CardContent className="p-6 space-y-4">
-        <div>
-          <label className="text-sm font-medium">Business Type/Title:</label>
-          <Input
-            placeholder="restaurant owner, dentist, real estate agent"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="mt-1"
-          />
-        </div>
-        <div>
-          <label className="text-sm font-medium">Location (City, State):</label>
-          <Input
-            placeholder="Miami, FL or Los Angeles, CA"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className="mt-1"
-          />
-        </div>
-        <div>
-          <label className="text-sm font-medium">Industry (Optional):</label>
-          <select
-            value={industry}
-            onChange={(e) => setIndustry(e.target.value)}
-            className="w-full p-2 border rounded-md mt-1"
-          >
-            <option value="">All Industries</option>
-            <option value="healthcare">Healthcare</option>
-            <option value="restaurant">Restaurant/Food</option>
-            <option value="retail">Retail</option>
-            <option value="realestate">Real Estate</option>
-            <option value="automotive">Automotive</option>
-            <option value="construction">Construction</option>
-            <option value="legal">Legal Services</option>
-            <option value="financial">Financial Services</option>
-          </select>
-        </div>
-        <Button 
-          onClick={handleInstantGenerate}
-          disabled={isGenerating}
-          className="w-full bg-purple-600 hover:bg-purple-700"
-        >
-          {isGenerating ? (
-            <>
-              <TrendingUp className="h-4 w-4 mr-2 animate-spin" />
-              Generating...
-            </>
-          ) : (
-            <>
-              <Zap className="h-4 w-4 mr-2" />
-              🚀 Generate Leads NOW
-            </>
-          )}
-        </Button>
-        <div className="text-xs text-gray-500 bg-purple-50 p-3 rounded">
-          <strong>🎯 TONIGHT READY:</strong> Generates leads from public business directories, 
-          Google Maps, Chamber of Commerce listings, and professional associations.
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
 
 // CSV Upload Component
 function CSVUploadComponent({ onUpload }: { onUpload: () => void }) {
@@ -1733,21 +1624,7 @@ Best,
               </CardContent>
             </Card>
 
-            {/* URGENT - Instant Lead Generator */}
-            <Card className="border-2 border-purple-300 bg-gradient-to-br from-purple-50 to-purple-100">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  ⚡ INSTANT Lead Generator
-                  <Badge className="bg-purple-600 text-white animate-pulse">TONIGHT READY!</Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-600 mb-4">🚨 Works RIGHT NOW - No API keys or waiting!</p>
-                <InstantLeadGeneratorComponent onImport={refetch} />
-              </CardContent>
-            </Card>
-
-            {/* CSV Upload with Template Download */}
+            {/* CSV Upload */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -1757,79 +1634,7 @@ Best,
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-600 mb-4">Upload your lead lists from spreadsheets</p>
-                <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="text-sm font-bold text-green-700">🎯 INSTANT CSV Templates</h4>
-                      <p className="text-xs text-green-600">Pre-filled with sample leads by industry</p>
-                    </div>
-                    <div className="space-x-2">
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        onClick={() => window.open('/api/leads/sample-template?industry=restaurant&location=Miami, FL', '_blank')}
-                        className="text-xs"
-                      >
-                        📥 Restaurant
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        onClick={() => window.open('/api/leads/sample-template?industry=healthcare&location=Miami, FL', '_blank')}
-                        className="text-xs"
-                      >
-                        📥 Healthcare
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        onClick={() => window.open('/api/leads/sample-template?industry=all&location=Miami, FL', '_blank')}
-                        className="text-xs"
-                      >
-                        📥 All Industries
-                      </Button>
-                    </div>
-                  </div>
-                </div>
                 <CSVUploadComponent onUpload={refetch} />
-              </CardContent>
-            </Card>
-
-            {/* TONIGHT LAUNCH SUMMARY CARD */}
-            <Card className="border-2 border-green-300 bg-gradient-to-br from-green-50 to-green-100">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700">
-                  🚨 TONIGHT LAUNCH OPTIONS
-                  <Badge className="bg-green-600 text-white animate-pulse">5 WORKING METHODS!</Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                    <span>⚡ Instant Lead Generator (Above)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                    <span>📥 Pre-filled CSV Templates</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                    <span>📂 Manual Lead Entry</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                    <span>📧 Email System (Already Working)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                    <span>🔗 HubSpot Import (Below)</span>
-                  </div>
-                </div>
-                <div className="mt-3 p-2 bg-green-100 rounded text-xs text-green-700">
-                  <strong>🎯 Action Plan:</strong> Use Instant Generator or download CSV templates, 
-                  then launch email campaigns immediately. No waiting required!
-                </div>
               </CardContent>
             </Card>
 
