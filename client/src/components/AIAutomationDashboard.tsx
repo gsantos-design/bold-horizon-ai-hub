@@ -23,7 +23,8 @@ import {
   Target,
   ExternalLink,
   Mail,
-  Send
+  Send,
+  Copy
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
@@ -353,6 +354,15 @@ export default function AIAutomationDashboard() {
                   </div>
                 </div>
 
+                {/* LEAD SOURCES & IMPORT */}
+                <div className="mt-6 p-6 border-4 border-purple-500 rounded-xl bg-purple-50 shadow-lg">
+                  <div className="text-center mb-6">
+                    <h2 className="text-2xl font-bold text-purple-600 mb-2">📊 YOUR LEAD SOURCES 📊</h2>
+                    <p className="text-purple-800 font-semibold">Import leads from multiple sources for your campaigns</p>
+                  </div>
+                  <LeadSourcesComponent />
+                </div>
+
                 {/* EMAIL CAMPAIGN LAUNCHER */}
                 <div className="mt-6 p-8 border-4 border-green-500 rounded-xl bg-green-50 shadow-lg">
                   <div className="text-center mb-6">
@@ -485,6 +495,126 @@ export default function AIAutomationDashboard() {
           </Card>
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// Lead Sources Component
+function LeadSourcesComponent() {
+  const [leads, setLeads] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchLeads = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/leads');
+      if (response.ok) {
+        const leadsData = await response.json();
+        setLeads(leadsData);
+      }
+    } catch (error) {
+      console.error('Failed to fetch leads:', error);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchLeads();
+  }, []);
+
+  const leadSources = [
+    {
+      name: 'Current Lead Database',
+      icon: '🗃️',
+      count: leads.length,
+      description: 'Your existing leads in the system',
+      action: () => window.location.href = '/lead-engine'
+    },
+    {
+      name: 'Apollo.io Import',
+      icon: '🚀',
+      count: 'Unlimited',
+      description: 'Import B2B leads from Apollo.io',
+      action: () => window.location.href = '/lead-engine'
+    },
+    {
+      name: 'LinkedIn Sales Navigator',
+      icon: '💼',
+      count: 'Pro Access',
+      description: 'Extract leads from LinkedIn searches',
+      action: () => window.location.href = '/lead-engine'
+    },
+    {
+      name: 'HubSpot CRM',
+      icon: '🔗',
+      count: 'Sync Ready',
+      description: 'Import from your HubSpot CRM',
+      action: () => window.location.href = '/lead-engine'
+    },
+    {
+      name: 'CSV Upload',
+      icon: '📂',
+      count: 'File Ready',
+      description: 'Upload your own lead lists',
+      action: () => window.location.href = '/lead-engine'
+    },
+    {
+      name: 'Website Forms',
+      icon: '🌐',
+      count: 'Live Capture',
+      description: 'Leads from your website forms',
+      action: () => window.location.href = '/lead-engine'
+    }
+  ];
+
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {leadSources.map((source) => (
+          <div 
+            key={source.name}
+            onClick={source.action}
+            className="p-4 border-2 border-purple-300 rounded-lg cursor-pointer hover:border-purple-500 hover:bg-purple-100 transition-all"
+          >
+            <div className="text-center">
+              <div className="text-3xl mb-2">{source.icon}</div>
+              <h4 className="font-bold text-purple-700">{source.name}</h4>
+              <div className="text-xl font-bold text-purple-600 mt-1">{source.count}</div>
+              <p className="text-sm text-gray-600 mt-2">{source.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {leads.length > 0 && (
+        <div className="p-4 bg-white border-2 border-purple-300 rounded-lg">
+          <h4 className="text-lg font-bold text-purple-600 mb-3">📧 QUICK EMAIL EXPORT</h4>
+          <p className="text-sm text-gray-600 mb-3">
+            Export emails from your current {leads.length} leads to paste into campaigns:
+          </p>
+          <div className="flex gap-3">
+            <Button 
+              onClick={() => {
+                const emails = leads.map(lead => lead.email).filter(Boolean).join('\n');
+                navigator.clipboard.writeText(emails);
+                alert(`✅ Copied ${leads.filter(lead => lead.email).length} emails to clipboard!`);
+              }}
+              className="bg-purple-600 hover:bg-purple-700"
+            >
+              <Copy className="h-4 w-4 mr-2" />
+              Copy All Emails
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => window.location.href = '/lead-engine'}
+              className="border-purple-400 text-purple-600"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Manage in Lead Engine
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
