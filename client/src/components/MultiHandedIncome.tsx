@@ -311,15 +311,14 @@ export default function MultiHandedIncome() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg" 
-                    className="bg-blue-600 hover:bg-blue-700"
+                    className="bg-primary hover:bg-primary/90 text-white"
                     onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
                   >
                     Start Your Journey
                   </Button>
                   <Button 
                     size="lg" 
-                    variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                    className="bg-primary hover:bg-primary/90 text-white"
                     onClick={() => window.location.href = 'tel:407-777-1087'}
                   >
                     Speak with Nolly
