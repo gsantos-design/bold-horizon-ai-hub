@@ -11,194 +11,85 @@ export default function AgentProfile() {
     <section className="bg-white py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Leadership Team Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t('page.santiago_team_title')}
-            </h1>
-            <p className="text-xl text-gray-600 mb-2">{t('page.team_leaders')}</p>
-            <p className="text-lg font-semibold text-primary mb-8">{t('page.empowering_through_new_art')}</p>
+          {/* Leadership Team Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Leadership Team</h2>
+            </div>
             
-            {/* Leadership Photos */}
-            <div className="flex flex-col md:flex-row justify-center items-start gap-12 mb-8">
-              {/* Nolly Santiago */}
-              <div className="text-center max-w-lg">
-                <div className="relative mb-6">
-                  <img 
-                    src="/nolly-santiago.png" 
-                    alt="Nolly Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
-                    style={{ objectPosition: 'center top' }}
-                  />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h2>
-                <p className="text-primary font-semibold mb-2">{t('team.nolly_title')}</p>
-                <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
-                  <p>{t('team.nolly_bio_1')}</p>
-                  <p>{t('team.nolly_bio_2')}</p>
-                  <p><strong>{t('team.nolly_bio_3')}</strong></p>
-                  <p>{t('team.nolly_bio_4')}</p>
-                </div>
-              </div>
-              
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Pablo Santiago */}
-              <div className="text-center max-w-lg">
-                <div className="relative mb-6">
+              <div className="text-center">
+                <div className="relative mb-4">
                   <img 
                     src="/pablo-santiago.png" 
                     alt="Pablo Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
+                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h2>
-                <p className="text-primary font-semibold mb-2">{t('team.pablo_title')}</p>
-                <div className="text-gray-700 leading-relaxed space-y-3 text-sm text-left">
-                  <p><strong>{t('team.pablo_bio_title')}</strong></p>
-                  <p>{t('team.pablo_bio_1')}</p>
-                  <p>{t('team.pablo_bio_2')}</p>
-                  <p><strong>{t('team.pablo_bio_3')}</strong></p>
-                  <p>{t('team.pablo_bio_4')}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Team Members Section */}
-          <div className="bg-white rounded-xl p-8 mb-12 border border-gray-200">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
-              Santiago Team Members
-            </h2>
-            
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              {/* Princhesca Photo */}
-              <div className="text-center lg:text-left">
-                <div className="relative mb-4">
-                  <img 
-                    src={princhescaPhoto} 
-                    alt="Princhesca Rainier Turner" 
-                    className="w-48 h-48 mx-auto lg:mx-0 rounded-full object-cover object-top shadow-lg border-4 border-primary"
-                    style={{ objectPosition: 'center top' }}
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Princhesca Rainier Turner</h3>
-                <p className="text-primary font-semibold mb-2">{t('team.princhesca_title')}</p>
-                <p className="text-gray-700 font-medium">{t('team.princhesca_company')}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Pablo Santiago</h3>
+                <p className="text-primary font-semibold text-sm mb-2">Senior Associate</p>
               </div>
               
-              {/* Princhesca Bio */}
-              <div className="flex-1">
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {t('team.princhesca_bio_1')}
-                  </p>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {t('team.princhesca_bio_2')}
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    {t('team.princhesca_bio_3')}
-                  </p>
+              {/* Nolly Santiago */}
+              <div className="text-center">
+                <div className="relative mb-4">
+                  <img 
+                    src="/nolly-santiago.png" 
+                    alt="Nolly Santiago" 
+                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
+                    style={{ objectPosition: 'center top' }}
+                  />
                 </div>
-                
-                {/* Services Offered */}
-                <div className="mt-6 grid grid-cols-2 gap-4">
-                  <div className="flex items-center space-x-2 text-primary">
-                    <Building className="h-4 w-4" />
-                    <span className="text-sm font-medium">{t('team.princhesca_service_1')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-primary">
-                    <FileText className="h-4 w-4" />
-                    <span className="text-sm font-medium">{t('team.princhesca_service_2')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-primary">
-                    <Building className="h-4 w-4" />
-                    <span className="text-sm font-medium">{t('team.princhesca_service_3')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-primary">
-                    <FileText className="h-4 w-4" />
-                    <span className="text-sm font-medium">{t('team.princhesca_service_4')}</span>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Nolly Santiago</h3>
+                <p className="text-primary font-semibold text-sm mb-2">Marketing Director</p>
               </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-gray-600 text-sm">50+ years combined experience in law enforcement and telecommunications</p>
             </div>
           </div>
 
-          {/* Additional Team Members */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* New Team Member 1 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-100">
-              <div className="text-center mb-4">
+          {/* Next Generation Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Next Generation</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Joseph Santiago */}
+              <div className="text-center">
                 <div className="relative mb-4">
                   <img 
                     src={josephImage} 
                     alt="Joseph Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
+                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Joseph Santiago</h3>
-                <p className="text-primary font-semibold mb-2">{t('team.joseph_title')}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {t('team.joseph_bio_1')}
-                  <br/><br/>
-                  {t('team.joseph_bio_2')}
-                  <br/><br/>
-                  {t('team.joseph_bio_3')}
-                </p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Joseph Santiago</h3>
+                <p className="text-primary font-semibold text-sm mb-2">Investment Licensed</p>
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-primary">
-                  <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.joseph_skill_1')}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-primary">
-                  <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.joseph_skill_2')}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-primary">
-                  <Users className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.joseph_skill_3')}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* New Team Member 2 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-100">
-              <div className="text-center mb-4">
+              
+              {/* Christian Santiago */}
+              <div className="text-center">
                 <div className="relative mb-4">
                   <img 
                     src="/christian-santiago.png" 
                     alt="Christian Santiago" 
-                    className="w-48 h-48 mx-auto rounded-full object-cover object-top shadow-lg border-4 border-primary"
+                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
                     style={{ objectPosition: 'center top' }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Christian Santiago</h3>
-                <p className="text-primary font-semibold mb-2">{t('team.christian_title')}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {t('team.christian_bio_1')}
-                  <br/><br/>
-                  {t('team.christian_bio_2')}
-                  <br/><br/>
-                  {t('team.christian_bio_3')}
-                  <br/><br/>
-                  {t('team.christian_bio_4')}
-                </p>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Christian Santiago</h3>
+                <p className="text-primary font-semibold text-sm mb-2">Mathematics Expert</p>
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-primary">
-                  <Building className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.christian_skill_1')}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-primary">
-                  <FileText className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.christian_skill_2')}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-primary">
-                  <Users className="h-4 w-4" />
-                  <span className="text-sm font-medium">{t('team.christian_skill_3')}</span>
-                </div>
-              </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-gray-600 text-sm">Bringing innovation and specialized expertise to financial services</p>
             </div>
           </div>
 
