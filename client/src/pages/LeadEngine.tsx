@@ -125,7 +125,10 @@ function ApolloConnectionComponent({ onImport }: { onImport: () => void }) {
   const [isConnecting, setIsConnecting] = useState(false);
 
   const handleApolloImport = async () => {
-    if (!apiKey || !searchQuery) return;
+    if (!apiKey || !searchQuery) {
+      alert('⚠️ Please enter both API Key and Search Query');
+      return;
+    }
 
     setIsConnecting(true);
     try {
@@ -137,13 +140,19 @@ function ApolloConnectionComponent({ onImport }: { onImport: () => void }) {
 
       if (response.ok) {
         const data = await response.json();
-        alert(`✅ Imported ${data.count} leads from Apollo.io!`);
-        onImport();
+        alert(`✅ Successfully imported ${data.count} Apollo.io leads!`);
+        // Clear form on success
+        setApiKey('');
+        setSearchQuery('');
+        // Refresh leads list
+        setTimeout(() => onImport(), 500);
       } else {
-        alert('❌ Apollo.io connection failed');
+        const errorData = await response.json().catch(() => ({}));
+        alert(`❌ Apollo.io import failed: ${errorData.error || 'Unknown error'}`);
       }
     } catch (error) {
-      alert('❌ Import failed');
+      console.error('Apollo import error:', error);
+      alert(`❌ Import failed: ${error instanceof Error ? error.message : 'Network error'}`);
     }
     setIsConnecting(false);
   };
@@ -282,7 +291,10 @@ function ManualLeadEntryComponent({ onAdd }: { onAdd: () => void }) {
   const [isAdding, setIsAdding] = useState(false);
 
   const handleAddLead = async () => {
-    if (!newLead.firstName || !newLead.lastName || !newLead.email) return;
+    if (!newLead.firstName || !newLead.lastName || !newLead.email) {
+      alert('⚠️ Please enter First Name, Last Name, and Email');
+      return;
+    }
 
     setIsAdding(true);
     try {
@@ -297,8 +309,9 @@ function ManualLeadEntryComponent({ onAdd }: { onAdd: () => void }) {
       });
 
       if (response.ok) {
-        alert(`✅ Added ${newLead.firstName} ${newLead.lastName} as new lead!`);
-        onAdd();
+        const result = await response.json();
+        alert(`✅ Successfully added ${newLead.firstName} ${newLead.lastName} as new lead!`);
+        // Clear form
         setNewLead({
           firstName: '',
           lastName: '',
@@ -307,11 +320,15 @@ function ManualLeadEntryComponent({ onAdd }: { onAdd: () => void }) {
           company: '',
           title: '',
         });
+        // Refresh leads list
+        setTimeout(() => onAdd(), 500);
       } else {
-        alert('❌ Failed to add lead');
+        const errorData = await response.json().catch(() => ({}));
+        alert(`❌ Failed to add lead: ${errorData.error || 'Unknown error'}`);
       }
     } catch (error) {
-      alert('❌ Add failed');
+      console.error('Manual add error:', error);
+      alert(`❌ Add failed: ${error instanceof Error ? error.message : 'Network error'}`);
     }
     setIsAdding(false);
   };
