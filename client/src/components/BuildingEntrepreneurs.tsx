@@ -42,8 +42,7 @@ export default function BuildingEntrepreneurs() {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/5 px-8 py-3 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
                   onClick={() => window.location.href = 'tel:407-777-1087'}
                 >
                   {t('building.call_pablo_nolly')}
