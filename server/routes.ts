@@ -416,6 +416,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/leads/:id", authenticateUser, async (req: any, res) => {
     try {
       const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid lead ID" });
+      }
       const lead = await storage.getLeadById(id);
       
       if (!lead) {
@@ -438,6 +441,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.patch("/api/leads/:id", authenticateUser, async (req: any, res) => {
     try {
       const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid lead ID" });
+      }
       const validatedData = updateLeadSchema.parse(req.body);
       
       // Check if lead exists and user has permission
@@ -466,6 +472,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.delete("/api/leads/:id", authenticateUser, requireFounder, async (req: any, res) => {
     try {
       const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid lead ID" });
+      }
       const success = await storage.deleteLead(id);
       
       if (!success) {

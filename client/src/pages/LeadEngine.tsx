@@ -140,15 +140,31 @@ function ApolloConnectionComponent({ onImport }: { onImport: () => void }) {
 
       if (response.ok) {
         const data = await response.json();
-        alert(`✅ Successfully imported ${data.count} Apollo.io leads!`);
-        // Clear form on success
-        setApiKey('');
-        setSearchQuery('');
+        if (data.count > 0) {
+          alert(`✅ Successfully imported ${data.count} real Apollo.io leads!\n\n${data.message || ''}`);
+          // Clear form on success
+          setApiKey('');
+          setSearchQuery('');
+        } else {
+          alert(`⚠️ No leads found for "${searchQuery}" - try a different search term`);
+        }
         // Refresh leads list
         setTimeout(() => onImport(), 500);
       } else {
-        const errorData = await response.json().catch(() => ({}));
-        alert(`❌ Apollo.io import failed: ${errorData.error || 'Unknown error'}`);
+        const errorText = await response.text();
+        console.error('Apollo API error response:', errorText);
+        
+        // Check if it's HTML (server error) vs JSON (API error)
+        if (errorText.includes('<!DOCTYPE')) {
+          alert('❌ Server error - check console for details');
+        } else {
+          try {
+            const errorData = JSON.parse(errorText);
+            alert(`❌ Apollo.io API error: ${errorData.error || 'Unknown error'}`);
+          } catch {
+            alert(`❌ Apollo.io import failed: ${errorText.slice(0, 200)}`);
+          }
+        }
       }
     } catch (error) {
       console.error('Apollo import error:', error);
