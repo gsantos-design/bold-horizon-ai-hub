@@ -11,114 +11,105 @@ export default function AgentProfile() {
     <section className="bg-white py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Leadership Team Section */}
-          <div className="mb-16">
+          {/* Team Section */}
+          <div className="bg-white py-12 mb-16">
+            {/* Leadership Team */}
             <div className="text-center mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Leadership Team</h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              {/* Pablo Santiago */}
-              <div className="text-center">
-                <div className="relative mb-4">
-                  <img 
-                    src="/pablo-santiago.png" 
-                    alt="Pablo Santiago" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
-                    style={{ objectPosition: 'center top' }}
-                  />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-6">
+                {/* Pablo Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-4">
+                    <img 
+                      src="/pablo-santiago.png" 
+                      alt="Pablo Santiago" 
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      style={{ objectPosition: 'center top' }}
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Pablo Santiago</h3>
+                  <p className="text-primary font-semibold text-sm">Senior Associate</p>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Pablo Santiago</h3>
-                <p className="text-primary font-semibold text-sm mb-2">Senior Associate</p>
-              </div>
-              
-              {/* Nolly Santiago */}
-              <div className="text-center">
-                <div className="relative mb-4">
-                  <img 
-                    src="/nolly-santiago.png" 
-                    alt="Nolly Santiago" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
-                    style={{ objectPosition: 'center top' }}
-                  />
+                
+                {/* Nolly Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-4">
+                    <img 
+                      src="/nolly-santiago.png" 
+                      alt="Nolly Santiago" 
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      style={{ objectPosition: 'center top' }}
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Nolly Santiago</h3>
+                  <p className="text-primary font-semibold text-sm">Marketing Director</p>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Nolly Santiago</h3>
-                <p className="text-primary font-semibold text-sm mb-2">Marketing Director</p>
               </div>
+              <p className="text-gray-600 text-sm max-w-md mx-auto">50+ years combined experience in law enforcement and telecommunications</p>
             </div>
-            
-            <div className="text-center">
-              <p className="text-gray-600 text-sm">50+ years combined experience in law enforcement and telecommunications</p>
-            </div>
-          </div>
 
-          {/* Next Generation Section */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">Next Generation</h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              {/* Joseph Santiago */}
-              <div className="text-center">
-                <div className="relative mb-4">
-                  <img 
-                    src={josephImage} 
-                    alt="Joseph Santiago" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
-                    style={{ objectPosition: 'center top' }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Joseph Santiago</h3>
-                <p className="text-primary font-semibold text-sm mb-2">Investment Licensed</p>
-              </div>
-              
-              {/* Christian Santiago */}
-              <div className="text-center">
-                <div className="relative mb-4">
-                  <img 
-                    src="/christian-santiago.png" 
-                    alt="Christian Santiago" 
-                    className="w-32 h-32 mx-auto rounded-full object-cover object-top shadow-lg"
-                    style={{ objectPosition: 'center top' }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">Christian Santiago</h3>
-                <p className="text-primary font-semibold text-sm mb-2">Mathematics Expert</p>
-              </div>
-            </div>
-            
+            {/* Next Generation */}
             <div className="text-center">
-              <p className="text-gray-600 text-sm">Bringing innovation and specialized expertise to financial services</p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Next Generation</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-6">
+                {/* Joseph Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-4">
+                    <img 
+                      src={josephImage} 
+                      alt="Joseph Santiago" 
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      style={{ objectPosition: 'center top' }}
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Joseph Santiago</h3>
+                  <p className="text-primary font-semibold text-sm">Investment Licensed</p>
+                </div>
+                
+                {/* Christian Santiago */}
+                <div className="text-center">
+                  <div className="relative mb-4">
+                    <img 
+                      src="/christian-santiago.png" 
+                      alt="Christian Santiago" 
+                      className="w-24 h-24 mx-auto rounded-full object-cover object-top shadow-lg"
+                      style={{ objectPosition: 'center top' }}
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Christian Santiago</h3>
+                  <p className="text-primary font-semibold text-sm">Mathematics Expert</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm max-w-md mx-auto">Bringing innovation and specialized expertise to financial services</p>
             </div>
           </div>
 
           {/* Contact Information Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {/* Nolly Phone */}
-            <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg border border-purple-200">
-              <Phone className="h-5 w-5 text-purple-600" />
+            <div className="flex items-center space-x-3 p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <Phone className="h-5 w-5 text-primary" />
               <div>
-                <p className="text-sm text-purple-600 font-medium">Nolly Santiago</p>
+                <p className="text-sm text-primary font-medium">Nolly Santiago</p>
                 <p className="font-semibold text-gray-900">(407) 777-1087</p>
               </div>
             </div>
 
-            {/* Paul Phone */}
-            <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <Phone className="h-5 w-5 text-blue-600" />
+            {/* Pablo Phone */}
+            <div className="flex items-center space-x-3 p-4 bg-primary/5 rounded-lg border border-primary/20">
+              <Phone className="h-5 w-5 text-primary" />
               <div>
-                <p className="text-sm text-blue-600 font-medium">Paul Santiago</p>
+                <p className="text-sm text-primary font-medium">Pablo Santiago</p>
                 <p className="font-semibold text-gray-900">407-777-1087</p>
               </div>
             </div>
 
             {/* Email */}
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-              <Mail className="h-5 w-5 text-blue-600" />
+              <Mail className="h-5 w-5 text-primary" />
               <div>
                 <p className="text-sm text-gray-600">Email</p>
-                <Button variant="link" className="p-0 h-auto text-blue-600 font-semibold">
+                <Button variant="link" className="p-0 h-auto text-primary font-semibold">
                   {t('contact.email_me')}
                 </Button>
               </div>
@@ -126,7 +117,7 @@ export default function AgentProfile() {
 
             {/* Location */}
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg md:col-span-2">
-              <MapPin className="h-5 w-5 text-blue-600" />
+              <MapPin className="h-5 w-5 text-primary" />
               <div>
                 <p className="text-sm text-gray-600">{t('contact.location')}</p>
                 <p className="font-semibold text-gray-900">
@@ -138,10 +129,10 @@ export default function AgentProfile() {
 
             {/* Office Hours */}
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-              <Clock className="h-5 w-5 text-blue-600" />
+              <Clock className="h-5 w-5 text-primary" />
               <div>
                 <p className="text-sm text-gray-600">{t('contact.office_hours')}</p>
-                <Button variant="link" className="p-0 h-auto text-blue-600 font-semibold">
+                <Button variant="link" className="p-0 h-auto text-primary font-semibold">
                   {t('office.click_office_hours')}
                 </Button>
               </div>
@@ -149,7 +140,7 @@ export default function AgentProfile() {
 
             {/* Languages */}
             <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg md:col-span-3">
-              <MessageCircle className="h-5 w-5 text-blue-600" />
+              <MessageCircle className="h-5 w-5 text-primary" />
               <div>
                 <p className="text-sm text-gray-600">{t('contact.languages')}</p>
                 <p className="font-semibold text-gray-900">{t('contact.spanish_english')}</p>
