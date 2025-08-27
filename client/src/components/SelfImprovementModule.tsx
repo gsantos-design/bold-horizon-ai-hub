@@ -594,7 +594,7 @@ export default function SelfImprovementModule() {
                   <Button 
                     size="lg" 
                     className="bg-purple-600 hover:bg-purple-700"
-                    onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
+                    onClick={() => window.open('https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D', '_blank')}
                   >
                     Begin Your Transformation
                   </Button>

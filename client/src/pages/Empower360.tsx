@@ -432,7 +432,7 @@ export default function Empower360() {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white font-semibold"
-                onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
+                onClick={() => window.open('https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D', '_blank')}
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
                 Start Your Journey Today

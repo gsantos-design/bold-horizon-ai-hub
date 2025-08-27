@@ -312,7 +312,7 @@ export default function MultiHandedIncome() {
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-white"
-                    onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
+                    onClick={() => window.open('https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D', '_blank')}
                   >
                     Start Your Journey
                   </Button>

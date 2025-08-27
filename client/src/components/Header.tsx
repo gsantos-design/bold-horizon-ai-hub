@@ -28,7 +28,7 @@ export default function Header() {
               className="h-8" 
             />
             <div className="hidden md:flex items-center text-sm text-gray-600">
-              <a href="https://www.worldfinancialgroup.com/" className="hover:text-primary transition-colors">
+              <a href="https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D" className="hover:text-primary transition-colors">
                 WorldFinancialGroup.com
               </a>
               <span className="mx-2 text-gray-400">|</span>
@@ -235,7 +235,7 @@ export default function Header() {
             </div>
             
             <div className="text-center border-t pt-3">
-              <a href="https://www.worldfinancialgroup.com/" className="text-sm text-gray-600 hover:text-primary">
+              <a href="https://agents.worldfinancialgroup.com/Nolly-Santiago-C8V5D" className="text-sm text-gray-600 hover:text-primary">
                 WorldFinancialGroup.com
               </a>
               <span className="mx-2 text-gray-400">|</span>
