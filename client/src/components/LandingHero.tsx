@@ -62,8 +62,7 @@ export default function LandingHero() {
               <Link href="/mission-highlights">
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary/5 px-8 py-4 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-secondary px-8 py-4 text-lg"
                 >
                   {t('hero.discover_mission')}
                   <ArrowRight className="h-5 w-5 ml-2" />
