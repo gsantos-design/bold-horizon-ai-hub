@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, GraduationCap, Brain, ArrowRight, PlayCircle, Star, Award, Users2, Target, Trophy, Zap } from "lucide-react";
+import { TrendingUp, GraduationCap, Target, ArrowRight, PlayCircle, Star, Award, Users2, Trophy, Zap } from "lucide-react";
 
 // Import correct Santiago family photos
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago (correct photo)
@@ -54,7 +54,7 @@ export default function Empower360() {
       title: "Self-Improvement",
       subtitle: "Build Confidence That Bends Reality",
       description: "Discover your life lens and learn to operate from imagination and dreams rather than history and memory.",
-      icon: <Brain className="h-8 w-8" />,
+      icon: <Target className="h-8 w-8" />,
       color: "from-purple-500 to-pink-500",
       features: [
         "Lens of Life Assessment Quiz",
@@ -396,7 +396,7 @@ export default function Empower360() {
                   value="self-improvement"
                   className="flex flex-col items-center gap-2 py-4 px-2 data-[state=active]:bg-primary data-[state=active]:text-white"
                 >
-                  <Brain className="h-5 w-5" />
+                  <Target className="h-5 w-5" />
                   <span className="text-xs md:text-sm font-medium">Self-Improvement</span>
                 </TabsTrigger>
               </TabsList>
