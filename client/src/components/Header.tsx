@@ -73,6 +73,13 @@ export default function Header() {
               </Button>
             </SafeLink>
             
+            <SafeLink href="/events">
+              <Button variant="ghost" size="sm" className="text-primary hover:text-accent hover:bg-secondary/10">
+                <Calendar className="h-4 w-4 mr-1" />
+                <span>{t('nav.events')}</span>
+              </Button>
+            </SafeLink>
+            
             {/* Language Toggle */}
             <Button 
               variant="outline" 
@@ -108,6 +115,12 @@ export default function Header() {
             <SafeLink href="/lead-engine">
               <Button variant="ghost" size="sm" title={t('nav.leads')}>
                 <BarChart3 className="h-4 w-4" />
+              </Button>
+            </SafeLink>
+            
+            <SafeLink href="/events">
+              <Button variant="ghost" size="sm" className="text-primary" title={t('nav.events')}>
+                <Calendar className="h-4 w-4" />
               </Button>
             </SafeLink>
             
