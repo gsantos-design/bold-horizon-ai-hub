@@ -117,7 +117,7 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             className="mb-4"
           >
-            <Card className="w-80 bg-white/95 backdrop-blur-sm border-2 border-blue-200 shadow-2xl">
+            <Card className="w-80 bg-white/95 backdrop-blur-sm border-2 border-primary shadow-2xl">
               <CardContent className="p-6">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
@@ -125,13 +125,13 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      className="p-2 bg-blue-100 rounded-full"
+                      className="p-2 bg-primary/20 rounded-full"
                     >
-                      <Sparkles className="h-4 w-4 text-blue-600" />
+                      <Sparkles className="h-4 w-4 text-primary" />
                     </motion.div>
                     <div>
                       <h3 className="font-bold text-gray-800">{currentContent.title}</h3>
-                      <p className="text-xs text-blue-600">Quick Help & Actions</p>
+                      <p className="text-xs text-primary">Quick Help & Actions</p>
                     </div>
                   </div>
                   <Button
@@ -158,12 +158,12 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
                     <motion.button
                       key={index}
                       onClick={action.action}
-                      className="w-full p-3 text-left rounded-lg border border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-colors group"
+                      className="w-full p-3 text-left rounded-lg border border-gray-100 hover:border-primary hover:bg-primary/10 transition-colors group"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                        <div className="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors">
                           {action.icon}
                         </div>
                         <div>
@@ -179,7 +179,7 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <p className="text-xs text-gray-500 text-center">
                     Need personal help? Call Pablo & Nolly at{' '}
-                    <a href="tel:407-777-1087" className="font-semibold text-blue-600 hover:underline">
+                    <a href="tel:407-777-1087" className="font-semibold text-primary hover:underline">
                       (407) 777-1087
                     </a>
                   </p>
@@ -204,7 +204,7 @@ export default function FloatingHelpButton({ currentPage = 'home' }: FloatingHel
             className={`h-14 w-14 rounded-full shadow-lg transition-all duration-300 ${
               isExpanded 
                 ? 'bg-red-600 hover:bg-red-700' 
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                : 'bg-primary hover:bg-primary/90'
             }`}
           >
             <AnimatePresence mode="wait">
