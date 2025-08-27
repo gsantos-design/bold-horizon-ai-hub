@@ -53,7 +53,7 @@ export default function TeamSantiago() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-20">
+      <section className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div {...fadeInUp}>
@@ -62,7 +62,7 @@ export default function TeamSantiago() {
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 The Santiago Family<br/>
-                <span className="text-yellow-300">Financial Legacy</span>
+                Financial Legacy
               </h1>
               <p className="text-xl mb-8 opacity-90 leading-relaxed">
                 Three generations united in transforming lives through financial education, 
@@ -96,8 +96,8 @@ export default function TeamSantiago() {
             >
               {/* Nolly Santiago */}
               <motion.div variants={fadeInUp}>
-                <Card className="h-full border-2 border-purple-200 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                <Card className="h-full border-2 border-primary shadow-xl">
+                  <CardHeader className="bg-primary text-white">
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
@@ -107,7 +107,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Nolly Santiago</CardTitle>
-                      <p className="text-purple-100">Marketing Director – World Financial Group</p>
+                      <p className="text-white">Marketing Director – World Financial Group</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -119,15 +119,15 @@ export default function TeamSantiago() {
                       </p>
                       
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-purple-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Briefcase className="h-4 w-4" />
                           <span className="text-sm font-medium">Telecommunications Veteran</span>
                         </div>
-                        <div className="flex items-center gap-2 text-purple-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Heart className="h-4 w-4" />
                           <span className="text-sm font-medium">Family Legacy Advocate</span>
                         </div>
-                        <div className="flex items-center gap-2 text-purple-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Users className="h-4 w-4" />
                           <span className="text-sm font-medium">Financial Education</span>
                         </div>
@@ -148,8 +148,8 @@ export default function TeamSantiago() {
 
               {/* Pablo Santiago */}
               <motion.div variants={fadeInUp}>
-                <Card className="h-full border-2 border-blue-200 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                <Card className="h-full border-2 border-primary shadow-xl">
+                  <CardHeader className="bg-primary text-white">
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
@@ -159,7 +159,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Pablo Santiago</CardTitle>
-                      <p className="text-blue-100">Former NYPD & Orange County Law Enforcement</p>
+                      <p className="text-white">Former NYPD & Orange County Law Enforcement</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -171,15 +171,15 @@ export default function TeamSantiago() {
                       </p>
                       
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-blue-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Shield className="h-4 w-4" />
                           <span className="text-sm font-medium">NYPD Veteran</span>
                         </div>
-                        <div className="flex items-center gap-2 text-blue-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Users className="h-4 w-4" />
                           <span className="text-sm font-medium">First Responder Advocate</span>
                         </div>
-                        <div className="flex items-center gap-2 text-blue-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Target className="h-4 w-4" />
                           <span className="text-sm font-medium">Tax-Free Wealth Strategies</span>
                         </div>
@@ -200,8 +200,8 @@ export default function TeamSantiago() {
 
               {/* Joseph Santiago */}
               <motion.div variants={fadeInUp}>
-                <Card className="h-full border-2 border-green-200 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+                <Card className="h-full border-2 border-primary shadow-xl">
+                  <CardHeader className="bg-primary text-white">
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
@@ -211,7 +211,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Joseph Santiago</CardTitle>
-                      <p className="text-green-100">Associate & Entrepreneurial Leader</p>
+                      <p className="text-white">Associate & Entrepreneurial Leader</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -223,15 +223,15 @@ export default function TeamSantiago() {
                       </p>
                       
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-green-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <GraduationCap className="h-4 w-4" />
                           <span className="text-sm font-medium">Finance Degree</span>
                         </div>
-                        <div className="flex items-center gap-2 text-green-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Building className="h-4 w-4" />
                           <span className="text-sm font-medium">Investment Licensed</span>
                         </div>
-                        <div className="flex items-center gap-2 text-green-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <DollarSign className="h-4 w-4" />
                           <span className="text-sm font-medium">Entrepreneurial Focus</span>
                         </div>
@@ -252,8 +252,8 @@ export default function TeamSantiago() {
 
               {/* Christian Santiago */}
               <motion.div variants={fadeInUp}>
-                <Card className="h-full border-2 border-orange-200 shadow-xl">
-                  <CardHeader className="bg-gradient-to-r from-orange-600 to-red-600 text-white">
+                <Card className="h-full border-2 border-primary shadow-xl">
+                  <CardHeader className="bg-primary text-white">
                     <div className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
                         <img 
@@ -263,7 +263,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Christian Santiago</CardTitle>
-                      <p className="text-orange-100">Associate & Youth Financial Educator</p>
+                      <p className="text-white">Associate & Youth Financial Educator</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -275,15 +275,15 @@ export default function TeamSantiago() {
                       </p>
                       
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-orange-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <GraduationCap className="h-4 w-4" />
                           <span className="text-sm font-medium">Recent Graduate</span>
                         </div>
-                        <div className="flex items-center gap-2 text-orange-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Target className="h-4 w-4" />
                           <span className="text-sm font-medium">Mathematics Expert</span>
                         </div>
-                        <div className="flex items-center gap-2 text-orange-600">
+                        <div className="flex items-center gap-2 text-primary">
                           <Users className="h-4 w-4" />
                           <span className="text-sm font-medium">Youth Educator</span>
                         </div>
@@ -328,7 +328,7 @@ export default function TeamSantiago() {
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
                   <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Heart className="h-8 w-8 text-purple-600" />
+                    <Heart className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Family First</h3>
                   <p className="text-gray-600">
@@ -341,7 +341,7 @@ export default function TeamSantiago() {
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
                   <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Shield className="h-8 w-8 text-blue-600" />
+                    <Shield className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Financial Protection</h3>
                   <p className="text-gray-600">
@@ -354,7 +354,7 @@ export default function TeamSantiago() {
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
                   <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                    <Trophy className="h-8 w-8 text-green-600" />
+                    <Trophy className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Generational Wealth</h3>
                   <p className="text-gray-600">
@@ -426,11 +426,11 @@ export default function TeamSantiago() {
                 build additional income streams, or start your entrepreneurial journey — we've got you covered.
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3">
+                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-3">
                   <Calendar className="h-5 w-5 mr-2" />
                   Schedule Your Consultation
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-3">
                   <Users className="h-5 w-5 mr-2" />
                   Explore Career Opportunities
                 </Button>
@@ -487,19 +487,19 @@ export default function TeamSantiago() {
             
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-blue-600 mb-2">Pablo</div>
+                <div className="text-2xl font-bold text-primary mb-2">Pablo</div>
                 <div className="text-sm text-gray-600">Law Enforcement Legacy</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-purple-600 mb-2">Nolly</div>
+                <div className="text-2xl font-bold text-primary mb-2">Nolly</div>
                 <div className="text-sm text-gray-600">Family Protection Mission</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-green-600 mb-2">Joseph</div>
+                <div className="text-2xl font-bold text-primary mb-2">Joseph</div>
                 <div className="text-sm text-gray-600">Entrepreneurial Leadership</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-orange-600 mb-2">Christian</div>
+                <div className="text-2xl font-bold text-primary mb-2">Christian</div>
                 <div className="text-sm text-gray-600">Youth Financial Education</div>
               </div>
             </div>
