@@ -16,7 +16,7 @@ export default function ThreePhilosophies() {
             🎯 Empowering Families
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            The <span className="text-accent">Three Philosophies</span><br/>
+            The Three Philosophies<br/>
             That Transform Lives
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
