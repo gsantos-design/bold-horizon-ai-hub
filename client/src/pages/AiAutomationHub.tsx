@@ -68,9 +68,9 @@ export default function AiAutomationHub() {
                   🤖 AI Automation Hub
                 </Badge>
               </AITooltip>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 AI Phone Calls &<br/>
-                <span className="text-yellow-300">Video Avatars</span>
+                Video Avatars
               </h1>
               <p className="text-xl mb-8 opacity-90 leading-relaxed">
                 Scale your Santiago Team outreach with AI-powered phone calls and personalized video messages 
