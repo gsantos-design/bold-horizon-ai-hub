@@ -143,9 +143,9 @@ export default function Empower360() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {philosophyModules.map((module, index) => (
               <Card key={module.id} className="relative overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white/70 backdrop-blur-sm">
-                <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-5`}></div>
+                <div className="absolute inset-0 bg-gray-50"></div>
                 <CardHeader className="text-center relative z-10">
-                  <div className={`inline-flex p-4 rounded-full bg-gradient-to-br ${module.color} text-white mb-4 mx-auto`}>
+                  <div className="inline-flex p-4 rounded-full bg-primary text-white mb-4 mx-auto">
                     {module.icon}
                   </div>
                   <CardTitle className="text-xl font-bold">{module.title}</CardTitle>
