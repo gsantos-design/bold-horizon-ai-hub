@@ -207,7 +207,7 @@ export default function AiAutomationHub() {
 
                   {/* AI Video Avatars */}
                   <Card className="border-2 border-primary shadow-xl">
-                    <CardHeader className="bg-primary text-secondary">
+                    <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center text-xl">
                         <Video className="h-6 w-6 mr-3" />
                         AI Video Avatars & Cloning
