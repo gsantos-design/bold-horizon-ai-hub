@@ -29,6 +29,7 @@ import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago (correct photo)  
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago (correct photo)
+import princhescaPhoto from '@assets/IMG_8889_1754678450603.png'; // Princhesca Rainier Turner (correct photo)
 import newTeamPhoto from '@assets/IMG_2259_1756309198291.jpeg';
 
 export default function TeamSantiago() {
@@ -374,9 +375,9 @@ export default function TeamSantiago() {
           <div className="max-w-4xl mx-auto">
             <motion.div {...fadeInUp}>
               <Card className="border-none shadow-2xl">
-                <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
+                <CardHeader className="bg-primary text-white text-center">
                   <CardTitle className="text-3xl">The Santiago Story</CardTitle>
-                  <p className="text-indigo-100">From Sacrifice to Success</p>
+                  <p className="text-white/80">From Sacrifice to Success</p>
                 </CardHeader>
                 <CardContent className="p-8">
                   <div className="space-y-6 text-gray-700 leading-relaxed">
@@ -414,7 +415,7 @@ export default function TeamSantiago() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
+      <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div {...fadeInUp}>
@@ -456,7 +457,7 @@ export default function TeamSantiago() {
       </section>
 
       {/* Santiago Team Family Photo Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-5xl mx-auto"
@@ -468,7 +469,7 @@ export default function TeamSantiago() {
               Together We Transform Lives
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The Santiago Team: Four generations united by service, driven by mission, 
+              The Santiago Team: Five generations united by service, driven by mission, 
               and committed to building generational wealth for families everywhere.
             </p>
             <div className="relative">
@@ -485,7 +486,7 @@ export default function TeamSantiago() {
               </div>
             </div>
             
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-primary mb-2">Pablo</div>
                 <div className="text-sm text-gray-600">Law Enforcement Legacy</div>
@@ -501,6 +502,10 @@ export default function TeamSantiago() {
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-primary mb-2">Christian</div>
                 <div className="text-sm text-gray-600">Youth Financial Education</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-2xl font-bold text-primary mb-2">Princhesca</div>
+                <div className="text-sm text-gray-600">Tax Services & Life Insurance</div>
               </div>
             </div>
           </motion.div>
