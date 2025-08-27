@@ -35,7 +35,7 @@ export default function BuildingEntrepreneurs() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-secondary px-8 py-3 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
                   onClick={() => window.open('https://registration.wfglaunch.com/?recruitercode=C8V5D', '_blank')}
                 >
                   {t('building.start_journey')}

@@ -53,7 +53,7 @@ export default function LandingHero() {
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-secondary px-8 py-4 text-lg"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg"
                 onClick={() => window.location.href = 'tel:407-777-1087'}
               >
                 <Phone className="h-5 w-5 mr-2" />
@@ -62,7 +62,7 @@ export default function LandingHero() {
               <Link href="/mission-highlights">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-secondary px-8 py-4 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg"
                 >
                   {t('hero.discover_mission')}
                   <ArrowRight className="h-5 w-5 ml-2" />
@@ -75,7 +75,7 @@ export default function LandingHero() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-secondary hover:bg-secondary/90 text-primary px-8 py-4 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg"
                 >
                   <Users className="h-5 w-5 mr-2" />
                   {t('meeting.register_spanish')}
@@ -225,7 +225,7 @@ export default function LandingHero() {
                   </div>
                 </div>
 
-                <div className="bg-primary text-secondary rounded-xl p-6 text-center" style={{background: 'hsl(215, 100%, 12%)'}}>
+                <div className="bg-primary text-white rounded-xl p-6 text-center" style={{background: 'hsl(215, 100%, 12%)'}}>
                   <h4 className="text-xl font-bold mb-2">{t('team.ready_secure')}</h4>
                   <p className="mb-4 opacity-90">
                     {t('team.join_thousands')}

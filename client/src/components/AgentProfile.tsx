@@ -270,7 +270,7 @@ export default function AgentProfile() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-secondary px-8 py-3 text-lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
               onClick={() => window.location.href = 'tel:407-777-1087'}
             >
               {t('contact.call_team')}
