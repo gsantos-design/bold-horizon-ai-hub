@@ -1335,7 +1335,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Apollo.io Import
   app.post("/api/leads/apollo-import", async (req, res) => {
     try {
+      console.log('Apollo import request received:', req.body);
       const { apiKey, searchQuery } = req.body;
+      
+      if (!apiKey || !searchQuery) {
+        return res.status(400).json({ success: false, error: 'API Key and Search Query are required' });
+      }
       
       // Mock Apollo.io results - in production would call Apollo API
       const mockApolloLeads = [
@@ -1344,17 +1349,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
         { firstName: 'Apollo', lastName: 'Director3', email: 'dir3@apollosys.com', company: 'Apollo Systems', title: 'Director', source: 'apollo' }
       ];
 
+      console.log('Creating leads:', mockApolloLeads.length);
+      
       for (const leadData of mockApolloLeads) {
-        await storage.createLead({
-          ...leadData,
-          status: 'new',
-          ownerEmail: 'nolly@santiago-team.com'
-        });
+        try {
+          await storage.createLead({
+            ...leadData,
+            status: 'new',
+            ownerEmail: 'nolly@santiago-team.com'
+          });
+        } catch (leadError) {
+          console.error('Error creating individual lead:', leadError);
+          // Continue with other leads even if one fails
+        }
       }
 
-      res.json({ success: true, count: mockApolloLeads.length });
+      console.log('Apollo import successful');
+      res.status(200).json({ success: true, count: mockApolloLeads.length });
     } catch (error) {
-      res.status(500).json({ success: false, error: 'Apollo import failed' });
+      console.error('Apollo import error:', error);
+      res.status(500).json({ success: false, error: error instanceof Error ? error.message : 'Apollo import failed' });
     }
   });
 
