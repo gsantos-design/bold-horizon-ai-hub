@@ -277,8 +277,7 @@ export default function AgentProfile() {
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary/5 px-8 py-3 text-lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
             >
               {t('contact.schedule_consultation')}
             </Button>
