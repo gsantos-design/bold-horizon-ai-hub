@@ -383,7 +383,7 @@ export default function TeamSantiago() {
             >
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                     <Heart className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Family First</h3>
@@ -396,7 +396,7 @@ export default function TeamSantiago() {
 
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                     <Shield className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Financial Protection</h3>
@@ -409,7 +409,7 @@ export default function TeamSantiago() {
 
               <motion.div variants={fadeInUp}>
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                     <Trophy className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Generational Wealth</h3>
@@ -425,7 +425,7 @@ export default function TeamSantiago() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div {...fadeInUp}>
@@ -512,7 +512,7 @@ export default function TeamSantiago() {
       </section>
 
       {/* Santiago Team Family Photo Section */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-5xl mx-auto"
