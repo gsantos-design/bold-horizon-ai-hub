@@ -649,53 +649,15 @@ export default function Events() {
                     </div>
                     
                     <div className="bg-gray-50 p-4 rounded-xl">
-                      <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
-                        🤖 AI Automation Hub
-                        <Badge className="ml-2 bg-green-100 text-green-700 text-xs">LIVE</Badge>
-                      </h5>
-                      <p className="text-sm text-gray-700 mb-3">
-                        AI Phone Calls & Video Avatars - Scale your Santiago Team outreach with AI-powered phone calls and personalized video messages featuring voice and video clones of Nolly and Pablo Santiago.
+                      <div className="flex items-center justify-center mb-3">
+                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-3">
+                          <span className="text-white font-bold text-sm">🤖</span>
+                        </div>
+                        <h5 className="font-semibold text-gray-900">Guaranteed AI Support</h5>
+                      </div>
+                      <p className="text-center text-gray-700">
+                        Every Santiago Team member receives dedicated AI assistance and advanced technology support to accelerate your success and streamline your business operations.
                       </p>
-                      
-                      <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-                        <div className="bg-white p-3 rounded-lg">
-                          <p className="text-gray-600">System Status:</p>
-                          <p className="font-bold text-primary">🤖 Fully Activated</p>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg">
-                          <p className="text-gray-600">Monthly Investment:</p>
-                          <p className="font-bold text-gray-900">$1021+</p>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg">
-                          <p className="text-gray-600">Expected ROI:</p>
-                          <p className="font-bold text-green-600">9,500%+</p>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg">
-                          <p className="text-gray-600">Setup Progress:</p>
-                          <p className="font-bold text-primary">100% Complete</p>
-                        </div>
-                      </div>
-
-                      <div className="bg-green-50 p-3 rounded-lg border border-green-200 mb-3">
-                        <p className="text-sm text-green-800">
-                          🎉 AI automation is fully operational! Ready to scale lead generation.
-                        </p>
-                      </div>
-
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">401k Rollover Outreach:</span>
-                          <span className="font-semibold">247 leads contacted</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Response Rate:</span>
-                          <span className="font-semibold text-green-600">34%</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Meetings Booked:</span>
-                          <span className="font-semibold text-primary">63</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
