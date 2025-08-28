@@ -102,8 +102,8 @@ export default function DynamicTeamMissionHighlightReel() {
       subtitle: 'Christian\'s Passion',
       description: 'Mathematics expert and compound interest advocate, Christian empowers young people to dream again and take control of their financial future through the new art of living.',
       icon: <GraduationCap className="h-8 w-8" />,
-      color: 'orange',
-      gradient: 'from-orange-600 to-red-600',
+      color: 'primary',
+      gradient: 'bg-primary',
       stats: [
         { label: 'Young Adults Educated', value: '1,000+' },
         { label: 'Compound Interest Workshops', value: '150+' },
@@ -206,12 +206,12 @@ export default function DynamicTeamMissionHighlightReel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="mb-4 bg-secondary text-primary px-6 py-2">
+            <Badge className="mb-4 bg-white text-primary px-6 py-2">
               🎯 Team Mission Highlights
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Dynamic Team Mission
-              <span className="text-secondary"> Highlight Reel</span>
+              <span className="text-primary"> Highlight Reel</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover the powerful missions driving each Santiago family member and their collective impact 
@@ -235,7 +235,7 @@ export default function DynamicTeamMissionHighlightReel() {
                     opacity: { duration: 0.2 }
                   }}
                 >
-                  <CardContent className={`${currentHighlight.gradient} text-secondary p-0`}>
+                  <CardContent className={`${currentHighlight.gradient} text-white p-0`}>
                     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
                       {/* Content Side */}
                       <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -373,7 +373,7 @@ export default function DynamicTeamMissionHighlightReel() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-blue-600 scale-125' 
+                      ? 'bg-primary scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
@@ -395,19 +395,19 @@ export default function DynamicTeamMissionHighlightReel() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-blue-600 mb-2">5,000+</div>
+              <div className="text-2xl font-bold text-primary mb-2">5,000+</div>
               <div className="text-sm text-gray-600">Families Served</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-purple-600 mb-2">75+</div>
+              <div className="text-2xl font-bold text-primary mb-2">75+</div>
               <div className="text-sm text-gray-600">Years Combined Experience</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-green-600 mb-2">3,800+</div>
+              <div className="text-2xl font-bold text-primary mb-2">3,800+</div>
               <div className="text-sm text-gray-600">Financial Plans Created</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-orange-600 mb-2">100%</div>
+              <div className="text-2xl font-bold text-primary mb-2">100%</div>
               <div className="text-sm text-gray-600">Family Commitment</div>
             </div>
           </motion.div>
