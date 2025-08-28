@@ -602,21 +602,21 @@ export default function Events() {
                 className="space-y-6"
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  WFG Business Platform Video
+                  Santiago Team Featured Video
                 </h3>
                 <div className="relative bg-gray-800 rounded-2xl overflow-hidden aspect-video shadow-2xl">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/PvKrpb5XWHQ?controls=1&modestbranding=1&rel=0"
-                    title="WFG Business Platform Video"
+                    src="https://www.youtube.com/embed/Erx3CJERJJE?controls=1&modestbranding=1&rel=0"
+                    title="Santiago Team Featured Video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Discover how World Financial Group provides a platform as diverse as those we serve. 
-                  See what makes WFG unique in the financial services industry.
+                  Watch the Santiago Team in action! See our mission and commitment to empowering families 
+                  through financial education and opportunity.
                 </p>
               </motion.div>
 
