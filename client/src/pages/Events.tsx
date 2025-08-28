@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink, Star, Sparkles, TrendingUp, Award, Heart, Globe, Facebook, Mail } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink, Star, Sparkles, TrendingUp, Award, Heart, Globe, Facebook, Mail, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -696,6 +696,125 @@ export default function Events() {
                       <Mail className="w-4 h-4 mr-2 text-primary" />
                       <span>Prsantiagowfg@outlook.com</span>
                     </div>
+                  </div>
+                </div>
+
+                {/* Social Media Links */}
+                <div className="bg-white rounded-2xl p-6 shadow-xl border border-primary/20">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center">
+                    <Globe className="w-5 h-5 mr-2 text-primary" />
+                    Connect With Santiago Team
+                  </h4>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Facebook */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-300 group"
+                      title="Add Facebook handle later"
+                    >
+                      <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <Facebook className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Facebook</p>
+                        <p className="text-xs text-gray-600">@SantiagoTeamWFG</p>
+                      </div>
+                    </a>
+
+                    {/* Instagram */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-pink-50 hover:bg-pink-100 rounded-xl transition-colors duration-300 group"
+                      title="Add Instagram handle later"
+                    >
+                      <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <Instagram className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Instagram</p>
+                        <p className="text-xs text-gray-600">@SantiagoTeamWFG</p>
+                      </div>
+                    </a>
+
+                    {/* LinkedIn */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors duration-300 group"
+                      title="Add LinkedIn profile later"
+                    >
+                      <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <Linkedin className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">LinkedIn</p>
+                        <p className="text-xs text-gray-600">Pablo Santiago</p>
+                      </div>
+                    </a>
+
+                    {/* YouTube */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-red-50 hover:bg-red-100 rounded-xl transition-colors duration-300 group"
+                      title="Add YouTube channel later"
+                    >
+                      <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <Youtube className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">YouTube</p>
+                        <p className="text-xs text-gray-600">Santiago Team</p>
+                      </div>
+                    </a>
+
+                    {/* Twitter/X */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors duration-300 group"
+                      title="Add Twitter/X handle later"
+                    >
+                      <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <Twitter className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Twitter/X</p>
+                        <p className="text-xs text-gray-600">@SantiagoTeamWFG</p>
+                      </div>
+                    </a>
+
+                    {/* TikTok */}
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors duration-300 group"
+                      title="Add TikTok handle later"
+                    >
+                      <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white font-bold text-sm">TT</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">TikTok</p>
+                        <p className="text-xs text-gray-600">@SantiagoTeamWFG</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Additional Social Platforms */}
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <p className="text-sm text-gray-600 mb-3 font-medium">Additional Platforms:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">WhatsApp Business</span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Telegram</span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Discord</span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Clubhouse</span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Snapchat</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 p-3 bg-primary/5 rounded-xl">
+                    <p className="text-sm text-gray-600">
+                      <strong>Note:</strong> Click any platform above to add your actual social media handles. 
+                      All links are currently placeholders ready for customization.
+                    </p>
                   </div>
                 </div>
               </motion.div>
