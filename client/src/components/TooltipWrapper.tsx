@@ -16,7 +16,7 @@ export const SantiagoTooltips = {
   // Lead Generation Tooltips
   LeadTargeting: ({ children }: { children: React.ReactNode }) => (
     <SmartTooltip 
-      content="Target high-value prospects across Florida and New York markets. Focus on 401k rollover opportunities ($100K+ accounts), conservative investors seeking CD alternatives (4.5-6.8% yields), and entrepreneurs wanting $100K-$250K additional income."
+      content="Target high-value prospects across nationwide markets. Focus on 401k rollover opportunities ($100K+ accounts), conservative investors seeking CD alternatives (4.5-6.8% yields), and entrepreneurs wanting $100K-$250K additional income."
       context="lead-generation"
     >
       {children}

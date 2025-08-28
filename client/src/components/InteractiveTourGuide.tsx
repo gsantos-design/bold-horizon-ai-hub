@@ -270,7 +270,7 @@ export const leadEngineTour: TourStep[] = [
   {
     id: 'dashboard',
     title: 'Lead Generation Dashboard',
-    content: 'Your command center for managing leads, tracking performance, and optimizing campaigns across Florida and New York markets.',
+    content: 'Your command center for managing leads, tracking performance, and optimizing campaigns across nationwide markets.',
     target: '.dashboard-section',
     position: 'bottom',
     icon: <Target className="w-5 h-5 text-blue-600" />

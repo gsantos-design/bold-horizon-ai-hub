@@ -140,7 +140,7 @@ export default function CommissionCalculator() {
           </CardTitle>
           <CardDescription className="text-white opacity-90">
             See how WFG can transform your financial future by calculating your potential earnings 
-            based on your rank and sales activity. Many of our Caribbean, Florida and New York associates 
+            based on your rank and sales activity. Many of our associates nationwide 
             have multiplied their former incomes by 3-5x within their first year.
           </CardDescription>
         </CardHeader>
@@ -250,8 +250,7 @@ export default function CommissionCalculator() {
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="caribbean">Caribbean</SelectItem>
-                            <SelectItem value="florida">Florida</SelectItem>
-                            <SelectItem value="newyork">New York</SelectItem>
+                            <SelectItem value="nationwide">United States</SelectItem>
                             <SelectItem value="other">Other</SelectItem>
                           </SelectContent>
                         </Select>
@@ -450,12 +449,12 @@ export default function CommissionCalculator() {
                     {region === 'florida' && (
                       <div>
                         <p className="text-sm mb-4">
-                          Florida associates have created some of our fastest-growing teams, leveraging the diverse community 
+                          Our associates nationwide have created some of our fastest-growing teams, leveraging diverse communities 
                           and entrepreneurial spirit of the Sunshine State to build massive organizations.
                         </p>
                         <p className="text-sm font-semibold">
                           "I left a 20-year banking career to join WFG. Within two years, I had surpassed my banking salary 
-                          and now lead a team of 75 associates across South Florida." - Elena Rodriguez, Miami
+                          and now lead a team of 75 associates nationwide." - Elena Rodriguez
                         </p>
                       </div>
                     )}
@@ -463,7 +462,7 @@ export default function CommissionCalculator() {
                     {region === 'newyork' && (
                       <div>
                         <p className="text-sm mb-4">
-                          In the highly competitive New York market, our associates thrive by serving diverse communities 
+                          In competitive markets nationwide, our associates thrive by serving diverse communities 
                           and building strong teams that support each other like family.
                         </p>
                         <p className="text-sm font-semibold">

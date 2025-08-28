@@ -29,8 +29,8 @@ export default function TeamBuilding() {
           Life-Changing Income Through Team Building
         </h2>
         <p className="text-neutral-600 max-w-3xl mx-auto">
-          The real power of WFG comes from building a successful team. Our associates in Florida 
-          and New York have transformed their financial futures by following our proven system.
+          The real power of WFG comes from building a successful team. Our associates nationwide 
+          have transformed their financial futures by following our proven system.
         </p>
         <div className="mt-4 max-w-xl mx-auto bg-accent/10 p-3 rounded-md">
           <p className="text-sm text-accent-dark font-semibold">
@@ -196,7 +196,7 @@ export default function TeamBuilding() {
             Real People, Real Transformations
           </h2>
           <p className="text-neutral-600 max-w-3xl mx-auto">
-            Hear from associates who changed their lives with WFG in the Florida and New York regions.
+            Hear from associates who changed their lives with WFG nationwide.
           </p>
         </div>
         
@@ -210,7 +210,7 @@ export default function TeamBuilding() {
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-lg text-center mb-1">Maria Rodriguez</h3>
-              <p className="text-neutral-500 text-sm text-center mb-4">Miami, Florida</p>
+              <p className="text-neutral-500 text-sm text-center mb-4">United States</p>
               <p className="text-neutral-600 italic mb-4">
                 "I was working 60 hours a week at two jobs and still struggling to pay my bills. After joining WFG, I was able to quit both jobs within 6 months. Now I earn triple my previous income while spending more time with my family."
               </p>
@@ -231,7 +231,7 @@ export default function TeamBuilding() {
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-lg text-center mb-1">James Davis</h3>
-              <p className="text-neutral-500 text-sm text-center mb-4">Miami, Florida</p>
+              <p className="text-neutral-500 text-sm text-center mb-4">United States</p>
               <p className="text-neutral-600 italic mb-4">
                 "After 15 years in corporate America, I was tired of missing my kids' basketball games. With WFG, I built a team of 12 associates in my first year. Now I make my own schedule and earn more than my old executive salary."
               </p>
@@ -252,7 +252,7 @@ export default function TeamBuilding() {
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-lg text-center mb-1">Tanya Diaz</h3>
-              <p className="text-neutral-500 text-sm text-center mb-4">Jamaica, New York</p>
+              <p className="text-neutral-500 text-sm text-center mb-4">United States</p>
               <p className="text-neutral-600 italic mb-4">
                 "As a single mother, I was living paycheck to paycheck with no time for my son. WFG gave me the blueprint to build wealth. In 18 months, I paid off $43,000 in debt and bought my first home. The best part? I'm helping others do the same."
               </p>

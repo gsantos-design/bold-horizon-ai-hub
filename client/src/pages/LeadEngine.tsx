@@ -410,7 +410,7 @@ export default function LeadEngine() {
     industries: ['Financial Services', 'Insurance', 'Real Estate', 'Professional Services', 'Healthcare', 'Technology', 'Consulting', 'E-commerce', 'Digital Marketing', 'Coaching', 'SaaS', 'Retail'],
     companySizes: ['11-50', '51-200', '201-500', '501-1000', '1001-5000'],
     titles: ['CEO', 'Founder', 'Managing Director', 'VP Sales', 'Sales Director', 'Business Owner', 'Partner', 'Entrepreneur', 'Co-Founder', 'President', 'Executive Director', 'General Manager'],
-    locations: ['Florida', 'New York', 'Miami-Dade', 'Broward County', 'Orlando', 'Tampa', 'Jacksonville', 'Manhattan', 'Brooklyn', 'Long Island'],
+    locations: ['United States', 'Nationwide', 'California', 'Texas', 'Florida', 'New York', 'Pennsylvania', 'Illinois', 'Ohio', 'Georgia', 'North Carolina', 'Michigan'],
     revenueRange: '$500K-$50M',
     employeeGrowth: true,
     hiringActivity: true

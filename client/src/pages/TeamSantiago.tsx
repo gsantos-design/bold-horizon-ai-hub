@@ -66,7 +66,7 @@ export default function TeamSantiago() {
               </h1>
               <p className="text-xl mb-8 opacity-90 leading-relaxed">
                 Three generations united in transforming lives through financial education, 
-                entrepreneurship, and building generational wealth across Florida and New York.
+                entrepreneurship, and building generational wealth across the United States.
               </p>
             </motion.div>
           </div>
@@ -442,7 +442,7 @@ export default function TeamSantiago() {
               <div className="mt-8 flex items-center justify-center gap-6 text-sm opacity-75">
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  <span>Florida & New York</span>
+                  <span>Nationwide United States</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4" />

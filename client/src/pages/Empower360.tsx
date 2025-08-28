@@ -122,7 +122,7 @@ export default function Empower360() {
                   <p className="text-gray-700 leading-relaxed">
                     30+ years of law enforcement experience drives Pablo's commitment to protecting first responders 
                     and their families through financial education. His dedication to "protecting the protectors" 
-                    has transformed thousands of lives across Florida and New York markets.
+                    has transformed thousands of lives across the United States.
                   </p>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function Empower360() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Meet the dedicated professionals who make financial transformation possible for families 
-              across the Florida and New York markets.
+              across nationwide markets.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ export default function Empower360() {
             <Card className="overflow-hidden max-w-5xl mx-auto bg-white border-2 border-primary/20">
               <CardHeader className="bg-primary text-white text-center">
                 <CardTitle className="text-2xl">The Santiago Family Team</CardTitle>
-                <p className="text-blue-100 mt-2">Three generations of excellence serving Florida and New York families</p>
+                <p className="text-blue-100 mt-2">Three generations of excellence serving families nationwide</p>
               </CardHeader>
               <CardContent className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
