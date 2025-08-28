@@ -668,6 +668,32 @@ export default function Events() {
                         Empoderando familias a través de educación financiera y oportunidades.
                       </p>
                     </div>
+
+                    {/* Facebook Video */}
+                    <div className="bg-gray-50 p-4 rounded-xl">
+                      <div className="flex items-center justify-between mb-3">
+                        <h5 className="font-semibold text-gray-900 flex items-center">
+                          <ExternalLink className="w-4 h-4 mr-2 text-primary" />
+                          Featured Video
+                        </h5>
+                        <Badge className="bg-blue-100 text-blue-700 text-xs">Facebook</Badge>
+                      </div>
+                      <div className="text-center">
+                        <a 
+                          href="https://www.facebook.com/share/v/1DK7cku4jN/?mibextid=wwXIfr"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                        >
+                          <Facebook className="w-5 h-5 mr-2" />
+                          Watch on Facebook
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                        <p className="text-gray-600 text-sm mt-3">
+                          See the Santiago Team in action and learn about our mission!
+                        </p>
+                      </div>
+                    </div>
                     
                     <div className="bg-gray-50 p-4 rounded-xl">
                       <div className="flex items-center justify-center mb-3">
