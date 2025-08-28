@@ -218,9 +218,10 @@ export default function TeamSantiago() {
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        Twin brother and entrepreneurial force. Fresh out of high school with his financial advisor 
-                        license already earned, Joseph brings passion for helping entrepreneurs build wealth 
-                        and create lasting legacies.
+                        <strong>Born into the family mission.</strong> Joseph earned his investment license while still in high school, 
+                        demonstrating the Santiago family's commitment to <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> from an early age. 
+                        As an entrepreneurial force, he specializes in helping business owners create multiple income streams and 
+                        build <DictionaryTerm termId="prosperidad">generational wealth</DictionaryTerm> through smart investing and compound interest strategies.
                       </p>
                       
                       <div className="space-y-2">
@@ -270,9 +271,10 @@ export default function TeamSantiago() {
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        Twin brother and mathematical mind. A recent graduate with a passion for numbers 
-                        and compound interest, Christian is dedicated to educating young people about 
-                        financial empowerment and the new art of living.
+                        <strong>The mathematical genius of the family.</strong> Christian combines his natural aptitude for numbers 
+                        with a deep understanding of compound interest and investment strategies. As a recent graduate, he's passionate 
+                        about teaching his generation the <DictionaryTerm termId="educacion_financiera">financial principles</DictionaryTerm> that can transform their futures. 
+                        His mission is helping young adults understand that time is their greatest asset in building wealth.
                       </p>
                       
                       <div className="space-y-2">
@@ -301,6 +303,61 @@ export default function TeamSantiago() {
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
+
+              {/* Princhesca Rainier Turner */}
+              <motion.div variants={fadeInUp} className="lg:col-span-2 lg:flex lg:justify-center">
+                <div className="lg:max-w-lg w-full">
+                  <Card className="h-full border-2 border-primary shadow-xl">
+                    <CardHeader className="bg-primary text-white">
+                      <div className="text-center">
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                          <img 
+                            src={princhescaPhoto} 
+                            alt="Princhesca Rainier Turner" 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <CardTitle className="text-2xl">Princhesca Rainier Turner</CardTitle>
+                        <p className="text-white">Senior Marketing Associate & Business Development</p>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <p className="text-gray-700 leading-relaxed">
+                          <strong>Strategic business development expert.</strong> Princhesca brings extensive experience in 
+                          client relationship management and business strategy to the Santiago Team. Her expertise in 
+                          <DictionaryTerm termId="educacion_financiera">financial planning</DictionaryTerm> and commitment to helping families achieve 
+                          <DictionaryTerm termId="libertad_financiera">financial independence</DictionaryTerm> makes her an invaluable part of our mission.
+                        </p>
+                        
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 text-primary">
+                            <TrendingUp className="h-4 w-4" />
+                            <span className="text-sm font-medium">Business Development</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-primary">
+                            <Users className="h-4 w-4" />
+                            <span className="text-sm font-medium">Client Relations</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-primary">
+                            <Target className="h-4 w-4" />
+                            <span className="text-sm font-medium">Strategic Planning</span>
+                          </div>
+                        </div>
+
+                        <div className="border-t pt-4">
+                          <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            <Badge variant="outline" className="text-xs">Business Strategy</Badge>
+                            <Badge variant="outline" className="text-xs">Family Financial Planning</Badge>
+                            <Badge variant="outline" className="text-xs">Wealth Building</Badge>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </motion.div>
             </motion.div>
           </div>
