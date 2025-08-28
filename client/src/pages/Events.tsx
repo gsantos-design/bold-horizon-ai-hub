@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink, Star, Sparkles, TrendingUp, Award, Heart, Globe } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Wine, Gift, CheckCircle, Phone, ExternalLink, Star, Sparkles, TrendingUp, Award, Heart, Globe, Facebook, Mail } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-// Import the event flyer images
+// Import the event flyer images and business card
 import wealthWorkshopFlyer from '@assets/IMG_0412_1754924705272.jpeg';
 import grandOpeningFlyer from '@assets/grand-opening-2025.png';
+import pabloBusinessCard from '@assets/Outlook-3jqddhaf_1756353398469.png';
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
@@ -568,6 +569,137 @@ export default function Events() {
                 </Button>
               </div>
             </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Video and Social Media Section */}
+        <motion.section
+          {...fadeInUp}
+          className="py-20 bg-gray-50"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              {...fadeInUp}
+              className="text-center mb-16"
+            >
+              <Badge className="bg-primary/10 text-primary text-lg px-6 py-3 mb-6">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Featured Content
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Our Story in Action
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+                See the Santiago Team's mission come to life through our videos and social media presence.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Video Section */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.2 }}
+                className="space-y-6"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  WFG Business Platform Video
+                </h3>
+                <div className="relative bg-gray-800 rounded-2xl overflow-hidden aspect-video shadow-2xl">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/PvKrpb5XWHQ?controls=1&modestbranding=1&rel=0"
+                    title="WFG Business Platform Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Discover how World Financial Group provides a platform as diverse as those we serve. 
+                  See what makes WFG unique in the financial services industry.
+                </p>
+              </motion.div>
+
+              {/* Social Media and Business Card */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.4 }}
+                className="space-y-8"
+              >
+                {/* Facebook Post */}
+                <div className="bg-white rounded-2xl p-6 shadow-xl border border-primary/20">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4">
+                      <Facebook className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">Santiago Team WFG</h4>
+                      <p className="text-sm text-gray-600">Featured Post</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-primary/5 p-4 rounded-xl border border-primary/20">
+                      <p className="text-lg font-semibold text-primary mb-2">
+                        🌟 Ven a ser parte del equipo Santiago en WFG
+                      </p>
+                      <p className="text-gray-700">
+                        Empoderando familias a través de educación financiera y oportunidades.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-xl">
+                      <h5 className="font-semibold text-gray-900 mb-2">🤖 AI Automation Hub</h5>
+                      <p className="text-sm text-gray-700 mb-3">
+                        AI Phone Calls & Video Avatars - Scale your Santiago Team outreach with AI-powered phone calls and personalized video messages.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-600">Expected ROI:</p>
+                          <p className="font-bold text-green-600">9,500%+</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-600">System Status:</p>
+                          <p className="font-bold text-primary">🤖 Fully Activated</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Business Card */}
+                <div className="bg-white rounded-2xl p-6 shadow-xl border border-primary/20">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center">
+                    <Phone className="w-5 h-5 mr-2 text-primary" />
+                    Contact Information
+                  </h4>
+                  
+                  <div className="relative">
+                    <img 
+                      src={pabloBusinessCard} 
+                      alt="Pablo Santiago Business Card" 
+                      className="w-full rounded-xl shadow-lg border border-gray-200"
+                    />
+                    <div className="absolute inset-0 bg-black/5 rounded-xl" />
+                  </div>
+                  
+                  <div className="mt-4 space-y-2 text-sm text-gray-700">
+                    <div className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-2 text-primary" />
+                      <span>235 N Westmont Dr Suite 107, Altamonte Springs, FL 32714</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2 text-primary" />
+                      <span>407-777-1067</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="w-4 h-4 mr-2 text-primary" />
+                      <span>Prsantiagowfg@outlook.com</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.section>
 
