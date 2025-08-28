@@ -120,9 +120,9 @@ export default function Empower360() {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h4>
                   <p className="text-primary font-semibold mb-4">Senior Associate – World Financial Group</p>
                   <p className="text-gray-700 leading-relaxed">
-                    30+ years of law enforcement experience drives Pablo's commitment to protecting first responders 
-                    and their families through financial education. His dedication to "protecting the protectors" 
-                    has transformed thousands of lives across the United States.
+                    After 34 years in law enforcement—NYPD and Orange County Deputy—Pablo realized that 
+                    "protection doesn't stop when the badge comes off." His mission: help families take control of their 
+                    financial future through education and tax-free wealth strategies, so they never have to wonder "What if?"
                   </p>
                 </div>
               </div>

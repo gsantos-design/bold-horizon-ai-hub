@@ -52,7 +52,7 @@ export default function DynamicTeamMissionHighlightReel() {
       id: 'protect-protectors',
       title: 'Protecting the Protectors',
       subtitle: 'Pablo\'s Mission',
-      description: '30+ years of law enforcement experience drives our commitment to protecting first responders and their families through financial education and tax-free wealth strategies.',
+      description: 'After 34 years in law enforcement (NYPD & Orange County), Pablo realized protection doesn\'t stop when the badge comes off. His mission: help families secure their financial future through education and tax-free wealth strategies.',
       icon: <Shield className="h-8 w-8" />,
       color: 'blue',
       gradient: 'bg-primary',

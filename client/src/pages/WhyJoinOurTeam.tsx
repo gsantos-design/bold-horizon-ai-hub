@@ -165,7 +165,7 @@ export default function WhyJoinOurTeam() {
       icon: <Users className="h-12 w-12" />,
       gradient: 'from-orange-600 to-red-600',
       features: [
-        'Pablo: 30+ years law enforcement',
+        'Pablo: 34 years law enforcement (NYPD & Orange County)',
         'Nolly: 20+ years telecommunications',
         'Joseph: Investment licensed entrepreneur',
         'Christian: Mathematics & education expert'
@@ -571,7 +571,7 @@ export default function WhyJoinOurTeam() {
                       />
                       <h4 className="font-bold text-gray-900">Pablo Santiago</h4>
                       <p className="text-sm text-blue-600 mb-2">Senior Associate - WFG</p>
-                      <p className="text-xs text-gray-600">30+ years law enforcement</p>
+                      <p className="text-xs text-gray-600">34 years law enforcement</p>
                     </div>
                     <div className="text-center">
                       <img 

@@ -160,29 +160,30 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Pablo Santiago</CardTitle>
-                      <p className="text-white">Former NYPD & Orange County Law Enforcement</p>
+                      <p className="text-white">Retired NYPD Officer & Orange County Deputy</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <p className="text-gray-700 leading-relaxed">
-                        <strong>30+ years in law enforcement.</strong> After surviving a major heart attack, Pablo realized 
-                        the financial vulnerabilities first responders face. His mission: protect the protectors through 
-                        <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm> and <DictionaryTerm termId="libertad_financiera">tax-free wealth building</DictionaryTerm> strategies.
+                        <strong>34 years in law enforcement</strong>—first with the NYPD and now serving as a deputy in Orange County. 
+                        "Protection doesn't stop when the badge comes off." After asking himself, "If something happened to me, would my family be financially secure?" 
+                        that question changed everything. Pablo shifted his focus to protecting his community through <DictionaryTerm termId="educacion_financiera">financial education</DictionaryTerm>, 
+                        helping families build real legacies with <DictionaryTerm termId="libertad_financiera">tax-free wealth strategies</DictionaryTerm> instead of giving more than necessary to Uncle Sam.
                       </p>
                       
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-primary">
                           <Shield className="h-4 w-4" />
-                          <span className="text-sm font-medium">NYPD Veteran</span>
+                          <span className="text-sm font-medium">34 Years Law Enforcement</span>
                         </div>
                         <div className="flex items-center gap-2 text-primary">
                           <Users className="h-4 w-4" />
-                          <span className="text-sm font-medium">First Responder Advocate</span>
+                          <span className="text-sm font-medium">Proud Father & Husband</span>
                         </div>
                         <div className="flex items-center gap-2 text-primary">
                           <Target className="h-4 w-4" />
-                          <span className="text-sm font-medium">Tax-Free Wealth Strategies</span>
+                          <span className="text-sm font-medium">Financial Protection Advocate</span>
                         </div>
                       </div>
 
@@ -438,7 +439,7 @@ export default function TeamSantiago() {
                 <CardContent className="p-8">
                   <div className="space-y-6 text-gray-700 leading-relaxed">
                     <p className="text-lg">
-                      <strong>Our journey began with service and sacrifice.</strong> Pablo served over 30 years with the NYPD 
+                      <strong>Our journey began with service and sacrifice.</strong> Pablo served 34 years with the NYPD and Orange County 
                       and Orange County law enforcement, protecting strangers and running toward danger. But after surviving 
                       a major heart attack, he realized a painful truth: even the most dedicated servants can be left financially 
                       vulnerable when they can no longer work.
