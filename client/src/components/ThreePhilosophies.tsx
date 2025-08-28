@@ -99,43 +99,43 @@ export default function ThreePhilosophies() {
                       </CardContent>
                     </Card>
                   </div>
-                  <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-6">
-                    <h4 className="text-xl font-bold text-yellow-800 mb-2">Question: Who Will Pay It Off Faster?</h4>
-                    <p className="text-yellow-700">The answer reveals the fundamental difference between single-handed and multi-handed income approaches.</p>
+                  <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6">
+                    <h4 className="text-xl font-bold text-primary mb-2">Question: Who Will Pay It Off Faster?</h4>
+                    <p className="text-gray-700">The answer reveals the fundamental difference between single-handed and multi-handed income approaches.</p>
                   </div>
                 </div>
 
                 {/* Two Pathways */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                  <Card className="border-2 border-red-200 bg-red-50">
+                  <Card className="border-2 border-primary bg-white">
                     <CardContent className="p-6 text-center">
-                      <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <TrendingUp className="h-8 w-8 text-red-600" />
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <TrendingUp className="h-8 w-8 text-primary" />
                       </div>
-                      <h4 className="text-xl font-bold text-red-800 mb-4">Single-Handed Income</h4>
-                      <p className="text-red-700 font-semibold mb-4">Income Will NEVER Multiply With:</p>
+                      <h4 className="text-xl font-bold text-primary mb-4">Single-Handed Income</h4>
+                      <p className="text-gray-700 font-semibold mb-4">Income Will NEVER Multiply With:</p>
                       <div className="space-y-2">
-                        <div className="bg-white rounded-lg p-3 border border-red-200">
+                        <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
                           <p className="font-semibold">Skill & Hours</p>
                         </div>
                       </div>
-                      <p className="text-sm text-red-600 mt-4">Limited by time and personal capacity</p>
+                      <p className="text-sm text-gray-600 mt-4">Limited by time and personal capacity</p>
                     </CardContent>
                   </Card>
 
-                  <Card className="border-2 border-green-200 bg-green-50">
+                  <Card className="border-2 border-primary bg-white">
                     <CardContent className="p-6 text-center">
-                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Users className="h-8 w-8 text-green-600" />
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Users className="h-8 w-8 text-primary" />
                       </div>
-                      <h4 className="text-xl font-bold text-green-800 mb-4">Multi-Handed Income</h4>
-                      <p className="text-green-700 font-semibold mb-4">Income WILL Multiply With:</p>
+                      <h4 className="text-xl font-bold text-primary mb-4">Multi-Handed Income</h4>
+                      <p className="text-gray-700 font-semibold mb-4">Income WILL Multiply With:</p>
                       <div className="space-y-2">
-                        <div className="bg-white rounded-lg p-3 border border-green-200">
+                        <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
                           <p className="font-semibold">System</p>
                         </div>
                       </div>
-                      <p className="text-sm text-green-600 mt-4">Scalable through team building and systems</p>
+                      <p className="text-sm text-gray-600 mt-4">Scalable through team building and systems</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -174,8 +174,8 @@ export default function ThreePhilosophies() {
         {/* Philosophy 2: 10% | 3 Rules | 3 Goals */}
         {activePhilosophy === 2 && (
           <div className="max-w-6xl mx-auto">
-            <Card className="mb-8 border-2 border-green-200 shadow-xl">
-              <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+            <Card className="mb-8 border-2 border-primary shadow-xl">
+              <CardHeader className="bg-primary text-white">
                 <CardTitle className="text-2xl md:text-3xl text-center">
                   <Target className="h-8 w-8 inline-block mr-3" />
                   Philosophy #2: 10% | 3 Rules | 3 Goals
@@ -184,9 +184,9 @@ export default function ThreePhilosophies() {
               <CardContent className="p-8">
                 {/* The Biggest Regret */}
                 <div className="text-center mb-12">
-                  <div className="bg-red-50 border-2 border-red-200 rounded-lg p-6 mb-8">
-                    <h3 className="text-2xl font-bold text-red-800 mb-4">The Biggest Regret of Americans/Canadians?</h3>
-                    <p className="text-xl font-bold text-red-600">NOT SAVING ENOUGH</p>
+                  <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6 mb-8">
+                    <h3 className="text-2xl font-bold text-primary mb-4">The Biggest Regret of Americans/Canadians?</h3>
+                    <p className="text-xl font-bold text-gray-700">NOT SAVING ENOUGH</p>
                   </div>
                   <p className="text-lg text-gray-700 mb-8">
                     To put families on the path of wealth creation, we empower them with:
@@ -202,7 +202,7 @@ export default function ThreePhilosophies() {
                         <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
                           <PiggyBank className="h-6 w-6 text-primary" />
                         </div>
-                        <h4 className="text-xl font-bold text-blue-800">SAVE 10% FROM NET-PAYCHECK</h4>
+                        <h4 className="text-xl font-bold text-primary">SAVE 10% FROM NET-PAYCHECK</h4>
                       </div>
                       <p className="text-gray-700">Establish a foundation of consistent savings to build wealth systematically.</p>
                     </CardContent>
@@ -211,26 +211,26 @@ export default function ThreePhilosophies() {
                   {/* 3 Rules */}
                   <Card className="border-2 border-primary">
                     <CardContent className="p-6">
-                      <h4 className="text-xl font-bold text-purple-800 mb-4">APPLY 3 RULES IN YOUR FAVOR</h4>
+                      <h4 className="text-xl font-bold text-primary mb-4">APPLY 3 RULES IN YOUR FAVOR</h4>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="text-center p-4 bg-purple-50 rounded-lg">
-                          <TrendingUp className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-purple-800">COMPOUND</h5>
-                          <p className="text-sm text-purple-600 mt-1">Accumulation Phase</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">COMPOUND</h5>
+                          <p className="text-sm text-gray-600 mt-1">Accumulation Phase</p>
                         </div>
-                        <div className="text-center p-4 bg-purple-50 rounded-lg">
-                          <Shield className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-purple-800">RISK</h5>
-                          <p className="text-sm text-purple-600 mt-1">Protection Phase</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">RISK</h5>
+                          <p className="text-sm text-gray-600 mt-1">Protection Phase</p>
                         </div>
-                        <div className="text-center p-4 bg-purple-50 rounded-lg">
-                          <DollarSign className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-purple-800">TAX</h5>
-                          <p className="text-sm text-purple-600 mt-1">Distribution Phase</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <DollarSign className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">TAX</h5>
+                          <p className="text-sm text-gray-600 mt-1">Distribution Phase</p>
                         </div>
                       </div>
-                      <div className="mt-4 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                        <p className="text-sm text-yellow-800 font-semibold">
+                      <div className="mt-4 bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <p className="text-sm text-gray-700 font-semibold">
                           Most people utilize various financial products, but they don't know if these 3 rules are in their favor.
                         </p>
                       </div>
@@ -240,22 +240,22 @@ export default function ThreePhilosophies() {
                   {/* 3 Goals */}
                   <Card className="border-2 border-green-200">
                     <CardContent className="p-6">
-                      <h4 className="text-xl font-bold text-green-800 mb-4">PLAN 3 GOALS FOR A SECURE FUTURE</h4>
+                      <h4 className="text-xl font-bold text-primary mb-4">PLAN 3 GOALS FOR A SECURE FUTURE</h4>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="text-center p-4 bg-green-50 rounded-lg">
-                          <Shield className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-green-800">INCOME PROTECTION</h5>
-                          <p className="text-sm text-green-600 mt-1">Safeguard your earning ability</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">INCOME PROTECTION</h5>
+                          <p className="text-sm text-gray-600 mt-1">Safeguard your earning ability</p>
                         </div>
-                        <div className="text-center p-4 bg-green-50 rounded-lg">
-                          <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-green-800">INCOME REPLACEMENT</h5>
-                          <p className="text-sm text-green-600 mt-1">Ensure retirement security</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <DollarSign className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">INCOME REPLACEMENT</h5>
+                          <p className="text-sm text-gray-600 mt-1">Ensure retirement security</p>
                         </div>
-                        <div className="text-center p-4 bg-green-50 rounded-lg">
-                          <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                          <h5 className="font-bold text-green-800">GENERATIONAL WEALTH</h5>
-                          <p className="text-sm text-green-600 mt-1">Create lasting family legacy</p>
+                        <div className="text-center p-4 bg-primary/5 rounded-lg">
+                          <Users className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <h5 className="font-bold text-primary">GENERATIONAL WEALTH</h5>
+                          <p className="text-sm text-gray-600 mt-1">Create lasting family legacy</p>
                         </div>
                       </div>
                     </CardContent>
@@ -270,7 +270,7 @@ export default function ThreePhilosophies() {
         {activePhilosophy === 3 && (
           <div className="max-w-6xl mx-auto">
             <Card className="mb-8 border-2 border-primary shadow-xl">
-              <CardHeader className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+              <CardHeader className="bg-primary text-white">
                 <CardTitle className="text-2xl md:text-3xl text-center">
                   <Zap className="h-8 w-8 inline-block mr-3" />
                   Philosophy #3: Self-Improvement
@@ -283,31 +283,31 @@ export default function ThreePhilosophies() {
                     The Biggest Suffering of Our Society Today is NOT Lack of Opportunities, But:
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <Card className="border-2 border-red-200 bg-red-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-red-600">1</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">1</span>
                         </div>
-                        <h4 className="font-bold text-lg text-red-800 mb-2">SELF-DOUBT</h4>
-                        <p className="text-red-600">Questioning one's own abilities and potential</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">SELF-DOUBT</h4>
+                        <p className="text-gray-600">Questioning one's own abilities and potential</p>
                       </CardContent>
                     </Card>
-                    <Card className="border-2 border-red-200 bg-red-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-red-600">2</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">2</span>
                         </div>
-                        <h4 className="font-bold text-lg text-red-800 mb-2">LOW CONFIDENCE</h4>
-                        <p className="text-red-600">Lack of belief in personal capabilities</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">LOW CONFIDENCE</h4>
+                        <p className="text-gray-600">Lack of belief in personal capabilities</p>
                       </CardContent>
                     </Card>
-                    <Card className="border-2 border-red-200 bg-red-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-red-600">3</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">3</span>
                         </div>
-                        <h4 className="font-bold text-lg text-red-800 mb-2">FEAR OF WHAT OTHERS THINK</h4>
-                        <p className="text-red-600">Paralyzed by social judgment and criticism</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">FEAR OF WHAT OTHERS THINK</h4>
+                        <p className="text-gray-600">Paralyzed by social judgment and criticism</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -329,42 +329,42 @@ export default function ThreePhilosophies() {
                     What Holds People Back From Life-Changing Chances?
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <Card className="border-2 border-orange-200 bg-orange-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-orange-600">1</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">1</span>
                         </div>
-                        <h4 className="font-bold text-lg text-orange-800 mb-2">BAD EXPERIENCES FROM PAST</h4>
-                        <p className="text-orange-600">Previous failures create future hesitation</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">BAD EXPERIENCES FROM PAST</h4>
+                        <p className="text-gray-600">Previous failures create future hesitation</p>
                       </CardContent>
                     </Card>
-                    <Card className="border-2 border-orange-200 bg-orange-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-orange-600">2</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">2</span>
                         </div>
-                        <h4 className="font-bold text-lg text-orange-800 mb-2">SELF-CREATED ILLUSIONS</h4>
-                        <p className="text-orange-600">Mental barriers we build ourselves</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">SELF-CREATED ILLUSIONS</h4>
+                        <p className="text-gray-600">Mental barriers we build ourselves</p>
                       </CardContent>
                     </Card>
-                    <Card className="border-2 border-orange-200 bg-orange-50">
+                    <Card className="border-2 border-primary bg-white">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl font-bold text-orange-600">3</span>
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-2xl font-bold text-primary">3</span>
                         </div>
-                        <h4 className="font-bold text-lg text-orange-800 mb-2">PRE-OCCUPIED PERSPECTIVE</h4>
-                        <p className="text-orange-600">Fixed mindset limiting new possibilities</p>
+                        <h4 className="font-bold text-lg text-primary mb-2">PRE-OCCUPIED PERSPECTIVE</h4>
+                        <p className="text-gray-600">Fixed mindset limiting new possibilities</p>
                       </CardContent>
                     </Card>
                   </div>
                   <div className="text-center space-y-4">
-                    <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-                      <p className="text-lg font-bold text-green-800 mb-2">
+                    <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6">
+                      <p className="text-lg font-bold text-primary mb-2">
                         But some people always stay open to learn new perspectives towards a bright future
                       </p>
                     </div>
-                    <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
-                      <p className="text-xl font-bold text-blue-800">
+                    <div className="bg-white border-2 border-primary rounded-lg p-6">
+                      <p className="text-xl font-bold text-primary">
                         IT'S NOT THE OPPORTUNITY, IT'S THE PERSPECTIVE TOWARDS OPPORTUNITY
                       </p>
                     </div>
@@ -380,25 +380,25 @@ export default function ThreePhilosophies() {
                     If you are one of those who are hungry for success and open-minded
                   </p>
                   <div className="bg-white rounded-lg p-6 border-2 border-primary mb-6">
-                    <p className="text-lg font-bold text-purple-800 mb-4">
+                    <p className="text-lg font-bold text-primary mb-4">
                       SET ONE-ON-ONE TIME TO LEARN HOW YOUR FAMILY CAN BE EMPOWERED WITH THE 3 PHILOSOPHIES
                     </p>
                     <div className="space-y-2 text-left max-w-md mx-auto">
                       <div className="flex items-center">
-                        <Users className="h-5 w-5 text-purple-600 mr-3" />
+                        <Users className="h-5 w-5 text-primary mr-3" />
                         <span className="font-semibold">Multi-Handed Income</span>
                       </div>
                       <div className="flex items-center">
-                        <Target className="h-5 w-5 text-purple-600 mr-3" />
+                        <Target className="h-5 w-5 text-primary mr-3" />
                         <span className="font-semibold">10% | 3 Rules | 3 Goals</span>
                       </div>
                       <div className="flex items-center">
-                        <Zap className="h-5 w-5 text-purple-600 mr-3" />
+                        <Zap className="h-5 w-5 text-primary mr-3" />
                         <span className="font-semibold">Self-Improvement</span>
                       </div>
                     </div>
                   </div>
-                  <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3">
+                  <Button size="lg" className="bg-primary text-white px-8 py-3 hover:bg-primary/90">
                     Schedule One-On-One Time to Learn the New Art of Living
                   </Button>
                 </div>
