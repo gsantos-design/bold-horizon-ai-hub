@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/LanguageContext";
 import princhescaPhoto from "@assets/IMG_8889_1754678450603.png";
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
-import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';
+import pabloImage from '@assets/image_1756353161547.png';
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg';
 

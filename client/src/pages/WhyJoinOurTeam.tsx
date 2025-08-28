@@ -37,7 +37,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Import correct Santiago family photos
-import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';
+import pabloImage from '@assets/image_1756353161547.png';
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg';

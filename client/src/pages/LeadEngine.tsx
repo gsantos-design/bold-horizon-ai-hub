@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlusCircle, Download, Users, TrendingUp, Target, MessageSquare, Zap, Filter, Star, Calendar, Building2, MapPin, DollarSign, Settings, Copy, ExternalLink, Play, CheckCircle2, AlertTriangle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago authentic photo
+import pabloImage from '@assets/image_1756353161547.png';  // Pablo Santiago authentic photo
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago authentic photo
 
 interface Lead {

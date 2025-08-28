@@ -6,7 +6,7 @@ import { TrendingUp, GraduationCap, Target, ArrowRight, PlayCircle, Star, Award,
 
 // Import correct Santiago family photos
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago (correct photo)
-import pabloImage from '@assets/IMG_0409_1754923884869.jpeg';  // Pablo Santiago (correct photo)
+import pabloImage from '@assets/image_1756353161547.png';  // Pablo Santiago (NEW professional photo)
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago
 // Removed individual team photo - using family showcase instead
