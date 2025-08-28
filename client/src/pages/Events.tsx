@@ -467,6 +467,31 @@ export default function Events() {
                 <ExternalLink className="w-4 h-4 mr-2" />
                 <span className="font-medium">Featured in Official WFG Promo Video</span>
               </motion.div>
+
+              {/* Featured Video for Upcoming Events */}
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.4 }}
+                className="mt-12 max-w-4xl mx-auto"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Santiago Team Featured Video
+                </h3>
+                <div className="relative bg-gray-800 rounded-2xl overflow-hidden aspect-video shadow-2xl">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/Erx3CJERJJE?controls=1&modestbranding=1&rel=0"
+                    title="Santiago Team Featured Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <p className="text-gray-600 leading-relaxed mt-4">
+                  Watch the Santiago Team in action! See our mission and commitment to empowering families 
+                  through financial education and opportunity.
+                </p>
+              </motion.div>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
@@ -595,28 +620,24 @@ export default function Events() {
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Video Section */}
+              {/* Past Events Video Section - Placeholder for Past Event Video */}
               <motion.div
                 {...fadeInUp}
                 transition={{ delay: 0.2 }}
                 className="space-y-6"
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Santiago Team Featured Video
+                  Past Event Highlights
                 </h3>
-                <div className="relative bg-gray-800 rounded-2xl overflow-hidden aspect-video shadow-2xl">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/Erx3CJERJJE?controls=1&modestbranding=1&rel=0"
-                    title="Santiago Team Featured Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
+                <div className="relative bg-gray-100 rounded-2xl overflow-hidden aspect-video shadow-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center">
+                    <ExternalLink className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-500 font-medium">Past Event Video Coming Soon</p>
+                    <p className="text-sm text-gray-400">Check back for highlights from our recent events</p>
+                  </div>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Watch the Santiago Team in action! See our mission and commitment to empowering families 
-                  through financial education and opportunity.
+                  This section will feature highlights and memorable moments from our past Santiago Team events and workshops.
                 </p>
               </motion.div>
 
