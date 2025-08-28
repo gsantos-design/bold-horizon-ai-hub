@@ -108,7 +108,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Nolly Santiago</CardTitle>
-                      <p className="text-white">Marketing Director – World Financial Group</p>
+                      <p className="text-white">Professional Financial Advisor</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -160,7 +160,7 @@ export default function TeamSantiago() {
                         />
                       </div>
                       <CardTitle className="text-2xl">Pablo Santiago</CardTitle>
-                      <p className="text-white">Retired NYPD Officer & Orange County Deputy</p>
+                      <p className="text-white">Retired NYPD Officer | Orange County Deputy | Financial Protection Advocate</p>
                     </div>
                   </CardHeader>
                   <CardContent className="p-6">

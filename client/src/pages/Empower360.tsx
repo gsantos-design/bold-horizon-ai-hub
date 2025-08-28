@@ -100,7 +100,7 @@ export default function Empower360() {
                     />
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Nolly Santiago</h4>
-                  <p className="text-primary font-semibold mb-4">Marketing Director – World Financial Group</p>
+                  <p className="text-primary font-semibold mb-4">Professional Financial Advisor</p>
                   <p className="text-gray-700 leading-relaxed">
                     With 20+ years in telecommunications, Nolly discovered WFG after losing both parents too early 
                     and realizing they never had financial education. Her mission: ensure every family has the knowledge 
@@ -118,7 +118,7 @@ export default function Empower360() {
                     />
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Pablo Santiago</h4>
-                  <p className="text-primary font-semibold mb-4">Senior Associate – World Financial Group</p>
+                  <p className="text-primary font-semibold mb-4">Financial Protection Advocate</p>
                   <p className="text-gray-700 leading-relaxed">
                     After 34 years in law enforcement—NYPD and Orange County Deputy—Pablo realized that 
                     "protection doesn't stop when the badge comes off." His mission: help families take control of their 
@@ -289,7 +289,7 @@ export default function Empower360() {
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-100"
                   />
                   <h4 className="font-bold text-gray-900 mb-1">Pablo Santiago</h4>
-                  <p className="text-blue-600 text-sm font-medium mb-2">Senior Associate - WFG</p>
+                  <p className="text-blue-600 text-sm font-medium mb-2">Financial Protection Advocate</p>
                   <p className="text-gray-600 text-sm">Protecting first responders &amp; families</p>
                 </div>
               </Card>
@@ -303,7 +303,7 @@ export default function Empower360() {
                     className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-100"
                   />
                   <h4 className="font-bold text-gray-900 mb-1">Nolly Santiago</h4>
-                  <p className="text-purple-600 text-sm font-medium mb-2">Marketing Director - WFG</p>
+                  <p className="text-purple-600 text-sm font-medium mb-2">Professional Financial Advisor</p>
                   <p className="text-gray-600 text-sm">Family legacy &amp; financial education</p>
                 </div>
               </Card>

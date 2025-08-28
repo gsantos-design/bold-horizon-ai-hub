@@ -340,9 +340,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'page.platform_diverse': 'A Platform as Diverse as Those We Serve',
     
     // Team Member Info
-    'team.nolly_title': 'Marketing Director - World Financial Group',
+    'team.nolly_title': 'Professional Financial Advisor',
     'team.nolly_bio_part1': 'Specialized in telecommunications, working as an executive specialist in',
-    'team.pablo_title': 'Former NYPD & Orange County Law Enforcement | WFG Associate',
+    'team.pablo_title': 'Retired NYPD Officer | Orange County Deputy | Financial Protection Advocate',
     'team.pablo_mission_title': 'Mi Historia, Mi Misión',
     'team.pablo_bio_part1': 'Durante más de 30 años, serví con NYPD y las fuerzas del orden del Condado de Orange. Estuve lado a lado con mis hermanos y hermanas — protegiendo extraños, corriendo hacia el peligro, y sacrificando tiempo con mi familia porque eso es lo que el trabajo demanda.',
     'team.pablo_bio_part2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y',
@@ -759,6 +759,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'leaders.title': 'EL EQUIPO SANTIAGO',
     'leaders.subtitle': 'Pablo y Nolly Santiago - Líderes del Equipo',
     'leaders.mission': 'Empoderando Familias a Través del Nuevo Arte de Vivir',
+    'team.nolly_title': 'Asesora Financiera Profesional',
+    'team.pablo_title': 'Oficial Retirado de NYPD | Diputado de Orange County | Defensor de Protección Financiera',
     
     // Contact Information - Spanish
     'contact.call_team': 'Llama al Equipo Santiago',
@@ -950,9 +952,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'page.platform_diverse': 'Una Plataforma Tan Diversa Como Aquellos a Quienes Servimos',
     
     // Team Member Info - Spanish
-    'team.nolly_title': 'Directora de Marketing - World Financial Group',
     'team.nolly_bio_part1': 'Especializada en telecomunicaciones, trabajando como ejecutiva especialista en',
-    'team.pablo_title': 'Ex NYPD y Fuerzas del Orden del Condado de Orange | Asociado WFG',
     'team.pablo_mission_title': 'Mi Historia, Mi Misión',
     'team.pablo_bio_part1': 'Durante más de 30 años, serví con NYPD y las fuerzas del orden del Condado de Orange. Estuve lado a lado con mis hermanos y hermanas — protegiendo extraños, corriendo hacia el peligro, y sacrificando tiempo con mi familia porque eso es lo que el trabajo demanda.',
     'team.pablo_bio_part2': 'El día que sobreviví a un infarto grave, vi una verdad que ojalá hubiera conocido antes: si no podía regresar al trabajo, mi familia habría quedado luchando. Mi pensión no habría sido suficiente. Mi 401(k) estaba lleno de impuestos ocultos y',

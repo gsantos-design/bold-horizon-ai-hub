@@ -570,7 +570,7 @@ export default function WhyJoinOurTeam() {
                         className="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-blue-200"
                       />
                       <h4 className="font-bold text-gray-900">Pablo Santiago</h4>
-                      <p className="text-sm text-blue-600 mb-2">Senior Associate - WFG</p>
+                      <p className="text-sm text-blue-600 mb-2">Financial Protection Advocate</p>
                       <p className="text-xs text-gray-600">34 years law enforcement</p>
                     </div>
                     <div className="text-center">
@@ -580,7 +580,7 @@ export default function WhyJoinOurTeam() {
                         className="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-purple-200"
                       />
                       <h4 className="font-bold text-gray-900">Nolly Santiago</h4>
-                      <p className="text-sm text-purple-600 mb-2">Marketing Director - WFG</p>
+                      <p className="text-sm text-purple-600 mb-2">Professional Financial Advisor</p>
                       <p className="text-xs text-gray-600">20+ years telecommunications</p>
                     </div>
                   </div>

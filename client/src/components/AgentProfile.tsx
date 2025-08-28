@@ -31,7 +31,7 @@ export default function AgentProfile() {
                     />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Pablo Santiago</h3>
-                  <p className="text-blue-700 font-semibold text-sm">Senior Associate - WFG</p>
+                  <p className="text-blue-700 font-semibold text-sm">Financial Protection Advocate</p>
                   <p className="text-gray-600 text-xs mt-2">Protecting first responders & families</p>
                 </div>
                 
@@ -46,7 +46,7 @@ export default function AgentProfile() {
                     />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Nolly Santiago</h3>
-                  <p className="text-purple-700 font-semibold text-sm">Marketing Director - WFG</p>
+                  <p className="text-purple-700 font-semibold text-sm">Professional Financial Advisor</p>
                   <p className="text-gray-600 text-xs mt-2">Family legacy & financial education</p>
                 </div>
                 
