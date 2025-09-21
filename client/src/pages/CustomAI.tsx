@@ -18,7 +18,7 @@ export default function CustomAI() {
       <Header />
       
       <main className="pt-20 pb-16">
-        {/* Hero Section - Enhanced with Google-style visuals */}
+        {/* Hero Section - Enhanced with Bold Horizons visuals */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -382,9 +382,9 @@ export default function CustomAI() {
                 <CardContent>
                   <div className="text-white/90">
                     <div className="text-3xl font-bold text-green-300 mb-2">Enterprise</div>
-                    <p className="text-white/80 mb-4">Google Cloud infrastructure ensuring 99.9% uptime across all chapters with real-time analytics.</p>
+                    <p className="text-white/80 mb-4">Enterprise-grade cloud infrastructure ensuring 99.9% uptime across all chapters with real-time analytics.</p>
                     <div className="flex gap-2">
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Google Cloud</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Enterprise Cloud</Badge>
                       <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Analytics</Badge>
                     </div>
                   </div>
@@ -463,7 +463,7 @@ export default function CustomAI() {
               {[
                 {
                   icon: Brain,
-                  title: "Google Gemini 2.5 Pro",
+                  title: "Advanced AI Engine",
                   description: "Advanced multimodal AI for intelligent voice command processing and automated responses.",
                   highlight: "Latest AI Model"
                 },

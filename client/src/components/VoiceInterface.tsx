@@ -171,10 +171,10 @@ export default function VoiceInterface() {
   const runDemoShowcase = async () => {
     setIsProcessing(true);
     try {
-      const demoResponse = await processVoiceCommand("Run the Google startup program demo showcase");
+      const demoResponse = await processVoiceCommand("Run the Santiago Team Bold Horizons corporate demo showcase");
       toast({
-        title: "Demo Showcase",
-        description: "Running Google startup program demonstration!"
+        title: "Santiago Demo Showcase",
+        description: "Running Bold Horizons corporate demonstration!"
       });
     } catch (error) {
       console.error('Demo error:', error);
