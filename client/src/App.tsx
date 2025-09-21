@@ -23,6 +23,7 @@ import SpanishTutorial from "@/pages/SpanishTutorial";
 import TooltipDemo from "@/pages/TooltipDemo";
 import LanguageHeatmap from "@/pages/LanguageHeatmap";
 import Documentation from "@/pages/Documentation";
+import CustomAI from "@/pages/CustomAI";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
@@ -51,6 +52,7 @@ function AppRouter() {
       <Route path="/team/leaderboard" component={Leaderboard} />
       <Route path="/admin/owners" component={AdminOwners} />
       <Route path="/docs" component={Documentation} />
+      <Route path="/custom-ai" component={CustomAI} />
       <Route component={NotFound} />
     </Switch>
   );

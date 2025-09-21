@@ -1171,6 +1171,77 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Custom AI Voice Interface Routes
+  app.post("/api/voice-command", async (req, res) => {
+    try {
+      // Basic validation
+      const { text } = req.body;
+      if (!text || typeof text !== 'string') {
+        return res.status(400).json({ 
+          text: 'Please provide a valid text command.',
+          error: 'Invalid input'
+        });
+      }
+
+      // Check environment variables
+      if (!process.env.GEMINI_API_KEY) {
+        return res.status(503).json({
+          text: 'AI services are currently unavailable. Please try again later.',
+          error: 'Missing API configuration'
+        });
+      }
+
+      const { customAI } = await import('./services/customAI');
+      
+      // Process voice command with Gemini AI
+      const command = await customAI.processVoiceCommand(text);
+      const response = await customAI.generateAutomationResponse(command, req.body.context);
+      
+      res.json(response);
+    } catch (error) {
+      console.error('Voice command error:', error);
+      res.status(500).json({ 
+        text: 'Sorry, I had trouble processing your command. Please try again.',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.post("/api/voice-synthesis", async (req, res) => {
+    try {
+      // Basic validation
+      const { text } = req.body;
+      if (!text || typeof text !== 'string') {
+        return res.status(400).json({ 
+          error: 'Please provide valid text for synthesis'
+        });
+      }
+
+      // Check environment variables
+      if (!process.env.ELEVENLABS_API_KEY) {
+        return res.status(503).json({
+          error: 'Voice synthesis services are currently unavailable'
+        });
+      }
+
+      const { customAI } = await import('./services/customAI');
+      
+      // Generate voice using ElevenLabs
+      const audioBuffer = await customAI.synthesizeVoice(text);
+      
+      res.set({
+        'Content-Type': 'audio/mpeg',
+        'Content-Length': audioBuffer.length,
+      });
+      res.send(audioBuffer);
+    } catch (error) {
+      console.error('Voice synthesis error:', error);
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : 'Voice synthesis failed'
+      });
+    }
+  });
+
   // AI Automation Routes
   app.get("/api/ai-automation/status", async (req, res) => {
     try {
