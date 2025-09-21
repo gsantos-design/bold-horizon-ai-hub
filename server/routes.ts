@@ -12,6 +12,23 @@ import {
   type QuizResults,
   type ChatMessageInput 
 } from "@shared/schema";
+
+// Multilingual lead generation validation schemas
+const multilingualLeadSchema = z.object({
+  firstName: z.string().min(1).max(50),
+  lastName: z.string().max(50).optional(),
+  email: z.string().email().max(100),
+  phone: z.string().max(20).optional(),
+  preferredLanguage: z.enum(['en', 'es', 'pt', 'fr', 'it']),
+  preferredAgent: z.enum(['pablo', 'nolly']),
+  industry: z.string().max(100).optional(),
+  jobTitle: z.string().max(100).optional(), 
+  company: z.string().max(100).optional(),
+  interestedService: z.string().max(100).optional()
+});
+
+const campaignTypeSchema = z.enum(['401k', 'high-yield', 'entrepreneur']);
+const scriptTypeSchema = z.enum(['connection', 'followup']);
 import { generateCareerRecommendation } from "./openai";
 import { generateMentorResponse, generateWelcomeMessage, suggestMentorPersonality } from "./aiCareerMentor";
 import { z } from "zod";
@@ -23,6 +40,7 @@ import {
   createNoteOnContact,
   getHubSpotOwners 
 } from "./lib/hubspot";
+import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
 
 // Simple authentication middleware for demo purposes
 // In production, you would use proper authentication
@@ -47,6 +65,9 @@ const requireFounder = (req: any, res: any, next: any) => {
 };
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize Google Gemini multilingual lead generator
+  const multilingualGenerator = new MultilingualLeadGenerator();
+  
   // Convert inquiries to leads
   app.post("/api/inquiries/convert/:id", authenticateUser, async (req: any, res) => {
     try {
@@ -1680,6 +1701,176 @@ export async function registerRoutes(app: Express): Promise<Server> {
         error: error instanceof Error ? error.message : 'Unknown error'
       });
     }
+  });
+
+  // ====== MULTILINGUAL LEAD GENERATION ROUTES (Google Gemini AI) ======
+  
+  // Generate multilingual email campaign
+  app.post("/api/multilingual/email-campaign", authenticateUser, async (req: any, res) => {
+    try {
+      const validation = z.object({
+        lead: multilingualLeadSchema,
+        campaignType: campaignTypeSchema
+      }).safeParse(req.body);
+      
+      if (!validation.success) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Invalid request data',
+          errors: validation.error.issues
+        });
+      }
+      
+      const { lead, campaignType } = validation.data;
+
+      const campaign = await multilingualGenerator.generateMultilingualEmailCampaign(lead, campaignType);
+      
+      res.json({
+        success: true,
+        campaign,
+        language: campaign.language,
+        message: `Email campaign generated in ${campaign.language.toUpperCase()}`
+      });
+
+    } catch (error: any) {
+      console.error('Multilingual email campaign error:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate multilingual email campaign',
+        error: error.message
+      });
+    }
+  });
+
+  // Generate multilingual LinkedIn scripts  
+  app.post("/api/multilingual/linkedin-script", authenticateUser, async (req: any, res) => {
+    try {
+      const validation = z.object({
+        lead: multilingualLeadSchema,
+        scriptType: scriptTypeSchema
+      }).safeParse(req.body);
+      
+      if (!validation.success) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Invalid request data',
+          errors: validation.error.issues
+        });
+      }
+      
+      const { lead, scriptType } = validation.data;
+
+      const script = await multilingualGenerator.generateMultilingualLinkedInScript(lead, scriptType);
+      
+      res.json({
+        success: true,
+        script,
+        language: script.language,
+        message: `LinkedIn script generated in ${script.language.toUpperCase()}`
+      });
+
+    } catch (error: any) {
+      console.error('Multilingual LinkedIn script error:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate multilingual LinkedIn script',
+        error: error.message
+      });
+    }
+  });
+
+  // Generate multilingual phone scripts
+  app.post("/api/multilingual/phone-script", authenticateUser, async (req: any, res) => {
+    try {
+      const { lead, campaignType } = req.body;
+      
+      if (!lead || !campaignType) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Lead data and campaign type required' 
+        });
+      }
+
+      const script = await multilingualGenerator.generateMultilingualPhoneScript(lead, campaignType);
+      
+      res.json({
+        success: true,
+        script,
+        language: script.language,
+        message: `Phone script generated in ${script.language.toUpperCase()}`
+      });
+
+    } catch (error: any) {
+      console.error('Multilingual phone script error:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate multilingual phone script',
+        error: error.message
+      });
+    }
+  });
+
+  // Batch generate multilingual campaigns for multiple leads
+  app.post("/api/multilingual/batch-campaign", authenticateUser, async (req: any, res) => {
+    try {
+      const { leads, campaignType } = req.body;
+      
+      if (!leads || !Array.isArray(leads) || !campaignType) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Array of leads and campaign type required' 
+        });
+      }
+
+      if (leads.length > 50) {
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Maximum 50 leads per batch request' 
+        });
+      }
+
+      const campaigns = await multilingualGenerator.generateBatchMultilingualCampaign(leads, campaignType);
+      
+      // Group by language for analytics
+      const languageStats = campaigns.reduce((acc, campaign) => {
+        acc[campaign.language] = (acc[campaign.language] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+      
+      res.json({
+        success: true,
+        campaigns,
+        total: campaigns.length,
+        languageBreakdown: languageStats,
+        message: `Generated ${campaigns.length} multilingual campaigns across ${Object.keys(languageStats).length} languages`
+      });
+
+    } catch (error: any) {
+      console.error('Batch multilingual campaign error:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate batch multilingual campaigns',
+        error: error.message
+      });
+    }
+  });
+
+  // Get supported languages and cultural contexts
+  app.get("/api/multilingual/supported-languages", (req, res) => {
+    const supportedLanguages = [
+      { code: 'en', name: 'English', region: 'United States' },
+      { code: 'es', name: 'Spanish', region: 'Hispanic/Latino Markets' },
+      { code: 'pt', name: 'Portuguese', region: 'Brazilian/Portuguese Communities' },
+      { code: 'fr', name: 'French', region: 'French-Canadian/French Markets' },
+      { code: 'it', name: 'Italian', region: 'Italian-American Communities' }
+    ];
+
+    res.json({
+      success: true,
+      languages: supportedLanguages,
+      total: supportedLanguages.length,
+      message: 'Santiago Team now supports 5 languages for lead generation powered by Google Gemini AI'
+    });
   });
 
   const httpServer = createServer(app);
