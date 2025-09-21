@@ -69,21 +69,21 @@ export default function HelpModal({ children, currentPage = 'home' }: HelpModalP
       items: [
         {
           title: 'Complete Setup Guide',
-          description: 'Step-by-step walkthrough for ElevenLabs, Retell AI, HeyGen, and Tavus',
+          description: 'Step-by-step walkthrough for Google Analytics, Firebase, Gemini AI, and Workspace',
           action: () => window.location.href = '/setup-guide',
-          time: '2-3 hours'
+          time: '1-2 hours'
         },
         {
-          title: 'Voice Cloning Setup',
-          description: 'Record and configure Nolly & Pablo Santiago voice clones',
-          action: () => window.open('/RECORDING_SCRIPTS_TEMPLATE.md', '_blank'),
-          time: '45 min'
+          title: 'Google AI Integration',
+          description: 'Configure Google Analytics tracking and Gemini AI automation',
+          action: () => window.location.href = '/setup-guide',
+          time: '30 min'
         },
         {
-          title: 'ROI Calculator',
-          description: 'Calculate expected returns: $421-656/month investment, 9,500-16,500% ROI',
-          action: () => console.log('Show ROI calculator'),
-          time: '5 min'
+          title: 'Analytics Dashboard',
+          description: 'Set up Google Analytics goals and conversion tracking for lead generation',
+          action: () => console.log('Show analytics setup'),
+          time: '15 min'
         }
       ]
     },

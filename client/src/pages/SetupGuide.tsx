@@ -14,7 +14,9 @@ import {
   Settings,
   PlayCircle,
   FileText,
-  Download
+  Download,
+  Chrome,
+  Database
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -139,70 +141,70 @@ export default function SetupGuide() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">AI Service Setup</h2>
+                <h2 className="text-3xl font-bold mb-4">Google Suite Integration</h2>
                 <p className="text-lg text-gray-600">
-                  Complete account setup for all 4 AI automation services
+                  Complete setup for Google Analytics, Firebase, and Gemini AI automation services
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <ServiceCard
-                  title="ElevenLabs Voice Cloning"
-                  cost="$22/month"
-                  setup="30 minutes"
-                  roi="Enable AI phone calls"
-                  link="https://elevenlabs.io/sign-up"
-                  icon={<Phone className="h-5 w-5 text-blue-600" />}
+                  title="Google Analytics 4"
+                  cost="Free"
+                  setup="15 minutes"
+                  roi="Real-time lead tracking"
+                  link="https://analytics.google.com"
+                  icon={<Chrome className="h-5 w-5 text-blue-600" />}
                   steps={[
-                    "Create account with business email",
-                    "Upgrade to Creator Plan ($22/month)", 
-                    "Copy API key from Profile → Settings",
-                    "Test voice cloning with sample recording"
+                    "Create Google Analytics account",
+                    "Set up GA4 property for your domain", 
+                    "Install tracking code on website",
+                    "Configure conversion goals and events"
                   ]}
                 />
 
                 <ServiceCard
-                  title="Retell AI Phone System"
-                  cost="$300-400/month"
-                  setup="45 minutes"
-                  roi="2000+ automated calls"
-                  link="https://dashboard.retellai.com"
-                  icon={<Bot className="h-5 w-5 text-green-600" />}
-                  steps={[
-                    "Sign up (get $10 free credits)",
-                    "Purchase Florida phone number ($2/month)",
-                    "Configure phone system settings",
-                    "Copy API key from dashboard"
-                  ]}
-                />
-
-                <ServiceCard
-                  title="Tavus Video Personalization"
-                  cost="$199/month"
+                  title="Firebase Backend"
+                  cost="Free tier available"
                   setup="20 minutes"
-                  roi="1000+ personalized videos"
-                  link="https://tavus.io/pricing"
-                  icon={<Video className="h-5 w-5 text-purple-600" />}
+                  roi="Scalable data management"
+                  link="https://console.firebase.google.com"
+                  icon={<Database className="h-5 w-5 text-green-600" />}
                   steps={[
-                    "Start with FREE tier (3 minutes/month)",
-                    "Test video personalization features",
-                    "Upgrade to Business Plan when ready",
-                    "Get API key from developer portal"
+                    "Create Firebase project",
+                    "Enable Firestore database",
+                    "Set up authentication rules",
+                    "Configure web app integration"
                   ]}
                 />
 
                 <ServiceCard
-                  title="HeyGen Enterprise"
-                  cost="$500-800/month"
-                  setup="1 hour consultation"
-                  roi="Professional avatar quality"
-                  link="https://www.heygen.com/enterprise"
+                  title="Google Gemini AI"
+                  cost="Free tier available"
+                  setup="10 minutes"
+                  roi="Intelligent automation"
+                  link="https://ai.google.dev/"
+                  icon={<Bot className="h-5 w-5 text-purple-600" />}
+                  steps={[
+                    "Access Google AI Studio",
+                    "Create new API key for Gemini",
+                    "Test AI model integration",
+                    "Configure rate limits and usage"
+                  ]}
+                />
+
+                <ServiceCard
+                  title="Google Workspace"
+                  cost="$6-18/month per user"
+                  setup="30 minutes"
+                  roi="Team collaboration & automation"
+                  link="https://workspace.google.com"
                   icon={<Settings className="h-5 w-5 text-orange-600" />}
                   steps={[
-                    "Fill out enterprise contact form",
-                    "Schedule consultation call",
-                    "Discuss high-volume requirements",
-                    "Get custom pricing and API access"
+                    "Create Google Workspace account",
+                    "Set up team email addresses",
+                    "Configure Drive and Sheets integration",
+                    "Enable API access for automation"
                   ]}
                 />
               </div>
