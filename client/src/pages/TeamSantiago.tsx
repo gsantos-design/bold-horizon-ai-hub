@@ -30,7 +30,7 @@ import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';  // Nolly Santiago
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago (correct photo)
 import princhescaPhoto from '@assets/IMG_8889_1754678450603.png'; // Princhesca Rainier Turner (team member)
-import newTeamPhoto from '@assets/IMG_2259_1756309198291.jpeg';
+import newTeamPhoto from '@assets/IMG_1242 (2)_1758480831086.jpeg';
 
 export default function TeamSantiago() {
   const { t } = useLanguage();
