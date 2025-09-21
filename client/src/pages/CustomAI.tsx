@@ -291,8 +291,8 @@ export default function CustomAI() {
                 Bold Horizons Impact Metrics
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Demonstrating how the Santiago Team's Bold Horizons platform can protect families 
-                and build generational wealth across WFG chapters nationwide.
+                Demonstrating how the Santiago Team's Bold Horizons platform enhances insurance, IUL, and 401K sales
+                to protect families and build generational wealth across WFG chapters nationwide.
               </p>
             </div>
 
@@ -376,16 +376,16 @@ export default function CustomAI() {
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
                     <TrendingUp className="w-5 h-5 mr-2" />
-                    Scalability Infrastructure
+                    Financial Services Scale
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-white/90">
                     <div className="text-3xl font-bold text-green-300 mb-2">Enterprise</div>
-                    <p className="text-white/80 mb-4">Enterprise-grade cloud infrastructure ensuring 99.9% uptime across all chapters with real-time analytics.</p>
+                    <p className="text-white/80 mb-4">Scalable financial services platform supporting insurance, IUL, and 401K sales across all WFG chapters with real-time analytics.</p>
                     <div className="flex gap-2">
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Enterprise Cloud</Badge>
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Analytics</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Financial Services</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Sales Analytics</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -539,7 +539,7 @@ export default function CustomAI() {
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12">
               This Bold Horizons AI system demonstrates how the Santiago Team's innovation 
-              can transform financial services nationwide with proven results and family values.
+              can transform insurance, IUL, and 401K sales nationwide with proven results and family values.
             </p>
 
             <div className="grid md:grid-cols-4 gap-8 text-white">
