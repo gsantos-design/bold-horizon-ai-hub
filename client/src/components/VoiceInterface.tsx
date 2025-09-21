@@ -223,7 +223,7 @@ export default function VoiceInterface() {
         </motion.div>
         
         <CardDescription className="text-lg text-gray-600 mb-6 relative z-10">
-          Voice-powered automation system built with Google Gemini and ElevenLabs
+          Revolutionary AI automation platform designed for World Financial Group excellence
         </CardDescription>
         
         <div className="flex justify-center gap-3 relative z-10">
@@ -238,7 +238,7 @@ export default function VoiceInterface() {
                 animate={{ opacity: [1, 0.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              Google Startup Program
+              WFG Santiago Team Elite
             </Badge>
           </motion.div>
           <motion.div
@@ -248,7 +248,7 @@ export default function VoiceInterface() {
             <Badge className="text-white text-sm px-4 py-2 shadow-lg border-0"
                    style={{ background: "linear-gradient(45deg, #1e3a8a, #1e40af)" }}>
               <TrendingDown className="w-3 h-3 mr-2" />
-              Cost-Effective AI
+              Award-Winning Innovation
             </Badge>
           </motion.div>
         </div>
@@ -342,20 +342,26 @@ export default function VoiceInterface() {
           </motion.div>
         </div>
 
-        {/* Demo Showcase Button */}
+        {/* WFG Demo Showcase Button */}
         <div className="text-center">
           <Button
             onClick={runDemoShowcase}
             variant="outline"
-            className="bg-gradient-to-r from-blue-50 to-green-50 border-blue-200"
+            className="border-2 rounded-2xl px-8 py-4 text-lg font-semibold shadow-xl"
+            style={{ 
+              borderColor: '#D97706', 
+              color: '#D97706',
+              backgroundColor: 'rgba(217, 119, 6, 0.08)',
+              background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.08), rgba(30, 58, 138, 0.05))'
+            }}
             disabled={isProcessing}
           >
             {isProcessing ? (
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              <Loader2 className="w-5 h-5 mr-3 animate-spin" />
             ) : (
-              <Play className="w-4 h-4 mr-2" />
+              <Play className="w-5 h-5 mr-3" />
             )}
-            Run Google Startup Demo
+            WFG Corporate Showcase
           </Button>
         </div>
 
