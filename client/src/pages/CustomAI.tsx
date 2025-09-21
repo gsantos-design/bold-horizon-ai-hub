@@ -221,7 +221,7 @@ export default function CustomAI() {
             </div>
 
             {/* Additional Corporate Benefits */}
-            <div className="mt-16 grid md:grid-cols-2 gap-8">
+            <div className="mt-16 grid md:grid-cols-3 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
@@ -236,6 +236,25 @@ export default function CustomAI() {
                     <div className="flex gap-2">
                       <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">GA4</Badge>
                       <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Lead Tracking</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <Database className="w-5 h-5 mr-2" />
+                    Firebase Operations
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-white/90">
+                    <div className="text-3xl font-bold text-orange-300 mb-2">Scalable</div>
+                    <p className="text-white/80 mb-4">Firebase real-time database sync, authentication-ready infrastructure, and event streaming for enterprise deployment.</p>
+                    <div className="flex gap-2">
+                      <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">Firebase</Badge>
+                      <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">Real-time Sync</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -270,11 +289,16 @@ export default function CustomAI() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="mb-6">
+              <div className="mb-6 space-y-3">
                 <Badge className="bg-primary/10 text-primary text-lg px-6 py-3">
                   <Chrome className="w-4 h-4 mr-2" />
                   Santiago Team AI Hub - Google Suite Powered
                 </Badge>
+                <div className="flex justify-center">
+                  <Badge className="bg-green-100 text-green-800 px-4 py-2">
+                    Bilingual Engagement (English/Spanish)
+                  </Badge>
+                </div>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Google-Powered Lead Generation
