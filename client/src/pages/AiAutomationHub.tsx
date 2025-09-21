@@ -161,7 +161,7 @@ export default function AiAutomationHub() {
                 <AIAutomationDashboard />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 mt-8">
                   {/* AI Phone Calls */}
-                  <Card className="border-2 border-blue-200 shadow-xl">
+                  <Card className="border-2 border-primary/20 shadow-xl">
                     <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center text-xl">
                         <Phone className="h-6 w-6 mr-3" />
@@ -172,7 +172,7 @@ export default function AiAutomationHub() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold">Platform Integration:</span>
-                          <Badge className="bg-blue-100 text-blue-800">Google AI Voice</Badge>
+                          <Badge className="bg-primary/10 text-primary">Google AI Voice</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
@@ -192,9 +192,9 @@ export default function AiAutomationHub() {
                             <span className="text-sm">Lead qualification & appointment booking</span>
                           </div>
                         </div>
-                        <div className="bg-blue-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-blue-800 mb-2">Perfect For:</h4>
-                          <ul className="text-sm text-blue-700 space-y-1">
+                        <div className="bg-primary/5 rounded-lg p-4">
+                          <h4 className="font-semibold text-primary mb-2">Perfect For:</h4>
+                          <ul className="text-sm text-primary/80 space-y-1">
                             <li>• 401k rollover prospect outreach</li>
                             <li>• High-yield account lead follow-up</li>
                             <li>• Entrepreneur income opportunity calls</li>
@@ -395,8 +395,8 @@ export default function AiAutomationHub() {
                         <CardTitle className="text-lg">Platform Pricing</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="bg-blue-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-blue-800">Google AI Voice</h4>
+                        <div className="bg-primary/5 rounded-lg p-4">
+                          <h4 className="font-semibold text-primary">Google AI Voice</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Voice Cloning: $22/month (Creator Plan)</p>
                             <p>• Phone Calls: $0.10-0.30/minute</p>
@@ -500,12 +500,12 @@ export default function AiAutomationHub() {
                         <div className="bg-gray-50 rounded-lg p-4">
                           <h4 className="font-semibold mb-2">Available Variables:</h4>
                           <div className="grid grid-cols-2 gap-2 text-sm">
-                            <span className="bg-blue-100 px-2 py-1 rounded">[PROSPECT_NAME]</span>
-                            <span className="bg-blue-100 px-2 py-1 rounded">[COMPANY_NAME]</span>
-                            <span className="bg-blue-100 px-2 py-1 rounded">[INDUSTRY]</span>
-                            <span className="bg-blue-100 px-2 py-1 rounded">[JOB_TITLE]</span>
-                            <span className="bg-blue-100 px-2 py-1 rounded">[LOCATION]</span>
-                            <span className="bg-blue-100 px-2 py-1 rounded">[PAIN_POINT]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[PROSPECT_NAME]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[COMPANY_NAME]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[INDUSTRY]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[JOB_TITLE]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[LOCATION]</span>
+                            <span className="bg-primary/10 px-2 py-1 rounded">[PAIN_POINT]</span>
                           </div>
                         </div>
                         <div>
@@ -625,7 +625,7 @@ export default function AiAutomationHub() {
                         <div className="border rounded-lg p-4">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="font-semibold">Entrepreneur Opportunity</h4>
-                            <Badge className="bg-yellow-100 text-yellow-800">Paused</Badge>
+                            <Badge className="bg-amber-100 text-amber-800">Paused</Badge>
                           </div>
                           <div className="grid grid-cols-2 gap-4 text-sm">
                             <div>
@@ -650,7 +650,7 @@ export default function AiAutomationHub() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-2 border-blue-200">
+                  <Card className="border-2 border-primary/20">
                     <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center">
                         <TrendingUp className="h-5 w-5 mr-2" />

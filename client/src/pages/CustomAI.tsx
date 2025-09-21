@@ -207,7 +207,7 @@ export default function CustomAI() {
 
               {/* Conversion Increase */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center" data-testid="metric-conversion-rate">
-                <div className="text-5xl font-bold text-yellow-400 mb-3">+35%</div>
+                <div className="text-5xl font-bold text-amber-400 mb-3">+35%</div>
                 <div className="text-white/80 text-lg mb-2">Lead Conversion</div>
                 <div className="text-sm text-white/60">AI-Powered Enhancement</div>
               </div>
@@ -231,11 +231,11 @@ export default function CustomAI() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-white/90">
-                    <div className="text-3xl font-bold text-blue-300 mb-2">Real-Time</div>
+                    <div className="text-3xl font-bold text-primary mb-2">Real-Time</div>
                     <p className="text-white/80 mb-4">Google Analytics 4 integration for comprehensive lead tracking, conversion analysis, and ROI measurement.</p>
                     <div className="flex gap-2">
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">GA4</Badge>
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Lead Tracking</Badge>
+                      <Badge className="bg-primary/20 text-primary border-primary/30">GA4</Badge>
+                      <Badge className="bg-primary/20 text-primary border-primary/30">Lead Tracking</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -314,8 +314,8 @@ export default function CustomAI() {
               <div>
                 <Card className="h-full border-primary/20" data-testid="card-google-analytics">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Chrome className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Chrome className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-2xl text-gray-900">Google Analytics 4</CardTitle>
                     <CardDescription className="text-lg text-gray-600">
@@ -333,7 +333,7 @@ export default function CustomAI() {
                       </ul>
                     </div>
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-blue-100 text-blue-800">Google Suite</Badge>
+                      <Badge className="bg-primary/10 text-primary">Google Suite</Badge>
                       <Badge className="bg-green-100 text-green-800">Real-time</Badge>
                     </div>
                   </CardContent>
@@ -344,8 +344,8 @@ export default function CustomAI() {
               <div>
                 <Card className="h-full border-primary/20" data-testid="card-firebase-gemini">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <Bot className="w-8 h-8 text-yellow-600" />
+                    <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                      <Bot className="w-8 h-8 text-amber-600" />
                     </div>
                     <CardTitle className="text-2xl text-gray-900">Firebase + Gemini AI</CardTitle>
                     <CardDescription className="text-lg text-gray-600">
@@ -363,7 +363,7 @@ export default function CustomAI() {
                       </ul>
                     </div>
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-yellow-100 text-yellow-800">AI-Powered</Badge>
+                      <Badge className="bg-amber-100 text-amber-800">AI-Powered</Badge>
                       <Badge className="bg-green-100 text-green-800">Automated</Badge>
                     </div>
                   </CardContent>
@@ -384,12 +384,12 @@ export default function CustomAI() {
                   <div className="grid md:grid-cols-3 gap-6 mb-6">
                     <div className="text-center p-4 bg-white rounded-lg">
                       <h4 className="font-semibold text-gray-900">Target Market</h4>
-                      <p className="text-2xl font-bold text-blue-600">2,500+ Chapters</p>
+                      <p className="text-2xl font-bold text-primary">2,500+ Chapters</p>
                       <p className="text-sm text-gray-600">WFG nationwide coverage</p>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg">
                       <h4 className="font-semibold text-gray-900">Service Enhancement</h4>
-                      <p className="text-2xl font-bold text-yellow-600">24/7 Coverage</p>
+                      <p className="text-2xl font-bold text-amber-600">24/7 Coverage</p>
                       <p className="text-sm text-gray-600">Bilingual client support</p>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg">
@@ -398,7 +398,7 @@ export default function CustomAI() {
                       <p className="text-sm text-gray-600">Core WFG product lines</p>
                     </div>
                   </div>
-                  <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg" data-testid="compliance-disclaimer">
+                  <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg" data-testid="compliance-disclaimer">
                     <p className="text-sm text-gray-700 font-semibold mb-2">⚠️ WFG Compliance Disclaimer</p>
                     <p className="text-xs text-gray-600 leading-relaxed">
                       All performance figures are illustrative projections based on Santiago Team pilot program data. No guarantees of results are made. 
@@ -422,7 +422,7 @@ export default function CustomAI() {
                 <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
                     href="/ai-career-mentor?lang=en"
-                    className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-md transition-colors"
+                    className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg rounded-md transition-colors"
                     data-testid="link-start-mentor-en"
                   >
                     <Globe className="w-5 h-5 mr-2" />
@@ -430,7 +430,7 @@ export default function CustomAI() {
                   </Link>
                   <Link 
                     href="/ai-career-mentor?lang=es"
-                    className="inline-flex items-center justify-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 text-lg rounded-md transition-colors"
+                    className="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg rounded-md transition-colors"
                     data-testid="link-start-mentor-es"
                   >
                     <Globe className="w-5 h-5 mr-2" />
@@ -478,13 +478,13 @@ export default function CustomAI() {
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.6 }}
-              className="max-w-2xl mx-auto bg-blue-50 border border-blue-200 rounded-xl p-6"
+              className="max-w-2xl mx-auto bg-primary/5 border border-primary/20 rounded-xl p-6"
             >
               <div className="flex items-center mb-3">
-                <Chrome className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="font-semibold text-blue-900">Browser Compatibility</span>
+                <Chrome className="w-5 h-5 text-primary mr-2" />
+                <span className="font-semibold text-primary">Browser Compatibility</span>
               </div>
-              <p className="text-blue-800 text-sm">
+              <p className="text-primary/80 text-sm">
                 For optimal voice recognition, use Chrome, Edge, or Safari. This system provides 
                 much better microphone performance than Windows built-in voice recognition.
               </p>
