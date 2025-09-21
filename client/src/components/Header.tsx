@@ -46,7 +46,7 @@ export default function Header() {
             </SafeLink>
             
             <SafeLink href="/team-santiago">
-              <Button variant="ghost" size="sm" className="text-secondary hover:text-secondary/80 hover:bg-secondary/10">
+              <Button variant="ghost" size="sm" className="text-primary hover:text-accent hover:bg-secondary/10 font-semibold">
                 <Users className="h-4 w-4 mr-1" />
                 <span>{t('nav.team')}</span>
               </Button>
@@ -101,7 +101,7 @@ export default function Header() {
             </SafeLink>
             
             <SafeLink href="/team-santiago">
-              <Button variant="ghost" size="sm" className="text-secondary" title={t('nav.team')}>
+              <Button variant="ghost" size="sm" className="text-primary font-semibold" title={t('nav.team')}>
                 <Users className="h-4 w-4" />
               </Button>
             </SafeLink>
