@@ -223,7 +223,7 @@ export default function VoiceInterface() {
         </motion.div>
         
         <CardDescription className="text-lg text-gray-600 mb-6 relative z-10">
-          Voice-powered automation system built with Google Gemini and ElevenLabs
+          Bold Horizons voice-powered automation system built by the Santiago Team
         </CardDescription>
         
         <div className="flex justify-center gap-3 relative z-10">
@@ -238,7 +238,7 @@ export default function VoiceInterface() {
                 animate={{ opacity: [1, 0.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              Google Startup Program
+              Santiago Team Excellence
             </Badge>
           </motion.div>
           <motion.div
@@ -361,7 +361,7 @@ export default function VoiceInterface() {
             ) : (
               <Play className="w-5 h-5 mr-3" />
             )}
-            Run Google Startup Demo
+            Run Santiago Team Demo
           </Button>
         </div>
 

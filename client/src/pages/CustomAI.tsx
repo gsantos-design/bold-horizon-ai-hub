@@ -131,7 +131,7 @@ export default function CustomAI() {
                 >
                   <Brain className="w-6 h-6" />
                 </motion.div>
-                <span className="font-semibold tracking-wide">Google AI Innovation</span>
+                <span className="font-semibold tracking-wide">Santiago Team Excellence</span>
                 <div className="ml-3 w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#D97706' }}></div>
               </motion.div>
             </motion.div>
@@ -177,8 +177,8 @@ export default function CustomAI() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
             >
-              Revolutionary voice-powered automation system built with Google Gemini AI and ElevenLabs.
-              Replacing expensive third-party services with custom solutions.
+              Bold Horizons: Revolutionary AI automation system built by the Santiago Team.
+              Transforming financial services through innovative technology and family values.
             </motion.p>
 
             {/* Cost Savings Highlight - Enhanced */}
@@ -241,7 +241,7 @@ export default function CustomAI() {
                     whileHover={{ scale: 1.05 }}
                   >
                     <div className="text-3xl font-bold mb-2" style={{ color: '#F59E0B' }}>~$100/mo</div>
-                    <div className="text-white/80 text-lg">Custom Solution</div>
+                    <div className="text-white/80 text-lg">Bold Horizons Solution</div>
                     <div className="absolute top-2 right-2">
                       <motion.div
                         className="w-3 h-3 rounded-full"
@@ -284,14 +284,15 @@ export default function CustomAI() {
               >
                 <Badge className="bg-white/20 text-white text-lg px-6 py-3">
                   <Award className="w-4 h-4 mr-2" />
-                  WFG Enterprise Impact
+                  Santiago Team Impact
                 </Badge>
               </motion.div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Corporate Scalability Metrics
+                Bold Horizons Impact Metrics
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Demonstrating enterprise-ready AI automation with proven ROI for large-scale deployment across 2500+ WFG chapters nationwide.
+                Demonstrating how the Santiago Team's Bold Horizons platform can protect families 
+                and build generational wealth across WFG chapters nationwide.
               </p>
             </div>
 
@@ -415,8 +416,8 @@ export default function CustomAI() {
                 Speak to Your AI Assistant
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience the future of automation with voice commands. Built specifically for 
-                Rob's Google Startup Program showcase - demonstrating cost-effective AI innovation.
+                Experience the future of automation with voice commands. Built by the Santiago Team 
+                to demonstrate innovative AI solutions that protect families and build generational wealth.
               </p>
             </div>
 
@@ -451,10 +452,10 @@ export default function CustomAI() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Google Startup Program Tech Stack
+                Bold Horizons Technology Stack
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Built with cutting-edge Google AI technology and cost-effective integrations.
+                Built with cutting-edge AI technology by the Santiago Team for maximum impact and cost-effectiveness.
               </p>
             </div>
 
@@ -534,11 +535,11 @@ export default function CustomAI() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready for Corporate Demo?
+              Ready for the Santiago Demo?
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12">
-              This Google-powered AI system demonstrates enterprise scalability with proven ROI metrics, 
-              perfect for both startup program approvals and corporate deployment decisions.
+              This Bold Horizons AI system demonstrates how the Santiago Team's innovation 
+              can transform financial services nationwide with proven results and family values.
             </p>
 
             <div className="grid md:grid-cols-4 gap-8 text-white">
