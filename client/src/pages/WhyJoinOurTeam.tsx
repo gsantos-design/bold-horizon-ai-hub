@@ -41,6 +41,8 @@ import pabloImage from '@assets/image_1756353161547.png';
 import nollyImage from '@assets/IMG_0410_1754923958309.jpeg';
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg';
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg';
+// Import team member photos
+import princhescaPhoto from '@assets/IMG_8889_1754678450603.png';
 
 export default function WhyJoinOurTeam() {
   const [activeFeature, setActiveFeature] = useState('ai-assistant');
@@ -613,6 +615,31 @@ export default function WhyJoinOurTeam() {
                       <h4 className="font-bold text-gray-900">Christian Santiago</h4>
                       <p className="text-sm text-orange-600 mb-2">Mathematics Expert</p>
                       <p className="text-xs text-gray-600">Youth education specialist</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Team Members - Non-Family */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+                <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                  <CardTitle className="text-center text-xl">Team Members</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <div className="text-center">
+                    <img 
+                      src={princhescaPhoto} 
+                      alt="Princhesca Rainier Turner" 
+                      className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-purple-200"
+                    />
+                    <h4 className="font-bold text-gray-900 text-lg">Princhesca Rainier Turner</h4>
+                    <p className="text-sm text-purple-600 mb-2">Senior Marketing Associate & Business Development</p>
+                    <p className="text-xs text-gray-600 mb-4">Strategic business development expert with extensive experience in client relationship management and business strategy</p>
+                    
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      <Badge variant="outline" className="text-xs bg-purple-50 text-purple-600 border-purple-200">Business Strategy</Badge>
+                      <Badge variant="outline" className="text-xs bg-purple-50 text-purple-600 border-purple-200">Client Relations</Badge>
+                      <Badge variant="outline" className="text-xs bg-purple-50 text-purple-600 border-purple-200">Financial Planning</Badge>
                     </div>
                   </div>
                 </CardContent>
