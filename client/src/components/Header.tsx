@@ -177,6 +177,13 @@ export default function Header() {
                 </Button>
               </SafeLink>
               
+              <SafeLink href="/team-santiago">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-secondary">
+                  <Users className="h-4 w-4 mr-2" />
+                  {t('nav.team')}
+                </Button>
+              </SafeLink>
+              
               <SafeLink href="/why-join-our-team">
                 <Button variant="ghost" size="sm" className="w-full justify-start text-secondary">
                   <Users className="h-4 w-4 mr-2" />
