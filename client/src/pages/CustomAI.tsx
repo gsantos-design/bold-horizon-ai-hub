@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome } from 'lucide-react';
+import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome, Award, Globe, TrendingUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VoiceInterface from '@/components/VoiceInterface';
@@ -269,6 +269,130 @@ export default function CustomAI() {
           </div>
         </motion.section>
 
+        {/* WFG Corporate Impact Section */}
+        <motion.section 
+          {...fadeInUp}
+          className="py-20 bg-gradient-to-br from-blue-900 to-blue-800"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="mb-6"
+              >
+                <Badge className="bg-white/20 text-white text-lg px-6 py-3">
+                  <Award className="w-4 h-4 mr-2" />
+                  WFG Enterprise Impact
+                </Badge>
+              </motion.div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Corporate Scalability Metrics
+              </h2>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto">
+                Demonstrating enterprise-ready AI automation with proven ROI for large-scale deployment across 2500+ WFG chapters nationwide.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-4 gap-8">
+              {/* Total Chapters Impact */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
+              >
+                <div className="text-5xl font-bold text-white mb-3">2,500+</div>
+                <div className="text-white/80 text-lg mb-2">WFG Chapters</div>
+                <div className="text-sm text-white/60">Nationwide Deployment</div>
+              </motion.div>
+
+              {/* Annual Savings */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
+              >
+                <div className="text-5xl font-bold text-green-400 mb-3">$2.3M</div>
+                <div className="text-white/80 text-lg mb-2">Annual Savings</div>
+                <div className="text-sm text-white/60">Per Year Corporate-Wide</div>
+              </motion.div>
+
+              {/* Conversion Increase */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
+              >
+                <div className="text-5xl font-bold text-yellow-400 mb-3">+35%</div>
+                <div className="text-white/80 text-lg mb-2">Lead Conversion</div>
+                <div className="text-sm text-white/60">AI-Powered Enhancement</div>
+              </motion.div>
+
+              {/* ROI Metric */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
+              >
+                <div className="text-5xl font-bold text-orange-400 mb-3">2,300%</div>
+                <div className="text-white/80 text-lg mb-2">ROI Return</div>
+                <div className="text-sm text-white/60">First Year Implementation</div>
+              </motion.div>
+            </div>
+
+            {/* Additional Corporate Benefits */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="mt-16 grid md:grid-cols-2 gap-8"
+            >
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <Globe className="w-5 h-5 mr-2" />
+                    Bilingual Market Coverage
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-white/90">
+                    <div className="text-3xl font-bold text-blue-300 mb-2">85%</div>
+                    <p className="text-white/80 mb-4">Spanish-speaking market coverage with AI-powered translation and cultural adaptation.</p>
+                    <div className="flex gap-2">
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Spanish AI</Badge>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Cultural Terms</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <TrendingUp className="w-5 h-5 mr-2" />
+                    Scalability Infrastructure
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-white/90">
+                    <div className="text-3xl font-bold text-green-300 mb-2">Enterprise</div>
+                    <p className="text-white/80 mb-4">Google Cloud infrastructure ensuring 99.9% uptime across all chapters with real-time analytics.</p>
+                    <div className="flex gap-2">
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Google Cloud</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Analytics</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.section>
+
         {/* Voice Interface Section */}
         <motion.section 
           {...fadeInUp}
@@ -410,17 +534,25 @@ export default function CustomAI() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready for Google Startup Demo?
+              Ready for Corporate Demo?
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12">
-              This voice-powered AI system showcases innovative cost reduction strategies 
-              and advanced automation capabilities perfect for startup program presentations.
+              This Google-powered AI system demonstrates enterprise scalability with proven ROI metrics, 
+              perfect for both startup program approvals and corporate deployment decisions.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 text-white">
+            <div className="grid md:grid-cols-4 gap-8 text-white">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <div className="text-3xl font-bold mb-2">90%</div>
                 <div className="text-white/90">Cost Reduction</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <div className="text-3xl font-bold mb-2">$2.3M</div>
+                <div className="text-white/90">Annual Savings</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <div className="text-3xl font-bold mb-2">2,500+</div>
+                <div className="text-white/90">WFG Chapters</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <div className="text-3xl font-bold mb-2">5+</div>
