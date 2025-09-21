@@ -26,7 +26,7 @@ import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly - ALL CORRECT SANTIAGO FAMILY PHOTOS
 import pabloImage from '@assets/image_1756353161547.png';  // Pablo Santiago (NEW professional photo)
-// Nolly Santiago - photo removed per user request  
+import nollyImage from '@assets/IMG_1248_1758497068316.png';  // Nolly Santiago (correct photo)  
 import josephImage from '@assets/IMG_9689_1754855787976.jpeg'; // Joseph Santiago (young male) - KEEP CORRECT
 import christianImage from '@assets/IMG_0411_1754924018747.jpeg'; // Christian Santiago (correct photo)
 import princhescaPhoto from '@assets/IMG_8889_1754678450603.png'; // Princhesca Rainier Turner (team member)
@@ -100,8 +100,12 @@ export default function TeamSantiago() {
                 <Card className="h-full border-2 border-primary shadow-xl">
                   <CardHeader className="bg-primary text-white">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg bg-primary/10 flex items-center justify-center">
-                        <div className="text-4xl font-bold text-primary">NS</div>
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                        <img 
+                          src={nollyImage} 
+                          alt="Nolly Santiago" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <CardTitle className="text-2xl">Nolly Santiago</CardTitle>
                       <p className="text-white">Professional Financial Advisor</p>
