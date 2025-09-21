@@ -131,7 +131,7 @@ export default function CustomAI() {
                 >
                   <Brain className="w-6 h-6" />
                 </motion.div>
-                <span className="font-semibold tracking-wide">WFG Innovation Excellence</span>
+                <span className="font-semibold tracking-wide">Santiago Team Innovation</span>
                 <div className="ml-3 w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#D97706' }}></div>
               </motion.div>
             </motion.div>
@@ -177,8 +177,8 @@ export default function CustomAI() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
             >
-              Award-winning AI automation platform engineered for World Financial Group teams.
-              Revolutionizing operational efficiency with cutting-edge custom solutions.
+              Professional AI automation platform designed for the Santiago Team excellence.
+              Replacing expensive third-party services with custom-built solutions.
             </motion.p>
 
             {/* Cost Savings Highlight - Enhanced */}
