@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import VoiceInterface from '@/components/VoiceInterface';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 
 export default function CustomAI() {
   const fadeInUp = {
@@ -53,12 +53,9 @@ export default function CustomAI() {
               </div>
             </motion.div>
             
-            <motion.h1 
-              {...fadeInUp}
-              className="text-6xl md:text-8xl font-bold text-white mb-12 leading-tight"
-            >
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-12 leading-tight">
               <span className="inline-block">
-                <motion.span 
+                <span 
                   className="bg-clip-text text-transparent"
                   style={{ 
                     background: "linear-gradient(45deg, #D97706 0%, #B45309 50%, #F59E0B 100%)",
@@ -67,44 +64,22 @@ export default function CustomAI() {
                   }}
                 >
                   Santiago Team
-                </motion.span>
+                </span>
               </span>
               <span className="block mt-4">
-                <motion.span
-                  className="relative"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
+                <span className="relative">
                   AI Assistant
-                  <motion.div
-                    className="absolute -inset-1 rounded-lg blur opacity-30"
-                    style={{ background: "linear-gradient(45deg, #1e3a8a, #D97706)" }}
-                    animate={{ 
-                      scale: [1, 1.05, 1],
-                      opacity: [0.3, 0.5, 0.3]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                </motion.span>
+                </span>
               </span>
-            </motion.h1>
+            </h1>
             
-            <motion.p 
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed"
-            >
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
               Bold Horizons: Revolutionary AI automation system built by the Santiago Team.
               Transforming financial services through innovative technology and family values.
-            </motion.p>
+            </p>
 
             {/* Cost Savings Highlight - Enhanced */}
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.4 }}
-              className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto shadow-2xl"
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto shadow-2xl">
               {/* Glassmorphism effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-3xl"></div>
@@ -168,120 +143,99 @@ export default function CustomAI() {
                   </motion.div>
                 </div>
                 
-                {/* Savings calculation animation */}
-                <motion.div
-                  className="mt-6 text-center text-white/90"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1 }}
-                >
+                {/* Savings calculation */}
+                <div className="mt-6 text-center text-white/90">
                   <span className="text-xl font-semibold">
                     Annual Savings: <span style={{ color: '#F59E0B' }}>$11,052</span>
                   </span>
-                </motion.div>
+                </div>
+                
+                {/* WFG Compliance Disclaimer */}
+                <div className="mt-4 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg" data-testid="cost-savings-disclaimer">
+                  <p className="text-xs text-white/80 leading-relaxed">
+                    <strong>WFG Compliance:</strong> Figures are illustrative projections only. No guarantees of results. 
+                    Individual outcomes may vary significantly. Not an offer or solicitation. Subject to WFG approval.
+                  </p>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 
         {/* WFG Corporate Impact Section */}
-        <motion.section 
-          {...fadeInUp}
-          className="py-20 bg-gradient-to-br from-blue-900 to-blue-800"
-        >
+        <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="mb-6"
-              >
+              <div className="mb-6">
                 <Badge className="bg-white/20 text-white text-lg px-6 py-3">
                   <Award className="w-4 h-4 mr-2" />
                   Santiago Team Impact
                 </Badge>
-              </motion.div>
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Bold Horizons Impact Metrics
               </h2>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
                 Demonstrating how the Santiago Team's Bold Horizons platform enhances insurance, IUL, and 401K sales
                 to protect families and build generational wealth across WFG chapters nationwide.
               </p>
+              
+              {/* WFG Compliance Disclaimer for Impact Metrics */}
+              <div className="max-w-4xl mx-auto p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg" data-testid="impact-metrics-disclaimer">
+                <p className="text-sm text-white/90 leading-relaxed text-center">
+                  <strong>⚠️ WFG Compliance Notice:</strong> All performance metrics shown are illustrative projections based on Santiago Team pilot data. 
+                  No guarantees of results are made. Individual results may vary significantly. Not an offer or solicitation. 
+                  Subject to World Financial Group compliance review and approval.
+                </p>
+              </div>
             </div>
 
             <div className="grid lg:grid-cols-4 gap-8">
               {/* Total Chapters Impact */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
-              >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center" data-testid="metric-wfg-chapters">
                 <div className="text-5xl font-bold text-white mb-3">2,500+</div>
                 <div className="text-white/80 text-lg mb-2">WFG Chapters</div>
                 <div className="text-sm text-white/60">Nationwide Deployment</div>
-              </motion.div>
+              </div>
 
               {/* Annual Savings */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
-              >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center" data-testid="metric-annual-savings">
                 <div className="text-5xl font-bold text-green-400 mb-3">$2.3M</div>
                 <div className="text-white/80 text-lg mb-2">Annual Savings</div>
                 <div className="text-sm text-white/60">Per Year Corporate-Wide</div>
-              </motion.div>
+              </div>
 
               {/* Conversion Increase */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
-              >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center" data-testid="metric-conversion-rate">
                 <div className="text-5xl font-bold text-yellow-400 mb-3">+35%</div>
                 <div className="text-white/80 text-lg mb-2">Lead Conversion</div>
                 <div className="text-sm text-white/60">AI-Powered Enhancement</div>
-              </motion.div>
+              </div>
 
               {/* ROI Metric */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all"
-              >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center" data-testid="metric-roi-return">
                 <div className="text-5xl font-bold text-orange-400 mb-3">2,300%</div>
                 <div className="text-white/80 text-lg mb-2">ROI Return</div>
                 <div className="text-sm text-white/60">First Year Implementation</div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Additional Corporate Benefits */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="mt-16 grid md:grid-cols-2 gap-8"
-            >
+            <div className="mt-16 grid md:grid-cols-2 gap-8">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
-                    <Globe className="w-5 h-5 mr-2" />
-                    Bilingual Market Coverage
+                    <Chrome className="w-5 h-5 mr-2" />
+                    Google Analytics Integration
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-white/90">
-                    <div className="text-3xl font-bold text-blue-300 mb-2">85%</div>
-                    <p className="text-white/80 mb-4">Spanish-speaking market coverage with AI-powered translation and cultural adaptation.</p>
+                    <div className="text-3xl font-bold text-blue-300 mb-2">Real-Time</div>
+                    <p className="text-white/80 mb-4">Google Analytics 4 integration for comprehensive lead tracking, conversion analysis, and ROI measurement.</p>
                     <div className="flex gap-2">
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Spanish AI</Badge>
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Cultural Terms</Badge>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">GA4</Badge>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Lead Tracking</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -290,24 +244,24 @@ export default function CustomAI() {
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
-                    <TrendingUp className="w-5 h-5 mr-2" />
-                    Financial Services Scale
+                    <Bot className="w-5 h-5 mr-2" />
+                    Gemini AI Automation
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-white/90">
-                    <div className="text-3xl font-bold text-green-300 mb-2">Enterprise</div>
-                    <p className="text-white/80 mb-4">Scalable financial services platform supporting insurance, IUL, and 401K sales across all WFG chapters with real-time analytics.</p>
+                    <div className="text-3xl font-bold text-green-300 mb-2">Automated</div>
+                    <p className="text-white/80 mb-4">Google Gemini AI for intelligent lead qualification, personalized outreach, and automated follow-up sequences.</p>
                     <div className="flex gap-2">
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Financial Services</Badge>
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Sales Analytics</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Gemini AI</Badge>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Lead Gen</Badge>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* AI Agents Section */}
         <motion.section 
@@ -316,103 +270,124 @@ export default function CustomAI() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="mb-6"
-              >
+              <div className="mb-6">
                 <Badge className="bg-primary/10 text-primary text-lg px-6 py-3">
-                  <Bot className="w-4 h-4 mr-2" />
-                  Bold Horizons AI Agents
+                  <Chrome className="w-4 h-4 mr-2" />
+                  Santiago Team AI Hub - Google Suite Powered
                 </Badge>
-              </motion.div>
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Bilingual AI Specialists
+                Google-Powered Lead Generation
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Professional AI agents fluent in English and Spanish, trained specifically for insurance, 
-                IUL, and 401K consultations with Santiago Team expertise.
+                Santiago Team's AI automation platform powered by Google Analytics, Firebase, and Gemini AI 
+                for automated lead generation, bilingual customer engagement, and WFG chapter management.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {/* English Agent */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/20">
+              {/* Google Analytics Integration */}
+              <div>
+                <Card className="h-full border-primary/20" data-testid="card-google-analytics">
                   <CardHeader className="text-center pb-4">
                     <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Globe className="w-8 h-8 text-blue-600" />
+                      <Chrome className="w-8 h-8 text-blue-600" />
                     </div>
-                    <CardTitle className="text-2xl text-gray-900">English Specialist</CardTitle>
+                    <CardTitle className="text-2xl text-gray-900">Google Analytics 4</CardTitle>
                     <CardDescription className="text-lg text-gray-600">
-                      Professional financial guidance in English
+                      Advanced lead tracking and conversion analytics
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-gray-900 mb-2">Expertise Areas:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-2">Automation Features:</h4>
                       <ul className="text-sm text-gray-600 space-y-1">
-                        <li>• Life Insurance & IUL Policies</li>
-                        <li>• 401K Rollover Strategies</li>
-                        <li>• Retirement Planning</li>
-                        <li>• Investment Protection</li>
+                        <li>• Real-time lead conversion tracking</li>
+                        <li>• Automated ROI measurement</li>
+                        <li>• WFG chapter performance analytics</li>
+                        <li>• Customer journey mapping</li>
                       </ul>
                     </div>
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-blue-100 text-blue-800">Professional</Badge>
-                      <Badge className="bg-green-100 text-green-800">Available 24/7</Badge>
+                      <Badge className="bg-blue-100 text-blue-800">Google Suite</Badge>
+                      <Badge className="bg-green-100 text-green-800">Real-time</Badge>
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
 
-              {/* Spanish Agent */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/20">
+              {/* Firebase & Gemini AI */}
+              <div>
+                <Card className="h-full border-primary/20" data-testid="card-firebase-gemini">
                   <CardHeader className="text-center pb-4">
                     <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <Globe className="w-8 h-8 text-yellow-600" />
+                      <Bot className="w-8 h-8 text-yellow-600" />
                     </div>
-                    <CardTitle className="text-2xl text-gray-900">Especialista en Español</CardTitle>
+                    <CardTitle className="text-2xl text-gray-900">Firebase + Gemini AI</CardTitle>
                     <CardDescription className="text-lg text-gray-600">
-                      Orientación financiera profesional en español
+                      Intelligent lead automation and customer engagement
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-gray-900 mb-2">Áreas de Especialización:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-2">AI Automation:</h4>
                       <ul className="text-sm text-gray-600 space-y-1">
-                        <li>• Seguros de Vida y Pólizas IUL</li>
-                        <li>• Estrategias de Transferencia 401K</li>
-                        <li>• Planificación para el Retiro</li>
-                        <li>• Protección de Inversiones</li>
+                        <li>• Automated lead qualification (Gemini AI)</li>
+                        <li>• Bilingual customer outreach sequences</li>
+                        <li>• Real-time Firebase data sync</li>
+                        <li>• Smart follow-up scheduling</li>
                       </ul>
                     </div>
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-yellow-100 text-yellow-800">Profesional</Badge>
-                      <Badge className="bg-green-100 text-green-800">Disponible 24/7</Badge>
+                      <Badge className="bg-yellow-100 text-yellow-800">AI-Powered</Badge>
+                      <Badge className="bg-green-100 text-green-800">Automated</Badge>
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+            </div>
+
+            {/* Business Impact Section */}
+            <div className="mt-16 text-center">
+              <Card className="max-w-5xl mx-auto bg-gray-50 border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-gray-900">Google Suite Integration Impact</CardTitle>
+                  <CardDescription>
+                    Google-powered automation platform for Santiago Team's nationwide WFG chapter expansion
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-3 gap-6 mb-6">
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <h4 className="font-semibold text-gray-900">Target Market</h4>
+                      <p className="text-2xl font-bold text-blue-600">2,500+ Chapters</p>
+                      <p className="text-sm text-gray-600">WFG nationwide coverage</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <h4 className="font-semibold text-gray-900">Service Enhancement</h4>
+                      <p className="text-2xl font-bold text-yellow-600">24/7 Coverage</p>
+                      <p className="text-sm text-gray-600">Bilingual client support</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <h4 className="font-semibold text-gray-900">Focus Areas</h4>
+                      <p className="text-lg font-bold text-green-600">Insurance • IUL • 401K</p>
+                      <p className="text-sm text-gray-600">Core WFG product lines</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg" data-testid="compliance-disclaimer">
+                    <p className="text-sm text-gray-700 font-semibold mb-2">⚠️ WFG Compliance Disclaimer</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      All performance figures are illustrative projections based on Santiago Team pilot program data. No guarantees of results are made. 
+                      Individual results may vary significantly. Subject to World Financial Group compliance review and approval. 
+                      This platform is currently in beta testing phase for potential WFG chapter deployment.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Agent Selection Interface */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 text-center"
-            >
+            <div className="mt-12 text-center">
               <Card className="max-w-4xl mx-auto bg-gray-50 border-primary/20">
                 <CardHeader>
                   <CardTitle className="text-xl text-gray-900">Start a Consultation</CardTitle>
@@ -421,23 +396,25 @@ export default function CustomAI() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-                    onClick={() => window.location.href = '/ai-career-mentor'}
+                  <Link 
+                    href="/ai-career-mentor?lang=en"
+                    className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-md transition-colors"
+                    data-testid="link-start-mentor-en"
                   >
                     <Globe className="w-5 h-5 mr-2" />
-                    Start in English
-                  </Button>
-                  <Button 
-                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 text-lg"
-                    onClick={() => window.location.href = '/ai-career-mentor'}
+                    Start English Mentor
+                  </Link>
+                  <Link 
+                    href="/ai-career-mentor?lang=es"
+                    className="inline-flex items-center justify-center bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 text-lg rounded-md transition-colors"
+                    data-testid="link-start-mentor-es"
                   >
                     <Globe className="w-5 h-5 mr-2" />
-                    Comenzar en Español
-                  </Button>
+                    Iniciar Mentor en Español
+                  </Link>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 

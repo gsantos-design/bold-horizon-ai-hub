@@ -68,7 +68,16 @@ const mentorColors = {
 };
 
 export default function AiCareerMentor() {
-  const { t } = useLanguage();
+  const { t, setLanguage } = useLanguage();
+  
+  // Handle language parameter from URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang');
+    if (lang === 'es' || lang === 'en') {
+      setLanguage(lang);
+    }
+  }, [setLanguage]);
   const [currentSession, setCurrentSession] = useState<ChatSession | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState("");
