@@ -474,6 +474,55 @@ export const translations: Record<Language, Record<string, string>> = {
     'actions.philosophy_desc': 'Learn our Three Philosophies system',
     'actions.personal_help': 'Need personal help? Call Pablo & Nolly at',
     
+    // Spanish Lead Generation Templates
+    'leads.spanish_email_401k_subject': 'Estrategias Libres de Impuestos para tu 401k - Ahorra Miles en Jubilación',
+    'leads.spanish_email_401k_body': 'Hola {firstName},\n\nSoy {agentName} Santiago del Equipo Santiago en World Financial Group. Vi que te interesa optimizar tu estrategia de jubilación.\n\nMuchas personas no saben que pueden transferir su 401k a productos libres de impuestos que podrían duplicar o triplicar sus ingresos de jubilación.\n\nPor ejemplo, un cliente reciente tenía $350,000 en su 401k anterior. Ahora está en camino de recibir $2,100 mensuales completamente libres de impuestos comenzando a los 62 años.\n\n¿Te gustaría descubrir cómo esto podría funcionar para tu situación?\n\nRespectfully,\n{agentName} Santiago\nEquipo Santiago - WFG\n(407) 777-1087',
+    'leads.spanish_email_highyield_subject': 'Alternativas de Alto Rendimiento: 4.5%-6.8% vs 0.5% de tu Banco',
+    'leads.spanish_email_highyield_body': 'Estimado {firstName},\n\nSoy {agentName} Santiago del Equipo Santiago. Los bancos están pagando prácticamente nada en cuentas de ahorro - tal vez 0.5% a 1% si tienes suerte.\n\nNuestros clientes están ganando 4.5% a 6.8% con protección completa del capital. Sin riesgo de mercado, sin pérdida de capital, crecimiento garantizado.\n\nUn cliente vino con $200,000 en un CD ganando 1.8%. Eso son solo $3,600 al año. Movimos ese mismo dinero a nuestro programa de alto rendimiento, y ahora está ganando $12,000 anualmente - eso son $8,400 extra cada año con la misma seguridad.\n\n¿Te gustaría aprender cómo funciona esto?\n\nSaludos cordiales,\n{agentName} Santiago\nEquipo Santiago - WFG\n(407) 777-1087',
+    'leads.spanish_email_entrepreneur_subject': 'Sistema de Ingresos Múltiples: $100k-$250k Adicionales para Empresarios',
+    'leads.spanish_email_entrepreneur_body': 'Hola {firstName},\n\nSoy {agentName} Santiago del Equipo Santiago en WFG. Empresarios exitosos como tú entienden que múltiples fuentes de ingresos crean verdadera riqueza.\n\nNuestro programa empresarial está diseñado específicamente para profesionales como tú - personas que quieren añadir $100,000 a $250,000 anualmente a sus ingresos existentes.\n\n¿Qué hace diferente nuestro programa?\n• Sin inventario ni capital inicial\n• Aprovechar tu red existente\n• Ingresos residuales que crecen con el tiempo\n• Ayudar a otros mientras construyes riqueza\n\n¿Estarías abierto a una conversación de 15 minutos sobre cómo esto podría funcionar para ti?\n\nÉxito continuo,\n{agentName} Santiago\nEquipo Santiago - WFG\n(407) 777-1087',
+    'leads.spanish_linkedin_connection': 'Hola {firstName}, soy {agentName} Santiago del Equipo Santiago en WFG. Me impresionó tu experiencia como {jobTitle} en {company}. Nos especializamos en ayudar a profesionales exitosos a crear fuentes de ingresos adicionales. ¿Te gustaría conectar?',
+    'leads.spanish_linkedin_followup': 'Gracias por conectar, {firstName}. Vi tu experiencia en {industry} y pensé que te interesaría saber cómo ayudamos a un {jobTitle} similar a aumentar sus ingresos en $180,000 en su primer año con nuestro sistema empresarial. ¿Tendrías 10 minutos para una breve conversación?',
+
+    // Lead Engine Spanish Completion
+    'leads.targeting_title': 'Identificación de Prospectos',
+    'leads.targeting_subtitle': 'Encuentra y califica leads de alta calidad para el Equipo Santiago',
+    'leads.import_leads': 'Importar Prospectos',
+    'leads.export_csv': 'Exportar CSV',
+    'leads.campaign_templates': 'Plantillas de Campañas',
+    'leads.401k_campaign': 'Campaña 401k',
+    'leads.highyield_campaign': 'Campaña Alto Rendimiento',
+    'leads.entrepreneur_campaign': 'Campaña Empresarial',
+    'leads.email_sequences': 'Secuencias de Correo',
+    'leads.linkedin_scripts': 'Scripts de LinkedIn',
+    'leads.phone_scripts': 'Scripts Telefónicos',
+    'leads.automation_status': 'Estado de Automatización',
+    'leads.conversion_rate': 'Tasa de Conversión',
+    'leads.pipeline_value': 'Valor del Pipeline',
+    'leads.next_follow_up': 'Próximo Seguimiento',
+    'leads.cultural_notes': 'Notas Culturales para el Mercado Hispano',
+    'leads.family_focus': 'Enfoque en protección familiar y legado generacional',
+    'leads.trust_building': 'Construir confianza a través de referencias comunitarias',
+    'leads.spanish_compliance': 'Cumplimiento: Todos los materiales están traducidos profesionalmente y cumplen con las regulaciones de WFG en Estados Unidos.',
+
+    // Spanish Compliance and Legal (WFG Requirements)
+    'compliance.spanish_disclaimer_full': 'El Equipo Santiago está compuesto por contratistas independientes afiliados con WFGIA. Este sitio web proporciona información educativa sobre conceptos financieros y oportunidades de WFG. Todo el contenido es solo para fines informativos y no constituye asesoramiento financiero. Los resultados individuales pueden variar y no están garantizados. Consulte con uno de nuestros profesionales licenciados para orientación financiera específica.',
+    'compliance.spanish_investment_disclaimer': 'Los productos de inversión no están asegurados por la FDIC, pueden perder valor y no están garantizados por el banco.',
+    'compliance.spanish_insurance_disclaimer': 'Los productos de seguro están sujetos a disponibilidad del estado y aprobaciones regulatorias. Las ilustraciones de beneficios están basadas en suposiciones actuales y no están garantizadas.',
+    'compliance.spanish_income_disclaimer': 'Las proyecciones de ingresos mostradas son ejemplos hipotéticos únicamente. Los ingresos reales dependen del esfuerzo individual, las habilidades y las condiciones del mercado. Los resultados pasados no garantizan resultados futuros.',
+    'compliance.spanish_licensing_notice': 'Los representantes del Equipo Santiago están licenciados para vender productos de seguros y valores en estados específicos. No todos los productos están disponibles en todos los estados.',
+    'compliance.spanish_education_notice': 'Este material es solo para propósitos educativos. No es una solicitud para la compra o venta de ningún valor o producto de seguro.',
+    'compliance.spanish_risk_disclosure': 'Todas las inversiones conllevan riesgo de pérdida. Los rendimientos pasados no garantizan resultados futuros.',
+    'compliance.spanish_professional_advice': 'Siempre consulte con profesionales calificados antes de tomar decisiones financieras importantes.',
+
+    // Footer Spanish
+    'footer.spanish_santiago_team': 'El Equipo Santiago',
+    'footer.spanish_independent_associates': 'Asociados Independientes de WFG',
+    'footer.spanish_empowering_families': 'Empoderando familias a través de educación financiera y oportunidades.',
+    'footer.spanish_disclaimer': 'El Equipo Santiago está compuesto por contratistas independientes afiliados con WFGIA. Este sitio web proporciona información educativa sobre conceptos financieros y oportunidades de WFG. Todo el contenido es solo para fines informativos y no constituye asesoramiento financiero. Los resultados individuales pueden variar y no están garantizados. Consulte con uno de nuestros profesionales licenciados para orientación financiera específica.',
+    'footer.spanish_copyright': '© 2024-2025 Transamerica Corporation. Todos los derechos reservados.',
+    'footer.spanish_trademark': 'World Financial Group y el logotipo de WFG son marcas registradas de Transamerica Corporation.',
+
     // Footer
     'footer.santiago_team': 'The Santiago Team',
     'footer.independent_associates': 'Independent WFG Associates',
