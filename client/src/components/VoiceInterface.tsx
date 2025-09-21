@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mic, MicOff, Volume2, VolumeX, Play, Square, Loader2 } from 'lucide-react';
+import { Mic, MicOff, Volume2, VolumeX, Play, Square, Loader2, TrendingDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -184,57 +184,162 @@ export default function VoiceInterface() {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-white border-primary/20">
-      <CardHeader className="text-center">
-        <CardTitle className="flex items-center justify-center gap-3">
-          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-            <Mic className="w-6 h-6 text-white" />
-          </div>
-          Santiago Team AI Assistant
-        </CardTitle>
-        <CardDescription>
+    <Card className="w-full max-w-3xl mx-auto border-0 shadow-2xl backdrop-blur-xl" 
+          style={{ 
+            background: "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(30,58,138,0.05) 50%, rgba(217,119,6,0.05) 100%)"
+          }}>
+      {/* Enhanced Header with Glassmorphism */}
+      <CardHeader className="text-center relative overflow-hidden">
+        {/* Animated background pattern - Navy & Gold */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(30,58,138,0.05) 0%, rgba(217,119,6,0.03) 100%)" }}></div>
+        <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #1e3a8a 0%, #D97706 50%, #1e40af 100%)" }}></div>
+        
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          className="relative z-10"
+        >
+          <CardTitle className="flex items-center justify-center gap-4 text-2xl mb-4">
+            <motion.div 
+              className="relative w-16 h-16 rounded-2xl flex items-center justify-center"
+              style={{ 
+                background: "linear-gradient(45deg, #1e3a8a, #D97706)"
+              }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+            >
+              <Mic className="w-8 h-8 text-white" />
+              <motion.div
+                className="absolute inset-0 rounded-2xl backdrop-blur-sm"
+                style={{ backgroundColor: 'rgba(217, 119, 6, 0.2)' }}
+                animate={{ opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </motion.div>
+            <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-bold">
+              Santiago Team AI Assistant
+            </span>
+          </CardTitle>
+        </motion.div>
+        
+        <CardDescription className="text-lg text-gray-600 mb-6 relative z-10">
           Voice-powered automation system built with Google Gemini and ElevenLabs
         </CardDescription>
-        <div className="flex justify-center gap-2 mt-4">
-          <Badge className="bg-green-100 text-green-700">Google Startup Program</Badge>
-          <Badge className="bg-blue-100 text-blue-700">Cost-Effective AI</Badge>
+        
+        <div className="flex justify-center gap-3 relative z-10">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Badge className="text-white text-sm px-4 py-2 shadow-lg border-0"
+                   style={{ background: "linear-gradient(45deg, #D97706, #B45309)" }}>
+              <motion.div 
+                className="w-2 h-2 bg-white rounded-full mr-2"
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+              Google Startup Program
+            </Badge>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Badge className="text-white text-sm px-4 py-2 shadow-lg border-0"
+                   style={{ background: "linear-gradient(45deg, #1e3a8a, #1e40af)" }}>
+              <TrendingDown className="w-3 h-3 mr-2" />
+              Cost-Effective AI
+            </Badge>
+          </motion.div>
         </div>
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Voice Controls */}
-        <div className="flex justify-center gap-4">
-          <Button
-            onClick={isListening ? stopListening : startListening}
-            disabled={isProcessing}
-            size="lg"
-            className={`relative ${isListening ? 'bg-red-500 hover:bg-red-600' : 'bg-primary hover:bg-primary/90'}`}
+        {/* Voice Controls - Enhanced */}
+        <div className="flex justify-center gap-6">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {isListening ? (
-              <>
-                <MicOff className="w-5 h-5 mr-2" />
-                Stop Listening
-                <motion.div
-                  className="absolute inset-0 bg-red-400 rounded-md opacity-30"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-              </>
-            ) : (
-              <>
-                <Mic className="w-5 h-5 mr-2" />
-                Start Listening
-              </>
-            )}
-          </Button>
+            <Button
+              onClick={isListening ? stopListening : startListening}
+              disabled={isProcessing}
+              size="lg"
+              className="relative px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl border-0 text-white"
+              style={{
+                background: isListening 
+                  ? "linear-gradient(45deg, #1e3a8a, #1e40af)"
+                  : "linear-gradient(45deg, #D97706, #B45309)"
+              }}
+            >
+              {isListening ? (
+                <>
+                  <MicOff className="w-6 h-6 mr-3" />
+                  Stop Listening
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 rounded-2xl"
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      opacity: [0.2, 0.4, 0.2]
+                    }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  />
+                  {/* Pulse rings */}
+                  <motion.div
+                    className="absolute inset-0 border-2 rounded-2xl"
+                    style={{ borderColor: '#D97706' }}
+                    animate={{ 
+                      scale: [1, 1.2, 1.4],
+                      opacity: [0.8, 0.4, 0]
+                    }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                </>
+              ) : (
+                <>
+                  <motion.div
+                    animate={{ rotate: isProcessing ? 360 : 0 }}
+                    transition={{ duration: 1, repeat: isProcessing ? Infinity : 0 }}
+                  >
+                    <Mic className="w-6 h-6 mr-3" />
+                  </motion.div>
+                  Start Listening
+                  <motion.div
+                    className="absolute -inset-1 rounded-2xl opacity-30 blur"
+                    style={{ background: "linear-gradient(45deg, #1e3a8a, #D97706)" }}
+                    animate={{ opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                </>
+              )}
+            </Button>
+          </motion.div>
 
-          <Button
-            onClick={() => setAudioEnabled(!audioEnabled)}
-            variant="outline"
-            size="lg"
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {audioEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-          </Button>
+            <Button
+              onClick={() => setAudioEnabled(!audioEnabled)}
+              variant="outline"
+              size="lg"
+              className="px-6 py-4 rounded-2xl border-2 border-gray-200 bg-white/70 backdrop-blur-sm hover:bg-white/90 shadow-lg"
+            >
+              <motion.div
+                animate={{ 
+                  scale: audioEnabled ? [1, 1.1, 1] : 1,
+                  rotate: audioEnabled ? 0 : [0, -10, 10, 0]
+                }}
+                transition={{ duration: audioEnabled ? 1.5 : 0.5, repeat: audioEnabled ? Infinity : 0 }}
+              >
+                {audioEnabled ? (
+                  <Volume2 className="w-6 h-6 text-green-600" />
+                ) : (
+                  <VolumeX className="w-6 h-6 text-red-500" />
+                )}
+              </motion.div>
+            </Button>
+          </motion.div>
         </div>
 
         {/* Demo Showcase Button */}
@@ -254,28 +359,105 @@ export default function VoiceInterface() {
           </Button>
         </div>
 
-        {/* Status Indicators */}
-        <div className="grid grid-cols-3 gap-4 text-center">
-          <div className={`p-3 rounded-lg ${isListening ? 'bg-red-50 text-red-700' : 'bg-gray-50 text-gray-600'}`}>
-            <Mic className="w-5 h-5 mx-auto mb-1" />
-            <div className="text-xs font-medium">
+        {/* Status Indicators - Enhanced */}
+        <div className="grid grid-cols-3 gap-6 text-center">
+          <motion.div 
+            className={`relative p-6 rounded-2xl backdrop-blur-lg border shadow-lg transition-all duration-300 ${
+              isListening 
+                ? 'bg-gradient-to-br from-red-50 to-pink-50 text-red-700 border-red-200/50 shadow-red-200/50' 
+                : 'bg-white/60 text-gray-600 border-gray-200/50'
+            }`}
+            whileHover={{ y: -2, scale: 1.02 }}
+            animate={isListening ? { scale: [1, 1.02, 1] } : {}}
+            transition={{ duration: 1, repeat: isListening ? Infinity : 0 }}
+          >
+            <motion.div
+              animate={isListening ? { 
+                scale: [1, 1.2, 1],
+                rotateY: [0, 180, 360] 
+              } : {}}
+              transition={{ duration: 2, repeat: isListening ? Infinity : 0 }}
+            >
+              <Mic className="w-6 h-6 mx-auto mb-2" />
+            </motion.div>
+            <div className="text-sm font-semibold">
               {isListening ? 'Listening' : 'Ready'}
             </div>
-          </div>
+            {isListening && (
+              <motion.div
+                className="absolute inset-0 border-2 border-red-300 rounded-2xl"
+                animate={{ scale: [1, 1.1], opacity: [0.5, 0] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              />
+            )}
+          </motion.div>
           
-          <div className={`p-3 rounded-lg ${isProcessing ? 'bg-blue-50 text-blue-700' : 'bg-gray-50 text-gray-600'}`}>
-            <Loader2 className={`w-5 h-5 mx-auto mb-1 ${isProcessing ? 'animate-spin' : ''}`} />
-            <div className="text-xs font-medium">
+          <motion.div 
+            className={`relative p-6 rounded-2xl backdrop-blur-lg border shadow-lg transition-all duration-300 ${
+              isProcessing 
+                ? 'bg-gradient-to-br from-blue-50 to-cyan-50 text-blue-700 border-blue-200/50 shadow-blue-200/50' 
+                : 'bg-white/60 text-gray-600 border-gray-200/50'
+            }`}
+            whileHover={{ y: -2, scale: 1.02 }}
+          >
+            <motion.div
+              animate={isProcessing ? { rotate: 360 } : {}}
+              transition={{ duration: 1.5, repeat: isProcessing ? Infinity : 0, ease: "linear" }}
+            >
+              <Loader2 className="w-6 h-6 mx-auto mb-2" />
+            </motion.div>
+            <div className="text-sm font-semibold">
               {isProcessing ? 'Processing' : 'AI Ready'}
             </div>
-          </div>
+            {isProcessing && (
+              <motion.div
+                className="absolute inset-0 bg-blue-400/20 rounded-2xl"
+                animate={{ opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              />
+            )}
+          </motion.div>
           
-          <div className={`p-3 rounded-lg ${isPlaying ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-600'}`}>
-            <Volume2 className="w-5 h-5 mx-auto mb-1" />
-            <div className="text-xs font-medium">
+          <motion.div 
+            className={`relative p-6 rounded-2xl backdrop-blur-lg border shadow-lg transition-all duration-300 ${
+              isPlaying 
+                ? 'bg-gradient-to-br from-green-50 to-emerald-50 text-green-700 border-green-200/50 shadow-green-200/50' 
+                : 'bg-white/60 text-gray-600 border-gray-200/50'
+            }`}
+            whileHover={{ y: -2, scale: 1.02 }}
+          >
+            <motion.div
+              animate={isPlaying ? { 
+                scale: [1, 1.1, 1],
+                rotate: [0, 5, -5, 0]
+              } : {}}
+              transition={{ duration: 0.5, repeat: isPlaying ? Infinity : 0 }}
+            >
+              <Volume2 className="w-6 h-6 mx-auto mb-2" />
+            </motion.div>
+            <div className="text-sm font-semibold">
               {isPlaying ? 'Speaking' : 'Audio Ready'}
             </div>
-          </div>
+            {isPlaying && (
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                {[0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="w-1 h-4 bg-green-500 rounded-full"
+                    animate={{ 
+                      scaleY: [0.3, 1, 0.3],
+                      opacity: [0.5, 1, 0.5]
+                    }}
+                    transition={{ 
+                      duration: 0.5, 
+                      repeat: Infinity,
+                      delay: i * 0.1
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+          </motion.div>
         </div>
 
         {/* Transcript Display */}

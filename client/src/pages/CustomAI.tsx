@@ -18,36 +18,157 @@ export default function CustomAI() {
       <Header />
       
       <main className="pt-20 pb-16">
-        {/* Hero Section */}
+        {/* Hero Section - Enhanced with Google-style visuals */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative py-24 overflow-hidden bg-primary"
+          className="relative py-32 overflow-hidden bg-gradient-to-br from-navy-900 via-blue-900 to-indigo-900"
+          style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #1e40af 35%, #312e81 100%)" }}
         >
+          {/* Advanced animated background */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-2 h-2 bg-white/30 rounded-full animate-bounce delay-1000"></div>
-            <div className="absolute bottom-20 left-20 w-3 h-3 bg-white/25 rounded-full animate-pulse delay-500"></div>
+            {/* Floating neural network nodes - Navy & Gold Theme */}
+            <div className="absolute top-20 left-16 w-6 h-6 rounded-full backdrop-blur-sm border border-yellow-500/30" style={{ backgroundColor: 'rgba(251, 191, 36, 0.2)' }}>
+              <motion.div 
+                className="w-full h-full rounded-full"
+                style={{ backgroundColor: '#D97706' }}
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.4, 0.9, 0.4]
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+            </div>
+            <div className="absolute top-40 right-24 w-4 h-4 rounded-full backdrop-blur-sm border border-blue-300/30" style={{ backgroundColor: 'rgba(30, 58, 138, 0.3)' }}>
+              <motion.div 
+                className="w-full h-full rounded-full"
+                style={{ backgroundColor: '#1e3a8a' }}
+                animate={{ 
+                  scale: [1, 1.3, 1],
+                  opacity: [0.4, 0.9, 0.4]
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+              />
+            </div>
+            <div className="absolute bottom-32 left-32 w-5 h-5 rounded-full backdrop-blur-sm border border-yellow-400/30" style={{ backgroundColor: 'rgba(217, 119, 6, 0.25)' }}>
+              <motion.div 
+                className="w-full h-full rounded-full"
+                style={{ backgroundColor: '#B45309' }}
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              />
+            </div>
+            <div className="absolute top-32 right-16 w-3 h-3 rounded-full backdrop-blur-sm border border-yellow-500/40" style={{ backgroundColor: 'rgba(245, 158, 11, 0.3)' }}>
+              <motion.div 
+                className="w-full h-full rounded-full"
+                style={{ backgroundColor: '#F59E0B' }}
+                animate={{ 
+                  scale: [1, 1.4, 1],
+                  opacity: [0.6, 1, 0.6]
+                }}
+                transition={{ duration: 3.5, repeat: Infinity, delay: 1.5 }}
+              />
+            </div>
+            
+            {/* Connecting lines animation */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none">
+              <motion.path
+                d="M 100 120 Q 300 200 500 160"
+                stroke="url(#gradient1)"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.4"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 4, repeat: Infinity }}
+              />
+              <motion.path
+                d="M 200 300 Q 400 250 600 280"
+                stroke="url(#gradient2)"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.3"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+              />
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#1e3a8a" stopOpacity="0.7" />
+                  <stop offset="100%" stopColor="#D97706" stopOpacity="0.4" />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#B45309" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#1e40af" stopOpacity="0.3" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Mesh gradient overlay - Navy & Gold */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-800/15 via-transparent to-yellow-600/10"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/8 to-transparent"></div>
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               {...fadeInUp}
-              className="mb-6"
+              className="mb-8"
             >
-              <Badge className="bg-white/20 text-white border-white/30 text-lg px-6 py-2 backdrop-blur-sm">
-                <Brain className="w-4 h-4 mr-2" />
-                Custom AI Innovation
-              </Badge>
+              <motion.div
+                className="inline-flex items-center bg-white/10 backdrop-blur-lg border text-white text-xl px-8 py-4 rounded-full shadow-2xl"
+                style={{ borderColor: 'rgba(217, 119, 6, 0.3)' }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  className="mr-3"
+                  style={{ color: '#D97706' }}
+                >
+                  <Brain className="w-6 h-6" />
+                </motion.div>
+                <span className="font-semibold tracking-wide">Custom AI Innovation</span>
+                <div className="ml-3 w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#D97706' }}></div>
+              </motion.div>
             </motion.div>
             
             <motion.h1 
               {...fadeInUp}
-              className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
+              className="text-6xl md:text-8xl font-bold text-white mb-12 leading-tight"
             >
-              Santiago Team
-              <span className="block text-white">
-                AI Assistant
+              <span className="inline-block">
+                <motion.span 
+                  className="bg-clip-text text-transparent"
+                  style={{ 
+                    background: "linear-gradient(45deg, #D97706 0%, #B45309 50%, #F59E0B 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text"
+                  }}
+                >
+                  Santiago Team
+                </motion.span>
+              </span>
+              <span className="block mt-4">
+                <motion.span
+                  className="relative"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  AI Assistant
+                  <motion.div
+                    className="absolute -inset-1 rounded-lg blur opacity-30"
+                    style={{ background: "linear-gradient(45deg, #1e3a8a, #D97706)" }}
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      opacity: [0.3, 0.5, 0.3]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                </motion.span>
               </span>
             </motion.h1>
             
@@ -60,25 +181,89 @@ export default function CustomAI() {
               Replacing expensive third-party services with custom solutions.
             </motion.p>
 
-            {/* Cost Savings Highlight */}
+            {/* Cost Savings Highlight - Enhanced */}
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.4 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto"
+              className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 max-w-3xl mx-auto shadow-2xl"
+              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="flex items-center justify-center mb-4">
-                <TrendingDown className="w-8 h-8 text-white mr-3" />
-                <span className="text-3xl font-bold text-white">90% Cost Reduction</span>
-              </div>
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div className="text-white/90">
-                  <div className="text-2xl font-bold line-through">$1,021/mo</div>
-                  <div className="text-sm">Previous AI Hub</div>
+              {/* Glassmorphism effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-3xl"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-6">
+                  <motion.div
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    style={{ color: '#D97706' }}
+                  >
+                    <TrendingDown className="w-10 h-10 mr-4" />
+                  </motion.div>
+                  <span className="text-4xl font-bold bg-clip-text text-transparent" 
+                        style={{ 
+                          background: "linear-gradient(45deg, #D97706 0%, #F59E0B 100%)",
+                          WebkitBackgroundClip: "text",
+                          backgroundClip: "text"
+                        }}>
+                    90% Cost Reduction
+                  </span>
                 </div>
-                <div className="text-white">
-                  <div className="text-2xl font-bold">~$100/mo</div>
-                  <div className="text-sm">Custom Solution</div>
+                
+                <div className="grid grid-cols-2 gap-8 text-center">
+                  <motion.div 
+                    className="relative p-6 backdrop-blur-sm rounded-2xl border"
+                    style={{ 
+                      backgroundColor: 'rgba(30, 58, 138, 0.15)',
+                      borderColor: 'rgba(30, 58, 138, 0.3)'
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-3xl font-bold text-white/80 line-through mb-2">$1,021/mo</div>
+                    <div className="text-white/70 text-lg">Previous AI Hub</div>
+                    <div className="absolute top-2 right-2">
+                      <motion.div
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: '#1e3a8a' }}
+                        animate={{ opacity: [1, 0.4, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="relative p-6 backdrop-blur-sm rounded-2xl border"
+                    style={{ 
+                      backgroundColor: 'rgba(217, 119, 6, 0.15)',
+                      borderColor: 'rgba(217, 119, 6, 0.3)'
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-3xl font-bold mb-2" style={{ color: '#F59E0B' }}>~$100/mo</div>
+                    <div className="text-white/80 text-lg">Custom Solution</div>
+                    <div className="absolute top-2 right-2">
+                      <motion.div
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: '#D97706' }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      />
+                    </div>
+                  </motion.div>
                 </div>
+                
+                {/* Savings calculation animation */}
+                <motion.div
+                  className="mt-6 text-center text-white/90"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 }}
+                >
+                  <span className="text-xl font-semibold">
+                    Annual Savings: <span style={{ color: '#F59E0B' }}>$11,052</span>
+                  </span>
+                </motion.div>
               </div>
             </motion.div>
           </div>
