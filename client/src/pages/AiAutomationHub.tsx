@@ -37,6 +37,8 @@ import AIAutomationDashboard from "@/components/AIAutomationDashboard";
 import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from "@/components/ContextualTooltip";
 import InteractiveTourGuide, { aiAutomationTour, useTourGuide } from "@/components/InteractiveTourGuide";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
+import { useLanguage } from "@/lib/LanguageContext";
+import { useSound } from "@/lib/SoundContext";
 
 export default function AiAutomationHub() {
   const [activeTab, setActiveTab] = useState("overview");

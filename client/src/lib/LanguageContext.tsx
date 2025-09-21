@@ -20,6 +20,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Header
+    'nav.announcement': '🚀 FIRST AI Agents for the Latino Community - Now Available!',
     'nav.home': 'Home',
     'nav.compensation': 'Compensation',
     'nav.team_building': 'Team Building',
@@ -35,6 +36,21 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.team': 'Team',
     'nav.join_us': 'Join Us',
     'nav.ai_tools': 'AI Tools',
+    
+    // AI Automation Hub
+    'ai.hero_badge': '🤖 AI Automation Hub',
+    'ai.hero_title': 'AI Phone Calls & Video Avatars',
+    'ai.hero_subtitle': 'Scale your Santiago Team outreach with AI-powered phone calls and personalized video messages featuring voice and video clones of Nolly and Pablo Santiago.',
+    'ai.start_campaign': 'Start AI Campaign',
+    'ai.configuration': 'Configuration',
+    
+    // Sound Controls
+    'sound.title': 'Sound Controls',
+    'sound.enabled': 'Sound On',
+    'sound.disabled': 'Sound Off', 
+    'sound.music': 'Music Volume',
+    'sound.effects': 'Sound Effects',
+    'sound.play_intro': 'Play Intro',
     'nav.leads': 'Leads',
     'nav.events': 'Events',
     'nav.board_view': 'Board View',
@@ -42,6 +58,8 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.badge': 'Santiago Team - World Financial Group',
+    'hero.first_ai_badge': '🚀 FIRST AI Agents Built for the Latino Community',
+    'hero.first_ai_subtitle': 'Bilingual AI that accelerates success for Spanish-speaking professionals and families',
     'hero.title_part1': 'Protecting Those Who',
     'hero.title_part2': 'Protect Others',
     'hero.subtitle': 'From 34 years in law enforcement (NYPD & Orange County) to telecommunications expertise, the Santiago family transforms lives through financial education, building generational wealth, and protecting what matters most.',
@@ -655,7 +673,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'constellation.ceomd.benefit3': 'Transformational impact potential',
   },
   es: {
-    // Header
+    // Header  
+    'nav.announcement': '🚀 PRIMEROS Agentes de IA para la Comunidad Latina - ¡Ya Disponibles!',
     'nav.home': 'Inicio',
     'nav.compensation': 'Compensación',
     'nav.team_building': 'Formación de Equipos',
@@ -671,6 +690,21 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.team': 'Equipo',
     'nav.join_us': 'Únete',
     'nav.ai_tools': 'Herramientas IA',
+    
+    // AI Automation Hub
+    'ai.hero_badge': '🤖 Centro de Automatización IA',
+    'ai.hero_title': 'Llamadas de IA y Avatares de Video',
+    'ai.hero_subtitle': 'Escala tu alcance del Equipo Santiago con llamadas telefónicas potenciadas por IA y mensajes de video personalizados con clones de voz y video de Nolly y Pablo Santiago.',
+    'ai.start_campaign': 'Iniciar Campaña IA',
+    'ai.configuration': 'Configuración',
+    
+    // Sound Controls
+    'sound.title': 'Controles de Sonido',
+    'sound.enabled': 'Sonido Activado',
+    'sound.disabled': 'Sonido Desactivado',
+    'sound.music': 'Volumen Música',
+    'sound.effects': 'Efectos de Sonido',
+    'sound.play_intro': 'Reproducir Introducción',
     'nav.leads': 'Contactos',
     'nav.events': 'Eventos',
     'nav.board_view': 'Vista Tablero',
@@ -678,6 +712,8 @@ export const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.badge': 'Equipo Santiago - World Financial Group',
+    'hero.first_ai_badge': '🚀 PRIMEROS Agentes de IA Creados para la Comunidad Latina',
+    'hero.first_ai_subtitle': 'IA bilingüe que acelera el éxito de profesionales y familias de habla hispana',
     'hero.title_part1': 'Protegiendo a Quienes',
     'hero.title_part2': 'Protegen a Otros',
     'hero.subtitle': 'Desde más de 30 años en aplicación de la ley hasta experiencia en telecomunicaciones, la familia Santiago transforma vidas a través de educación financiera, construyendo riqueza generacional y protegiendo lo que más importa.',

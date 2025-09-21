@@ -17,6 +17,7 @@ import {
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { useLanguage } from '@/lib/LanguageContext';
+import { useSound } from '@/lib/SoundContext';
 import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly
@@ -24,6 +25,7 @@ import newTeamPhoto from '@assets/IMG_2259_1756309198291.jpeg';
 
 export default function LandingHero() {
   const { t } = useLanguage();
+  const { playSfx, playMusic } = useSound();
   
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -35,6 +37,34 @@ export default function LandingHero() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
+          {/* First AI Agents Badge - Prominently Featured */}
+          <motion.div className="text-center mb-8" {...fadeInUp}>
+            <Badge 
+              className="mb-4 bg-gradient-to-r from-amber-500 to-primary text-white px-8 py-4 text-xl font-bold shadow-2xl cursor-pointer hover:shadow-3xl transition-all transform hover:scale-105 border-2 border-amber-300"
+              onClick={async () => {
+                await playSfx('celebration-stinger');
+                await playMusic('intro-theme');
+              }}
+            >
+              ✨ {t('hero.first_ai_badge')} ✨
+            </Badge>
+            <p className="text-lg md:text-xl text-primary font-semibold mb-8 max-w-3xl mx-auto">
+              {t('hero.first_ai_subtitle')}
+            </p>
+            
+            <Button 
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-400 text-white px-8 py-4 text-lg font-bold shadow-lg mr-4 mb-4 md:mb-0"
+              onClick={async () => {
+                await playSfx('fanfare-success');
+                await playMusic('intro-theme');
+              }}
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              {t('sound.play_intro')}
+            </Button>
+          </motion.div>
+
           {/* Main Hero Content */}
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <Badge className="mb-4 bg-primary text-white px-6 py-3 text-lg">

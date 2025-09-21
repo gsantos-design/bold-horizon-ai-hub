@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages, Calendar, Thermometer, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useSound } from "@/lib/SoundContext";
 import { SafeLink } from "@/components/SafeLink";
+import SoundControls from "@/components/SoundControls";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { playSfx } = useSound();
+  const [announcementClicked, setAnnouncementClicked] = useState(() => {
+    return localStorage.getItem('santiago-announcement-clicked') === 'true';
+  });
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -16,8 +23,27 @@ export default function Header() {
     setLanguage(language === 'en' ? 'es' : 'en');
   };
 
+  const handleAnnouncementClick = async () => {
+    if (!announcementClicked) {
+      await playSfx('announcement-ding');
+      setAnnouncementClicked(true);
+      localStorage.setItem('santiago-announcement-clicked', 'true');
+    }
+  };
+
   return (
     <header className="bg-white shadow-md border-b">
+      {/* Announcement Banner */}
+      <div className="bg-gradient-to-r from-primary via-amber-500 to-primary text-white py-2 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <Badge 
+          className="relative z-10 bg-white text-primary font-bold px-4 py-1 text-sm cursor-pointer hover:bg-amber-100 transition-colors"
+          onClick={handleAnnouncementClick}
+        >
+          {t('nav.announcement')}
+        </Badge>
+      </div>
+      
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           {/* WFG Logo and Branding */}
@@ -80,6 +106,8 @@ export default function Header() {
               </Button>
             </SafeLink>
             
+            <SoundControls />
+            
             {/* Language Toggle */}
             <Button 
               variant="outline" 
@@ -124,6 +152,8 @@ export default function Header() {
               </Button>
             </SafeLink>
             
+            <SoundControls />
+            
             {/* Language Toggle */}
             <Button 
               variant="outline" 
@@ -138,6 +168,8 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
+            <SoundControls />
+            
             <Button 
               variant="outline" 
               size="sm"
