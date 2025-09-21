@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome, Award, Globe, TrendingUp } from 'lucide-react';
+import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome, Award, Globe, TrendingUp, Bot } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VoiceInterface from '@/components/VoiceInterface';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 export default function CustomAI() {
   const fadeInUp = {
@@ -302,6 +303,138 @@ export default function CustomAI() {
                       <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Sales Analytics</Badge>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* AI Agents Section */}
+        <motion.section 
+          {...fadeInUp}
+          className="py-20 bg-white"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="mb-6"
+              >
+                <Badge className="bg-primary/10 text-primary text-lg px-6 py-3">
+                  <Bot className="w-4 h-4 mr-2" />
+                  Bold Horizons AI Agents
+                </Badge>
+              </motion.div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Bilingual AI Specialists
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Professional AI agents fluent in English and Spanish, trained specifically for insurance, 
+                IUL, and 401K consultations with Santiago Team expertise.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* English Agent */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/20">
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                      <Globe className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-2xl text-gray-900">English Specialist</CardTitle>
+                    <CardDescription className="text-lg text-gray-600">
+                      Professional financial guidance in English
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-900 mb-2">Expertise Areas:</h4>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Life Insurance & IUL Policies</li>
+                        <li>• 401K Rollover Strategies</li>
+                        <li>• Retirement Planning</li>
+                        <li>• Investment Protection</li>
+                      </ul>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Badge className="bg-blue-100 text-blue-800">Professional</Badge>
+                      <Badge className="bg-green-100 text-green-800">Available 24/7</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Spanish Agent */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/20">
+                  <CardHeader className="text-center pb-4">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <Globe className="w-8 h-8 text-yellow-600" />
+                    </div>
+                    <CardTitle className="text-2xl text-gray-900">Especialista en Español</CardTitle>
+                    <CardDescription className="text-lg text-gray-600">
+                      Orientación financiera profesional en español
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-900 mb-2">Áreas de Especialización:</h4>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• Seguros de Vida y Pólizas IUL</li>
+                        <li>• Estrategias de Transferencia 401K</li>
+                        <li>• Planificación para el Retiro</li>
+                        <li>• Protección de Inversiones</li>
+                      </ul>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Badge className="bg-yellow-100 text-yellow-800">Profesional</Badge>
+                      <Badge className="bg-green-100 text-green-800">Disponible 24/7</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* Agent Selection Interface */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-12 text-center"
+            >
+              <Card className="max-w-4xl mx-auto bg-gray-50 border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-xl text-gray-900">Start a Consultation</CardTitle>
+                  <CardDescription>
+                    Choose your preferred language and connect with a Santiago Team AI specialist
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+                    onClick={() => window.location.href = '/ai-career-mentor'}
+                  >
+                    <Globe className="w-5 h-5 mr-2" />
+                    Start in English
+                  </Button>
+                  <Button 
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 text-lg"
+                    onClick={() => window.location.href = '/ai-career-mentor'}
+                  >
+                    <Globe className="w-5 h-5 mr-2" />
+                    Comenzar en Español
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
