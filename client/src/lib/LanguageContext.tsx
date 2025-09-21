@@ -713,7 +713,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Equipo Santiago - World Financial Group',
     'hero.first_ai_badge': '🚀 PRIMEROS Agentes de IA Creados para la Comunidad Latina',
-    'hero.first_ai_subtitle': 'IA bilingüe que acelera el éxito de profesionales y familias de habla hispana',
+    'hero.first_ai_subtitle': 'IA bilingüe que acelera el éxito de profesionales y familias de idioma español',
     'hero.title_part1': 'Protegiendo a Quienes',
     'hero.title_part2': 'Protegen a Otros',
     'hero.subtitle': 'Desde más de 30 años en aplicación de la ley hasta experiencia en telecomunicaciones, la familia Santiago transforma vidas a través de educación financiera, construyendo riqueza generacional y protegiendo lo que más importa.',

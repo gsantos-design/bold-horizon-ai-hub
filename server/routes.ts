@@ -41,6 +41,7 @@ import {
   getHubSpotOwners 
 } from "./lib/hubspot";
 import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
+import { VideoGenerationService } from './videoGeneration';
 
 // Simple authentication middleware for demo purposes
 // In production, you would use proper authentication
@@ -67,6 +68,9 @@ const requireFounder = (req: any, res: any, next: any) => {
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize Google Gemini multilingual lead generator
   const multilingualGenerator = new MultilingualLeadGenerator();
+  
+  // Initialize Video Generation Service
+  const videoGenerationService = new VideoGenerationService();
   
   // Convert inquiries to leads
   app.post("/api/inquiries/convert/:id", authenticateUser, async (req: any, res) => {
@@ -1871,6 +1875,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
       total: supportedLanguages.length,
       message: 'Santiago Team now supports 5 languages for lead generation powered by Google Gemini AI'
     });
+  });
+
+  // 🎬 EPIC VIDEO GENERATION ROUTES - HeyGen & Tavus Integration
+  
+  // Generate epic entrance video with Nolly/Pablo and triumphant music
+  app.post("/api/generate-epic-video", async (req, res) => {
+    try {
+      const videoRequest = req.body;
+      console.log('🎬 Epic video generation request:', videoRequest);
+
+      const result = await videoGenerationService.generateEpicVideo(videoRequest);
+      
+      res.json({
+        success: true,
+        videoId: result.videoId,
+        status: result.status,
+        message: 'Epic Santiago Team video generation started! This will be legendary! 🏆',
+        estimatedTime: '3-5 minutes'
+      });
+
+    } catch (error: any) {
+      console.error('❌ Epic video generation failed:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to generate epic video',
+        error: error.message
+      });
+    }
+  });
+
+  // Check video generation status
+  app.get("/api/video-status/:videoId", async (req, res) => {
+    try {
+      const { videoId } = req.params;
+      const status = await videoGenerationService.checkVideoStatus(videoId);
+      
+      res.json({
+        success: true,
+        videoId,
+        status: status.status,
+        videoUrl: status.videoUrl,
+        message: status.videoUrl 
+          ? '🎬 Your epic Santiago Team video is ready! Time to conquer the market!' 
+          : 'Epic video is still rendering...'
+      });
+
+    } catch (error: any) {
+      console.error('❌ Video status check failed:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to check video status',
+        error: error.message
+      });
+    }
   });
 
   const httpServer = createServer(app);

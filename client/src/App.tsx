@@ -25,6 +25,7 @@ import LanguageHeatmap from "@/pages/LanguageHeatmap";
 import Documentation from "@/pages/Documentation";
 import CustomAI from "@/pages/CustomAI";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { SoundProvider } from "@/lib/SoundContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
 import AchievementNotificationContainer from "@/components/AchievementNotification";
 
@@ -78,11 +79,13 @@ function AppContent() {
 function App() {
   return (
     <LanguageProvider>
-      <ProgressProvider>
-        <TooltipProvider>
-          <AppContent />
-        </TooltipProvider>
-      </ProgressProvider>
+      <SoundProvider>
+        <ProgressProvider>
+          <TooltipProvider>
+            <AppContent />
+          </TooltipProvider>
+        </ProgressProvider>
+      </SoundProvider>
     </LanguageProvider>
   );
 }
