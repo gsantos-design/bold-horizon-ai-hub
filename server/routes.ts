@@ -413,6 +413,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // CSV Export (respects permissions) - MUST be before /:id route to avoid conflict
+  app.get("/api/leads/export", authenticateUser, async (req: any, res) => {
+    try {
+      const leads = await storage.getLeads(req.user.email, req.user.role);
+      
+      // Create CSV content
+      const csvHeaders = [
+        'ID', 'First Name', 'Last Name', 'Email', 'Phone', 
+        'Status', 'Source', 'Owner Email', 'Notes', 
+        'Last Contact Date', 'Next Follow Up', 'Created At', 'Updated At'
+      ];
+      
+      const csvRows = leads.map(lead => [
+        lead.id,
+        lead.firstName || '',
+        lead.lastName || '',
+        lead.email || '',
+        lead.phone || '',
+        lead.status || '',
+        lead.source || '',
+        lead.ownerEmail || '',
+        (lead.notes || '').replace(/["\r\n]/g, ' '), // Clean notes for CSV
+        lead.lastContactDate ? lead.lastContactDate.toISOString() : '',
+        lead.nextFollowUp ? lead.nextFollowUp.toISOString() : '',
+        lead.createdAt ? lead.createdAt.toISOString() : '',
+        lead.updatedAt ? lead.updatedAt.toISOString() : ''
+      ]);
+      
+      const csvContent = [csvHeaders, ...csvRows]
+        .map(row => row.map(field => `"${field}"`).join(','))
+        .join('\n');
+      
+      const timestamp = new Date().toISOString().split('T')[0];
+      const filename = `leads-export-${timestamp}.csv`;
+      
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.send(csvContent);
+    } catch (error) {
+      console.error("Error exporting leads:", error);
+      res.status(500).json({ message: "Failed to export leads" });
+    }
+  });
+
   // Get single lead
   app.get("/api/leads/:id", authenticateUser, async (req: any, res) => {
     try {
@@ -490,49 +534,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
 
-  // CSV Export (respects permissions)  
-  app.get("/api/leads/export", authenticateUser, async (req: any, res) => {
-    try {
-      const leads = await storage.getLeads(req.user.email, req.user.role);
-      
-      // Create CSV content
-      const csvHeaders = [
-        'ID', 'First Name', 'Last Name', 'Email', 'Phone', 
-        'Status', 'Source', 'Owner Email', 'Notes', 
-        'Last Contact Date', 'Next Follow Up', 'Created At', 'Updated At'
-      ];
-      
-      const csvRows = leads.map(lead => [
-        lead.id,
-        lead.firstName || '',
-        lead.lastName || '',
-        lead.email || '',
-        lead.phone || '',
-        lead.status || '',
-        lead.source || '',
-        lead.ownerEmail || '',
-        (lead.notes || '').replace(/["\r\n]/g, ' '), // Clean notes for CSV
-        lead.lastContactDate ? lead.lastContactDate.toISOString() : '',
-        lead.nextFollowUp ? lead.nextFollowUp.toISOString() : '',
-        lead.createdAt ? lead.createdAt.toISOString() : '',
-        lead.updatedAt ? lead.updatedAt.toISOString() : ''
-      ]);
-      
-      const csvContent = [csvHeaders, ...csvRows]
-        .map(row => row.map(field => `"${field}"`).join(','))
-        .join('\n');
-      
-      const timestamp = new Date().toISOString().split('T')[0];
-      const filename = `leads-export-${timestamp}.csv`;
-      
-      res.setHeader('Content-Type', 'text/csv');
-      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.send(csvContent);
-    } catch (error) {
-      console.error("Error exporting leads:", error);
-      res.status(500).json({ message: "Failed to export leads" });
-    }
-  });
 
   // Lead import from Apollo.io / external sources - NEW v12 Feature with Deal Amount Estimator
   app.post("/api/leads/import", async (req, res) => {

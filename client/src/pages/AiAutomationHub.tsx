@@ -64,7 +64,7 @@ export default function AiAutomationHub() {
                 content="Transform your Santiago Team's lead generation with cutting-edge AI technology. Scale from dozens to thousands of personalized prospect interactions daily while maintaining the authentic touch of Nolly and Pablo Santiago."
                 title="🤖 Revolutionary AI Scaling"
               >
-                <Badge className="mb-4 bg-white/20 text-white px-6 py-2 text-sm cursor-help">
+                <Badge className="mb-4 bg-amber-500/90 text-white px-6 py-2 text-sm cursor-help font-semibold shadow-lg">
                   🤖 AI Automation Hub
                 </Badge>
               </AITooltip>
@@ -81,7 +81,7 @@ export default function AiAutomationHub() {
                   content="Launch your first AI automation campaign targeting 401k rollover prospects, high-yield savers, or entrepreneurs. Expected results: 8-12% conversion rate, 200+ appointments monthly, $2.5M+ pipeline value."
                   title="🚀 Campaign Launch"
                 >
-                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 font-bold border-2 border-white shadow-lg">
+                  <Button size="lg" className="bg-amber-400 text-primary hover:bg-amber-300 px-8 font-bold border-2 border-amber-400 shadow-lg">
                     <PlayCircle className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-primary">Start AI Campaign</span>
                   </Button>
