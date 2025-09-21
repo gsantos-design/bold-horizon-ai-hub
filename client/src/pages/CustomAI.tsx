@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome, Award, Globe, TrendingUp, Bot } from 'lucide-react';
+import { Sparkles, Brain, Mic, TrendingDown, Zap, Chrome, Award, Globe, TrendingUp, Bot, Database } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VoiceInterface from '@/components/VoiceInterface';
@@ -291,21 +291,21 @@ export default function CustomAI() {
             <div className="text-center mb-16">
               <div className="mb-6 space-y-3">
                 <Badge className="bg-primary/10 text-primary text-lg px-6 py-3">
-                  <Chrome className="w-4 h-4 mr-2" />
-                  Santiago Team AI Hub - Google Suite Powered
+                  <Bot className="w-4 h-4 mr-2" />
+                  Santiago Team Sales Agent Hub
                 </Badge>
                 <div className="flex justify-center">
                   <Badge className="bg-green-100 text-green-800 px-4 py-2">
-                    Bilingual Engagement (English/Spanish)
+                    Bilingual Engagement (English/Spanish) • Powered by Google
                   </Badge>
                 </div>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Google-Powered Lead Generation
+                Intelligent Lead Generation
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Santiago Team's AI automation platform powered by Google Analytics, Firebase, and Gemini AI 
-                for automated lead generation, bilingual customer engagement, and WFG chapter management.
+                Santiago Team's powerful sales agent hub with AI automation for lead generation, 
+                bilingual customer engagement, and WFG chapter management nationwide.
               </p>
             </div>
 
@@ -375,9 +375,9 @@ export default function CustomAI() {
             <div className="mt-16 text-center">
               <Card className="max-w-5xl mx-auto bg-gray-50 border-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Google Suite Integration Impact</CardTitle>
+                  <CardTitle className="text-2xl text-gray-900">Sales Agent Hub Impact</CardTitle>
                   <CardDescription>
-                    Google-powered automation platform for Santiago Team's nationwide WFG chapter expansion
+                    Powerful automation platform for Santiago Team's nationwide WFG chapter expansion
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
