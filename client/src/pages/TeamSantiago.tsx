@@ -492,18 +492,14 @@ export default function TeamSantiago() {
               </div>
             </div>
             
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 justify-center max-w-3xl mx-auto">
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-primary mb-2">Pablo</div>
-                <div className="text-sm text-gray-600">Law Enforcement Legacy</div>
+                <div className="text-2xl font-bold text-primary mb-2">Joseph</div>
+                <div className="text-sm text-gray-600">Entrepreneurial Leadership</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-primary mb-2">Nolly</div>
                 <div className="text-sm text-gray-600">Family Protection Mission</div>
-              </div>
-              <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-primary mb-2">Joseph</div>
-                <div className="text-sm text-gray-600">Entrepreneurial Leadership</div>
               </div>
               <div className="text-center p-6 bg-white rounded-xl shadow-lg">
                 <div className="text-2xl font-bold text-primary mb-2">Christian</div>
