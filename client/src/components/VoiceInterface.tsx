@@ -223,7 +223,7 @@ export default function VoiceInterface() {
         </motion.div>
         
         <CardDescription className="text-lg text-gray-600 mb-6 relative z-10">
-          Voice-powered automation system built with advanced AI technology and professional voice synthesis
+          Voice-powered automation system built with Google Gemini and ElevenLabs
         </CardDescription>
         
         <div className="flex justify-center gap-3 relative z-10">
@@ -238,7 +238,7 @@ export default function VoiceInterface() {
                 animate={{ opacity: [1, 0.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
-              Santiago Team Excellence
+              Google Startup Program
             </Badge>
           </motion.div>
           <motion.div
@@ -248,7 +248,7 @@ export default function VoiceInterface() {
             <Badge className="text-white text-sm px-4 py-2 shadow-lg border-0"
                    style={{ background: "linear-gradient(45deg, #1e3a8a, #1e40af)" }}>
               <TrendingDown className="w-3 h-3 mr-2" />
-              Cost-Effective Innovation
+              Cost-Effective AI
             </Badge>
           </motion.div>
         </div>
@@ -361,7 +361,7 @@ export default function VoiceInterface() {
             ) : (
               <Play className="w-5 h-5 mr-3" />
             )}
-            Santiago Team Demo
+            Run Google Startup Demo
           </Button>
         </div>
 
