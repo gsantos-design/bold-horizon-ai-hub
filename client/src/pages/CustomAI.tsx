@@ -517,7 +517,7 @@ export default function CustomAI() {
                 },
                 {
                   icon: Mic,
-                  title: "ElevenLabs Voice Synthesis",
+                  title: "Google AI Voice Processing",
                   description: "High-quality text-to-speech with natural voice cloning capabilities.",
                   highlight: "Premium Audio"
                 },

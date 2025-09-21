@@ -172,7 +172,7 @@ export default function AiAutomationHub() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold">Platform Integration:</span>
-                          <Badge className="bg-blue-100 text-blue-800">Retell AI + ElevenLabs</Badge>
+                          <Badge className="bg-blue-100 text-blue-800">Google AI Voice</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
@@ -217,7 +217,7 @@ export default function AiAutomationHub() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold">Platform Integration:</span>
-                          <Badge className="bg-primary text-white">HeyGen + Tavus</Badge>
+                          <Badge className="bg-primary text-white">Google AI Video</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
@@ -273,7 +273,7 @@ export default function AiAutomationHub() {
                           <span className="text-2xl font-bold text-white">2</span>
                         </div>
                         <h3 className="font-bold text-lg mb-2">API Integration</h3>
-                        <p className="text-sm text-gray-600">Integrate Retell AI, ElevenLabs, HeyGen, and Tavus APIs into the existing Santiago Lead Engine</p>
+                        <p className="text-sm text-gray-600">Integrate Google AI voice, video, and analytics APIs into the existing Santiago Lead Engine</p>
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -396,7 +396,7 @@ export default function AiAutomationHub() {
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="bg-blue-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-blue-800">Retell AI + ElevenLabs</h4>
+                          <h4 className="font-semibold text-blue-800">Google AI Voice</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Voice Cloning: $22/month (Creator Plan)</p>
                             <p>• Phone Calls: $0.10-0.30/minute</p>
@@ -533,7 +533,7 @@ export default function AiAutomationHub() {
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="bg-purple-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-purple-800">HeyGen + Tavus</h4>
+                          <h4 className="font-semibold text-purple-800">Google AI Video</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Avatar Creation: $99/month</p>
                             <p>• Video Generation: $0.50-1.00/minute</p>
