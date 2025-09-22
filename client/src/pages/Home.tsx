@@ -11,7 +11,7 @@ import OfficeInfo from "@/components/OfficeInfo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, ArrowRight, Bot, MessageCircle, PlayCircle, HelpCircle } from "lucide-react";
+import { Star, ArrowRight, Bot, MessageCircle, PlayCircle, HelpCircle, Video, FileVideo } from "lucide-react";
 import { Link } from "wouter";
 import { HelpTooltip, TipTooltip, FeatureTooltip, AITooltip, SmartTooltip } from "@/components/ContextualTooltip";
 import InteractiveTourGuide, { homePageTour, useTourGuide } from "@/components/InteractiveTourGuide";
@@ -64,6 +64,49 @@ export default function Home() {
       
       {/* Spanish Meeting Callout */}
       <SpanishMeetingCallout />
+
+      {/* Epic Video Generator - FEATURED */}
+      <section className="bg-gradient-to-r from-amber-50 to-orange-50 py-12">
+        <div className="container mx-auto px-4">
+          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-amber-500 to-orange-500 border-0 shadow-xl text-white">
+            <CardContent className="p-8 text-center">
+              <Badge className="mb-4 bg-white text-amber-600 px-4 py-2 font-bold">
+                🎬 NEW! Epic Video Generator
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Create Epic Entrance Videos
+              </h2>
+              <p className="text-lg mb-6 max-w-2xl mx-auto opacity-90">
+                Generate cinematic entrance videos for your WFG presentations. Upload your own Veo creations or use our authentic Spanish community themes with triumphant music!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-amber-600 hover:bg-gray-100 font-bold"
+                  onClick={() => window.location.href = '/epic-video'}
+                  data-testid="button-epic-video-home"
+                >
+                  <FileVideo className="h-5 w-5 mr-2" />
+                  Launch Epic Video Generator
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-amber-600/20 text-white border-white/30 hover:bg-amber-600/30"
+                  onClick={() => window.location.href = '/ai-automation'}
+                  data-testid="button-ai-automation-home"
+                >
+                  <Bot className="h-5 w-5 mr-2" />
+                  AI Automation Hub
+                </Button>
+              </div>
+              <div className="mt-4 text-sm opacity-75">
+                ⚡ Your uploaded video is ready! Perfect for billion-dollar presentations.
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
       {/* AI Career Mentor Featured Section */}
       <section className="bg-white py-12">
