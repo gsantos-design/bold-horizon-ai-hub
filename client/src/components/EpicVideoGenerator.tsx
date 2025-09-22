@@ -242,15 +242,53 @@ export default function EpicVideoGenerator() {
             Your Epic Veo Video URL
           </Label>
           <Input
-            placeholder="Paste your epic Veo-generated video URL here..."
+            placeholder="Paste your epic video URL here, or use your uploaded video..."
             className="w-full text-lg py-3"
             value={request.videoUrl || ''}
             onChange={(e) => setRequest({...request, videoUrl: e.target.value})}
           />
-          <p className="text-sm text-primary font-semibold">
-            🎬 Create your Spanish community video with Veo + epic music, then paste URL here!
-          </p>
+          <div className="flex gap-3 items-center">
+            <Button 
+              type="button"
+              variant="outline"
+              onClick={() => setRequest({...request, videoUrl: '/attached_assets/Untitled video_1758504215243.mp4'})}
+              className="text-sm"
+            >
+              🎬 Use Your Uploaded Video
+            </Button>
+            <p className="text-sm text-primary font-semibold">
+              Or paste your Veo-generated video URL above!
+            </p>
+          </div>
         </div>
+
+        {/* Video Preview */}
+        {request.videoUrl && (
+          <div className="space-y-3">
+            <Label className="text-lg font-semibold text-primary flex items-center gap-2">
+              🎬 <span>Epic Video Preview</span>
+            </Label>
+            <div className="bg-black rounded-lg overflow-hidden shadow-2xl">
+              <video 
+                src={request.videoUrl} 
+                controls 
+                className="w-full max-h-96"
+                onError={() => {
+                  toast({
+                    title: "Video Load Error",
+                    description: "Please check your video URL or file",
+                    variant: "destructive"
+                  });
+                }}
+              >
+                Your epic video will appear here
+              </video>
+            </div>
+            <p className="text-sm text-center text-primary font-semibold">
+              ⚡ Your epic entrance video is ready for the billion-dollar presentation!
+            </p>
+          </div>
+        )}
 
         {/* Crowd Level */}
         <div className="space-y-3">
