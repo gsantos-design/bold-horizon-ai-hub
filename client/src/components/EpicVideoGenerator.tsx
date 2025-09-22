@@ -114,7 +114,7 @@ export default function EpicVideoGenerator() {
 
   return (
     <Card className="w-full max-w-4xl mx-auto border-2 border-primary/20 shadow-2xl">
-      <CardHeader className="bg-gradient-to-r from-primary to-amber-500 text-white">
+      <CardHeader className="bg-primary text-white">
         <div className="flex items-center gap-3">
           <Crown className="h-8 w-8" />
           <div>
@@ -126,8 +126,8 @@ export default function EpicVideoGenerator() {
       
       <CardContent className="p-6 space-y-6">
         {/* First AI Agents Banner */}
-        <div className="text-center p-4 bg-gradient-to-r from-amber-50 to-primary/10 border-2 border-amber-300 rounded-lg">
-          <Badge className="bg-gradient-to-r from-amber-500 to-primary text-white px-4 py-2 text-lg font-bold mb-2">
+        <div className="text-center p-4 bg-primary/5 border-2 border-primary/20 rounded-lg">
+          <Badge className="bg-primary text-white px-4 py-2 text-lg font-bold mb-2">
             ✨ {t('hero.first_ai_badge')} ✨
           </Badge>
           <p className="text-primary font-semibold">
@@ -258,7 +258,7 @@ export default function EpicVideoGenerator() {
             onClick={generateEpicVideo}
             disabled={isGenerating}
             size="lg"
-            className="bg-gradient-to-r from-amber-500 to-primary text-white px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all"
+            className="bg-primary hover:bg-primary/90 text-white px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all"
           >
             {isGenerating ? (
               <>

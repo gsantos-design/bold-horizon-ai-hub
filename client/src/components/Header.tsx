@@ -34,10 +34,10 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md border-b">
       {/* Announcement Banner */}
-      <div className="bg-gradient-to-r from-primary via-amber-500 to-primary text-white py-2 px-4 text-center relative overflow-hidden">
+      <div className="bg-gradient-to-r from-primary to-primary text-white py-2 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <Badge 
-          className="relative z-10 bg-white text-primary font-bold px-4 py-1 text-sm cursor-pointer hover:bg-amber-100 transition-colors"
+          className="relative z-10 bg-white text-primary font-bold px-4 py-1 text-sm cursor-pointer hover:bg-gray-50 transition-colors"
           onClick={handleAnnouncementClick}
         >
           {t('nav.announcement')}

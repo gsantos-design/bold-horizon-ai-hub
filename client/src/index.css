@@ -13,8 +13,8 @@
   --card-foreground: 215 100% 12%;
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --primary: 215 100% 12%; /* Deep Navy Blue (like the starry background) */
-  --primary-foreground: 43 100% 65%; /* Elegant Gold text on navy */
+  --primary: 215 100% 12%; /* Deep Navy Blue - Clean and Professional */
+  --primary-foreground: 0 0% 100%; /* Clean White text on navy - More readable */
   --secondary: 210 40% 96%; /* Light gray */
   --secondary-foreground: 215 100% 12%; /* Navy text */
   --accent: 210 40% 96%; /* Light gray accent */

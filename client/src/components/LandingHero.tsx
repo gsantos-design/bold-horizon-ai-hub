@@ -40,7 +40,7 @@ export default function LandingHero() {
           {/* First AI Agents Badge - Prominently Featured */}
           <motion.div className="text-center mb-8" {...fadeInUp}>
             <Badge 
-              className="mb-4 bg-gradient-to-r from-amber-500 to-primary text-white px-8 py-4 text-xl font-bold shadow-2xl cursor-pointer hover:shadow-3xl transition-all transform hover:scale-105 border-2 border-amber-300"
+              className="mb-4 bg-primary text-white px-8 py-4 text-xl font-bold shadow-2xl cursor-pointer hover:shadow-3xl transition-all transform hover:scale-105 border-2 border-primary"
               onClick={async () => {
                 await playSfx('celebration-stinger');
                 await playMusic('intro-theme');
@@ -54,7 +54,7 @@ export default function LandingHero() {
             
             <Button 
               size="lg"
-              className="bg-amber-500 hover:bg-amber-400 text-white px-8 py-4 text-lg font-bold shadow-lg mr-4 mb-4 md:mb-0"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-bold shadow-lg mr-4 mb-4 md:mb-0"
               onClick={async () => {
                 await playSfx('fanfare-success');
                 await playMusic('intro-theme');

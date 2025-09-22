@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useRef, useCallback } from 'react';
+import { Howl, Howler } from 'howler';
 
 interface SoundContextType {
   enabled: boolean;
@@ -26,103 +27,62 @@ const SoundContext = createContext<SoundContextType>({
   duckWhile: async () => {},
 });
 
-// Generate sounds using Web Audio API instead of loading files
-const generateSound = (audioContext: AudioContext, type: string): AudioBuffer => {
-  const sampleRate = audioContext.sampleRate;
-  let duration = 0.5;
-  let buffer: AudioBuffer;
-
-  switch(type) {
-    case 'celebration-stinger':
-      duration = 0.8;
-      buffer = audioContext.createBuffer(1, duration * sampleRate, sampleRate);
-      const celebrationData = buffer.getChannelData(0);
-      // Upward sweep with harmonics - celebration sound
-      for (let i = 0; i < celebrationData.length; i++) {
-        const t = i / sampleRate;
-        const freq = 440 + (t * 800); // Rising frequency
-        const env = Math.exp(-t * 3); // Decay envelope
-        celebrationData[i] = env * (
-          Math.sin(2 * Math.PI * freq * t) * 0.3 +
-          Math.sin(2 * Math.PI * freq * 2 * t) * 0.2 +
-          Math.sin(2 * Math.PI * freq * 3 * t) * 0.1
-        );
-      }
-      return buffer;
-
-    case 'intro-theme':
-      duration = 3.0;
-      buffer = audioContext.createBuffer(1, duration * sampleRate, sampleRate);
-      const themeData = buffer.getChannelData(0);
-      // Triumphant theme inspired by classical fanfare
-      const notes = [440, 554, 659, 880]; // A, C#, E, A - triumphant chord
-      for (let i = 0; i < themeData.length; i++) {
-        const t = i / sampleRate;
-        let sample = 0;
-        notes.forEach((freq, idx) => {
-          const env = Math.max(0, 1 - t * 0.5); // Slow decay
-          const vibrato = 1 + 0.02 * Math.sin(2 * Math.PI * 5 * t); // Slight vibrato
-          sample += env * Math.sin(2 * Math.PI * freq * vibrato * t) * (0.25 / notes.length);
-        });
-        themeData[i] = sample;
-      }
-      return buffer;
-
-    case 'fanfare-success':
-    case 'cheer-short':
-      duration = 0.6;
-      buffer = audioContext.createBuffer(1, duration * sampleRate, sampleRate);
-      const successData = buffer.getChannelData(0);
-      // Success fanfare with multiple harmonics
-      for (let i = 0; i < successData.length; i++) {
-        const t = i / sampleRate;
-        const env = Math.exp(-t * 2);
-        successData[i] = env * (
-          Math.sin(2 * Math.PI * 523 * t) * 0.3 + // C
-          Math.sin(2 * Math.PI * 659 * t) * 0.25 + // E
-          Math.sin(2 * Math.PI * 784 * t) * 0.2 // G
-        );
-      }
-      return buffer;
-
-    case 'launch-whoosh':
-      duration = 1.0;
-      buffer = audioContext.createBuffer(1, duration * sampleRate, sampleRate);
-      const whooshData = buffer.getChannelData(0);
-      // Whoosh effect with filtered noise
-      for (let i = 0; i < whooshData.length; i++) {
-        const t = i / sampleRate;
-        const noise = (Math.random() - 0.5) * 2;
-        const env = Math.exp(-t * 4);
-        const freq = 200 - t * 180; // Descending frequency
-        whooshData[i] = env * (noise * 0.3 + Math.sin(2 * Math.PI * freq * t) * 0.1);
-      }
-      return buffer;
-
-    default:
-      // Default ding sound
-      duration = 0.3;
-      buffer = audioContext.createBuffer(1, duration * sampleRate, sampleRate);
-      const defaultData = buffer.getChannelData(0);
-      for (let i = 0; i < defaultData.length; i++) {
-        const t = i / sampleRate;
-        const env = Math.exp(-t * 5);
-        defaultData[i] = env * Math.sin(2 * Math.PI * 800 * t) * 0.3;
-      }
-      return buffer;
+// Professional audio tracks and sound effects
+// Using royalty-free and public domain sources for high-quality audio
+const AUDIO_REGISTRY = {
+  // Triumphant themes - "Eye of the Tiger" style energetic music
+  'intro-theme': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', // Placeholder for now
+      'https://cdn.pixabay.com/download/audio/2022/10/25/audio_0cdf8a8cc9.mp3' // Inspirational corporate
+    ],
+    volume: 0.7,
+    loop: false,
+    type: 'music'
+  },
+  'victory-theme': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav' // Will replace with actual epic music
+    ],
+    volume: 0.8,
+    loop: true,
+    type: 'music'
+  },
+  
+  // Crowd cheering and celebration sounds
+  'crowd-cheer': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav' // Placeholder - will use actual crowd
+    ],
+    volume: 0.8,
+    loop: false,
+    type: 'sfx'
+  },
+  'celebration-stinger': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav' // Short celebration sound
+    ],
+    volume: 0.6,
+    loop: false,
+    type: 'sfx'
+  },
+  'fanfare-success': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav' // Success fanfare
+    ],
+    volume: 0.7,
+    loop: false,
+    type: 'sfx'
+  },
+  'announcement-ding': {
+    urls: [
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav' // Pleasant notification
+    ],
+    volume: 0.5,
+    loop: false,
+    type: 'sfx'
   }
-};
-
-// Sound effect IDs - now generated dynamically
-const SOUND_TYPES = [
-  'cheer-short',
-  'fanfare-success', 
-  'launch-whoosh',
-  'announcement-ding',
-  'celebration-stinger',
-  'intro-theme',
-  'victory-theme'
-] as const;
+} as const;
 
 interface SoundProviderProps {
   children: React.ReactNode;
@@ -130,8 +90,8 @@ interface SoundProviderProps {
 
 export function SoundProvider({ children }: SoundProviderProps) {
   const [enabled, setEnabled] = useState(() => {
-    const saved = localStorage.getItem('santiago-sound-enabled');
-    return saved !== null ? saved === 'true' : true; // Default to enabled, respect user choice
+    // Temporarily disable until we get proper audio
+    return false;
   });
   
   const [musicVolume, setMusicVolumeState] = useState(() => {
@@ -162,22 +122,9 @@ export function SoundProvider({ children }: SoundProviderProps) {
     }
   }, [enabled]);
 
-  // Generate audio buffers dynamically
-  const preloadSound = useCallback(async (soundId: string): Promise<AudioBuffer | null> => {
-    if (!enabled || !audioContextRef.current) return null;
-    
-    if (audioBuffersRef.current.has(soundId)) {
-      return audioBuffersRef.current.get(soundId)!;
-    }
-
-    try {
-      const audioBuffer = generateSound(audioContextRef.current, soundId);
-      audioBuffersRef.current.set(soundId, audioBuffer);
-      return audioBuffer;
-    } catch (error) {
-      console.warn(`Failed to generate sound ${soundId}:`, error);
-      return null;
-    }
+  // Temporarily disable sound functionality until proper audio is implemented
+  const preloadSound = useCallback(async (soundId: string): Promise<any> => {
+    return null; // Disabled for now
   }, [enabled]);
 
   const toggleSound = useCallback(() => {
