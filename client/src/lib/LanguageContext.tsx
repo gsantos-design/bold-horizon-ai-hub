@@ -59,7 +59,6 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Santiago Team - World Financial Group',
     'hero.first_ai_badge': '🚀 FIRST AI Agents Built for the Latino Community',
-    'hero.first_ai_platform': '💎 First AI platform for Spanish-speaking members in the WFG community',
     'hero.first_ai_subtitle': 'Bilingual AI that accelerates success for Spanish-speaking professionals and families',
     'hero.title_part1': 'Protecting Those Who',
     'hero.title_part2': 'Protect Others',
@@ -714,7 +713,6 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Equipo Santiago - World Financial Group',
     'hero.first_ai_badge': '🚀 PRIMEROS Agentes de IA Creados para la Comunidad Latina',
-    'hero.first_ai_platform': '💎 Primera plataforma de IA para miembros que hablan español en la comunidad WFG',
     'hero.first_ai_subtitle': 'IA bilingüe que acelera el éxito de profesionales y familias de idioma español',
     'hero.title_part1': 'Protegiendo a Quienes',
     'hero.title_part2': 'Protegen a Otros',
