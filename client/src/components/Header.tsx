@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages, Calendar, Thermometer, BookOpen, Sparkles } from "lucide-react";
+import { Menu, X, BarChart3, Users, Settings, Star, Trophy, Bot, Target, Languages, Calendar, Thermometer, BookOpen, Sparkles, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -85,6 +85,13 @@ export default function Header() {
               </Button>
             </SafeLink>
             
+            <SafeLink href="/epic-video">
+              <Button variant="ghost" size="sm" className="text-primary hover:text-accent hover:bg-secondary/10 font-semibold">
+                <Video className="h-4 w-4 mr-1" />
+                <span>Epic Video</span>
+              </Button>
+            </SafeLink>
+            
             <SafeLink href="/lead-engine">
               <Button variant="ghost" size="sm">
                 <BarChart3 className="h-4 w-4 mr-1" />
@@ -137,6 +144,12 @@ export default function Header() {
             <SafeLink href="/ai-automation">
               <Button variant="ghost" size="sm" className="text-primary" title={t('nav.ai_tools')}>
                 <Bot className="h-4 w-4" />
+              </Button>
+            </SafeLink>
+            
+            <SafeLink href="/epic-video">
+              <Button variant="ghost" size="sm" className="text-primary" title="Epic Video Generator">
+                <Video className="h-4 w-4" />
               </Button>
             </SafeLink>
             

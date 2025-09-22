@@ -251,7 +251,7 @@ export default function EpicVideoGenerator() {
             <Button 
               type="button"
               variant="outline"
-              onClick={() => setRequest({...request, videoUrl: '/attached_assets/Untitled video_1758504215243.mp4'})}
+              onClick={() => setRequest({...request, videoUrl: '/assets/video/epic-video.mp4'})}
               className="text-sm"
             >
               🎬 Use Your Uploaded Video

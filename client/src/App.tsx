@@ -24,6 +24,7 @@ import TooltipDemo from "@/pages/TooltipDemo";
 import LanguageHeatmap from "@/pages/LanguageHeatmap";
 import Documentation from "@/pages/Documentation";
 import CustomAI from "@/pages/CustomAI";
+import EpicVideo from "@/pages/EpicVideo";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { SoundProvider } from "@/lib/SoundContext";
 import { ProgressProvider } from "@/lib/ProgressContext";
@@ -54,6 +55,8 @@ function AppRouter() {
       <Route path="/admin/owners" component={AdminOwners} />
       <Route path="/docs" component={Documentation} />
       <Route path="/custom-ai" component={CustomAI} />
+      <Route path="/epic-video" component={EpicVideo} />
+      <Route path="/ai-automation/epic-video" component={EpicVideo} />
       <Route component={NotFound} />
     </Switch>
   );

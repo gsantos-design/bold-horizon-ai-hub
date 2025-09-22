@@ -161,7 +161,7 @@ export default function AiAutomationHub() {
               {/* Overview Tab */}
               <TabsContent value="overview" className="mt-0">
                 <AIAutomationDashboard />
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 mt-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 mt-8">
                   {/* AI Phone Calls */}
                   <Card className="border-2 border-primary/20 shadow-xl">
                     <CardHeader className="bg-primary text-white">
@@ -247,6 +247,59 @@ export default function AiAutomationHub() {
                             <li>• Educational content delivery</li>
                             <li>• Customer onboarding sequences</li>
                           </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Epic Video Generator - NEW! */}
+                  <Card className="border-2 border-amber-500 shadow-xl relative overflow-hidden">
+                    <div className="absolute top-2 right-2 z-10">
+                      <Badge className="bg-amber-500 text-white font-bold">NEW!</Badge>
+                    </div>
+                    <CardHeader className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+                      <CardTitle className="flex items-center text-xl">
+                        <FileVideo className="h-6 w-6 mr-3" />
+                        Epic Video Generator
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold">Platform Integration:</span>
+                          <Badge className="bg-amber-500/10 text-amber-600">Google Veo + Custom</Badge>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex items-center">
+                            <Camera className="h-4 w-4 text-amber-600 mr-3" />
+                            <span className="text-sm">Epic entrance videos for WFG presentations</span>
+                          </div>
+                          <div className="flex items-center">
+                            <Volume2 className="h-4 w-4 text-amber-600 mr-3" />
+                            <span className="text-sm">Triumphant music & crowd cheering</span>
+                          </div>
+                          <div className="flex items-center">
+                            <Star className="h-4 w-4 text-amber-600 mr-3" />
+                            <span className="text-sm">Authentic Spanish/Latino community themes</span>
+                          </div>
+                          <div className="flex items-center">
+                            <Target className="h-4 w-4 text-amber-600 mr-3" />
+                            <span className="text-sm">Perfect for billion-dollar presentations</span>
+                          </div>
+                        </div>
+                        <div className="bg-amber-500/5 rounded-lg p-4">
+                          <h4 className="font-semibold text-amber-600 mb-2">Your Uploaded Video Ready!</h4>
+                          <p className="text-sm text-amber-700 mb-3">
+                            Your epic video is loaded and ready for integration. Create more with Google Veo!
+                          </p>
+                          <Button 
+                            onClick={() => window.location.href = '/epic-video'} 
+                            className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                            data-testid="button-epic-video"
+                          >
+                            <FileVideo className="h-4 w-4 mr-2" />
+                            Launch Epic Video Generator
+                          </Button>
                         </div>
                       </div>
                     </CardContent>
