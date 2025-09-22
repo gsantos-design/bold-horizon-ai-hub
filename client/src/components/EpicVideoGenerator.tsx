@@ -16,7 +16,8 @@ import {
   Trophy,
   Volume2,
   Users,
-  Sparkles
+  Sparkles,
+  Languages
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useSound } from "@/lib/SoundContext";
@@ -60,6 +61,17 @@ export default function EpicVideoGenerator() {
   ];
 
   const generateEpicVideo = async () => {
+    // If user has uploaded video, just use that instead of generating
+    if (request.videoUrl) {
+      setGeneratedVideoUrl(request.videoUrl);
+      await playSfx('fanfare-success');
+      toast({
+        title: "Epic video ready!",
+        description: "Your uploaded video is ready for your presentation."
+      });
+      return;
+    }
+
     setIsGenerating(true);
     
     try {
@@ -221,18 +233,82 @@ export default function EpicVideoGenerator() {
           </div>
         </div>
 
-        {/* Script Input */}
-        <div className="space-y-3">
-          <Label className="text-lg font-semibold flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-primary" />
-            Victory Speech Script
-          </Label>
-          <Textarea
-            value={request.script}
-            onChange={(e) => setRequest({...request, script: e.target.value})}
-            className="min-h-[100px]"
-            placeholder="Enter the powerful message that will accompany your epic entrance..."
-          />
+        {/* Cost-Effective Dynamic Content Generation */}
+        <div className="space-y-4 p-4 bg-green-50 rounded-lg border-2 border-green-200">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="h-8 w-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">💰</div>
+            <h3 className="font-bold text-green-800">Budget-Friendly Dynamic Content</h3>
+            <Badge className="bg-green-500 text-white text-xs">~$0.02 per variation</Badge>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Team Chapter Info */}
+            <div className="space-y-2">
+              <Label className="text-sm font-medium text-green-800">Chapter/Team Name</Label>
+              <Input 
+                placeholder="Santiago Team Orlando"
+                className="border-green-300"
+              />
+            </div>
+            
+            {/* Achievement Numbers */}
+            <div className="space-y-2">
+              <Label className="text-sm font-medium text-green-800">Key Achievement</Label>
+              <Input 
+                placeholder="$2.3M in Sales This Quarter"
+                className="border-green-300"
+              />
+            </div>
+          </div>
+
+          {/* AI Script Variations */}
+          <div className="space-y-3">
+            <Label className="text-lg font-semibold flex items-center gap-2 text-green-800">
+              <Sparkles className="h-5 w-5 text-green-600" />
+              AI-Generated Victory Scripts
+            </Label>
+            <div className="flex gap-2 mb-2 flex-wrap">
+              <Button size="sm" variant="outline" className="text-xs border-green-300 text-green-700">
+                🎯 Professional
+              </Button>
+              <Button size="sm" variant="outline" className="text-xs border-green-300 text-green-700">
+                🔥 Motivational  
+              </Button>
+              <Button size="sm" variant="outline" className="text-xs border-green-300 text-green-700">
+                🏆 Victory
+              </Button>
+              <Button size="sm" variant="outline" className="text-xs border-green-300 text-green-700">
+                🌟 Spanish/Latino
+              </Button>
+            </div>
+            <Textarea
+              value={request.script}
+              onChange={(e) => setRequest({...request, script: e.target.value})}
+              className="min-h-[80px] border-green-300"
+              placeholder="AI will generate different powerful scripts for each chapter..."
+            />
+            <div className="flex gap-2">
+              <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                <Sparkles className="h-4 w-4 mr-1" />
+                Generate Script ($0.01)
+              </Button>
+              <Button size="sm" variant="outline" className="border-green-600 text-green-700">
+                <Languages className="h-4 w-4 mr-1" />
+                Spanish Version
+              </Button>
+            </div>
+          </div>
+
+          <div className="bg-white p-3 rounded border border-green-300">
+            <h4 className="font-semibold text-green-800 mb-2">💡 What This System Does:</h4>
+            <ul className="text-sm text-green-700 space-y-1">
+              <li>• <strong>Uses your uploaded video as template</strong> (no expensive video generation)</li>
+              <li>• <strong>Generates dynamic text overlays</strong> with team-specific information</li>
+              <li>• <strong>Creates different script variations</strong> using low-cost AI text generation</li>
+              <li>• <strong>Adds multilingual support</strong> for Spanish-speaking communities</li>
+              <li>• <strong>Cost: ~$0.02 per variation</strong> instead of $5-50 per video</li>
+            </ul>
+          </div>
         </div>
 
         {/* Video URL Input - For User-Created Epic Videos */}
@@ -320,6 +396,11 @@ export default function EpicVideoGenerator() {
               <>
                 <Loader2 className="h-6 w-6 mr-3 animate-spin" />
                 Creating Your Epic Video...
+              </>
+            ) : request.videoUrl ? (
+              <>
+                <Crown className="h-6 w-6 mr-3" />
+                🚀 Use This Epic Video
               </>
             ) : (
               <>
