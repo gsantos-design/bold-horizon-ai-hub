@@ -28,6 +28,7 @@ interface VideoGenerationRequest {
   music: 'zarathustra' | 'william_tell' | 'pomp_circumstance' | 'custom_fanfare';
   script: string;
   crowdLevel: 'moderate' | 'loud' | 'thunderous';
+  videoUrl?: string; // User-created Veo video URL
 }
 
 export default function EpicVideoGenerator() {
@@ -232,6 +233,23 @@ export default function EpicVideoGenerator() {
             className="min-h-[100px]"
             placeholder="Enter the powerful message that will accompany your epic entrance..."
           />
+        </div>
+
+        {/* Video URL Input - For User-Created Epic Videos */}
+        <div className="space-y-3">
+          <Label className="text-lg font-semibold flex items-center gap-2">
+            <Video className="h-5 w-5 text-primary" />
+            Your Epic Veo Video URL
+          </Label>
+          <Input
+            placeholder="Paste your epic Veo-generated video URL here..."
+            className="w-full text-lg py-3"
+            value={request.videoUrl || ''}
+            onChange={(e) => setRequest({...request, videoUrl: e.target.value})}
+          />
+          <p className="text-sm text-primary font-semibold">
+            🎬 Create your Spanish community video with Veo + epic music, then paste URL here!
+          </p>
         </div>
 
         {/* Crowd Level */}
