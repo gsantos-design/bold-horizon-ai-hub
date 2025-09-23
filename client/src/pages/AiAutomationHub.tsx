@@ -66,7 +66,7 @@ export default function AiAutomationHub() {
                 content="Transform your Santiago Team's lead generation with cutting-edge AI technology. Scale from dozens to thousands of personalized prospect interactions daily while maintaining the authentic touch of Nolly and Pablo Santiago."
                 title="🤖 Revolutionary AI Scaling"
               >
-                <Badge className="mb-4 bg-amber-500/90 text-white px-6 py-2 text-sm cursor-help font-semibold shadow-lg">
+                <Badge className="mb-4 bg-slate-600 text-white px-6 py-2 text-sm cursor-help font-semibold shadow-lg">
                   🤖 AI Automation Hub
                 </Badge>
               </AITooltip>
@@ -83,7 +83,7 @@ export default function AiAutomationHub() {
                   content="Launch your first AI automation campaign targeting 401k rollover prospects, high-yield savers, or entrepreneurs. Expected results: 8-12% conversion rate, 200+ appointments monthly, $2.5M+ pipeline value."
                   title="🚀 Campaign Launch"
                 >
-                  <Button size="lg" className="bg-amber-400 text-primary hover:bg-amber-300 px-8 font-bold border-2 border-amber-400 shadow-lg">
+                  <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-600 px-8 font-bold border-2 border-slate-700 shadow-lg">
                     <PlayCircle className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-primary">Start AI Campaign</span>
                   </Button>
@@ -253,11 +253,11 @@ export default function AiAutomationHub() {
                   </Card>
 
                   {/* Epic Video Generator - NEW! */}
-                  <Card className="border-2 border-amber-500 shadow-xl relative overflow-hidden">
+                  <Card className="border-2 border-slate-600 shadow-xl relative overflow-hidden">
                     <div className="absolute top-2 right-2 z-10">
-                      <Badge className="bg-amber-500 text-white font-bold">NEW!</Badge>
+                      <Badge className="bg-slate-600 text-white font-bold">NEW!</Badge>
                     </div>
-                    <CardHeader className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+                    <CardHeader className="bg-gradient-to-r from-slate-700 to-slate-600 text-white">
                       <CardTitle className="flex items-center text-xl">
                         <FileVideo className="h-6 w-6 mr-3" />
                         Epic Video Generator
@@ -267,34 +267,34 @@ export default function AiAutomationHub() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold">Platform Integration:</span>
-                          <Badge className="bg-amber-500/10 text-amber-600">Google Veo + Custom</Badge>
+                          <Badge className="bg-slate-100 text-slate-700">Google Veo + Custom</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
-                            <Camera className="h-4 w-4 text-amber-600 mr-3" />
+                            <Camera className="h-4 w-4 text-slate-600 mr-3" />
                             <span className="text-sm">Epic entrance videos for WFG presentations</span>
                           </div>
                           <div className="flex items-center">
-                            <Volume2 className="h-4 w-4 text-amber-600 mr-3" />
+                            <Volume2 className="h-4 w-4 text-slate-600 mr-3" />
                             <span className="text-sm">Triumphant music & crowd cheering</span>
                           </div>
                           <div className="flex items-center">
-                            <Star className="h-4 w-4 text-amber-600 mr-3" />
+                            <Star className="h-4 w-4 text-slate-600 mr-3" />
                             <span className="text-sm">Authentic Spanish/Latino community themes</span>
                           </div>
                           <div className="flex items-center">
-                            <Target className="h-4 w-4 text-amber-600 mr-3" />
+                            <Target className="h-4 w-4 text-slate-600 mr-3" />
                             <span className="text-sm">Perfect for billion-dollar presentations</span>
                           </div>
                         </div>
-                        <div className="bg-amber-500/5 rounded-lg p-4">
-                          <h4 className="font-semibold text-amber-600 mb-2">Your Uploaded Video Ready!</h4>
-                          <p className="text-sm text-amber-700 mb-3">
+                        <div className="bg-slate-50 rounded-lg p-4">
+                          <h4 className="font-semibold text-slate-700 mb-2">Your Uploaded Video Ready!</h4>
+                          <p className="text-sm text-slate-600 mb-3">
                             Your epic video is loaded and ready for integration. Create more with Google Veo!
                           </p>
                           <Button 
                             onClick={() => window.location.href = '/epic-video'} 
-                            className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                            className="w-full bg-slate-700 hover:bg-slate-600 text-white"
                             data-testid="button-epic-video"
                           >
                             <FileVideo className="h-4 w-4 mr-2" />
