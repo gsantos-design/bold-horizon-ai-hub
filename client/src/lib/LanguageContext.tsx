@@ -590,6 +590,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.submit': 'Submit',
     'contact.success': 'Message sent successfully!',
     
+    // Money Matters Form
+    'money_matters.title': 'Download Money Matters',
+    'money_matters.description': 'An introduction to WFGIA and the key concepts that can help you build a solid financial foundation. Learn how WFG can help you and anticipate and overcome the challenges in saving for your future.',
+    'money_matters.first_name': 'First Name*',
+    'money_matters.last_name': 'Last Name*',
+    'money_matters.email': 'Email Address*',
+    'money_matters.mobile': 'Mobile',
+    'money_matters.download_now': 'Download Now',
+    'money_matters.privacy_statement': 'Online Privacy Statement',
+    
     // Footer Legacy (keeping for compatibility)
     'footer.rights': 'All rights reserved',
     'footer.legacy_disclaimer': 'This website is for recruitment purposes only and is not an offer of securities or insurance products.',
@@ -1217,6 +1227,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.interest': 'Interés',
     'contact.submit': 'Enviar',
     'contact.success': '¡Mensaje enviado con éxito!',
+    
+    // Money Matters Form - Spanish
+    'money_matters.title': 'Descargar Money Matters',
+    'money_matters.description': 'Una introducción a WFGIA y los conceptos clave que pueden ayudarte a construir una base financiera sólida. Aprende cómo WFG puede ayudarte y anticipar y superar los desafíos en el ahorro para tu futuro.',
+    'money_matters.first_name': 'Nombre*',
+    'money_matters.last_name': 'Apellido*',
+    'money_matters.email': 'Dirección de Correo Electrónico*',
+    'money_matters.mobile': 'Móvil',
+    'money_matters.download_now': 'Descargar Ahora',
+    'money_matters.privacy_statement': 'Declaración de Privacidad en Línea',
     
     // Footer Legacy (keeping for compatibility) - Spanish
     'footer.rights': 'Todos los derechos reservados',

@@ -66,9 +66,9 @@ export default function FinancialIndependence() {
                   alt="Money Matters Brochure" 
                   className="w-32 h-40 object-cover mx-auto mb-4"
                 />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Download Money Matters</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('money_matters.title')}</h3>
                 <p className="text-gray-600 text-sm">
-                  An introduction to WFGIA and the key concepts that can help you build a solid financial foundation. Learn how WFG can help you and anticipate and overcome the challenges in saving for your future.
+                  {t('money_matters.description')}
                 </p>
               </div>
 
@@ -76,7 +76,7 @@ export default function FinancialIndependence() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
-                      First Name*
+                      {t('money_matters.first_name')}
                     </Label>
                     <Input
                       id="firstName"
@@ -89,7 +89,7 @@ export default function FinancialIndependence() {
                   </div>
                   <div>
                     <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
-                      Last Name*
+                      {t('money_matters.last_name')}
                     </Label>
                     <Input
                       id="lastName"
@@ -104,7 +104,7 @@ export default function FinancialIndependence() {
                 
                 <div>
                   <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Email Address*
+                    {t('money_matters.email')}
                   </Label>
                   <Input
                     id="email"
@@ -118,7 +118,7 @@ export default function FinancialIndependence() {
                 
                 <div>
                   <Label htmlFor="mobile" className="text-sm font-medium text-gray-700">
-                    Mobile
+                    {t('money_matters.mobile')}
                   </Label>
                   <Input
                     id="mobile"
@@ -133,12 +133,12 @@ export default function FinancialIndependence() {
                   type="submit" 
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
                 >
-                  Download Now
+                  {t('money_matters.download_now')}
                 </Button>
                 
                 <p className="text-xs text-gray-500 text-center">
                   <a href="https://www.worldfinancialgroup.com/legal/privacy-policy" className="text-blue-600 hover:underline">
-                    Online Privacy Statement
+                    {t('money_matters.privacy_statement')}
                   </a>
                 </p>
               </form>
