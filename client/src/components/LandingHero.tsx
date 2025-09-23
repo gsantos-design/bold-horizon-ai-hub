@@ -21,7 +21,7 @@ import { useSound } from '@/lib/SoundContext';
 import { DictionaryTerm } from '@/components/TooltipDictionary';
 
 // Import images directly
-import newTeamPhoto from '@assets/IMG_2259_1756309198291.jpeg';
+import newTeamPhoto from '@assets/IMG_1251_1758671838798.jpg';
 
 export default function LandingHero() {
   const { t } = useLanguage();
