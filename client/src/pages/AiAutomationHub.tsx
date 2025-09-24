@@ -239,12 +239,12 @@ export default function AiAutomationHub() {
                           </div>
                         </div>
                         <div className="bg-blue-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-blue-800 mb-2">Perfect For:</h4>
+                          <h4 className="font-semibold text-blue-800 mb-2">{t('ai.perfect_for')}</h4>
                           <ul className="text-sm text-blue-700 space-y-1">
-                            <li>• Email campaign personalization</li>
-                            <li>• LinkedIn outreach videos</li>
-                            <li>• Educational content delivery</li>
-                            <li>• Customer onboarding sequences</li>
+                            <li>• {t('ai.email_personalization')}</li>
+                            <li>• {t('ai.linkedin_videos')}</li>
+                            <li>• {t('ai.educational_content')}</li>
+                            <li>• {t('ai.onboarding_sequences')}</li>
                           </ul>
                         </div>
                       </div>
@@ -259,7 +259,7 @@ export default function AiAutomationHub() {
                     <CardHeader className="bg-gradient-to-r from-slate-700 to-slate-600 text-white">
                       <CardTitle className="flex items-center text-xl">
                         <FileVideo className="h-6 w-6 mr-3" />
-                        Epic Video Generator
+                        {t('ai.epic_video_title')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6">
@@ -271,25 +271,25 @@ export default function AiAutomationHub() {
                         <div className="space-y-3">
                           <div className="flex items-center">
                             <Camera className="h-4 w-4 text-slate-600 mr-3" />
-                            <span className="text-sm">Epic entrance videos for WFG presentations</span>
+                            <span className="text-sm">{t('ai.epic_entrance_videos')}</span>
                           </div>
                           <div className="flex items-center">
                             <Volume2 className="h-4 w-4 text-slate-600 mr-3" />
-                            <span className="text-sm">Triumphant music & crowd cheering</span>
+                            <span className="text-sm">{t('ai.triumphant_music')}</span>
                           </div>
                           <div className="flex items-center">
                             <Star className="h-4 w-4 text-slate-600 mr-3" />
-                            <span className="text-sm">Authentic Spanish/Latino community themes</span>
+                            <span className="text-sm">{t('ai.spanish_themes')}</span>
                           </div>
                           <div className="flex items-center">
                             <Target className="h-4 w-4 text-slate-600 mr-3" />
-                            <span className="text-sm">Perfect for billion-dollar presentations</span>
+                            <span className="text-sm">{t('ai.billion_presentations')}</span>
                           </div>
                         </div>
                         <div className="bg-slate-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-slate-700 mb-2">Your Uploaded Video Ready!</h4>
+                          <h4 className="font-semibold text-slate-700 mb-2">{t('ai.video_ready')}</h4>
                           <p className="text-sm text-slate-600 mb-3">
-                            Your epic video is loaded and ready for integration. Create more with Google Veo!
+                            {t('ai.video_ready_desc')}
                           </p>
                           <Button 
                             onClick={() => window.location.href = '/epic-video'} 
@@ -297,7 +297,7 @@ export default function AiAutomationHub() {
                             data-testid="button-epic-video"
                           >
                             <FileVideo className="h-4 w-4 mr-2" />
-                            Launch Epic Video Generator
+                            {t('ai.launch_epic_generator')}
                           </Button>
                         </div>
                       </div>
@@ -310,7 +310,7 @@ export default function AiAutomationHub() {
                   <CardHeader className="bg-primary text-white">
                     <CardTitle className="flex items-center text-xl">
                       <Settings className="h-6 w-6 mr-3" />
-                      Implementation Roadmap
+                      {t('ai.implementation_roadmap')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
@@ -319,22 +319,22 @@ export default function AiAutomationHub() {
                         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                           <span className="text-2xl font-bold text-white">1</span>
                         </div>
-                        <h3 className="font-bold text-lg mb-2">Voice & Video Training</h3>
-                        <p className="text-sm text-gray-600">Collect 2-minute voice samples and video training footage from Nolly and Pablo Santiago for AI cloning</p>
+                        <h3 className="font-bold text-lg mb-2">{t('ai.voice_video_training')}</h3>
+                        <p className="text-sm text-gray-600">{t('ai.voice_video_training_desc')}</p>
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                           <span className="text-2xl font-bold text-white">2</span>
                         </div>
-                        <h3 className="font-bold text-lg mb-2">API Integration</h3>
-                        <p className="text-sm text-gray-600">Integrate Google AI voice, video, and analytics APIs into the existing Santiago Lead Engine</p>
+                        <h3 className="font-bold text-lg mb-2">{t('ai.api_integration')}</h3>
+                        <p className="text-sm text-gray-600">{t('ai.api_integration_desc')}</p>
                       </div>
                       <div className="text-center">
                         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                           <span className="text-2xl font-bold text-white">3</span>
                         </div>
-                        <h3 className="font-bold text-lg mb-2">Campaign Launch</h3>
-                        <p className="text-sm text-gray-600">Deploy AI automation for Florida and New York market targeting with personalized outreach</p>
+                        <h3 className="font-bold text-lg mb-2">{t('ai.campaign_launch')}</h3>
+                        <p className="text-sm text-gray-600">{t('ai.campaign_launch_desc')}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -349,12 +349,12 @@ export default function AiAutomationHub() {
                       <CardHeader>
                         <CardTitle className="flex items-center">
                           <Mic className="h-5 w-5 mr-2" />
-                          Voice Clone Configuration
+                          {t('ai.voice_clone_config')}
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div>
-                          <Label>Select Santiago Team Member</Label>
+                          <Label>{t('ai.select_team_member')}</Label>
                           <Select>
                             <SelectTrigger>
                               <SelectValue placeholder="Choose voice to clone" />
@@ -367,7 +367,7 @@ export default function AiAutomationHub() {
                           </Select>
                         </div>
                         <div>
-                          <Label htmlFor="phone-script">Call Script Template</Label>
+                          <Label htmlFor="phone-script">{t('ai.call_script_template')}</Label>
                           <Textarea 
                             id="phone-script"
                             placeholder="Hi [PROSPECT_NAME], this is Nolly Santiago from the Santiago Team at World Financial Group. I'm calling because you expressed interest in learning about our high-yield savings alternatives..."
@@ -485,12 +485,12 @@ export default function AiAutomationHub() {
                       <CardHeader>
                         <CardTitle className="flex items-center">
                           <Camera className="h-5 w-5 mr-2" />
-                          Avatar Clone Configuration
+                          {t('ai.avatar_clone_config')}
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div>
-                          <Label>Select Santiago Team Member</Label>
+                          <Label>{t('ai.select_team_member')}</Label>
                           <Select>
                             <SelectTrigger>
                               <SelectValue placeholder="Choose avatar to clone" />
@@ -503,7 +503,7 @@ export default function AiAutomationHub() {
                           </Select>
                         </div>
                         <div>
-                          <Label htmlFor="video-script">Video Script Template</Label>
+                          <Label htmlFor="video-script">{t('ai.video_script_template')}</Label>
                           <Textarea 
                             id="video-script"
                             placeholder="Hi [PROSPECT_NAME], I'm Nolly Santiago, and I wanted to personally reach out to you about an incredible opportunity with our Santiago Team. Based on your background in [INDUSTRY], I believe you'd be perfect for our entrepreneur program..."
@@ -606,7 +606,7 @@ export default function AiAutomationHub() {
                         </div>
                         <Button className="w-full">
                           <FileVideo className="h-4 w-4 mr-2" />
-                          Start Video AI Setup
+                          {t('ai.start_video_setup')}
                         </Button>
                       </CardContent>
                     </Card>
