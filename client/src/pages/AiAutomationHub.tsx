@@ -45,6 +45,7 @@ export default function AiAutomationHub() {
   const [phoneScript, setPhoneScript] = useState("");
   const [videoScript, setVideoScript] = useState("");
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -67,16 +68,14 @@ export default function AiAutomationHub() {
                 title="🤖 Revolutionary AI Scaling"
               >
                 <Badge className="mb-4 bg-slate-600 text-white px-6 py-2 text-sm cursor-help font-semibold shadow-lg">
-                  🤖 AI Automation Hub
+                  {t('ai.hero_badge')}
                 </Badge>
               </AITooltip>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                AI Phone Calls &<br/>
-                Video Avatars
+                {t('ai.hero_title')}
               </h1>
               <p className="text-xl mb-8 opacity-90 leading-relaxed">
-                Scale your Santiago Team outreach with AI-powered phone calls and personalized video messages 
-                featuring voice and video clones of Nolly and Pablo Santiago.
+                {t('ai.hero_subtitle')}
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
                 <TipTooltip 
@@ -85,7 +84,7 @@ export default function AiAutomationHub() {
                 >
                   <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-600 px-8 font-bold border-2 border-slate-700 shadow-lg">
                     <PlayCircle className="h-5 w-5 mr-2 text-primary" />
-                    <span className="text-primary">Start AI Campaign</span>
+                    <span className="text-primary">{t('ai.start_campaign')}</span>
                   </Button>
                 </TipTooltip>
                 
@@ -95,7 +94,7 @@ export default function AiAutomationHub() {
                 >
                   <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 font-bold bg-transparent">
                     <Settings className="h-5 w-5 mr-2" />
-                    <span>Configuration</span>
+                    <span>{t('ai.configuration')}</span>
                   </Button>
                 </HelpTooltip>
               </div>
@@ -112,7 +111,7 @@ export default function AiAutomationHub() {
                       className="border-2 border-white/70 text-white hover:bg-white/10 font-bold bg-transparent"
                     >
                       <PlayCircle className="h-4 w-4 mr-2 text-white" />
-                      <span className="text-white">Take AI Automation Tour</span>
+                      <span className="text-white">{t('ai.take_tour')}</span>
                     </Button>
                   </TipTooltip>
                 </div>
@@ -132,28 +131,28 @@ export default function AiAutomationHub() {
                     className="flex flex-col items-center gap-2 py-4 px-2"
                   >
                     <Eye className="h-5 w-5" />
-                    <span className="text-xs md:text-sm">Overview</span>
+                    <span className="text-xs md:text-sm">{t('ai.tab_overview')}</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="phone-ai" 
                     className="flex flex-col items-center gap-2 py-4 px-2"
                   >
                     <Phone className="h-5 w-5" />
-                    <span className="text-xs md:text-sm">AI Calls</span>
+                    <span className="text-xs md:text-sm">{t('ai.tab_calls')}</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="video-ai" 
                     className="flex flex-col items-center gap-2 py-4 px-2"
                   >
                     <Video className="h-5 w-5" />
-                    <span className="text-xs md:text-sm">AI Videos</span>
+                    <span className="text-xs md:text-sm">{t('ai.tab_videos')}</span>
                   </TabsTrigger>
                   <TabsTrigger 
                     value="campaigns" 
                     className="flex flex-col items-center gap-2 py-4 px-2"
                   >
                     <Zap className="h-5 w-5" />
-                    <span className="text-xs md:text-sm">Campaigns</span>
+                    <span className="text-xs md:text-sm">{t('ai.tab_campaigns')}</span>
                   </TabsTrigger>
                 </TabsList>
               </div>
@@ -167,40 +166,40 @@ export default function AiAutomationHub() {
                     <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center text-xl">
                         <Phone className="h-6 w-6 mr-3" />
-                        AI Phone Calls with Voice Cloning
+                        {t('ai.phone_title')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="font-semibold">Platform Integration:</span>
+                          <span className="font-semibold">{t('ai.platform_integration')}</span>
                           <Badge className="bg-primary/10 text-primary">Google AI Voice</Badge>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-center">
                             <Volume2 className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Voice clones of Nolly & Pablo Santiago</span>
+                            <span className="text-sm">{t('ai.voice_clones')}</span>
                           </div>
                           <div className="flex items-center">
                             <Clock className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Sub-500ms response latency</span>
+                            <span className="text-sm">{t('ai.response_latency')}</span>
                           </div>
                           <div className="flex items-center">
                             <Users className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Thousands of concurrent calls</span>
+                            <span className="text-sm">{t('ai.concurrent_calls')}</span>
                           </div>
                           <div className="flex items-center">
                             <Target className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Lead qualification & appointment booking</span>
+                            <span className="text-sm">{t('ai.lead_qualification')}</span>
                           </div>
                         </div>
                         <div className="bg-primary/5 rounded-lg p-4">
-                          <h4 className="font-semibold text-primary mb-2">Perfect For:</h4>
+                          <h4 className="font-semibold text-primary mb-2">{t('ai.perfect_for')}</h4>
                           <ul className="text-sm text-primary/80 space-y-1">
-                            <li>• 401k rollover prospect outreach</li>
-                            <li>• High-yield account lead follow-up</li>
-                            <li>• Entrepreneur income opportunity calls</li>
-                            <li>• Appointment confirmation & reminders</li>
+                            <li>• {t('ai.rollover_outreach')}</li>
+                            <li>• {t('ai.high_yield_followup')}</li>
+                            <li>• {t('ai.entrepreneur_calls')}</li>
+                            <li>• {t('ai.appointment_reminders')}</li>
                           </ul>
                         </div>
                       </div>
@@ -212,7 +211,7 @@ export default function AiAutomationHub() {
                     <CardHeader className="bg-primary text-white">
                       <CardTitle className="flex items-center text-xl">
                         <Video className="h-6 w-6 mr-3" />
-                        AI Video Avatars & Cloning
+                        {t('ai.video_title')}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-6">
@@ -224,19 +223,19 @@ export default function AiAutomationHub() {
                         <div className="space-y-3">
                           <div className="flex items-center">
                             <Camera className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Video avatars of Nolly & Pablo Santiago</span>
+                            <span className="text-sm">{t('ai.video_avatars')}</span>
                           </div>
                           <div className="flex items-center">
                             <MessageSquare className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Personalized prospect messaging</span>
+                            <span className="text-sm">{t('ai.personalized_messaging')}</span>
                           </div>
                           <div className="flex items-center">
                             <Zap className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">Bulk video generation at scale</span>
+                            <span className="text-sm">{t('ai.bulk_generation')}</span>
                           </div>
                           <div className="flex items-center">
                             <TrendingUp className="h-4 w-4 text-primary mr-3" />
-                            <span className="text-sm">CRM integration & automation</span>
+                            <span className="text-sm">{t('ai.crm_integration')}</span>
                           </div>
                         </div>
                         <div className="bg-blue-50 rounded-lg p-4">
