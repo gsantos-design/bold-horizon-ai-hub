@@ -239,9 +239,9 @@ export default function AiAutomationHub() {
                             <span className="text-sm">CRM integration & automation</span>
                           </div>
                         </div>
-                        <div className="bg-purple-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-purple-800 mb-2">Perfect For:</h4>
-                          <ul className="text-sm text-purple-700 space-y-1">
+                        <div className="bg-blue-50 rounded-lg p-4">
+                          <h4 className="font-semibold text-blue-800 mb-2">Perfect For:</h4>
+                          <ul className="text-sm text-blue-700 space-y-1">
                             <li>• Email campaign personalization</li>
                             <li>• LinkedIn outreach videos</li>
                             <li>• Educational content delivery</li>
@@ -587,8 +587,8 @@ export default function AiAutomationHub() {
                         <CardTitle className="text-lg">Platform Pricing</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="bg-purple-50 rounded-lg p-4">
-                          <h4 className="font-semibold text-purple-800">Google AI Video</h4>
+                        <div className="bg-blue-50 rounded-lg p-4">
+                          <h4 className="font-semibold text-blue-800">Google AI Video</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
                             <p>• Avatar Creation: $99/month</p>
                             <p>• Video Generation: $0.50-1.00/minute</p>
@@ -765,7 +765,7 @@ export default function AiAutomationHub() {
                               <span>"High-Yield Alternative"</span>
                               <span className="font-semibold text-primary">8.9% conversion</span>
                             </div>
-                            <div className="flex items-center justify-between bg-purple-50 rounded px-3 py-2">
+                            <div className="flex items-center justify-between bg-blue-50 rounded px-3 py-2">
                               <span>"Entrepreneur Income"</span>
                               <span className="font-semibold text-primary">15.2% conversion</span>
                             </div>
