@@ -89,6 +89,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'ai.video_ready': 'Your Uploaded Video Ready!',
     'ai.video_ready_desc': 'Your epic video is loaded and ready for integration. Create more with Google Veo!',
     'ai.launch_epic_generator': 'Launch Epic Video Generator',
+    'ai.platform_integration_video': 'Platform Integration:',
+    'ai.platform_integration_epic': 'Platform Integration:',
     
     // Sound Controls
     'sound.title': 'Sound Controls',
@@ -799,6 +801,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'ai.video_ready': '¡Tu Video Subido Está Listo!',
     'ai.video_ready_desc': 'Tu video épico está cargado y listo para integración. ¡Crea más con Google Veo!',
     'ai.launch_epic_generator': 'Lanzar Generador de Videos Épicos',
+    'ai.platform_integration_video': 'Integración de Plataforma:',
+    'ai.platform_integration_epic': 'Integración de Plataforma:',
     
     // Sound Controls
     'sound.title': 'Controles de Sonido',

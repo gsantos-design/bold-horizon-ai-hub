@@ -217,7 +217,7 @@ export default function AiAutomationHub() {
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="font-semibold">Platform Integration:</span>
+                          <span className="font-semibold">{t('ai.platform_integration_video')}</span>
                           <Badge className="bg-primary text-white">Google AI Video</Badge>
                         </div>
                         <div className="space-y-3">
@@ -265,7 +265,7 @@ export default function AiAutomationHub() {
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="font-semibold">Platform Integration:</span>
+                          <span className="font-semibold">{t('ai.platform_integration_epic')}</span>
                           <Badge className="bg-slate-100 text-slate-700">Google Veo + Custom</Badge>
                         </div>
                         <div className="space-y-3">
