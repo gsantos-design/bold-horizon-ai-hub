@@ -24,6 +24,8 @@ export default function Header() {
     const newLanguage = language === 'en' ? 'es' : 'en';
     console.log('🌐 Switching to:', newLanguage);
     setLanguage(newLanguage);
+    // Force a visible test
+    alert(`Language switched to: ${newLanguage}. Check console for details.`);
   };
 
   const handleAnnouncementClick = async () => {
