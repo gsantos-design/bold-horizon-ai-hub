@@ -582,15 +582,16 @@ export default function AiAutomationHub() {
                         <div className="bg-primary/5 rounded-lg p-4">
                           <h4 className="font-semibold text-primary">Google AI Voice</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
-                            <p>• Voice Cloning: $22/month (Creator Plan)</p>
-                            <p>• Phone Calls: $0.10-0.30/minute</p>
-                            <p>• Setup: $500-1,000 one-time</p>
+                            <p>• Google Voice API: $0.000016/character (~$0.006/minute)</p>
+                            <p>• Phone Calls: $0.02-0.08/minute (Google Voice)</p>
+                            <p>• Setup: $200-500 one-time (simplified automation)</p>
+                            <p className="text-xs text-gray-500 mt-2">* Pricing estimates based on Google AI current rates. Actual costs may vary.</p>
                           </div>
                         </div>
                         <div className="space-y-2">
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Monthly Cost (1,000 calls):</span>
-                            <span className="font-semibold">$200-400</span>
+                            <span className="font-semibold">$50-150</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Setup Time:</span>
@@ -719,15 +720,16 @@ export default function AiAutomationHub() {
                         <div className="bg-blue-50 rounded-lg p-4">
                           <h4 className="font-semibold text-blue-800">Google AI Video</h4>
                           <div className="text-sm text-primary space-y-1 mt-2">
-                            <p>• Avatar Creation: $99/month</p>
-                            <p>• Video Generation: $0.50-1.00/minute</p>
+                            <p>• Google Video AI: $0.002/second (~$0.12/minute)</p>
+                            <p>• Avatar Processing: $25-50/month (reduced costs)</p>
                             <p>• Personalization: Included</p>
+                            <p className="text-xs text-gray-500 mt-1">* Based on Google's current AI pricing</p>
                           </div>
                         </div>
                         <div className="space-y-2">
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Monthly Cost (500 videos):</span>
-                            <span className="font-semibold">$350-550</span>
+                            <span className="font-semibold">$75-200</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Setup Time:</span>

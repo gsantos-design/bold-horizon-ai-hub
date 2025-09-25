@@ -238,7 +238,7 @@ export default function EpicVideoGenerator() {
           <div className="flex items-center gap-2 mb-3">
             <div className="h-8 w-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">💰</div>
             <h3 className="font-bold text-green-800">Budget-Friendly Dynamic Content</h3>
-            <Badge className="bg-green-500 text-white text-xs">~$0.02 per variation</Badge>
+            <Badge className="bg-green-500 text-white text-xs">~$0.005 per variation</Badge>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -290,7 +290,7 @@ export default function EpicVideoGenerator() {
             <div className="flex gap-2">
               <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
                 <Sparkles className="h-4 w-4 mr-1" />
-                Generate Script ($0.01)
+                Generate Script (~$0.003)
               </Button>
               <Button size="sm" variant="outline" className="border-green-600 text-green-700">
                 <Languages className="h-4 w-4 mr-1" />
@@ -306,11 +306,11 @@ export default function EpicVideoGenerator() {
               <li>• <strong>Generates dynamic text overlays</strong> with team-specific information</li>
               <li>• <strong>Creates different script variations</strong> using low-cost AI text generation</li>
               <li>• <strong>Adds multilingual support</strong> for Spanish-speaking communities</li>
-              <li>• <strong>Cost: ~$0.02 per variation</strong> instead of $5-50 per video</li>
+              <li>• <strong>Cost: ~$0.005 per variation</strong> instead of $5-50 per video (Google AI pricing)</li>
               <li>• <strong>Perfect for WFG chapters</strong> - affordable scaling across all teams</li>
             </ul>
             <div className="mt-2 p-2 bg-green-100 rounded text-xs">
-              <strong>🎯 Business Impact:</strong> Each chapter can create unlimited video variations at 99% lower cost than traditional video generation APIs!
+              <strong>🎯 Business Impact:</strong> Each chapter can create unlimited video variations at 99.9% lower cost with Google AI vs traditional video APIs!
             </div>
           </div>
         </div>
