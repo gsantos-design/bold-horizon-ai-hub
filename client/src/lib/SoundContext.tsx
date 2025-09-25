@@ -90,8 +90,8 @@ interface SoundProviderProps {
 
 export function SoundProvider({ children }: SoundProviderProps) {
   const [enabled, setEnabled] = useState(() => {
-    // Temporarily disable until we get proper audio
-    return false;
+    const saved = localStorage.getItem('santiago-sound-enabled');
+    return saved ? saved === 'true' : true; // Enable by default
   });
   
   const [musicVolume, setMusicVolumeState] = useState(() => {
@@ -122,9 +122,42 @@ export function SoundProvider({ children }: SoundProviderProps) {
     }
   }, [enabled]);
 
-  // Temporarily disable sound functionality until proper audio is implemented
-  const preloadSound = useCallback(async (soundId: string): Promise<any> => {
-    return null; // Disabled for now
+  // Load and cache audio files
+  const preloadSound = useCallback(async (soundId: string): Promise<HTMLAudioElement | null> => {
+    if (!enabled) return null;
+    
+    const audioConfig = AUDIO_REGISTRY[soundId as keyof typeof AUDIO_REGISTRY];
+    if (!audioConfig) {
+      console.warn(`Sound ${soundId} not found in registry`);
+      return null;
+    }
+
+    try {
+      const audio = new Audio();
+      audio.preload = 'auto';
+      audio.volume = audioConfig.volume;
+      
+      // Try each URL until one works
+      for (const url of audioConfig.urls) {
+        try {
+          audio.src = url;
+          await new Promise((resolve, reject) => {
+            audio.oncanplaythrough = resolve;
+            audio.onerror = reject;
+            audio.load();
+          });
+          return audio;
+        } catch (err) {
+          console.warn(`Failed to load audio from ${url}:`, err);
+          continue;
+        }
+      }
+      
+      return null;
+    } catch (error) {
+      console.warn(`Failed to preload sound ${soundId}:`, error);
+      return null;
+    }
   }, [enabled]);
 
   const toggleSound = useCallback(() => {
@@ -159,19 +192,14 @@ export function SoundProvider({ children }: SoundProviderProps) {
     if (!enabled || sfxVolume === 0) return;
     
     try {
-      await initAudioContext();
-      const buffer = await preloadSound(soundId);
-      if (!buffer || !audioContextRef.current || !gainNodeRef.current) return;
+      const audio = await preloadSound(soundId);
+      if (!audio) return;
 
-      const source = audioContextRef.current.createBufferSource();
-      const gainNode = audioContextRef.current.createGain();
+      // Clone audio for concurrent playback
+      const audioClone = audio.cloneNode() as HTMLAudioElement;
+      audioClone.volume = sfxVolume;
       
-      source.buffer = buffer;
-      gainNode.gain.value = sfxVolume;
-      
-      source.connect(gainNode);
-      gainNode.connect(gainNodeRef.current);
-      source.start();
+      await audioClone.play();
     } catch (error) {
       console.warn(`Failed to play sound ${soundId}:`, error);
       // Auto-enable sound on first user interaction
@@ -180,40 +208,27 @@ export function SoundProvider({ children }: SoundProviderProps) {
         localStorage.setItem('santiago-sound-enabled', 'true');
       }
     }
-  }, [enabled, sfxVolume, initAudioContext, preloadSound]);
+  }, [enabled, sfxVolume, preloadSound]);
 
   const playMusic = useCallback(async (musicId: string, options: { loop?: boolean } = {}) => {
     if (!enabled || musicVolume === 0) return;
     
-    await initAudioContext();
-    if (!audioContextRef.current) return;
-
     try {
       stopMusic(); // Stop any current music
       
-      const audioBuffer = await preloadSound(musicId);
-      if (!audioBuffer) return;
+      const audio = await preloadSound(musicId);
+      if (!audio) return;
 
-      const source = audioContextRef.current.createBufferSource();
-      source.buffer = audioBuffer;
-      source.loop = options.loop || false;
+      audio.volume = musicVolume;
+      audio.loop = options.loop || false;
       
-      const gainNode = audioContextRef.current.createGain();
-      gainNode.gain.value = musicVolume;
-      
-      source.connect(gainNode);
-      gainNode.connect(audioContextRef.current.destination);
-      
-      source.start(0);
-      
-      // Store reference for stopping  
-      (source as any).gainNode = gainNode;
-      currentMusicRef.current = source as any;
+      currentMusicRef.current = audio;
+      await audio.play();
       
     } catch (error) {
       console.warn(`Failed to play music ${musicId}:`, error);
     }
-  }, [enabled, musicVolume, initAudioContext, preloadSound]);
+  }, [enabled, musicVolume, preloadSound]);
 
   const stopMusic = useCallback(() => {
     if (currentMusicRef.current) {
