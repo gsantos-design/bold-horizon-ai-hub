@@ -177,7 +177,7 @@ export default function CustomAI() {
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
                 Demonstrating how the Santiago Team's Bold Horizons platform enhances insurance, IUL, and 401K sales
-                to protect families and build generational wealth across WFG chapters nationwide.
+                to protect families and build generational wealth for authorized field office deployment.
               </p>
               
               {/* WFG Compliance Disclaimer for Impact Metrics */}

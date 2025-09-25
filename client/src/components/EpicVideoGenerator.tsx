@@ -308,7 +308,7 @@ export default function EpicVideoGenerator() {
               <li>• <strong>Creates different script variations</strong> using low-cost AI text generation</li>
               <li>• <strong>Adds multilingual support</strong> for Spanish-speaking communities</li>
               <li>• <strong>Cost: ~$0.005 per variation</strong> instead of $5-50 per video (Google AI pricing)</li>
-              <li>• <strong>Perfect for WFG chapters</strong> - affordable scaling across all teams</li>
+              <li>• <strong>Enterprise-ready automation</strong> - aligned with corporate compliance mandates</li>
             </ul>
             <div className="mt-2 p-2 bg-green-100 rounded text-xs">
               <strong>🎯 Business Impact:</strong> Each chapter can create unlimited video variations at 99.9% lower cost with Google AI vs traditional video APIs!
