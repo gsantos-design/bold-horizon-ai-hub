@@ -37,6 +37,7 @@ function AppRouter() {
       <Route path="/empower360" component={Empower360} />
       <Route path="/three-philosophies" component={ThreePhilosophiesPage} />
       <Route path="/ai-automation" component={AiAutomationHub} />
+      <Route path="/ai-automation-hub" component={AiAutomationHub} />
       <Route path="/setup-guide" component={SetupGuide} />
       <Route path="/workflow-visualization" component={WorkflowVisualization} />
       <Route path="/localization-wizard" component={LocalizationWizard} />
