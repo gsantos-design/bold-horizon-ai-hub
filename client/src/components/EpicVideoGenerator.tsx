@@ -311,7 +311,7 @@ export default function EpicVideoGenerator() {
               <li>• <strong>Enterprise-ready automation</strong> - aligned with corporate compliance mandates</li>
             </ul>
             <div className="mt-2 p-2 bg-green-100 rounded text-xs">
-              <strong>🎯 Business Impact:</strong> Each chapter can create unlimited video variations at 99.9% lower cost with Google AI vs traditional video APIs!
+              <strong>🎯 Business Impact:</strong> Enterprise teams can create unlimited video variations at 99.9% lower cost with Google AI vs traditional video APIs!
             </div>
           </div>
         </div>
