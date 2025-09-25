@@ -1536,6 +1536,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Save language preference to localStorage when it changes
   useEffect(() => {
+    console.log('🌐 Language useEffect triggered. Setting language to:', language);
     localStorage.setItem('language', language);
     // Update document language for accessibility
     document.documentElement.lang = language;

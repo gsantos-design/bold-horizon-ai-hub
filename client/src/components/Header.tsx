@@ -20,7 +20,10 @@ export default function Header() {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
+    console.log('🌐 Language toggle clicked! Current language:', language);
+    const newLanguage = language === 'en' ? 'es' : 'en';
+    console.log('🌐 Switching to:', newLanguage);
+    setLanguage(newLanguage);
   };
 
   const handleAnnouncementClick = async () => {
