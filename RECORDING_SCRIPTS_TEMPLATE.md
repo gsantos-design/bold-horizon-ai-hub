@@ -5,7 +5,7 @@
 ### Nolly Santiago Voice Training Script (30-45 minutes total)
 
 #### Introduction & Personal Brand (5 minutes)
-"Hi, I'm Nolly Santiago, co-leader of the Santiago Team at World Financial Group. For over [X years], my husband Pablo and I have been helping families in Florida and New York achieve financial freedom through proven wealth-building strategies. Our team specializes in three core areas: tax-free retirement planning, high-yield savings alternatives, and entrepreneur income opportunities."
+"Hi, I'm Nolly Santiago, co-leader of the Santiago Team at World Financial Group. For over [X years], my husband Pablo and I have been helping families nationwide achieve financial freedom through proven wealth-building strategies. Our team specializes in three core areas: tax-free retirement planning, high-yield savings alternatives, and entrepreneur income opportunities."
 
 #### 401k Rollover Specialty (10 minutes)
 "When it comes to 401k rollovers, most people don't realize they're missing out on incredible tax-free opportunities. Let me explain how our specialized rollover strategy works. Instead of leaving your money in a traditional 401k where you'll pay taxes on every withdrawal, we help you move those funds into tax-free vehicles like Index Universal Life policies and strategic annuities.
@@ -71,7 +71,7 @@ These aren't just statistics - these are real families with real financial secur
 ### Nolly Santiago Video Avatar Script (2-3 minutes)
 
 #### Personal Introduction
-"Hi, I'm Nolly Santiago, and I'm excited to personally connect with you about your financial future. As co-leader of the Santiago Team at World Financial Group, I specialize in helping families in Florida and New York create tax-free wealth and secure retirement strategies."
+"Hi, I'm Nolly Santiago, and I'm excited to personally connect with you about your financial future. As co-leader of the Santiago Team at World Financial Group, I specialize in helping families nationwide create tax-free wealth and secure retirement strategies."
 
 #### Value Proposition
 "What makes our approach unique is that we don't just manage your money - we multiply it. Through our proven systems for 401k rollovers, high-yield alternatives, and entrepreneur opportunities, our clients typically see 200% to 400% improvements in their financial outcomes."

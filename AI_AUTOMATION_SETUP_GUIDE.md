@@ -238,4 +238,4 @@ TWILIO_PHONE_NUMBER=+1xxxxxxxxxx
 
 **Contact for Support**: The development team can assist with technical implementation, API integration, and campaign setup. Budget $2,000-5,000 for professional implementation and first month optimization.
 
-This AI automation system will multiply the Santiago Team's outreach capacity while maintaining the personal touch that Nolly and Pablo are known for in the Florida and New York markets.
+This AI automation system will multiply the Santiago Team's outreach capacity while maintaining the personal touch that Nolly and Pablo are known for in nationwide markets.
