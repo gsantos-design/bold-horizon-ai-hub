@@ -35,16 +35,6 @@ interface VideoGenerationRequest {
 export default function EpicVideoGenerator() {
   const { t, language } = useLanguage();
   
-  // Debugging: Log current language and test translations
-  console.log('🎬 Epic Video Generator - Current language:', language);
-  console.log('🎬 Testing translation for epic.generate_video:', t('epic.generate_video'));
-  console.log('🎬 Testing if Spanish translations exist:', 
-    language === 'es' ? 'Spanish mode' : 'English mode');
-    
-  // Force test Spanish translation
-  const testSpanishTranslation = language === 'es' ? 
-    '¡Video épico listo!' : 'Epic video ready!';
-  console.log('🎬 Expected vs actual:', testSpanishTranslation, 'vs', t('epic.video_ready'));
   const { playSfx, playMusic } = useSound();
   const { toast } = useToast();
   
