@@ -140,7 +140,8 @@ export class VideoGenerationService {
             },
             voice: {
               type: "text",
-              input_text: this.enhanceScriptForScene(request.script, request.scene, request.avatarType)
+              input_text: this.enhanceScriptForScene(request.script, request.scene, request.avatarType),
+              voice_id: "santiago_voice_clone" // Add required voice_id parameter
             },
             background: {
               type: "template",

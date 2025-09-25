@@ -48,16 +48,16 @@ export default function EpicVideoGenerator() {
   });
 
   const musicOptions = [
-    { value: 'zarathustra', label: '🎵 Also sprach Zarathustra (2001 Theme)', description: 'Epic, cosmic, absolutely iconic' },
-    { value: 'william_tell', label: '🎵 William Tell Overture (Lone Ranger)', description: 'Building excitement, classic triumph' },
-    { value: 'pomp_circumstance', label: '🎵 Pomp and Circumstance', description: 'Graduation ceremony, achievement' },
-    { value: 'custom_fanfare', label: '🎵 Santiago Team Victory Fanfare', description: 'Custom orchestral celebration' }
+    { value: 'zarathustra', label: `🎵 ${t('epic.music_zarathustra')}`, description: t('epic.music_zarathustra_desc') },
+    { value: 'william_tell', label: `🎵 ${t('epic.music_william_tell')}`, description: t('epic.music_william_tell_desc') },
+    { value: 'pomp_circumstance', label: `🎵 ${t('epic.music_pomp')}`, description: t('epic.music_pomp_desc') },
+    { value: 'custom_fanfare', label: `🎵 ${t('epic.music_fanfare')}`, description: t('epic.music_fanfare_desc') }
   ];
 
   const sceneOptions = [
-    { value: 'entrance', label: '🚪 Grand Entrance', description: 'Walking into cheering room' },
-    { value: 'presentation', label: '🎤 Stage Presentation', description: 'Speaking to excited audience' },
-    { value: 'celebration', label: '🎉 Victory Celebration', description: 'Celebrating success with crowd' }
+    { value: 'entrance', label: `🚪 ${t('epic.scene_entrance')}`, description: t('epic.scene_entrance_desc') },
+    { value: 'presentation', label: `🎤 ${t('epic.scene_presentation')}`, description: t('epic.scene_presentation_desc') },
+    { value: 'celebration', label: `🎉 ${t('epic.scene_celebration')}`, description: t('epic.scene_celebration_desc') }
   ];
 
   const generateEpicVideo = async () => {
@@ -66,8 +66,8 @@ export default function EpicVideoGenerator() {
       setGeneratedVideoUrl(request.videoUrl);
       await playSfx('fanfare-success');
       toast({
-        title: "Epic video ready!",
-        description: "Your uploaded video is ready for your presentation."
+        title: t('epic.video_ready'),
+        description: t('epic.video_ready_desc')
       });
       return;
     }
@@ -97,16 +97,16 @@ export default function EpicVideoGenerator() {
       await playSfx('fanfare-success');
       
       toast({
-        title: "🎬 Epic Video Generated!",
-        description: "Your Santiago Team triumph video is ready to conquer the market!",
+        title: `🎬 ${t('epic.video_generated')}`,
+        description: t('epic.video_generated_desc'),
         duration: 5000,
       });
 
     } catch (error) {
       console.error('Video generation failed:', error);
       toast({
-        title: "Video Generation Error",
-        description: "Unable to create video. Please try again.",
+        title: t('epic.video_error'),
+        description: t('epic.video_error_desc'),
         variant: "destructive",
         duration: 5000,
       });
@@ -119,8 +119,8 @@ export default function EpicVideoGenerator() {
     await playSfx('celebration-stinger');
     // In a real implementation, we'd have actual audio files
     toast({
-      title: `🎵 Playing Preview: ${musicOptions.find(m => m.value === musicType)?.label}`,
-      description: "This will be the background music for your epic video!",
+      title: `🎵 ${t('epic.music_preview')}: ${musicOptions.find(m => m.value === musicType)?.label}`,
+      description: t('epic.music_preview_desc'),
       duration: 3000,
     });
   };
@@ -409,7 +409,7 @@ export default function EpicVideoGenerator() {
             ) : (
               <>
                 <Crown className="h-6 w-6 mr-3" />
-                Generate Epic Video
+                {t('epic.generate_video')}
               </>
             )}
           </Button>
