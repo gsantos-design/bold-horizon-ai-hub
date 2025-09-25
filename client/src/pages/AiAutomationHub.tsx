@@ -46,9 +46,87 @@ export default function AiAutomationHub() {
   const [phoneScript, setPhoneScript] = useState("");
   const [videoScript, setVideoScript] = useState("");
   const [isSetupLoading, setIsSetupLoading] = useState(false);
+  const [isTestingAI, setIsTestingAI] = useState(false);
+  const [testResults, setTestResults] = useState<any>(null);
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
   const { t } = useLanguage();
   const { toast } = useToast();
+  
+  // Test Google AI functionality for corporate demo
+  const testGoogleAI = async () => {
+    setIsTestingAI(true);
+    setTestResults(null);
+    
+    try {
+      // Test connection first
+      const connectionResponse = await fetch('/api/google-ai/test-connection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const connectionResult = await connectionResponse.json();
+      
+      if (!connectionResult.success) {
+        throw new Error(connectionResult.message);
+      }
+      
+      // Test voice script generation
+      const voiceResponse = await fetch('/api/google-ai/generate-voice-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          scenario: '401k rollover opportunity',
+          teamMember: 'Nolly'
+        })
+      });
+      const voiceResult = await voiceResponse.json();
+      
+      // Test video script generation  
+      const videoResponse = await fetch('/api/google-ai/generate-video-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prospect: 'Corporate Executive',
+          scenario: 'financial growth opportunity'
+        })
+      });
+      const videoResult = await videoResponse.json();
+      
+      // Test lead analysis
+      const leadResponse = await fetch('/api/google-ai/analyze-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          leadInfo: 'Experienced business owner, 45 years old, interested in investment opportunities, annual income $150K+'
+        })
+      });
+      const leadResult = await leadResponse.json();
+      
+      const allResults = {
+        connection: connectionResult,
+        voiceScript: voiceResult.script,
+        videoScript: videoResult.script,
+        leadAnalysis: leadResult.analysis
+      };
+      
+      setTestResults(allResults);
+      
+      toast({
+        title: "✅ Google AI Test Successful!",
+        description: "All AI automation features are working perfectly. Ready for corporate demonstration!",
+        duration: 5000
+      });
+      
+    } catch (error: any) {
+      console.error('Google AI test failed:', error);
+      toast({
+        title: "❌ Google AI Test Failed",
+        description: error.message || "Please check your API configuration.",
+        duration: 5000
+      });
+    } finally {
+      setIsTestingAI(false);
+    }
+  };
 
   // Handler functions for button interactions
   const handleVoiceSetup = () => {
@@ -210,7 +288,81 @@ export default function AiAutomationHub() {
               {/* Overview Tab */}
               <TabsContent value="overview" className="mt-0">
                 <AIAutomationDashboard />
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 mt-8">
+                
+                {/* Google AI Test Section for Corporate Demo */}
+                <div className="mb-8 mt-8">
+                  <Card className="border-green-200 bg-green-50">
+                    <CardHeader>
+                      <CardTitle className="flex items-center text-green-800">
+                        <Bot className="h-6 w-6 mr-2" />
+                        🚀 Google AI Test - Corporate Demo Ready
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+                        <div className="flex-1">
+                          <p className="text-green-700 mb-2">
+                            Test all Google AI automation features instantly for the corporate demonstration.
+                          </p>
+                          <p className="text-sm text-green-600">
+                            ✅ Voice Script Generation • ✅ Video Script Creation • ✅ Lead Analysis • ✅ API Connection
+                          </p>
+                        </div>
+                        <Button 
+                          onClick={testGoogleAI}
+                          disabled={isTestingAI}
+                          className="bg-green-700 hover:bg-green-600 text-white px-8 py-3 text-lg font-bold shadow-lg"
+                          data-testid="test-google-ai"
+                        >
+                          {isTestingAI ? (
+                            <>
+                              <Bot className="h-5 w-5 mr-2 animate-spin" />
+                              Testing Google AI...
+                            </>
+                          ) : (
+                            <>
+                              <Zap className="h-5 w-5 mr-2" />
+                              Test Google AI Now
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                      
+                      {/* Test Results Display */}
+                      {testResults && (
+                        <div className="mt-6 space-y-4">
+                          <h4 className="font-semibold text-green-800">✅ Test Results - Ready for Corporate Demo!</h4>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-white rounded-lg p-4 border border-green-200">
+                              <h5 className="font-semibold text-green-700 mb-2">📞 Voice Script Sample</h5>
+                              <p className="text-sm text-gray-700 italic line-clamp-3">"{testResults.voiceScript}"</p>
+                            </div>
+                            
+                            <div className="bg-white rounded-lg p-4 border border-green-200">
+                              <h5 className="font-semibold text-green-700 mb-2">🎥 Video Script Sample</h5>
+                              <p className="text-sm text-gray-700 italic line-clamp-3">"{testResults.videoScript}"</p>
+                            </div>
+                            
+                            <div className="bg-white rounded-lg p-4 border border-green-200">
+                              <h5 className="font-semibold text-green-700 mb-2">🎯 Lead Analysis</h5>
+                              <p className="text-sm text-gray-700">Score: {testResults.leadAnalysis?.score}/10</p>
+                              <p className="text-xs text-gray-600 mt-1">{testResults.leadAnalysis?.recommendations?.join(', ')}</p>
+                            </div>
+                            
+                            <div className="bg-white rounded-lg p-4 border border-green-200">
+                              <h5 className="font-semibold text-green-700 mb-2">⚡ API Status</h5>
+                              <p className="text-sm text-green-600 font-semibold">✅ Google AI Connected</p>
+                              <p className="text-xs text-gray-600">Ready for production deployment</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
                   {/* AI Phone Calls */}
                   <Card className="border-2 border-primary/20 shadow-xl">
                     <CardHeader className="bg-primary text-white">

@@ -42,6 +42,7 @@ import {
 } from "./lib/hubspot";
 import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
 import { VideoGenerationService } from './videoGeneration';
+import { googleAI } from './services/googleAI';
 
 // Simple authentication middleware for demo purposes
 // In production, you would use proper authentication
@@ -71,6 +72,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
   // Initialize Video Generation Service
   const videoGenerationService = new VideoGenerationService();
+  
+  // Google AI Test Routes for Corporate Demo
+  app.post('/api/google-ai/test-connection', async (req, res) => {
+    try {
+      const result = await googleAI.testConnection();
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Connection test failed' });
+    }
+  });
+  
+  app.post('/api/google-ai/generate-voice-script', async (req, res) => {
+    try {
+      const { scenario, teamMember } = req.body;
+      const script = await googleAI.generateVoiceScript(scenario || '401k rollover opportunity', teamMember || 'Nolly');
+      res.json({ success: true, script });
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Script generation failed' });
+    }
+  });
+  
+  app.post('/api/google-ai/generate-video-script', async (req, res) => {
+    try {
+      const { prospect, scenario } = req.body;
+      const script = await googleAI.generateVideoScript(prospect || 'Valued Client', scenario || 'financial opportunity');
+      res.json({ success: true, script });
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Video script generation failed' });
+    }
+  });
+  
+  app.post('/api/google-ai/analyze-lead', async (req, res) => {
+    try {
+      const { leadInfo } = req.body;
+      const analysis = await googleAI.analyzeLead(leadInfo || 'Experienced entrepreneur interested in additional income streams');
+      res.json({ success: true, analysis });
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Lead analysis failed' });
+    }
+  });
   
   // Convert inquiries to leads
   app.post("/api/inquiries/convert/:id", authenticateUser, async (req: any, res) => {
