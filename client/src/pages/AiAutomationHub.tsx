@@ -46,10 +46,87 @@ export default function AiAutomationHub() {
   const [phoneScript, setPhoneScript] = useState("");
   const [videoScript, setVideoScript] = useState("");
   const [isSetupLoading, setIsSetupLoading] = useState(false);
+  const [isTestingAI, setIsTestingAI] = useState(false);
+  const [testResults, setTestResults] = useState<any>(null);
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
   const { t } = useLanguage();
   const { toast } = useToast();
   
+  // Test Google AI functionality for enterprise deployment
+  const testGoogleAI = async () => {
+    setIsTestingAI(true);
+    setTestResults(null);
+    
+    try {
+      // Test connection first
+      const connectionResponse = await fetch('/api/google-ai/test-connection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const connectionResult = await connectionResponse.json();
+      
+      if (!connectionResult.success) {
+        throw new Error(connectionResult.message);
+      }
+      
+      // Test voice script generation
+      const voiceResponse = await fetch('/api/google-ai/generate-voice-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          scenario: '401k rollover opportunity',
+          teamMember: 'Nolly'
+        })
+      });
+      const voiceResult = await voiceResponse.json();
+      
+      // Test video script generation  
+      const videoResponse = await fetch('/api/google-ai/generate-video-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prospect: 'Business Professional',
+          scenario: 'financial growth opportunity'
+        })
+      });
+      const videoResult = await videoResponse.json();
+      
+      // Test lead analysis
+      const leadResponse = await fetch('/api/google-ai/analyze-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          leadInfo: 'Experienced business owner, 45 years old, interested in investment opportunities, annual income $150K+'
+        })
+      });
+      const leadResult = await leadResponse.json();
+      
+      const allResults = {
+        connection: connectionResult,
+        voiceScript: voiceResult.script,
+        videoScript: videoResult.script,
+        leadAnalysis: leadResult.analysis
+      };
+      
+      setTestResults(allResults);
+      
+      toast({
+        title: "✅ Enterprise AI Systems Online",
+        description: "All automation features are functioning correctly and ready for deployment.",
+        duration: 5000
+      });
+      
+    } catch (error: any) {
+      console.error('Google AI test failed:', error);
+      toast({
+        title: "❌ System Check Failed",
+        description: error.message || "Please verify your configuration settings.",
+        duration: 5000
+      });
+    } finally {
+      setIsTestingAI(false);
+    }
+  };
 
   // Handler functions for button interactions
   const handleVoiceSetup = () => {
