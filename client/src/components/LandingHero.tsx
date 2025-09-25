@@ -12,7 +12,8 @@ import {
   Award,
   TrendingUp,
   Building,
-  GraduationCap
+  GraduationCap,
+  Play
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
@@ -60,7 +61,7 @@ export default function LandingHero() {
                 await playMusic('intro-theme');
               }}
             >
-              <Phone className="h-5 w-5 mr-2" />
+              <Play className="h-5 w-5 mr-2" />
               {t('sound.play_intro')}
             </Button>
           </motion.div>
