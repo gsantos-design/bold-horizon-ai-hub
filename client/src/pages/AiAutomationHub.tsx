@@ -39,13 +39,63 @@ import InteractiveTourGuide, { aiAutomationTour, useTourGuide } from "@/componen
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useSound } from "@/lib/SoundContext";
+import { useToast } from "@/hooks/use-toast";
 
 export default function AiAutomationHub() {
   const [activeTab, setActiveTab] = useState("overview");
   const [phoneScript, setPhoneScript] = useState("");
   const [videoScript, setVideoScript] = useState("");
+  const [isSetupLoading, setIsSetupLoading] = useState(false);
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
   const { t } = useLanguage();
+  const { toast } = useToast();
+
+  // Handler functions for button interactions
+  const handleVoiceSetup = () => {
+    setIsSetupLoading(true);
+    toast({
+      title: "Voice Setup Guide",
+      description: "Voice cloning requires ElevenLabs account setup and voice samples. Check our setup guide for step-by-step instructions.",
+      duration: 5000
+    });
+    // Simulate setup process
+    setTimeout(() => {
+      setIsSetupLoading(false);
+    }, 2000);
+  };
+
+  const handleVideoSetup = () => {
+    setIsSetupLoading(true);
+    toast({
+      title: "Video Setup Guide",
+      description: "Video avatar creation requires HeyGen or Tavus account setup and training footage. Check our setup guide for requirements.",
+      duration: 5000
+    });
+    // Simulate setup process
+    setTimeout(() => {
+      setIsSetupLoading(false);
+    }, 2000);
+  };
+
+  const handleDeployAutomation = () => {
+    toast({
+      title: "AI Automation Deployment",
+      description: "Contact the Santiago Team to deploy your AI automation campaigns. We'll help set up voice cloning, video avatars, and targeting.",
+      duration: 6000
+    });
+  };
+
+  const handleScheduleCall = () => {
+    toast({
+      title: "Strategy Call Scheduled",
+      description: "Redirecting to calendar to book your Santiago Team strategy session...",
+      duration: 3000
+    });
+    // Redirect to calendar booking
+    setTimeout(() => {
+      window.open('https://calendly.com/santiago-team-wfg', '_blank');
+    }, 1000);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -604,9 +654,13 @@ export default function AiAutomationHub() {
                             <span className="font-semibold">1-2 weeks</span>
                           </div>
                         </div>
-                        <Button className="w-full">
+                        <Button 
+                          className="w-full" 
+                          onClick={handleVideoSetup}
+                          disabled={isSetupLoading}
+                        >
                           <FileVideo className="h-4 w-4 mr-2" />
-                          {t('ai.start_video_setup')}
+                          {isSetupLoading ? 'Setting up...' : t('ai.start_video_setup')}
                         </Button>
                       </CardContent>
                     </Card>
@@ -784,11 +838,19 @@ export default function AiAutomationHub() {
                           Transform your nationwide lead generation with AI-powered phone calls and personalized video outreach
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
-                          <Button size="lg" className="bg-primary text-white px-8">
+                          <Button 
+                            size="lg" 
+                            className="bg-primary text-white px-8"
+                            onClick={handleDeployAutomation}
+                          >
                             <Bot className="h-5 w-5 mr-2" />
                             Deploy AI Automation
                           </Button>
-                          <Button size="lg" className="bg-primary text-white px-8">
+                          <Button 
+                            size="lg" 
+                            className="bg-primary text-white px-8"
+                            onClick={handleScheduleCall}
+                          >
                             <Calendar className="h-5 w-5 mr-2" />
                             Schedule Strategy Call
                           </Button>
