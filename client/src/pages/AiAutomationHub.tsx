@@ -781,7 +781,7 @@ export default function AiAutomationHub() {
                       <div className="max-w-3xl mx-auto">
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Scale Your Santiago Team?</h3>
                         <p className="text-lg text-gray-600 mb-6">
-                          Transform your Florida and New York lead generation with AI-powered phone calls and personalized video outreach
+                          Transform your nationwide lead generation with AI-powered phone calls and personalized video outreach
                         </p>
                         <div className="flex flex-col md:flex-row gap-4 justify-center">
                           <Button size="lg" className="bg-primary text-white px-8">
