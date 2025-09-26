@@ -196,26 +196,26 @@ export default function AiAutomationHub() {
         })
       });
 
-      // Check if response is actually JSON and successful
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new Error("Server returned non-JSON response. API endpoint may not exist.");
-      }
-
       const result = await response.json();
       
-      if (result.success) {
+      if (response.ok && result.success) {
         toast({
           title: "✅ Video AI Setup Complete",
           description: `Video avatar ready for ${selectedTeamMember}! Video ID: ${result.videoId}`,
           duration: 5000
         });
       } else {
-        throw new Error(result.message || 'Video setup failed');
+        // Handle honest error responses (501 = Not Implemented)
+        if (response.status === 501) {
+          toast({
+            title: "🔧 Production Setup Required",
+            description: result.message || "This feature requires real API configuration to function.",
+            variant: "default",
+            duration: 8000
+          });
+        } else {
+          throw new Error(result.message || 'Video setup failed');
+        }
       }
     } catch (error: any) {
       console.error('Video setup error:', error);

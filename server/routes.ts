@@ -1988,42 +1988,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // REAL ElevenLabs Voice Cloning API Call
-      const voiceResponse = await fetch('https://api.elevenlabs.io/v1/voices/add', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'xi-api-key': process.env.ELEVENLABS_API_KEY,
-          'Content-Type': 'application/json'
+      // HONEST: This requires real voice cloning setup
+      return res.status(501).json({
+        success: false,
+        message: '🔧 Voice cloning requires actual ElevenLabs setup with audio samples to function.',
+        required: {
+          apis: ['ElevenLabs Voice Cloning'],
+          cost: '$22+/month for voice cloning',
+          setup: 'Requires high-quality audio samples from team members'
         },
-        body: JSON.stringify({
-          name: voiceName || `${teamMember} Santiago Voice`,
-          description: description || `Professional voice clone for ${teamMember} Santiago - WFG Team`,
-          files: [], // Would need actual audio files in production
-          labels: {
-            'team': 'santiago',
-            'purpose': 'lead-generation',
-            'member': teamMember
-          }
-        })
+        demo_note: 'This button would normally create real voice clones, but needs production setup and audio samples first.'
       });
-
-      const voiceData = await voiceResponse.json();
-      
-      if (voiceResponse.ok && voiceData.voice_id) {
-        res.json({
-          success: true,
-          voiceId: voiceData.voice_id,
-          message: `Voice cloning active for ${teamMember}. Ready for phone campaigns!`,
-          details: {
-            name: voiceData.name,
-            category: voiceData.category,
-            samples: voiceData.samples?.length || 0
-          }
-        });
-      } else {
-        throw new Error(voiceData.detail?.message || 'Voice cloning failed - may need audio samples');
-      }
     } catch (error: any) {
       console.error('Voice cloning error:', error);
       res.status(500).json({
@@ -2044,45 +2019,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // REAL Retell AI Phone Campaign Launch
-      const campaignResponse = await fetch('https://api.retellai.com/create-phone-call', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RETELL_API_KEY}`,
-          'Content-Type': 'application/json'
+      // HONEST: This requires real phone automation setup
+      return res.status(501).json({
+        success: false,
+        message: '🔧 Phone AI requires actual Retell AI configuration and phone number setup to function.',
+        required: {
+          apis: ['Retell AI', 'Twilio Phone Number'],
+          cost: '$50-150/month for phone automation',
+          setup: 'Requires voice cloning and phone number verification'
         },
-        body: JSON.stringify({
-          from_number: process.env.TWILIO_PHONE_NUMBER || '+15555551234',
-          to_number: '+15555556789', // Demo number for testing
-          agent_id: voiceId || 'santiago-agent-id',
-          custom_prompt: script || 'Hi, this is the Santiago Team from World Financial Group...',
-          metadata: {
-            campaign: 'santiago-team-outreach',
-            type: campaignType,
-            dailyVolume: dailyVolume,
-            territory: 'nationwide'
-          }
-        })
+        demo_note: 'This button would normally launch real AI phone campaigns, but needs production setup first.'
       });
-
-      const campaignData = await campaignResponse.json();
-      
-      if (campaignResponse.ok && campaignData.call_id) {
-        res.json({
-          success: true,
-          campaignId: campaignData.call_id,
-          message: `Phone campaign launched: ${dailyVolume} calls/day with Retell AI`,
-          details: {
-            callId: campaignData.call_id,
-            status: campaignData.status,
-            script: script?.substring(0, 50) + '...',
-            voiceId: voiceId,
-            type: campaignType
-          }
-        });
-      } else {
-        throw new Error(campaignData.message || 'Retell AI campaign launch failed');
-      }
     } catch (error: any) {
       console.error('Phone campaign error:', error);
       res.status(500).json({
@@ -2103,26 +2050,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // For demo purposes with Google AI integration ready
-      // Generate a unique video ID for tracking
-      const videoId = `google_ai_video_${Date.now()}_${Math.random().toString(36).substring(7)}`;
-      
-      // Since Google Workspace is ready, instant setup is possible
-      res.json({
-        success: true,
-        videoId: videoId,
-        message: `🚀 Video AI setup complete! Google Workspace integration active for ${avatar}`,
-        details: {
-          videoId: videoId,
-          status: 'ready',
-          avatar: avatar,
-          platform: 'Google AI Video Generation',
-          setup: 'instant-ready',
-          duration: settings?.duration || '60-90 seconds',
-          background: settings?.background || 'office',
-          estimatedTime: 'immediate',
-          integration: 'Google Workspace Connected'
-        }
+      // HONEST: This requires real video API setup
+      return res.status(501).json({
+        success: false,
+        message: '🔧 Video AI requires actual HeyGen or Tavus API configuration to function. Current setup is demonstration-only.',
+        required: {
+          apis: ['HeyGen', 'Tavus', 'D-ID'],
+          cost: '$25-200/month for video generation',
+          setup: 'Requires avatar training and API keys'
+        },
+        demo_note: 'This button would normally generate real AI videos, but needs production API setup first.'
       });
     } catch (error: any) {
       console.error('Video campaign error:', error);
