@@ -733,7 +733,15 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                         </div>
                         <div className="flex items-center justify-between">
                           <Label>Transfer to Human Agent</Label>
-                          <Button variant="outline" size="sm">Configure</Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={handleVoiceSetup}
+                            disabled={isSetupLoading}
+                            data-testid="voice-configure-button"
+                          >
+                            {isSetupLoading ? 'Configuring...' : 'Configure'}
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>
@@ -764,9 +772,14 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                             <span className="font-semibold text-green-600">Instant ✓</span>
                           </div>
                         </div>
-                        <Button className="w-full">
+                        <Button 
+                          className="w-full"
+                          onClick={handleVoiceSetup}
+                          disabled={isSetupLoading}
+                          data-testid="phone-setup-button"
+                        >
                           <PhoneCall className="h-4 w-4 mr-2" />
-                          Start Phone AI Setup
+                          {isSetupLoading ? 'Setting up...' : 'Start Phone AI Setup'}
                         </Button>
                       </CardContent>
                     </Card>

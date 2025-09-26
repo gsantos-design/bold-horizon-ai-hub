@@ -20,11 +20,17 @@ The script should be:
 Format as a natural phone conversation.`;
 
     try {
-      const response = await ai.models.generateContent({
+      // Add timeout to prevent hanging
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Google AI timeout after 10 seconds')), 10000)
+      );
+      
+      const aiPromise = ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: prompt,
       });
 
+      const response = await Promise.race([aiPromise, timeoutPromise]) as any;
       return response.text || "Hello, this is the Santiago Team at World Financial Group. We're excited to share an incredible opportunity with you.";
     } catch (error) {
       console.error("Google AI error:", error);
