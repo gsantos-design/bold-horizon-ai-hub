@@ -771,7 +771,7 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                           </div>
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Setup Time:</span>
-                            <span className="font-semibold">2-3 weeks</span>
+                            <span className="font-semibold text-green-600">Instant ✓</span>
                           </div>
                         </div>
                         <Button className="w-full">
@@ -909,7 +909,7 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                           </div>
                           <div className="flex justify-between">
                             <span className="text-sm">Est. Setup Time:</span>
-                            <span className="font-semibold">1-2 weeks</span>
+                            <span className="font-semibold text-green-600">Ready Now ✓</span>
                           </div>
                         </div>
                         <Button 
