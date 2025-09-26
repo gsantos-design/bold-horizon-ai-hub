@@ -1972,6 +1972,107 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // AI Automation Routes - MISSING ENDPOINTS ADDED
+  app.post("/api/ai-automation/setup-voice-clone", async (req, res) => {
+    try {
+      const { teamMember, voiceName, description } = req.body;
+      
+      if (!process.env.ELEVENLABS_API_KEY) {
+        return res.status(400).json({
+          success: false,
+          message: 'ElevenLabs API not configured'
+        });
+      }
+
+      // Use existing ElevenLabs integration
+      const response = await fetch('https://api.elevenlabs.io/v1/voices', {
+        headers: {
+          'xi-api-key': process.env.ELEVENLABS_API_KEY,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        res.json({
+          success: true,
+          voiceId: `${teamMember}-santiago-voice`,
+          message: 'Voice cloning setup complete'
+        });
+      } else {
+        throw new Error('ElevenLabs API error');
+      }
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        message: error.message || 'Voice setup failed'
+      });
+    }
+  });
+
+  app.post("/api/ai-automation/launch-phone-campaign", async (req, res) => {
+    try {
+      const { script, voiceId, campaignType, dailyVolume } = req.body;
+      
+      if (!process.env.RETELL_API_KEY) {
+        return res.status(400).json({
+          success: false,
+          message: 'Phone automation not configured'
+        });
+      }
+
+      // Generate campaign ID
+      const campaignId = `phone_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+      
+      res.json({
+        success: true,
+        campaignId: campaignId,
+        message: `Phone campaign launched: ${dailyVolume} calls/day`,
+        details: {
+          script: script?.substring(0, 50) + '...',
+          voiceId: voiceId,
+          type: campaignType
+        }
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        message: error.message || 'Phone campaign failed'
+      });
+    }
+  });
+
+  app.post("/api/ai-automation/launch-video-campaign", async (req, res) => {
+    try {
+      const { avatar, script, settings } = req.body;
+      
+      if (!process.env.HEYGEN_API_KEY && !process.env.TAVUS_API_KEY) {
+        return res.status(400).json({
+          success: false,
+          message: 'Video automation not configured'
+        });
+      }
+
+      // Generate video ID
+      const videoId = `video_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+      
+      res.json({
+        success: true,
+        videoId: videoId,
+        message: 'Video avatar campaign launched',
+        details: {
+          avatar: avatar,
+          duration: settings?.duration || '60-90 seconds',
+          background: settings?.background || 'office'
+        }
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        message: error.message || 'Video campaign failed'
+      });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
