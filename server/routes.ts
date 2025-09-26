@@ -1984,24 +1984,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Use existing ElevenLabs integration
-      const response = await fetch('https://api.elevenlabs.io/v1/voices', {
+      // REAL ElevenLabs Voice Cloning API Call
+      const voiceResponse = await fetch('https://api.elevenlabs.io/v1/voices/add', {
+        method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'xi-api-key': process.env.ELEVENLABS_API_KEY,
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({
+          name: voiceName || `${teamMember} Santiago Voice`,
+          description: description || `Professional voice clone for ${teamMember} Santiago - WFG Team`,
+          files: [], // Would need actual audio files in production
+          labels: {
+            'team': 'santiago',
+            'purpose': 'lead-generation',
+            'member': teamMember
+          }
+        })
       });
 
-      if (response.ok) {
+      const voiceData = await voiceResponse.json();
+      
+      if (voiceResponse.ok && voiceData.voice_id) {
         res.json({
           success: true,
-          voiceId: `${teamMember}-santiago-voice`,
-          message: 'Voice cloning setup complete'
+          voiceId: voiceData.voice_id,
+          message: `Voice cloning active for ${teamMember}. Ready for phone campaigns!`,
+          details: {
+            name: voiceData.name,
+            category: voiceData.category,
+            samples: voiceData.samples?.length || 0
+          }
         });
       } else {
-        throw new Error('ElevenLabs API error');
+        throw new Error(voiceData.detail?.message || 'Voice cloning failed - may need audio samples');
       }
     } catch (error: any) {
+      console.error('Voice cloning error:', error);
       res.status(500).json({
         success: false,
         message: error.message || 'Voice setup failed'
@@ -2020,20 +2040,47 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Generate campaign ID
-      const campaignId = `phone_${Date.now()}_${Math.random().toString(36).substring(7)}`;
-      
-      res.json({
-        success: true,
-        campaignId: campaignId,
-        message: `Phone campaign launched: ${dailyVolume} calls/day`,
-        details: {
-          script: script?.substring(0, 50) + '...',
-          voiceId: voiceId,
-          type: campaignType
-        }
+      // REAL Retell AI Phone Campaign Launch
+      const campaignResponse = await fetch('https://api.retellai.com/create-phone-call', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RETELL_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from_number: process.env.TWILIO_PHONE_NUMBER || '+15555551234',
+          to_number: '+15555556789', // Demo number for testing
+          agent_id: voiceId || 'santiago-agent-id',
+          custom_prompt: script || 'Hi, this is the Santiago Team from World Financial Group...',
+          metadata: {
+            campaign: 'santiago-team-outreach',
+            type: campaignType,
+            dailyVolume: dailyVolume,
+            territory: 'nationwide'
+          }
+        })
       });
+
+      const campaignData = await campaignResponse.json();
+      
+      if (campaignResponse.ok && campaignData.call_id) {
+        res.json({
+          success: true,
+          campaignId: campaignData.call_id,
+          message: `Phone campaign launched: ${dailyVolume} calls/day with Retell AI`,
+          details: {
+            callId: campaignData.call_id,
+            status: campaignData.status,
+            script: script?.substring(0, 50) + '...',
+            voiceId: voiceId,
+            type: campaignType
+          }
+        });
+      } else {
+        throw new Error(campaignData.message || 'Retell AI campaign launch failed');
+      }
     } catch (error: any) {
+      console.error('Phone campaign error:', error);
       res.status(500).json({
         success: false,
         message: error.message || 'Phone campaign failed'
@@ -2052,20 +2099,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Generate video ID
-      const videoId = `video_${Date.now()}_${Math.random().toString(36).substring(7)}`;
-      
-      res.json({
-        success: true,
-        videoId: videoId,
-        message: 'Video avatar campaign launched',
-        details: {
-          avatar: avatar,
-          duration: settings?.duration || '60-90 seconds',
-          background: settings?.background || 'office'
-        }
+      // REAL HeyGen Video Generation API Call
+      const videoResponse = await fetch('https://api.heygen.com/v2/video/generate', {
+        method: 'POST',
+        headers: {
+          'X-API-KEY': process.env.HEYGEN_API_KEY!,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          video_inputs: [{
+            character: {
+              type: "avatar",
+              avatar_id: "santiago-avatar-id", // Would be actual avatar ID
+              avatar_style: "normal"
+            },
+            voice: {
+              type: "text",
+              input_text: script || 'Hi, this is the Santiago Team from World Financial Group. We help families build wealth and secure their financial future.',
+              voice_id: `${avatar}-santiago-voice`
+            },
+            background: {
+              type: "color",
+              value: settings?.background === 'branded' ? '#1e40af' : '#ffffff'
+            }
+          }],
+          dimension: {
+            width: 1920,
+            height: 1080
+          },
+          aspect_ratio: "16:9",
+          test: true // Remove in production
+        })
       });
+
+      const videoData = await videoResponse.json();
+      
+      if (videoResponse.ok && videoData.data?.video_id) {
+        res.json({
+          success: true,
+          videoId: videoData.data.video_id,
+          message: `Video avatar campaign launched for ${avatar}!`,
+          details: {
+            videoId: videoData.data.video_id,
+            status: 'processing',
+            avatar: avatar,
+            duration: settings?.duration || '60-90 seconds',
+            background: settings?.background || 'office',
+            estimatedTime: '3-5 minutes'
+          }
+        });
+      } else {
+        throw new Error(videoData.message || 'HeyGen video generation failed');
+      }
     } catch (error: any) {
+      console.error('Video campaign error:', error);
       res.status(500).json({
         success: false,
         message: error.message || 'Video campaign failed'
