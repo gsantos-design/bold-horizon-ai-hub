@@ -20,11 +20,8 @@ export default function Header() {
   };
 
   const toggleLanguage = () => {
-    console.log('🌐 TOGGLE CLICKED! Current language:', language);
     const newLanguage = language === 'en' ? 'es' : 'en';
-    console.log('🌐 Setting new language to:', newLanguage);
     setLanguage(newLanguage);
-    console.log('🌐 setLanguage called with:', newLanguage);
   };
 
   const handleAnnouncementClick = async () => {

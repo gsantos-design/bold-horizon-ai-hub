@@ -139,28 +139,6 @@ export default function EpicVideoGenerator() {
       </CardHeader>
       
       <CardContent className="p-6 space-y-6">
-        {/* Language Debug Panel */}
-        <div className="bg-yellow-100 border-2 border-yellow-400 p-4 rounded-lg">
-          <h3 className="font-bold text-black mb-2">🔧 Language Debug Panel</h3>
-          <div className="text-sm text-black space-y-1">
-            <p><strong>Current Language:</strong> {language}</p>
-            <p><strong>Sample Translation (epic.generate_video):</strong> {t('epic.generate_video')}</p>
-            <p><strong>Expected Spanish:</strong> Generar Video Épico</p>
-            <p><strong>LocalStorage:</strong> {typeof window !== 'undefined' ? localStorage.getItem('language') : 'Not available'}</p>
-          </div>
-          <button 
-            onClick={() => {
-              console.log('🔧 Direct language test - Current:', language);
-              const newLang = language === 'en' ? 'es' : 'en';
-              console.log('🔧 Switching from', language, 'to', newLang);
-              setLanguage(newLang);
-            }}
-            className="mt-2 bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700"
-          >
-            Test Direct Language Switch ({language === 'en' ? 'Switch to ES' : 'Switch to EN'})
-          </button>
-        </div>
-        
         {/* First AI Agents Banner */}
         <div className="text-center p-4 bg-primary/5 border-2 border-primary/20 rounded-lg">
           <Badge className="bg-primary text-white px-4 py-2 text-lg font-bold mb-2">
@@ -175,7 +153,7 @@ export default function EpicVideoGenerator() {
         <div className="space-y-3">
           <Label className="text-lg font-semibold flex items-center gap-2">
             <Users className="h-5 w-5 text-primary" />
-            Who should star in your epic video?
+            {t('epic.who_should_star')}
           </Label>
           <Select value={request.avatarType} onValueChange={(value: any) => setRequest({...request, avatarType: value})}>
             <SelectTrigger className="w-full">
@@ -193,7 +171,7 @@ export default function EpicVideoGenerator() {
         <div className="space-y-3">
           <Label className="text-lg font-semibold flex items-center gap-2">
             <Video className="h-5 w-5 text-primary" />
-            Choose Your Epic Scene
+            {t('epic.choose_your_scene')}
           </Label>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {sceneOptions.map((scene) => (
@@ -219,7 +197,7 @@ export default function EpicVideoGenerator() {
         <div className="space-y-3">
           <Label className="text-lg font-semibold flex items-center gap-2">
             <Volume2 className="h-5 w-5 text-primary" />
-            Choose Your Triumphant Music
+            {t('epic.choose_triumphant_music')}
           </Label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {musicOptions.map((music) => (
@@ -260,7 +238,7 @@ export default function EpicVideoGenerator() {
         <div className="space-y-4 p-4 bg-green-50 rounded-lg border-2 border-green-200">
           <div className="flex items-center gap-2 mb-3">
             <div className="h-8 w-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">💰</div>
-            <h3 className="font-bold text-green-800">Budget-Friendly Dynamic Content</h3>
+            <h3 className="font-bold text-green-800">{t('epic.budget_friendly_content')}</h3>
             <Badge className="bg-green-500 text-white text-xs">~$0.005 per variation</Badge>
           </div>
           
@@ -333,7 +311,7 @@ export default function EpicVideoGenerator() {
               <li>• <strong>Enterprise-ready automation</strong> - aligned with corporate compliance mandates</li>
             </ul>
             <div className="mt-2 p-2 bg-green-100 rounded text-xs">
-              <strong>🎯 Business Impact:</strong> Enterprise teams can create unlimited video variations at 99.9% lower cost with Google AI vs traditional video APIs!
+              <strong>🎯 {t('epic.business_impact')}:</strong> {t('epic.enterprise_teams_create')}
             </div>
           </div>
         </div>
