@@ -225,18 +225,44 @@ export default function AiAutomationHub() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          subject: 'Santiago Team - Transform Your Financial Future',
-          template: 'santiago-introduction',
-          targeting: {
-            industry: 'entrepreneurship',
-            income: '$100K+',
-            age: '35-55'
+          campaignType: campaignType || '401k',
+          emails: ['demo@example.com'], // Demo email for testing
+          template: {
+            subject: 'Santiago Team - Transform Your Financial Future',
+            template: `Hi [NAME],
+
+This is Nolly Santiago from the Santiago Team at World Financial Group. I wanted to personally reach out about an incredible opportunity that could transform your financial future.
+
+Our AI automation platform has helped dozens of professionals like yourself discover tax-free strategies and high-yield alternatives that traditional banks simply don't offer.
+
+Based on your profile in [STATE], I believe you'd be perfect for our entrepreneur program targeting an additional $100K-$250K annually.
+
+Would you be interested in a brief 15-minute strategy call to explore how our team can help you achieve your financial goals?
+
+Best regards,
+Nolly Santiago
+Santiago Team - World Financial Group
+
+P.S. We're the FIRST to offer AI-powered financial strategies specifically designed for the Latino and Spanish-speaking community.`
           }
         })
       });
       
-      const phoneResult = await phoneResponse.json();
-      const emailResult = await emailResponse.json();
+      // Handle responses safely
+      let phoneResult = { success: false, campaignId: 'N/A' };
+      let emailResult = { success: false, campaignId: 'N/A' };
+      
+      try {
+        phoneResult = await phoneResponse.json();
+      } catch (error) {
+        console.error('Phone API response error:', error);
+      }
+      
+      try {
+        emailResult = await emailResponse.json();
+      } catch (error) {
+        console.error('Email API response error:', error);
+      }
       
       if (phoneResult.success && emailResult.success) {
         toast({
@@ -244,8 +270,14 @@ export default function AiAutomationHub() {
           description: `Phone campaign: ${phoneResult.campaignId} | Email campaign: ${emailResult.campaignId}. Check dashboard for real-time results.`,
           duration: 7000
         });
+      } else if (phoneResult.success) {
+        toast({
+          title: "📞 Phone Campaign Deployed!",
+          description: `Phone automation active: ${phoneResult.campaignId}. Email setup needs configuration.`,
+          duration: 5000
+        });
       } else {
-        throw new Error('Failed to deploy all campaigns');
+        throw new Error(`Phone: ${phoneResult.success ? 'OK' : 'Failed'} | Email: ${emailResult.success ? 'OK' : 'Failed'}`);
       }
     } catch (error: any) {
       toast({
