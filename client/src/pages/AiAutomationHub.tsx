@@ -180,6 +180,7 @@ export default function AiAutomationHub() {
   };
 
   const handleVideoSetup = async () => {
+    console.log('🎬 Video setup button clicked!');
     setIsSetupLoading(true);
     try {
       const response = await fetch('/api/ai-automation/launch-video-campaign', {
@@ -914,8 +915,12 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                         </div>
                         <Button 
                           className="w-full" 
-                          onClick={handleVideoSetup}
+                          onClick={() => {
+                            console.log('🔵 Button clicked - about to call handleVideoSetup');
+                            handleVideoSetup();
+                          }}
                           disabled={isSetupLoading}
+                          data-testid="video-setup-button"
                         >
                           <FileVideo className="h-4 w-4 mr-2" />
                           {isSetupLoading ? 'Setting up...' : t('ai.start_video_setup')}
