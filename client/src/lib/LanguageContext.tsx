@@ -37,6 +37,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.join_us': 'Join Us',
     'nav.ai_tools': 'AI Tools',
     
+    // AI Automation
+    'ai.start_video_setup': 'Start Video AI Setup',
+    'ai.start_voice_setup': 'Start Voice AI Setup',
+    'ai.start_phone_setup': 'Start Phone AI Setup',
+    
     // AI Automation Hub
     'ai.hero_badge': '🤖 AI Automation Hub',
     'ai.hero_title': 'AI Phone Calls & Video Avatars',
@@ -73,7 +78,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'ai.call_script_template': 'Call Script Template',
     'ai.avatar_clone_config': 'Avatar Clone Configuration',
     'ai.video_script_template': 'Video Script Template',
-    'ai.start_video_setup': 'Start Video AI Setup',
     'ai.implementation_roadmap': 'Implementation Roadmap',
     'ai.voice_video_training': 'Voice & Video Training',
     'ai.voice_video_training_desc': 'Collect 2-minute voice samples and video training footage from Nolly and Pablo Santiago for AI cloning',
@@ -817,6 +821,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'ai.avatar_clone_config': 'Configuración de Clonación de Avatar',
     'ai.video_script_template': 'Plantilla de Guion de Video',
     'ai.start_video_setup': 'Iniciar Configuración de Video IA',
+    'ai.start_voice_setup': 'Iniciar Configuración de Voz IA',
+    'ai.start_phone_setup': 'Iniciar Configuración de Teléfono IA',
     'ai.implementation_roadmap': 'Hoja de Ruta de Implementación',
     'ai.voice_video_training': 'Entrenamiento de Voz y Video',
     'ai.voice_video_training_desc': 'Recopilar muestras de voz de 2 minutos y material de entrenamiento de video de Nolly y Pablo Santiago para clonación IA',
