@@ -1666,7 +1666,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const sgMail = await import('@sendgrid/mail');
       sgMail.default.setApiKey(process.env.SENDGRID_API_KEY!);
 
-      const fromEmail = `noreply@${process.env.REPLIT_DOMAIN || 'replit.dev'}`;
+      // Use verified sender email for SendGrid
+      const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'nolly@santiago-team.com';
       let successCount = 0;
       let errorCount = 0;
       const errors: string[] = [];
@@ -1676,7 +1677,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         try {
           const emailData = {
             to: email,
-            from: fromEmail,
+            from: {
+              email: fromEmail,
+              name: 'Santiago Team - World Financial Group'
+            },
             subject: template.subject,
             text: template.template.replace(/\[NAME\]/g, 'Valued Client').replace(/\[STATE\]/g, 'your state'),
             html: `
