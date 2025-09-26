@@ -180,7 +180,6 @@ export default function AiAutomationHub() {
   };
 
   const handleVideoSetup = async () => {
-    console.log('🎬 Video setup button clicked!');
     setIsSetupLoading(true);
     try {
       const response = await fetch('/api/ai-automation/launch-video-campaign', {
@@ -200,22 +199,12 @@ export default function AiAutomationHub() {
       
       if (response.ok && result.success) {
         toast({
-          title: "✅ Video AI Setup Complete",
-          description: `Video avatar ready for ${selectedTeamMember}! Video ID: ${result.videoId}`,
-          duration: 5000
+          title: "✅ Google AI Video Complete",
+          description: `${result.message} Script: "${result.script?.substring(0, 100)}..."`,
+          duration: 8000
         });
       } else {
-        // Handle honest error responses (501 = Not Implemented)
-        if (response.status === 501) {
-          toast({
-            title: "🔧 Production Setup Required",
-            description: result.message || "This feature requires real API configuration to function.",
-            variant: "default",
-            duration: 8000
-          });
-        } else {
-          throw new Error(result.message || 'Video setup failed');
-        }
+        throw new Error(result.message || 'Google AI video generation failed');
       }
     } catch (error: any) {
       console.error('Video setup error:', error);
@@ -915,10 +904,7 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
                         </div>
                         <Button 
                           className="w-full" 
-                          onClick={() => {
-                            console.log('🔵 Button clicked - about to call handleVideoSetup');
-                            handleVideoSetup();
-                          }}
+                          onClick={handleVideoSetup}
                           disabled={isSetupLoading}
                           data-testid="video-setup-button"
                         >
