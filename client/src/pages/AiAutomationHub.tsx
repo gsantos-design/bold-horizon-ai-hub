@@ -139,23 +139,35 @@ export default function AiAutomationHub() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          teamMember: 'nolly',
-          voiceName: 'Nolly Santiago WFG',
+          teamMember: selectedTeamMember,
+          voiceName: `${selectedTeamMember} Santiago WFG`,
           description: 'Professional voice for Santiago Team lead generation'
         })
       });
+
+      // Check if response is actually JSON and successful
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Server returned non-JSON response. API endpoint may not exist.");
+      }
+
       const result = await response.json();
       
       if (result.success) {
         toast({
           title: "✅ Voice AI Setup Complete",
-          description: "Voice cloning is now active and ready for phone campaigns. Test with the voice synthesis feature.",
+          description: `Voice cloning active for ${selectedTeamMember}. Voice ID: ${result.voiceId}`,
           duration: 5000
         });
       } else {
         throw new Error(result.message || 'Voice setup failed');
       }
     } catch (error: any) {
+      console.error('Voice setup error:', error);
       toast({
         title: "❌ Voice Setup Error",
         description: error.message || "Please verify your ElevenLabs configuration.",
@@ -174,7 +186,7 @@ export default function AiAutomationHub() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          avatar: 'nolly',
+          avatar: selectedTeamMember,
           script: videoScript || 'Hi [PROSPECT_NAME], this is Nolly Santiago from the Santiago Team at World Financial Group. I wanted to personally reach out about an incredible opportunity...',
           settings: {
             background: 'office',
@@ -182,18 +194,30 @@ export default function AiAutomationHub() {
           }
         })
       });
+
+      // Check if response is actually JSON and successful
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Server returned non-JSON response. API endpoint may not exist.");
+      }
+
       const result = await response.json();
       
       if (result.success) {
         toast({
           title: "✅ Video AI Setup Complete",
-          description: `Video avatar is ready! Video ID: ${result.videoId}. Check status in campaign dashboard.`,
+          description: `Video avatar ready for ${selectedTeamMember}! Video ID: ${result.videoId}`,
           duration: 5000
         });
       } else {
         throw new Error(result.message || 'Video setup failed');
       }
     } catch (error: any) {
+      console.error('Video setup error:', error);
       toast({
         title: "❌ Video Setup Error", 
         description: error.message || "Please verify your HeyGen/Tavus configuration.",
@@ -248,20 +272,40 @@ P.S. We're the FIRST to offer AI-powered financial strategies specifically desig
         })
       });
       
-      // Handle responses safely
+      // Handle responses safely with proper HTTP status checking
       let phoneResult = { success: false, campaignId: 'N/A' };
       let emailResult = { success: false, campaignId: 'N/A' };
       
-      try {
-        phoneResult = await phoneResponse.json();
-      } catch (error) {
-        console.error('Phone API response error:', error);
+      // Check phone response
+      if (phoneResponse.ok) {
+        const contentType = phoneResponse.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          try {
+            phoneResult = await phoneResponse.json();
+          } catch (error) {
+            console.error('Phone API JSON parse error:', error);
+          }
+        } else {
+          console.error('Phone API returned non-JSON response');
+        }
+      } else {
+        console.error(`Phone API HTTP error: ${phoneResponse.status}`);
       }
       
-      try {
-        emailResult = await emailResponse.json();
-      } catch (error) {
-        console.error('Email API response error:', error);
+      // Check email response  
+      if (emailResponse.ok) {
+        const contentType = emailResponse.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          try {
+            emailResult = await emailResponse.json();
+          } catch (error) {
+            console.error('Email API JSON parse error:', error);
+          }
+        } else {
+          console.error('Email API returned non-JSON response');
+        }
+      } else {
+        console.error(`Email API HTTP error: ${emailResponse.status}`);
       }
       
       if (phoneResult.success && emailResult.success) {
