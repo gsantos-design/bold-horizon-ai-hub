@@ -33,7 +33,7 @@ interface VideoGenerationRequest {
 }
 
 export default function EpicVideoGenerator() {
-  const { t, language } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
   
   const { playSfx, playMusic } = useSound();
   const { toast } = useToast();
@@ -139,6 +139,28 @@ export default function EpicVideoGenerator() {
       </CardHeader>
       
       <CardContent className="p-6 space-y-6">
+        {/* Language Debug Panel */}
+        <div className="bg-yellow-100 border-2 border-yellow-400 p-4 rounded-lg">
+          <h3 className="font-bold text-black mb-2">🔧 Language Debug Panel</h3>
+          <div className="text-sm text-black space-y-1">
+            <p><strong>Current Language:</strong> {language}</p>
+            <p><strong>Sample Translation (epic.generate_video):</strong> {t('epic.generate_video')}</p>
+            <p><strong>Expected Spanish:</strong> Generar Video Épico</p>
+            <p><strong>LocalStorage:</strong> {typeof window !== 'undefined' ? localStorage.getItem('language') : 'Not available'}</p>
+          </div>
+          <button 
+            onClick={() => {
+              console.log('🔧 Direct language test - Current:', language);
+              const newLang = language === 'en' ? 'es' : 'en';
+              console.log('🔧 Switching from', language, 'to', newLang);
+              setLanguage(newLang);
+            }}
+            className="mt-2 bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700"
+          >
+            Test Direct Language Switch ({language === 'en' ? 'Switch to ES' : 'Switch to EN'})
+          </button>
+        </div>
+        
         {/* First AI Agents Banner */}
         <div className="text-center p-4 bg-primary/5 border-2 border-primary/20 rounded-lg">
           <Badge className="bg-primary text-white px-4 py-2 text-lg font-bold mb-2">
