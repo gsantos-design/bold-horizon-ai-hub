@@ -48,6 +48,9 @@ export default function AiAutomationHub() {
   const [isSetupLoading, setIsSetupLoading] = useState(false);
   const [isTestingAI, setIsTestingAI] = useState(false);
   const [testResults, setTestResults] = useState<any>(null);
+  const [selectedTeamMember, setSelectedTeamMember] = useState("nolly");
+  const [campaignType, setCampaignType] = useState("401k");
+  const [dailyVolume, setDailyVolume] = useState("100");
   const { isActive, hasSeenTour, startTour, completeTour, skipTour } = useTourGuide('ai-automation');
   const { t } = useLanguage();
   const { toast } = useToast();
@@ -129,38 +132,131 @@ export default function AiAutomationHub() {
   };
 
   // Handler functions for button interactions
-  const handleVoiceSetup = () => {
+  const handleVoiceSetup = async () => {
     setIsSetupLoading(true);
-    toast({
-      title: "Voice Setup Guide",
-      description: "Voice cloning requires ElevenLabs account setup and voice samples. Check our setup guide for step-by-step instructions.",
-      duration: 5000
-    });
-    // Simulate setup process
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/ai-automation/setup-voice-clone', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          teamMember: 'nolly',
+          voiceName: 'Nolly Santiago WFG',
+          description: 'Professional voice for Santiago Team lead generation'
+        })
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "✅ Voice AI Setup Complete",
+          description: "Voice cloning is now active and ready for phone campaigns. Test with the voice synthesis feature.",
+          duration: 5000
+        });
+      } else {
+        throw new Error(result.message || 'Voice setup failed');
+      }
+    } catch (error: any) {
+      toast({
+        title: "❌ Voice Setup Error",
+        description: error.message || "Please verify your ElevenLabs configuration.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
       setIsSetupLoading(false);
-    }, 2000);
+    }
   };
 
-  const handleVideoSetup = () => {
+  const handleVideoSetup = async () => {
     setIsSetupLoading(true);
-    toast({
-      title: "Video Setup Guide",
-      description: "Video avatar creation requires HeyGen or Tavus account setup and training footage. Check our setup guide for requirements.",
-      duration: 5000
-    });
-    // Simulate setup process
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/ai-automation/launch-video-campaign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          avatar: 'nolly',
+          script: videoScript || 'Hi [PROSPECT_NAME], this is Nolly Santiago from the Santiago Team at World Financial Group. I wanted to personally reach out about an incredible opportunity...',
+          settings: {
+            background: 'office',
+            duration: '60-90 seconds'
+          }
+        })
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "✅ Video AI Setup Complete",
+          description: `Video avatar is ready! Video ID: ${result.videoId}. Check status in campaign dashboard.`,
+          duration: 5000
+        });
+      } else {
+        throw new Error(result.message || 'Video setup failed');
+      }
+    } catch (error: any) {
+      toast({
+        title: "❌ Video Setup Error", 
+        description: error.message || "Please verify your HeyGen/Tavus configuration.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
       setIsSetupLoading(false);
-    }, 2000);
+    }
   };
 
-  const handleDeployAutomation = () => {
-    toast({
-      title: "AI Automation Deployment",
-      description: "Contact the Santiago Team to deploy your AI automation campaigns. We'll help set up voice cloning, video avatars, and targeting.",
-      duration: 6000
-    });
+  const handleDeployAutomation = async () => {
+    setIsSetupLoading(true);
+    try {
+      // Launch phone campaign
+      const phoneResponse = await fetch('/api/ai-automation/launch-phone-campaign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          script: phoneScript || 'Hi [PROSPECT_NAME], this is Nolly Santiago from the Santiago Team at World Financial Group...',
+          voiceId: 'nolly-santiago',
+          campaignType: '401k',
+          dailyVolume: 100
+        })
+      });
+      
+      // Launch email campaign  
+      const emailResponse = await fetch('/api/launch-email-campaign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          subject: 'Santiago Team - Transform Your Financial Future',
+          template: 'santiago-introduction',
+          targeting: {
+            industry: 'entrepreneurship',
+            income: '$100K+',
+            age: '35-55'
+          }
+        })
+      });
+      
+      const phoneResult = await phoneResponse.json();
+      const emailResult = await emailResponse.json();
+      
+      if (phoneResult.success && emailResult.success) {
+        toast({
+          title: "🚀 AI Automation Deployed!",
+          description: `Phone campaign: ${phoneResult.campaignId} | Email campaign: ${emailResult.campaignId}. Check dashboard for real-time results.`,
+          duration: 7000
+        });
+      } else {
+        throw new Error('Failed to deploy all campaigns');
+      }
+    } catch (error: any) {
+      toast({
+        title: "❌ Deployment Error",
+        description: error.message || "Please verify your automation configuration.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
+      setIsSetupLoading(false);
+    }
   };
 
   const handleScheduleCall = () => {
@@ -485,7 +581,7 @@ export default function AiAutomationHub() {
                       <CardContent className="space-y-4">
                         <div>
                           <Label>{t('ai.select_team_member')}</Label>
-                          <Select>
+                          <Select value={selectedTeamMember} onValueChange={setSelectedTeamMember}>
                             <SelectTrigger>
                               <SelectValue placeholder="Choose voice to clone" />
                             </SelectTrigger>
@@ -509,7 +605,7 @@ export default function AiAutomationHub() {
                         <div className="grid grid-cols-2 gap-4">
                           <div>
                             <Label>Campaign Type</Label>
-                            <Select>
+                            <Select value={campaignType} onValueChange={setCampaignType}>
                               <SelectTrigger>
                                 <SelectValue placeholder="Select campaign" />
                               </SelectTrigger>
@@ -523,7 +619,11 @@ export default function AiAutomationHub() {
                           </div>
                           <div>
                             <Label>Call Volume</Label>
-                            <Input placeholder="e.g., 100 calls/day" />
+                            <Input 
+                              placeholder="e.g., 100 calls/day" 
+                              value={dailyVolume}
+                              onChange={(e) => setDailyVolume(e.target.value)}
+                            />
                           </div>
                         </div>
                       </CardContent>
