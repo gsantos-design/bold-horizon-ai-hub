@@ -1981,13 +1981,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { teamMember, voiceName, description } = req.body;
       
-      if (!process.env.ELEVENLABS_API_KEY) {
-        return res.status(400).json({
-          success: false,
-          message: 'ElevenLabs API not configured'
-        });
-      }
-
       // USE THE ACTUAL GOOGLE AI IMPLEMENTATION THAT WAS BUILT
       if (!process.env.GEMINI_API_KEY) {
         return res.status(400).json({
@@ -2081,13 +2074,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { avatar, script, settings } = req.body;
       
-      if (!process.env.HEYGEN_API_KEY && !process.env.TAVUS_API_KEY) {
-        return res.status(400).json({
-          success: false,
-          message: 'Video automation not configured'
-        });
-      }
-
       // USE THE ACTUAL GOOGLE AI IMPLEMENTATION THAT WAS BUILT
       if (!process.env.GEMINI_API_KEY) {
         return res.status(400).json({
