@@ -328,6 +328,104 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Twilio inbound SMS webhook with bilingual auto-replies
+  function escapeXml(s: string = "") {
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
+  }
+
+  app.post('/api/twilio/sms', async (req, res) => {
+    try {
+      const from = (req.body?.From || '').toString();
+      const body = (req.body?.Body || '').toString().trim();
+      const lower = body.toLowerCase();
+
+      // Respect STOP keywords; Twilio will auto-confirm
+      const stopWords = ['stop','stopall','unsubscribe','cancel','end','quit'];
+      if (stopWords.includes(lower)) {
+        return res.status(204).end();
+      }
+
+      // Language heuristic: default ES unless asks for English
+      const lang = (/\beng(li(sh)?)?\b/.test(lower) || /\benglish\b/.test(lower)) ? 'en' : 'es';
+
+      let reply: string;
+      if (["1","401k"].includes(lower)) {
+        reply = lang === 'en'
+          ? "Quick 401k guide. SMS summary or visit Hub? Link: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=401k Reply A) SMS B) Hub"
+          : "Guía 401k. ¿Resumen por SMS o visitar el Hub? Enlace: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=401k Responde A) SMS B) Hub";
+      } else if (["2","iul"].includes(lower)) {
+        reply = lang === 'en'
+          ? "IUL basics with pros/cons. Link: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=iul Reply A) SMS B) Hub"
+          : "IUL básico con pros/contras. Enlace: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=iul Responde A) SMS B) Hub";
+      } else if (["3","cita","call","llamar","llamada"].includes(lower)) {
+        reply = lang === 'en'
+          ? "Great—phone or Zoom? Share best day/time and your email to confirm. Reply STOP to opt out."
+          : "¡Perfecto! ¿Llamada o Zoom? Comparte mejor día/hora y tu email para confirmar. Responde STOP para salir.";
+      } else if (["4","info","más","mas","more","help","ayuda"].includes(lower)) {
+        reply = lang === 'en'
+          ? "I can help with 401k and IUL. Which topic do you want first?"
+          : "Puedo ayudarte con 401k e IUL. ¿Qué tema quieres primero?";
+      } else if (["a","b"].includes(lower)) {
+        reply = lang === 'en'
+          ? (lower === 'a'
+              ? "Okay, I’ll text a short summary next. Want a quick call too? Reply 3."
+              : "Here’s the Hub link: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=hub")
+          : (lower === 'a'
+              ? "Perfecto, te envío un resumen breve enseguida. ¿Agendamos llamada? Responde 3."
+              : "Aquí el Hub: https://hub.boldhorizonsfinancial.com/?utm_source=sms&utm_medium=inbound&utm_campaign=hub");
+      } else {
+        reply = lang === 'en'
+          ? "Thanks! Reply: 1) 401k 2) IUL 3) Call 4) Info. Reply STOP to opt out. Escribe ESP para español."
+          : "¡Gracias! Responde: 1) 401k 2) IUL 3) Cita 4) Info. Reply STOP para salir. Type ENG for English.";
+      }
+
+      // Log to Google Sheet (best-effort)
+      try {
+        if (process.env.APPS_SCRIPT_LEADS_URL) {
+          await fetch(process.env.APPS_SCRIPT_LEADS_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Webhook-Secret': process.env.LEADS_WEBHOOK_SECRET || '',
+            },
+            body: JSON.stringify({
+              source: 'twilio-sms',
+              phone: from,
+              message: body,
+              lang,
+              ts: new Date().toISOString(),
+            }),
+          } as any);
+        }
+      } catch (e) {
+        console.warn('Sheet log failed:', (e as any)?.message || e);
+      }
+
+      // Upsert in HubSpot and add Note (best-effort)
+      try {
+        if (process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN || process.env.HUBSPOT_AUTH_MODE === 'oauth') {
+          const contactId = await upsertContact({ phone: from, message_last: body, preferred_language: lang, lead_source: 'twilio-sms' });
+          if (contactId) {
+            await createNoteOnContact(contactId, `SMS from ${from}:\n${body || '(no body)'}`);
+          }
+        }
+      } catch (e) {
+        console.warn('HubSpot upsert failed:', (e as any)?.message || e);
+      }
+
+      const twiml = `<?xml version="1.0" encoding="UTF-8"?><Response><Message>${escapeXml(reply)}</Message></Response>`;
+      res.type('text/xml').send(twiml);
+    } catch (e: any) {
+      console.error('Twilio SMS webhook error:', e);
+      res.status(500).json({ success: false, message: 'SMS handling failed' });
+    }
+  });
+
   // API route for career path quiz submissions
   app.post("/api/career-quiz", async (req, res) => {
     try {
