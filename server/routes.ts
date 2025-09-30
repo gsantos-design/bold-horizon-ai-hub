@@ -38,7 +38,8 @@ import {
   listDealsForContact, 
   updateDealStage, 
   createNoteOnContact,
-  getHubSpotOwners 
+  getHubSpotOwners,
+  upsertContact,
 } from "./lib/hubspot";
 import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
 import { VideoGenerationService } from './videoGeneration';
@@ -81,6 +82,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const videoGenerationService = new VideoGenerationService();
   
   // Google AI Test Routes for Corporate Demo
+  // Lightweight health check (with optional deep checks)
+  app.get('/api/healthz', async (req, res) => {
+    const deep = req.query.deep === '1' || req.query.deep === 'true';
+    const base = {
+      ok: true,
+      env: {
+        GEMINI_API_KEY: Boolean(process.env.GEMINI_API_KEY),
+        APPS_SCRIPT_LEADS_URL: Boolean(process.env.APPS_SCRIPT_LEADS_URL),
+        HUBSPOT: Boolean(process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN),
+      },
+      version: process.env.COMMIT_SHA || null,
+    } as any;
+
+    if (!deep) return res.json(base);
+
+    const checks: Record<string, boolean | null> = {};
+    try {
+      const r = await googleAI.testConnection();
+      checks.googleAI = Boolean((r as any)?.success ?? r);
+    } catch { checks.googleAI = false; }
+
+    try {
+      const owners = await getHubSpotOwners();
+      checks.hubspot = Array.isArray(owners);
+    } catch { checks.hubspot = false; }
+
+    try {
+      if (process.env.APPS_SCRIPT_LEADS_URL) {
+        const r = await fetch(process.env.APPS_SCRIPT_LEADS_URL, { method: 'OPTIONS' } as any);
+        checks.appsScript = r.ok;
+      } else {
+        checks.appsScript = null;
+      }
+    } catch { checks.appsScript = false; }
+
+    base.checks = checks;
+    base.ok = Object.values(checks).every(v => v === true || v === null);
+    res.json(base);
+  });
+
   app.post('/api/google-ai/test-connection', async (req, res) => {
     try {
       const result = await googleAI.testConnection();
@@ -173,6 +214,62 @@ export async function registerRoutes(app: Express): Promise<Server> {
           message: "Failed to submit inquiry. Please try again." 
         });
       }
+    }
+  });
+
+  // Public lead endpoint: logs to Google Sheet and HubSpot
+  app.post('/api/lead', async (req, res) => {
+    try {
+      const { name = '', email = '', phone = '', message = '', lang = '', source = 'web' } = (req.body || {});
+
+      if (!email && !phone) {
+        return res.status(400).json({ success: false, message: 'Email or phone required' });
+      }
+
+      // Write to Google Sheet (fallback system of record)
+      try {
+        if (process.env.APPS_SCRIPT_LEADS_URL) {
+          await fetch(process.env.APPS_SCRIPT_LEADS_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Webhook-Secret': process.env.LEADS_WEBHOOK_SECRET || '',
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              phone,
+              message,
+              lang,
+              source,
+              ts: new Date().toISOString(),
+            }),
+          } as any);
+        }
+      } catch (e) {
+        console.warn('Sheet log failed:', (e as any)?.message || e);
+      }
+
+      // Upsert in HubSpot (if configured)
+      let hubspotContactId: string | null = null;
+      try {
+        if (process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN) {
+          const [firstname, ...rest] = String(name).trim().split(' ');
+          const lastname = rest.join(' ');
+          hubspotContactId = await upsertContact({ email, firstname, lastname, phone, message_last: message, preferred_language: lang, lead_source: source });
+
+          if (hubspotContactId) {
+            await createNoteOnContact(hubspotContactId, `New lead from ${source}:\n${message || '(no message)'}`);
+          }
+        }
+      } catch (e) {
+        console.warn('HubSpot upsert failed:', (e as any)?.message || e);
+      }
+
+      return res.json({ success: true, hubspotContactId: hubspotContactId || undefined });
+    } catch (err: any) {
+      console.error('Lead submit error:', err);
+      return res.status(500).json({ success: false, message: 'Lead submission failed' });
     }
   });
 

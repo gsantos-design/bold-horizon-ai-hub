@@ -1,8 +1,8 @@
 const HUBSPOT_BASE = 'https://api.hubapi.com'
 
 async function hs(path: string, method: string, body?: any) {
-  const key = process.env.HUBSPOT_API_KEY || ''
-  if (!key) throw new Error('Missing HUBSPOT_API_KEY')
+  const key = process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN || ''
+  if (!key) throw new Error('Missing HubSpot token (set HUBSPOT_API_KEY or HUBSPOT_TOKEN)')
   const res = await fetch(HUBSPOT_BASE + path, {
     method,
     headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -59,8 +59,8 @@ export async function createNoteOnContact(contactId: string, bodyText: string) {
 
 export async function getHubSpotOwners() {
   try {
-    if (!process.env.HUBSPOT_API_KEY) {
-      console.log('No HubSpot API key configured, returning empty results')
+    if (!process.env.HUBSPOT_API_KEY && !process.env.HUBSPOT_TOKEN) {
+      console.log('No HubSpot token configured, returning empty results')
       return []
     }
     const res = await hs('/crm/v3/owners', 'GET')
@@ -69,4 +69,35 @@ export async function getHubSpotOwners() {
     console.log('HubSpot API not available, returning empty results:', error.message)
     return []
   }
+}
+
+// Create or update a contact by email (basic upsert)
+export async function upsertContact(props: {
+  email?: string;
+  firstname?: string;
+  lastname?: string;
+  phone?: string;
+  lifecyclestage?: string;
+  [key: string]: any;
+}) {
+  const properties = {
+    lifecyclestage: 'lead',
+    ...props,
+  }
+
+  let id: string | null = null
+  try {
+    if (props.email) {
+      const existing = await findContactByEmail(props.email)
+      if (existing?.id) id = existing.id
+    }
+  } catch {}
+
+  if (id) {
+    await hs(`/crm/v3/objects/contacts/${id}`, 'PATCH', { properties })
+    return id
+  }
+
+  const created = await hs('/crm/v3/objects/contacts', 'POST', { properties })
+  return created.id as string
 }
