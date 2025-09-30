@@ -1,8 +1,9 @@
 const HUBSPOT_BASE = 'https://api.hubapi.com'
+import { getAccessToken, getAuthMode } from './hubspotAuth'
 
 async function hs(path: string, method: string, body?: any) {
-  const key = process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN || ''
-  if (!key) throw new Error('Missing HubSpot token (set HUBSPOT_API_KEY or HUBSPOT_TOKEN)')
+  // Use PAT by default; if HUBSPOT_AUTH_MODE=oauth, use OAuth access token with refresh
+  const key = await getAccessToken()
   const res = await fetch(HUBSPOT_BASE + path, {
     method,
     headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -59,7 +60,7 @@ export async function createNoteOnContact(contactId: string, bodyText: string) {
 
 export async function getHubSpotOwners() {
   try {
-    if (!process.env.HUBSPOT_API_KEY && !process.env.HUBSPOT_TOKEN) {
+    if (getAuthMode() !== 'oauth' && !process.env.HUBSPOT_API_KEY && !process.env.HUBSPOT_TOKEN) {
       console.log('No HubSpot token configured, returning empty results')
       return []
     }

@@ -41,6 +41,7 @@ import {
   getHubSpotOwners,
   upsertContact,
 } from "./lib/hubspot";
+import { buildAuthUrl, consumeState, exchangeCodeForTokens, status as hubspotAuthStatus, getAuthMode } from './lib/hubspotAuth'
 import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
 import { VideoGenerationService } from './videoGeneration';
 import { googleAI } from './services/googleAI';
@@ -121,6 +122,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
     base.ok = Object.values(checks).every(v => v === true || v === null);
     res.json(base);
   });
+
+  // HubSpot OAuth endpoints (enabled when HUBSPOT_AUTH_MODE=oauth)
+  app.get('/api/hubspot/oauth/init', (req, res) => {
+    try {
+      if (process.env.HUBSPOT_AUTH_MODE !== 'oauth') {
+        return res.status(400).json({ message: 'OAuth disabled. Set HUBSPOT_AUTH_MODE=oauth' })
+      }
+      const url = buildAuthUrl()
+      res.redirect(url)
+    } catch (e: any) {
+      res.status(400).json({ message: e.message || 'OAuth init failed' })
+    }
+  })
+
+  app.get('/api/hubspot/oauth/callback', async (req, res) => {
+    try {
+      if (process.env.HUBSPOT_AUTH_MODE !== 'oauth') {
+        return res.status(400).json({ message: 'OAuth disabled. Set HUBSPOT_AUTH_MODE=oauth' })
+      }
+      const code = String(req.query.code || '')
+      const state = String(req.query.state || '')
+      if (!code || !consumeState(state)) {
+        return res.status(400).json({ message: 'Invalid OAuth callback (missing/invalid state or code)' })
+      }
+      await exchangeCodeForTokens(code)
+      res.status(200).json({ success: true, message: 'HubSpot connected via OAuth' })
+    } catch (e: any) {
+      res.status(400).json({ success: false, message: e.message || 'OAuth callback failed' })
+    }
+  })
+
+  app.get('/api/hubspot/oauth/status', (req, res) => {
+    res.json(hubspotAuthStatus())
+  })
 
   app.post('/api/google-ai/test-connection', async (req, res) => {
     try {
@@ -253,7 +288,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Upsert in HubSpot (if configured)
       let hubspotContactId: string | null = null;
       try {
-        if (process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN) {
+        if (process.env.HUBSPOT_API_KEY || process.env.HUBSPOT_TOKEN || process.env.HUBSPOT_AUTH_MODE === 'oauth') {
           const [firstname, ...rest] = String(name).trim().split(' ');
           const lastname = rest.join(' ');
           hubspotContactId = await upsertContact({ email, firstname, lastname, phone, message_last: message, preferred_language: lang, lead_source: source });
