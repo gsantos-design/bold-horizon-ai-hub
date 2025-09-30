@@ -273,6 +273,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Public lead endpoint: logs to Google Sheet and HubSpot
+  // GET helper for human/browser checks
+  app.get('/api/lead', (_req, res) => {
+    res.set('Allow', 'POST');
+    res.status(405).json({
+      message: 'Use POST /api/lead with a JSON body',
+      example: {
+        name: 'Juan Perez',
+        email: 'juan@example.com',
+        phone: '+1...',
+        message: 'Quiero info de IUL',
+        lang: 'es',
+        source: 'web-es'
+      }
+    });
+  });
+
   app.post('/api/lead', async (req, res) => {
     try {
       const { name = '', email = '', phone = '', message = '', lang = '', source = 'web' } = (req.body || {});
