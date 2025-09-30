@@ -129,3 +129,42 @@ export async function getAccessToken(): Promise<string> {
   return tokens.access_token
 }
 
+export function clearTokens() {
+  tokens = null
+}
+
+export async function getAccessTokenMetadata(providedToken?: string) {
+  const token = providedToken || (getAuthMode() === 'oauth' ? (await getAccessToken()) : '')
+  if (!token) throw new Error('Token metadata is only available in OAuth mode or when a token is provided')
+  const res = await fetch(`https://api.hubapi.com/oauth/v1/access-tokens/${encodeURIComponent(token)}`, {
+    method: 'GET',
+    headers: { 'Accept': 'application/json' },
+  } as any)
+  if (!res.ok) {
+    const t = await res.text()
+    throw new Error(`HubSpot access token info failed: ${res.status} ${t}`)
+  }
+  return res.json()
+}
+
+export async function revokeRefreshToken(providedRefreshToken?: string) {
+  const refresh = providedRefreshToken || tokens?.refresh_token
+  if (!refresh) throw new Error('No refresh token to revoke')
+  const cid = process.env.HUBSPOT_CLIENT_ID || ''
+  const secret = process.env.HUBSPOT_CLIENT_SECRET || ''
+  const headers: Record<string,string> = { 'Accept': 'application/json' }
+  if (cid && secret) {
+    const basic = Buffer.from(`${cid}:${secret}`).toString('base64')
+    headers['Authorization'] = `Basic ${basic}`
+  }
+  const res = await fetch(`https://api.hubapi.com/oauth/v1/refresh-tokens/${encodeURIComponent(refresh)}`, {
+    method: 'DELETE',
+    headers,
+  } as any)
+  if (!res.ok) {
+    const t = await res.text()
+    throw new Error(`HubSpot refresh token revoke failed: ${res.status} ${t}`)
+  }
+  clearTokens()
+  return { success: true }
+}

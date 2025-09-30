@@ -41,7 +41,7 @@ import {
   getHubSpotOwners,
   upsertContact,
 } from "./lib/hubspot";
-import { buildAuthUrl, consumeState, exchangeCodeForTokens, status as hubspotAuthStatus, getAuthMode } from './lib/hubspotAuth'
+import { buildAuthUrl, consumeState, exchangeCodeForTokens, status as hubspotAuthStatus, getAuthMode, getAccessTokenMetadata, revokeRefreshToken } from './lib/hubspotAuth'
 import { MultilingualLeadGenerator, type MultilingualLead, type SupportedLanguage } from './multilingualLeadGen';
 import { VideoGenerationService } from './videoGeneration';
 import { googleAI } from './services/googleAI';
@@ -155,6 +155,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get('/api/hubspot/oauth/status', (req, res) => {
     res.json(hubspotAuthStatus())
+  })
+
+  app.get('/api/hubspot/oauth/token-info', async (req, res) => {
+    try {
+      const token = typeof req.query.token === 'string' ? req.query.token : undefined
+      const info = await getAccessTokenMetadata(token)
+      res.json(info)
+    } catch (e: any) {
+      res.status(400).json({ message: e.message || 'Failed to retrieve token info' })
+    }
+  })
+
+  app.delete('/api/hubspot/oauth/refresh-token', async (req, res) => {
+    try {
+      const refresh = typeof req.query.token === 'string' ? req.query.token : undefined
+      const result = await revokeRefreshToken(refresh)
+      res.json(result)
+    } catch (e: any) {
+      res.status(400).json({ message: e.message || 'Failed to revoke refresh token' })
+    }
   })
 
   app.post('/api/google-ai/test-connection', async (req, res) => {
